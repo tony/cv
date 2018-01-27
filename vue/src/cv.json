@@ -2,23 +2,20 @@
   {
     "component": "Patch",
     "options": {
-      "type": "Patch",
-      "tpl": "<div>node: {{ opts }} {{ log }}</div>"
+      "type": "Patch"
     }
   },
   {
     "component": "Website",
     "lol": "custom data success",
     "options": {
-      "type": "Website",
-      "tpl": "<div>node2: {{ opts }} {{ log }}</div>"
+      "type": "Website"
     }
   },
   {
     "component": "Project",
     "options": {
-      "type": "Project",
-      "tpl": "<div>node3: {{ opts }} {{ log }}</div>"
+      "type": "Project"
     }
   }
 ]
