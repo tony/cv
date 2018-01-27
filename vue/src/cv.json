@@ -1,6 +1,12 @@
 [
   {
     "component": "Patch",
+    "qa_url": "https://github.com/pytest-dev/pytest-django/pull/568",
+    "in_re_url": "https://github.com/pytest-dev/pytest-django/issues/565",
+    "repo_url": "https://github.com/tony/tmuxp",
+    "diff_url": "https://patch-diff.githubusercontent.com/raw/pytest-dev/pytest-django/pull/568.diff",
+    "languages": ["Python"],
+    "title": "Add fixtures for user request factories, clients",
     "options": {
       "type": "Patch"
     }
