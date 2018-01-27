@@ -13,16 +13,16 @@
 
 <script>
 import items from './cv.json';
-import Node from './Node';
-import Node2 from './Node2';
+import Patch from './components/item_types/Patch';
+import Website from './components/item_types/Website';
 
 export default {
   name: 'App',
   components: {
-    Node,
-    Node2,
-    Node3: () => ({
-      component: import('./Node3'),
+    Patch,
+    Website,
+    Project: () => ({
+      component: import('./components/item_types/Project'),
       delay: 4000,
       timeout: 4000,
     }),

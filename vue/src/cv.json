@@ -1,23 +1,23 @@
 [
   {
-    "component": "Node",
+    "component": "Patch",
     "options": {
-      "type": "Node",
+      "type": "Patch",
       "tpl": "<div>node: {{ opts }} {{ log }}</div>"
     }
   },
   {
-    "component": "Node2",
+    "component": "Website",
     "lol": "custom data success",
     "options": {
-      "type": "Node2",
+      "type": "Website",
       "tpl": "<div>node2: {{ opts }} {{ log }}</div>"
     }
   },
   {
-    "component": "Node3",
+    "component": "Project",
     "options": {
-      "type": "Node3",
+      "type": "Project",
       "tpl": "<div>node3: {{ opts }} {{ log }}</div>"
     }
   }

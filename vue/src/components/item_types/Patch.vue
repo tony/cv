@@ -1,11 +1,11 @@
 <template>
-  <div>node2 {{item.lol}}</div>
+  <div>must be static tpl!</div>
 </template>
 
 <script>
 export default {
-  name: 'Node2',
-  props: ['opts', 'item'],
+  name: 'Patch',
+  props: ['opts'],
   computed: {
     log: () => JSON.stringify(this.opts),
   },
@@ -13,7 +13,7 @@ export default {
     return {};
   },
   created: () => {
-    console.log('dfdsfsdfa');
+    console.log(this.opts);
   },
 };
 </script>
