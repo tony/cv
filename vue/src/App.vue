@@ -12,37 +12,12 @@
 </template>
 
 <script>
+import items from './cv.json';
+
 export default {
   name: 'App',
   data() {
-    return {
-      newItem: {
-        component: '',
-        options: '',
-      },
-      items: [{
-        component: 'node',
-        options: {
-          type: 'node',
-          tpl: '<div>node: {{ opts }} {{ log }}</div>',
-        },
-      },
-      {
-        component: 'node2',
-        lol: 'custom data success',
-        options: {
-          type: 'node2',
-          tpl: '<div>node2: {{ opts }} {{ log }}</div>',
-        },
-      }, {
-        component: 'node3',
-        options: {
-          type: 'node3',
-          tpl: '<div>node3: {{ opts }} {{ log }}</div>',
-        },
-      },
-      ],
-    };
+    return { items };
   },
 };
 </script>
