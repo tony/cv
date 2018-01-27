@@ -13,9 +13,20 @@
 
 <script>
 import items from './cv.json';
+import Node from './Node';
+import Node2 from './Node2';
 
 export default {
   name: 'App',
+  components: {
+    Node,
+    Node2,
+    Node3: () => ({
+      component: import('./Node3'),
+      delay: 4000,
+      timeout: 4000,
+    }),
+  },
   data() {
     return { items };
   },

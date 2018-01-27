@@ -1,23 +1,23 @@
 [
   {
-    "component": "node",
+    "component": "Node",
     "options": {
-      "type": "node",
+      "type": "Node",
       "tpl": "<div>node: {{ opts }} {{ log }}</div>"
     }
   },
   {
-    "component": "node2",
+    "component": "Node2",
     "lol": "custom data success",
     "options": {
-      "type": "node2",
+      "type": "Node2",
       "tpl": "<div>node2: {{ opts }} {{ log }}</div>"
     }
   },
   {
-    "component": "node3",
+    "component": "Node3",
     "options": {
-      "type": "node3",
+      "type": "Node3",
       "tpl": "<div>node3: {{ opts }} {{ log }}</div>"
     }
   }
