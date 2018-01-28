@@ -25,12 +25,6 @@ export default {
   computed: {
     log: () => JSON.stringify(this.opts),
   },
-  data() {
-    return {};
-  },
-  created: () => {
-    console.log(this.opts);
-  },
 };
 </script>
 

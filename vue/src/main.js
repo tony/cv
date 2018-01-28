@@ -38,12 +38,12 @@ function validateProject(item) {
 
 function validateSubjects(list) {
   list.forEach((item) => {
-    switch (item.subject) {
+    switch (item.type) {
       case 'project':
         validateProject(item);
         break;
       default:
-        throw Error(`invalid subject for ${item}`);
+        throw Error(`invalid type for ${item}`);
     }
   });
 }
@@ -77,9 +77,13 @@ const store = new Vuex.Store({
   getters: {
     verbs: state => state.verbs,
     subjects: state => state.subjects, // subject items
-    availableSubjects: state => [
-      ...new Set(state.subjects.map(item => item.subject)),
+    availableSubjectTypes: state => [
+      ...new Set(state.subjects.map(item => item.type)),
     ],
+    availableSubjects: state => [
+      state.subjects.map(item => item.project.name),
+    ],
+
     availableVerbs: state => [
       ...new Set(state.verbs.map(item => item.component)),
     ],

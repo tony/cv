@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "subject": "project",
+    "type": "project",
     "name": "pytest-django",
     "url": "https://pytest-django.readthedocs.io/",
     "repo_url": "https://github.com/pytest-dev/pytest-django"

@@ -2,28 +2,21 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h3>Subject</h3>
-    <span
-      v-for="subject in availableSubjects"
-      :key="subject.id"
-      >
-      {{subject}}:
+
       <multiselect
-        v-model="multiValue"
+        v-model="subjectChoices"
         :search="true"
         :multiple="true"
-        track-by="name"
-        label="name"
-        :options="subjects">
+        :options="availableSubjectTypes">
       </multiselect>
-    </span>
 
     <h3>Verb</h3>
-    <span
-      v-for="verb in availableVerbs"
-      :key="verb.id"
-      >
-      {{verb}}
-    </span>
+    <multiselect
+      v-model="verbChoices"
+      :search="true"
+      :multiple="true"
+      :options="availableVerbs">
+    </multiselect>
   </div>
 </template>
 
@@ -36,12 +29,16 @@ export default {
   components: { Multiselect },
   data() {
     return {
-      multiValue: null,
+      subjectChoices: null,
+      verbChoices: null,
       msg: 'Tony Narlock\'s CV',
     };
   },
   computed: mapGetters([
-    'subjects', 'availableSubjects', 'availableVerbs',
+    'subjects',
+    'availableSubjects',
+    'availableSubjectTypes',
+    'availableVerbs',
   ]),
   methods: {
     addTag(newTag) {
