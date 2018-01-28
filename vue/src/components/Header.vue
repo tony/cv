@@ -5,33 +5,37 @@
     <p><em>Friendly reminder: I don't do technical screens. I only seek
       remote, senior programming roles.
       I'm also available for <a href="https://www.git-pull.com/consulting/">consulting</a> and
-        <a href="https://www.git-pull.com/mentoring/">mentoring</a>.</em></p>
+    <a href="https://www.git-pull.com/mentoring/">mentoring</a>.</em></p>
 
-    <multiselect
-      v-model="subjectChoices"
-      :search="true"
-      :multiple="true"
-      placeholder="Filter by project / company"
-      label="name"
-      :limit="3" @tag="onTagging"
-      :options="subjects">
-      <template slot="option" slot-scope="props">
-      <span class="badge__name">{{ props.option.name }}</span>
-      <span class="badge__img tag">
-      {{props.option.type}}
-      </span>
-      </template>
-    </multiselect>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <multiselect
+          v-model="subjectChoices"
+          :search="true"
+          :multiple="true"
+          placeholder="Filter by project / company"
+          label="name"
+          :limit="3" @tag="onTagging"
+          :options="subjects">
+          <template slot="option" slot-scope="props">
+          <span class="badge__name">{{ props.option.name }}</span>
+          <span class="badge__img tag">
+          {{props.option.type}}
+          </span>
+          </template>
+        </multiselect>
 
-    <multiselect
-      v-model="verbChoices"
-      :search="true"
-      :multiple="true"
-      placeholder="Filter by event"
-      :options="availableVerbs"
-     >
-    </multiselect>
-
+        <multiselect
+          v-model="verbChoices"
+          :search="true"
+          :multiple="true"
+          placeholder="Filter by event"
+          :options="availableVerbs"
+         >
+        </multiselect>
+      </div>
+    </div>
+  <p />
   </div>
 </template>
 
