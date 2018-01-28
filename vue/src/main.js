@@ -76,7 +76,10 @@ const store = new Vuex.Store({
   },
   getters: {
     verbs: state => state.verbs,
-    subjects: state => state.subjects,
+    subjects: state => state.subjects, // subject items
+    availableSubjects: state => [
+      ...new Set(state.subjects.map(item => item.subject)),
+    ],
   },
   mutations: {
     increment(state) {

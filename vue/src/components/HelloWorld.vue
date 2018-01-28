@@ -1,13 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    Projects: <span
-      v-for="subject in subjects"
-      v-if="subject.subject == 'project'"
+    <h3>Subject</h3>
+    <span
+      v-for="subject in availableSubjects"
       :key="subject.id"
       >
-    {{subject.name}}
+      {{subject}}:
+      <span
+        v-for="item in subjects"
+        v-if="item.subject == subject"
+        :key="item.id"
+        >
+        {{item.name}}
+      </span>
     </span>
+
+    <h3>Verb</h3>
+
   </div>
 </template>
 
@@ -22,7 +32,7 @@ export default {
     };
   },
   computed: mapGetters([
-    'subjects',
+    'subjects', 'availableSubjects',
   ]),
 };
 </script>
