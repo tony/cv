@@ -15,8 +15,9 @@
           :multiple="true"
           placeholder="Filter by project / company"
           label="name"
-          :limit="3" @tag="onTagging"
-          :options="subjects">
+          @tag="onTagging"
+          :options="subjects"
+          >
           <template slot="option" slot-scope="props">
           <span>{{ props.option.name }}</span>
           <span class="tag">
@@ -31,6 +32,8 @@
           :multiple="true"
           placeholder="Filter by event"
           :options="availableVerbs"
+          :value="availableVerbs"
+          @tag="onTagging"
          >
         </multiselect>
       </div>
@@ -48,7 +51,7 @@ export default {
   data() {
     return {
       subjectChoices: null,
-      verbChoices: null,
+      verbChoices: this.$store.getters.availableVerbs,
       msg: 'Tony Narlock\'s CV',
       source: [],
       value: [],
@@ -62,10 +65,13 @@ export default {
   ]),
   methods: {
     onTagging(newTag) {
+      console.log('onTagging', newTag);
+      console.log(this.verbChoices);
       this.source.push({ name: newTag, language: newTag });
       this.value.push({ name: newTag, language: newTag });
     },
     addTag(newTag) {
+      console.log('addTag', newTag);
       const tag = {
         name: newTag,
         code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000)),
@@ -81,14 +87,6 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #42b983;
