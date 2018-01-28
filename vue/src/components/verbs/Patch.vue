@@ -9,6 +9,15 @@
       <span class="tag" v-for="language in item.languages" :key="language.id">
       {{language}}
       </span>
+
+      <br />
+      Submitted: <span v-show="item.proposed_date">{{item.proposed_date}}</span>
+      <template v-if="item.accepted_date">
+      Accepted: <span v-show="item.accepted_date">{{item.accepted_date}}</span>
+      </template>
+      <template v-else="item.accepted_date">
+      Not merged.
+      </template>
       </p>
       </div></div>
       <div class="col-xs-8 item"><div class="box">
