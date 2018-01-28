@@ -18,8 +18,8 @@
           :limit="3" @tag="onTagging"
           :options="subjects">
           <template slot="option" slot-scope="props">
-          <span class="badge__name">{{ props.option.name }}</span>
-          <span class="badge__img tag">
+          <span>{{ props.option.name }}</span>
+          <span class="tag">
           {{props.option.type}}
           </span>
           </template>
@@ -93,15 +93,6 @@ li {
 }
 a {
   color: #42b983;
-}
-
-.badge__img {
-}
-
-.badge__name {
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: 5px;
 }
 
 .tag {
