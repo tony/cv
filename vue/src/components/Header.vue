@@ -110,7 +110,9 @@ a {
   justify-content: center;
   line-height: 1.5;
   padding-top: 0.5em;
+  margin-top: -0.5em;
   padding-bottom: 0.5em;
+  margin-bottom: -0.5em;
   padding-left: .75em;
   padding-right: .75em;
   white-space: nowrap;
