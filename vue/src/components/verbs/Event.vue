@@ -1,10 +1,10 @@
 <template>
-  <div>I am a kudo, thank you!</div>
+  <div>I am an event, thank you!</div>
 </template>
 
 <script>
 export default {
-  name: 'Kudo',
+  name: 'Event',
   props: ['item', 'opts'],
 };
 </script>
