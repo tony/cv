@@ -15,6 +15,7 @@
           :multiple="true"
           placeholder="Filter by project / company"
           label="name"
+          track-by="name"
           @tag="onTagging"
           :options="subjects"
           >
@@ -31,6 +32,7 @@
           :search="true"
           :multiple="true"
           placeholder="Filter by event"
+          :taggable="true"
           :options="availableVerbs"
           :value="availableVerbs"
           @tag="onTagging"
