@@ -13,16 +13,12 @@
     }
   },
   {
-    "component": "Website",
-    "lol": "custom data success",
-    "options": {
-      "type": "Website"
-    }
+    "component": "Kudo",
+    "name": "Thank you for this article",
+    "lol": "custom data success"
   },
   {
-    "component": "Project",
-    "options": {
-      "type": "Project"
-    }
+    "component": "Event",
+    "name": "Coding presentation"
   }
 ]
