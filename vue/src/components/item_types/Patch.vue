@@ -6,6 +6,11 @@
     <a :href="item.qa_url" target="_blank">qa</a>
     <a :href="item.repo_url" target="_blank">repo</a>
     <a :href="item.diff_url" target="_blank">patch</a>
+    <ul>
+      <li v-for="language in item.languages" :key="language.id">
+      {{language}}
+      </li>
+    </ul>
   </div>
 </template>
 

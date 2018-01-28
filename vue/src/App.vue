@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import items from './cv.json';
+import { mapGetters } from 'vuex';
+
 import Patch from './components/item_types/Patch';
 import Website from './components/item_types/Website';
 import Project from './components/item_types/Project';
@@ -24,9 +25,9 @@ export default {
     Website,
     Project,
   },
-  data() {
-    return { items };
-  },
+  computed: mapGetters([
+    'items',
+  ]),
 };
 </script>
 
