@@ -7,6 +7,7 @@ import { schema } from 'normalizr';
 import App from './App';
 import router from './router';
 import items from './cv.json';
+import subjects from './subjects.json';
 
 Vue.config.productionTip = false;
 
@@ -18,7 +19,26 @@ export const company = new schema.Entity('companies');
 export const publication = new schema.Entity('publications');
 export const club = new schema.Entity('clubs');
 
-// verb
+
+function validateProject(item) {
+  console.assert('name' in item, item, 'name not in item');
+  console.assert('url' in item, item, 'url not in item');
+  console.assert('repo_url' in item, item, 'repo_url not in item');
+}
+function validateSubjects(list) {
+  list.forEach((item) => {
+    switch (item.subject) {
+      case 'project':
+        validateProject(item);
+        break;
+      default:
+        throw Error(`invalid subject for ${item}`);
+    }
+  });
+}
+validateSubjects(subjects);
+
+// verb / actions
 export const kudo = new schema.Entity('kudos'); // hn/reddit/blog/tweet/review
 export const patch = new schema.Entity('patches'); // gh, bugzilla
 export const status = new schema.Entity('status'); // role
