@@ -7,13 +7,14 @@
       :key="subject.id"
       >
       {{subject}}:
-      <span
-        v-for="item in subjects"
-        v-if="item.subject == subject"
-        :key="item.id"
-        >
-        {{item.name}}
-      </span>
+      <multiselect
+        v-model="multiValue"
+        :search="true"
+        :multiple="true"
+        track-by="name"
+        label="name"
+        :options="subjects">
+      </multiselect>
     </span>
 
     <h3>Verb</h3>
@@ -27,12 +28,15 @@
 </template>
 
 <script>
+import Multiselect from 'vue-multiselect';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'HelloWorld',
+  components: { Multiselect },
   data() {
     return {
+      multiValue: null,
       msg: 'Tony Narlock\'s CV',
     };
   },
@@ -59,3 +63,4 @@ a {
   color: #42b983;
 }
 </style>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
