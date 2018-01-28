@@ -5,7 +5,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
 import router from './router';
-import items from './cv.json';
+import verbs from './cv.json';
 import subjects from './subjects.json';
 
 Vue.config.productionTip = false;
@@ -49,8 +49,8 @@ function validateSubjects(list) {
 }
 validateSubjects(subjects);
 
-function normalizeVerbs(verbs) {
-  verbs.map((item) => {
+function normalizeVerbs(v) {
+  v.map((item) => {
     switch (item.component) {
       case 'Patch':
         if (item.project !== undefined) {
@@ -63,20 +63,20 @@ function normalizeVerbs(verbs) {
         return item;
     }
   });
-  return verbs;
+  return v;
 }
 
-const normalizedVerbs = normalizeVerbs(items);
+const normalizedVerbs = normalizeVerbs(verbs);
 
 const store = new Vuex.Store({
   state: {
     count: 0,
-    items: normalizedVerbs,
-    // items,
+    verbs: normalizedVerbs,
     subjects,
   },
   getters: {
-    items: state => state.items,
+    verbs: state => state.verbs,
+    subjects: state => state.subjects,
   },
   mutations: {
     increment(state) {

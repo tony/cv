@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
     <component
-      v-for="item in items"
+      v-for="item in verbs"
       :is="item.component"
       :item="item"
       :key="item.index"
@@ -26,7 +26,7 @@ export default {
     Project,
   },
   computed: mapGetters([
-    'items',
+    'verbs',
   ]),
 };
 </script>
