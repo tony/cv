@@ -15,7 +15,7 @@
       <template v-if="item.accepted_date">
       Accepted: <span v-show="item.accepted_date">{{item.accepted_date}}</span>
       </template>
-      <template v-else="item.accepted_date">
+      <template v-else>
       Not merged.
       </template>
       </p>
