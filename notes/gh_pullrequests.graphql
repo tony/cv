@@ -1,0 +1,27 @@
+{
+  user(login: "tony") {
+    pullRequests(last: 100) {
+      edges {
+        node {
+          mergedAt
+          createdAt
+          closedAt
+          title
+          url
+          repository {
+            url
+            name
+            nameWithOwner
+            languages(last: 1, orderBy: {direction: ASC, field: SIZE}) {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
