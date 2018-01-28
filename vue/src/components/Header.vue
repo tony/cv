@@ -2,6 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
+    <p><em>Friendly reminder: I don't do technical screens. I only seek
+      remote, senior programming roles.
+      I'm also available for <a href="https://www.git-pull.com/consulting/">consulting</a> and
+        <a href="https://www.git-pull.com/mentoring/">mentoring</a>.</em></p>
+
     <multiselect
       v-model="subjectChoices"
       :search="true"
