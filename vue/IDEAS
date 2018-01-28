@@ -103,3 +103,4 @@ Shouts
     End_year
     Place: [Project, Employer, Club, Website]
 - Show / Hide minor (typos, formatting fixes)
+- Create a range slider for date/timespans
