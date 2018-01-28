@@ -78,10 +78,10 @@ const store = new Vuex.Store({
     verbs: state => state.verbs,
     subjects: state => state.subjects, // subject items
     availableSubjectTypes: state => [
-      ...new Set(state.subjects.map(item => item.type)),
+      ...new Set(state.subjects.map(item => item)),
     ],
     availableSubjects: state => [
-      state.subjects.map(item => item.project.name),
+      state.subjects.map(item => item.project),
     ],
 
     availableVerbs: state => [

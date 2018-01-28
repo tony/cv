@@ -50,3 +50,5 @@ export default {
   position: relative;
 }
 </style>
+<style src="../../../_static/flexboxgrid.min.css"></style>
+<style src="../../../_static/git-pull.css"></style>

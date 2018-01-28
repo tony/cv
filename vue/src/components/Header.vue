@@ -1,22 +1,32 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>Subject</h3>
 
-      <multiselect
-        v-model="subjectChoices"
-        :search="true"
-        :multiple="true"
-        :options="availableSubjectTypes">
-      </multiselect>
+    <multiselect
+      v-model="subjectChoices"
+      :search="true"
+      :multiple="true"
+      placeholder="Filter by project / company"
+      label="name"
+      :limit="3" @tag="onTagging"
+      :options="subjects">
+      <template slot="option" slot-scope="props">
+      <span class="badge__name">{{ props.option.name }}</span>
+      <span class="badge__img tag">
+      {{props.option.type}}
+      </span>
+      </template>
+    </multiselect>
 
-    <h3>Verb</h3>
     <multiselect
       v-model="verbChoices"
       :search="true"
       :multiple="true"
-      :options="availableVerbs">
+      placeholder="Filter by event"
+      :options="availableVerbs"
+     >
     </multiselect>
+
   </div>
 </template>
 
@@ -32,6 +42,8 @@ export default {
       subjectChoices: null,
       verbChoices: null,
       msg: 'Tony Narlock\'s CV',
+      source: [],
+      value: [],
     };
   },
   computed: mapGetters([
@@ -41,6 +53,10 @@ export default {
     'availableVerbs',
   ]),
   methods: {
+    onTagging(newTag) {
+      this.source.push({ name: newTag, language: newTag });
+      this.value.push({ name: newTag, language: newTag });
+    },
     addTag(newTag) {
       const tag = {
         name: newTag,
@@ -68,6 +84,31 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.badge__img {
+}
+
+.badge__name {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tag {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  color: #4a4a4a;
+  //display: inline-flex;
+  font-size: .75rem;
+  justify-content: center;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: .75em;
+  padding-right: .75em;
+  white-space: nowrap;
 }
 </style>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
