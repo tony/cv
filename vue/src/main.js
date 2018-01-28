@@ -80,6 +80,9 @@ const store = new Vuex.Store({
     availableSubjects: state => [
       ...new Set(state.subjects.map(item => item.subject)),
     ],
+    availableVerbs: state => [
+      ...new Set(state.verbs.map(item => item.component)),
+    ],
   },
   mutations: {
     increment(state) {

@@ -17,7 +17,12 @@
     </span>
 
     <h3>Verb</h3>
-
+    <span
+      v-for="verb in availableVerbs"
+      :key="verb.id"
+      >
+      {{verb}}
+    </span>
   </div>
 </template>
 
@@ -32,7 +37,7 @@ export default {
     };
   },
   computed: mapGetters([
-    'subjects', 'availableSubjects',
+    'subjects', 'availableSubjects', 'availableVerbs',
   ]),
 };
 </script>
