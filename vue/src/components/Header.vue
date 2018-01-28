@@ -32,7 +32,7 @@ import Multiselect from 'vue-multiselect';
 import { mapGetters } from 'vuex';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Header',
   components: { Multiselect },
   data() {
     return {
