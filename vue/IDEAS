@@ -86,6 +86,14 @@ Shouts
            title: president
        Items:
         Achievement (<trophy> winner)
+    Publications
+       Role:
+         Author (author)
+           title: author
+
+    Kudos, Achievement, Patch,
+    Exit, Released (created? published? updated? inherited?),
+    Status (employed|maintainer|volunteer|owner)
 
 - Role
     Title
