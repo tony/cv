@@ -14,16 +14,22 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import Patch from './components/item_types/Patch';
-import Website from './components/item_types/Website';
-import Project from './components/item_types/Project';
+import Patch from './components/verbs/Patch';
+import Kudo from './components/verbs/Kudo';
+import Status from './components/verbs/Status';
+import Achievement from './components/verbs/Achievement';
+import Event from './components/verbs/Event';
+import Presentation from './components/verbs/Presentation';
 
 export default {
   name: 'App',
   components: {
     Patch,
-    Website,
-    Project,
+    Kudo,
+    Status,
+    Achievement,
+    Event,
+    Presentation,
   },
   computed: mapGetters([
     'verbs',

@@ -1,10 +1,10 @@
 <template>
-  <div>node2 {{item.lol}}</div>
+  <div>This happened {{item.lol}}</div>
 </template>
 
 <script>
 export default {
-  name: 'Website',
+  name: 'Status',
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),
@@ -13,7 +13,7 @@ export default {
     return {};
   },
   created: () => {
-    console.log('dfdsfsdfa');
+    // console.log('dfdsfsdfa');
   },
 };
 </script>

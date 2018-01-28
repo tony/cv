@@ -1,10 +1,10 @@
 <template>
-  <div>I am async node3!</div>
+  <div>I am a presentation, thank you!</div>
 </template>
 
 <script>
 export default {
-  name: 'Project',
+  name: 'Presentation',
   props: ['item', 'opts'],
 };
 </script>
