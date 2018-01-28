@@ -40,7 +40,9 @@ validateSubjects(subjects);
 
 // verb / actions
 export const kudo = new schema.Entity('kudos'); // hn/reddit/blog/tweet/review
-export const patch = new schema.Entity('patches'); // gh, bugzilla
+export const patch = new schema.Entity('patches', {
+  project,
+}); // gh, bugzilla
 export const status = new schema.Entity('status'); // role
 export const achievement = new schema.Entity('achievements'); // exit, cert
 export const event = new schema.Entity('achievements'); // released, started
@@ -50,10 +52,31 @@ export const presentation = new schema.Entity('presentations');
 export const language = new schema.Entity('languages');
 export const role = new schema.Entity('roles'); // employee, volunteere, president
 
+function normalizeVerbs(verbs) {
+  verbs.map((item) => {
+    switch (item.component) {
+      case 'Patch':
+        if (item.project !== undefined) {
+          return Object.assign(
+            item, { project: subjects[item.project] },
+          );
+        }
+        return item;
+      default:
+        return item;
+    }
+  });
+  return verbs;
+}
+
+const normalizedVerbs = normalizeVerbs(items);
+
 const store = new Vuex.Store({
   state: {
     count: 0,
-    items,
+    items: normalizedVerbs,
+    // items,
+    subjects,
   },
   getters: {
     items: state => state.items,

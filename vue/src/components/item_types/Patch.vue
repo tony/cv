@@ -11,6 +11,10 @@
       {{language}}
       </li>
     </ul>
+    {{item.project.name}}
+    {{item.project}}
+    {{item.project.url}}
+    {{item.project.repo_url}}
   </div>
 </template>
 
