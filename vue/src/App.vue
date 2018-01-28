@@ -48,6 +48,10 @@ export default {
   color: #4a4a4a;
   max-width: 100%;
   position: relative;
+  margin-top: 1rem;
+}
+.item:first-of-type {
+  margin-top: 1rem;
 }
 </style>
 <style src="../../../_static/flexboxgrid.min.css"></style>

@@ -8,9 +8,20 @@
     "languages": ["Python"],
     "title": "Add fixtures for user request factories, clients",
     "project": 0,
-    "options": {
-      "type": "Patch"
-    }
+    "proposed_date": "12-26-2017",
+    "accepted_date": null
+  },
+  {
+    "id": 1,
+    "component": "Patch",
+    "qa_url": "https://github.com/pytest-dev/pytest-django/pull/566",
+    "in_re_url": null,
+    "diff_url": "https://patch-diff.githubusercontent.com/raw/pytest-dev/pytest-django/pull/566.diff",
+    "languages": ["Python"],
+    "title": "Update copyright year, README for Django 2.0, add django versions to setup.py",
+    "project": 0,
+    "proposed_date": "12-26-2017",
+    "accepted_date": "01-18-2018"
   },
   {
     "component": "Kudo",
