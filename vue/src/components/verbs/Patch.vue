@@ -1,9 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-    <div class="box">
-    <div class="row">
-      <div class="col-xs-4 item"><div class="box">
+  <Row>
+    <div slot="left">
       <h1>Patch</h1>
       <p>
       <span class="tag" v-for="language in item.languages" :key="language.id">
@@ -19,27 +16,27 @@
       Not merged.
       </template>
       </p>
-      </div></div>
-      <div class="col-xs-8 item"><div class="box">
-        <h2>{{item.title}}</h2>
-        <em>for
-        <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
-        </em>
-        <small>(<a :href="item.project.repo_url" target="_blank">repo</a>)</small>
-        <br />
-        <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
-        <a :href="item.qa_url" target="_blank">qa</a>
-        <a :href="item.diff_url" target="_blank">patch</a>
-      </div></div>
     </div>
+    <div slot="right">
+      <h2>{{item.title}}</h2>
+      <em>for
+      <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
+      </em>
+      <small>(<a :href="item.project.repo_url" target="_blank">repo</a>)</small>
+      <br />
+      <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
+      <a :href="item.qa_url" target="_blank">qa</a>
+      <a :href="item.diff_url" target="_blank">patch</a>
     </div>
-    </div>
-  </div>
+  </Row>
 </template>
 
 <script>
+import Row from '../Row';
+
 export default {
   name: 'Patch',
+  components: { Row },
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),
