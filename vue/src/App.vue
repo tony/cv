@@ -14,12 +14,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import Patch from './components/verbs/Patch';
-import Kudo from './components/verbs/Kudo';
-import Status from './components/verbs/Status';
-import Achievement from './components/verbs/Achievement';
-import Event from './components/verbs/Event';
-import Presentation from './components/verbs/Presentation';
+import { Patch, Kudo, Status, Achievement, Event, Presentation } from './components/verbs';
 
 export default {
   name: 'App',
