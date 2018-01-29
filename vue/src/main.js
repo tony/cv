@@ -84,26 +84,25 @@ function availableSubjects(s) {
 }
 
 
-const filterTypos = (vItems) => {
-  return vItems.filter(v => !v.title.match(/(typo|Typo|spelling|Spelling|README|Readme|note|Note)/));
+const filterTypos = (v) => {
+  return !v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
 };
 
-const filterDocs = (vItems) => {
-  return vItems.filter(v => !v.title.match(/(doc|Doc)/));
+const filterDocs = (v) => {
+  return !v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
 }
 
 const defaultSelectedFilters = {
-  filterTypos,
+  filterTypos, filterDocs,
 };
 
 function filterVerbs(vItems, selVerbs, selFilters) {
-  console.log('selecetedFilters', selFilters);
   // only show selected verbs
-  vItems.filter(vItem => selVerbs.includes(vItem.component));
+  vItems = vItems.filter(vItem => selVerbs.includes(vItem.component));
 
   selFilters.map(filterName => {
     console.log(vItems.length);
-    vItems = defaultSelectedFilters[filterName](vItems);
+    vItems = vItems.filter(defaultSelectedFilters[filterName]);
     console.log(vItems.length);
   });
   return vItems;
