@@ -118,3 +118,11 @@ async function makeQuery2(query) {
 makeQuery2(basicQuery).then(data => {
   console.log(data);
 });
+
+let curPrQuery = prQuery.replace('{{user_params}}', 'login: "tony"').replace('{{pull_requests_params}}', 'first: 100');
+
+makeQuery2(curPrQuery).then(data => {
+  console.log(data);
+}).catch(err => {
+  console.error(err);
+});

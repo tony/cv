@@ -1,7 +1,9 @@
 {
-  user(login: "tony") {
-    pullRequests(last: 100) {
+  user({{user_params}}) {
+    pullRequests({{pull_requests_params}}) {
+      totalCount
       edges {
+        cursor
         node {
           mergedAt
           createdAt
