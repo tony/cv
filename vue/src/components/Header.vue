@@ -17,6 +17,7 @@
           label="name"
           track-by="name"
           id="subjectFilter"
+          :value="selectedSubjects"
           :options="subjects"
           >
           <template slot="option" slot-scope="props">
@@ -64,7 +65,7 @@ export default {
       'availableSubjectTypes',
       'availableVerbs',
     ]),
-    ...mapState(['selectedVerbs']),
+    ...mapState(['selectedVerbs', 'selectedSubjects']),
   },
   watch: {
     verbChoices(value) {
@@ -72,7 +73,10 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['updateSelectedVerbsAction']),
+    ...mapActions([
+      'updateSelectedVerbsAction',
+      'updateSelectedSubjectsAction',
+    ]),
   },
 };
 </script>

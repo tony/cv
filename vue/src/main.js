@@ -74,12 +74,20 @@ function availableVerbs(v) {
   ];
 }
 
+function availableSubjects(s) {
+  return [
+    s.map(item => item.project),
+  ];
+}
+
+
 const store = new Vuex.Store({
   state: {
     count: 0,
     verbs: normalizedVerbs,
     subjects,
     selectedVerbs: availableVerbs(normalizedVerbs),
+    selectedSubjects: null,
   },
   getters: {
     verbs: state => state.verbs,
@@ -87,21 +95,25 @@ const store = new Vuex.Store({
     availableSubjectTypes: state => [
       ...new Set(state.subjects.map(item => item)),
     ],
-    availableSubjects: state => [
-      state.subjects.map(item => item.project),
-    ],
-
+    availableSubjects: state => availableSubjects(state.subjects),
     availableVerbs: state => availableVerbs(state.verbs),
   },
   actions: {
     updateSelectedVerbsAction({ commit }, value) {
       commit('updateSelectedVerbs', value);
     },
+    updateSelectedSubjectsAction({ commit }, value) {
+      commit('updateSelectedSubjects', value);
+    },
   },
   mutations: {
-    updateValue(state, value) {
+    updateSelectedVerbs(state, value) {
       state.selectedVerbs = value;
     },
+    updateSelectedSubjects(state, value) {
+      state.selectedSubjects = value;
+    },
+
   },
 });
 
