@@ -83,8 +83,26 @@ function availableSubjects(s) {
   ];
 }
 
-function filterVerbs(vItems, selVerbs) {
-  return vItems.filter(vItem => selVerbs.includes(vItem.component));
+
+const filterTypos = (vItems) => {
+  return vItems.filter(v => !v.title.match(/(typo|Typo|spelling|Spelling)/));
+};
+
+const defaultSelectedFilters = {
+  filterTypos,
+};
+
+function filterVerbs(vItems, selVerbs, selFilters) {
+  console.log('selecetedFilters', selFilters);
+  // only show selected verbs
+  vItems.filter(vItem => selVerbs.includes(vItem.component));
+
+  selFilters.map(filterName => {
+    console.log(vItems.length);
+    vItems = defaultSelectedFilters[filterName](vItems);
+    console.log(vItems.length);
+  });
+  return vItems;
 }
 
 
@@ -95,15 +113,17 @@ const store = new Vuex.Store({
     subjects,
     selectedVerbs: availableVerbs(normalizedVerbs),
     selectedSubjects: null,
+    selectedFilters: Object.keys(defaultSelectedFilters),
   },
   getters: {
-    verbs: state => filterVerbs(state.verbs, state.selectedVerbs),
+    verbs: state => filterVerbs(state.verbs, state.selectedVerbs, state.selectedFilters),
     subjects: state => state.subjects, // subject items
     availableSubjectTypes: state => [
       ...new Set(state.subjects.map(item => item)),
     ],
     availableSubjects: state => availableSubjects(state.subjects),
     availableVerbs: state => availableVerbs(state.verbs),
+    availableFilters: () => Object.keys(defaultSelectedFilters),
   },
   actions: {
     updateSelectedVerbsAction({ commit }, value) {
@@ -111,6 +131,9 @@ const store = new Vuex.Store({
     },
     updateSelectedSubjectsAction({ commit }, value) {
       commit('updateSelectedSubjects', value);
+    },
+    updateSelectedFiltersAction({ commit }, value) {
+      commit('updateSelectedFilters', value);
     },
   },
   mutations: {
@@ -122,7 +145,10 @@ const store = new Vuex.Store({
       console.log(value);
       state.selectedSubjects = value;
     },
-
+    updateSelectedFilters(state, value) {
+      console.log(value);
+      state.selectedFilters = value;
+    },
   },
 });
 

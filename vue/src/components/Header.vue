@@ -39,6 +39,19 @@
           @input="updateSelectedVerbsAction"
          >
         </multiselect>
+
+        <multiselect
+          :search="true"
+          :multiple="true"
+          placeholder="Special filters"
+          :taggable="true"
+          id="specialFilter"
+          :options="availableFilters"
+          :value="selectedFilters"
+          @input="updateSelectedFiltersAction"
+         >
+        </multiselect>
+
       </div>
     </div>
   </div>
@@ -62,18 +75,15 @@ export default {
       'availableSubjects',
       'availableSubjectTypes',
       'availableVerbs',
+      'availableFilters',
     ]),
-    ...mapState(['selectedVerbs', 'selectedSubjects']),
-  },
-  watch: {
-    verbChoices(value) {
-      console.log('verbChoices has changed', value);
-    },
+    ...mapState(['selectedVerbs', 'selectedSubjects', 'selectedFilters']),
   },
   methods: {
     ...mapActions([
       'updateSelectedVerbsAction',
       'updateSelectedSubjectsAction',
+      'updateSelectedFiltersAction',
     ]),
   },
 };
