@@ -106,10 +106,8 @@ const defaultSelectedFilters = [
 function filterVerbs(vItems, selVerbs, selFilters, selSubjects) {
   // only show selected verbs
   let items = vItems.filter(vItem => selVerbs.includes(vItem.component));
-  console.log(selSubjects);
-  if (selSubjects) {
+  if (selSubjects && selSubjects.length) {
     items = items.filter(item => selSubjects.find(s => s.id === item.project.id));
-    console.log(4 in selSubjects);
   }
 
 
@@ -157,15 +155,12 @@ const store = new Vuex.Store({
   },
   mutations: {
     updateSelectedVerbs(state, value) {
-      console.log('Verb', value);
       state.selectedVerbs = value;
     },
     updateSelectedSubjects(state, value) {
-      console.log(value);
       state.selectedSubjects = value;
     },
     updateSelectedFilters(state, value) {
-      console.log(value);
       state.selectedFilters = value;
     },
   },
