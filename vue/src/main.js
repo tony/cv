@@ -85,8 +85,12 @@ function availableSubjects(s) {
 
 
 const filterTypos = (vItems) => {
-  return vItems.filter(v => !v.title.match(/(typo|Typo|spelling|Spelling)/));
+  return vItems.filter(v => !v.title.match(/(typo|Typo|spelling|Spelling|README|Readme|note|Note)/));
 };
+
+const filterDocs = (vItems) => {
+  return vItems.filter(v => !v.title.match(/(doc|Doc)/));
+}
 
 const defaultSelectedFilters = {
   filterTypos,
