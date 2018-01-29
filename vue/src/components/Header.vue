@@ -16,7 +16,7 @@
           placeholder="Filter by project / company"
           label="name"
           track-by="name"
-          @tag="onTagging"
+          id="subjectFilter"
           :options="subjects"
           >
           <template slot="option" slot-scope="props">
@@ -33,6 +33,7 @@
           :multiple="true"
           placeholder="Filter by event"
           :taggable="true"
+          id="verbFilter"
           :options="availableVerbs"
           :value="availableVerbs"
           @tag="onTagging"
@@ -65,6 +66,11 @@ export default {
     'availableSubjectTypes',
     'availableVerbs',
   ]),
+  watch: {
+    verbChoices(value) {
+      console.log('verbChoices has changed', value);
+    },
+  },
   methods: {
     onTagging(newTag) {
       console.log('onTagging', newTag);
