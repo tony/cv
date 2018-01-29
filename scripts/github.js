@@ -94,21 +94,6 @@ recursePRQuery(initialPrQuery).then(prs => {
 
   prs = prs.map(pr => pr.node);  // zoom in on "node"
 
-  let id = 0;
-  const final = prs.map(pr => {
-    return {
-      id: id++,
-      component: 'Patch',
-      qa_url: pr.url,
-      diff_url: pr.url + '.diff',
-      proposed_date: pr.createdAt,
-      accepted_date: pr.mergedAt,
-      title: pr.title,
-    }
-  });
-  let data = JSON.stringify(final, null, '  ');
-  fs.writeFileSync(`${config.output_dir}/gh_patches.json`, data);
-
 
   let projects = prs.map(pr => pr.repository);
 
@@ -129,7 +114,7 @@ recursePRQuery(initialPrQuery).then(prs => {
   // console.log(projects);
   // console.log(projects.length);
 
-  id = 0;
+  let id = 0;
   const projects_final = projects.map(p => {
     return {
       id: id++,
@@ -140,7 +125,26 @@ recursePRQuery(initialPrQuery).then(prs => {
     }
   });
 
-  data = JSON.stringify(projects_final, null, '  ');
+  let data = JSON.stringify(projects_final, null, '  ');
   fs.writeFileSync(`${config.output_dir}/gh_projects.json`, data);
+
+  // we do this at the bottom because we want to associate the
+  // project_final 'id' attribute with project in pr's
+
+  id = 0;
+  const pullRequests_final = prs.map(pr => {
+    return {
+      id: id++,
+      component: 'Patch',
+      qa_url: pr.url,
+      diff_url: pr.url + '.diff',
+      proposed_date: pr.createdAt,
+      accepted_date: pr.mergedAt,
+      title: pr.title,
+      project: projects_final.find(p => pr.repository.name == p.name).id,
+    }
+  });
+  data = JSON.stringify(pullRequests_final, null, '  ');
+  fs.writeFileSync(`${config.output_dir}/gh_patches.json`, data);
 
 }).catch(err => console.error(err));
