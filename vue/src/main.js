@@ -84,13 +84,9 @@ function availableSubjects(s) {
 }
 
 
-const filterTypos = (v) => {
-  return !v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
-};
+const filterTypos = v => !v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
 
-const filterDocs = (v) => {
-  return !v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
-}
+const filterDocs = v => !v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
 
 const defaultSelectedFilters = {
   filterTypos, filterDocs,
@@ -98,14 +94,14 @@ const defaultSelectedFilters = {
 
 function filterVerbs(vItems, selVerbs, selFilters) {
   // only show selected verbs
-  vItems = vItems.filter(vItem => selVerbs.includes(vItem.component));
+  let items = vItems.filter(vItem => selVerbs.includes(vItem.component));
 
-  selFilters.map(filterName => {
-    console.log(vItems.length);
-    vItems = vItems.filter(defaultSelectedFilters[filterName]);
-    console.log(vItems.length);
+  selFilters.forEach((filterName) => {
+    console.log(items.length);
+    items = items.filter(defaultSelectedFilters[filterName]);
+    console.log(items.length);
   });
-  return vItems;
+  return items;
 }
 
 
