@@ -86,8 +86,22 @@ recursePRQuery(initialPrQuery).then(prs => {
       prs = prs.filter(pr => !pr.node.url.includes(`https://github.com/${user}/`));
     }
   }
-  const filtered = prs.map((pr) => {
-    return pr;
-  });
+
+  const filtered = prs.map(pr => pr.node);  // zoom in on "node"
+
   console.log(filtered);
+  let id = 0;
+  const final = filtered.map(pr => {
+    return {
+      id: id++,
+      component: 'Patch',
+      qa_url: pr.url,
+      diff_url: pr.url + '.diff',
+      proposed_date: pr.createdAt,
+      accepted_date: pr.mergedAt,
+      title: pr.title,
+    }
+  });
+  let data = JSON.stringify(final, null, '  ');
+  fs.writeFileSync('src/data/gh_patches.json', data);
 }).catch(err => console.error(err));
