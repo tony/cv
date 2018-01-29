@@ -84,13 +84,24 @@ function availableSubjects(s) {
 }
 
 
-const filterTypos = v => !v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
+const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
+const filterIgnoreTypos = v => !filterTypos(v);
 
-const filterDocs = v => !v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
+const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
+const filterIgnoreDocs = v => !filterDocs(v);
 
-const defaultSelectedFilters = {
-  filterTypos, filterDocs,
+
+const filters = {
+  'Ignore Typos': filterIgnoreTypos,
+  'Ignore Documentation': filterIgnoreDocs,
+  'Only Typos': filterTypos,
+  'Only Documentation': filterDocs,
 };
+
+const defaultSelectedFilters = [
+  'Ignore Typos',
+  'Ignore Documentation',
+];
 
 function filterVerbs(vItems, selVerbs, selFilters) {
   // only show selected verbs
@@ -98,7 +109,7 @@ function filterVerbs(vItems, selVerbs, selFilters) {
 
   selFilters.forEach((filterName) => {
     console.log(items.length);
-    items = items.filter(defaultSelectedFilters[filterName]);
+    items = items.filter(filters[filterName]);
     console.log(items.length);
   });
   return items;
@@ -112,7 +123,7 @@ const store = new Vuex.Store({
     subjects,
     selectedVerbs: availableVerbs(normalizedVerbs),
     selectedSubjects: null,
-    selectedFilters: Object.keys(defaultSelectedFilters),
+    selectedFilters: defaultSelectedFilters,
   },
   getters: {
     verbs: state => filterVerbs(state.verbs, state.selectedVerbs, state.selectedFilters),
@@ -122,7 +133,7 @@ const store = new Vuex.Store({
     ],
     availableSubjects: state => availableSubjects(state.subjects),
     availableVerbs: state => availableVerbs(state.verbs),
-    availableFilters: () => Object.keys(defaultSelectedFilters),
+    availableFilters: () => Object.keys(filters),
   },
   actions: {
     updateSelectedVerbsAction({ commit }, value) {
