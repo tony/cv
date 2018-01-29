@@ -107,3 +107,5 @@ Shouts
 - Filter by programming language
 - add a d3 graph over time of patches/languages/etc
 - add a d3 pie chart over time of patches/languages/etc
+- Split data up into patches.json, kudos.json, etc
+- create a languages.json, add python, js, C++, CMake
