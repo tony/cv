@@ -2,6 +2,10 @@
   user({{user_params}}) {
     pullRequests({{pull_requests_params}}) {
       totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
       edges {
         cursor
         node {

@@ -119,10 +119,21 @@ makeQuery2(basicQuery).then(data => {
   console.log(data);
 });
 
-let curPrQuery = prQuery.replace('{{user_params}}', 'login: "tony"').replace('{{pull_requests_params}}', 'first: 100');
+const userPrQuery = prQuery.replace('{{user_params}}', 'login: "tony"')
+const initialPrQuery = userPrQuery.replace(
+  '{{pull_requests_params}}', 'first: 100'
+);
 
-makeQuery2(curPrQuery).then(data => {
-  console.log(data);
+makeQuery2(initialPrQuery).then(res=> {
+  console.log(res.data);
+  let endCursor = res.data.user.pullRequests.pageInfo.endCursor
+  let hasNextPage = res.data.user.pullRequests.pageInfo.hasNextPage
+  if (hasNextPage) {
+    let curQuery = userPrQuery.replace(
+      '{{pull_requests_params}}', `first: 100, after: ${endCursor}`
+    );
+    console.log('next', curQuery);
+  }
 }).catch(err => {
   console.error(err);
 });
