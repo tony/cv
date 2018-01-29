@@ -110,7 +110,8 @@ recursePRQuery(initialPrQuery).then(prs => {
   // console.log(projects.length);
 
   // only have unique stuff
-  projects = [ ... new Set(projects) ];
+  // projects = [ ... new Set(projects) ];
+  projects = projects.filter((project, index, self) => self.findIndex(p => p.name === project.name) === index)
   // console.log(projects);
   // console.log(projects.length);
 
