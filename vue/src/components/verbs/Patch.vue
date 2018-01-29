@@ -18,7 +18,7 @@
       </p>
     </div>
     <div slot="right">
-      <h2>{{item.title}}</h2>
+      <h2><a :href="item.qa_url" target="_blank" class="verbTitle">{{item.title}}</a></h2>
       <em>for
       <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
       </em>
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .tag {
   align-items: center;
   background-color: #f5f5f5;
@@ -59,5 +59,9 @@ export default {
   padding-left: .75em;
   padding-right: .75em;
   white-space: nowrap;
+}
+.verbTitle {
+  color: #4a4a4a;
+  text-decoration: none;
 }
 </style>
