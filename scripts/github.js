@@ -115,25 +115,67 @@ async function makeQuery2(query) {
   });
   return q;
 }
-makeQuery2(basicQuery).then(data => {
-  console.log(data);
-});
+// makeQuery2(basicQuery).then(data => {
+//   console.log(data);
+// });
 
 const userPrQuery = prQuery.replace('{{user_params}}', 'login: "tony"')
 const initialPrQuery = userPrQuery.replace(
   '{{pull_requests_params}}', 'first: 100'
 );
 
-makeQuery2(initialPrQuery).then(res=> {
-  console.log(res.data);
-  let endCursor = res.data.user.pullRequests.pageInfo.endCursor
-  let hasNextPage = res.data.user.pullRequests.pageInfo.hasNextPage
-  if (hasNextPage) {
-    let curQuery = userPrQuery.replace(
-      '{{pull_requests_params}}', `first: 100, after: ${endCursor}`
+let issues = [];
+
+// function recurseQuery(res) {
+//   let edges = res.data.user.pullRequests.edges;
+//   let endCursor = res.data.user.pullRequests.pageInfo.endCursor
+//   let hasNextPage = res.data.user.pullRequests.pageInfo.hasNextPage
+//
+//   issues = issues.concat(edges);
+//   if (hasNextPage) {
+//     let curQuery = userPrQuery.replace(
+//       '{{pull_requests_params}}', `first: 100, after: "${endCursor}"`
+//     );
+//     console.log(curQuery);
+//     makeQuery2(curQuery).then(recurseQuery).catch(err => console.error(err));
+//     // makeQuery2(curQuery).then(recurseQuery).catch(err => console.error(err));
+//   }
+// }
+//
+// makeQuery2(initialPrQuery).then(recurseQuery).catch(err => {
+//   console.error(err);
+// });
+//
+// console.log(issues.length);
+// console.log(issues);
+// tutorial: http://blog.scottlogic.com/2017/09/14/asynchronous-recursion.html
+
+const makePRQuery = async (query) => {  // wraps makeQuery2
+  const res = await makeQuery2(query);
+  const data = {  // create a compact response (non-standard)
+    ...{ pullRequests: res.data.user.pullRequests.edges },
+    ...res.data.user.pullRequests.pageInfo,
+  };
+  if (data.hasNextPage) {
+    data.nextQuery = userPrQuery.replace(
+      '{{pull_requests_params}}', `first: 100, after: "${data.endCursor}"`
     );
-    console.log('next', curQuery);
   }
-}).catch(err => {
-  console.error(err);
-});
+  return data;
+}
+
+const recursePRQuery = async (query) => {  // on first invocation, add initial query
+  const res = await makePRQuery(query);
+
+  issues = issues.concat(res.pullRequests);
+  if (res.nextQuery) {
+    return await recursePRQuery(res.nextQuery);
+  } else {
+    return issues;
+  }
+}
+
+recursePRQuery(initialPrQuery).then(prs => {
+  console.log(prs);
+  console.log(prs.length);
+}).catch(err => console.error(err));
