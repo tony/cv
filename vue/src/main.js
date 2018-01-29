@@ -80,6 +80,10 @@ function availableSubjects(s) {
   ];
 }
 
+function filterVerbs(vItems, selVerbs) {
+  return vItems.filter(vItem => selVerbs.includes(vItem.component));
+}
+
 
 const store = new Vuex.Store({
   state: {
@@ -90,7 +94,7 @@ const store = new Vuex.Store({
     selectedSubjects: null,
   },
   getters: {
-    verbs: state => state.verbs,
+    verbs: state => filterVerbs(state.verbs, state.selectedVerbs),
     subjects: state => state.subjects, // subject items
     availableSubjectTypes: state => [
       ...new Set(state.subjects.map(item => item)),

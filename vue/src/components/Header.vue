@@ -34,7 +34,7 @@
           placeholder="Filter by event"
           :taggable="true"
           id="verbFilter"
-          :options="selectedVerbs"
+          :options="availableVerbs"
           :value="selectedVerbs"
           @input="updateSelectedVerbsAction"
          >
