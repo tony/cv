@@ -2,6 +2,8 @@ const fs = require('fs');
 var client = require('github-graphql-client');
 const util = require('util');
 const c = util.promisify(client);
+const moment = require('moment');
+
 
 const gh_token = process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;
 
@@ -140,8 +142,8 @@ recursePRQuery(initialPrQuery).then(prs => {
       component: 'Patch',
       qa_url: pr.url,
       diff_url: pr.url + '.diff',
-      proposed_date: pr.createdAt,
-      accepted_date: pr.mergedAt,
+      proposed_date: moment(pr.createdAt).format('YYYY-mm-D'),
+      accepted_date: moment(pr.mergedAt).format('YYYY-mm-D'),
       title: pr.title,
       project: projects_final.find(p => pr.repository.name == p.name).id,
     }
