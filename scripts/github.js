@@ -14,6 +14,12 @@ octokit.authenticate({
     type: 'token',
     token: gh_token,
 })
+const GH_USERNAME = 'tony';
+const config = {
+  exclude_own_repo: true,
+  gh_user: 'tony',
+  exclude_users: ['nick-ma'],
+}
 
 
 function filterPullRequests(data) {
@@ -119,7 +125,7 @@ async function makeQuery2(query) {
 //   console.log(data);
 // });
 
-const userPrQuery = prQuery.replace('{{user_params}}', 'login: "tony"')
+const userPrQuery = prQuery.replace('{{user_params}}', `login: "${config.gh_user}"`)
 const initialPrQuery = userPrQuery.replace(
   '{{pull_requests_params}}', 'first: 100'
 );
@@ -175,8 +181,16 @@ const recursePRQuery = async (query) => {  // on first invocation, add initial q
   }
 }
 
+
 recursePRQuery(initialPrQuery).then(prs => {
-  prs = prs.filter(pr => !pr.node.url.includes('https://github.com/tony/'));
+  if (config.exclude_own_repo) {
+    prs = prs.filter(pr => !pr.node.url.includes(`https://github.com/${config.gh_user}/`));
+  }
+  if (config.exclude_users) {
+    for (let user of config.exclude_users) {
+      prs = prs.filter(pr => !pr.node.url.includes(`https://github.com/${user}/`));
+    }
+  }
   const filtered = prs.map((pr) => {
     return pr;
   });
