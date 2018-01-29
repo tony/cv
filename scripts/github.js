@@ -176,6 +176,9 @@ const recursePRQuery = async (query) => {  // on first invocation, add initial q
 }
 
 recursePRQuery(initialPrQuery).then(prs => {
-  console.log(prs);
-  console.log(prs.length);
+  prs = prs.filter(pr => !pr.node.url.includes('https://github.com/tony/'));
+  const filtered = prs.map((pr) => {
+    return pr;
+  });
+  console.log(filtered);
 }).catch(err => console.error(err));
