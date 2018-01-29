@@ -100,9 +100,9 @@ recursePRQuery(initialPrQuery).then(prs => {
   // join languages
   projects = projects.map(p => {
     if (p.languages.edges.length) {
-      p.language = p.languages.edges[0].node.name;
+      p.languages = [p.languages.edges[0].node.name];
     } else {
-      p.language = undefined;
+      p.languages = undefined;
     }
     return p;
   });
@@ -123,6 +123,7 @@ recursePRQuery(initialPrQuery).then(prs => {
       name: p.name,
       url: p.homepageUrl,
       repo_url: p.url,
+      languages: p.languages,
     }
   });
 
