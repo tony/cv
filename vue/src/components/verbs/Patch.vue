@@ -26,7 +26,7 @@
       <br />
       <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
       <a :href="item.qa_url" target="_blank">qa</a>
-      <a :href="item.diff_url" target="_blank">patch</a>
+      <a :href="item.diff_url" target="_blank">diff</a>
     </div>
   </Row>
 </template>
