@@ -48,6 +48,7 @@
           id="specialFilter"
           :options="availableFilters"
           :value="selectedFilters"
+          class="selectedFilters"
           @input="updateSelectedFiltersAction"
          >
         </multiselect>
@@ -89,8 +90,9 @@ export default {
 };
 </script>
 
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 h1, h2 {
   font-weight: normal;
 }
@@ -115,5 +117,20 @@ a {
   padding-right: .75em;
   white-space: nowrap;
 }
+
+.selectedFilters .multiselect__tag {
+    background: gray;
+      outline: none;
+        color: white;
+      }
+.selectedFilters      .multiselect__tag-icon:hover {
+background: #666;
+}
+.selectedFilters .multiselect__tag-icon:after {
+color: #666;
+}
+.selectedFilters .multiselect__tag-icon:hover:after {
+  color: white;
+}
 </style>
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
