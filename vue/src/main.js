@@ -108,9 +108,11 @@ const store = new Vuex.Store({
   },
   mutations: {
     updateSelectedVerbs(state, value) {
+      console.log('Verb', value);
       state.selectedVerbs = value;
     },
     updateSelectedSubjects(state, value) {
+      console.log(value);
       state.selectedSubjects = value;
     },
 

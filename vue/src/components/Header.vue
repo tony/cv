@@ -10,7 +10,6 @@
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
         <multiselect
-          v-model="subjectChoices"
           :search="true"
           :multiple="true"
           placeholder="Filter by project / company"
@@ -19,6 +18,7 @@
           id="subjectFilter"
           :value="selectedSubjects"
           :options="subjects"
+          @input="updateSelectedSubjectsAction"
           >
           <template slot="option" slot-scope="props">
           <span>{{ props.option.name }}</span>
@@ -36,6 +36,7 @@
           id="verbFilter"
           :options="selectedVerbs"
           :value="selectedVerbs"
+          @input="updateSelectedVerbsAction"
          >
         </multiselect>
       </div>
@@ -52,10 +53,7 @@ export default {
   components: { Multiselect },
   data() {
     return {
-      subjectChoices: null,
       msg: 'Tony Narlock\'s CV',
-      source: [],
-      value: [],
     };
   },
   computed: {
