@@ -109,3 +109,4 @@ Shouts
 - add a d3 pie chart over time of patches/languages/etc
 - Split data up into patches.json, kudos.json, etc
 - create a languages.json, add python, js, C++, CMake
+- Don't run moment.js on github script if mergedAt undefined/null
