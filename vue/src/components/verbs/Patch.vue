@@ -3,7 +3,7 @@
     <div slot="left">
       <h1>Patch</h1>
       <p>
-      <span class="tag" v-for="language in item.languages" :key="language.id">
+      <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
       </span>
 

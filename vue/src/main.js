@@ -5,8 +5,11 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
 import router from './router';
-import verbs from './data/verbs.json';
-import subjects from './data/subjects.json';
+import verbs from './data/scraped/gh_patches.json';
+import subjects from './data/scraped/gh_projects.json';
+
+// import verbs from './data/verbs.json';
+// import subjects from './data/subjects.json';
 
 Vue.config.productionTip = false;
 
