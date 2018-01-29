@@ -103,14 +103,18 @@ const defaultSelectedFilters = [
   'Ignore Documentation',
 ];
 
-function filterVerbs(vItems, selVerbs, selFilters) {
+function filterVerbs(vItems, selVerbs, selFilters, selSubjects) {
   // only show selected verbs
   let items = vItems.filter(vItem => selVerbs.includes(vItem.component));
+  console.log(selSubjects);
+  if (selSubjects) {
+    items = items.filter(item => selSubjects.find(s => s.id === item.project.id));
+    console.log(4 in selSubjects);
+  }
+
 
   selFilters.forEach((filterName) => {
-    console.log(items.length);
     items = items.filter(filters[filterName]);
-    console.log(items.length);
   });
   return items;
 }
@@ -126,7 +130,12 @@ const store = new Vuex.Store({
     selectedFilters: defaultSelectedFilters,
   },
   getters: {
-    verbs: state => filterVerbs(state.verbs, state.selectedVerbs, state.selectedFilters),
+    verbs: state => filterVerbs(
+      state.verbs,
+      state.selectedVerbs,
+      state.selectedFilters,
+      state.selectedSubjects,
+    ),
     subjects: state => state.subjects, // subject items
     availableSubjectTypes: state => [
       ...new Set(state.subjects.map(item => item)),
