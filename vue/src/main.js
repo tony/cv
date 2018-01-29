@@ -68,11 +68,18 @@ function normalizeVerbs(v) {
 
 const normalizedVerbs = normalizeVerbs(verbs);
 
+function availableVerbs(v) {
+  return [
+    ...new Set(v.map(item => item.component)),
+  ];
+}
+
 const store = new Vuex.Store({
   state: {
     count: 0,
     verbs: normalizedVerbs,
     subjects,
+    selectedVerbs: availableVerbs(normalizedVerbs),
   },
   getters: {
     verbs: state => state.verbs,
@@ -84,13 +91,16 @@ const store = new Vuex.Store({
       state.subjects.map(item => item.project),
     ],
 
-    availableVerbs: state => [
-      ...new Set(state.verbs.map(item => item.component)),
-    ],
+    availableVerbs: state => availableVerbs(state.verbs),
+  },
+  actions: {
+    updateSelectedVerbsAction({ commit }, value) {
+      commit('updateSelectedVerbs', value);
+    },
   },
   mutations: {
-    increment(state) {
-      state.count += 1;
+    updateValue(state, value) {
+      state.selectedVerbs = value;
     },
   },
 });

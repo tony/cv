@@ -28,15 +28,13 @@
         </multiselect>
 
         <multiselect
-          v-model="verbChoices"
           :search="true"
           :multiple="true"
           placeholder="Filter by event"
           :taggable="true"
           id="verbFilter"
-          :options="availableVerbs"
-          :value="availableVerbs"
-          @tag="onTagging"
+          :options="selectedVerbs"
+          :value="selectedVerbs"
          >
         </multiselect>
       </div>
@@ -46,7 +44,7 @@
 
 <script>
 import Multiselect from 'vue-multiselect';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions, mapState } from 'vuex';
 
 export default {
   name: 'Header',
@@ -54,39 +52,27 @@ export default {
   data() {
     return {
       subjectChoices: null,
-      verbChoices: this.$store.getters.availableVerbs,
       msg: 'Tony Narlock\'s CV',
       source: [],
       value: [],
     };
   },
-  computed: mapGetters([
-    'subjects',
-    'availableSubjects',
-    'availableSubjectTypes',
-    'availableVerbs',
-  ]),
+  computed: {
+    ...mapGetters([
+      'subjects',
+      'availableSubjects',
+      'availableSubjectTypes',
+      'availableVerbs',
+    ]),
+    ...mapState(['selectedVerbs']),
+  },
   watch: {
     verbChoices(value) {
       console.log('verbChoices has changed', value);
     },
   },
   methods: {
-    onTagging(newTag) {
-      console.log('onTagging', newTag);
-      console.log(this.verbChoices);
-      this.source.push({ name: newTag, language: newTag });
-      this.value.push({ name: newTag, language: newTag });
-    },
-    addTag(newTag) {
-      console.log('addTag', newTag);
-      const tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000)),
-      };
-      this.options.push(tag);
-      this.value.push(tag);
-    },
+    ...mapActions(['updateSelectedVerbsAction']),
   },
 };
 </script>
