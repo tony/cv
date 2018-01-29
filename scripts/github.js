@@ -16,6 +16,11 @@ const config = {
   exclude_own_repo: true,
   gh_user: 'tony',
   exclude_users: ['nick-ma'],
+  output_dir: 'src/data/scraped',
+}
+
+if (!fs.existsSync(config.output_dir)){
+    fs.mkdirSync(config.output_dir);
 }
 
 
@@ -87,11 +92,10 @@ recursePRQuery(initialPrQuery).then(prs => {
     }
   }
 
-  const filtered = prs.map(pr => pr.node);  // zoom in on "node"
+  prs = prs.map(pr => pr.node);  // zoom in on "node"
 
-  console.log(filtered);
   let id = 0;
-  const final = filtered.map(pr => {
+  const final = prs.map(pr => {
     return {
       id: id++,
       component: 'Patch',
@@ -103,5 +107,40 @@ recursePRQuery(initialPrQuery).then(prs => {
     }
   });
   let data = JSON.stringify(final, null, '  ');
-  fs.writeFileSync('src/data/gh_patches.json', data);
+  fs.writeFileSync(`${config.output_dir}/gh_patches.json`, data);
+
+
+  let projects = prs.map(pr => pr.repository);
+
+  // join languages
+  projects = projects.map(p => {
+    if (p.languages.edges.length) {
+      p.language = p.languages.edges[0].node.name;
+    } else {
+      p.language = undefined;
+    }
+    return p;
+  });
+  // console.log(projects);
+  // console.log(projects.length);
+
+  // only have unique stuff
+  projects = [ ... new Set(projects) ];
+  // console.log(projects);
+  // console.log(projects.length);
+
+  id = 0;
+  const projects_final = projects.map(p => {
+    return {
+      id: id++,
+      type: 'project',
+      name: p.name,
+      url: p.homepageUrl,
+      repo_url: p.url,
+    }
+  });
+
+  data = JSON.stringify(projects_final, null, '  ');
+  fs.writeFileSync(`${config.output_dir}/gh_projects.json`, data);
+
 }).catch(err => console.error(err));
