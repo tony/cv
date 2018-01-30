@@ -75,7 +75,7 @@ const normalizedActivities = normalizeActivities(activities);
 
 const activityTypes = [
   {
-    name: 'Open Source Contribution',
+    name: 'Open Source Contributions',
     component_name: 'Patch',
   },
 ];
