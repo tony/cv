@@ -44,7 +44,6 @@
         <div id='example-3'>
           <span v-for="fil in availableFilters" :key="fil.id" class="roundedOne">
             <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
-
             <label :for="fil">{{fil}}</label>
           </span>
         </div>
@@ -76,11 +75,9 @@ export default {
     ...{
       selectedFilters: {
         get() {
-          console.log(this.$store.state.selectedFilters);
           return this.$store.state.selectedFilters;
         },
         set(value) {
-          console.log(value);
           this.$store.commit('updateSelectedFilters', value);
         },
       },
