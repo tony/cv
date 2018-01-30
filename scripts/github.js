@@ -143,7 +143,7 @@ recursePRQuery(initialPrQuery).then(prs => {
       qa_url: pr.url,
       diff_url: pr.url + '.diff',
       proposed_date: moment(pr.createdAt).format('YYYY-mm-D'),
-      accepted_date: moment(pr.mergedAt).format('YYYY-mm-D'),
+      accepted_date: pr.mergedAt ? moment(pr.mergedAt).format('YYYY-mm-D') : undefined,
       title: pr.title,
       project: projects_final.find(p => pr.repository.name == p.name).id,
     }
