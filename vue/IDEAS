@@ -110,3 +110,7 @@ Shouts
 - Split data up into patches.json, kudos.json, etc
 - create a languages.json, add python, js, C++, CMake
 - Don't run moment.js on github script if mergedAt undefined/null
+- Use checkboxes for certain special filters
+- negate/allow switch for filtering
+- Hide Spelling Contributions
+- Hide Documentation Contributions
