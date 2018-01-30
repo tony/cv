@@ -19,6 +19,7 @@
             name
             nameWithOwner
             homepageUrl
+            isPrivate
             languages(last: 1, orderBy: {direction: ASC, field: SIZE}) {
               edges {
                 node {
