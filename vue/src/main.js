@@ -100,15 +100,15 @@ const filterIgnoreDocs = v => !filterDocs(v);
 
 
 const filters = {
-  'Ignore Typos': filterIgnoreTypos,
-  'Ignore Documentation': filterIgnoreDocs,
-  'Only Typos': filterTypos,
-  'Only Documentation': filterDocs,
+  'Hide Spelling Contributions': filterIgnoreTypos,
+  'Hide Documentation Contributions': filterIgnoreDocs,
+  'Only Show Spelling Contributions': filterTypos,
+  'Only Show Documentation Contributions': filterDocs,
 };
 
 const defaultSelectedFilters = [
-  'Ignore Typos',
-  'Ignore Documentation',
+  'Hide Spelling Contributions',
+  'Hide Documentation Contributions',
 ];
 
 function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
@@ -174,19 +174,19 @@ const store = new Vuex.Store({
         [...new Set(val)].filter(x => !new Set(state.selectedFilters).has(x)),
       );
       if (difference) {
-        if (difference.has('Ignore Typos') && state.selectedFilters.includes('Only Typos')) {
-          val = val.filter(v => v !== 'Only Typos');
-        } else if (difference.has('Only Typos') && state.selectedFilters.includes('Ignore Typos')) {
-          val = val.filter(v => v !== 'Ignore Typos');
+        if (difference.has('Hide Spelling Contributions') && state.selectedFilters.includes('Only Show Spelling Contributions')) {
+          val = val.filter(v => v !== 'Only Show Spelling Contributions');
+        } else if (difference.has('Only Show Spelling Contributions') && state.selectedFilters.includes('Hide Spelling Contributions')) {
+          val = val.filter(v => v !== 'Hide Spelling Contributions');
         } else if (
-          difference.has('Only Documentation') &&
-          state.selectedFilters.includes('Ignore Documentation')
+          difference.has('Only Show Documentation Contributions') &&
+          state.selectedFilters.includes('Hide Documentation Contributions')
         ) {
-          val = val.filter(v => v !== 'Ignore Documentation');
-        } else if (difference.has('Ignore Documentation') &&
-          state.selectedFilters.includes('Only Documentation')
+          val = val.filter(v => v !== 'Hide Documentation Contributions');
+        } else if (difference.has('Hide Documentation Contributions') &&
+          state.selectedFilters.includes('Only Show Documentation Contributions')
         ) {
-          val = val.filter(v => v !== 'Only Documentation');
+          val = val.filter(v => v !== 'Only Show Documentation Contributions');
         }
       }
 
