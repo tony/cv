@@ -96,10 +96,10 @@ function availableSubjects(s) {
 const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
 const filterIgnoreTypos = v => !filterTypos(v);
 
-const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines)/);
+const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge)/);
 const filterIgnoreDocs = v => !filterDocs(v);
 
-const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint)/);
+const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs)/);
 const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
 
 const filterUnmerged = v => v.accepted_date;
