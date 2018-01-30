@@ -8,12 +8,16 @@
       </span>
 
       <br />
-      Submitted: <span v-show="item.proposed_date">{{item.proposed_date}}</span>
+      <span v-show="item.proposed_date">
+        Submitted {{item.proposed_date | moment("from", "now") }}
+        <small>({{item.proposed_date}})</small>
+      </span>
+      <br />
       <template v-if="item.accepted_date">
-      Accepted: <span v-show="item.accepted_date">{{item.accepted_date}}</span>
+      <span v-show="item.accepted_date"><small>Accepted {{item.accepted_date}}</small></span>
       </template>
       <template v-else>
-      <em>Unmerged</em>
+        <small><em>Unmerged</em></small>
       </template>
       </p>
     </div>
