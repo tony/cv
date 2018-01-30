@@ -36,7 +36,8 @@
           id="activityFilter"
           :options="availableActivityTypes"
           :value="selectedActivityTypes"
-          @input="updateSelectedActivitiesAction"
+          @input="updateSelectedActivityTypeAction"
+          label="name"
          >
         </multiselect>
 
@@ -82,7 +83,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'updateSelectedActivitiesAction',
+      'updateSelectedActivityTypeAction',
       'updateSelectedSubjectsAction',
       'updateSelectedFiltersAction',
     ]),
