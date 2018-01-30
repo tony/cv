@@ -14,6 +14,7 @@ import subjects from './data/scraped/gh_projects.json';
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
+Vue.use(require('vue-moment'));
 
 // subject
 // project, 'projects'
