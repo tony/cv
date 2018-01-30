@@ -102,17 +102,21 @@ const filterIgnoreDocs = v => !filterDocs(v);
 const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort)/);
 const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
 
+const filterUnmerged = v => v.accepted_date;
+
 
 const filters = {
   'Hide Spelling Contributions': filterIgnoreTypos,
   'Hide Documentation Contributions': filterIgnoreDocs,
   'Hide Code Style Contributions': filterIgnoreCodeStyle,
+  'Hide Unmerged Contributions': filterUnmerged,
 };
 
 const defaultSelectedFilters = [
   'Hide Spelling Contributions',
   'Hide Documentation Contributions',
   'Hide Code Style Contributions',
+  'Hide Unmerged Contributions',
 ];
 
 function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
