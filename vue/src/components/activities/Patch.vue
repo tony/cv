@@ -1,7 +1,7 @@
 <template>
   <Row>
     <div slot="left">
-      <h1>Open Source Contribution</h1>
+      <h2>Open Source Contribution</h2>
       <div class="languages">
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
@@ -16,10 +16,13 @@
       </small></p>
     </div>
     <div slot="right">
-      <h2><a :href="item.qa_url" target="_blank" class="activity-title">
-        {{item.title}}
-        <octicon name="mark-github" label="View on GitHub"></octicon>
-      </a></h2>
+      <h3 class="align-octicon-bottom">
+        <a :href="item.qa_url" target="_blank" class="activity-title">
+          <octicon name="mark-github" label="View on GitHub"></octicon>
+          {{item.title}}
+        </a>
+      </h3>
+
       <p>
         <em>was contributed by Tony to the
         <template v-if="item.project.url">
@@ -118,4 +121,8 @@ a.muted-link {
 .align-octicon .octicon {
   vertical-align: text-top;
 }
+.align-octicon-bottom .octicon {
+  vertical-align: text-baseline;
+}
+
 </style>
