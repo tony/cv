@@ -14,7 +14,7 @@ import 'vue-octicon/icons/git-pull-request';
 import App from './App';
 import router from './router';
 import activities from './data/scraped/gh_patches.json';
-import subjects from './data/scraped/gh_projects.json';
+import initialSubjects from './data/scraped/gh_projects.json';
 
 // import activities from './data/activities.json';
 // import subjects from './data/subjects.json';
@@ -61,7 +61,7 @@ function validateSubjects(list) {
     }
   });
 }
-validateSubjects(subjects);
+validateSubjects(initialSubjects);
 
 function expandRelations(items) {
   /**
@@ -75,7 +75,7 @@ function expandRelations(items) {
       case 'Patch':
         if (item.project !== undefined) {
           return Object.assign(
-            item, { project: subjects[item.project] },
+            item, { project: initialSubjects[item.project] },
           );
         }
         return item;
@@ -99,10 +99,13 @@ function availableActivityTypes(v) {
   ];
 }
 
-function availableSubjects(s) {
+function availableSubjects(subjects, availableActivities) {
+  /**
+   * Return available Subject targets, minus ones that are filtered out.
+   **/
   return [
-    s.map(item => item.project),
-  ];
+    ...new Set(availableActivities.map(item => subjects.find(s => s.id === item.project.id))),
+  ]
 }
 
 
@@ -154,7 +157,7 @@ const store = new Vuex.Store({
   state: {
     count: 0,
     activities: initialActivities,
-    subjects,
+    subjects: initialSubjects,
     selectedActivityTypes: availableActivityTypes(initialActivities),
     selectedSubjects: null,
     selectedFilters: defaultSelectedFilters,
@@ -170,7 +173,9 @@ const store = new Vuex.Store({
     availableSubjectTypes: state => [
       ...new Set(state.subjects.map(item => item)),
     ],
-    availableSubjects: state => availableSubjects(state.subjects),
+    availableSubjects: (state, getters) => availableSubjects(
+      state.subjects, getters.filteredActivities,
+    ),
     availableActivityTypes: (state, getters) => availableActivityTypes(getters.filteredActivities),
     availableFilters: () => Object.keys(filters),
   },

@@ -17,7 +17,7 @@
           track-by="name"
           id="subjectFilter"
           :value="selectedSubjects"
-          :options="subjects"
+          :options="availableSubjects"
           @input="updateSelectedSubjectsAction"
           >
           <template slot="option" slot-scope="props">
