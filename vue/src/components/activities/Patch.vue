@@ -9,14 +9,14 @@
       </div>
 
       <br />
-      <p v-show="item.proposed_date">
+      <p v-show="item.proposed_date" class="align-octicon"><small>
+        <octicon name="repo" label="Submitted"></octicon>
         Submitted {{item.proposed_date | moment("from", "now") }}
-        <small>({{item.proposed_date}})</small>
-      </p>
-      <br />
+        ({{item.proposed_date}})
+      </small></p>
     </div>
     <div slot="right">
-      <h2><a :href="item.qa_url" target="_blank" class="activityTitle">
+      <h2><a :href="item.qa_url" target="_blank" class="activity-title">
         {{item.title}}
         <octicon name="mark-github" label="View on GitHub"></octicon>
       </a></h2>
@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" rel="stylesheet/scss" scoped>
 .tag {
   align-items: center;
   background-color: #f5f5f5;
@@ -96,23 +96,25 @@ export default {
   padding-right: .75em;
   white-space: nowrap;
 }
-.activityTitle {
+.activity-title {
   color: #4a4a4a;
   text-decoration: none;
 }
-a[href^="http"] {
+
+a {
   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 a.muted-link {
   color: #4a4a4a;
+  &:hover {
+    color: #0366d6;
+    text-decoration: none;
+  }
 }
-a.muted-link:hover {
-  color: #0366d6;
-  text-decoration: none;
-}
+
 .align-octicon .octicon {
   vertical-align: text-top;
 }
