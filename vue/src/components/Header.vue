@@ -41,25 +41,12 @@
          >
         </multiselect>
 
-        <multiselect
-          :search="true"
-          :multiple="true"
-          placeholder="Special filters"
-          :taggable="true"
-          id="specialFilter"
-          :options="availableFilters"
-          :value="selectedFilters"
-          class="selectedFilters"
-          @input="updateSelectedFiltersAction"
-         >
-        </multiselect>
         <div id='example-3'>
-          <div v-for="fil in availableFilters" :key="fil.id" class="roundedOne">
+          <span v-for="fil in availableFilters" :key="fil.id" class="roundedOne">
             <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
 
             <label :for="fil">{{fil}}</label>
-          </div>
-          <span>Checked names: {{ selectedFilters }}</span>
+          </span>
         </div>
       </div>
     </div>
