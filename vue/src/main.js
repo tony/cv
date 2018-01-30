@@ -95,10 +95,10 @@ function availableSubjects(s) {
 const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
 const filterIgnoreTypos = v => !filterTypos(v);
 
-const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link)/);
+const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md)/);
 const filterIgnoreDocs = v => !filterDocs(v);
 
-const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint)/);
+const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort)/);
 const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
 
 
