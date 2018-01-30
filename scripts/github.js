@@ -19,6 +19,7 @@ const config = {
   gh_user: 'tony',
   exclude_users: ['nick-ma'],
   output_dir: 'src/data/scraped',
+  ignore_private_repos: true,
 }
 
 if (!fs.existsSync(config.output_dir)){
@@ -92,6 +93,10 @@ recursePRQuery(initialPrQuery).then(prs => {
     for (let user of config.exclude_users) {
       prs = prs.filter(pr => !pr.node.url.includes(`https://github.com/${user}/`));
     }
+  }
+
+  if (config.ignore_private_repos) {
+    prs = prs.filter(pr => !pr.node.repository.isPrivate);
   }
 
   prs = prs.map(pr => pr.node);  // zoom in on "node"
