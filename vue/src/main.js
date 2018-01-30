@@ -98,17 +98,20 @@ const filterIgnoreTypos = v => !filterTypos(v);
 const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link)/);
 const filterIgnoreDocs = v => !filterDocs(v);
 
+const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint)/);
+const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
+
 
 const filters = {
   'Hide Spelling Contributions': filterIgnoreTypos,
   'Hide Documentation Contributions': filterIgnoreDocs,
-  'Only Show Spelling Contributions': filterTypos,
-  'Only Show Documentation Contributions': filterDocs,
+  'Hide Code Style Contributions': filterIgnoreCodeStyle,
 };
 
 const defaultSelectedFilters = [
   'Hide Spelling Contributions',
   'Hide Documentation Contributions',
+  'Hide Code Style Contributions',
 ];
 
 function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
