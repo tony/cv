@@ -3,6 +3,12 @@
 // https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Octicon from 'vue-octicon/components/Octicon';
+import 'vue-octicon/icons/diff';
+import 'vue-octicon/icons/mark-github';
+import 'vue-octicon/icons/git-merge';
+import 'vue-octicon/icons/git-pull-request';
+
 import App from './App';
 import router from './router';
 import activities from './data/scraped/gh_patches.json';
@@ -15,6 +21,8 @@ Vue.config.productionTip = false;
 
 Vue.use(Vuex);
 Vue.use(require('vue-moment'));
+
+Vue.component('octicon', Octicon);
 
 // subject
 // project, 'projects'

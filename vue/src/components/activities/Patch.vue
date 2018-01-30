@@ -14,7 +14,10 @@
       </span>
       <br />
       <template v-if="item.accepted_date">
-      <span v-show="item.accepted_date"><small>Accepted {{item.accepted_date}}</small></span>
+      <span v-show="item.accepted_date"><small>
+        <octicon name="git-merge" label="Merged"></octicon>
+        Accepted {{item.accepted_date}}
+      </small></span>
       </template>
       <template v-else>
         <small><em>Unmerged</em></small>
@@ -22,15 +25,22 @@
       </p>
     </div>
     <div slot="right">
-      <h2><a :href="item.qa_url" target="_blank" class="activityTitle">{{item.title}}</a></h2>
+      <h2><a :href="item.qa_url" target="_blank" class="activityTitle">
+        {{item.title}}
+        <octicon name="mark-github" label="View on GitHub"></octicon>
+      </a></h2>
       <em>for
       <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
       </em>
       <small>(<a :href="item.project.repo_url" target="_blank">repo</a>)</small>
       <br />
       <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
+      <octicon name="git-pull-request" label="Pull Request"></octicon>
       <a :href="item.qa_url" target="_blank">qa</a>
-      <a :href="item.diff_url" target="_blank">diff</a>
+      <octicon name="diff" label="Diff"></octicon>
+      <a :href="item.diff_url" target="_blank">
+        diff
+      </a>
     </div>
   </Row>
 </template>
