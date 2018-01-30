@@ -33,7 +33,7 @@
           :multiple="true"
           placeholder="Filter by event"
           :taggable="true"
-          id="verbFilter"
+          id="activityFilter"
           :options="availableActivityTypes"
           :value="selectedActivityTypes"
           @input="updateSelectedActivitiesAction"

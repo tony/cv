@@ -18,7 +18,7 @@
       </p>
     </div>
     <div slot="right">
-      <h2><a :href="item.qa_url" target="_blank" class="verbTitle">{{item.title}}</a></h2>
+      <h2><a :href="item.qa_url" target="_blank" class="activityTitle">{{item.title}}</a></h2>
       <em>for
       <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
       </em>
@@ -60,7 +60,7 @@ export default {
   padding-right: .75em;
   white-space: nowrap;
 }
-.verbTitle {
+.activityTitle {
   color: #4a4a4a;
   text-decoration: none;
 }

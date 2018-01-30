@@ -5,10 +5,10 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
 import router from './router';
-import verbs from './data/scraped/gh_patches.json';
+import activities from './data/scraped/gh_patches.json';
 import subjects from './data/scraped/gh_projects.json';
 
-// import verbs from './data/verbs.json';
+// import activities from './data/activities.json';
 // import subjects from './data/subjects.json';
 
 Vue.config.productionTip = false;
@@ -69,10 +69,10 @@ function normalizeActivities(v) {
   return v;
 }
 
-const normalizedActivities = normalizeActivities(verbs);
+const normalizedActivities = normalizeActivities(activities);
 
 
-const verbTypes = [
+const activityTypes = [
   {
     name: 'Open Source Contribution',
     component_name: 'Patch',
@@ -81,7 +81,7 @@ const verbTypes = [
 
 function availableActivityTypes(v) {
   return [
-    ...new Set(v.map(item => verbTypes.find(vt => vt.component_name === item.component))),
+    ...new Set(v.map(item => activityTypes.find(vt => vt.component_name === item.component))),
   ];
 }
 
@@ -129,15 +129,15 @@ function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) 
 const store = new Vuex.Store({
   state: {
     count: 0,
-    verbs: normalizedActivities,
+    activities: normalizedActivities,
     subjects,
     selectedActivityTypes: availableActivityTypes(normalizedActivities),
     selectedSubjects: null,
     selectedFilters: defaultSelectedFilters,
   },
   getters: {
-    verbs: state => filterActivityTypes(
-      state.verbs,
+    activities: state => filterActivityTypes(
+      state.activities,
       state.selectedActivityTypes,
       state.selectedFilters,
       state.selectedSubjects,
@@ -147,7 +147,7 @@ const store = new Vuex.Store({
       ...new Set(state.subjects.map(item => item)),
     ],
     availableSubjects: state => availableSubjects(state.subjects),
-    availableActivityTypes: state => availableActivityTypes(state.verbs),
+    availableActivityTypes: state => availableActivityTypes(state.activities),
     availableFilters: () => Object.keys(filters),
   },
   actions: {

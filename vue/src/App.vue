@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
     <component
-      v-for="item in verbs"
+      v-for="item in activities"
       :is="item.component"
       :item="item"
       :key="item.index"
@@ -14,7 +14,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { Patch, Kudo, Status, Achievement, Event, Presentation } from './components/verbs';
+import { Patch, Kudo, Status, Achievement, Event, Presentation } from './components/activities';
 
 export default {
   name: 'App',
@@ -27,7 +27,7 @@ export default {
     Presentation,
   },
   computed: mapGetters([
-    'verbs',
+    'activities',
   ]),
 };
 </script>
