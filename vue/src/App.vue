@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
     <component
-      v-for="item in activities"
+      v-for="item in filteredActivities"
       :is="item.component"
       :item="item"
       :key="item.index"
@@ -27,7 +27,7 @@ export default {
     Presentation,
   },
   computed: mapGetters([
-    'activities',
+    'filteredActivities',
   ]),
 };
 </script>

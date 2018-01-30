@@ -160,7 +160,7 @@ const store = new Vuex.Store({
     selectedFilters: defaultSelectedFilters,
   },
   getters: {
-    activities: state => filterActivityTypes(
+    filteredActivities: state => filterActivityTypes(
       state.activities,
       state.selectedActivityTypes,
       state.selectedFilters,
@@ -171,7 +171,7 @@ const store = new Vuex.Store({
       ...new Set(state.subjects.map(item => item)),
     ],
     availableSubjects: state => availableSubjects(state.subjects),
-    availableActivityTypes: state => availableActivityTypes(state.activities),
+    availableActivityTypes: (state, getters) => availableActivityTypes(getters.filteredActivities),
     availableFilters: () => Object.keys(filters),
   },
   actions: {
