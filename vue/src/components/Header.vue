@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="header">
     <h1>{{ msg }}</h1>
 
     <p><em>Friendly reminder: I don't do technical screens. I only seek
@@ -94,14 +94,14 @@ export default {
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h1, h2 {
+.header h1, .header h2 {
   font-weight: normal;
 }
-a {
+.header a {
   color: #42b983;
 }
 
-.tag {
+.header .tag {
   align-items: center;
   background-color: #f5f5f5;
   border-radius: 3px;
