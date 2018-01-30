@@ -4,8 +4,8 @@
 
     <p><em>Friendly reminder: I don't do technical screens. I only seek
       remote, senior programming roles.
-      I'm also available for <a href="https://www.git-pull.com/consulting/">consulting</a> and
-    <a href="https://www.git-pull.com/mentoring/">mentoring</a>.</em></p>
+      I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank">consulting</a> and
+    <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
