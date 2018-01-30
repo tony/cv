@@ -95,7 +95,7 @@ function availableSubjects(s) {
 const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
 const filterIgnoreTypos = v => !filterTypos(v);
 
-const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme)/);
+const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link)/);
 const filterIgnoreDocs = v => !filterDocs(v);
 
 
