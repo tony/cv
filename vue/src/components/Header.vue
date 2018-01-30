@@ -54,10 +54,11 @@
          >
         </multiselect>
         <div id='example-3'>
-          <span v-for="fil in availableFilters" :key="fil.id">
-            <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters">
-            {{fil}}
-          </span>
+          <div v-for="fil in availableFilters" :key="fil.id" class="roundedOne">
+            <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
+
+            <label :for="fil">{{fil}}</label>
+          </div>
           <span>Checked names: {{ selectedFilters }}</span>
         </div>
       </div>
@@ -145,10 +146,10 @@ export default {
 .selectedFilters .multiselect__tag-icon:hover {
   background: #666;
 }
-.selectedFilters.multiselect__tag-icon:after {
+.selectedFilters .multiselect__tag-icon:after {
   color: #666;
 }
-.selectedFilters.multiselect__tag-icon:hover:after {
+.selectedFilters .multiselect__tag-icon:hover:after {
   color: white;
 }
 </style>
