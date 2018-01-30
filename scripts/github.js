@@ -17,7 +17,7 @@ if (!gh_token) {
 const config = {
   exclude_own_repo: true,
   gh_user: 'tony',
-  exclude_users: ['nick-ma'],
+  exclude_users: ['cihai', 'git-pull', 'nick-ma'],
   output_dir: 'src/data/scraped',
   ignore_private_repos: true,
 }
