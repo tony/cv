@@ -1,0 +1,49 @@
+h1.logo { font-size: 13px; }
+img.logo { margin: 0 0 20px 0; }
+
+div.book-container > p {
+    text-align: center;
+}
+
+div.book-container {
+  background: rgba(250, 251, 252, 0.75);
+  border-left: 5px solid rgba(85, 138, 187, 0.75);
+  margin-top: 10px;
+}
+
+div.book-container:hover {
+  background: rgba(250, 251, 252, 1);
+  border-left: 5px solid rgba(85, 138, 187, 1);
+}
+
+div.book-container .hsk-right p:first-of-type,
+div.book-container .rightside-book p:first-of-type
+{
+   padding-top: 10px;
+}
+
+/* flexbox.css overrides */
+
+@media only screen and (min-width: 75em),
+@media only screen and (min-width: 64em),
+@media only screen and (min-width: 48em) {
+  .container {
+    width: auto !important 
+  }
+}
+
+.project div.figure p.caption {
+  margin-bottom: 0px;
+}
+
+.book-container a.reference:hover,
+.project a.reference:hover {
+  border-bottom: 0px;
+}
+
+/* attempt to fix flexbox in screen responsiveness at mid-width */
+@media only screen and (min-width: 64em) {
+  .container {
+    width: auto !important;
+  }
+}
