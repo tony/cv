@@ -63,8 +63,14 @@ function validateSubjects(list) {
 }
 validateSubjects(subjects);
 
-function normalizeActivities(v) {
-  v.map((item) => {
+function expandRelations(items) {
+  /**
+   * Expands primary key/ID relations with other objects.
+   *
+   * @param {Array, <Object>} items
+   * @return {Void}
+   */
+  items.map((item) => {
     switch (item.component) {
       case 'Patch':
         if (item.project !== undefined) {
@@ -77,11 +83,8 @@ function normalizeActivities(v) {
         return item;
     }
   });
-  return v;
+  return items;
 }
-
-const normalizedActivities = normalizeActivities(activities);
-
 
 const activityTypes = [
   {
@@ -144,12 +147,15 @@ function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) 
   return items;
 }
 
+// Resolve ID to object relationships so they're available in data
+const initialActivities = expandRelations(activities);
+
 const store = new Vuex.Store({
   state: {
     count: 0,
-    activities: normalizedActivities,
+    activities: initialActivities,
     subjects,
-    selectedActivityTypes: availableActivityTypes(normalizedActivities),
+    selectedActivityTypes: availableActivityTypes(initialActivities),
     selectedSubjects: null,
     selectedFilters: defaultSelectedFilters,
   },
