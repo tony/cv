@@ -2,45 +2,67 @@
   <Row>
     <div slot="left">
       <h1>Open Source Contribution</h1>
-      <p>
+      <div class="languages">
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
       </span>
+      </div>
 
       <br />
-      <span v-show="item.proposed_date">
+      <p v-show="item.proposed_date">
         Submitted {{item.proposed_date | moment("from", "now") }}
         <small>({{item.proposed_date}})</small>
-      </span>
-      <br />
-      <template v-if="item.accepted_date">
-      <span v-show="item.accepted_date"><small>
-        <octicon name="git-merge" label="Merged"></octicon>
-        Accepted {{item.accepted_date}}
-      </small></span>
-      </template>
-      <template v-else>
-        <small><em>Unmerged</em></small>
-      </template>
       </p>
+      <br />
     </div>
     <div slot="right">
       <h2><a :href="item.qa_url" target="_blank" class="activityTitle">
         {{item.title}}
         <octicon name="mark-github" label="View on GitHub"></octicon>
       </a></h2>
-      <em>for
-      <a :href="item.project.url" target="_blank">{{item.project.name}}</a>
-      </em>
-      <small>(<a :href="item.project.repo_url" target="_blank">repo</a>)</small>
-      <br />
-      <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
-      <octicon name="git-pull-request" label="Pull Request"></octicon>
-      <a :href="item.qa_url" target="_blank">qa</a>
-      <octicon name="diff" label="Diff"></octicon>
-      <a :href="item.diff_url" target="_blank">
-        diff
-      </a>
+      <p>
+        <em>was contributed by Tony to the
+        <template v-if="item.project.url">
+          <a :href="item.project.url" target="_blank" class="muted-link">{{item.project.name}}</a>
+        </template>
+        <template v-else>
+          {{item.project.name}}
+        </template>
+
+        project
+        </em>
+      </p>
+
+      <p><small>
+        <a :href="item.project.repo_url" target="_blank" class="muted-link align-octicon">
+          <octicon name="repo" label="GH"></octicon>
+          Repository
+        </a>
+
+        <a :href="item.in_re_url" v-show="item.in_re_url" target="_blank">issue</a>
+
+        <a :href="item.qa_url" target="_blank" class="muted-link align-octicon">
+          <octicon name="git-pull-request" label="Pull Request"></octicon>
+          Pull Request
+        </a>
+
+        <a :href="item.diff_url" target="_blank" class="muted-link align-octicon">
+          <octicon name="diff" label="Diff"></octicon>
+          .diff File
+        </a>
+      </small></p>
+
+      <p><small>
+        <template v-if="item.accepted_date">
+        <span v-show="item.accepted_date" class="align-octicon">
+          <octicon name="check" label="Merged"></octicon>
+          Accepted {{item.accepted_date}}
+        </span>
+        </template>
+        <template v-else>
+          <em>Unmerged</em>
+        </template>
+      </small></p>
     </div>
   </Row>
 </template>
@@ -77,5 +99,21 @@ export default {
 .activityTitle {
   color: #4a4a4a;
   text-decoration: none;
+}
+a[href^="http"] {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.muted-link {
+  color: #4a4a4a;
+}
+a.muted-link:hover {
+  color: #0366d6;
+  text-decoration: none;
+}
+.align-octicon .octicon {
+  vertical-align: text-top;
 }
 </style>

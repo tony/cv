@@ -7,6 +7,8 @@ import Octicon from 'vue-octicon/components/Octicon';
 import 'vue-octicon/icons/diff';
 import 'vue-octicon/icons/mark-github';
 import 'vue-octicon/icons/git-merge';
+import 'vue-octicon/icons/check';
+import 'vue-octicon/icons/repo';
 import 'vue-octicon/icons/git-pull-request';
 
 import App from './App';
