@@ -102,10 +102,10 @@ function availableActivityTypes(v) {
 function availableSubjects(subjects, availableActivities) {
   /**
    * Return available Subject targets, minus ones that are filtered out.
-   **/
+   */
   return [
     ...new Set(availableActivities.map(item => subjects.find(s => s.id === item.project.id))),
-  ]
+  ];
 }
 
 
@@ -199,28 +199,7 @@ const store = new Vuex.Store({
       state.selectedSubjects = value;
     },
     updateSelectedFilters(state, value) {
-      let val = value;
-      const difference = new Set(
-        [...new Set(val)].filter(x => !new Set(state.selectedFilters).has(x)),
-      );
-      if (difference) {
-        if (difference.has('Hide Spelling Contributions') && state.selectedFilters.includes('Only Show Spelling Contributions')) {
-          val = val.filter(v => v !== 'Only Show Spelling Contributions');
-        } else if (difference.has('Only Show Spelling Contributions') && state.selectedFilters.includes('Hide Spelling Contributions')) {
-          val = val.filter(v => v !== 'Hide Spelling Contributions');
-        } else if (
-          difference.has('Only Show Documentation Contributions') &&
-          state.selectedFilters.includes('Hide Documentation Contributions')
-        ) {
-          val = val.filter(v => v !== 'Hide Documentation Contributions');
-        } else if (difference.has('Hide Documentation Contributions') &&
-          state.selectedFilters.includes('Only Show Documentation Contributions')
-        ) {
-          val = val.filter(v => v !== 'Only Show Documentation Contributions');
-        }
-      }
-
-      state.selectedFilters = val;
+      state.selectedFilters = value;
     },
   },
 });
