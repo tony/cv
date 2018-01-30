@@ -34,9 +34,9 @@
           placeholder="Filter by event"
           :taggable="true"
           id="verbFilter"
-          :options="availableVerbs"
-          :value="selectedVerbs"
-          @input="updateSelectedVerbsAction"
+          :options="availableActivityTypes"
+          :value="selectedActivityTypes"
+          @input="updateSelectedActivitiesAction"
          >
         </multiselect>
 
@@ -75,14 +75,14 @@ export default {
       'subjects',
       'availableSubjects',
       'availableSubjectTypes',
-      'availableVerbs',
+      'availableActivityTypes',
       'availableFilters',
     ]),
-    ...mapState(['selectedVerbs', 'selectedSubjects', 'selectedFilters']),
+    ...mapState(['selectedActivityTypes', 'selectedSubjects', 'selectedFilters']),
   },
   methods: {
     ...mapActions([
-      'updateSelectedVerbsAction',
+      'updateSelectedActivitiesAction',
       'updateSelectedSubjectsAction',
       'updateSelectedFiltersAction',
     ]),

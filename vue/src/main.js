@@ -52,7 +52,7 @@ function validateSubjects(list) {
 }
 validateSubjects(subjects);
 
-function normalizeVerbs(v) {
+function normalizeActivities(v) {
   v.map((item) => {
     switch (item.component) {
       case 'Patch':
@@ -69,11 +69,19 @@ function normalizeVerbs(v) {
   return v;
 }
 
-const normalizedVerbs = normalizeVerbs(verbs);
+const normalizedActivities = normalizeActivities(verbs);
 
-function availableVerbs(v) {
+
+const verbTypes = [
+  {
+    name: 'Open Source Contribution',
+    component_name: 'Patch',
+  },
+];
+
+function availableActivityTypes(v) {
   return [
-    ...new Set(v.map(item => item.component)),
+    ...new Set(v.map(item => verbTypes.find(vt => vt.component_name === item.component))),
   ];
 }
 
@@ -103,13 +111,14 @@ const defaultSelectedFilters = [
   'Ignore Documentation',
 ];
 
-function filterVerbs(vItems, selVerbs, selFilters, selSubjects) {
-  // only show selected verbs
-  let items = vItems.filter(vItem => selVerbs.includes(vItem.component));
+function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
+  // only show selected activity types
+  let items = vItems.filter(
+    vItem => selActivityTypes.map(sA => sA.component_name).includes(vItem.component),
+  );
   if (selSubjects && selSubjects.length) {
     items = items.filter(item => selSubjects.find(s => s.id === item.project.id));
   }
-
 
   selFilters.forEach((filterName) => {
     items = items.filter(filters[filterName]);
@@ -117,20 +126,19 @@ function filterVerbs(vItems, selVerbs, selFilters, selSubjects) {
   return items;
 }
 
-
 const store = new Vuex.Store({
   state: {
     count: 0,
-    verbs: normalizedVerbs,
+    verbs: normalizedActivities,
     subjects,
-    selectedVerbs: availableVerbs(normalizedVerbs),
+    selectedActivityTypes: availableActivityTypes(normalizedActivities),
     selectedSubjects: null,
     selectedFilters: defaultSelectedFilters,
   },
   getters: {
-    verbs: state => filterVerbs(
+    verbs: state => filterActivityTypes(
       state.verbs,
-      state.selectedVerbs,
+      state.selectedActivityTypes,
       state.selectedFilters,
       state.selectedSubjects,
     ),
@@ -139,12 +147,12 @@ const store = new Vuex.Store({
       ...new Set(state.subjects.map(item => item)),
     ],
     availableSubjects: state => availableSubjects(state.subjects),
-    availableVerbs: state => availableVerbs(state.verbs),
+    availableActivityTypes: state => availableActivityTypes(state.verbs),
     availableFilters: () => Object.keys(filters),
   },
   actions: {
-    updateSelectedVerbsAction({ commit }, value) {
-      commit('updateSelectedVerbs', value);
+    updateSelectedActivitiesAction({ commit }, value) {
+      commit('updateSelectedActivities', value);
     },
     updateSelectedSubjectsAction({ commit }, value) {
       commit('updateSelectedSubjects', value);
@@ -154,8 +162,8 @@ const store = new Vuex.Store({
     },
   },
   mutations: {
-    updateSelectedVerbs(state, value) {
-      state.selectedVerbs = value;
+    updateSelectedActivities(state, value) {
+      state.selectedActivityTypes = value;
     },
     updateSelectedSubjects(state, value) {
       state.selectedSubjects = value;
