@@ -1,7 +1,7 @@
 <template>
   <Row>
     <div slot="left">
-      <h1>Patch</h1>
+      <h1>Open Source Contribution</h1>
       <p>
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
@@ -13,7 +13,7 @@
       Accepted: <span v-show="item.accepted_date">{{item.accepted_date}}</span>
       </template>
       <template v-else>
-      Not merged.
+      <em>Unmerged</em>
       </template>
       </p>
     </div>
