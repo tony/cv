@@ -53,7 +53,13 @@
           @input="updateSelectedFiltersAction"
          >
         </multiselect>
-
+        <div id='example-3'>
+          <span v-for="fil in availableFilters" :key="fil.id">
+            <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters">
+            {{fil}}
+          </span>
+          <span>Checked names: {{ selectedFilters }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -79,7 +85,19 @@ export default {
       'availableActivityTypes',
       'availableFilters',
     ]),
-    ...mapState(['selectedActivityTypes', 'selectedSubjects', 'selectedFilters']),
+    ...{
+      selectedFilters: {
+        get() {
+          console.log(this.$store.state.selectedFilters);
+          return this.$store.state.selectedFilters;
+        },
+        set(value) {
+          console.log(value);
+          this.$store.commit('updateSelectedFilters', value);
+        },
+      },
+    },
+    ...mapState(['selectedActivityTypes', 'selectedSubjects']),
   },
   methods: {
     ...mapActions([
@@ -120,18 +138,17 @@ export default {
 }
 
 .selectedFilters .multiselect__tag {
-    background: gray;
-      outline: none;
-        color: white;
-      }
-.selectedFilters      .multiselect__tag-icon:hover {
-background: #666;
+  background: gray;
+  outline: none;
+  color: white;
 }
-.selectedFilters .multiselect__tag-icon:after {
-color: #666;
+.selectedFilters .multiselect__tag-icon:hover {
+  background: #666;
 }
-.selectedFilters .multiselect__tag-icon:hover:after {
+.selectedFilters.multiselect__tag-icon:after {
+  color: #666;
+}
+.selectedFilters.multiselect__tag-icon:hover:after {
   color: white;
 }
 </style>
-

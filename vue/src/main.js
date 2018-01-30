@@ -158,6 +158,7 @@ const store = new Vuex.Store({
       commit('updateSelectedSubjects', value);
     },
     updateSelectedFiltersAction({ commit }, value) {
+      console.log(commit, value);
       commit('updateSelectedFilters', value);
     },
   },
