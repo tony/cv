@@ -4,6 +4,7 @@
     "type": "project",
     "name": "tmuxp",
     "url": "https://tmuxp.git-pull.com/",
-    "repo_url": "https://github.com/tony/tmuxp/"
+    "repo_url": "https://github.com/tony/tmuxp/",
+    "languages": ["Python"]
   }
 ]

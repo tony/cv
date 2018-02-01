@@ -72,6 +72,10 @@ function validateSubjects(list) {
 }
 validateSubjects(initialSubjects);
 
+function lookupSubjectById(subjects, type, id) {
+  return subjects.filter(sub => sub.type === type && sub.id === id);
+}
+
 function expandRelations(items) {
   /**
    * Expands primary key/ID relations with other objects.
@@ -91,7 +95,10 @@ function expandRelations(items) {
       case 'Event':
         if (item.project !== undefined) {
           return Object.assign(
-            item, { project: initialSubjects[item.project] },
+            item,
+            {
+              project: lookupSubjectById(initialSubjects, 'project', item.project),
+            },
           );
         }
         return item;
@@ -207,7 +214,6 @@ const store = new Vuex.Store({
       commit('updateSelectedSubjects', value);
     },
     updateSelectedFiltersAction({ commit }, value) {
-      console.log(commit, value);
       commit('updateSelectedFilters', value);
     },
   },

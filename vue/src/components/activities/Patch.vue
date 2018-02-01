@@ -124,5 +124,4 @@ a.muted-link {
 .align-octicon-bottom .octicon {
   vertical-align: text-baseline;
 }
-
 </style>

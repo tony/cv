@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
     <component
-      v-for="item in filteredActivities"
+      v-for="item in activities"
       :is="item.component"
       :item="item"
       :key="item.index"
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 import { Patch, Kudo, Status, Achievement, Event, Presentation } from './components/activities';
 
@@ -26,9 +26,14 @@ export default {
     Event,
     Presentation,
   },
-  computed: mapGetters([
-    'filteredActivities',
-  ]),
+  computed: {
+    ...mapGetters([
+      'filteredActivities',
+    ]),
+    ...mapState([
+      'activities',
+    ]),
+  },
 };
 </script>
 
