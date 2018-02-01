@@ -13,11 +13,13 @@ import 'vue-octicon/icons/git-pull-request';
 
 import App from './App';
 import router from './router';
-import activities from './data/scraped/gh_patches.json';
-import initialSubjects from './data/scraped/gh_projects.json';
+import githubPatches from './data/scraped/gh_patches.json';
+import githubProjects from './data/scraped/gh_projects.json';
 
 // import activities from './data/activities.json';
 // import subjects from './data/subjects.json';
+const activities = githubPatches;
+const initialSubjects = githubProjects;
 
 Vue.config.productionTip = false;
 
