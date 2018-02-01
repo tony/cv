@@ -1,10 +1,9 @@
 [
   {
     "id": 20000,
-    "component": "Event",
-    "verb": "Created",
+    "component": "MyProject",
     "created_date": "2013-01-01",
-    "title": "Started the tmuxp project",
+    "title": "Created the tmuxp project",
     "project": 10000
   }
 ]

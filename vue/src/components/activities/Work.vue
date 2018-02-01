@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Status',
+  name: 'Work',
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),

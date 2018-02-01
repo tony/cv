@@ -92,7 +92,7 @@ function expandRelations(items) {
           );
         }
         return item;
-      case 'Event':
+      case 'MyProject':
         if (item.project !== undefined) {
           return Object.assign(
             item,
@@ -115,8 +115,8 @@ const activityTypes = [
     component_name: 'Patch',
   },
   {
-    name: 'Event',
-    component_name: 'Event',
+    name: 'My Projects',
+    component_name: 'MyProject',
   },
 ];
 

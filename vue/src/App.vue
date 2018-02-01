@@ -14,16 +14,16 @@
 <script>
 import { mapGetters, mapState } from 'vuex';
 
-import { Patch, Kudo, Status, Achievement, Event, Presentation } from './components/activities';
+import { Patch, Kudo, Work, Achievement, MyProject, Presentation } from './components/activities';
 
 export default {
   name: 'App',
   components: {
     Patch,
     Kudo,
-    Status,
+    Work,
     Achievement,
-    Event,
+    MyProject,
     Presentation,
   },
   computed: {
