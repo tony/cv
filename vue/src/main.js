@@ -15,11 +15,18 @@ import App from './App';
 import router from './router';
 import githubPatches from './data/scraped/gh_patches.json';
 import githubProjects from './data/scraped/gh_projects.json';
+import myActivities from './data/myActivities.json';
+import myProjects from './data/myProjects.json';
 
-// import activities from './data/activities.json';
-// import subjects from './data/subjects.json';
-const activities = githubPatches;
-const initialSubjects = githubProjects;
+const activities = [
+  ...githubPatches,
+  ...myActivities,
+];
+
+const initialSubjects = [
+  ...githubProjects,
+  ...myProjects,
+];
 
 Vue.config.productionTip = false;
 
@@ -59,7 +66,7 @@ function validateSubjects(list) {
         validateProject(item);
         break;
       default:
-        throw Error(`invalid type for ${item}`);
+        throw Error(`invalid type ${item.type} for ${item}`);
     }
   });
 }
@@ -81,6 +88,13 @@ function expandRelations(items) {
           );
         }
         return item;
+      case 'Event':
+        if (item.project !== undefined) {
+          return Object.assign(
+            item, { project: initialSubjects[item.project] },
+          );
+        }
+        return item;
       default:
         return item;
     }
@@ -92,6 +106,10 @@ const activityTypes = [
   {
     name: 'Open Source Contributions',
     component_name: 'Patch',
+  },
+  {
+    name: 'Event',
+    component_name: 'Event',
   },
 ];
 
@@ -178,12 +196,12 @@ const store = new Vuex.Store({
     availableSubjects: (state, getters) => availableSubjects(
       state.subjects, getters.filteredActivities,
     ),
-    availableActivityTypes: (state, getters) => availableActivityTypes(getters.filteredActivities),
+    availableActivityTypes: state => availableActivityTypes(state.activities),
     availableFilters: () => Object.keys(filters),
   },
   actions: {
-    updateSelectedActivitiesAction({ commit }, value) {
-      commit('updateSelectedActivities', value);
+    updateSelectedActivityTypeAction({ commit }, value) {
+      commit('updateSelectedActivityType', value);
     },
     updateSelectedSubjectsAction({ commit }, value) {
       commit('updateSelectedSubjects', value);
@@ -194,7 +212,7 @@ const store = new Vuex.Store({
     },
   },
   mutations: {
-    updateSelectedActivities(state, value) {
+    updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;
     },
     updateSelectedSubjects(state, value) {
