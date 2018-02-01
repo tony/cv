@@ -73,7 +73,7 @@ function validateSubjects(list) {
 validateSubjects(initialSubjects);
 
 function lookupSubjectById(subjects, type, id) {
-  return subjects.filter(sub => sub.type === type && sub.id === id);
+  return subjects.find(sub => sub.type === type && sub.id === id);
 }
 
 function expandRelations(items) {
@@ -145,7 +145,7 @@ const filterIgnoreDocs = v => !filterDocs(v);
 const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs)/);
 const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
 
-const filterUnmerged = v => v.accepted_date;
+const filterUnmerged = v => ('accepted_date' in v ? v.accepted_date : true);
 
 
 const filters = {

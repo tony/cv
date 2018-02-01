@@ -9,10 +9,10 @@
       </div>
 
       <br />
-      <p v-show="item.proposed_date" class="align-octicon"><small>
+      <p v-show="item.created_date" class="align-octicon"><small>
         <octicon name="repo" label="Submitted"></octicon>
-        Submitted {{item.proposed_date | moment("from", "now") }}
-        ({{item.proposed_date}})
+        Submitted {{item.created_date | moment("from", "now") }}
+        ({{item.created_date}})
       </small></p>
     </div>
     <div slot="right">
@@ -31,7 +31,7 @@
 import Row from '../Row';
 
 export default {
-  name: 'Event',
+  name: 'MyProject',
   components: { Row },
   props: ['item', 'opts'],
 };
