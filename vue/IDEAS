@@ -117,3 +117,8 @@ Shouts
 - Split off / filter-branch  cv to tony/cv
   Tony Narlock's Resume
 - No results, uncheck filters to make sure you're not hiding results.
+- rename 'project' to 'flossproject'
+- Applications 'application'
+- Software Libraries 'software_library'
+- Sample Code  'sample_code'
+- Websites 'website'
