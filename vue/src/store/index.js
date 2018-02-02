@@ -65,7 +65,7 @@ const filters = {
   'Hide Unmerged Contributions': filterUnmerged,
 };
 
-function reduceActivities(vItems, selActivityTypes, selFilters) {
+function reduceActivities(vItems, selActivityTypes, selFilters, selLanguages) {
   // only show selected activity types
   let items = vItems.filter(
     vItem => selActivityTypes.map(sA => sA.component_name).includes(vItem.component),
@@ -74,6 +74,15 @@ function reduceActivities(vItems, selActivityTypes, selFilters) {
   selFilters.forEach((filterName) => {
     items = items.filter(filters[filterName]);
   });
+
+  if (selLanguages) {
+    items = items.filter((item) => {
+      if (!item.project.languages) {
+        return false;
+      }
+      return item.project.languages.some(s => selLanguages.includes(s));
+    });
+  }
   return items;
 }
 
@@ -95,7 +104,7 @@ const store = new Vuex.Store({
       state.activities,
       state.selectedActivityTypes,
       state.selectedFilters,
-      state.selectedSubjects,
+      state.selectedLanguages,
     ),
     filteredActivitiesMinusProjects: (state, getters) => {
       if (state.selectedSubjects && state.selectedSubjects.length) {
@@ -143,7 +152,12 @@ const store = new Vuex.Store({
       state.selectedActivityTypes = availableActivityTypes(data.activities);
       state.selectedSubjects = null;
       state.selectedFilters = data.selectedFilters;
-      state.selectedLanguages = null;
+      state.selectedLanguages = availableLanguages(reduceActivities(
+        state.activities,
+        state.selectedActivityTypes,
+        state.selectedFilters,
+        null,
+      ));
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;

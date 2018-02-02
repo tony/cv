@@ -46,7 +46,6 @@
           :multiple="true"
           placeholder="Filter by languages"
           id="languageFilter"
-          track-by="id"
           :options="availableLanguages"
           :value="selectedLanguages"
           @input="updateSelectedLanguagesAction"
