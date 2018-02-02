@@ -19,8 +19,6 @@ store.commit(
   {
     activities: ACTIVITIES,
     subjects: SUBJECTS,
-    selectedActivityTypes: ACTIVITIES,
-    selectedSubjects: null,
     selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );

@@ -36,6 +36,16 @@ function availableSubjects(subjects, availableActivities) {
 }
 
 
+function availableLanguages(availableActivities) {
+  let languages = [];
+  languages = availableActivities.map(item => item.project.languages);
+  languages = [].concat(...languages);
+  languages = languages.filter(h => h);
+  languages = new Set(languages);
+  return [...languages];
+}
+
+
 const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL)/);
 const filterIgnoreTypos = v => !filterTypos(v);
 
@@ -75,8 +85,12 @@ const store = new Vuex.Store({
     selectedActivityTypes: null,
     selectedSubjects: null,
     selectedFilters: null,
+    selectedLanguages: null,
   },
   getters: {
+    availableLanguages: state => availableLanguages(
+      state.activities,
+    ),
     filteredActivities: state => reduceActivities(
       state.activities,
       state.selectedActivityTypes,
@@ -118,14 +132,18 @@ const store = new Vuex.Store({
     updateSelectedFiltersAction({ commit }, value) {
       commit('updateSelectedFilters', value);
     },
+    updateSelectedLanguagesAction({ commit }, value) {
+      commit('updateSelectedLanguages', value);
+    },
   },
   mutations: {
     [LOAD_INITIAL_DATA]: (state, data) => {
       state.activities = data.activities;
       state.subjects = data.subjects;
-      state.selectedActivityTypes = availableActivityTypes(data.selectedActivityTypes);
-      state.selectedSubjects = data.selectedSubjects;
+      state.selectedActivityTypes = availableActivityTypes(data.activities);
+      state.selectedSubjects = null;
       state.selectedFilters = data.selectedFilters;
+      state.selectedLanguages = null;
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;
@@ -135,6 +153,9 @@ const store = new Vuex.Store({
     },
     updateSelectedFilters(state, value) {
       state.selectedFilters = value;
+    },
+    updateSelectedLanguages(state, value) {
+      state.selectedLanguages = value;
     },
   },
 });

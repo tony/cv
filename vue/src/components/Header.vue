@@ -41,6 +41,18 @@
          >
         </multiselect>
 
+        <multiselect
+          :search="true"
+          :multiple="true"
+          placeholder="Filter by languages"
+          id="languageFilter"
+          track-by="id"
+          :options="availableLanguages"
+          :value="selectedLanguages"
+          @input="updateSelectedLanguagesAction"
+         >
+        </multiselect>
+
         <div id='example-3'>
           <span v-for="fil in availableFilters" :key="fil.id" class="roundedOne">
             <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
@@ -71,6 +83,7 @@ export default {
       'availableSubjectTypes',
       'availableActivityTypes',
       'availableFilters',
+      'availableLanguages',
     ]),
     ...{
       selectedFilters: {
@@ -82,13 +95,14 @@ export default {
         },
       },
     },
-    ...mapState(['selectedActivityTypes', 'selectedSubjects']),
+    ...mapState(['selectedActivityTypes', 'selectedSubjects', 'selectedLanguages']),
   },
   methods: {
     ...mapActions([
       'updateSelectedActivityTypeAction',
       'updateSelectedSubjectsAction',
       'updateSelectedFiltersAction',
+      'updateSelectedLanguagesAction',
     ]),
   },
 };
