@@ -52,14 +52,14 @@
     "id": 20005,
     "component": "SoftwareLib",
     "created_date": "2016-06-20",
-    "title": "Split libvcs from vcspull",
-    "project": 10007
+    "title": "Decouple libvcs from vcspull",
+    "project": 10008
   },
   {
     "id": 20006,
     "component": "SoftwareApp",
     "created_date": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
-    "project": 10008
+    "project": 10007
   }
 ]
