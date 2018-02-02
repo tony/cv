@@ -12,7 +12,7 @@
         <multiselect
           :search="true"
           :multiple="true"
-          placeholder="Filter by Software Project(s), Company/Companies, Website(s), and Publication(s)"
+          placeholder="Filter by Project(s), Company/Companies, Website(s), and Publication(s)"
           label="name"
           track-by="name"
           id="subjectFilter"
