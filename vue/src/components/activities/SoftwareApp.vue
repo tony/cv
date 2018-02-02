@@ -24,34 +24,64 @@
       </a>
 
       <small class="bottompad10">
-        <a v-show="item.project.url" :href="item.project.url" target="_blank">Website</a>
+        <a v-show="item.project.url" :href="item.project.url"
+         target="_blank" class="align-octicon">
+          <octicon name="home" label="Created"></octicon>
+          Website
+        </a>
         <template v-if="item.project.url">|</template>
-        <a v-show="item.project.repo_url" :href="item.project.repo_url" target="_blank">GitHub</a>
+        <a v-show="item.project.repo_url" :href="item.project.repo_url"
+         target="_blank" class="align-octicon">
+          <octicon name="mark-github" label="Created"></octicon>
+          GitHub
+        </a>
         <template v-if="item.project.docs_url">|</template>
-        <a v-show="item.project.docs_url" :href="item.project.docs_url" target="_blank">Docs</a>
+        <a v-show="item.project.docs_url" :href="item.project.docs_url"
+         target="_blank" class="align-octicon">
+          <octicon name="book" label="Created"></octicon>
+          Docs
+        </a>
         <template v-if="item.project.docs_url">|</template>
-        <a v-show="item.project.api_url" :href="item.project.api_url" target="_blank">API</a>
+        <a v-show="item.project.api_url" :href="item.project.api_url"
+         target="_blank" class="align-octicon">
+          <octicon name="search" label="API"></octicon>
+          API
+        </a>
         <template v-if="item.project.coverage_url">|</template>
-        <a v-show="item.project.coverage_url" :href="item.project.coverage_url" target="_blank">
+        <a v-show="item.project.coverage_url" :href="item.project.coverage_url"
+         target="_blank" class="align-octicon">
+          <octicon name="graph" label="Created"></octicon>
           Coverage
         </a>
         <template v-if="item.project.ci_url">|</template>
-        <a v-show="item.project.ci_url" :href="item.project.ci_url" target="_blank">CI</a>
+        <a v-show="item.project.ci_url" :href="item.project.ci_url"
+         target="_blank" class="align-octicon">
+          <octicon name="dashboard" label="Created"></octicon>
+          CI
+        </a>
         <template v-if="item.project.browse_code_url">|</template>
         <a v-show="item.project.browse_code_url"
-          :href="item.project.browse_code_url" target="_blank">Browse Code</a>
+          :href="item.project.browse_code_url" target="_blank" class="align-octicon">
+          <octicon name="code" label="Created"></octicon>
+          Browse Code
+        </a>
         <template v-if="item.project.browse_code_tests_url">(</template>
           <a v-show="item.project.browse_code_tests_url"
-            :href="item.project.browse_code_tests_url" target="_blank">Tests</a>
+            :href="item.project.browse_code_tests_url" target="_blank" class="align-octicon">
+          <octicon name="checklist" label="Created"></octicon>
+            Tests
+          </a>
         <template v-if="item.project.browse_code_tests_url">)</template>
         <template v-if="item.project.issues_url">|</template>
         <a v-show="item.project.issues_url"
-            :href="item.project.issues_url" target="_blank">
+            :href="item.project.issues_url" target="_blank" class="align-octicon">
+          <octicon name="comment-discussion" label="Created"></octicon>
           Issues
         </a>
         <template v-if="item.project.changelog_url">|</template>
         <a v-show="item.project.changelog_url"
-            :href="item.project.changelog_url" target="_blank">
+            :href="item.project.changelog_url" target="_blank" class="align-octicon">
+          <octicon name="list-unordered" label="Created"></octicon>
           Changelog
         </a>
       </small>
