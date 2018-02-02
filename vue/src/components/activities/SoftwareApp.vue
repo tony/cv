@@ -57,6 +57,11 @@ img.logo {
   margin: 1em auto;
 }
 
+.bottompad10 {
+  margin-bottom: 1em;
+  display: block;
+}
+
 a {
   color: #4a4a4a;
   text-decoration: none;
