@@ -5,5 +5,12 @@
     "created_date": "2013-01-01",
     "title": "Created the tmuxp project",
     "project": 10000
+  },
+  {
+    "id": 20001,
+    "component": "MyProject",
+    "created_date": "2013-01-01",
+    "title": "Created the libtmux project",
+    "project": 10001
   }
 ]
