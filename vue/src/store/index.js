@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import moment from 'moment';
 
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
@@ -86,6 +87,13 @@ const store = new Vuex.Store({
       state.selectedActivityTypes,
       state.selectedFilters,
       state.selectedSubjects,
+    ),
+    sortedActivities: (state, getters) => (
+      getters.filteredActivities.sort(
+        (activity1, activity2) => (
+          moment(activity2.created_date).diff(moment(activity1.created_date))
+        ),
+      )
     ),
     subjects: state => state.subjects, // subject items
     availableSubjectTypes: state => [
