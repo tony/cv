@@ -97,8 +97,8 @@ const store = new Vuex.Store({
     selectedLanguages: [],
   },
   getters: {
-    availableLanguages: state => availableLanguages(
-      state.activities,
+    availableLanguages: (state, getters) => availableLanguages(
+      getters.filteredActivities,
     ),
     filteredActivities: state => reduceActivities(
       state.activities,
