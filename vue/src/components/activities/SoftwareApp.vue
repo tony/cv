@@ -16,7 +16,7 @@
       </small></p>
     </div>
     <div slot="right" class="myproject">
-      <a :href="item.project.url" target="_blank" class="activity-title">
+      <a :href="item.project.url" target="_blank" class="activity-title" v-if="item.project.logo">
         <img :v-show="item.project.logo" :src="item.project.logo" class="logo" />
       </a>
       <a :href="item.project.url" target="_blank" class="activity-title">
