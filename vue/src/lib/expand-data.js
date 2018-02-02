@@ -18,7 +18,7 @@ export const expandRelations = (activities, subjects) => {
       case 'Patch':
         if (item.project !== undefined) {
           return Object.assign(
-            item, { project: subjects[item.project] },
+            item, { project: lookupSubjectById(subjects, 'project', item.project) },
           );
         }
         return item;
