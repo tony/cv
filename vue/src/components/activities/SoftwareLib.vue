@@ -18,6 +18,8 @@
     <div slot="right" class="myproject">
       <a :href="item.project.url" target="_blank" class="activity-title">
         <img :v-show="item.project.logo" :src="item.project.logo" class="logo" />
+      </a>
+      <a :href="item.project.url" target="_blank" class="activity-title">
         {{item.title}}
       </a>
     </div>
@@ -43,16 +45,15 @@ export default {
 .activity-title {
   text-align: center;
   font-size: 1.17em;
-  font-weight: bold;
   color: #4a4a4a;
-  margin: 0 auto;
-  display: inline-block;
+  margin: 0 auto 1em auto;
+  display: block;
 }
 
 img.logo {
   width: 200px;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 a {
