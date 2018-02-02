@@ -92,7 +92,17 @@ function expandRelations(items) {
           );
         }
         return item;
-      case 'MyProject':
+      case 'SoftwareApp':
+        if (item.project !== undefined) {
+          return Object.assign(
+            item,
+            {
+              project: lookupSubjectById(initialSubjects, 'project', item.project),
+            },
+          );
+        }
+        return item;
+      case 'SoftwareLib':
         if (item.project !== undefined) {
           return Object.assign(
             item,
@@ -115,8 +125,12 @@ const activityTypes = [
     component_name: 'Patch',
   },
   {
-    name: 'My Projects',
-    component_name: 'MyProject',
+    name: 'Applications',
+    component_name: 'SoftwareApp',
+  },
+  {
+    name: 'Libraries',
+    component_name: 'SoftwareLib',
   },
 ];
 

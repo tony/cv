@@ -14,7 +14,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { Patch, Kudo, Work, Achievement, MyProject, Presentation } from './components/activities';
+import { Patch, Kudo, Work, Achievement, SoftwareApp, SoftwareLib, Presentation } from './components/activities';
 
 export default {
   name: 'App',
@@ -23,7 +23,8 @@ export default {
     Kudo,
     Work,
     Achievement,
-    MyProject,
+    SoftwareApp,
+    SoftwareLib,
     Presentation,
   },
   computed: mapGetters([

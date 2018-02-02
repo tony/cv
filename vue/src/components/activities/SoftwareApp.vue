@@ -1,7 +1,7 @@
 <template>
   <Row>
     <div slot="left">
-      <h2>My Project</h2>
+      <h2>Application</h2>
       <div class="languages">
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
@@ -10,8 +10,8 @@
 
       <br />
       <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="repo" label="Submitted"></octicon>
-        Submitted {{item.created_date | moment("from", "now") }}
+        <octicon name="repo" label="Created"></octicon>
+        Created {{item.created_date | moment("from", "now") }}
         ({{item.created_date}})
       </small></p>
     </div>
@@ -29,7 +29,7 @@
 import Row from '../Row';
 
 export default {
-  name: 'MyProject',
+  name: 'SoftwareApp',
   components: { Row },
   props: ['item', 'opts'],
 };

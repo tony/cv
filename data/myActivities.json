@@ -1,14 +1,14 @@
 [
   {
     "id": 20000,
-    "component": "MyProject",
+    "component": "SoftwareApp",
     "created_date": "2013-01-01",
     "title": "Created the tmuxp project",
     "project": 10000
   },
   {
     "id": 20001,
-    "component": "MyProject",
+    "component": "SoftwareLib",
     "created_date": "2013-01-01",
     "title": "Created the libtmux project",
     "project": 10001
