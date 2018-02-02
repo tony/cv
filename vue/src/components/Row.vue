@@ -37,4 +37,10 @@ export default {
   padding-right: .75em;
   white-space: nowrap;
 }
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
