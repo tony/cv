@@ -57,14 +57,11 @@ const filters = {
   'Hide Unmerged Contributions': filterUnmerged,
 };
 
-function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
+function reduceActivities(vItems, selActivityTypes, selFilters) {
   // only show selected activity types
   let items = vItems.filter(
     vItem => selActivityTypes.map(sA => sA.component_name).includes(vItem.component),
   );
-  if (selSubjects && selSubjects.length) {
-    items = items.filter(item => selSubjects.find(s => s.id === item.project.id));
-  }
 
   selFilters.forEach((filterName) => {
     items = items.filter(filters[filterName]);
@@ -82,14 +79,22 @@ const store = new Vuex.Store({
     selectedFilters: null,
   },
   getters: {
-    filteredActivities: state => filterActivityTypes(
+    filteredActivities: state => reduceActivities(
       state.activities,
       state.selectedActivityTypes,
       state.selectedFilters,
       state.selectedSubjects,
     ),
+    filteredActivitiesMinusProjects: (state, getters) => {
+      if (state.selectedSubjects && state.selectedSubjects.length) {
+        return getters.filteredActivities.filter(
+          item => state.selectedSubjects.find(s => s.id === item.project.id),
+        );
+      }
+      return getters.filteredActivities;
+    },
     sortedActivities: (state, getters) => (
-      getters.filteredActivities.sort(
+      getters.filteredActivitiesMinusProjects.sort(
         (activity1, activity2) => (
           moment(activity2.created_date).diff(moment(activity1.created_date))
         ),
