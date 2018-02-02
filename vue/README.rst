@@ -32,6 +32,28 @@ information in one request.
 
 .. _graphql: http://graphql.org/
 
+Why?
+----
+
+Due to my atypical startup / open source background, I have work peppered across
+the internet that's substantive. Typical resumes don't fit me well.
+
+But most of all, I wanted to create a comparison of Vue vs React (in the
+same spirit as my `Django vs Flask`_ article.)
+
+.. _Django vs Flask: https://devel.tech/features/django-vs-flask/
+
+I deliberately swore off front-end JS a few years back, and tried to stay
+away from it as much as I could. Now I'm coming back and want to deeply
+analyze the productivity, scalability, and performance of them before I
+make a final pick.
+
+Ultimately, I plan to create two CV's with the identical UX and (to the
+best extent possible) filtering algorithms. The reason for this is I want
+to benchmark a medium-sized application in Vue and React, with a few
+functional tests, but then also with a "stop watch" type thing for how
+long it takes to paint to the screen side-by-side.
+
 Install and build
 -----------------
 
@@ -82,6 +104,16 @@ Moving forward
 
 With GitHub's new API, it may be lot easier to reintroduce live browser
 queries to API.
+
+*Re: Optimizing getters/reducers*
+
+The code to filter (as of 2018-02-01) is not efficient. I don't intend on
+optimizing or restructuring the data until the very end when the
+structures are set in stone. Refactoring data structures and flow is costly, and the only
+real way to test someone's chops in this respect is in the final stages.
+A wise programmer isn't going to try to play a prophet and guess what the
+data layout will be like in early stages, premature optimization is the
+root of all evil.
 
 .. _vue.js: https://vuejs.org/
 .. _vuex: https://vuex.vuejs.org/en/
