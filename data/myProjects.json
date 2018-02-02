@@ -88,5 +88,19 @@
     "issues_url": "https://github.com/cihai/unihan-db/issues",
     "languages": ["Python"],
     "logo": "https://unihan-db.git-pull.com/en/latest/_static/img/cihai.svg"
+  },
+  {
+    "id": 10006,
+    "type": "project",
+    "name": "django-slugify-processor",
+    "url": "https://django-slugify-processor.devel.tech/",
+    "repo_url": "https://github.com/develtech/django-slugify-processor/",
+    "docs_url": "https://django-slugify-processor.devel.tech",
+    "api_url": "https://django-slugify-processor.devel.tech/en/latest/api.html",
+    "ci_url": "https://travis-ci.org/develtech/django-slugify-processor",
+    "coverage_url": "https://codecov.io/gh/develtech/django-slugify-processor",
+    "changelog_url": "https://django-slugify-processor.devel.tech/en/latest/history.html",
+    "issues_url": "https://github.com/develtech/django-slugify-processor/issues",
+    "languages": ["Python"]
   }
 ]

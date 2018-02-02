@@ -40,5 +40,12 @@
     "created_date": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
     "project": 10005
+  },
+  {
+    "id": 20004,
+    "component": "SoftwareLib",
+    "created_date": "2017-11-26",
+    "title": "Created a django package, django-slugify-processor",
+    "project": 10006
   }
 ]
