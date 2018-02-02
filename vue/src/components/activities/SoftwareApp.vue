@@ -59,4 +59,11 @@ a {
   color: #4a4a4a;
   text-decoration: none;
 }
+
+.align-octicon .octicon {
+  vertical-align: text-top;
+}
+.align-octicon-bottom .octicon {
+  vertical-align: text-baseline;
+}
 </style>
