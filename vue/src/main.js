@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
-import Vuex from 'vuex';
 import Octicon from 'vue-octicon/components/Octicon';
 import 'vue-octicon/icons/diff';
 import 'vue-octicon/icons/mark-github';
@@ -27,6 +26,9 @@ import githubProjects from './data/scraped/gh_projects.json';
 import myActivities from './data/myActivities.json';
 import myProjects from './data/myProjects.json';
 
+import store from './store';
+import { LOAD_INITIAL_DATA } from './store/mutation-types';
+
 const activities = [
   ...githubPatches,
   ...myActivities,
@@ -39,7 +41,6 @@ const initialSubjects = [
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuex);
 Vue.use(require('vue-moment'));
 
 Vue.component('octicon', Octicon);
@@ -128,56 +129,6 @@ function expandRelations(items) {
   return items;
 }
 
-const activityTypes = [
-  {
-    name: 'Open Source Contributions',
-    component_name: 'Patch',
-  },
-  {
-    name: 'Applications',
-    component_name: 'SoftwareApp',
-  },
-  {
-    name: 'Libraries',
-    component_name: 'SoftwareLib',
-  },
-];
-
-function availableActivityTypes(v) {
-  return [
-    ...new Set(v.map(item => activityTypes.find(vt => vt.component_name === item.component))),
-  ];
-}
-
-function availableSubjects(subjects, availableActivities) {
-  /**
-   * Return available Subject targets, minus ones that are filtered out.
-   */
-  return [
-    ...new Set(availableActivities.map(item => subjects.find(s => s.id === item.project.id))),
-  ];
-}
-
-
-const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note)/);
-const filterIgnoreTypos = v => !filterTypos(v);
-
-const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge)/);
-const filterIgnoreDocs = v => !filterDocs(v);
-
-const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs)/);
-const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
-
-const filterUnmerged = v => ('accepted_date' in v ? v.accepted_date : true);
-
-
-const filters = {
-  'Hide Spelling Contributions': filterIgnoreTypos,
-  'Hide Documentation Contributions': filterIgnoreDocs,
-  'Hide Code Style Contributions': filterIgnoreCodeStyle,
-  'Hide Unmerged Contributions': filterUnmerged,
-};
-
 const defaultSelectedFilters = [
   'Hide Spelling Contributions',
   'Hide Documentation Contributions',
@@ -185,73 +136,20 @@ const defaultSelectedFilters = [
   'Hide Unmerged Contributions',
 ];
 
-function filterActivityTypes(vItems, selActivityTypes, selFilters, selSubjects) {
-  // only show selected activity types
-  let items = vItems.filter(
-    vItem => selActivityTypes.map(sA => sA.component_name).includes(vItem.component),
-  );
-  if (selSubjects && selSubjects.length) {
-    items = items.filter(item => selSubjects.find(s => s.id === item.project.id));
-  }
-
-  selFilters.forEach((filterName) => {
-    items = items.filter(filters[filterName]);
-  });
-  return items;
-}
-
 // Resolve ID to object relationships so they're available in data
 const initialActivities = expandRelations(activities);
 
-const store = new Vuex.Store({
-  state: {
-    count: 0,
+// Load initial data
+store.commit(
+  LOAD_INITIAL_DATA,
+  {
     activities: initialActivities,
     subjects: initialSubjects,
-    selectedActivityTypes: availableActivityTypes(initialActivities),
+    selectedActivityTypes: initialActivities,
     selectedSubjects: null,
     selectedFilters: defaultSelectedFilters,
   },
-  getters: {
-    filteredActivities: state => filterActivityTypes(
-      state.activities,
-      state.selectedActivityTypes,
-      state.selectedFilters,
-      state.selectedSubjects,
-    ),
-    subjects: state => state.subjects, // subject items
-    availableSubjectTypes: state => [
-      ...new Set(state.subjects.map(item => item)),
-    ],
-    availableSubjects: (state, getters) => availableSubjects(
-      state.subjects, getters.filteredActivities,
-    ),
-    availableActivityTypes: state => availableActivityTypes(state.activities),
-    availableFilters: () => Object.keys(filters),
-  },
-  actions: {
-    updateSelectedActivityTypeAction({ commit }, value) {
-      commit('updateSelectedActivityType', value);
-    },
-    updateSelectedSubjectsAction({ commit }, value) {
-      commit('updateSelectedSubjects', value);
-    },
-    updateSelectedFiltersAction({ commit }, value) {
-      commit('updateSelectedFilters', value);
-    },
-  },
-  mutations: {
-    updateSelectedActivityType(state, value) {
-      state.selectedActivityTypes = value;
-    },
-    updateSelectedSubjects(state, value) {
-      state.selectedSubjects = value;
-    },
-    updateSelectedFilters(state, value) {
-      state.selectedFilters = value;
-    },
-  },
-});
+);
 
 /* eslint-disable no-new */
 new Vue({
