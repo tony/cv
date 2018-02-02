@@ -61,5 +61,25 @@
     "created_date": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
     "project": 10007
+  },
+  {
+    "id": 30000,
+    "component": "Patch",
+    "created_date": "2007-04-12",
+    "accepted_date": "2007-06-18",
+    "qa_url": "https://www.drupal.org/project/event/issues/143542",
+    "diff_url": "https://www.drupal.org/files/issues/event_32.patch",
+    "title": "Improving RSS feeds",
+    "project": 20000
+  },
+  {
+    "id": 30001,
+    "component": "Patch",
+    "created_date": "2008-01-23",
+    "accepted_date": "2008-02-06",
+    "qa_url": "https://www.drupal.org/project/drupal/issues/213172",
+    "diff_url": "https://www.drupal.org/files/issues/color_imageless_0.patch",
+    "title": "Eliminate Color.module base_image requirement on 6.0",
+    "project": 20001
   }
 ]

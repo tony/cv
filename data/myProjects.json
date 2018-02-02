@@ -150,5 +150,29 @@
     "browse_code_url": "https://github.com/tony/libvcs/tree/master/libvcs",
     "languages": ["Python"],
     "logo": "https://libvcs.git-pull.com/en/latest/_static/img/libvcs.svg"
+  },
+  {
+    "id": 20000,
+    "type": "project",
+    "name": "Drupal Events",
+    "url": "https://www.drupal.org/project/event",
+    "repo_url": "https://cgit.drupalcode.org/event",
+    "docs_url": "https://www.drupal.org/documentation/modules/event",
+    "issues_url": "https://www.drupal.org/project/issues/event?categories=All",
+    "changelog_url": "https://www.drupal.org/node/3238/commits",
+    "browse_code_url": "https://cgit.drupalcode.org/event",
+    "languages": ["PHP"]
+  },
+  {
+    "id": 20001,
+    "type": "project",
+    "name": "Drupal",
+    "url": "https://www.drupal.org/project/drupal",
+    "repo_url": "https://cgit.drupalcode.org/drupal",
+    "docs_url": "https://www.drupal.org/documentation/modules/drupal",
+    "issues_url": "https://www.drupal.org/project/issues/drupal?categories=All",
+    "changelog_url": "https://www.drupal.org/list-changes/drupal",
+    "browse_code_url": "https://cgit.drupalcode.org/drupal",
+    "languages": ["PHP"]
   }
 ]
