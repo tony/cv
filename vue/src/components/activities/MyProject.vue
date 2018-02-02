@@ -15,13 +15,11 @@
         ({{item.created_date}})
       </small></p>
     </div>
-    <div slot="right">
-      <h3 class="align-octicon-bottom">
-        <a :href="item.project.url" target="_blank" class="activity-title">
-          <img :v-show="item.project.logo" :src="item.project.logo" class="logo" />
-          {{item.title}}
-        </a>
-      </h3>
+    <div slot="right" class="myproject">
+      <a :href="item.project.url" target="_blank" class="activity-title">
+        <img :v-show="item.project.logo" :src="item.project.logo" class="logo" />
+        {{item.title}}
+      </a>
     </div>
   </Row>
 </template>
@@ -38,8 +36,17 @@ export default {
 </script>
 
 <style scoped>
+.myproject {
+  text-align: center;
+}
+
 .activity-title {
   text-align: center;
+  font-size: 1.17em;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 img.logo {
