@@ -136,4 +136,7 @@ export default {
 .selectedFilters .multiselect__tag-icon:hover:after {
   color: white;
 }
+#example-3 {
+  margin-top: .5rem;
+}
 </style>
