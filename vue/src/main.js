@@ -25,9 +25,16 @@ import githubPatches from './data/scraped/gh_patches.json';
 import githubProjects from './data/scraped/gh_projects.json';
 import myActivities from './data/myActivities.json';
 import myProjects from './data/myProjects.json';
-
+import validateSubjects from './lib/precheck-data';
+import { expandRelations } from './lib/expand-data';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
+
+Vue.config.productionTip = false;
+
+Vue.use(require('vue-moment'));
+
+Vue.component('octicon', Octicon);
 
 const activities = [
   ...githubPatches,
@@ -39,95 +46,7 @@ const initialSubjects = [
   ...myProjects,
 ];
 
-Vue.config.productionTip = false;
-
-Vue.use(require('vue-moment'));
-
-Vue.component('octicon', Octicon);
-
-// subject
-// project, 'projects'
-// company, 'companies'
-// publication, 'publications'
-// club, 'clubs'
-
-// verb / actions
-// kudo, 'kudos'; // hn/reddit/blog/tweet/review
-// patch, 'patches' //  gh, bugzilla
-// status, 'status // role
-// achievement, 'achievements  // exit, cert
-// event, 'achievements' // released, started
-// presentation = 'presentations'
-
-// adjective
-// language, 'languages'
-// role, 'roles' // employee, volunteere, president
-
-function validateProject(item) {
-  console.assert('name' in item, item, 'name not in item');
-  console.assert('url' in item, item, 'url not in item');
-  console.assert('repo_url' in item, item, 'repo_url not in item');
-}
-
-function validateSubjects(list) {
-  list.forEach((item) => {
-    switch (item.type) {
-      case 'project':
-        validateProject(item);
-        break;
-      default:
-        throw Error(`invalid type ${item.type} for ${item}`);
-    }
-  });
-}
 validateSubjects(initialSubjects);
-
-function lookupSubjectById(subjects, type, id) {
-  return subjects.find(sub => sub.type === type && sub.id === id);
-}
-
-function expandRelations(items) {
-  /**
-   * Expands primary key/ID relations with other objects.
-   *
-   * @param {Array, <Object>} items
-   * @return {Void}
-   */
-  items.map((item) => {
-    switch (item.component) {
-      case 'Patch':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item, { project: initialSubjects[item.project] },
-          );
-        }
-        return item;
-      case 'SoftwareApp':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item,
-            {
-              project: lookupSubjectById(initialSubjects, 'project', item.project),
-            },
-          );
-        }
-        return item;
-      case 'SoftwareLib':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item,
-            {
-              project: lookupSubjectById(initialSubjects, 'project', item.project),
-            },
-          );
-        }
-        return item;
-      default:
-        return item;
-    }
-  });
-  return items;
-}
 
 const defaultSelectedFilters = [
   'Hide Spelling Contributions',
@@ -137,7 +56,7 @@ const defaultSelectedFilters = [
 ];
 
 // Resolve ID to object relationships so they're available in data
-const initialActivities = expandRelations(activities);
+const initialActivities = expandRelations(activities, initialSubjects);
 
 // Load initial data
 store.commit(

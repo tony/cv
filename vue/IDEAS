@@ -129,3 +129,21 @@ Shouts
 - Fix project filtering, picking 1 filter for a project seems
   to filter all of them, only filter by special filters
   and activity types
+- old structure notes:
+  // subject
+  // project, 'projects'
+  // company, 'companies'
+  // publication, 'publications'
+  // club, 'clubs'
+
+  // verb / actions
+  // kudo, 'kudos'; // hn/reddit/blog/tweet/review
+  // patch, 'patches' //  gh, bugzilla
+  // status, 'status // role
+  // achievement, 'achievements  // exit, cert
+  // event, 'achievements' // released, started
+  // presentation = 'presentations'
+
+  // adjective
+  // language, 'languages'
+  // role, 'roles' // employee, volunteere, president
