@@ -21,14 +21,9 @@ import 'vue-octicon/icons/git-pull-request';
 
 import App from './App';
 import router from './router';
-import githubPatches from './data/scraped/gh_patches.json';
-import githubProjects from './data/scraped/gh_projects.json';
-import myActivities from './data/myActivities.json';
-import myProjects from './data/myProjects.json';
-import validateSubjects from './lib/precheck-data';
-import { expandRelations } from './lib/expand-data';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
+import { ACTIVITIES, SUBJECTS, DEFAULT_SELECTED_FILTERS } from './constants';
 
 Vue.config.productionTip = false;
 
@@ -36,37 +31,15 @@ Vue.use(require('vue-moment'));
 
 Vue.component('octicon', Octicon);
 
-const activities = [
-  ...githubPatches,
-  ...myActivities,
-];
-
-const initialSubjects = [
-  ...githubProjects,
-  ...myProjects,
-];
-
-validateSubjects(initialSubjects);
-
-const defaultSelectedFilters = [
-  'Hide Spelling Contributions',
-  'Hide Documentation Contributions',
-  'Hide Code Style Contributions',
-  'Hide Unmerged Contributions',
-];
-
-// Resolve ID to object relationships so they're available in data
-const initialActivities = expandRelations(activities, initialSubjects);
-
 // Load initial data
 store.commit(
   LOAD_INITIAL_DATA,
   {
-    activities: initialActivities,
-    subjects: initialSubjects,
-    selectedActivityTypes: initialActivities,
+    activities: ACTIVITIES,
+    subjects: SUBJECTS,
+    selectedActivityTypes: ACTIVITIES,
     selectedSubjects: null,
-    selectedFilters: defaultSelectedFilters,
+    selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );
 
