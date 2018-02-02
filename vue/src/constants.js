@@ -1,4 +1,4 @@
-import validateSubjects from './lib/precheck-data';
+import { validateSubjects } from './lib/precheck-data';
 import { expandRelations } from './lib/expand-data';
 import githubPatches from './data/scraped/gh_patches.json';
 import githubProjects from './data/scraped/gh_projects.json';
