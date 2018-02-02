@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import moment from 'moment';
-
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
@@ -96,7 +94,7 @@ const store = new Vuex.Store({
     sortedActivities: (state, getters) => (
       getters.filteredActivitiesMinusProjects.sort(
         (activity1, activity2) => (
-          moment(activity2.created_date).diff(moment(activity1.created_date))
+          Vue.moment(activity2.created_date).diff(Vue.moment(activity1.created_date))
         ),
       )
     ),
