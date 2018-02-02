@@ -116,5 +116,39 @@
     "browse_code_tests_url": "https://github.com/develtech/django-slugify-processor/tree/master/tests",
     "browse_code_url": "https://github.com/develtech/django-slugify-processor/tree/master/django_slugify_processor",
     "languages": ["Python"]
+  },
+  {
+    "id": 10007,
+    "type": "project",
+    "name": "vcspull",
+    "url": "https://vcspull.git-pull.com/",
+    "repo_url": "https://github.com/tony/vcspull/",
+    "docs_url": "https://vcspull.git-pull.com",
+    "api_url": "https://vcspull.git-pull.com/en/latest/api.html",
+    "ci_url": "https://travis-ci.org/tony/vcspull",
+    "coverage_url": "https://codecov.io/gh/tony/vcspull",
+    "changelog_url": "https://vcspull.git-pull.com/en/latest/history.html",
+    "issues_url": "https://github.com/tony/vcspull/issues",
+    "browse_code_tests_url": "https://github.com/tony/vcspull/tree/master/tests",
+    "browse_code_url": "https://github.com/tony/vcspull/tree/master/vcspull",
+    "languages": ["Python"],
+    "logo": "https://vcspull.git-pull.com/en/latest/_static/img/vcspull.svg"
+  },
+  {
+    "id": 10008,
+    "type": "project",
+    "name": "libvcs",
+    "url": "https://libvcs.git-pull.com/",
+    "repo_url": "https://github.com/tony/libvcs/",
+    "docs_url": "https://libvcs.git-pull.com",
+    "api_url": "https://libvcs.git-pull.com/en/latest/api.html",
+    "ci_url": "https://travis-ci.org/tony/libvcs",
+    "coverage_url": "https://codecov.io/gh/tony/libvcs",
+    "changelog_url": "https://libvcs.git-pull.com/en/latest/history.html",
+    "issues_url": "https://github.com/tony/libvcs/issues",
+    "browse_code_tests_url": "https://github.com/tony/libvcs/tree/master/tests",
+    "browse_code_url": "https://github.com/tony/libvcs/tree/master/libvcs",
+    "languages": ["Python"],
+    "logo": "https://libvcs.git-pull.com/en/latest/_static/img/libvcs.svg"
   }
 ]
