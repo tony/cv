@@ -27,25 +27,34 @@
         <a v-show="item.project.url" :href="item.project.url" target="_blank">Website</a>
         <template v-if="item.project.url">|</template>
         <a v-show="item.project.repo_url" :href="item.project.repo_url" target="_blank">GitHub</a>
-        <template v-if="item.project.repo_url">|</template>
+        <template v-if="item.project.docs_url">|</template>
         <a v-show="item.project.docs_url" :href="item.project.docs_url" target="_blank">Docs</a>
         <template v-if="item.project.docs_url">|</template>
         <a v-show="item.project.api_url" :href="item.project.api_url" target="_blank">API</a>
-        <template v-if="item.project.api_url">|</template>
+        <template v-if="item.project.coverage_url">|</template>
         <a v-show="item.project.coverage_url" :href="item.project.coverage_url" target="_blank">
           Coverage
         </a>
-        <template v-if="item.project.coverage_url">|</template>
-        CI
         <template v-if="item.project.ci_url">|</template>
-        Browse Code
-        <template v-if="item.project.browse_code_tests_url">(</template>
-          Tests
-        <template v-if="item.project.browse_code_tests_url">)</template>
+        <a v-show="item.project.ci_url" :href="item.project.ci_url" target="_blank">CI</a>
         <template v-if="item.project.browse_code_url">|</template>
-        Changelog
+        <a v-show="item.project.browse_code_url"
+          :href="item.project.browse_code_url" target="_blank">Browse Code</a>
+        <template v-if="item.project.browse_code_tests_url">(</template>
+          <a v-show="item.project.browse_code_tests_url"
+            :href="item.project.browse_code_tests_url" target="_blank">Tests</a>
+        <template v-if="item.project.browse_code_tests_url">)</template>
+        <template v-if="item.project.issues_url">|</template>
+        <a v-show="item.project.issues_url"
+            :href="item.project.issues_url" target="_blank">
+          Issues
+        </a>
+        <template v-if="item.project.changelog_url">|</template>
+        <a v-show="item.project.changelog_url"
+            :href="item.project.changelog_url" target="_blank">
+          Changelog
+        </a>
       </small>
-
     </div>
   </Row>
 </template>

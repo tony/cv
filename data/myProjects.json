@@ -14,6 +14,12 @@
     "name": "libtmux",
     "url": "https://libtmux.git-pull.com/",
     "repo_url": "https://github.com/tony/libtmux/",
+    "docs_url": "https://libtmux.git-pull.com",
+    "api_url": "https://libtmux.git-pull.com/en/latest/api.html",
+    "ci_url": "https://travis-ci.org/tony/libtmux",
+    "coverage_url": "https://codecov.io/gh/tony/libtmux",
+    "changelog_url": "https://libtmux.git-pull.com/en/latest/history.html",
+    "issues_url": "https://github.com/tony/libtmux/issues",
     "languages": ["Python"],
     "logo": "https://libtmux.git-pull.com/en/latest/_static/img/libtmux.svg"
   },
