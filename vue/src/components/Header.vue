@@ -12,7 +12,7 @@
         <multiselect
           :search="true"
           :multiple="true"
-          placeholder="Filter by project / company"
+          placeholder="Filter by Software Project(s), Company/Companies, Website(s), and Publication(s)"
           label="name"
           track-by="name"
           id="subjectFilter"
@@ -31,7 +31,7 @@
         <multiselect
           :search="true"
           :multiple="true"
-          placeholder="Filter by event"
+          placeholder="Filter by Activity Type(s)"
           id="activityFilter"
           track-by="name"
           :options="availableActivityTypes"
@@ -44,7 +44,7 @@
         <multiselect
           :search="true"
           :multiple="true"
-          placeholder="Filter by languages"
+          placeholder="Filter by Programming Language(s)"
           id="languageFilter"
           :options="availableLanguages"
           :value="selectedLanguages"

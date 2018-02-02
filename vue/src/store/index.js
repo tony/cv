@@ -75,7 +75,7 @@ function reduceActivities(vItems, selActivityTypes, selFilters, selLanguages) {
     items = items.filter(filters[filterName]);
   });
 
-  if (selLanguages) {
+  if (selLanguages.length) {
     items = items.filter((item) => {
       if (!item.project.languages) {
         return false;
@@ -94,7 +94,7 @@ const store = new Vuex.Store({
     selectedActivityTypes: null,
     selectedSubjects: null,
     selectedFilters: null,
-    selectedLanguages: null,
+    selectedLanguages: [],
   },
   getters: {
     availableLanguages: state => availableLanguages(
@@ -150,14 +150,7 @@ const store = new Vuex.Store({
       state.activities = data.activities;
       state.subjects = data.subjects;
       state.selectedActivityTypes = availableActivityTypes(data.activities);
-      state.selectedSubjects = null;
       state.selectedFilters = data.selectedFilters;
-      state.selectedLanguages = availableLanguages(reduceActivities(
-        state.activities,
-        state.selectedActivityTypes,
-        state.selectedFilters,
-        null,
-      ));
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;
