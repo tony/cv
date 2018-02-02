@@ -139,4 +139,7 @@ export default {
 #example-3 {
   margin-top: .5rem;
 }
+.roundedOne {
+  margin: 0 .5rem;
+}
 </style>
