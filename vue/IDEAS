@@ -122,3 +122,6 @@ Shouts
 - Software Libraries 'software_library'
 - Sample Code  'sample_code'
 - Websites 'website'
+- For projects link to
+  Repo URL, Docs_url, API_url, license,
+  Travis_url, codecov_url
