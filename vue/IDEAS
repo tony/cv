@@ -126,3 +126,6 @@ Shouts
   Repo URL, Docs_url, API_url, license,
   Travis_url, codecov_url, change log
 - Sort by date, type, alphabet
+- Fix project filtering, picking 1 filter for a project seems
+  to filter all of them, only filter by special filters
+  and activity types
