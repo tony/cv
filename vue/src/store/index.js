@@ -18,6 +18,10 @@ const activityTypes = [
     name: 'Libraries',
     component_name: 'SoftwareLib',
   },
+  {
+    name: 'Work',
+    component_name: 'Work',
+  },
 ];
 
 function availableActivityTypes(v) {

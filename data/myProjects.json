@@ -180,55 +180,63 @@
     "type": "project",
     "name": "The Tao of tmux",
     "url": "https://leanpub.com/the-tao-of-tmux",
-    "logo": "/static/img/taooftmux.png"
+    "logo": "/static/img/taooftmux.png",
+    "languages": ["Markdown", "ShellScript"]
   },
   {
     "id": 40000,
     "type": "project",
     "name": "devel.tech",
     "url": "https://devel.tech/",
-    "logo": "/static/img/develtech.png"
+    "logo": "/static/img/develtech.png",
+    "languages": ["Python", "JavaScript"]
   },
   {
     "id": 40001,
     "type": "project",
     "name": "HSK FlashCards",
     "url": "https://www.hskflashcards.com/",
-    "logo": "/static/img/hsk.png"
+    "logo": "/static/img/hsk.png",
+    "languages": ["Python", "JavaScript"]
   },
   {
     "id": 40002,
     "type": "project",
     "name": "Wengu",
     "url": "https://wengu.tartarie.com/",
-    "logo": "/static/img/wengu.png"
+    "logo": "/static/img/wengu.png",
+    "languages": ["PHP"]
   },
   {
     "id": 50000,
     "type": "project",
     "name": "Buzzr",
     "url": "https://buzzr.com",
-    "logo": "/static/img/buzzr.jpg"
+    "logo": "/static/img/buzzr.jpg",
+    "languages": ["PHP", "JavaScript"]
   },
   {
     "id": 50001,
     "type": "project",
     "name": "Social Amp",
     "url": "https://socialamp.com",
-    "logo": "/static/img/socialamp.png"
+    "logo": "/static/img/socialamp.png",
+    "languages": ["PHP", "JavaScript"]
   },
   {
     "id": 50002,
     "type": "project",
     "name": "Merkle",
     "url": "https://merkleinc.com",
-    "logo": "/static/img/merkle.png"
+    "logo": "/static/img/merkle.png",
+    "languages": ["PHP", "JavaScript"]
   },
   {
     "id": 50003,
     "type": "project",
     "name": "Boostable",
     "url": "https://app.boostable.com",
-    "logo": "/static/img/boostable.png"
+    "logo": "/static/img/boostable.png",
+    "languages": ["JavaScript", "Python"]
   }
 ]

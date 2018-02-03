@@ -42,6 +42,16 @@ export const expandRelations = (activities, subjects) => {
           );
         }
         return item;
+      case 'Work':
+        if (item.project !== undefined) {
+          return Object.assign(
+            item,
+            {
+              project: lookupSubjectById(subjects, 'project', item.project),
+            },
+          );
+        }
+        return item;
       default:
         return item;
     }
