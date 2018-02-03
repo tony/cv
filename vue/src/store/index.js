@@ -70,10 +70,14 @@ const filters = {
 };
 
 function reduceActivities(vItems, selActivityTypes, selFilters) {
+  let items = vItems;
+
   // only show selected activity types
-  let items = vItems.filter(
-    vItem => selActivityTypes.map(sA => sA.component_name).includes(vItem.component),
-  );
+  if (selActivityTypes.length) {
+    items = items.filter(
+      i => selActivityTypes.map(sA => sA.component_name).includes(i.component),
+    );
+  }
 
   selFilters.forEach((filterName) => {
     items = items.filter(filters[filterName]);
@@ -87,7 +91,7 @@ const store = new Vuex.Store({
     count: 0,
     activities: null,
     subjects: null,
-    selectedActivityTypes: null,
+    selectedActivityTypes: [],
     selectedSubjects: null,
     selectedFilters: null,
     selectedLanguages: [],
