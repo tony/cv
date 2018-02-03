@@ -174,5 +174,61 @@
     "changelog_url": "https://www.drupal.org/list-changes/drupal",
     "browse_code_url": "https://cgit.drupalcode.org/drupal",
     "languages": ["PHP"]
+  },
+  {
+    "id": 30000,
+    "type": "project",
+    "name": "The Tao of tmux",
+    "url": "https://leanpub.com/the-tao-of-tmux",
+    "logo": "./static/img/taooftmux.png"
+  },
+  {
+    "id": 40000,
+    "type": "project",
+    "name": "devel.tech",
+    "url": "https://devel.tech/",
+    "logo": "./static/img/develtech.png"
+  },
+  {
+    "id": 40001,
+    "type": "project",
+    "name": "HSK FlashCards",
+    "url": "https://www.hskflashcards.com/",
+    "logo": "./static/img/hsk.png"
+  },
+  {
+    "id": 40002,
+    "type": "project",
+    "name": "Wengu",
+    "url": "https://wengu.tartarie.com/",
+    "logo": "./static/img/wengu.png"
+  },
+  {
+    "id": 50000,
+    "type": "project",
+    "name": "Buzzr",
+    "url": "https://buzzr.com",
+    "logo": "./static/img/buzzr.jpg"
+  },
+  {
+    "id": 50001,
+    "type": "project",
+    "name": "Social Amp",
+    "url": "https://socialamp.com",
+    "logo": "./static/img/socialamp.png"
+  },
+  {
+    "id": 50002,
+    "type": "project",
+    "name": "Merkle",
+    "url": "https://merkleinc.com",
+    "logo": "./static/merkle.png"
+  },
+  {
+    "id": 50003,
+    "type": "project",
+    "name": "Boostable",
+    "url": "https://boostable.com",
+    "logo": "./static/boostable.png"
   }
 ]
