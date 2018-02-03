@@ -219,7 +219,8 @@
     "id": 50001,
     "type": "project",
     "name": "Social Amp",
-    "url": "https://socialamp.com",
+    "url": "https://web.archive.org/web/20160302231819/http://www.socialamp.com:80/",
+    "old_url": "https://socialamp.com",
     "logo": "/static/img/socialamp.png",
     "languages": ["PHP", "JavaScript"]
   },
@@ -227,7 +228,7 @@
     "id": 50002,
     "type": "project",
     "name": "Merkle",
-    "url": "https://merkleinc.com",
+    "url": "https://www.merkleinc.com",
     "logo": "/static/img/merkle.png",
     "languages": ["PHP", "JavaScript"]
   },
@@ -235,7 +236,8 @@
     "id": 50003,
     "type": "project",
     "name": "Boostable",
-    "url": "https://app.boostable.com",
+    "url": "https://web.archive.org/web/20150727124553/https://www.boostable.com/",
+    "old_url": "https://boostable.com",
     "logo": "/static/img/boostable.png",
     "languages": ["JavaScript", "Python"]
   }
