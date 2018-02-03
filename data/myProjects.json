@@ -180,55 +180,55 @@
     "type": "project",
     "name": "The Tao of tmux",
     "url": "https://leanpub.com/the-tao-of-tmux",
-    "logo": "./assets/img/taooftmux.png"
+    "logo": "/static/img/taooftmux.png"
   },
   {
     "id": 40000,
     "type": "project",
     "name": "devel.tech",
     "url": "https://devel.tech/",
-    "logo": "./assets/img/develtech.png"
+    "logo": "/static/img/develtech.png"
   },
   {
     "id": 40001,
     "type": "project",
     "name": "HSK FlashCards",
     "url": "https://www.hskflashcards.com/",
-    "logo": "./assets/img/hsk.png"
+    "logo": "/static/img/hsk.png"
   },
   {
     "id": 40002,
     "type": "project",
     "name": "Wengu",
     "url": "https://wengu.tartarie.com/",
-    "logo": "./assets/img/wengu.png"
+    "logo": "/static/img/wengu.png"
   },
   {
     "id": 50000,
     "type": "project",
     "name": "Buzzr",
     "url": "https://buzzr.com",
-    "logo": "./assets/img/buzzr.jpg"
+    "logo": "/static/img/buzzr.jpg"
   },
   {
     "id": 50001,
     "type": "project",
     "name": "Social Amp",
     "url": "https://socialamp.com",
-    "logo": "./assets/img/socialamp.png"
+    "logo": "/static/img/socialamp.png"
   },
   {
     "id": 50002,
     "type": "project",
     "name": "Merkle",
     "url": "https://merkleinc.com",
-    "logo": "./assets/img/merkle.png"
+    "logo": "/static/img/merkle.png"
   },
   {
     "id": 50003,
     "type": "project",
     "name": "Boostable",
-    "url": "https://boostable.com",
-    "logo": "./assets/img/boostable.png"
+    "url": "https://app.boostable.com",
+    "logo": "/static/img/boostable.png"
   }
 ]
