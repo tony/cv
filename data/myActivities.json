@@ -83,11 +83,21 @@
     "project": 20001
   },
   {
-    "id": 40001,
+    "id": 40000,
     "component": "Work",
     "created_date": "2014-04-01",
     "end_date": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
+    "description": "Node.js / Sail.js -> Django. Stripe integration czar",
     "project": 50003
+  },
+  {
+    "id": 40001,
+    "component": "Work",
+    "created_date": "2017",
+    "end_date": "2019",
+    "title": "Founder and Programmer at devel.tech",
+    "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
+    "project": 40000
   }
 ]

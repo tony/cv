@@ -21,7 +21,9 @@
         {{item.title}}
       </a>
 
+      {{item.description}}
       <small class="bottompad10">
+        <br />
         <a v-show="item.project.url" :href="item.project.url"
          target="_blank" class="align-octicon">
           <octicon name="home" label="Created"></octicon>
