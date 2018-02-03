@@ -59,7 +59,7 @@ export default {
 }
 
 img.logo {
-  width: 200px;
+  max-width: 400px;
   display: block;
   margin: 1em auto;
 }
