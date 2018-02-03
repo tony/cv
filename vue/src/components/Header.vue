@@ -2,8 +2,9 @@
   <div class="header">
     <h1>{{ msg }}</h1>
 
-    <p><em>Friendly reminder: I don't do technical screens. I only seek
-      remote, senior programming roles.
+    <p><em>Friendly reminder:
+      <a href="https://www.git-pull.com/blog/2018/01/technical-screening.html" target="_blank">I don't do technical screens</a>.
+      I only seek remote, senior programming roles.
       I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank">consulting</a> and
     <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
