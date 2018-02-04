@@ -50,36 +50,31 @@ function availableLanguages(availableActivities) {
 }
 
 
-const filterTypos = v => v.title.match(/(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement)/);
-const filterIgnoreTypos = v => !filterTypos(v);
-
-const filterDocs = v => v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-)/);
-const filterIgnoreDocs = v => !filterDocs(v);
-
-const filterCodeStyle = v => v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|travis|Travis|dependency|MANIFEST.in|Pythonic|pythonic)/);
-const filterIgnoreCodeStyle = v => !filterCodeStyle(v);
-
+const filterTypos = v => !v.title.match(/(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement)/);
+const filterDocs = v => !v.title.match(/(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-)/);
+const filterCodeStyle = v => !v.title.match(/(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|travis|Travis|dependency|MANIFEST.in|Pythonic|pythonic)/);
 const filterUnmerged = v => ('accepted_date' in v ? v.accepted_date : true);
 
 
 const filters = {
-  'Hide Spelling Contributions': filterIgnoreTypos,
-  'Hide Documentation Contributions': filterIgnoreDocs,
-  'Hide Code Style Contributions': filterIgnoreCodeStyle,
+  'Hide Spelling Contributions': filterTypos,
+  'Hide Documentation Contributions': filterDocs,
+  'Hide Code Style Contributions': filterCodeStyle,
   'Hide Unmerged Contributions': filterUnmerged,
 };
 
-function reduceActivities(vItems, selActivityTypes, selFilters) {
-  let items = vItems;
+function reduceActivities(state) {
+  const { selectedActivityTypes, selectedFilters } = state;
+  let { activities: items } = state;
 
   // only show selected activity types
-  if (selActivityTypes.length) {
+  if (selectedActivityTypes.length) {
     items = items.filter(
-      i => selActivityTypes.map(sA => sA.component_name).includes(i.component),
+      i => selectedActivityTypes.map(sA => sA.component_name).includes(i.component),
     );
   }
 
-  selFilters.forEach((filterName) => {
+  selectedFilters.forEach((filterName) => {
     items = items.filter(filters[filterName]);
   });
 
@@ -100,11 +95,7 @@ const store = new Vuex.Store({
     availableLanguages: (state, getters) => availableLanguages(
       getters.filteredActivities,
     ),
-    filteredActivities: state => reduceActivities(
-      state.activities,
-      state.selectedActivityTypes,
-      state.selectedFilters,
-    ),
+    filteredActivities: state => reduceActivities(state),
     filteredActivitiesMinusProjects: (state, getters) => {
       let items = getters.filteredActivities;
       if (state.selectedLanguages.length) {
