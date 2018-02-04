@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'Achievement',
-  props: ['item', 'opts'],
+  props: ['item'],
 };
 </script>
 

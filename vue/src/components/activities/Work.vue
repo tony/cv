@@ -1,7 +1,6 @@
 <template>
   <Row>
-    <div slot="left">
-      <h2>Work</h2>
+    <div slot="left"> <h2>Work</h2>
       <div class="languages">
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
@@ -35,7 +34,7 @@ import ImageTitleLinkColumn from '../ImageTitleLinkColumn';
 export default {
   name: 'Work',
   components: { Row, ImageTitleLinkColumn },
-  props: ['item', 'opts'],
+  props: ['item'],
 };
 </script>
 

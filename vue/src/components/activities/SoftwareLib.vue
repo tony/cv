@@ -11,9 +11,3 @@ export default {
   props: ['item'],
 };
 </script>
-
-<style scoped>
-img.logo {
-  width: 200px;
-}
-</style>

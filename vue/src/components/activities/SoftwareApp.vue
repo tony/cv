@@ -2,7 +2,6 @@
   <SoftwareProject :item="item" projectType="Application" />
 </template>
 
-
 <script>
 import SoftwareProject from './SoftwareProject';
 
@@ -12,9 +11,3 @@ export default {
   props: ['item'],
 };
 </script>
-
-<style scoped>
-img.logo {
-  width: 200px;
-}
-</style>
