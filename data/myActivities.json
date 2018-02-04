@@ -103,8 +103,8 @@
   {
     "id": 40002,
     "component": "Work",
-    "created_date": "2009-01-01",
-    "end_date": "2012-01-01",
+    "created_date": "2008-01-01",
+    "end_date": "2011-01-01",
     "title": "Software Developer",
     "description": "Developing Drupal based SAAS platform, attending conferences, sales via GoToMeeting/Video conferences",
     "project": 50000
@@ -112,17 +112,17 @@
   {
     "id": 40003,
     "component": "Work",
-    "created_date": "2013-01-01",
-    "end_date": "2014-01-01",
+    "created_date": "2012-10-01",
+    "end_date": "2012-01-01",
     "title": "Software Developer",
-    "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. Acquired by Merkle.",
+    "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. (Acquired by Merkle.)",
     "project": 50001
   },
   {
     "id": 40004,
     "component": "Work",
-    "created_date": "2014-01-01",
-    "end_date": "2015-01-01",
+    "created_date": "2012-11-01",
+    "end_date": "2013-04-01",
     "title": "Software Developer",
     "description": "Back with MORE love for making social social media campaigns for awesome customers like 1-800-Flowers, Marie Claire, and Elle",
     "duties": [
