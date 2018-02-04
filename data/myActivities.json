@@ -94,8 +94,8 @@
   {
     "id": 40001,
     "component": "Work",
-    "created_date": "2017",
-    "end_date": "now",
+    "created_date": "2017-01-01",
+    "end_date": "2019-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
     "project": 40000
@@ -103,8 +103,8 @@
   {
     "id": 40002,
     "component": "Work",
-    "created_date": "2009",
-    "end_date": "2012",
+    "created_date": "2009-01-01",
+    "end_date": "2012-01-01",
     "title": "Software Developer",
     "description": "Developing Drupal based SAAS platform, attending conferences, sales via GoToMeeting/Video conferences",
     "project": 50000
@@ -112,8 +112,8 @@
   {
     "id": 40003,
     "component": "Work",
-    "created_date": "2013",
-    "end_date": "2014",
+    "created_date": "2013-01-01",
+    "end_date": "2014-01-01",
     "title": "Software Developer",
     "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. Acquired by Merkle.",
     "project": 50001
@@ -121,8 +121,8 @@
   {
     "id": 40004,
     "component": "Work",
-    "created_date": "2014",
-    "end_date": "2015",
+    "created_date": "2014-01-01",
+    "end_date": "2015-01-01",
     "title": "Software Developer",
     "description": "Back with MORE love for making social social media campaigns for awesome customers like 1-800-Flowers, Marie Claire, and Elle",
     "duties": [
