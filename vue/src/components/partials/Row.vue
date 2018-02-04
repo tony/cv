@@ -1,12 +1,12 @@
 <template>
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
+    <div class="col-md-10 col-md-offset-1 col-xs-12">
     <div class="box">
     <div class="row">
-      <div class="col-xs-4 item"><div class="box">
+      <div class="col-md-4 col-xs-12 item"><div class="box">
       <slot name="left"></slot>
       </div></div>
-      <div class="col-xs-8 item"><div class="box">
+      <div class="col-md-8 col-xs-12 item"><div class="box">
         <slot name="right"></slot>
       </div></div>
     </div>
