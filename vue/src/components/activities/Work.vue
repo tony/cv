@@ -28,8 +28,8 @@
 
 
 <script>
-import Row from '../Row';
-import ImageTitleLinkColumn from '../ImageTitleLinkColumn';
+import Row from '../partials/Row';
+import ImageTitleLinkColumn from '../partials/ImageTitleLinkColumn';
 
 export default {
   name: 'Work',

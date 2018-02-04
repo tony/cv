@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import Row from '../Row';
+import Row from '../partials/Row';
 
 export default {
   name: 'Patch',

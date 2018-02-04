@@ -27,9 +27,9 @@
 
 
 <script>
-import Row from '../Row';
-import ImageTitleLinkColumn from '../ImageTitleLinkColumn';
-import SoftwareProjectLinks from '../SoftwareProjectLinks';
+import Row from '../../partials/Row';
+import ImageTitleLinkColumn from '../../partials/ImageTitleLinkColumn';
+import SoftwareProjectLinks from './partials/Links';
 
 export default {
   name: 'SoftwareProject',

@@ -1,9 +1,9 @@
 <template>
-  <SoftwareProject :item="item" projectType="Library" />
+  <SoftwareProject :item="item" projectType="Application" />
 </template>
 
 <script>
-import SoftwareProject from './SoftwareProject';
+import SoftwareProject from './base';
 
 export default {
   name: 'SoftwareApp',
