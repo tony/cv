@@ -6,7 +6,6 @@
 function validateProject(item) {
   console.assert('name' in item, item, 'name not in item');
   console.assert('url' in item, item, 'url not in item');
-  console.assert('repo_url' in item, item, 'repo_url not in item');
 }
 
 export const validateSubjects = (list) => {

@@ -43,4 +43,11 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.align-octicon .octicon {
+  vertical-align: text-top;
+}
+.align-octicon-bottom .octicon {
+  vertical-align: text-baseline;
+}
+
 </style>

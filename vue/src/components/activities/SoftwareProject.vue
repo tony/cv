@@ -1,7 +1,7 @@
 <template>
   <Row>
     <div slot="left">
-      <h2>Work</h2>
+      <h2>{{projectType}}</h2>
       <div class="languages">
       <span class="tag" v-for="language in item.project.languages" :key="language.id">
       {{language}}
@@ -10,20 +10,18 @@
 
       <br />
       <p v-show="item.created_date" class="align-octicon"><small>
-        {{item.created_date | moment("YYYY")}} -  {{item.end_date | moment("YYYY")}}
+        <octicon name="repo" label="Created"></octicon>
+        Created {{item.created_date | moment("from", "now") }}
+        ({{item.created_date}})
       </small></p>
     </div>
     <div slot="right">
       <ImageTitleLinkColumn :item="item">
         <div slot="links">
-         <a v-show="item.project.url" :href="item.project.url"
-         target="_blank" class="align-octicon">
-          <octicon name="home" label="Created"></octicon>
-          Website
-          </a>
+          <SoftwareProjectLinks :item="item" />
         </div>
       </ImageTitleLinkColumn>
-     </div>
+    </div>
   </Row>
 </template>
 
@@ -31,13 +29,17 @@
 <script>
 import Row from '../Row';
 import ImageTitleLinkColumn from '../ImageTitleLinkColumn';
+import SoftwareProjectLinks from '../SoftwareProjectLinks';
 
 export default {
-  name: 'Work',
-  components: { Row, ImageTitleLinkColumn },
-  props: ['item', 'opts'],
+  name: 'SoftwareProject',
+  components: { Row, ImageTitleLinkColumn, SoftwareProjectLinks },
+  props: ['item', 'projectType'],
 };
 </script>
 
 <style scoped>
+img.logo {
+  width: 200px;
+}
 </style>
