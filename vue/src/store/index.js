@@ -64,6 +64,13 @@ const filters = {
 };
 
 function reduceActivities(state) {
+  /**
+   * Reduce activities based on most filters.
+   *
+   * These results are used by other reducers, and do not include
+   * eliminating individual projects, only applying category-type filters
+   * and regex-type filters. Not direct project lookups.
+   */
   const { selectedActivityTypes, selectedFilters } = state;
   let { activities: items } = state;
 
@@ -81,6 +88,29 @@ function reduceActivities(state) {
   return items;
 }
 
+const reduceActivitiesFinal = (state, getters) => {
+  /**
+   * Final reducer, includes direct proejct lookups and programming languages.
+   */
+  let { filteredActivities } = getters;
+  const { selectedLanguages, selectedSubjects } = state;
+  if (selectedLanguages.length) {
+    filteredActivities = filteredActivities.filter((item) => {
+      if (!item.project.languages) {
+        return false;
+      }
+      return item.project.languages.some(s => selectedLanguages.includes(s));
+    });
+  }
+
+  if (selectedSubjects && selectedSubjects.length) {
+    return filteredActivities.filter(
+      item => selectedSubjects.find(s => s.id === item.project.id),
+    );
+  }
+  return filteredActivities;
+};
+
 const store = new Vuex.Store({
   state: {
     count: 0,
@@ -96,24 +126,7 @@ const store = new Vuex.Store({
       getters.filteredActivities,
     ),
     filteredActivities: state => reduceActivities(state),
-    filteredActivitiesMinusProjects: (state, getters) => {
-      let items = getters.filteredActivities;
-      if (state.selectedLanguages.length) {
-        items = items.filter((item) => {
-          if (!item.project.languages) {
-            return false;
-          }
-          return item.project.languages.some(s => state.selectedLanguages.includes(s));
-        });
-      }
-
-      if (state.selectedSubjects && state.selectedSubjects.length) {
-        return items.filter(
-          item => state.selectedSubjects.find(s => s.id === item.project.id),
-        );
-      }
-      return items;
-    },
+    filteredActivitiesMinusProjects: (state, getters) => reduceActivitiesFinal(state, getters),
     sortedActivities: (state, getters) => (
       getters.filteredActivitiesMinusProjects.sort(
         (activity1, activity2) => (
