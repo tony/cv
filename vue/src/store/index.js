@@ -174,7 +174,6 @@ const store = new Vuex.Store({
     [LOAD_INITIAL_DATA]: (state, data) => {
       state.activities = data.activities;
       state.subjects = data.subjects;
-      state.selectedActivityTypes = availableActivityTypes(data.activities);
       state.selectedFilters = data.selectedFilters;
     },
     updateSelectedActivityType(state, value) {

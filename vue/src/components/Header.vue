@@ -8,61 +8,59 @@
       I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank">consulting</a> and
     <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
-        <multiselect
-          :search="true"
-          :multiple="true"
-          placeholder="Filter by Project(s), Company/Companies, Website(s), and Publication(s)"
-          label="name"
-          track-by="name"
-          id="subjectFilter"
-          :value="selectedSubjects"
-          :options="availableSubjects"
-          @input="updateSelectedSubjectsAction"
-          >
-          <template slot="option" slot-scope="props">
-          <span>{{ props.option.name }}</span>
-          <span class="tag">
-          {{props.option.type}}
-          </span>
-          </template>
-        </multiselect>
+    <div class="row"><div class="col-xs-10 col-xs-offset-1">
+      <multiselect
+        :search="true"
+        :multiple="true"
+        placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
+        label="name"
+        track-by="name"
+        id="subjectFilter"
+        :value="selectedSubjects"
+        :options="availableSubjects"
+        @input="updateSelectedSubjectsAction"
+        >
+        <template slot="option" slot-scope="props">
+        <span>{{ props.option.name }}</span>
+        <span class="tag">
+        {{props.option.type}}
+        </span>
+        </template>
+      </multiselect>
 
-        <multiselect
-          :search="true"
-          :multiple="true"
-          placeholder="Filter by Activity Type(s)"
-          id="activityFilter"
-          track-by="name"
-          :options="availableActivityTypes"
-          :value="selectedActivityTypes"
-          @input="updateSelectedActivityTypeAction"
-          label="name"
-         >
-        </multiselect>
+      <multiselect
+        :search="true"
+        :multiple="true"
+        placeholder="Filter by Activity Type(s) - e.g. Work, Open Source, Website, Volunteering"
+        id="activityFilter"
+        track-by="name"
+        :options="availableActivityTypes"
+        :value="selectedActivityTypes"
+        @input="updateSelectedActivityTypeAction"
+        label="name"
+       >
+      </multiselect>
 
-        <multiselect
-          :search="true"
-          :multiple="true"
-          placeholder="Filter by Programming Language(s)"
-          id="languageFilter"
-          :options="availableLanguages"
-          :value="selectedLanguages"
-          @input="updateSelectedLanguagesAction"
-         >
-        </multiselect>
+      <multiselect
+        :search="true"
+        :multiple="true"
+        placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
+        id="languageFilter"
+        :options="availableLanguages"
+        :value="selectedLanguages"
+        @input="updateSelectedLanguagesAction"
+       >
+      </multiselect>
 
-        <div class="row choices">
-          <div v-for="fil in availableFilters" :key="fil.id" class="roundedOne col-sm">
-            <div class="box">
-              <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
-              <label :for="fil">{{fil}}</label>
-            </div>
+      <div class="row choices">
+        <div v-for="fil in availableFilters" :key="fil.id" class="roundedOne col-sm">
+          <div class="box">
+            <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
+            <label :for="fil">{{fil}}</label>
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </template>
 
