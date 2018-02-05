@@ -3,7 +3,8 @@
  */
 
 function lookupSubjectById(subjects, type, id) {
-  return subjects.find(sub => sub.type === type && sub.id === id);
+  /* Lookup and resolve subject by ID */
+  return subjects.find(sub => sub.id === id);
 }
 
 function expandProject(item, subjects) {

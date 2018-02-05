@@ -126,11 +126,11 @@ recursePRQuery(initialPrQuery).then(prs => {
   const projects_final = projects.map(p => {
     return {
       id: id++,
-      type: 'project',
+      type: 'open source project',
       name: p.name,
       url: p.homepageUrl,
       repo_url: p.url,
-      languages: p.languages,
+      languages: p.languages
     }
   });
 

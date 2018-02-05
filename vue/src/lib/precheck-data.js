@@ -14,6 +14,21 @@ export const validateSubjects = (list) => {
       case 'project':
         validateProject(item);
         break;
+      case 'open source project':
+        validateProject(item);
+        break;
+      case 'website':
+        validateProject(item);
+        break;
+      case 'company':
+        validateProject(item);
+        break;
+      case 'publication':
+        validateProject(item);
+        break;
+      case 'article':
+        validateProject(item);
+        break;
       default:
         throw Error(`invalid type ${item.type} for ${item}`);
     }
