@@ -6,6 +6,16 @@ function lookupSubjectById(subjects, type, id) {
   return subjects.find(sub => sub.type === type && sub.id === id);
 }
 
+function expandProject(item, subjects) {
+  if (item.project !== undefined) {
+    return Object.assign(
+      item, { project: lookupSubjectById(subjects, 'project', item.project) },
+    );
+  }
+  return item;
+}
+
+
 export const expandRelations = (activities, subjects) => {
   /**
    * Expands primary key/ID relations with other objects.
@@ -16,49 +26,19 @@ export const expandRelations = (activities, subjects) => {
   activities.map((item) => {
     switch (item.component) {
       case 'Patch':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item, { project: lookupSubjectById(subjects, 'project', item.project) },
-          );
-        }
-        return item;
+        return expandProject(item, subjects);
       case 'Publication':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item, { project: lookupSubjectById(subjects, 'project', item.project) },
-          );
-        }
-        return item;
+        return expandProject(item, subjects);
       case 'SoftwareApp':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item,
-            {
-              project: lookupSubjectById(subjects, 'project', item.project),
-            },
-          );
-        }
-        return item;
+        return expandProject(item, subjects);
       case 'SoftwareLib':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item,
-            {
-              project: lookupSubjectById(subjects, 'project', item.project),
-            },
-          );
-        }
-        return item;
+        return expandProject(item, subjects);
       case 'Work':
-        if (item.project !== undefined) {
-          return Object.assign(
-            item,
-            {
-              project: lookupSubjectById(subjects, 'project', item.project),
-            },
-          );
-        }
-        return item;
+        return expandProject(item, subjects);
+      case 'Volunteer':
+        return expandProject(item, subjects);
+      case 'Website':
+        return expandProject(item, subjects);
       default:
         return item;
     }

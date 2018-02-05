@@ -26,6 +26,14 @@ const activityTypes = [
     name: 'Publications',
     component_name: 'Publication',
   },
+  {
+    name: 'Volunteering',
+    component_name: 'Volunteer',
+  },
+  {
+    name: 'Websites',
+    component_name: 'Website',
+  },
 ];
 
 function availableActivityTypes(v) {

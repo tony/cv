@@ -207,7 +207,7 @@
     "type": "project",
     "name": "Wengu",
     "url": "https://wengu.tartarie.com/",
-    "logo": "/static/img/wengu.png",
+    "logo": "/static/img/wengu.jpg",
     "languages": ["PHP"]
   },
   {

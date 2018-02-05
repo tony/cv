@@ -6,3 +6,5 @@ export { default as SoftwareApp } from './Software/App';
 export { default as SoftwareLib } from './Software/Lib';
 export { default as Presentation } from './Presentation';
 export { default as Publication } from './Publication';
+export { default as Volunteer } from './Volunteer';
+export { default as Website } from './Website';
