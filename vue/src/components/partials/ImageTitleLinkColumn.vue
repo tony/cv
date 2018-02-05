@@ -35,7 +35,6 @@ export default {
 }
 
 img.logo {
-  max-width: 400px;
   display: block;
   margin: 1em auto;
 }

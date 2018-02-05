@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped>
-img.logo {
+>>> img.logo {
   width: 200px;
 }
 </style>
