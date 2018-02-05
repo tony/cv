@@ -126,7 +126,7 @@ recursePRQuery(initialPrQuery).then(prs => {
   const projects_final = projects.map(p => {
     return {
       id: id++,
-      type: 'open source project',
+      type: 'Open Source',
       name: p.name,
       url: p.homepageUrl,
       repo_url: p.url,

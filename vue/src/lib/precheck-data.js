@@ -11,22 +11,19 @@ function validateProject(item) {
 export const validateSubjects = (list) => {
   list.forEach((item) => {
     switch (item.type) {
-      case 'project':
+      case 'Open Source':
         validateProject(item);
         break;
-      case 'open source project':
+      case 'Website':
         validateProject(item);
         break;
-      case 'website':
+      case 'Company':
         validateProject(item);
         break;
-      case 'company':
+      case 'Publication':
         validateProject(item);
         break;
-      case 'publication':
-        validateProject(item);
-        break;
-      case 'article':
+      case 'Article':
         validateProject(item);
         break;
       default:
