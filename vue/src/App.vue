@@ -14,12 +14,13 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { Patch, Kudo, Work, Achievement, SoftwareApp, SoftwareLib, Presentation } from './components/activities';
+import { Publication, Patch, Kudo, Work, Achievement, SoftwareApp, SoftwareLib, Presentation } from './components/activities';
 
 export default {
   name: 'App',
   components: {
     Patch,
+    Publication,
     Kudo,
     Work,
     Achievement,

@@ -22,6 +22,10 @@ const activityTypes = [
     name: 'Work',
     component_name: 'Work',
   },
+  {
+    name: 'Publications',
+    component_name: 'Publication',
+  },
 ];
 
 function availableActivityTypes(v) {

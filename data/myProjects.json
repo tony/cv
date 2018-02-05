@@ -181,7 +181,10 @@
     "name": "The Tao of tmux",
     "url": "https://leanpub.com/the-tao-of-tmux",
     "logo": "/static/img/taooftmux.png",
-    "languages": ["Markdown", "ShellScript"]
+    "languages": ["Markdown", "ShellScript"],
+    "leanpub_url": "https://leanpub.com/the-tao-of-tmux",
+    "amazon_url": "http://amzn.to/2gPfRhC",
+    "goodreads_url": "https://www.goodreads.com/book/show/33246223-the-tao-of-tmux"
   },
   {
     "id": 40000,

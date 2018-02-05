@@ -5,3 +5,4 @@ export { default as Work } from './Work';
 export { default as SoftwareApp } from './Software/App';
 export { default as SoftwareLib } from './Software/Lib';
 export { default as Presentation } from './Presentation';
+export { default as Publication } from './Publication';

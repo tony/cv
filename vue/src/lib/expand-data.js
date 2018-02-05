@@ -22,6 +22,13 @@ export const expandRelations = (activities, subjects) => {
           );
         }
         return item;
+      case 'Publication':
+        if (item.project !== undefined) {
+          return Object.assign(
+            item, { project: lookupSubjectById(subjects, 'project', item.project) },
+          );
+        }
+        return item;
       case 'SoftwareApp':
         if (item.project !== undefined) {
           return Object.assign(
