@@ -17,34 +17,14 @@ function expandProject(item, subjects) {
 }
 
 
-export const expandRelations = (activities, subjects) => {
+export const expandRelations = (activities, subjects) => (
   /**
    * Expands primary key/ID relations with other objects.
    *
    * @param {Array, <Object>} activities
    * @return {Void}
    */
-  activities.map((item) => {
-    switch (item.component) {
-      case 'Patch':
-        return expandProject(item, subjects);
-      case 'Publication':
-        return expandProject(item, subjects);
-      case 'SoftwareApp':
-        return expandProject(item, subjects);
-      case 'SoftwareLib':
-        return expandProject(item, subjects);
-      case 'Work':
-        return expandProject(item, subjects);
-      case 'Volunteer':
-        return expandProject(item, subjects);
-      case 'Website':
-        return expandProject(item, subjects);
-      default:
-        return item;
-    }
-  });
-  return activities;
-};
+  activities.map(item => expandProject(item, subjects))
+);
 
 export default expandRelations;
