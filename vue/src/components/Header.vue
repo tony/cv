@@ -154,10 +154,10 @@ export default {
 }
 @media (min-width: 500px) {
   .choices {
-    margin-top: .5rem;
+    margin-top: .5em;
   }
   .roundedOne {
-    margin: .5rem 0 .5rem 0;
+    margin: .5em 0 0 0;
   }
 
 }
