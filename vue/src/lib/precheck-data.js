@@ -9,27 +9,7 @@ function validateProject(item) {
 }
 
 export const validateSubjects = (list) => {
-  list.forEach((item) => {
-    switch (item.type) {
-      case 'Open Source':
-        validateProject(item);
-        break;
-      case 'Website':
-        validateProject(item);
-        break;
-      case 'Company':
-        validateProject(item);
-        break;
-      case 'Publication':
-        validateProject(item);
-        break;
-      case 'Article':
-        validateProject(item);
-        break;
-      default:
-        throw Error(`invalid type ${item.type} for ${item}`);
-    }
-  });
+  list.forEach(item => validateProject(item));
 };
 
 export default validateSubjects;
