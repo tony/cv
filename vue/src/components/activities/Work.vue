@@ -9,7 +9,8 @@
 
       <br />
       <p v-show="item.created_date" class="align-octicon"><small>
-        {{item.created_date | moment("YYYY")}} -  {{item.end_date | moment("YYYY")}}
+        {{item.created_date | moment("YYYY")}} -
+        <template v-if="item.end_date">{{item.end_date | moment("YYYY")}}</template>
       </small></p>
     </div>
     <div slot="right">

@@ -2,7 +2,8 @@
   <Row>
     <div slot="left"> <h2>Publication</h2>
       <p v-show="item.created_date" class="align-octicon"><small>
-        Published {{item.created_date | moment("YYYY")}} -  {{item.end_date | moment("YYYY")}}
+        Published {{item.created_date | moment("YYYY")}}
+        <template v-if="item.end_date">-  {{item.end_date | moment("YYYY")}}</template>
       </small></p>
     </div>
     <div slot="right">
