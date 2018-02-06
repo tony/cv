@@ -83,6 +83,26 @@
     "project": 20001
   },
   {
+    "id": 30002,
+    "component": "Patch",
+    "created_date": "2014-12-27",
+    "accepted_date": "2015-02-24",
+    "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
+    "diff_url": "https://bz-attachments.freebsd.org/attachment.cgi?id=150996",
+    "title": "x11-fonts/lohit: Fix typo in files/pkg-message.in",
+    "project": 20002
+  },
+  {
+    "id": 30003,
+    "component": "Patch",
+    "created_date": "2016-02-19",
+    "accepted_date": "2016-04-06",
+    "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
+    "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167177",
+    "title": "Storage Controller Interface driver - typo in unimplemented macro in scic_sds_controller_registers.h",
+    "project": 20002
+  },
+  {
     "id": 40000,
     "component": "Work",
     "created_date": "2014-04-01",

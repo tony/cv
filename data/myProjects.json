@@ -176,6 +176,18 @@
     "languages": ["PHP"]
   },
   {
+    "id": 20002,
+    "type": "Open Source",
+    "name": "FreeBSD",
+    "url": "FreeBSD",
+    "repo_url": "https://svn.freebsd.org/",
+    "docs_url": "https://www.freebsd.org/docs.html",
+    "issues_url": "https://bugs.freebsd.org/bugzilla/",
+    "changelog_url": "https://www.freebsd.org/releases/",
+    "browse_code_url": "https://github.com/freebsd/freebsd",
+    "languages": ["C"]
+  },
+  {
     "id": 30000,
     "type": "Publication",
     "name": "The Tao of tmux",
