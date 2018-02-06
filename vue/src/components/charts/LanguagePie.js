@@ -5,6 +5,18 @@ export default {
   props: ['activities'],
   mixins: [mixins.reactiveProp],
   mounted() {
-    this.renderChart(this.chartData, { responsive: true, maintainAspectRatio: false });
+    this.renderChart(
+      this.chartData,
+      {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          display: false,
+          labels: {
+            fontColor: 'rgb(255, 99, 132)',
+          },
+        },
+      },
+    );
   },
 };

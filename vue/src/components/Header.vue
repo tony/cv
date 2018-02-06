@@ -113,7 +113,7 @@ export default {
               if (lang in rLanguages) {
                 rLanguages[lang] += 1;
               } else {
-                rLanguages[lang] = 0;
+                rLanguages[lang] = 1;
               }
             });
           }
@@ -129,7 +129,6 @@ export default {
         return {
           labels: Object.keys(l),
           datasets: [{
-
             backgroundColor: [
               '#41B883',
               '#E46651',
