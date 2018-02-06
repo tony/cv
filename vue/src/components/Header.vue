@@ -9,7 +9,7 @@
     <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
     <div class="row padBottom">
-      <div class="col-sm-2 col-xs-offset-2">
+      <div class="col-sm-2 col-sm-offset-2">
         <language-pie
           :chart-data="languages"
           :height="250"
