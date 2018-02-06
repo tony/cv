@@ -3,8 +3,8 @@
     <h1>{{ msg }}</h1>
 
     <p><em>Friendly reminder:
-      <a href="https://www.git-pull.com/blog/2018/01/technical-screening.html" target="_blank">I don't do technical screens</a>.
-      I only seek remote, senior programming roles.
+      I don't do technical screens<a href="https://www.git-pull.com/blog/2018/01/technical-screening.html" target="_blank" class="footnote">[1]</a>.
+      Seeking remote, senior programming roles.
       I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank">consulting</a> and
     <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
@@ -175,4 +175,10 @@ export default {
   }
 }
 
+.footnote {
+  text-decoration: none;
+  font-size: .7em;
+  vertical-align: top;
+  border-bottom: 1px dotted #004b6b;
+}
 </style>
