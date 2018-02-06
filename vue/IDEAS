@@ -148,3 +148,9 @@ Shouts
   // language, 'languages'
   // role, 'roles' // employee, volunteere, president
 - created_date -> begin_date
+- LanguageTag component
+  accepts name of language, looks up color.
+- add colors to tag programming languages multiselect
+- fix width when inside multiselect (placeholder) while it's in
+  selected state
+- colors for project/place/company
