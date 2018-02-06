@@ -55,7 +55,7 @@ function availableSubjects(subjects, availableActivities) {
 
 function availableLanguages(availableActivities) {
   return availableActivities.reduce((acc, activity) => {
-    if (activity.project.languages.length) {
+    if (activity.project.languages && activity.project.languages.length) {
       activity.project.languages.forEach((lang) => {
         if (!acc.some(s => lang.name === s.name)) {
           acc.push(lang);
