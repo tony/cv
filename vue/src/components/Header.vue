@@ -73,6 +73,8 @@ import Multiselect from 'vue-multiselect';
 import { mapGetters, mapActions, mapState } from 'vuex';
 import LanguagePie from './charts/LanguagePie';
 
+const colors = require('github-colors');
+
 export default {
   name: 'Header',
   components: { Multiselect, LanguagePie },
@@ -107,7 +109,6 @@ export default {
         // https://github.com/airbnb/javascript/issues/719
         const l = this.filteredActivitiesMinusProjects.reduce((languages, activity) => {
           const rLanguages = languages;
-          console.log(activity);
           if (activity.project.languages.length) {
             activity.project.languages.forEach((lang) => {
               if (lang in rLanguages) {
@@ -119,22 +120,10 @@ export default {
           }
           return rLanguages;
         }, {});
-        console.log({
-          labels: Object.keys(l),
-          datasets: [
-
-          ],
-        });
-        console.log(l);
         return {
           labels: Object.keys(l),
           datasets: [{
-            backgroundColor: [
-              '#41B883',
-              '#E46651',
-              '#00D8FF',
-              '#DD1B16',
-            ],
+            backgroundColor: Object.keys(l).map(lang => colors.get(lang).color),
             data: Object.values(l),
           }],
         };
