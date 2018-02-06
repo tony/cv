@@ -8,6 +8,21 @@
       I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank">consulting</a> and
     <a href="https://www.git-pull.com/mentoring/" target="_blank">mentoring</a>.</em></p>
 
+    <div class="row padBottom">
+      <div class="col-sm-2 col-xs-offset-2">
+        <language-pie
+          :chart-data="languages"
+          :height="250"
+          />
+      </div>
+      <div class="col-sm-6 ">
+        <activity-line
+          :chart-data="activityTimes"
+          :height="250"
+          />
+      </div>
+    </div>
+
     <div class="row"><div class="col-xs-10 col-xs-offset-1">
       <multiselect
         :search="true"
@@ -63,21 +78,6 @@
         </div>
       </div>
     </div></div>
-
-    <div class="row">
-      <div class="col-sm">
-        <language-pie
-          :chart-data="languages"
-          :height="250"
-          />
-      </div>
-      <div class="col-sm">
-        <activity-line
-          :chart-data="activityTimes"
-          :height="250"
-          />
-      </div>
-    </div>
   </div>
 </template>
 
@@ -263,5 +263,8 @@ export default {
 }
 .hidden {
   display: none;
+}
+.padBottom {
+  margin-bottom: 1em;
 }
 </style>
