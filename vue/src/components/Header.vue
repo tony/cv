@@ -77,7 +77,7 @@
           :height="250"
           />
       </div>
-    </div></div>
+    </div>
   </div>
 </template>
 
@@ -170,7 +170,9 @@ export default {
         l = Object.keys(l).map(key => l[key]);
         return {
           labels: l.map(lang => lang.name),
-          datasets: [{data: l.map(lang => lang.count)}],
+          datasets: [
+            { data: l.map(lang => lang.count) },
+          ],
         };
       },
     },
