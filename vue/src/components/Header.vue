@@ -64,21 +64,33 @@
       </div>
     </div></div>
 
-  <language-pie
-    :chart-data="languages"
-    :height="250"
-    />
+    <div class="row">
+      <div class="col-sm">
+        <language-pie
+          :chart-data="languages"
+          :height="250"
+          />
+      </div>
+      <div class="col-sm">
+        <activity-line
+          :chart-data="activityTimes"
+          :height="250"
+          />
+      </div>
+    </div></div>
   </div>
 </template>
 
 <script>
 import Multiselect from 'vue-multiselect';
+import Vue from 'vue';
 import { mapGetters, mapActions, mapState } from 'vuex';
 import LanguagePie from './charts/LanguagePie';
+import ActivityLine from './charts/ActivityLine';
 
 export default {
   name: 'Header',
-  components: { Multiselect, LanguagePie },
+  components: { Multiselect, LanguagePie, ActivityLine },
   data() {
     return {
       msg: 'Tony Narlock\'s CV',
@@ -134,6 +146,31 @@ export default {
             backgroundColor: l.map(lang => lang.color),
             data: l.map(lang => lang.count),
           }],
+        };
+      },
+      activityTimes() {
+        // https://github.com/airbnb/javascript/issues/719
+        let l = this.filteredActivitiesMinusProjects.reduce((acc1, activity) => {
+          const acc = acc1;
+          if (activity.created_date) {
+            const year = Vue.moment(activity.created_date).get('year');
+            if (year in acc) {
+              acc[year].count += 1;
+            } else {
+              acc[year] = {
+                count: 1,
+                name: year,
+              };
+            }
+          }
+          return acc;
+        }, {});
+
+        // flatten
+        l = Object.keys(l).map(key => l[key]);
+        return {
+          labels: l.map(lang => lang.name),
+          datasets: [{data: l.map(lang => lang.count)}],
         };
       },
     },
