@@ -178,8 +178,8 @@
   {
     "id": 20002,
     "type": "Open Source",
-    "name": "FreeBSD",
-    "url": "FreeBSD",
+    "name": "FreeBSD (Main tracker/bugzilla)",
+    "url": "https://www.freebsd.org",
     "repo_url": "https://svn.freebsd.org/",
     "docs_url": "https://www.freebsd.org/docs.html",
     "issues_url": "https://bugs.freebsd.org/bugzilla/",
