@@ -64,6 +64,7 @@
 
   <language-pie
     :chart-data="languages"
+    :height="250"
     ></language-pie>
   </div>
 </template>
