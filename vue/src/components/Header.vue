@@ -89,7 +89,7 @@ export default {
       'availableActivityTypes',
       'availableFilters',
       'availableLanguages',
-      'filteredActivities',
+      'filteredActivitiesMinusProjects',
     ]),
     ...{
       selectedFilters: {
@@ -105,7 +105,7 @@ export default {
     ...{
       languages() {
         // https://github.com/airbnb/javascript/issues/719
-        const l = this.filteredActivities.reduce((languages, activity) => {
+        const l = this.filteredActivitiesMinusProjects.reduce((languages, activity) => {
           const rLanguages = languages;
           console.log(activity);
           if (activity.project.languages.length) {
