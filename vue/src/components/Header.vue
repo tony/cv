@@ -61,16 +61,21 @@
         </div>
       </div>
     </div></div>
+
+  <language-pie
+    :chart-data="languages"
+    ></language-pie>
   </div>
 </template>
 
 <script>
 import Multiselect from 'vue-multiselect';
 import { mapGetters, mapActions, mapState } from 'vuex';
+import LanguagePie from './charts/LanguagePie';
 
 export default {
   name: 'Header',
-  components: { Multiselect },
+  components: { Multiselect, LanguagePie },
   data() {
     return {
       msg: 'Tony Narlock\'s CV',
@@ -84,6 +89,7 @@ export default {
       'availableActivityTypes',
       'availableFilters',
       'availableLanguages',
+      'filteredActivities',
     ]),
     ...{
       selectedFilters: {
@@ -96,6 +102,45 @@ export default {
       },
     },
     ...mapState(['selectedActivityTypes', 'selectedSubjects', 'selectedLanguages']),
+    ...{
+      languages() {
+        // https://github.com/airbnb/javascript/issues/719
+        const l = this.filteredActivities.reduce((languages, activity) => {
+          const rLanguages = languages;
+          console.log(activity);
+          if (activity.project.languages.length) {
+            activity.project.languages.forEach((lang) => {
+              if (lang in rLanguages) {
+                rLanguages[lang] += 1;
+              } else {
+                rLanguages[lang] = 0;
+              }
+            });
+          }
+          return rLanguages;
+        }, {});
+        console.log({
+          labels: Object.keys(l),
+          datasets: [
+
+          ],
+        });
+        console.log(l);
+        return {
+          labels: Object.keys(l),
+          datasets: [{
+
+            backgroundColor: [
+              '#41B883',
+              '#E46651',
+              '#00D8FF',
+              '#DD1B16',
+            ],
+            data: Object.values(l),
+          }],
+        };
+      },
+    },
   },
   methods: {
     ...mapActions([
