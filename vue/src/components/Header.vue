@@ -48,6 +48,8 @@
         id="languageFilter"
         :options="availableLanguages"
         :value="selectedLanguages"
+        track-by="name"
+        label="name"
         @input="updateSelectedLanguagesAction"
        >
       </multiselect>
@@ -73,8 +75,6 @@
 import Multiselect from 'vue-multiselect';
 import { mapGetters, mapActions, mapState } from 'vuex';
 import LanguagePie from './charts/LanguagePie';
-
-const colors = require('github-colors');
 
 export default {
   name: 'Header',
@@ -108,24 +108,31 @@ export default {
     ...{
       languages() {
         // https://github.com/airbnb/javascript/issues/719
-        const l = this.filteredActivitiesMinusProjects.reduce((languages, activity) => {
+        let l = this.filteredActivitiesMinusProjects.reduce((languages, activity) => {
           const rLanguages = languages;
           if (activity.project.languages.length) {
             activity.project.languages.forEach((lang) => {
-              if (lang in rLanguages) {
-                rLanguages[lang] += 1;
+              if (lang.name in rLanguages) {
+                rLanguages[lang.name].count += 1;
               } else {
-                rLanguages[lang] = 1;
+                rLanguages[lang.name] = {
+                  count: 1,
+                  color: lang.color,
+                  name: lang.name,
+                };
               }
             });
           }
           return rLanguages;
         }, {});
+
+        // flatten
+        l = Object.keys(l).map(key => l[key]);
         return {
-          labels: Object.keys(l),
+          labels: l.map(lang => lang.name),
           datasets: [{
-            backgroundColor: Object.keys(l).map(lang => colors.get(lang).color),
-            data: Object.values(l),
+            backgroundColor: l.map(lang => lang.color),
+            data: l.map(lang => lang.count),
           }],
         };
       },

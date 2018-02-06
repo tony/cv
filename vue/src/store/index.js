@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
+
 Vue.use(Vuex);
 
 
@@ -53,12 +54,16 @@ function availableSubjects(subjects, availableActivities) {
 
 
 function availableLanguages(availableActivities) {
-  let languages = [];
-  languages = availableActivities.map(item => item.project.languages);
-  languages = [].concat(...languages);
-  languages = languages.filter(h => h);
-  languages = new Set(languages);
-  return [...languages];
+  return availableActivities.reduce((acc, activity) => {
+    if (activity.project.languages.length) {
+      activity.project.languages.forEach((lang) => {
+        if (!acc.some(s => lang.name === s.name)) {
+          acc.push(lang);
+        }
+      });
+    }
+    return acc;
+  }, []);
 }
 
 
@@ -111,7 +116,7 @@ const reduceActivitiesFinal = (state, getters) => {
       if (!item.project.languages) {
         return false;
       }
-      return item.project.languages.some(s => selectedLanguages.includes(s));
+      return item.project.languages.some(s => selectedLanguages.find(z => z.name === s.name));
     });
   }
 

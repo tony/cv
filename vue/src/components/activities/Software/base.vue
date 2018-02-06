@@ -3,9 +3,10 @@
     <div slot="left">
       <h2>{{projectType}}</h2>
       <div class="languages">
-      <span class="tag" v-for="language in item.project.languages" :key="language.id">
-      {{language}}
-      </span>
+      <LanguageTag
+      v-for="language in item.project.languages" :key="language.name" :index="language.name"
+      v-bind:language="language"
+      />
       </div>
 
       <br />
@@ -30,10 +31,11 @@
 import Row from '../../partials/Row';
 import ImageTitleLinkColumn from '../../partials/ImageTitleLinkColumn';
 import SoftwareProjectLinks from './partials/Links';
+import LanguageTag from '../../partials/LanguageTag';
 
 export default {
   name: 'SoftwareProject',
-  components: { Row, ImageTitleLinkColumn, SoftwareProjectLinks },
+  components: { Row, ImageTitleLinkColumn, SoftwareProjectLinks, LanguageTag },
   props: ['item', 'projectType'],
 };
 </script>

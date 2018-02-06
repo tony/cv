@@ -10,9 +10,10 @@
       </small></p>
 
       <div class="languages hide-sm">
-      <span class="tag" v-for="language in item.project.languages" :key="language.id">
-      {{language}}
-      </span>
+      <LanguageTag
+      v-for="language in item.project.languages" :key="language.name" :index="language.name"
+      v-bind:language="language"
+      />
       </div>
     </div>
     <div slot="right">
@@ -72,10 +73,11 @@
 
 <script>
 import Row from '../partials/Row';
+import LanguageTag from '../partials/LanguageTag';
 
 export default {
   name: 'Patch',
-  components: { Row },
+  components: { Row, LanguageTag },
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),
