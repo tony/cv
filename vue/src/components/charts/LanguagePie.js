@@ -4,7 +4,6 @@ import { Pie, mixins } from 'vue-chartjs';
 
 export default {
   extends: Pie,
-  props: ['activities'],
   mixins: [mixins.reactiveProp],
   mounted() {
     this.renderChart(
@@ -14,7 +13,7 @@ export default {
         maintainAspectRatio: false,
         title: {
           display: true,
-          text: 'Languages',
+          text: 'Programming Languages',
           position: 'top',
           fontColor: '#4a4a4a',
           fontSize: '14',
@@ -22,9 +21,6 @@ export default {
         },
         legend: {
           display: false,
-          labels: {
-            fontColor: 'rgb(255, 99, 132)',
-          },
         },
         onClick: (e, i) => {
           if (i && i.length) {
