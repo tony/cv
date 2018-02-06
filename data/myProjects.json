@@ -185,7 +185,7 @@
     "issues_url": "https://bugs.freebsd.org/bugzilla/",
     "changelog_url": "https://www.freebsd.org/releases/",
     "browse_code_url": "https://github.com/freebsd/freebsd",
-    "languages": ["C", "PMake"]
+    "languages": ["Makefile"]
   },
   {
     "id": 30000,
