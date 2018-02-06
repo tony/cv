@@ -10,6 +10,14 @@ export default {
       {
         responsive: true,
         maintainAspectRatio: false,
+        title: {
+          display: true,
+          text: 'Languages',
+          position: 'top',
+          fontColor: '#4a4a4a',
+          fontSize: '14',
+          fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
+        },
         legend: {
           display: false,
           labels: {
