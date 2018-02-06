@@ -19,6 +19,16 @@ export default {
           fontSize: '14',
           fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
         },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: true,
+            },
+          }],
+        },
         legend: {
           display: false,
         },
