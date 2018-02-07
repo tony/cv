@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <header-view/>
     <component
       v-for="item in sortedActivities"
       :is="item.component"
@@ -12,8 +12,8 @@
 </template>
 
 <script>
+import Header from '@/components/Header';
 import { mapGetters } from 'vuex';
-
 import {
   Website, Volunteer, Publication, Patch, Kudo, Work, Achievement,
   SoftwareApp, SoftwareLib, Presentation,
@@ -32,6 +32,7 @@ export default {
     SoftwareApp,
     SoftwareLib,
     Presentation,
+    'header-view': Header,
   },
   computed: mapGetters([
     'filteredActivities',

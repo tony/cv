@@ -3,7 +3,6 @@
 // https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
 import App from './App';
-import router from './router';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
 import { ACTIVITIES, SUBJECTS, DEFAULT_SELECTED_FILTERS } from './constants';
@@ -27,7 +26,6 @@ store.commit(
 new Vue({
   el: '#app',
   store,
-  router,
   components: { App },
   template: '<App/>',
 });
