@@ -63,11 +63,6 @@ import { mapGetters, mapActions, mapState } from 'vuex';
 export default {
   name: 'Lenses',
   components: { Multiselect },
-  data() {
-    return {
-      msg: 'Tony Narlock\'s CV',
-    };
-  },
   computed: {
     ...mapGetters([
       'subjects',
