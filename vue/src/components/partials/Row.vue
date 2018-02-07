@@ -58,4 +58,8 @@ h3.align-octicon-bottom .octicon {
     display: none;
   }
 }
+
+h2 {
+  margin-top: 0;
+}
 </style>
