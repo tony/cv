@@ -13,6 +13,7 @@
        :logo="false"
        >
         <div slot="links">
+         <template v-if="item.featured">Discussed on </template>
          <a
           v-for="(link, title) in item.featured" :href="link"
           :key="title" target="_blank" class="align-octicon">
