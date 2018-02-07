@@ -222,9 +222,15 @@
   {
     "id": 70001,
     "component": "Article",
-    "created_date": "2017-06-01",
+    "created_date": "2017-07-04",
     "title": "Django vs Flask",
     "project": 40000,
-    "url": "https://devel.tech/features/django-vs-flask"
+    "url": "https://devel.tech/features/django-vs-flask",
+    "featured": {
+      "HN": "https://news.ycombinator.com/item?id=14690638",
+      "/r/python": "https://www.reddit.com/r/Python/comments/6iti1z/django_vs_flask_a_practitioners_perspective_2017/",
+      "/r/flask": "https://www.reddit.com/r/flask/comments/6itkvf/django_vs_flask_a_practitioners_perspective_2017/",
+      "/r/django": "https://www.reddit.com/r/django/comments/6iti8o/django_vs_flask_a_practitioners_perspective_2017/"
+    }
   }
 ]

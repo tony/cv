@@ -47,7 +47,10 @@ export default {
   vertical-align: text-top;
 }
 .align-octicon-bottom .octicon {
-  vertical-align: text-baseline;
+  vertical-align: initial;
+}
+h3.align-octicon-bottom .octicon {
+  vertical-align: baseline;
 }
 
 @media (max-width: 499px) {

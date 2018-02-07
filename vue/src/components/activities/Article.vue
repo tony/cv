@@ -14,7 +14,7 @@
        >
         <div slot="links">
          <a
-          v-for="(title, link) in item.featured_urls" :href="link"
+          v-for="(link, title) in item.featured" :href="link"
           :key="title" target="_blank" class="align-octicon">
            {{title}}
           </a>

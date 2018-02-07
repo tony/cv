@@ -5,9 +5,9 @@
       <img :src="logo" class="logo" />
     </a>
     </template>
-    <a :href="url" target="_blank" class="activity-title">
+    <strong><a :href="url" target="_blank" class="activity-title">
       {{title}}
-    </a>
+    </a></strong>
 
     {{description}}
     <small class="bottompad10">
