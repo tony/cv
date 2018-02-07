@@ -55,45 +55,6 @@ export default {
   white-space: nowrap;
 }
 
-.selectedFilters .multiselect__tag {
-  background: gray;
-  outline: none;
-  color: white;
-}
-.selectedFilters .multiselect__tag-icon:hover {
-  background: #666;
-}
-.selectedFilters .multiselect__tag-icon:after {
-  color: #666;
-}
-.selectedFilters .multiselect__tag-icon:hover:after {
-  color: white;
-}
-@media (min-width: 500px) {
-  .choices {
-    margin-top: .5em;
-  }
-  .roundedOne {
-    margin: .5em 0 0 0;
-  }
-
-}
-@media (max-width: 499px) {
-  .choices {
-    margin-top: .5rem;
-  }
-  h3, h2, p {
-    margin: 0;
-  }
-  h2 {
-    padding-top: 2em;
-    padding-bottom: .25em;
-  }
-  .hide-sm {
-    display: none;
-  }
-}
-
 .footnote {
   text-decoration: none;
   font-size: .7em;

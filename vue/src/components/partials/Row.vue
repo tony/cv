@@ -50,4 +50,9 @@ export default {
   vertical-align: text-baseline;
 }
 
+@media (max-width: 499px) {
+  .hide-sm {
+    display: none;
+  }
+}
 </style>
