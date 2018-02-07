@@ -25,13 +25,15 @@ export default {
         onClick: (e, i) => {
           if (i && i.length) {
             const language = i[0]._model.label;
-            this.$store.commit(
-              'updateSelectedLanguages',
-              [
-                ...this.$store.state.selectedLanguages,
-                ...this.$store.getters.availableLanguages.filter(lang => lang.name === language),
-              ],
-            );
+            if (!this.$store.state.selectedLanguages.find(lang => lang.name === language)) {
+              this.$store.commit(
+                'updateSelectedLanguages',
+                [
+                  ...this.$store.state.selectedLanguages,
+                  ...this.$store.getters.availableLanguages.filter(lang => lang.name === language),
+                ],
+              );
+            }
           }
         },
       },
