@@ -15,7 +15,12 @@
       </small></p>
     </div>
     <div slot="right">
-      <ImageTitleLinkColumn :item="item">
+      <ImageTitleLinkColumn
+       :title="item.title"
+       :description="item.description"
+       :logo="item.project.logo"
+       :url="item.project.url"
+       >
         <div slot="links">
          <a v-show="item.project.url" :href="item.project.url"
          target="_blank" class="align-octicon">

@@ -16,7 +16,7 @@ import Header from '@/components/Header';
 import { mapGetters } from 'vuex';
 import {
   Website, Volunteer, Publication, Patch, Kudo, Work, Achievement,
-  SoftwareApp, SoftwareLib, Presentation,
+  SoftwareApp, SoftwareLib, Presentation, Article,
 } from './components/activities';
 
 export default {
@@ -24,6 +24,7 @@ export default {
   components: {
     Patch,
     Website,
+    Article,
     Volunteer,
     Publication,
     Kudo,

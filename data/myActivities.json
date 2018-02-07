@@ -218,5 +218,13 @@
     "created_date": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
     "project": 40001
+  },
+  {
+    "id": 70001,
+    "component": "Article",
+    "created_date": "2017-06-01",
+    "title": "Django vs Flask",
+    "project": 40000,
+    "url": "https://devel.tech/features/django-vs-flask"
   }
 ]

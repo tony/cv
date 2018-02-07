@@ -8,3 +8,4 @@ export { default as Presentation } from './Presentation';
 export { default as Publication } from './Publication';
 export { default as Volunteer } from './Volunteer';
 export { default as Website } from './Website';
+export { default as Article } from './Article';

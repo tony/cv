@@ -1,31 +1,29 @@
 <template>
   <div class="right-col-content">
-  <a :href="item.project.url" target="_blank" class="activity-title" v-if="item.project.logo">
-    <img :v-show="item.project.logo" :src="item.project.logo" class="logo" />
-  </a>
-  <a :href="item.project.url" target="_blank" class="activity-title">
-    {{item.title}}
-  </a>
+    <template v-if="logo">
+    <a :href="url" target="_blank" class="activity-title">
+      <img :src="logo" class="logo" />
+    </a>
+    </template>
+    <a :href="url" target="_blank" class="activity-title">
+      {{title}}
+    </a>
 
-  {{item.description}}
-  <small class="bottompad10">
-    <slot name="links"></slot>
-  </small>
+    {{description}}
+    <small class="bottompad10">
+      <slot name="links"></slot>
+    </small>
   </div>
 </template>
 
 <script>
 export default {
   name: 'ImageTitleLinkColumn',
-  props: ['item'],
+  props: ['url', 'logo', 'description', 'title'],
 };
 </script>
 
 <style scoped>
-.myproject {
-  text-align: center;
-}
-
 .activity-title {
   text-align: center;
   font-size: 1.17em;
