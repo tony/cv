@@ -154,3 +154,5 @@ Shouts
 - fix width when inside multiselect (placeholder) while it's in
   selected state
 - colors for project/place/company
+- move data files into a general area
+- vue/  react/
