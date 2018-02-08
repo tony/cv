@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "github-graphql-client": "^1.0.0",
+    "moment": "^2.20.1"
+  }
+}
