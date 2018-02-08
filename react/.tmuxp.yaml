@@ -1,7 +1,7 @@
-session_name: cv (vue.js)
+session_name: cv (react)
 start_directory: ./ # load session relative to config location (project root).
 windows:
-- window_name: cv (vue.js)
+- window_name: cv (react)
   layout: main-horizontal
   options:
     main-pane-height: 35
@@ -12,4 +12,4 @@ windows:
   - focus: true
   - pane
   - pane
-  - npm run dev
+  - npm start
