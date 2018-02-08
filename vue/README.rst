@@ -1,7 +1,7 @@
 Tony Narlock's CV (Vue.js)
 ==========================
 
-This single page application (SPA) is based in `Vue.js`_, ES6. It uses `vuex`_
+This single page application (SPA) uses `Vue.js`_, ES6, and `vuex`_
 as a global data singleton, and a as well as `Single File Components
 <https://vuejs.org/v2/guide/single-file-components.html>`__.
 
@@ -13,11 +13,6 @@ Install and build
 Prerequisites: To build, ensure you have `node`_ + `yarn`_ installed.
 
 Development: ``$ yarn``, ``$ npm run dev``, and go to http://localhost:8080
-
-Structure
----------
-
-*scripts/* - scripts for scraping and compiling data
 
 Libraries
 ---------
@@ -38,6 +33,8 @@ Code decisions and rationale
 ----------------------------
 
 - Why Vue.js and not react / redux?
+
+  (There is a React version */react/*)
 
   Both are good. Vue.js is a lot simpler. There's less libraries to worry
   about. But if the data was any more complex, a solution like react and
