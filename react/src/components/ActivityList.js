@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Moment from 'react-moment';
 
 
 class Row extends React.Component {
@@ -10,10 +11,11 @@ class Row extends React.Component {
         <div className="box">
         <div className="row">
           <div className="col-md-4 col-xs-12 item"><div className="box">
-          {this.props.left.created_date}
+            {this.props.left.created_date}
+            <span> (<Moment fromNow>{this.props.left.created_date}</Moment>)</span>
           </div></div>
-          <div className="col-md-8 col-xs-12 item"><div className="box">
-          {this.props.right.title}
+            <div className="col-md-8 col-xs-12 item"><div className="box">
+            {this.props.right.title}
           </div></div>
         </div>
         </div>
