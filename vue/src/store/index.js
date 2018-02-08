@@ -147,9 +147,9 @@ const store = new Vuex.Store({
       getters.filteredActivities,
     ),
     filteredActivities: state => reduceActivities(state),
-    filteredActivitiesMinusProjects: (state, getters) => reduceActivitiesFinal(state, getters),
+    filteredActivitiesFinal: (state, getters) => reduceActivitiesFinal(state, getters),
     sortedActivities: (state, getters) => (
-      getters.filteredActivitiesMinusProjects.sort(
+      getters.filteredActivitiesFinal.sort(
         (activity1, activity2) => (
           Vue.moment(activity2.created_date).diff(Vue.moment(activity1.created_date))
         ),

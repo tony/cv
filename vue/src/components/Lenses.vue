@@ -71,7 +71,7 @@ export default {
       'availableActivityTypes',
       'availableFilters',
       'availableLanguages',
-      'filteredActivitiesMinusProjects',
+      'filteredActivitiesFinal',
     ]),
     ...{
       selectedFilters: {

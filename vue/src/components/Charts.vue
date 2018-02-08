@@ -25,11 +25,11 @@ export default {
   name: 'Charts',
   components: { LanguagePie, ActivityLine },
   computed: {
-    ...mapGetters(['filteredActivitiesMinusProjects']),
+    ...mapGetters(['filteredActivitiesFinal']),
     ...{
       languages() {
         // https://github.com/airbnb/javascript/issues/719
-        let l = this.filteredActivitiesMinusProjects.reduce((languages, activity) => {
+        let l = this.filteredActivitiesFinal.reduce((languages, activity) => {
           const rLanguages = languages;
           if (activity.project.languages && activity.project.languages.length) {
             activity.project.languages.forEach((lang) => {
@@ -59,7 +59,7 @@ export default {
       },
       activityTimes() {
         // https://github.com/airbnb/javascript/issues/719
-        let l = this.filteredActivitiesMinusProjects.reduce((acc1, activity) => {
+        let l = this.filteredActivitiesFinal.reduce((acc1, activity) => {
           const acc = acc1;
           if (activity.created_date) {
             const year = Vue.moment(activity.created_date).get('year');
