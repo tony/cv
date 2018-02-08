@@ -6,6 +6,7 @@ Quickstart
 
 - *vue/*: `Vue.js`_ version
 - *react/*: `React`_ version
+- *lib/*: Common code (reducers/filters code, initial data collections)
 - *scripts/*: GitHub Scraper
 - *static/*: Static assets (images) shared across versions
 - *yarn.lock* / *package.json*: Packages for *scripts/* files
@@ -23,11 +24,26 @@ Quickstart
     - *gh_actors.json*: GitHub Repos. Same schema as
       *my_actors.json*), combined.
 
-The notion of *actor* and *activity* is the same idea as the terms in `Activity
-Streams`_ 2.0 (May 2017). The schema's aren't strictly adhered to, only
-influenced by it.
+Concepts
+--------
 
-In the JSON file(s) in *data/*:
+Common code reused between Vue/React versions
+"""""""""""""""""""""""""""""""""""""""""""""
+
+To make an accurate, holistic comparsion between React/Redux and Vue/Vuex.
+
+Careful attention is made strike a balance between avoiding extra processing
+steps and being greatest common chunks of code between the two.
+
+Actor / Activity are just nouns / verbs
+"""""""""""""""""""""""""""""""""""""""
+
+The name actor/activity is picked to refer the same meaning throughout the
+data, Vue.js, and React versions.
+
+The notion of *actor* and *activity* is influenced by `Activity
+Streams`_ 2.0 (May 2017). The schema's aren't strictly adhered to. Too
+verbose, not needed.
 
 An *actor* object is a noun/person/place/thing. Examples: A company (Social
 Amp), or Software Library (libtmux).
