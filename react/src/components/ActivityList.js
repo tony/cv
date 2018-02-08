@@ -20,14 +20,6 @@ Activity.propTypes = {
   id: PropTypes.number.isRequired
 }
 
-const ActivityList2 = ({ activities, onActivityClick }) => (
-  <ul>
-    {activities.map(activity => (
-      <Activity key={activity.id} {...activity} onClick={() => onActivityClick(activity.id)} />
-    ))}
-  </ul>
-)
-
 const Components = {
   Patch: Activity,
   Article: Activity,
@@ -42,20 +34,18 @@ const Components = {
 
 class ActivityList extends React.Component {
   render() {
-    console.log(this.props);
-    var self = this;
-    var items = this.props.activities.map(function(itemData) {
-      console.log(itemData['component']);
-      var component = Components[itemData['component']];
+    const { activities, onActivityClick } = this.props;
+    const items = activities.map(function(itemData) {
+      const component = Components[itemData['component']];
       return React.createElement(component, {
         ...{
           key: itemData['id'],
-          onClick: () => self.props.onActivityClick(itemData.id),
+          onClick: () => onActivityClick(itemData.id),
         },
         ...itemData,
       });
     });
-    console.log(items);
+
     return (
       <div className="list">
       <div>And I am an ItemList</div>
