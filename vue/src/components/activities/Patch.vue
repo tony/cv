@@ -11,7 +11,7 @@
 
       <div class="languages hide-sm">
       <LanguageTag
-      v-for="language in item.project.languages" :key="language.name" :index="language.name"
+      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
       v-bind:language="language"
       />
       </div>
@@ -26,11 +26,11 @@
 
       <p>
         <em>was contributed by Tony to the
-        <template v-if="item.project.url">
-          <a :href="item.project.url" target="_blank" class="muted-link">{{item.project.name}}</a>
+        <template v-if="item.actor.url">
+          <a :href="item.actor.url" target="_blank" class="muted-link">{{item.actor.name}}</a>
         </template>
         <template v-else>
-          {{item.project.name}}
+          {{item.actor.name}}
         </template>
 
         project
@@ -38,7 +38,7 @@
       </p>
 
       <p><small>
-        <a :href="item.project.repo_url" target="_blank" class="muted-link align-octicon">
+        <a :href="item.actor.repo_url" target="_blank" class="muted-link align-octicon">
           <octicon name="repo" label="GH"></octicon>
           Repository
         </a>

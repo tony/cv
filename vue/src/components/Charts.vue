@@ -31,8 +31,8 @@ export default {
         // https://github.com/airbnb/javascript/issues/719
         let l = this.filteredActivitiesFinal.reduce((languages, activity) => {
           const rLanguages = languages;
-          if (activity.project.languages && activity.project.languages.length) {
-            activity.project.languages.forEach((lang) => {
+          if (activity.actor.languages && activity.actor.languages.length) {
+            activity.actor.languages.forEach((lang) => {
               if (lang.name in rLanguages) {
                 rLanguages[lang.name].count += 1;
               } else {

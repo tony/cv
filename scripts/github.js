@@ -153,7 +153,7 @@ recursePRQuery(initialPrQuery).then(prs => {
       created_date: moment(pr.createdAt).format('YYYY-MM-DD'),
       accepted_date: pr.mergedAt ? moment(pr.mergedAt).format('YYYY-MM-DD') : null,
       title: pr.title,
-      project: projects_final.find(p => pr.repository.name == p.name).id,
+      actor: projects_final.find(p => pr.repository.name == p.name).id,
     }
   });
   data = JSON.stringify(pullRequests_final, null, '  ');

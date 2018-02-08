@@ -10,19 +10,19 @@
       <ImageTitleLinkColumn
        :title="item.title"
        :description="item.description"
-       :logo="item.project.logo"
-       :url="item.project.url"
+       :logo="item.actor.logo"
+       :url="item.actor.url"
        >
         <div slot="links">
-         <a v-show="item.project.leanpub_url" :href="item.project.leanpub_url"
+         <a v-show="item.actor.leanpub_url" :href="item.actor.leanpub_url"
          target="_blank" class="align-octicon">
            Leanpub
           </a>
-         <a v-show="item.project.amazon_url" :href="item.project.amazon_url"
+         <a v-show="item.actor.amazon_url" :href="item.actor.amazon_url"
          target="_blank" class="align-octicon">
            Amazon
           </a>
-         <a v-show="item.project.goodreads_url" :href="item.project.goodreads_url"
+         <a v-show="item.actor.goodreads_url" :href="item.actor.goodreads_url"
          target="_blank" class="align-octicon">
            Goodreads
           </a>

@@ -3,13 +3,13 @@
  */
 
 
-function validateProject(item) {
+function validateActor(item) {
   console.assert('name' in item, item, 'name not in item');
   console.assert('url' in item, item, 'url not in item');
 }
 
 export const validateActors = (list) => {
-  list.forEach(item => validateProject(item));
+  list.forEach(item => validateActor(item));
 };
 
 export default validateActors;

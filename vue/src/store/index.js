@@ -52,15 +52,15 @@ function availableActors(actors, availableActivities) {
    * Return available Actor targets, minus ones that are filtered out.
    */
   return [
-    ...new Set(availableActivities.map(item => actors.find(s => s.id === item.project.id))),
+    ...new Set(availableActivities.map(item => actors.find(s => s.id === item.actor.id))),
   ];
 }
 
 
 function availableLanguages(availableActivities) {
   return availableActivities.reduce((acc, activity) => {
-    if (activity.project.languages && activity.project.languages.length) {
-      activity.project.languages.forEach((lang) => {
+    if (activity.actor.languages && activity.actor.languages.length) {
+      activity.actor.languages.forEach((lang) => {
         if (!acc.some(s => lang.name === s.name)) {
           acc.push(lang);
         }
@@ -89,8 +89,8 @@ function reduceActivities(state) {
    * Reduce activities based on most filters.
    *
    * These results are used by other reducers, and do not include
-   * eliminating individual projects, only applying category-type filters
-   * and regex-type filters. Not direct project lookups.
+   * eliminating individual actors, only applying category-type filters
+   * and regex-type filters. Not direct actor lookups.
    */
   const { selectedActivityTypes, selectedFilters } = state;
   let { activities: items } = state;
@@ -117,16 +117,16 @@ const reduceActivitiesFinal = (state, getters) => {
   const { selectedLanguages, selectedActors } = state;
   if (selectedLanguages.length) {
     filteredActivities = filteredActivities.filter((item) => {
-      if (!item.project.languages) {
+      if (!item.actor.languages) {
         return false;
       }
-      return item.project.languages.some(s => selectedLanguages.find(z => z.name === s.name));
+      return item.actor.languages.some(s => selectedLanguages.find(z => z.name === s.name));
     });
   }
 
   if (selectedActors && selectedActors.length) {
     return filteredActivities.filter(
-      item => selectedActors.find(s => s.id === item.project.id),
+      item => selectedActors.find(s => s.id === item.actor.id),
     );
   }
   return filteredActivities;

@@ -9,19 +9,19 @@ function lookupActorById(actors, type, id) {
   return actors.find(sub => sub.id === id);
 }
 
-function expandProject(item, actors) {
-  if (item.project !== undefined) {
+function expandActor(item, actors) {
+  if (item.actor !== undefined) {
     return Object.assign(
-      item, { project: lookupActorById(actors, 'project', item.project) },
+      item, { actor: lookupActorById(actors, 'actor', item.actor) },
     );
   }
   return item;
 }
 
-function expandLanguage(project) {
+function expandLanguage(actor) {
   /** Expand Array{string} of languages to a list of objects with name and color.
    *
-   * @param {Array, String} project
+   * @param {Array, String} actor
    * @return {Array, Object}
    *
    * Before: ['Python']
@@ -30,27 +30,27 @@ function expandLanguage(project) {
    *   'color': '#3572A5'
    * }]
    */
-  if (project.languages && project.languages.length) {
-    Object.assign(project, {
-      languages: project.languages.map(lang => ({
+  if (actor.languages && actor.languages.length) {
+    Object.assign(actor, {
+      languages: actor.languages.map(lang => ({
         name: lang,
         color: colors.get(lang).color,
       })),
     });
   }
-  return project;
+  return actor;
 }
 
 
-export const expandRelations = (activities, rawProjects) => {
+export const expandRelations = (activities, rawActors) => {
   /**
    * Expands primary key/ID relations with other objects.
    *
    * @param {Array, <Object>} activities
-   * @param {Array, <Object>} projects
+   * @param {Array, <Object>} actors
    * @return {Void}
    */
-  const projects = rawProjects.map(project => expandLanguage(project));
-  return activities.map(item => expandProject(item, projects));
+  const actors = rawActors.map(actor => expandLanguage(actor));
+  return activities.map(item => expandActor(item, actors));
 };
 export default expandRelations;

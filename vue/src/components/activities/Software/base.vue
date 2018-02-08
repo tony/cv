@@ -4,7 +4,7 @@
       <h2>{{projectType}}</h2>
       <div class="languages">
       <LanguageTag
-      v-for="language in item.project.languages" :key="language.name" :index="language.name"
+      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
       v-bind:language="language"
       />
       </div>
@@ -20,8 +20,8 @@
       <ImageTitleLinkColumn
        :title="item.title"
        :description="item.description"
-       :logo="item.project.logo"
-       :url="item.project.url"
+       :logo="item.actor.logo"
+       :url="item.actor.url"
        >
         <div slot="links">
           <SoftwareProjectLinks :item="item" />

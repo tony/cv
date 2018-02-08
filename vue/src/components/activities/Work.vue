@@ -3,7 +3,7 @@
     <div slot="left"> <h2>Work</h2>
       <div class="languages">
       <LanguageTag
-      v-for="language in item.project.languages" :key="language.name" :index="language.name"
+      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
       v-bind:language="language"
       />
       </div>
@@ -18,11 +18,11 @@
       <ImageTitleLinkColumn
        :title="item.title"
        :description="item.description"
-       :logo="item.project.logo"
-       :url="item.project.url"
+       :logo="item.actor.logo"
+       :url="item.actor.url"
        >
         <div slot="links">
-         <a v-show="item.project.url" :href="item.project.url"
+         <a v-show="item.actor.url" :href="item.actor.url"
          target="_blank" class="align-octicon">
           <octicon name="home" label="Created"></octicon>
           Website

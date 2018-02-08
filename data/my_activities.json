@@ -4,63 +4,63 @@
     "component": "SoftwareApp",
     "created_date": "2013-10-08",
     "title": "Created the tmuxp project",
-    "project": 10000
+    "actor": 10000
   },
   {
     "id": 20001,
     "component": "SoftwareApp",
     "created_date": "2017-04-17",
     "title": "Created the unihan-etl project",
-    "project": 10004
+    "actor": 10004
   },
   {
     "id": 20002,
     "component": "SoftwareApp",
     "created_date": "2013-05-20",
     "title": "Created the CLI interface to the cihai project",
-    "project": 10003
+    "actor": 10003
   },
   {
     "id": 20001,
     "component": "SoftwareLib",
     "created_date": "2016-10-08",
     "title": "Created the libtmux project",
-    "project": 10001
+    "actor": 10001
   },
   {
     "id": 20002,
     "component": "SoftwareLib",
     "created_date": "2017-04-16",
     "title": "Created the cihai CJK (Chinese, Japanese, Korean) data project",
-    "project": 10002
+    "actor": 10002
   },
   {
     "id": 20003,
     "component": "SoftwareLib",
     "created_date": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
-    "project": 10005
+    "actor": 10005
   },
   {
     "id": 20004,
     "component": "SoftwareLib",
     "created_date": "2017-11-26",
     "title": "Created a django package, django-slugify-processor",
-    "project": 10006
+    "actor": 10006
   },
   {
     "id": 20005,
     "component": "SoftwareLib",
     "created_date": "2016-06-20",
     "title": "Decouple libvcs from vcspull",
-    "project": 10008
+    "actor": 10008
   },
   {
     "id": 20006,
     "component": "SoftwareApp",
     "created_date": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
-    "project": 10007
+    "actor": 10007
   },
   {
     "id": 30000,
@@ -70,7 +70,7 @@
     "qa_url": "https://www.drupal.org/project/event/issues/143542",
     "diff_url": "https://www.drupal.org/files/issues/event_32.patch",
     "title": "Improving RSS feeds",
-    "project": 20000
+    "actor": 20000
   },
   {
     "id": 30001,
@@ -80,7 +80,7 @@
     "qa_url": "https://www.drupal.org/project/drupal/issues/213172",
     "diff_url": "https://www.drupal.org/files/issues/color_imageless_0.patch",
     "title": "Eliminate Color.module base_image requirement on 6.0",
-    "project": 20001
+    "actor": 20001
   },
   {
     "id": 30002,
@@ -90,7 +90,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
     "diff_url": "https://bz-attachments.freebsd.org/attachment.cgi?id=150996",
     "title": "x11-fonts/lohit: Fix typo in files/pkg-message.in",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30003,
@@ -100,7 +100,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167177",
     "title": "Storage Controller Interface driver - typo in unimplemented macro in scic_sds_controller_registers.h",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30004,
@@ -110,7 +110,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207337",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167179",
     "title": "libi386: typo in struct in pxe.h",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30005,
@@ -120,7 +120,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=180483",
     "title": "[NEW PORT] devel/py-libtmux: python API for tmux",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30006,
@@ -130,7 +130,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151072",
     "title": "[NEW PORT] devel/py-kaptan: Config file parser for json, yaml and ini files",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30007,
@@ -140,7 +140,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205987",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=165189",
     "title": "sysutils/py-tmuxp: Update to 0.9.3 for tmux 2.1 compatibility",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 30006,
@@ -150,7 +150,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151080",
     "title": "[NEW PORT] sysutils/py-tmuxp: Session manager for tmux",
-    "project": 20002
+    "actor": 20002
   },
   {
     "id": 40000,
@@ -159,7 +159,7 @@
     "end_date": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
     "description": "Node.js / Sail.js -> Django. Stripe integration czar",
-    "project": 50003
+    "actor": 50003
   },
   {
     "id": 40001,
@@ -167,7 +167,7 @@
     "created_date": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
-    "project": 40000
+    "actor": 40000
   },
   {
     "id": 40002,
@@ -176,7 +176,7 @@
     "end_date": "2011-01-01",
     "title": "Software Developer",
     "description": "Developing Drupal based SAAS platform, attending conferences, sales via GoToMeeting/Video conferences",
-    "project": 50000
+    "actor": 50000
   },
   {
     "id": 40003,
@@ -185,7 +185,7 @@
     "end_date": "2012-01-01",
     "title": "Software Developer",
     "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. (Acquired by Merkle.)",
-    "project": 50001
+    "actor": 50001
   },
   {
     "id": 40004,
@@ -197,34 +197,34 @@
     "duties": [
       "Facebook API"
     ],
-    "project": 50002
+    "actor": 50002
   }, {
     "id": 50000,
     "component": "Publication",
     "created_date": "2017-01-01",
     "title": "Published The Tao of tmux",
-    "project": 30000
+    "actor": 30000
   },
   {
     "id": 60000,
     "component": "Volunteer",
     "created_date": "2013-01-01",
     "title": "System Administrator at Wengu",
-    "project": 40002
+    "actor": 40002
   },
   {
     "id": 70000,
     "component": "Website",
     "created_date": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
-    "project": 40001
+    "actor": 40001
   },
   {
     "id": 70001,
     "component": "Article",
     "created_date": "2017-07-04",
     "title": "Django vs Flask",
-    "project": 40000,
+    "actor": 40000,
     "url": "https://devel.tech/features/django-vs-flask",
     "featured": {
       "HN": "https://news.ycombinator.com/item?id=14690638",
