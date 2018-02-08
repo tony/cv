@@ -1,21 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Activity = ({ onClick, completed, title }) => (
+const Activity = ({ onClick, accepted_date, title, created_date, id }) => (
   <li
     onClick={onClick}
     style={ {
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: accepted_date ? 'line-through' : 'none'
     }}
   >
-    {title}
+    {title} {created_date} id: {id}
   </li>
 )
 
 Activity.propTypes = {
   onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
+  accepted_date: PropTypes.string,
+  created_date: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired
 }
 
@@ -33,7 +34,7 @@ ActivityList.propTypes = {
       id: PropTypes.number.isRequired,
       component: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
+      description: PropTypes.string,
       actor: PropTypes.object.isRequired,
       created_date: PropTypes.string.isRequired,
       accepted_date: PropTypes.string,
