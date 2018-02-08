@@ -18,7 +18,7 @@ const config = {
   exclude_own_repo: true,
   gh_user: 'tony',
   exclude_users: ['cihai', 'git-pull', 'nick-ma'],
-  output_dir: 'src/data/scraped',
+  output_dir: 'data/scraped',
   ignore_private_repos: true,
 }
 
@@ -38,7 +38,7 @@ const testQuery = `
 // note, this requires .replace of:
 // 1. {{user_params}} -> 'login: "yourusername"'
 // 2. {{pull_requests_params}} -> 'first 100'
-const prQuery = fs.readFileSync('./notes/gh_pullrequests.graphql', 'utf8');
+const prQuery = fs.readFileSync('./gh_pullrequests.graphql', 'utf8');
 
 async function ghQuery(query) {
   const q = await c({
