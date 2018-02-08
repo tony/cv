@@ -5,15 +5,15 @@ import PropTypes from 'prop-types'
 class Row extends React.Component {
   render () {
     return (
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-xs-12">
-        <div class="box">
-        <div class="row">
-          <div class="col-md-4 col-xs-12 item"><div class="box">
-          {this.props.left}
+      <div className="row">
+        <div className="col-md-10 col-md-offset-1 col-xs-12">
+        <div className="box">
+        <div className="row">
+          <div className="col-md-4 col-xs-12 item"><div className="box">
+          {this.props.left.created_date}
           </div></div>
-          <div class="col-md-8 col-xs-12 item"><div class="box">
-          {this.props.right}
+          <div className="col-md-8 col-xs-12 item"><div className="box">
+          {this.props.right.title}
           </div></div>
         </div>
         </div>
@@ -28,15 +28,9 @@ class Activity extends React.Component {
   render () {
     const { onClick, accepted_date, title, created_date, id } = this.props;
     return (
-      <li
-        onClick={onClick}
-        style={ {
-          textDecoration: accepted_date ? 'line-through' : 'none'
-        }}
-      >
-        {title} {created_date} id: {id}
-        <Row left={title}/>
-      </li>
+      <Row left={this.props} right={this.props} onClick={onClick}  style={ {
+        textDecoration: accepted_date ? 'line-through' : 'none'
+      } }/>
     )
   }
 
