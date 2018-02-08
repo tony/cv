@@ -156,3 +156,8 @@ Shouts
 - colors for project/place/company
 - move data files into a general area
 - vue/  react/
+- parity notes:
+
+  - use #root on both vue and react, or #app
+
+    right now #app is on vue, and #root is on react
