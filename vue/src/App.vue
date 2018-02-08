@@ -42,26 +42,6 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.item {
-  background-color: #fff;
-  color: #4a4a4a;
-  max-width: 100%;
-  position: relative;
-  margin-top: 1rem;
-}
-.item:first-of-type {
-  margin-top: 1rem;
-}
-</style>
 <style src="cv-lib/assets/css/flexboxgrid.min.css"></style>
 <style src="cv-lib/assets/css/git-pull.css"></style>
+<style src="cv-lib/assets/css/cv.css"></style>

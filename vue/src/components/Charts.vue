@@ -88,10 +88,3 @@ export default {
   },
 };
 </script>
-
-
-<style>
-.padBottom {
-  margin-bottom: 1em;
-}
-</style>

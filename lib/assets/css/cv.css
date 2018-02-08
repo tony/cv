@@ -1,0 +1,136 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+.item {
+  background-color: #fff;
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  margin-top: 1rem;
+}
+.item:first-of-type {
+  margin-top: 1rem;
+}
+
+.header h1, .header h2 {
+  font-weight: normal;
+}
+.header a {
+  color: #42b983;
+}
+
+.header .tag {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  color: #4a4a4a;
+  //display: inline-flex;
+  font-size: .75rem;
+  justify-content: center;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  margin-top: -0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: -0.5em;
+  padding-left: .75em;
+  padding-right: .75em;
+  white-space: nowrap;
+}
+
+.footnote {
+  text-decoration: none;
+  font-size: .7em;
+  vertical-align: top;
+  border-bottom: 1px dotted #004b6b;
+}
+.hidden {
+  display: none;
+}
+
+.padBottom {
+  margin-bottom: 1em;
+}
+
+.roundedOne {
+  margin: .5em 0 0 0;
+}
+@media (min-width: 500px) {
+  .choices {
+    margin-top: .5em;
+  }
+
+}
+@media (max-width: 499px) {
+  .choices {
+    margin-top: .5rem;
+  }
+  h3, h2, p {
+    margin: 0;
+  }
+  h2 {
+    padding-top: 2em;
+    padding-bottom: .25em;
+  }
+}
+
+.selectedFilters .multiselect__tag {
+  background: gray;
+  outline: none;
+  color: white;
+}
+.selectedFilters .multiselect__tag-icon:hover {
+  background: #666;
+}
+.selectedFilters .multiselect__tag-icon:after {
+  color: #666;
+}
+.selectedFilters .multiselect__tag-icon:hover:after {
+  color: white;
+}
+
+.tag {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  color: #4a4a4a;
+  display: inline-flex;
+  font-size: .75rem;
+  justify-content: center;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: .75em;
+  padding-right: .75em;
+  white-space: nowrap;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.align-octicon .octicon {
+  vertical-align: text-top;
+}
+.align-octicon-bottom .octicon {
+  vertical-align: initial;
+}
+h3.align-octicon-bottom .octicon {
+  vertical-align: baseline;
+}
+
+@media (max-width: 499px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
+h2 {
+  margin-top: 0;
+}

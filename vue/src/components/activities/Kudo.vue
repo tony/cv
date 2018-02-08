@@ -8,6 +8,3 @@ export default {
   props: ['item', 'opts'],
 };
 </script>
-
-<style>
-</style>
