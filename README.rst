@@ -4,7 +4,8 @@ Tony Narlock's CV
 Quickstart
 ----------
 
-- *vue/* - Vue.js version
+- *vue/* - `Vue.js`_ version
+- *react/* - `React`_ version
 - *scripts/* - GitHub Scraper
 - *static/* - Static assets (images) shared across versions
 
@@ -56,3 +57,4 @@ functional tests, but then also with a "stop watch" type thing for how
 long it takes to paint to the screen side-by-side.
 
 .. _Vue.js: https://vuejs.org/
+.. _React: https://reactjs.org/
