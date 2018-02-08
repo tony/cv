@@ -4,10 +4,22 @@ Tony Narlock's CV
 Quickstart
 ----------
 
-- *vue/* - `Vue.js`_ version
-- *react/* - `React`_ version
-- *scripts/* - GitHub Scraper
-- *static/* - Static assets (images) shared across versions
+- *vue/*: `Vue.js`_ version
+- *react/*: `React`_ version
+- *scripts/*: GitHub Scraper
+- *static/*: Static assets (images) shared across versions
+- *yarn.lock* / *package.json*: Packages for *scripts/* files.
+- *data/*: initial data
+  - *myProjects.json*: Subjects e.g. Company, Website, Open Source Project,
+    App, Library, Article
+  - *myActivities.json*: Individual events occuring *at* a subjace (Patch
+    to an Open Source Project, Work at a Company, Volunteer at a Website)
+  - *scraped/*: data pulled from remote API's (such as
+    *scripts/github.js*)
+    - *gh_patches.json*: Pull requests for users *except* yourself / your
+      own repos. Same format as *myActivities.json*, combined.
+    - *gh_projects.json*: GitHub Repos. Same schema as
+      *myProjects.json*), combined.
 
 Background
 ----------
