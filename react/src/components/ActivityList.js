@@ -1,6 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+
+class Row extends React.Component {
+  render () {
+    return (
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+        <div class="box">
+        <div class="row">
+          <div class="col-md-4 col-xs-12 item"><div class="box">
+          1
+          </div></div>
+          <div class="col-md-8 col-xs-12 item"><div class="box">
+          2
+          </div></div>
+        </div>
+        </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+
 class Activity extends React.Component {
   render () {
     const { onClick, accepted_date, title, created_date, id } = this.props;
@@ -12,6 +35,7 @@ class Activity extends React.Component {
         }}
       >
         {title} {created_date} id: {id}
+        <Row/>
       </li>
     )
   }

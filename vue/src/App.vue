@@ -63,5 +63,5 @@ export default {
   margin-top: 1rem;
 }
 </style>
-<style src="./assets/css/flexboxgrid.min.css"></style>
-<style src="./assets/css/git-pull.css"></style>
+<style src="cv-lib/assets/css/flexboxgrid.min.css"></style>
+<style src="cv-lib/assets/css/git-pull.css"></style>
