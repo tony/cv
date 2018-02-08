@@ -4,15 +4,15 @@
 const colors = require('github-colors');
 
 
-function lookupSubjectById(subjects, type, id) {
-  /* Lookup and resolve subject by ID */
-  return subjects.find(sub => sub.id === id);
+function lookupActorById(actors, type, id) {
+  /* Lookup and resolve actor by ID */
+  return actors.find(sub => sub.id === id);
 }
 
-function expandProject(item, subjects) {
+function expandProject(item, actors) {
   if (item.project !== undefined) {
     return Object.assign(
-      item, { project: lookupSubjectById(subjects, 'project', item.project) },
+      item, { project: lookupActorById(actors, 'project', item.project) },
     );
   }
   return item;

@@ -8,8 +8,8 @@ function validateProject(item) {
   console.assert('url' in item, item, 'url not in item');
 }
 
-export const validateSubjects = (list) => {
+export const validateActors = (list) => {
   list.forEach(item => validateProject(item));
 };
 
-export default validateSubjects;
+export default validateActors;

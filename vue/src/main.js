@@ -5,7 +5,7 @@ import Vue from 'vue';
 import App from './App';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
-import { ACTIVITIES, SUBJECTS, DEFAULT_SELECTED_FILTERS } from './constants';
+import { ACTIVITIES, ACTORS, DEFAULT_SELECTED_FILTERS } from './constants';
 import './lib/octicons';
 
 Vue.config.productionTip = false;
@@ -17,7 +17,7 @@ store.commit(
   LOAD_INITIAL_DATA,
   {
     activities: ACTIVITIES,
-    subjects: SUBJECTS,
+    actors: ACTORS,
     selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );

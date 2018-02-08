@@ -47,12 +47,12 @@ function availableActivityTypes(v) {
   ];
 }
 
-function availableSubjects(subjects, availableActivities) {
+function availableActors(actors, availableActivities) {
   /**
-   * Return available Subject targets, minus ones that are filtered out.
+   * Return available Actor targets, minus ones that are filtered out.
    */
   return [
-    ...new Set(availableActivities.map(item => subjects.find(s => s.id === item.project.id))),
+    ...new Set(availableActivities.map(item => actors.find(s => s.id === item.project.id))),
   ];
 }
 
@@ -114,7 +114,7 @@ const reduceActivitiesFinal = (state, getters) => {
    * Final reducer, includes direct proejct lookups and programming languages.
    */
   let { filteredActivities } = getters;
-  const { selectedLanguages, selectedSubjects } = state;
+  const { selectedLanguages, selectedActors } = state;
   if (selectedLanguages.length) {
     filteredActivities = filteredActivities.filter((item) => {
       if (!item.project.languages) {
@@ -124,9 +124,9 @@ const reduceActivitiesFinal = (state, getters) => {
     });
   }
 
-  if (selectedSubjects && selectedSubjects.length) {
+  if (selectedActors && selectedActors.length) {
     return filteredActivities.filter(
-      item => selectedSubjects.find(s => s.id === item.project.id),
+      item => selectedActors.find(s => s.id === item.project.id),
     );
   }
   return filteredActivities;
@@ -136,9 +136,9 @@ const store = new Vuex.Store({
   state: {
     count: 0,
     activities: null,
-    subjects: null,
+    actors: null,
     selectedActivityTypes: [],
-    selectedSubjects: null,
+    selectedActors: null,
     selectedFilters: null,
     selectedLanguages: [],
   },
@@ -155,12 +155,12 @@ const store = new Vuex.Store({
         ),
       )
     ),
-    subjects: state => state.subjects, // subject items
-    availableSubjectTypes: state => [
-      ...new Set(state.subjects.map(item => item)),
+    actors: state => state.actors, // actor items
+    availableActorTypes: state => [
+      ...new Set(state.actors.map(item => item)),
     ],
-    availableSubjects: (state, getters) => availableSubjects(
-      state.subjects, getters.filteredActivities,
+    availableActors: (state, getters) => availableActors(
+      state.actors, getters.filteredActivities,
     ),
     availableActivityTypes: state => availableActivityTypes(state.activities),
     availableFilters: () => Object.keys(filters),
@@ -169,8 +169,8 @@ const store = new Vuex.Store({
     updateSelectedActivityTypeAction({ commit }, value) {
       commit('updateSelectedActivityType', value);
     },
-    updateSelectedSubjectsAction({ commit }, value) {
-      commit('updateSelectedSubjects', value);
+    updateSelectedActorsAction({ commit }, value) {
+      commit('updateSelectedActors', value);
     },
     updateSelectedFiltersAction({ commit }, value) {
       commit('updateSelectedFilters', value);
@@ -182,14 +182,14 @@ const store = new Vuex.Store({
   mutations: {
     [LOAD_INITIAL_DATA]: (state, data) => {
       state.activities = data.activities;
-      state.subjects = data.subjects;
+      state.actors = data.actors;
       state.selectedFilters = data.selectedFilters;
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;
     },
-    updateSelectedSubjects(state, value) {
-      state.selectedSubjects = value;
+    updateSelectedActors(state, value) {
+      state.selectedActors = value;
     },
     updateSelectedFilters(state, value) {
       state.selectedFilters = value;

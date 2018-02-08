@@ -6,10 +6,10 @@
       placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
       label="name"
       track-by="name"
-      id="subjectFilter"
-      :value="selectedSubjects"
-      :options="availableSubjects"
-      @input="updateSelectedSubjectsAction"
+      id="actorFilter"
+      :value="selectedActors"
+      :options="availableActors"
+      @input="updateSelectedActorsAction"
       >
       <template slot="option" slot-scope="props">
       <span>{{ props.option.name }}</span>
@@ -65,9 +65,9 @@ export default {
   components: { Multiselect },
   computed: {
     ...mapGetters([
-      'subjects',
-      'availableSubjects',
-      'availableSubjectTypes',
+      'actors',
+      'availableActors',
+      'availableActorTypes',
       'availableActivityTypes',
       'availableFilters',
       'availableLanguages',
@@ -83,12 +83,12 @@ export default {
         },
       },
     },
-    ...mapState(['selectedActivityTypes', 'selectedSubjects', 'selectedLanguages']),
+    ...mapState(['selectedActivityTypes', 'selectedActors', 'selectedLanguages']),
   },
   methods: {
     ...mapActions([
       'updateSelectedActivityTypeAction',
-      'updateSelectedSubjectsAction',
+      'updateSelectedActorsAction',
       'updateSelectedFiltersAction',
       'updateSelectedLanguagesAction',
     ]),

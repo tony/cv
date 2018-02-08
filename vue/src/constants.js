@@ -1,4 +1,4 @@
-import { validateSubjects } from './lib/precheck-data';
+import { validateActors } from './lib/precheck-data';
 import { expandRelations } from './lib/expand-data';
 import githubActivities from '../../data/scraped/gh_activities.json';
 import githubActors from '../../data/scraped/gh_actors.json';
@@ -12,15 +12,15 @@ export const DEFAULT_SELECTED_FILTERS = [
   'Hide Unmerged Contributions',
 ];
 
-export const SUBJECTS = [
+export const ACTORS = [
   ...githubActors,
   ...myActors,
 ];
 
-validateSubjects(SUBJECTS);
+validateActors(ACTORS);
 
 // Resolve ID to object relationships so they're available in data
 export const ACTIVITIES = expandRelations([
   ...githubActivities,
   ...myActivities,
-], SUBJECTS);
+], ACTORS);
