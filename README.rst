@@ -12,9 +12,9 @@ Quickstart
 Background
 ----------
 
-In 2014, I wrote a `similar application
-<https://github.com/tony/github-exercise>`__ that became deprecated when
-GitHub's API changed. In 2018, I am using `Vue.js`_ and webpack.
+In 2014, I wrote a `similar application <https://github.com/tony/github-exercise>`__
+that became deprecated when GitHub's API changed. In 2018, I am experimenting with
+both `Vue.js`_ and `React`_.
 
 The first project would use find all repositories a user had, and all
 contributors the repositories had. It would use asynchronous requests
