@@ -8,18 +8,37 @@ Quickstart
 - *react/*: `React`_ version
 - *scripts/*: GitHub Scraper
 - *static/*: Static assets (images) shared across versions
-- *yarn.lock* / *package.json*: Packages for *scripts/* files.
+- *yarn.lock* / *package.json*: Packages for *scripts/* files
 - *data/*: initial data
-  - *myProjects.json*: Subjects e.g. Company, Website, Open Source Project,
-    App, Library, Article
-  - *myActivities.json*: Individual events occuring *at* a subjace (Patch
-    to an Open Source Project, Work at a Company, Volunteer at a Website)
+
+  - *my_actors.json*: `Actors`_ noun, person, place, thing, etc.
+  - *my_activities.json*: `Activities`_ verb, action, event, happening
+    in relation to an *actor*
+
   - *scraped/*: data pulled from remote API's (such as
     *scripts/github.js*)
-    - *gh_patches.json*: Pull requests for users *except* yourself / your
-      own repos. Same format as *myActivities.json*, combined.
-    - *gh_projects.json*: GitHub Repos. Same schema as
-      *myProjects.json*), combined.
+
+    - *gh_activities.json*: Pull requests for users *except* yourself / your
+      own repos. Same format as *my_activities.json*, combined.
+    - *gh_actors.json*: GitHub Repos. Same schema as
+      *my_actors.json*), combined.
+
+The notion of *actor* and *activity* is the same idea as the terms in `Activity
+Streams`_ 2.0 (May 2017). The schema's aren't strictly adhered to, only
+influenced by it.
+
+In the JSON file(s) in *data/*:
+
+An *actor* object is a noun/person/place/thing. Examples: A company (Social
+Amp), or Software Library (libtmux).
+
+An *activity* object is a verb/action/event/happening related to an *actor*.
+Examples: Patch to an Open Source Project, Work at a Company, Volunteer at a
+Website.
+
+.. _Actors: https://www.w3.org/TR/activitystreams-core/#actors
+.. _Activities: https://www.w3.org/TR/activitystreams-core/#activities
+.. _Activity Streams: https://www.w3.org/TR/activitystreams-core/#introduction
 
 Background
 ----------
