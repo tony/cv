@@ -7,10 +7,15 @@ import { createStore } from 'redux';
 import todoApp from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import { addTodo } from './actions';
+import { ACTORS, ACTIVITIES } from 'cv-lib/constants';
 
-let store = createStore(todoApp)
+let store = createStore(todoApp, {
+  actors: ACTORS,
+  activities: ACTIVITIES
+});
 
 store.dispatch(addTodo('hi'));
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
