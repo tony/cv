@@ -10,10 +10,10 @@ class Row extends React.Component {
         <div class="box">
         <div class="row">
           <div class="col-md-4 col-xs-12 item"><div class="box">
-          1
+          {this.props.left}
           </div></div>
           <div class="col-md-8 col-xs-12 item"><div class="box">
-          2
+          {this.props.right}
           </div></div>
         </div>
         </div>
@@ -35,7 +35,7 @@ class Activity extends React.Component {
         }}
       >
         {title} {created_date} id: {id}
-        <Row/>
+        <Row left={title}/>
       </li>
     )
   }
