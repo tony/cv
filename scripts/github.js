@@ -1,4 +1,5 @@
 const fs = require('fs');
+var path = require('path');
 var client = require('github-graphql-client');
 const util = require('util');
 const c = util.promisify(client);
@@ -38,7 +39,9 @@ const testQuery = `
 // note, this requires .replace of:
 // 1. {{user_params}} -> 'login: "yourusername"'
 // 2. {{pull_requests_params}} -> 'first 100'
-const prQuery = fs.readFileSync('./gh_pullrequests.graphql', 'utf8');
+const prQuery = fs.readFileSync(
+  path.join(__dirname, './gh_pullrequests.graphql'), 'utf8'
+);
 
 async function ghQuery(query) {
   const q = await c({
@@ -135,7 +138,7 @@ recursePRQuery(initialPrQuery).then(prs => {
   });
 
   let data = JSON.stringify(projects_final, null, '  ');
-  fs.writeFileSync(`${config.output_dir}/gh_projects.json`, data);
+  fs.writeFileSync(`${config.output_dir}/gh_actors.json`, data);
 
   // we do this at the bottom because we want to associate the
   // project_final 'id' attribute with project in pr's
@@ -154,6 +157,6 @@ recursePRQuery(initialPrQuery).then(prs => {
     }
   });
   data = JSON.stringify(pullRequests_final, null, '  ');
-  fs.writeFileSync(`${config.output_dir}/gh_patches.json`, data);
+  fs.writeFileSync(`${config.output_dir}/gh_activities.json`, data);
 
 }).catch(err => console.error(err));
