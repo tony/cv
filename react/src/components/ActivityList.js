@@ -1,24 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Activity = ({ onClick, accepted_date, title, created_date, id }) => (
-  <li
-    onClick={onClick}
-    style={ {
-      textDecoration: accepted_date ? 'line-through' : 'none'
-    }}
-  >
-    {title} {created_date} id: {id}
-  </li>
-)
+class Activity extends React.Component {
+  render () {
+    const { onClick, accepted_date, title, created_date, id } = this.props;
+    return (
+      <li
+        onClick={onClick}
+        style={ {
+          textDecoration: accepted_date ? 'line-through' : 'none'
+        }}
+      >
+        {title} {created_date} id: {id}
+      </li>
+    )
+  }
 
-Activity.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  accepted_date: PropTypes.string,
-  created_date: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
+    accepted_date: PropTypes.string,
+    created_date: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  }
 }
+
 
 const Components = {
   Patch: Activity,
