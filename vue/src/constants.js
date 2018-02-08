@@ -1,9 +1,9 @@
 import { validateSubjects } from './lib/precheck-data';
 import { expandRelations } from './lib/expand-data';
-import githubPatches from '../../data/scraped/gh_activities.json';
-import githubProjects from '../../data/scraped/gh_actors.json';
+import githubActivities from '../../data/scraped/gh_activities.json';
+import githubActors from '../../data/scraped/gh_actors.json';
 import myActivities from '../../data/my_activities.json';
-import myProjects from '../../data/my_actors.json';
+import myActors from '../../data/my_actors.json';
 
 export const DEFAULT_SELECTED_FILTERS = [
   'Hide Spelling Contributions',
@@ -13,14 +13,14 @@ export const DEFAULT_SELECTED_FILTERS = [
 ];
 
 export const SUBJECTS = [
-  ...githubProjects,
-  ...myProjects,
+  ...githubActors,
+  ...myActors,
 ];
 
 validateSubjects(SUBJECTS);
 
 // Resolve ID to object relationships so they're available in data
 export const ACTIVITIES = expandRelations([
-  ...githubPatches,
+  ...githubActivities,
   ...myActivities,
 ], SUBJECTS);
