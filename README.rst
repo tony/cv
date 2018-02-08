@@ -4,13 +4,37 @@ Tony Narlock's CV
 Quickstart
 ----------
 
-- *vue/*: `Vue.js`_ version
-- *react/*: `React`_ version
-- *lib/*: Common code (reducers/filters code, initial data collections)
-- *scripts/*: GitHub Scraper
-- *static/*: Static assets (images) shared across versions
-- *yarn.lock* / *package.json*: Packages for *scripts/* files
-- *data/*: initial data
+.. code-block:: bash
+
+   $ yarn
+
+   $ ./scripts/github.sh
+
+   # for Vue.js
+   $ cd vue/
+   $ yarn
+   $ npm run build
+
+   # for Vue.js
+   $ cd vue/
+   $ yarn
+   $ npm run build
+
+   # for React
+   $ cd react/
+   $ yarn
+   $ npm run build
+
+Structure
+--------
+
+- `vue/ <vue/>`_: `Vue.js`_ version
+- `react/ <react/>`_: `React`_ version
+- `lib/ <lib/>`_: Common code (reducers/filters code, initial data collections)
+- `scripts/ <scripts/>`_: GitHub Scraper
+- `static/ <static/>`_: Static assets (images) shared across versions
+- yarn.lock / package.json: Packages for *scripts/* files
+- `data/ <data/>`_: initial data
 
   - *my_actors.json*: `Actors`_ noun, person, place, thing, etc.
   - *my_activities.json*: `Activities`_ verb, action, event, happening
@@ -39,7 +63,7 @@ steps and being greatest common chunks of code between the two.
 always use the freshest "live" common code.
 
 This is done via symlinks. Yarn Workspaces orchestrates what ``npm link`` /
-``yarn link`` would have each user to do manually, every time they cloned
+``yarn link`` would have each user to manually, every time they cloned
 the repo.
 
 *lib/* is mapped to the ``cv-lib`` package, *data/* to ``cv-data``
@@ -48,11 +72,11 @@ Rationale:
 
 - Using relative file links to ``../data`` and ``../lib`` from the
   *vue/package.json* and *react/package.json* would **copy** the package,
-  which means the react/vue's file watching wouldn't detect chages made
+  which means the react/vue's file watching wouldn't detect changes made
   to *lib/* and *data/*, but rather *react/node_modules/cv-lib* and
   *react/node_modules/cv-data*, and so on. Hot updates wouldn't work
   if you modifed the real data, only the files that were copied to
-  *node_modules/*.
+  *node_modules/* (which you probably wouldn't edit directly).
 
   The data would be needlessly duplicated, and would grow stale if changes were
   made in development.
