@@ -20,3 +20,11 @@ export const toggleTodo = id => {
     id
   }
 }
+
+
+export const toggleActivity = id => {
+  return {
+    type: 'TOGGLE_ACTIVITY',
+    id
+  }
+}
