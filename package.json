@@ -3,5 +3,6 @@
     "github-colors": "^2.2.16",
     "github-graphql-client": "^1.0.0",
     "moment": "^2.20.1"
-  }
+  },
+  "workspaces": ["lib", "data"]
 }

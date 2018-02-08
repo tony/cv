@@ -1,11 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
+import { ACTIVITIES, ACTORS, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
 import App from './App';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
-import { ACTIVITIES, ACTORS, DEFAULT_SELECTED_FILTERS } from '../../lib/constants';
 import './lib/octicons';
 
 Vue.config.productionTip = false;

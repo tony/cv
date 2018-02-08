@@ -1,0 +1,7 @@
+{
+  "name": "cv-data",
+  "version": "1.0.0",
+  "description": "Common data in Tony Narlock's CV",
+  "author": "Tony Narlock <tony@git-pull.com>",
+  "private": true
+}
