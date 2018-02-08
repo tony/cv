@@ -11,11 +11,13 @@ class Row extends React.Component {
         <div className="box">
         <div className="row">
           <div className="col-md-4 col-xs-12 item"><div className="box">
-            {this.props.left.created_date}
+            {this.props.left.component}<br />
+            {this.props.left.created_date}<br />
             <span> (<Moment fromNow>{this.props.left.created_date}</Moment>)</span>
           </div></div>
-            <div className="col-md-8 col-xs-12 item"><div className="box">
-            {this.props.right.title}
+          <div className="col-md-8 col-xs-12 item"><div className="box">
+            {this.props.right.title}<br />
+            {this.props.left.actor.name}
           </div></div>
         </div>
         </div>
@@ -25,10 +27,21 @@ class Row extends React.Component {
   }
 }
 
+const activityProp = {
+  id: PropTypes.number.isRequired,
+  component: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  actor: PropTypes.object.isRequired,
+  created_date: PropTypes.string.isRequired,
+  accepted_date: PropTypes.string,
+  end_date: PropTypes.string
+};
+
 
 class Activity extends React.Component {
   render () {
-    const { onClick, accepted_date, title, created_date, id } = this.props;
+    const { accepted_date, onClick } = this.props;
     return (
       <Row left={this.props} right={this.props} onClick={onClick}  style={ {
         textDecoration: accepted_date ? 'line-through' : 'none'
@@ -37,11 +50,10 @@ class Activity extends React.Component {
   }
 
   static propTypes = {
-    onClick: PropTypes.func.isRequired,
-    title: PropTypes.string.isRequired,
-    accepted_date: PropTypes.string,
-    created_date: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    ...activityProp,
+    ...{
+      onClick: PropTypes.func.isRequired,
+    }
   }
 }
 
@@ -81,16 +93,7 @@ class ActivityList extends React.Component {
   }
   static propTypes = {
     activities: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        component: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string,
-        actor: PropTypes.object.isRequired,
-        created_date: PropTypes.string.isRequired,
-        accepted_date: PropTypes.string,
-        end_date: PropTypes.string
-      }).isRequired
+      PropTypes.shape(activityProp).isRequired
     ).isRequired,
     onActivityClick: PropTypes.func.isRequired
   }
