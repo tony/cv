@@ -134,3 +134,25 @@ h3.align-octicon-bottom .octicon {
 h2 {
   margin-top: 0;
 }
+
+.activity-title {
+  text-align: center;
+  font-size: 1.17em;
+  color: #4a4a4a;
+  display: block;
+}
+
+img.logo {
+  display: block;
+  margin: 1em auto;
+}
+
+.bottompad10 {
+  margin-bottom: 1em;
+  display: block;
+}
+
+a {
+  color: #4a4a4a;
+  text-decoration: none;
+}

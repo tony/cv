@@ -25,26 +25,6 @@ export default {
 
 <style scoped>
 .activity-title {
-  text-align: center;
-  font-size: 1.17em;
-  color: #4a4a4a;
   margin: 0 auto 1em auto;
-  display: block;
-}
-
-img.logo {
-  display: block;
-  margin: 1em auto;
-}
-
-.bottompad10 {
-  margin-bottom: 1em;
-  display: block;
-}
-
-a {
-  color: #4a4a4a;
-  text-decoration: none;
-  padding: 0 .25em;
 }
 </style>
