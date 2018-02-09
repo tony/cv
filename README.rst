@@ -286,5 +286,23 @@ declaratively add it when necessary.
 There was an example in Vue.js were the whitespace was giving me a
 concrete issue, but I don't remember it.
 
+Performance: Render control
+"""""""""""""""""""""""""""
+
+On of the most important benefits React brings to the table with this is
+``shouldComponentUpdate``.
+
+The nature of controlling when components render in SPA is critical.
+A central storage (vuex, redux) is going to trigger chain reactions across
+a tree of components. They add up.
+
+Vue doesn't make it as easy to control renders by hand, it's done
+automatically [1]_.
+
+React allows you to go under the hood and do it yourself. For any non-trivial,
+enterprise-grade frontend application, the granularity ``shouldComponentUpdate``
+will be indispensible.
+
 .. _Vue.js: https://vuejs.org/
 .. _React: https://reactjs.org/
+.. [1] https://github.com/vuejs/vue/issues/4255#issuecomment-261778207
