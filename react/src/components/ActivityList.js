@@ -112,7 +112,7 @@ class ActivityList extends React.Component {
         ...{
           key: itemData['id'],
           onClick: () => onActivityClick(itemData.id),
-          activityType: activityTypes.find(a => itemData.component === a.component_name).name,
+          activityType: activityTypes.find(a => itemData.component === a.component_name).singular_name,
         },
         ...itemData,
       });
