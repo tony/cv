@@ -16,7 +16,13 @@ class LeftBox extends React.Component {
         </p>
         {this.props.actor.languages ? (
           this.props.actor.languages.map((language, i) =>
-            <span className="tag" key={i}>{language.name}</span>
+            <span
+              className="tag language-tag"
+              key={i}
+              style={ language.color ? {
+                backgroundColor: language.color
+              }: {}}
+            >{language.name}</span>
           )
         ) : null }
       </div>

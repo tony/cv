@@ -1,6 +1,6 @@
 <template>
   <span
-    class="tag"
+    class="tag language-tag"
     :style="{ backgroundColor: language.color }"
     >{{language.name}}</span>
 </template>
@@ -12,11 +12,3 @@ export default {
   props: ['language', 'item', 'idx'],
 };
 </script>
-
-<style scoped>
-.tag {
-  color: white;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .7);
-  margin-left: 0.2em;
-}
-</style>
