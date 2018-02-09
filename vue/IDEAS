@@ -162,3 +162,4 @@ Shouts
 
     right now #app is on vue, and #root is on react
 - When scrolling down, merge filters at top of screen.
+- Unify filter/reducers into one select box
