@@ -161,3 +161,4 @@ Shouts
   - use #root on both vue and react, or #app
 
     right now #app is on vue, and #root is on react
+- When scrolling down, merge filters at top of screen.
