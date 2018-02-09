@@ -67,19 +67,19 @@ class Row extends React.Component {
 }
 
 const languageProp = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   name: PropTypes.string.isRequired,
 };
 
 const actorProp = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  repo_url: PropTypes.string.isRequired,
+  repo_url: PropTypes.string,
   type: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   languages: PropTypes.arrayOf(
     PropTypes.shape(languageProp).isRequired
-  ).isRequired,
+  ),
 };
 
 const activityProp = {
@@ -145,8 +145,7 @@ class ActivityList extends React.Component {
 
     return (
       <div className="list">
-      <div>And I am an ItemList</div>
-      <div>{items}</div>
+        <div>{items}</div>
       </div>
     );
   }
