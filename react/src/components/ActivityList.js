@@ -24,6 +24,17 @@ class LeftBox extends React.Component {
   }
 }
 
+class RightBox extends React.Component {
+  render() {
+    return (
+      <div className="box">
+        {this.props.title}<br />
+        {this.props.actor.name}
+      </div>
+    )
+  }
+}
+
 
 
 class Row extends React.Component {
@@ -37,10 +48,7 @@ class Row extends React.Component {
             {this.props.leftbox}
           </div>
           <div className="col-md-8 col-xs-12 item">
-          <div className="box">
-            {this.props.right.title}<br />
-            {this.props.right.actor.name}
-          </div>
+            {this.props.rightbox}
           </div>
         </div>
         </div>
@@ -82,7 +90,10 @@ class Activity extends React.Component {
   render () {
     const { accepted_date, onClick } = this.props;
     return (
-      <Row leftbox={<LeftBox {...this.props}/>} right={this.props} onClick={onClick}  style={ {
+      <Row
+        leftbox={<LeftBox {...this.props}/>}
+        rightbox={<RightBox {...this.props}/>}
+        onClick={onClick} style={ {
         textDecoration: accepted_date ? 'line-through' : 'none'
       } }/>
     )
