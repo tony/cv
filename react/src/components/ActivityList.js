@@ -1,24 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Moment from 'react-moment';
+import { activityTypes } from 'cv-lib/storage';
 
 
 class Row extends React.Component {
   render () {
+    console.log(this.props.left.actor);
     return (
       <div className="row">
         <div className="col-md-10 col-md-offset-1 col-xs-12">
         <div className="box">
         <div className="row">
-          <div className="col-md-4 col-xs-12 item"><div className="box">
-            {this.props.left.component}<br />
-            {this.props.left.created_date}<br />
-            <span> (<Moment fromNow>{this.props.left.created_date}</Moment>)</span>
-          </div></div>
-          <div className="col-md-8 col-xs-12 item"><div className="box">
+          <div className="col-md-4 col-xs-12 item">
+          <div className="box">
+            <h2>{this.props.left.activityType}</h2>
+            <p>
+            <small>Submitted
+              <span> <Moment fromNow>{this.props.left.created_date}</Moment> </span>
+               ({this.props.left.created_date})
+            </small>
+            </p>
+            {this.props.left.actor.languages ? (
+              this.props.left.actor.languages.map((language, i) =>
+                <span className="tag" key={i}>{language.name}</span>
+              )
+            ) : null}
+          </div>
+          </div>
+          <div className="col-md-8 col-xs-12 item">
+          <div className="box">
             {this.props.right.title}<br />
             {this.props.left.actor.name}
-          </div></div>
+          </div>
+          </div>
         </div>
         </div>
         </div>
@@ -27,12 +42,30 @@ class Row extends React.Component {
   }
 }
 
+const languageProp = {
+  color: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+const actorProp = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  repo_url: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  actor: PropTypes.arrayOf(
+    PropTypes.shape(languageProp).isRequired
+  ).isRequired,
+};
+
 const activityProp = {
   id: PropTypes.number.isRequired,
   component: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  actor: PropTypes.object.isRequired,
+  actor: PropTypes.arrayOf(
+    PropTypes.shape(actorProp).isRequired
+  ).isRequired,
   created_date: PropTypes.string.isRequired,
   accepted_date: PropTypes.string,
   end_date: PropTypes.string
@@ -79,6 +112,7 @@ class ActivityList extends React.Component {
         ...{
           key: itemData['id'],
           onClick: () => onActivityClick(itemData.id),
+          activityType: activityTypes.find(a => itemData.component === a.component_name).name,
         },
         ...itemData,
       });
