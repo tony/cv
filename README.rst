@@ -157,5 +157,134 @@ to benchmark a medium-sized application in Vue and React, with a few
 functional tests, but then also with a "stop watch" type thing for how
 long it takes to paint to the screen side-by-side.
 
+Observations Developing with Vue.js vs React (Feb 2018)
+-------------------------------------------------------
+
+React 16.2.0 and Vue.js 2.5.2
+
+Property validation (minor)
+"""""""""""""""""""""""""""
+
+In React, `PropTypes`_ let you declaratively construct validation for your data. It emits warnings if the data is malformed. ``isRequired`` can be added to the type for required values. Critically, it can handle nested and arrays, and is composable:
+
+.. code-block:: javascript
+
+   const languageProp = {
+     color: PropTypes.string.isRequired,
+     name: PropTypes.string.isRequired,
+   };
+
+   const actorProp = {
+     id: PropTypes.number.isRequired,
+     name: PropTypes.string.isRequired,
+     repo_url: PropTypes.string.isRequired,
+     type: PropTypes.string.isRequired,
+     url: PropTypes.string.isRequired,
+     languages: PropTypes.arrayOf(
+       PropTypes.shape(languageProp).isRequired
+     ).isRequired,
+   };
+
+   const activityProp = {
+     id: PropTypes.number.isRequired,
+     component: PropTypes.string.isRequired,
+     title: PropTypes.string.isRequired,
+     description: PropTypes.string,
+     actor: PropTypes.shape(actorProp).isRequired,
+     created_date: PropTypes.string.isRequired,
+     accepted_date: PropTypes.string,
+     end_date: PropTypes.string
+   };
+
+In Vue.js, there also `Prop Validation`_ built-in. Like PropTypes, it emits warnings when an object doesn't fit. It can be used to declare defaults, and is inclined to have you use a ``validator`` `callback accepting the prop value as an argument for nested stuff <https://github.com/vuejs/vue/issues/7265>`__. Here's an example from Vue.js docs:
+
+.. code-block:: javascript
+
+   Vue.component('example', {
+     props: {
+       // basic type check (`null` means accept any type)
+       propA: Number,
+       // multiple possible types
+       propB: [String, Number],
+       // a required string
+       propC: {
+         type: String,
+         required: true
+       },
+       // a number with default value
+       propD: {
+         type: Number,
+         default: 100
+       },
+       // object/array defaults should be returned from a
+       // factory function
+       propE: {
+         type: Object,
+         default: function () {
+           return { message: 'hello' }
+         }
+       },
+       // custom validator function
+       propF: {
+         validator: function (value) {
+           return value > 10
+         }
+       }
+     }
+   })
+
+There is a third party plugin called `Vuelidate`_ that handles nested
+models.
+
+I prefer React's PropTypes for its superb execution. More compact, handles
+arrays and nested objects granularly with ``.shape()``. Can be (de)-composed
+(broken down into separate PropType variables, e.g. ``languageProp``,
+``actorProp``, ``activityProp`` above, and used in decoupled components). A real gem.
+
+.. _PropTypes: https://reactjs.org/docs/typechecking-with-proptypes.html
+.. _Prop Validation:
+   https://vuejs.org/v2/guide/components.html#Prop-Validation
+.. _Vuelidate: https://monterail.github.io/vuelidate/
+
+White spacing (minor)
+"""""""""""""""""""""
+
+React component templats automatically strips whitespace,
+Vue.js adds whitespace, forcing you to pile on template tags
+on the same line. (Because a new line creates a space).
+
+With React.js, You explicitly have to create a whitespace by, at a
+minimum, adding a ``<span>`` and spaces inside it. For example:
+
+.. code-block:: html
+
+   class LeftBox extends React.Component {
+     render() {
+       return (
+         <div className="box">
+           <h2>{this.props.activityType}</h2>
+           <p>
+           <small>Submitted
+             <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
+              ({this.props.created_date})
+           </small>
+           </p>
+         </div>
+       )
+     }
+   }
+
+See how I manually add the space in ``<span> <moment..``?
+
+I prefer React's way. I like being explicit with whitespace, but also find
+it helpful because I want to separate tags/text and not create space
+automatically.
+
+It's more tedious and verbose to trim whitespace *after* it occurs than it is to
+declaratively add it when necessary.
+
+There was an example in Vue.js were the whitespace was giving me a
+concrete issue, but I don't remember it.
+
 .. _Vue.js: https://vuejs.org/
 .. _React: https://reactjs.org/
