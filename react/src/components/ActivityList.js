@@ -3,35 +3,43 @@ import PropTypes from 'prop-types'
 import Moment from 'react-moment';
 import { activityTypes } from 'cv-lib/storage';
 
+class LeftBox extends React.Component {
+  render() {
+    return (
+      <div className="box">
+        <h2>{this.props.activityType}</h2>
+        <p>
+        <small>Submitted
+          <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
+           ({this.props.created_date})
+        </small>
+        </p>
+        {this.props.actor.languages ? (
+          this.props.actor.languages.map((language, i) =>
+            <span className="tag" key={i}>{language.name}</span>
+          )
+        ) : null }
+      </div>
+    )
+  }
+}
+
+
 
 class Row extends React.Component {
   render () {
-    console.log(this.props.left.actor);
     return (
       <div className="row">
         <div className="col-md-10 col-md-offset-1 col-xs-12">
         <div className="box">
         <div className="row">
           <div className="col-md-4 col-xs-12 item">
-          <div className="box">
-            <h2>{this.props.left.activityType}</h2>
-            <p>
-            <small>Submitted
-              <span> <Moment fromNow>{this.props.left.created_date}</Moment> </span>
-               ({this.props.left.created_date})
-            </small>
-            </p>
-            {this.props.left.actor.languages ? (
-              this.props.left.actor.languages.map((language, i) =>
-                <span className="tag" key={i}>{language.name}</span>
-              )
-            ) : null}
-          </div>
+            {this.props.leftbox}
           </div>
           <div className="col-md-8 col-xs-12 item">
           <div className="box">
             {this.props.right.title}<br />
-            {this.props.left.actor.name}
+            {this.props.right.actor.name}
           </div>
           </div>
         </div>
@@ -53,7 +61,7 @@ const actorProp = {
   repo_url: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  actor: PropTypes.arrayOf(
+  languages: PropTypes.arrayOf(
     PropTypes.shape(languageProp).isRequired
   ).isRequired,
 };
@@ -63,9 +71,7 @@ const activityProp = {
   component: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  actor: PropTypes.arrayOf(
-    PropTypes.shape(actorProp).isRequired
-  ).isRequired,
+  actor: PropTypes.shape(actorProp).isRequired,
   created_date: PropTypes.string.isRequired,
   accepted_date: PropTypes.string,
   end_date: PropTypes.string
@@ -76,7 +82,7 @@ class Activity extends React.Component {
   render () {
     const { accepted_date, onClick } = this.props;
     return (
-      <Row left={this.props} right={this.props} onClick={onClick}  style={ {
+      <Row leftbox={<LeftBox {...this.props}/>} right={this.props} onClick={onClick}  style={ {
         textDecoration: accepted_date ? 'line-through' : 'none'
       } }/>
     )
