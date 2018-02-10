@@ -303,6 +303,21 @@ React allows you to go under the hood and do it yourself. For any non-trivial,
 enterprise-grade frontend application, the granularity ``shouldComponentUpdate``
 will be indispensible.
 
+Granularity: State control
+""""""""""""""""""""""""""
+
+Vue.js + Vuex has `getters`_, `actions`_ (which can be async), and `modules`_ to
+split off state into different attributes (like ``combineReducers``).
+*Mutation of the state is also permitted* via `mutations`_.
+
+Redux's storage is fully immutable. Redux also has a way to manage complicated,
+asynchronous states. `This video delves into what I mean
+<https://youtu.be/Td-2D-_7Y2E?list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b&t=182>`_.
+
 .. _Vue.js: https://vuejs.org/
 .. _React: https://reactjs.org/
 .. [1] https://github.com/vuejs/vue/issues/4255#issuecomment-261778207
+.. _getters: https://vuex.vuejs.org/en/getters.html
+.. _actions: https://vuex.vuejs.org/en/actions.html
+.. _modules: https://vuex.vuejs.org/en/modules.html
+.. _mutations: https://vuex.vuejs.org/en/mutations.html
