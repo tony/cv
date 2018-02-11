@@ -25,6 +25,8 @@ const mapStateToProps = state => {
     activities: getVisibleActivities(state.activities, state.visibilityFilter),
     actors: state.actors,
     actors_select: getSelectValues(state.actors),
+    selectedActors: state.selectedActors,
+    selectedActors_select: state.selectedActors,
   }
 }
 
@@ -32,6 +34,13 @@ const mapDispatchToProps = dispatch => {
   return {
     onActivityClick: id => {
       dispatch(toggleActivity(id))
+    },
+    onSelectedActorChange: value => {
+      console.log('new select', value);
+      dispatch({
+        type: 'CHANGE_SELECTED_ACTORS',
+        value: value
+      });
     }
   }
 }

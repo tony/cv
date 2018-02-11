@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger'
 import 'cv-lib/assets/css/flexboxgrid.min.css';
 import 'cv-lib/assets/css/git-pull.css';
 import 'cv-lib/assets/css/cv.css';
 import App from './components/App';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import todoApp from './reducers';
+import cvReducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import { ACTORS, ACTIVITIES } from 'cv-lib/constants';
 
-let store = createStore(todoApp, {
-  actors: ACTORS,
-  activities: ACTIVITIES
+
+const logger = createLogger({
+  // ...options
 });
+
+let store = createStore(cvReducers, {
+  actors: ACTORS,
+  activities: ACTIVITIES,
+  selectedActors: [],
+}, applyMiddleware(logger));
 
 ReactDOM.render(
   <Provider store={store}>

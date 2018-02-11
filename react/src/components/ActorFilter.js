@@ -4,13 +4,15 @@ import 'react-select/dist/react-select.css';
 
 class ActorFilter extends React.Component {
   render() {
-    console.log(this);
     return (
       <Select
         name="form-field-name"
-        onChange={this.handleChange}
+        multi
+        simpleValue
         options={this.props.actors_select}
+        value={this.props.selectedActors_select.length ? this.props.selectedActors_select : ""}
         placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
+        onChange={this.props.onSelectedActorChange}
       />
     );
   }

@@ -1,5 +1,13 @@
-const todos = (state = [], action) => {
+const selectedActors = (state = [], action) => {
+  console.log('selectedActors reducer', state, action);
   switch (action.type) {
+    case 'CHANGE_SELECTED_ACTORS':
+      console.log(state);
+      console.log(action);
+      console.log([
+        ...state, action.value
+      ]);
+      return action.value
     case 'ADD_TODO':
       return [
         ...state,
@@ -20,4 +28,4 @@ const todos = (state = [], action) => {
   }
 }
 
-export default todos
+export default selectedActors

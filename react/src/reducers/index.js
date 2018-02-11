@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
 import activities from './activities'
 import actors from './actors'
+import selectedActors from './selectedActors'
 import visibilityFilter from './visibilityFilter'
 
-const todoApp = combineReducers({
-  todos,
+const cvReducers = combineReducers({
   actors,
+  selectedActors,
   activities,
   visibilityFilter
 })
 
-export default todoApp
+export default cvReducers
