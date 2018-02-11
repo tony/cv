@@ -8,9 +8,9 @@ class ActorFilter extends React.Component {
     return (
       <Select
         name="form-field-name"
-        value={this.props}
         onChange={this.handleChange}
         options={this.props.actors_select}
+        placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
       />
     );
   }
