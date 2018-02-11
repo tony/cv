@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
+import ProjectFilter from '../components/ProjectFilter'
 
 const getVisibleActivities = (activities, filter) => {
   switch (filter) {
@@ -28,9 +29,14 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const VisibleActivityList = connect(
+export const VisibleActivityList = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ActivityList)
+
+export const VisibleProjectFilter = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProjectFilter)
 
 export default VisibleActivityList
