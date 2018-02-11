@@ -36,7 +36,6 @@ const mapDispatchToProps = dispatch => {
       dispatch(toggleActivity(id))
     },
     onSelectedActorChange: value => {
-      console.log('new select', value);
       dispatch({
         type: 'CHANGE_SELECTED_ACTORS',
         value: value
