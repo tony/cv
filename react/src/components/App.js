@@ -1,9 +1,9 @@
 import React from 'react'
-import { VisibleProjectFilter, VisibleActivityList } from '../containers/ActivityList'
+import { VisibleActorFilter, VisibleActivityList } from '../containers/ActivityList'
 
 const App = () => (
   <div>
-    <VisibleProjectFilter />
+    <VisibleActorFilter />
     <VisibleActivityList />
   </div>
 )

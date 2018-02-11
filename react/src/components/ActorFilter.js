@@ -2,7 +2,7 @@ import React from 'react'
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
-class ProjectFilter extends React.Component {
+class ActorFilter extends React.Component {
   render() {
     console.log(this);
     return (
@@ -16,4 +16,4 @@ class ProjectFilter extends React.Component {
   }
 }
 
-export default ProjectFilter
+export default ActorFilter
