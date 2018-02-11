@@ -15,9 +15,16 @@ const getVisibleActivities = (activities, filter) => {
   }
 }
 
+const getSelectValues = (actors) => {
+  /** Return available actors in format acceptable to react-select **/
+  return actors.map((actor => ({ value: actor.name, label: actor.name })));
+}
+
 const mapStateToProps = state => {
   return {
-    activities: getVisibleActivities(state.activities, state.visibilityFilter)
+    activities: getVisibleActivities(state.activities, state.visibilityFilter),
+    actors: state.actors,
+    actors_select: getSelectValues(state.actors),
   }
 }
 

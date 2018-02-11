@@ -10,7 +10,7 @@ class ProjectFilter extends React.Component {
         name="form-field-name"
         value={this.props}
         onChange={this.handleChange}
-        options={this.props.activities}
+        options={this.props.actors_select}
       />
     );
   }
