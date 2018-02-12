@@ -314,6 +314,19 @@ Redux's storage is fully immutable. Redux also has a way to manage complicated,
 asynchronous states. `This video delves into what I mean
 <https://youtu.be/Td-2D-_7Y2E?list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b&t=182>`_.
 
+In practice, redux codebases can get pretty complex. The examples that
+exist in open source seomtimes aren't good influences. It means more to
+get a good grasp of redux and your own data flow, then build your redux
+actions from scratch. Even simple examples like todo lists were
+over-engineered, when really everything could have been done in one file.
+
+Performance: Initial impressions
+""""""""""""""""""""""""""""""""
+
+As of 2018-02-11, the redux and react activity lists are renders far faster than
+Vue.js. I haven't been able to rule out inefficiencies / optimizations
+that could be taken on the vue app yet.
+
 .. _Vue.js: https://vuejs.org/
 .. _React: https://reactjs.org/
 .. [1] https://github.com/vuejs/vue/issues/4255#issuecomment-261778207
