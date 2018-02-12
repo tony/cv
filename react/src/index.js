@@ -9,8 +9,8 @@ import 'cv-lib/assets/css/cv.css';
 import App from './components/App';
 import cvReducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
-import { ACTORS, ACTIVITIES } from 'cv-lib/constants';
-import { availableLanguages, availableActivityTypes } from 'cv-lib/storage';
+import { ACTORS, ACTIVITIES, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
+import { availableLanguages, availableActivityTypes, filters } from 'cv-lib/storage';
 
 
 const logger = createLogger({
@@ -25,6 +25,9 @@ let store = createStore(cvReducers, {
   selectedLanguages: [],
   activityTypes: availableActivityTypes(ACTIVITIES),
   selectedActivityTypes: [],
+  filters: filters,
+  selectedFilters: DEFAULT_SELECTED_FILTERS,
+
 }, applyMiddleware(logger));
 
 ReactDOM.render(

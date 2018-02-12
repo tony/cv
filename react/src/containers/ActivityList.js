@@ -65,6 +65,8 @@ const mapStateToProps = state => {
     activityTypes: state.activityTypes,
     activityTypes_select: getSelectValues(state.activityTypes),
     selectedActivityTypes: state.selectedActivityTypes,
+    filters: state.filters,
+    selectedFilters: state.selectedFilters,
   }
 }
 
@@ -88,6 +90,12 @@ const mapDispatchToProps = dispatch => {
     onSelectedActivityTypesChange: value => {
       dispatch({
         type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
+        value: value
+      });
+    },
+    onSelectedFiltersChange: value => {
+      dispatch({
+        type: 'CHANGE_SELECTED_FILTERS',
         value: value
       });
     }
