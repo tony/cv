@@ -2,12 +2,13 @@ import { connect } from 'react-redux'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import ActorFilter from '../components/ActorFilter'
-import { activityTypes } from 'cv-lib/storage'
+import { activityTypes, filters } from 'cv-lib/storage'
 
 const getVisibleActivities = (activities, filter, state) => {
   let filteredActivities = activities;
   const selectedLanguages = state.selectedLanguages.length ? state.selectedLanguages.split(',') : [];
   let selectedActivityTypes = state.selectedActivityTypes.length ? state.selectedActivityTypes.split(',') : [];
+  let selectedFilters = ['Hide Spelling Contributions', 'Hide Documentation Contributions', 'Hide Code Style Contributions', 'Hide Unmerged Contributions']
 
   selectedActivityTypes = selectedActivityTypes.map(at => (
     activityTypes.find(vt => vt.name === at).component_name
@@ -28,6 +29,11 @@ const getVisibleActivities = (activities, filter, state) => {
       return item.actor.languages.some(s => selectedLanguages.find(z => z === s.name));
     });
   }
+
+  selectedFilters.forEach((filterName) => {
+    filteredActivities = filteredActivities.filter(filters[filterName]);
+  });
+
 
   switch (filter) {
     case 'SHOW_ACTIVE':
