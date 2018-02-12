@@ -35,8 +35,8 @@ class ActorFilter extends React.Component {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}
       />
-      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange}>
-        {Object.keys(this.props.filters).map(fruit => (
+      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange} style={{ textAlign: 'center' }}>
+         {Object.keys(this.props.filters).map(fruit => (
           <label key={fruit} >
             <Checkbox value={fruit}/>
             <span>{fruit}</span>
