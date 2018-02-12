@@ -8,7 +8,7 @@ const getVisibleActivities = (activities, filter, state) => {
   let filteredActivities = activities;
   const selectedLanguages = state.selectedLanguages.length ? state.selectedLanguages.split(',') : [];
   let selectedActivityTypes = state.selectedActivityTypes.length ? state.selectedActivityTypes.split(',') : [];
-  let selectedFilters = ['Hide Spelling Contributions', 'Hide Documentation Contributions', 'Hide Code Style Contributions', 'Hide Unmerged Contributions']
+  const selectedFilters = state.selectedFilters;
 
   selectedActivityTypes = selectedActivityTypes.map(at => (
     activityTypes.find(vt => vt.name === at).component_name
@@ -48,10 +48,6 @@ const getSelectValues = (actors) => {
   /** Return available actors in format acceptable to react-select **/
   return actors.map((actor => ({ value: actor.name, label: actor.name })));
 }
-
-
-
-
 
 const mapStateToProps = state => {
   return {

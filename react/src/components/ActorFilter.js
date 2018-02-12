@@ -6,7 +6,6 @@ import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 
 class ActorFilter extends React.Component {
   render() {
-    console.log(this.props.selectedFilters);
     return (
       <span style={{ textAlign: 'left' }}>
       <Select
@@ -36,8 +35,8 @@ class ActorFilter extends React.Component {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}
       />
-      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters}>
-        {this.props.selectedFilters.map(fruit => (
+      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange}>
+        {Object.keys(this.props.filters).map(fruit => (
           <label key={fruit} >
             <Checkbox value={fruit}/>
             <span>{fruit}</span>
