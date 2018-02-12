@@ -20,13 +20,16 @@ const getSelectValues = (actors) => {
   return actors.map((actor => ({ value: actor.name, label: actor.name })));
 }
 
+
 const mapStateToProps = state => {
   return {
     activities: getVisibleActivities(state.activities, state.visibilityFilter),
     actors: state.actors,
     actors_select: getSelectValues(state.actors),
     selectedActors: state.selectedActors,
-    selectedActors_select: state.selectedActors,
+    languages: state.languages,
+    languages_select: getSelectValues(state.languages),
+    selectedLanguages: state.selectedLanguages,
   }
 }
 
@@ -38,6 +41,12 @@ const mapDispatchToProps = dispatch => {
     onSelectedActorChange: value => {
       dispatch({
         type: 'CHANGE_SELECTED_ACTORS',
+        value: value
+      });
+    },
+    onSelectedLanguageChange: value => {
+      dispatch({
+        type: 'CHANGE_SELECTED_LANGUAGES',
         value: value
       });
     }
