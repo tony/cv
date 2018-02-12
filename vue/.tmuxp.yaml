@@ -1,4 +1,4 @@
-session_name: cv (vue.js)
+session_name: cv (vue)
 start_directory: ./ # load session relative to config location (project root).
 windows:
 - window_name: cv (vue.js)
