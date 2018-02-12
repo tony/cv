@@ -2,16 +2,39 @@ import { connect } from 'react-redux'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import ActorFilter from '../components/ActorFilter'
+import { activityTypes } from 'cv-lib/storage'
 
-const getVisibleActivities = (activities, filter) => {
+const getVisibleActivities = (activities, filter, state) => {
+  let filteredActivities = activities;
+  const selectedLanguages = state.selectedLanguages.length ? state.selectedLanguages.split(',') : [];
+  let selectedActivityTypes = state.selectedActivityTypes.length ? state.selectedActivityTypes.split(',') : [];
+
+  selectedActivityTypes = selectedActivityTypes.map(at => (
+    activityTypes.find(vt => vt.name === at).component_name
+  ));
+
+  // only show selected activity types
+  if (selectedActivityTypes.length) {
+    filteredActivities = filteredActivities.filter((i) => {
+      return selectedActivityTypes.includes(i.component);
+    });
+  }
+
+  if (selectedLanguages.length) {
+    filteredActivities = filteredActivities.filter((item) => {
+      if (!item.actor.languages) {
+        return false;
+      }
+      return item.actor.languages.some(s => selectedLanguages.find(z => z === s.name));
+    });
+  }
+
   switch (filter) {
-    case 'SHOW_COMPLETED':
-      return activities.filter(t => t.completed)
     case 'SHOW_ACTIVE':
-      return activities.filter(t => !t.completed)
+      return filteredActivities.filter(t => !t.completed)
     case 'SHOW_ALL':
     default:
-      return activities
+      return filteredActivities
   }
 }
 
@@ -21,9 +44,12 @@ const getSelectValues = (actors) => {
 }
 
 
+
+
+
 const mapStateToProps = state => {
   return {
-    activities: getVisibleActivities(state.activities, state.visibilityFilter),
+    activities: getVisibleActivities(state.activities, state.visibilityFilter, state),
     actors: state.actors,
     actors_select: getSelectValues(state.actors),
     selectedActors: state.selectedActors,
@@ -33,7 +59,6 @@ const mapStateToProps = state => {
     activityTypes: state.activityTypes,
     activityTypes_select: getSelectValues(state.activityTypes),
     selectedActivityTypes: state.selectedActivityTypes,
-
   }
 }
 
