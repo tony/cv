@@ -5,7 +5,7 @@ import 'react-select/dist/react-select.css';
 class ActorFilter extends React.Component {
   render() {
     return (
-      <span>
+      <span style={{ textAlign: 'left' }}>
       <Select
         name="selected-actors"
         multi
