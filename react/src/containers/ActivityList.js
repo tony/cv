@@ -30,6 +30,10 @@ const mapStateToProps = state => {
     languages: state.languages,
     languages_select: getSelectValues(state.languages),
     selectedLanguages: state.selectedLanguages,
+    activityTypes: state.activityTypes,
+    activityTypes_select: getSelectValues(state.activityTypes),
+    selectedActivityTypes: state.selectedActivityTypes,
+
   }
 }
 
@@ -47,6 +51,12 @@ const mapDispatchToProps = dispatch => {
     onSelectedLanguageChange: value => {
       dispatch({
         type: 'CHANGE_SELECTED_LANGUAGES',
+        value: value
+      });
+    },
+    onSelectedActivityTypesChange: value => {
+      dispatch({
+        type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
         value: value
       });
     }

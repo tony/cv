@@ -16,6 +16,15 @@ class ActorFilter extends React.Component {
         onChange={this.props.onSelectedActorChange}
       />
       <Select
+        name="selected-activity-types"
+        multi
+        simpleValue
+        options={this.props.activityTypes_select}
+        value={this.props.selectedActivityTypes.length ? this.props.selectedActivityTypes : ""}
+        placeholder="Filter by Activity Type(s) - e.g. Work, Open Source, Website, Volunteering"
+        onChange={this.props.onSelectedActivityTypesChange}
+      />
+      <Select
         name="selected-languages"
         multi
         simpleValue
