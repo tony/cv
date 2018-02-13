@@ -1,7 +1,7 @@
 import React from 'react'
 import { VisibleActivityList } from '../containers/ActivityList'
 import Lenses from './Lenses.js'
-import Graphs from './Graphs.js'
+import Charts from './Charts.js'
 
 
 const App = () => (
@@ -19,7 +19,7 @@ const App = () => (
         <a href="https://www.git-pull.com/blog/2018/01/technical-screening.html" target="_blank" rel="noopener noreferrer" className="hidden footnote">[1]</a>.
       </em></p>
 
-      <Graphs />
+      <Charts />
       <Lenses />
     </div>
     <VisibleActivityList />

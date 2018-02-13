@@ -2,7 +2,7 @@ import React from 'react'
 import {Doughnut} from 'react-chartjs-2';
 
 
-class Graphs extends React.Component {
+class Charts extends React.Component {
   render() {
     return (
       <span style={{ textAlign: 'left' }}>
@@ -11,4 +11,4 @@ class Graphs extends React.Component {
   }
 }
 
-export default Graphs
+export default Charts
