@@ -320,6 +320,21 @@ get a good grasp of redux and your own data flow, then build your redux
 actions from scratch. Even simple examples like todo lists were
 over-engineered, when really everything could have been done in one file.
 
+Computing / Composition / Filtering / Faceting data
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Vuex allows ``getters`` (global computed properties) to be aware from each
+other. This allows reuse / composability of siphoned/filter aspects of the data.
+
+With redux, there isn't a concept of passing around sibing
+properties. You can easily be sent into a spiral of duplicated filtering
+code. Thankfully, there is `reselect`_. It memoizes (caches) them and
+gives you behavior comparable with Vuex getters. See the `Computer Derived
+Data Recipe`_ in the redux docs.
+
+.. _reselect: https://github.com/reactjs/reselect
+.. _Computer Derived Data Recipe: https://redux.js.org/docs/recipes/ComputingDerivedData.html
+
 Performance: Initial impressions
 """"""""""""""""""""""""""""""""
 
