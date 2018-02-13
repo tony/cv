@@ -1,5 +1,6 @@
 import React from 'react'
-import { VisibleActorFilter, VisibleActivityList } from '../containers/ActivityList'
+import { VisibleActivityList } from '../containers/ActivityList'
+import Lenses from './Lenses.js'
 import Graphs from './Graphs.js'
 
 
@@ -19,8 +20,7 @@ const App = () => (
       </em></p>
 
       <Graphs />
-      <VisibleActorFilter />
-
+      <Lenses />
     </div>
     <VisibleActivityList />
   </div>

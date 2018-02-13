@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
-import ActorFilter from '../components/ActorFilter'
 import { activityTypes, filters } from 'cv-lib/storage'
 
 const getVisibleActivities = (activities, filter, state) => {
@@ -49,7 +48,7 @@ const getSelectValues = (actors) => {
   return actors.map((actor => ({ value: actor.name, label: actor.name })));
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     activities: getVisibleActivities(state.activities, state.visibilityFilter, state),
     actors: state.actors,
@@ -66,7 +65,7 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     onActivityClick: id => {
       dispatch(toggleActivity(id))
@@ -102,10 +101,5 @@ export const VisibleActivityList = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ActivityList)
-
-export const VisibleActorFilter = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ActorFilter)
 
 export default VisibleActivityList

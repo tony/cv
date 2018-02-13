@@ -1,10 +1,12 @@
 import React from 'react'
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import { connect } from 'react-redux';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
+import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.js';
 
 
-class ActorFilter extends React.Component {
+class Lenses extends React.Component {
   render() {
     return (
       <span style={{ textAlign: 'left' }}>
@@ -48,4 +50,7 @@ class ActorFilter extends React.Component {
   }
 }
 
-export default ActorFilter
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Lenses);
