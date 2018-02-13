@@ -21,9 +21,32 @@ class LanguagePie extends React.Component {
     },
   }
 
+  handleOnClick = (i, proxy) => {
+    if (i && i.length) {
+      let languages = '';
+      const language = i[0]._model.label;
+
+      if (this.props.selectedLanguages.indexOf(language) > -1) {
+        languages = this.props.selectedLanguages;
+      } else if (this.props.selectedLanguages.length) {
+        languages = this.props.selectedLanguages + ',' + language;
+      } else {
+        languages = language;
+      }
+
+      this.props.onSelectedLanguageChange(languages);
+    }
+  }
+
   render() {
     return (
-      <Pie data={this.props.activitiesPie} options={this.pieOptions} legend={this.pieOptions.legend} height={300}/>
+      <Pie
+        data={this.props.activitiesPie}
+        options={this.pieOptions}
+        legend={this.pieOptions.legend}
+        height={300}
+        onElementsClick={this.handleOnClick}
+      />
     )
   }
 }
@@ -70,7 +93,11 @@ class Charts extends React.Component {
     return (
       <div className="charts row padBottom">
         <div className="col-sm-2 col-sm-offset-2">
-          <LanguagePie activitiesPie={this.props.activitiesPie} />
+          <LanguagePie
+            activitiesPie={this.props.activitiesPie}
+            onSelectedLanguageChange={this.props.onSelectedLanguageChange}
+            selectedLanguages={this.props.selectedLanguages}
+          />
         </div>
         <div className="col-sm-6">
           <ActivityLine activitiesLine={this.props.activitiesLine} />
