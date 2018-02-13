@@ -21,7 +21,7 @@ Libraries
   rationale: the webpack configuration was set to run in development mode,
   and build producation binaries with relative no added effort.
 
-  it's not much different than what most `Vue`_ devs would arrive at if they
+  it's not much different than what most `Vue.js`_ devs would arrive at if they
   built a layout / webpack config themselves.
 
   On 2018-02-13, `6ed6bc6`_ ejected create-react-app. For two reasons:
