@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import { activityTypes, filters } from 'cv-lib/storage'
+import { getActivityLanguagePieData } from 'cv-lib/charts'
 
 const getVisibleActivities = (activities, filter, state) => {
   let filteredActivities = activities;
@@ -51,6 +52,7 @@ const getSelectValues = (actors) => {
 export const mapStateToProps = state => {
   return {
     activities: getVisibleActivities(state.activities, state.visibilityFilter, state),
+    activitiesPie: getActivityLanguagePieData(getVisibleActivities(state.activities, state.visibilityFilter, state)),
     actors: state.actors,
     actors_select: getSelectValues(state.actors),
     selectedActors: state.selectedActors,
