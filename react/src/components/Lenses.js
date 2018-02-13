@@ -9,7 +9,7 @@ import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.
 class Lenses extends React.Component {
   render() {
     return (
-      <span style={{ textAlign: 'left' }}>
+      <div className="row"><div className="col-xs-10 col-xs-offset-1" style={{ textAlign: 'left' }}>
       <Select
         name="selected-actors"
         multi
@@ -45,7 +45,7 @@ class Lenses extends React.Component {
           </label>
         ))}
       </CheckboxGroup>
-      </span>
+    </div></div>
     );
   }
 }
