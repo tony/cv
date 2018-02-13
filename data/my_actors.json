@@ -218,7 +218,7 @@
     "id": 40002,
     "type": "Website",
     "name": "Wengu",
-    "url": "https://wengu.tartarie.com/",
+    "url": "http://wengu.tartarie.com/",
     "logo": "/static/img/wengu.jpg",
     "languages": ["PHP"]
   },
