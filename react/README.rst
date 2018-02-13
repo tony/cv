@@ -24,6 +24,21 @@ Libraries
   it's not much different than what most `Vue`_ devs would arrive at if they
   built a layout / webpack config themselves.
 
+  On 2018-02-13, `6ed6bc6`_ ejected create-react-app. For two reasons:
+
+  1. By default, ``npm run build`` would fail minification when accessing the
+     ES6+ code in ``lib/storage.js``. In order for babel to correctly handle
+     the packages symlinked from the parent directory (via yarn workspaces),
+     the package names need to be mapped via ``require.resolve``.
+  2. ``lib/`` aka ``cv-lib`` also has static files such as images and CSS
+     to include.
+
+  Both of the above require modifying the webpack config manually. So
+  ``npm run eject`` was ran to split the webpack files and package
+  dependenies out.
+
+  .. _6ed6bc6: https://github.com/tony/cv/commit/6ed6bc6c04ba76ad84f422abfdfed6442004ef2d
+
 - moment.js: nice, human readable dates and times
 
 .. _create-react-app: https://github.com/facebook/create-react-app
