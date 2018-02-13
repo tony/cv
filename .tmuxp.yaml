@@ -1,0 +1,33 @@
+session_name: cv (vue)
+start_directory: ./ # load session relative to config location (project root).
+windows:
+- window_name: main
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - '[ -d node_modules ] && yarn && reset'
+- window_name: cv (react)
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./react
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - '[ -d node_modules ] && yarn && reset; BROWSER=none npm start'
+- window_name: cv (vue.js)
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./vue
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - '[ -d node_modules ] && yarn && reset; npm start'
