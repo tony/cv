@@ -39,9 +39,9 @@ class Lenses extends React.Component {
       />
       <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange} style={{ textAlign: 'center' }} className="row choices">
          {Object.keys(this.props.filters).map(filterChoice => (
-          <div className="col-sm"><div className="box">
+          <div className="col-sm" key={filterChoice}><div className="box">
             <Checkbox value={filterChoice} id={filterChoice} />
-            <label key={filterChoice} for={filterChoice}>
+            <label htmlFor={filterChoice}>
               <span>{filterChoice}</span>
             </label>
           </div></div>
