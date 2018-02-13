@@ -6,6 +6,7 @@ import { createLogger } from 'redux-logger'
 import 'cv-lib/assets/css/flexboxgrid.min.css';
 import 'cv-lib/assets/css/git-pull.css';
 import 'cv-lib/assets/css/cv.css';
+import 'cv-lib/assets/favicon.ico';
 import App from './components/App';
 import cvReducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
