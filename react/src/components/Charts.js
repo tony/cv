@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Pie } from 'react-chartjs-2';
+import { Line, Pie } from 'react-chartjs-2';
 import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.js';
 
 
-class Charts extends React.Component {
+class LanguagePie extends React.Component {
   pieOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -23,11 +23,57 @@ class Charts extends React.Component {
 
   render() {
     return (
+      <Pie data={this.props.activitiesPie} options={this.pieOptions} legend={this.pieOptions.legend} height={300}/>
+    )
+  }
+}
+
+
+class ActivityLine extends React.Component {
+  lineOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    title: {
+      display: true,
+      text: 'Time',
+      position: 'top',
+      fontColor: '#4a4a4a',
+      fontSize: '14',
+      fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+        },
+        gridLines: {
+          display: true,
+        },
+      }],
+    },
+    legend: {
+      display: false,
+    },
+  }
+
+  render() {
+    return (
+      <Line data={this.props.activitiesLine} options={this.lineOptions} legend={this.lineOptions.legend} height={300} />
+    )
+  }
+}
+
+
+class Charts extends React.Component {
+
+  render() {
+    return (
       <div className="charts row padBottom">
         <div className="col-sm-2 col-sm-offset-2">
-          <Pie data={this.props.activitiesPie} options={this.pieOptions} legend={this.pieOptions.legend} height='300'/>
+          <LanguagePie activitiesPie={this.props.activitiesPie} />
         </div>
         <div className="col-sm-6">
+          <ActivityLine activitiesLine={this.props.activitiesLine} />
         </div>
       </div>
     );
