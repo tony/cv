@@ -84,24 +84,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" rel="stylesheet/scss" scoped>
-.activity-title {
-  color: #4a4a4a;
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-a.muted-link {
-  color: #4a4a4a;
-  &:hover {
-    color: #0366d6;
-    text-decoration: none;
-  }
-}
-</style>

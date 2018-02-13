@@ -36,7 +36,7 @@ class RightBox extends React.Component {
       <div className="box">
         <h3><a href={this.props.qa_url} target="_blank" className="activity-title">{this.props.title}</a></h3>
         <p>
-          <em>was contributed to the <a href={this.props.actor.url}>{this.props.actor.name}</a> project</em>
+          <em>was contributed to the <a href={this.props.actor.url} className='muted-link'>{this.props.actor.name}</a> project</em>
         </p>
       </div>
     )
