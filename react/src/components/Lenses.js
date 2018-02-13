@@ -37,12 +37,14 @@ class Lenses extends React.Component {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}
       />
-      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange} style={{ textAlign: 'center' }}>
-         {Object.keys(this.props.filters).map(fruit => (
-          <label key={fruit} >
-            <Checkbox value={fruit}/>
-            <span>{fruit}</span>
-          </label>
+      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange} style={{ textAlign: 'center' }} className="row choices">
+         {Object.keys(this.props.filters).map(filterChoice => (
+          <div className="col-sm"><div className="box">
+            <Checkbox value={filterChoice} id={filterChoice} />
+            <label key={filterChoice} for={filterChoice}>
+              <span>{filterChoice}</span>
+            </label>
+          </div></div>
         ))}
       </CheckboxGroup>
     </div></div>
