@@ -251,7 +251,10 @@ White spacing (minor)
 
 React component templats automatically strips whitespace,
 Vue.js adds whitespace, forcing you to pile on template tags
-on the same line. (Because a new line creates a space).
+on the same line. (Because a new line creates a space). This is `discussed
+in greater length
+<https://reactjs.org/blog/2014/02/20/react-v0.9.html#jsx-whitespace>`__
+in the React v0.9 release post.
 
 With React.js, You explicitly have to create a whitespace by, at a
 minimum, adding a ``<span>`` and spaces inside it. For example:
