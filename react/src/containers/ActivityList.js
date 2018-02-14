@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { activityTypes, filters, sortActivities, availableLanguages } from 'cv-lib/storage'
+import { activityTypes, filters, sortActivities, availableLanguages, availableActors } from 'cv-lib/storage'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts'
@@ -12,6 +12,7 @@ const getSelectedLanguages = (state) => state.selectedLanguages;
 const getSelectedActivityTypes = (state) => state.selectedActivityTypes;
 const getSelectedFilters = (state) => state.selectedFilters;
 const getFilters = (state) => state.filter;
+const getActors = (state) => state.actors;
 
 const getVisibleActivities = createSelector(
   [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getFilters],
@@ -69,6 +70,15 @@ const getAvailableLanguagesReactSelectValues = createSelector(
   (languages) => getReactSelectValues(languages)
 );
 
+const getAvailableActors = createSelector(
+  [ getActors, getVisibleActivities ],
+  (actors, activities) => availableActors(actors, activities)
+);
+const getAvailableActorsReactSelectValues = createSelector(
+  [ getAvailableActors ],
+  (actors) => getReactSelectValues(actors)
+);
+
 export const mapStateToProps = state => {
   return {
     activities: getVisibleActivities(state),
@@ -76,6 +86,8 @@ export const mapStateToProps = state => {
     activitiesLine: getActivityTimeChartData((getVisibleActivities(state)), moment),
     actors: state.actors,
     actors_select: getReactSelectValues(state.actors),
+    availableActors: getAvailableActors(state),
+    availableActors_select: getAvailableActorsReactSelectValues(state),
     selectedActors: state.selectedActors,
     languages: state.languages,
     availableLanguages: getAvailableLanguages(state),

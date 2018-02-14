@@ -14,7 +14,7 @@ class Lenses extends React.Component {
         name="selected-actors"
         multi
         simpleValue
-        options={this.props.actors_select}
+        options={this.props.availableActors_select}
         value={this.props.selectedActors.length ? this.props.selectedActors : ""}
         placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
         onChange={this.props.onSelectedActorChange}
