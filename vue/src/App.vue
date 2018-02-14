@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class='github-fork'>
-      Powered by Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>). <a href="/react.html">See React version (beta)</a>.
+      Powered by Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>). <a href="https://cv-react.git-pull.com">See React version (beta)</a>.
     </div>
     <header-view/>
     <component
