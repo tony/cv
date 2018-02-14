@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class='github-fork'>
-      Made with ❤️ by <a href="https://git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
+      Made with <span role="img" aria-label="love">❤️</span> by <a href="https://www.git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
       Written in Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>).<br />
       <a href="https://cv-react.git-pull.com">See React version (beta)</a>.
     </div>

@@ -7,7 +7,7 @@ import Charts from './Charts.js'
 const App = () => (
   <div id="app">
     <div className='github-fork'>
-      Made with <span role="img" aria-label="love">❤️</span> by <a href="https://git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
+      Made with <span role="img" aria-label="love">❤️</span> by <a href="https://www.git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
       Written in React (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>).<br/>
       <a href="https://cv-vue.git-pull.com">See also: Vue.js version</a>.
     </div>
