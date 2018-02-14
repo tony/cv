@@ -6,6 +6,10 @@ import Charts from './Charts.js'
 
 const App = () => (
   <div id="app">
+
+    <p className='github-fork'>
+      Powered by React (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>). <a href="/vue.html">See Vue.js version</a>.
+    </p>
     <div className="header">
       <h1>Tony Narlock's CV</h1>
 

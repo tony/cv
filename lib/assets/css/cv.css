@@ -186,3 +186,25 @@ a {
   color: #0366d6;
   text-decoration: none;
 }
+
+
+.github-fork {
+  width: 12.1em;
+  height: 12.1em;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: pointer;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.github-fork.fixed {
+  position: fixed;
+}
+
+.github-fork:hover, .github-fork:active {
+  background-color: rgba(0, 0, 0, 0.0);
+}
