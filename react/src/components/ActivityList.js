@@ -47,6 +47,56 @@ class RightBox extends React.Component {
 }
 
 
+class PatchRightBox extends RightBox {
+  render() {
+    return (
+      <div className="box">
+        <h3><a href={this.props.qa_url} target="_blank" className="activity-title">{this.props.title}</a></h3>
+        <p>
+          <em>was contributed to the <a href={this.props.actor.url} className='muted-link'>{this.props.actor.name}</a> project</em>
+        </p>
+
+        <p><small>
+          <a href={this.props.actor.repo_url} target="_blank" className="muted-link align-octicon">
+            <Octicon name="repo" label="GH"></Octicon>
+            Repository </a>
+
+          { this.props.in_re_url && this.props.in_re_url.length > 0 &&
+              <span>
+                <a href={this.props.in_re_url} target="_blank">issue</a>
+              </span>
+          }
+
+          <span>
+            <a href={this.props.qa_url} target="_blank" className="muted-link align-octicon">
+              <Octicon name="git-pull-request" label="Pull Request"></Octicon>
+              Pull Request
+            </a>
+          </span>
+
+          <span> <a href={this.props.diff_url} target="_blank" className="muted-link align-octicon">
+            <Octicon name="diff" label="Diff"></Octicon>
+            .diff File
+          </a></span>
+        </small></p>
+
+        <p><small>
+          { this.props.accepted_date ? (
+              <span className="align-octicon">
+              <Octicon name="check" label="Merged"></Octicon>
+              Accepted {this.props.accepted_date}
+              </span>
+            ) : (
+              <em>Unmerged</em>
+            )
+          }
+        </small></p>
+      </div>
+    )
+  }
+}
+
+
 
 class Row extends React.Component {
   render () {
@@ -98,11 +148,13 @@ const activityProp = {
 
 
 class Activity extends React.Component {
+  leftbox = <LeftBox {...this.props}/>
+  rightbox = <RightBox {...this.props}/>
   render () {
     return (
       <Row
-        leftbox={<LeftBox {...this.props}/>}
-        rightbox={<RightBox {...this.props}/>}
+        leftbox={this.leftbox}
+        rightbox={this.rightbox}
       />
     )
   }
@@ -111,8 +163,13 @@ class Activity extends React.Component {
 }
 
 
+class Patch extends Activity {
+  rightbox = <PatchRightBox {...this.props}/>
+}
+
+
 const Components = {
-  Patch: Activity,
+  Patch: Patch,
   Article: Activity,
   Work: Activity,
   SoftwareLib: Activity,
