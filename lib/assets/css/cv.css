@@ -212,3 +212,8 @@ a {
 .github-fork:hover, .github-fork:active {
   background-color: rgba(0, 0, 0, 0.0);
 }
+
+.lenses .Select-input > input {
+  /* react-select: fix wierd box that shows up in chrome on prod builds */
+  border: 0;
+}

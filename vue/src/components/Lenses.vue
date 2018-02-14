@@ -1,5 +1,5 @@
 <template>
-  <div class="row"><div class="col-xs-10 col-xs-offset-1">
+  <div class="row lenses"><div class="col-xs-10 col-xs-offset-1">
     <multiselect
       :search="true"
       :multiple="true"
