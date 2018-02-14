@@ -131,15 +131,15 @@ const Components = {
 class ActivityList extends React.Component {
   render() {
     const { activities, onActivityClick } = this.props;
-    const items = activities.map(function(itemData) {
-      const component = Components[itemData['component']];
+    const items = activities.map(function(item) {
+      const component = Components[item['component']];
       return React.createElement(component, {
         ...{
-          key: itemData['id'],
-          onClick: () => onActivityClick(itemData.id),
-          activityType: activityTypes.find(a => itemData.component === a.component_name).singular_name,
+          key: item['id'],
+          onClick: () => onActivityClick(item.id),
+          activityType: activityTypes.find(a => item.component === a.component_name).singular_name,
         },
-        ...itemData,
+        ...item,
       });
     });
 
