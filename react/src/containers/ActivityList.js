@@ -13,17 +13,26 @@ const getSelectedActivityTypes = (state) => state.selectedActivityTypes;
 const getSelectedFilters = (state) => state.selectedFilters;
 const getFilters = (state) => state.filter;
 const getActors = (state) => state.actors;
+const getSelectedActors = (state) => state.selectedActors;
 
 const getVisibleActivities = createSelector(
-  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getFilters],
-  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, filter) => {
+  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getSelectedActors, getFilters],
+  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, selectedActors, filter) => {
     let filteredActivities = activities;
     const selectedLanguageList = selectedLanguages.length ? selectedLanguages.split(',') : [];
     let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes.split(',') : [];
-
+    // we need to filter against the component_name of the activity, so get that data
     selectedActivityTypeList = selectedActivityTypeList.map(at => (
       activityTypes.find(vt => vt.name === at).component_name
     ));
+    const selectedActorList = selectedActors.length ? selectedActors.split(',') : [];
+
+    // for direct lookups
+    if (selectedActorList && selectedActorList.length) {
+      return filteredActivities.filter(
+        item => selectedActorList.find(s => s === item.actor.name),
+      );
+    }
 
     // only show selected activity types
     if (selectedActivityTypeList.length) {
