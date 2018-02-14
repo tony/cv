@@ -4,46 +4,56 @@ import { activityTypes, filters } from 'cv-lib/storage'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts'
+import { createSelector } from 'reselect'
 
-const getVisibleActivities = (activities, filter, state) => {
-  let filteredActivities = activities;
-  const selectedLanguages = state.selectedLanguages.length ? state.selectedLanguages.split(',') : [];
-  let selectedActivityTypes = state.selectedActivityTypes.length ? state.selectedActivityTypes.split(',') : [];
-  const selectedFilters = state.selectedFilters;
 
-  selectedActivityTypes = selectedActivityTypes.map(at => (
-    activityTypes.find(vt => vt.name === at).component_name
-  ));
+const getActivities = (state) => state.activities;
+const getSelectedLanguages = (state) => state.selectedLanguages;
+const getSelectedActivityTypes = (state) => state.selectedActivityTypes;
+const getSelectedFilters = (state) => state.selectedFilters;
+const getFilters = (state) => state.filter;
 
-  // only show selected activity types
-  if (selectedActivityTypes.length) {
-    filteredActivities = filteredActivities.filter((i) => {
-      return selectedActivityTypes.includes(i.component);
+const getVisibleActivities = createSelector(
+  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getFilters],
+  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, filter) => {
+    let filteredActivities = activities;
+    const selectedLanguageList = selectedLanguages.length ? selectedLanguages.split(',') : [];
+    let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes.split(',') : [];
+
+    selectedActivityTypeList = selectedActivityTypeList.map(at => (
+      activityTypes.find(vt => vt.name === at).component_name
+    ));
+
+    // only show selected activity types
+    if (selectedActivityTypeList.length) {
+      filteredActivities = filteredActivities.filter((i) => {
+        return selectedActivityTypeList.includes(i.component);
+      });
+    }
+
+    if (selectedLanguageList.length) {
+      filteredActivities = filteredActivities.filter((item) => {
+        if (!item.actor.languages) {
+          return false;
+        }
+        return item.actor.languages.some(s => selectedLanguageList.find(z => z === s.name));
+      });
+    }
+
+    selectedFilters.forEach((filterName) => {
+      filteredActivities = filteredActivities.filter(filters[filterName]);
     });
+
+
+    switch (filter) {
+      case 'SHOW_ACTIVE':
+        return filteredActivities.filter(t => !t.completed)
+      case 'SHOW_ALL':
+      default:
+        return filteredActivities
+    }
   }
-
-  if (selectedLanguages.length) {
-    filteredActivities = filteredActivities.filter((item) => {
-      if (!item.actor.languages) {
-        return false;
-      }
-      return item.actor.languages.some(s => selectedLanguages.find(z => z === s.name));
-    });
-  }
-
-  selectedFilters.forEach((filterName) => {
-    filteredActivities = filteredActivities.filter(filters[filterName]);
-  });
-
-
-  switch (filter) {
-    case 'SHOW_ACTIVE':
-      return filteredActivities.filter(t => !t.completed)
-    case 'SHOW_ALL':
-    default:
-      return filteredActivities
-  }
-}
+)
 
 const getSelectValues = (actors) => {
   /** Return available actors in format acceptable to react-select **/
@@ -52,9 +62,9 @@ const getSelectValues = (actors) => {
 
 export const mapStateToProps = state => {
   return {
-    activities: getVisibleActivities(state.activities, state.visibilityFilter, state),
-    activitiesPie: getActivityLanguagePieData(getVisibleActivities(state.activities, state.visibilityFilter, state)),
-    activitiesLine: getActivityTimeChartData((getVisibleActivities(state.activities, state.visibilityFilter, state)), moment),
+    activities: getVisibleActivities(state),
+    activitiesPie: getActivityLanguagePieData(getVisibleActivities(state)),
+    activitiesLine: getActivityTimeChartData((getVisibleActivities(state)), moment),
     actors: state.actors,
     actors_select: getSelectValues(state.actors),
     selectedActors: state.selectedActors,
