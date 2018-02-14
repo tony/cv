@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActivityTypes, availableActors, availableLanguages, filters, reduceActivities, reduceActivitiesFinal } from 'cv-lib/storage';
+import { availableActivityTypes, availableActors, availableLanguages, filters, reduceActivities, reduceActivitiesFinal, sortActivities } from 'cv-lib/storage';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
@@ -24,11 +24,7 @@ const store = new Vuex.Store({
     filteredActivities: state => reduceActivities(state),
     filteredActivitiesFinal: (state, getters) => reduceActivitiesFinal(state, getters),
     sortedActivities: (state, getters) => (
-      getters.filteredActivitiesFinal.sort(
-        (activity1, activity2) => (
-          Vue.moment(activity2.created_date).diff(Vue.moment(activity1.created_date))
-        ),
-      )
+      sortActivities(getters.filteredActivitiesFinal, Vue.moment)
     ),
     actors: state => state.actors, // actor items
     availableActorTypes: state => [
