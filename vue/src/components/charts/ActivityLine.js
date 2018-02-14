@@ -1,6 +1,7 @@
-/* eslint no-underscore-dangle: 0 */
+/* eslint no-underscore-dangle: 0 import/no-extraneous-dependencies: 0 */
 import { mapActions } from 'vuex';
 import { Line, mixins } from 'vue-chartjs';
+import { timeLineOptions } from 'cv-lib/charts';
 
 export default {
   extends: Line,
@@ -9,29 +10,7 @@ export default {
     this.renderChart(
       this.chartData,
       {
-        responsive: true,
-        maintainAspectRatio: false,
-        title: {
-          display: true,
-          text: 'Time',
-          position: 'top',
-          fontColor: '#4a4a4a',
-          fontSize: '14',
-          fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true,
-            },
-            gridLines: {
-              display: true,
-            },
-          }],
-        },
-        legend: {
-          display: false,
-        },
+        ...timeLineOptions,
         onClick: (e, i) => {
           if (i && i.length) {
             const language = i[0]._model.label;
