@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { activityTypes, filters } from 'cv-lib/storage'
+import { activityTypes, filters, sortActivities } from 'cv-lib/storage'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts'
@@ -50,7 +50,7 @@ const getVisibleActivities = createSelector(
         return filteredActivities.filter(t => !t.completed)
       case 'SHOW_ALL':
       default:
-        return filteredActivities
+        return sortActivities(filteredActivities, moment);
     }
   }
 )
