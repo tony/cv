@@ -52,7 +52,7 @@
     "id": 20007,
     "component": "SoftwareLib",
     "created_date": "2016-06-20",
-    "title": "Decouple libvcs from vcspull",
+    "title": "Decoupled libvcs from vcspull",
     "actor": 10008
   },
   {
