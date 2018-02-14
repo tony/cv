@@ -32,7 +32,7 @@ class Lenses extends React.Component {
         name="selected-languages"
         multi
         simpleValue
-        options={this.props.languages_select}
+        options={this.props.availableLanguages_select}
         value={this.props.selectedLanguages.length ? this.props.selectedLanguages : ""}
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}

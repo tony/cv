@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { activityTypes, filters, sortActivities } from 'cv-lib/storage'
+import { activityTypes, filters, sortActivities, availableLanguages } from 'cv-lib/storage'
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
 import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts'
@@ -55,10 +55,19 @@ const getVisibleActivities = createSelector(
   }
 )
 
-const getSelectValues = (actors) => {
-  /** Return available actors in format acceptable to react-select **/
+const getReactSelectValues = (actors) => {
+  /** (react-select only) Return available actors in format acceptable to react-select **/
   return actors.map((actor => ({ value: actor.name, label: actor.name })));
 }
+
+const getAvailableLanguages = createSelector(
+  [ getVisibleActivities ],
+  (activities) => availableLanguages(activities)
+);
+const getAvailableLanguagesReactSelectValues = createSelector(
+  [ getAvailableLanguages ],
+  (languages) => getReactSelectValues(languages)
+);
 
 export const mapStateToProps = state => {
   return {
@@ -66,13 +75,15 @@ export const mapStateToProps = state => {
     activitiesPie: getActivityLanguagePieData(getVisibleActivities(state)),
     activitiesLine: getActivityTimeChartData((getVisibleActivities(state)), moment),
     actors: state.actors,
-    actors_select: getSelectValues(state.actors),
+    actors_select: getReactSelectValues(state.actors),
     selectedActors: state.selectedActors,
     languages: state.languages,
-    languages_select: getSelectValues(state.languages),
+    availableLanguages: getAvailableLanguages(state),
+    availableLanguages_select: getAvailableLanguagesReactSelectValues(state),
+    languages_select: getReactSelectValues(state.languages),
     selectedLanguages: state.selectedLanguages,
     activityTypes: state.activityTypes,
-    activityTypes_select: getSelectValues(state.activityTypes),
+    activityTypes_select: getReactSelectValues(state.activityTypes),
     selectedActivityTypes: state.selectedActivityTypes,
     filters: state.filters,
     selectedFilters: state.selectedFilters,
