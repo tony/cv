@@ -96,6 +96,12 @@ export const mapDispatchToProps = dispatch => {
         value: value
       });
     },
+    onSelectedLanguageAdd: value => {
+      dispatch({
+        type: 'ADD_SELECTED_LANGUAGE',
+        value: value
+      });
+    },
     onSelectedActivityTypesChange: value => {
       dispatch({
         type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
