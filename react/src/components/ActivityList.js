@@ -12,7 +12,6 @@ class LeftBox extends React.Component {
         <p className="align-octicon">
           <small>
             <Octicon name="repo"/>
-            Submitted
             <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
            ({this.props.created_date})
         </small>
@@ -99,6 +98,122 @@ class PatchRightBox extends RightBox {
 }
 
 
+class SoftwareRightBox extends RightBox {
+  render() {
+    return (
+      <div className="box">
+        { this.props.actor.logo && this.props.actor.logo.length > 0 &&
+            <a href={this.props.actor.url}
+              target="_blank"
+              className="align-octicon"
+            >
+              <img
+                src={this.props.actor.logo}
+                className="logo"
+                style={{ maxWidth: 200 }}
+                alt={this.props.actor.name}
+              />
+            </a>
+        }
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+          {this.props.title}
+        </a></h3>
+
+        <small className="bottompad10"><div className="software-project-links">
+          { this.props.actor.url && this.props.actor.url.length > 0 &&
+          <a href={this.props.actor.url}
+            target="_blank" className="align-octicon">
+            <Octicon name="home" label="Website"></Octicon>
+            {' '}
+            Website
+          </a>
+          }
+          { this.props.actor.repo_url && this.props.actor.repo_url.length > 0 &&
+          <a href={this.props.actor.repo_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="mark-github" label="Repo"></Octicon>
+            {' '}
+            GitHub
+          </a>
+          }
+          { this.props.actor.docs_url && this.props.actor.docs_url.length > 0 &&
+            <a href={this.props.actor.docs_url}
+              target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="book" label="Docs"></Octicon>
+            {' '}
+            Docs
+          </a>
+          }
+          { this.props.actor.api_url && this.props.actor.api_url.length > 0 &&
+          <a href={this.props.actor.api_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="search" label="API"></Octicon>
+            {' '}
+            API
+          </a>
+          }
+          { this.props.actor.coverage_url && this.props.actor.coverage_url.length > 0 &&
+          <a href={this.props.actor.coverage_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="graph" label="Coverage"></Octicon>
+            {' '}
+            Coverage
+          </a>
+          }
+          { this.props.actor.ci_url && this.props.actor.ci_url.length > 0 &&
+          <a href={this.props.actor.ci_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="dashboard" label="CI"></Octicon>
+            {' '}
+            CI
+          </a>
+          }
+          { this.props.actor.browse_code_url && this.props.actor.browse_code_url.length > 0 &&
+          <a href={this.props.actor.browse_code_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="code" label="CI"></Octicon>
+            {' '}
+            Browse Code
+          </a>
+          }
+          { this.props.actor.browse_code_tests_url && this.props.actor.browse_code_tests_url.length > 0 &&
+          <a href={this.props.actor.browse_code_tests_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            (tests)
+          </a>
+          }
+          { this.props.actor.issues_url && this.props.actor.issues_url.length > 0 &&
+          <a href={this.props.actor.issues_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="comment-discussion" label="CI"></Octicon>
+            {' '}
+            Issues
+          </a>
+          }
+          { this.props.actor.changelog_url && this.props.actor.changelog_url.length > 0 &&
+          <a href={this.props.actor.changelog_url}
+            target="_blank" className="align-octicon">
+            {' '}
+            <Octicon name="list-unordered" label="Changelog"></Octicon>
+            {' '}
+            Changelog
+          </a>
+          }
+      </div></small>
+      </div>
+    )
+  }
+}
+
+
 
 class Row extends React.Component {
   render () {
@@ -169,13 +284,20 @@ class Patch extends Activity {
   rightbox = <PatchRightBox {...this.props}/>
 }
 
+class SoftwareLib extends Activity {
+  rightbox = <SoftwareRightBox {...this.props} />
+}
+class SoftwareApp extends Activity {
+  rightbox = <SoftwareRightBox {...this.props} />
+}
+
 
 const Components = {
   Patch: Patch,
   Article: Activity,
   Work: Activity,
-  SoftwareLib: Activity,
-  SoftwareApp: Activity,
+  SoftwareLib: SoftwareLib,
+  SoftwareApp: SoftwareApp,
   Volunteer: Activity,
   Publication: Activity,
   Website: Activity,
