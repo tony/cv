@@ -1,26 +1,11 @@
+/* eslint no-underscore-dangle: 0 import/no-extraneous-dependencies: 0 */
 import React from 'react'
 import { connect } from 'react-redux';
 import { Line, Pie } from 'react-chartjs-2';
 import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.js';
-
+import { pieOptions, timeLineOptions } from 'cv-lib/charts';
 
 class LanguagePie extends React.Component {
-  pieOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    title: {
-      display: true,
-      text: 'Programming Languages',
-      position: 'top',
-      fontColor: '#4a4a4a',
-      fontSize: '14',
-      fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
-    },
-    legend: {
-      display: false,
-    },
-  }
-
   handleOnClick = (i, proxy) => {
     if (i && i.length) {
       const language = i[0]._model.label;
@@ -32,8 +17,8 @@ class LanguagePie extends React.Component {
     return (
       <Pie
         data={this.props.activitiesPie}
-        options={this.pieOptions}
-        legend={this.pieOptions.legend}
+        options={pieOptions}
+        legend={pieOptions.legend}
         height={300}
         onElementsClick={this.handleOnClick}
       />
@@ -43,35 +28,15 @@ class LanguagePie extends React.Component {
 
 
 class ActivityLine extends React.Component {
-  lineOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    title: {
-      display: true,
-      text: 'Time',
-      position: 'top',
-      fontColor: '#4a4a4a',
-      fontSize: '14',
-      fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-        gridLines: {
-          display: true,
-        },
-      }],
-    },
-    legend: {
-      display: false,
-    },
-  }
 
   render() {
     return (
-      <Line data={this.props.activitiesLine} options={this.lineOptions} legend={this.lineOptions.legend} height={300} />
+      <Line
+      data={this.props.activitiesLine}
+      options={timeLineOptions}
+      legend={timeLineOptions.legend}
+      height={300}
+      />
     )
   }
 }
