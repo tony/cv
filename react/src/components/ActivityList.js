@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Moment from 'react-moment';
+import Octicon from 'react-octicon'
 import { activityTypes } from 'cv-lib/storage';
 
 class LeftBox extends React.Component {
@@ -8,9 +9,11 @@ class LeftBox extends React.Component {
     return (
       <div className="box">
         <h2>{this.props.activityType}</h2>
-        <p>
-        <small>Submitted
-          <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
+        <p className="align-octicon">
+          <small>
+            <Octicon name="repo"/>
+            Submitted
+            <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
            ({this.props.created_date})
         </small>
         </p>
