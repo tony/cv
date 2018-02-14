@@ -16,8 +16,6 @@
   "dependencies": {
     "chart.js": "^2.7.1",
     "github-colors": "^2.2.16",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
     "vue": "^2.5.2",
     "vue-chartjs": "^3.1.1",
     "vue-moment": "^3.1.0",
@@ -92,5 +90,8 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "workspaces": ["../lib", "../data"]
+  "workspaces": [
+    "../lib",
+    "../data"
+  ]
 }
