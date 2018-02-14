@@ -189,7 +189,7 @@ a {
 
 
 .github-fork {
-  width: 12.1em;
+  width: 13.1em;
   height: 12.1em;
   position: absolute;
   overflow: hidden;
@@ -199,10 +199,14 @@ a {
   pointer-events: pointer;
   font-size: 13px;
   text-decoration: none;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: 1em;
 }
 
-.github-fork.fixed {
-  position: fixed;
+.github-fork a {
+  color: rgba(74, 74, 74, 0.6);
 }
 
 .github-fork:hover, .github-fork:active {
