@@ -96,23 +96,15 @@ const activityProp = {
 
 class Activity extends React.Component {
   render () {
-    const { accepted_date, onClick } = this.props;
     return (
       <Row
         leftbox={<LeftBox {...this.props}/>}
         rightbox={<RightBox {...this.props}/>}
-        onClick={onClick} style={ {
-        textDecoration: accepted_date ? 'line-through' : 'none'
-      } }/>
+      />
     )
   }
 
-  static propTypes = {
-    ...activityProp,
-    ...{
-      onClick: PropTypes.func.isRequired,
-    }
-  }
+  static propTypes = activityProp
 }
 
 
@@ -130,13 +122,12 @@ const Components = {
 
 class ActivityList extends React.Component {
   render() {
-    const { activities, onActivityClick } = this.props;
+    const { activities } = this.props;
     const items = activities.map(function(item) {
       const component = Components[item['component']];
       return React.createElement(component, {
         ...{
           key: item['id'],
-          onClick: () => onActivityClick(item.id),
           activityType: activityTypes.find(a => item.component === a.component_name).singular_name,
         },
         ...item,
@@ -153,7 +144,6 @@ class ActivityList extends React.Component {
     activities: PropTypes.arrayOf(
       PropTypes.shape(activityProp).isRequired
     ).isRequired,
-    onActivityClick: PropTypes.func.isRequired
   }
 }
 
