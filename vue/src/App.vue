@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class='github-fork'>
-      Powered by Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>). <a href="https://cv-react.git-pull.com">See React version (beta)</a>.
+      Made with ❤️ by <a href="https://git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
+      Written in Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>).<br />
+      <a href="https://cv-react.git-pull.com">See React version (beta)</a>.
     </div>
     <header-view/>
     <component
