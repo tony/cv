@@ -65,7 +65,7 @@ class PatchRightBox extends RightBox {
           <Octicon name="mark-github" label="View on GitHub"></Octicon> {this.props.title}
         </a></h3>
         <p>
-          <em>was contributed to the <a href={this.props.actor.url} className='muted-link'>{this.props.actor.name}</a> project</em>
+          <em>was contributed to the <a href={this.props.actor.url} target="_blank" className='muted-link'>{this.props.actor.name}</a> project</em>
         </p>
 
         <p><small>
