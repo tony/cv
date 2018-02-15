@@ -5,7 +5,6 @@ import selectedLanguages from './selectedLanguages'
 import selectedActivityTypes from './selectedActivityTypes'
 import selectedActors from './selectedActors'
 import selectedFilters from './selectedFilters'
-import visibilityFilter from './visibilityFilter'
 
 const cvReducers = combineReducers({
   actors,
@@ -17,7 +16,6 @@ const cvReducers = combineReducers({
   selectedActivityTypes,
   filters: (state = [], action) => state,
   selectedFilters,
-  visibilityFilter
 })
 
 export default cvReducers
