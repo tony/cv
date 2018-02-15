@@ -20,8 +20,8 @@
 import Header from '@/components/Header';
 import { mapGetters } from 'vuex';
 import {
-  Website, Volunteer, Publication, Patch, Kudo, Work, Achievement,
-  SoftwareApp, SoftwareLib, Presentation, Article,
+  Website, Volunteer, Publication, Patch, Work,
+  SoftwareApp, SoftwareLib, Article,
 } from './components/activities';
 
 export default {
@@ -32,12 +32,9 @@ export default {
     Article,
     Volunteer,
     Publication,
-    Kudo,
     Work,
-    Achievement,
     SoftwareApp,
     SoftwareLib,
-    Presentation,
     'header-view': Header,
   },
   computed: mapGetters([
