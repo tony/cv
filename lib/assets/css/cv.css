@@ -200,9 +200,15 @@ a {
   font-size: 13px;
   text-decoration: none;
   text-align: right;
-  color: rgba(0, 0, 0, 0.3);
+  color: #4a4a4a;
   display: block;
   padding: 1em;
+
+  opacity: .3;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
 }
 
 .github-fork a {
@@ -210,7 +216,7 @@ a {
 }
 
 .github-fork:hover, .github-fork:active {
-  background-color: rgba(0, 0, 0, 0.0);
+  opacity: 1;
 }
 
 .lenses .Select-input > input {
