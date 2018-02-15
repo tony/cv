@@ -19,7 +19,7 @@ class LanguagePie extends React.Component {
         data={this.props.activitiesPie}
         options={pieOptions}
         legend={pieOptions.legend}
-        height={300}
+        height={250}
         onElementsClick={this.handleOnClick}
       />
     )
@@ -35,7 +35,7 @@ class ActivityLine extends React.Component {
       data={this.props.activitiesLine}
       options={timeLineOptions}
       legend={timeLineOptions.legend}
-      height={300}
+      height={250}
       />
     )
   }
