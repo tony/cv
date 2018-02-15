@@ -44,7 +44,7 @@ class RightBox extends React.Component {
               <img
                 src={this.props.actor.logo}
                 className="logo"
-                style={{ maxWidth: 200 }}
+                style={{ maxWidth: 400 }}
                 alt={this.props.actor.name}
               />
             </a>
