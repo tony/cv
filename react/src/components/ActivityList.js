@@ -11,7 +11,7 @@ class LeftBox extends React.Component {
         <h2>{this.props.activityType}</h2>
         <p className="align-octicon">
           <small>
-            <Octicon name="repo"/>
+            <Octicon name="clock"/>
             <span> <Moment fromNow>{this.props.created_date}</Moment> </span>
            ({this.props.created_date})
         </small>
