@@ -40,7 +40,9 @@ import LanguageTag from '../../partials/LanguageTag';
 
 export default {
   name: 'SoftwareProject',
-  components: { Row, ImageTitleLinkColumn, SoftwareProjectLinks, LanguageTag },
+  components: {
+    Row, ImageTitleLinkColumn, SoftwareProjectLinks, LanguageTag,
+  },
   props: ['item', 'projectType'],
 };
 </script>
