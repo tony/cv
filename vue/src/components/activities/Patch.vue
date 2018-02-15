@@ -4,8 +4,8 @@
       <h2>Open Source Contribution</h2>
 
       <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="repo" label="Submitted"></octicon>
-        Submitted {{item.created_date | moment("from", "now") }}
+        <octicon name="clock" label="Submitted"></octicon>
+        {{item.created_date | moment("from", "now") }}
         ({{item.created_date}})
       </small></p>
 
@@ -19,8 +19,7 @@
     <div slot="right">
       <h3 class="align-octicon-bottom">
         <a :href="item.qa_url" target="_blank" class="activity-title">
-          <octicon name="mark-github" label="View on GitHub"></octicon>
-          {{item.title}}
+          <octicon name="mark-github" label="View on GitHub"></octicon> {{item.title}}
         </a>
       </h3>
 

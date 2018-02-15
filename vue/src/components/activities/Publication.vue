@@ -2,6 +2,7 @@
   <Row>
     <div slot="left"> <h2>Publication</h2>
       <p v-show="item.created_date" class="align-octicon"><small>
+        <octicon name="clock"></octicon>
         Published {{item.created_date | moment("YYYY")}}
         <template v-if="item.end_date">-  {{item.end_date | moment("YYYY")}}</template>
       </small></p>

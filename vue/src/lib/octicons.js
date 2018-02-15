@@ -4,6 +4,7 @@ import 'vue-octicon/icons/diff';
 import 'vue-octicon/icons/mark-github';
 import 'vue-octicon/icons/git-merge';
 import 'vue-octicon/icons/check';
+import 'vue-octicon/icons/clock';
 import 'vue-octicon/icons/repo';
 import 'vue-octicon/icons/book';
 import 'vue-octicon/icons/code';

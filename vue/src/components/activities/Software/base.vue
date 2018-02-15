@@ -11,8 +11,8 @@
 
       <br />
       <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="repo" label="Created"></octicon>
-        Created {{item.created_date | moment("from", "now") }}
+        <octicon name="clock" label="Created"></octicon>
+        {{item.created_date | moment("from", "now") }}
         ({{item.created_date}})
       </small></p>
     </div>

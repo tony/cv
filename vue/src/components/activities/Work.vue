@@ -10,6 +10,7 @@
 
       <br />
       <p v-show="item.created_date" class="align-octicon"><small>
+        <octicon name="clock" label="Submitted"></octicon>
         {{item.created_date | moment("YYYY")}} -
         <template v-if="item.end_date">{{item.end_date | moment("YYYY")}}</template>
       </small></p>
@@ -24,8 +25,7 @@
         <div slot="links">
          <a v-show="item.actor.url" :href="item.actor.url"
          target="_blank" class="align-octicon">
-          <octicon name="home" label="Created"></octicon>
-          Website
+          <octicon name="home"></octicon> Website
           </a>
         </div>
       </ImageTitleLinkColumn>
