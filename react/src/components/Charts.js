@@ -35,7 +35,6 @@ class ActivityLine extends React.Component {
       data={this.props.activitiesLine}
       options={timeLineOptions}
       legend={timeLineOptions.legend}
-      height={250}
       />
     )
   }
@@ -47,15 +46,27 @@ class Charts extends React.Component {
   render() {
     return (
       <div className="charts row padBottom">
-        <div className="col-sm-2 col-sm-offset-2">
+        <div className="col-xs-12 col-sm-2 col-sm-offset-2">
           <LanguagePie
             activitiesPie={this.props.activitiesPie}
             onSelectedLanguageAdd={this.props.onSelectedLanguageAdd}
             selectedLanguages={this.props.selectedLanguages}
+            style={{
+              width: '100%',
+              height: '250px',
+              position: 'relative'
+            }}
           />
         </div>
-        <div className="col-sm-6">
-          <ActivityLine activitiesLine={this.props.activitiesLine} />
+        <div className="col-xs-12 col-sm-6">
+          <ActivityLine
+            activitiesLine={this.props.activitiesLine}
+            style={{
+              width: '100%',
+              height: '250px',
+              position: 'relative'
+            }}
+          />
         </div>
       </div>
     );
