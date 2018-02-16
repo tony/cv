@@ -1,7 +1,7 @@
 <template>
   <span
     class="tag language-tag"
-    :style="{ backgroundColor: language.color }"
+    :style="{ backgroundColor: language.color, color: language.textColor }"
     >{{language.name}}</span>
 </template>
 
