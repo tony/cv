@@ -1,6 +1,6 @@
 <template>
-  <Row>
-    <div slot="left"> <h2>Website</h2>
+  <Row :component_type="'Website'" :item="item">
+    <div slot="left">
       <p v-show="item.created_date" class="align-octicon"><small>
         <octicon name="clock" label="Submitted"></octicon>
         {{item.created_date | moment("YYYY")}}

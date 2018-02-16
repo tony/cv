@@ -1,21 +1,5 @@
 <template>
-  <Row>
-    <div slot="left">
-      <h2>{{projectType}}</h2>
-      <div class="languages">
-      <LanguageTag
-      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
-      v-bind:language="language"
-      />
-      </div>
-
-      <br />
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock" label="Created"></octicon>
-        {{item.created_date | moment("from", "now") }}
-        ({{item.created_date}})
-      </small></p>
-    </div>
+  <Row :component_type="projectType" :item="item">
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"

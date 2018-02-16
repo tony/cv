@@ -1,10 +1,5 @@
 <template>
-  <Row>
-    <div slot="left"> <h2>Publication</h2>
-      <DateYearly
-      :created_date="item.created_date"
-      :end_date="item.end_date" />
-    </div>
+  <Row :component_type="'Publication'" :item="item">
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"

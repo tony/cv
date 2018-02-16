@@ -1,19 +1,5 @@
 <template>
-  <Row :component_type="'Open Source Contributions'">
-    <div slot="left">
-      <Date
-      :created_date="item.created_date"
-      :end_date="item.end_date" />
-
-      <div class="languages hide-sm">
-        <LanguageTag
-          v-for="language in item.actor.languages"
-          :key="language.name"
-          :index="language.name"
-          :language="language"
-        />
-      </div>
-    </div>
+  <Row :component_type="'Open Source Contributions'" :item="item">
     <div slot="right">
       <h3 class="align-octicon-bottom">
         <a :href="item.qa_url" target="_blank" class="activity-title">
@@ -70,12 +56,10 @@
 
 <script>
 import Row from '../partials/Row';
-import Date from '../partials/Date';
-import LanguageTag from '../partials/LanguageTag';
 
 export default {
   name: 'Patch',
-  components: { Row, LanguageTag, Date },
+  components: { Row },
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),

@@ -1,6 +1,6 @@
 <template>
-  <Row>
-    <div slot="left"> <h2>Work</h2>
+  <Row :component_type="'Work'" :item="item">
+    <div slot="left">
       <div class="languages">
       <LanguageTag
       v-for="language in item.actor.languages" :key="language.name" :index="language.name"

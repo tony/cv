@@ -1,12 +1,5 @@
 <template>
-  <Row>
-    <div slot="left"> <h2>Volunteer</h2>
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock" label="Submitted"></octicon>
-        {{item.created_date | moment("YYYY")}} -
-        <template v-if="item.end_date">{{item.end_date | moment("YYYY")}}</template>
-      </small></p>
-    </div>
+  <Row :component_type="'Volunteer'" :item="item">
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"
