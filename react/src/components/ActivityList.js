@@ -22,7 +22,8 @@ class LeftBox extends React.Component {
               className="tag language-tag"
               key={i}
               style={ language.color ? {
-                backgroundColor: language.color
+                backgroundColor: language.color,
+                color: language.textColor
               }: {}}
             >{language.name}</span>
           )
