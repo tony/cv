@@ -228,7 +228,7 @@
     "name": "Buzzr",
     "url": "https://buzzr.com",
     "logo": "/static/img/buzzr.jpg",
-    "languages": ["PHP", "JavaScript"]
+    "languages": ["JavaScript", "PHP"]
   },
   {
     "id": 50001,
@@ -237,7 +237,7 @@
     "url": "https://web.archive.org/web/20160302231819/http://www.socialamp.com:80/",
     "old_url": "https://socialamp.com",
     "logo": "/static/img/socialamp.png",
-    "languages": ["PHP", "JavaScript"]
+    "languages": ["JavaScript", "PHP"]
   },
   {
     "id": 50002,
@@ -245,7 +245,7 @@
     "name": "Merkle",
     "url": "https://www.merkleinc.com",
     "logo": "/static/img/merkle.png",
-    "languages": ["PHP", "JavaScript"]
+    "languages": ["JavaScript", "PHP"]
   },
   {
     "id": 50003,
