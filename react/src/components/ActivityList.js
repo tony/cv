@@ -110,6 +110,42 @@ class PatchRightBox extends RightBox {
 }
 
 
+class PublicationRightBox extends RightBox {
+  render() {
+    return (
+      <div className="box">
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+          {this.props.title}
+      </a></h3>
+
+        <p><small>
+          Seen on
+          {' '}
+          { this.props.actor.leanpub_url && this.props.actor.leanpub_url.length > 0 &&
+              <span>
+                <a href={this.props.actor.leanpub_url} target="_blank">Leanpub</a>
+              </span>
+          }
+          {' '}
+          { this.props.actor.amazon_url && this.props.actor.amazon_url.length > 0 &&
+              <span>
+                <a href={this.props.actor.amazon_url} target="_blank">Amazon</a>
+              </span>
+          }
+          {' '}
+          { this.props.actor.goodreads_url && this.props.actor.goodreads_url.length > 0 &&
+              <span>
+                <a href={this.props.actor.goodreads_url} target="_blank">Goodreads</a>
+              </span>
+          }
+
+        </small></p>
+      </div>
+    )
+  }
+}
+
+
 class SoftwareRightBox extends RightBox {
   render() {
     return (
@@ -296,6 +332,10 @@ class Patch extends Activity {
   rightbox = <PatchRightBox {...this.props}/>
 }
 
+class Publication extends Activity {
+  rightbox = <PublicationRightBox {...this.props}/>
+}
+
 class SoftwareLib extends Activity {
   rightbox = <SoftwareRightBox {...this.props} />
 }
@@ -311,7 +351,7 @@ const Components = {
   SoftwareLib: SoftwareLib,
   SoftwareApp: SoftwareApp,
   Volunteer: Activity,
-  Publication: Activity,
+  Publication: Publication,
   Website: Activity,
 };
 
