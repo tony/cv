@@ -1,15 +1,15 @@
 <template>
   <div class="charts row padBottom">
-    <div class="col-sm-2 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-2">
       <language-pie
         :chart-data="languages"
-        :height="250"
+        style="width: 100%; height: 250px; position: relative;"
         />
     </div>
-    <div class="col-sm-6 ">
+    <div class="col-xs-12 col-sm-6">
       <activity-line
         :chart-data="activityTimes"
-        :height="250"
+         style="width: 100%; height: 250px; position: relative;"
         />
     </div>
   </div>
