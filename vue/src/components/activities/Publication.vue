@@ -1,11 +1,9 @@
 <template>
   <Row>
     <div slot="left"> <h2>Publication</h2>
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock"></octicon>
-        {{item.created_date | moment("YYYY")}}
-        <template v-if="item.end_date">-  {{item.end_date | moment("YYYY")}}</template>
-      </small></p>
+      <DateYearly
+      :created_date="item.created_date"
+      :end_date="item.end_date" />
     </div>
     <div slot="right">
       <ImageTitleLinkColumn
@@ -36,11 +34,12 @@
 
 <script>
 import Row from '../partials/Row';
+import DateYearly from '../partials/DateYearly';
 import ImageTitleLinkColumn from '../partials/ImageTitleLinkColumn';
 
 export default {
   name: 'Publication',
-  components: { Row, ImageTitleLinkColumn },
+  components: { Row, DateYearly, ImageTitleLinkColumn },
   props: ['item'],
 };
 </script>

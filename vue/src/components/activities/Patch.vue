@@ -1,19 +1,17 @@
 <template>
-  <Row>
+  <Row :component_type="'Open Source Contributions'">
     <div slot="left">
-      <h2>Open Source Contribution</h2>
-
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock" label="Submitted"></octicon>
-        {{item.created_date | moment("from", "now") }}
-        ({{item.created_date}})
-      </small></p>
+      <Date
+      :created_date="item.created_date"
+      :end_date="item.end_date" />
 
       <div class="languages hide-sm">
-      <LanguageTag
-      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
-      v-bind:language="language"
-      />
+        <LanguageTag
+          v-for="language in item.actor.languages"
+          :key="language.name"
+          :index="language.name"
+          :language="language"
+        />
       </div>
     </div>
     <div slot="right">
@@ -72,11 +70,12 @@
 
 <script>
 import Row from '../partials/Row';
+import Date from '../partials/Date';
 import LanguageTag from '../partials/LanguageTag';
 
 export default {
   name: 'Patch',
-  components: { Row, LanguageTag },
+  components: { Row, LanguageTag, Date },
   props: ['opts', 'item'],
   computed: {
     log: () => JSON.stringify(this.opts),

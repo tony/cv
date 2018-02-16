@@ -4,6 +4,7 @@
     <div class="box">
     <div class="row">
       <div class="col-md-4 col-xs-12 item"><div class="box">
+      <h2>{{component_type}}</h2>
       <slot name="left"></slot>
       </div></div>
       <div class="col-md-8 col-xs-12 item"><div class="box">
@@ -18,5 +19,6 @@
 <script>
 export default {
   name: 'Row',
+  props: ['component_type'],
 };
 </script>
