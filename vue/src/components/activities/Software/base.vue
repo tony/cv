@@ -2,6 +2,7 @@
   <Row
   :component_type="component_type"
   :created_date="item.created_date"
+  :languages="item.actor.languages"
   >
     <div slot="right">
       <ImageTitleLinkColumn

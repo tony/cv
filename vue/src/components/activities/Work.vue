@@ -5,6 +5,7 @@
   :end_date="item.end_date"
   :date_format="'YYYY'"
   :show_from="false"
+  :languages="item.actor.languages"
   >
     <div slot="right">
       <ImageTitleLinkColumn
