@@ -1,5 +1,5 @@
 <template>
-  <SoftwareProject :item="item" projectType="Library" />
+  <SoftwareProject :item="item" component_type="Library" />
 </template>
 
 <script>

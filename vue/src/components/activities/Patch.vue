@@ -1,5 +1,9 @@
 <template>
-  <Row :component_type="'Open Source Contributions'" :item="item">
+  <Row
+  :component_type="'Open Source Contributions'"
+  :created_date="item.created_date"
+  :languages="item.actor.languages"
+  >
     <div slot="right">
       <h3 class="align-octicon-bottom">
         <a :href="item.qa_url" target="_blank" class="activity-title">

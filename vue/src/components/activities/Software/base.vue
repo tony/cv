@@ -1,5 +1,8 @@
 <template>
-  <Row :component_type="projectType" :item="item">
+  <Row
+  :component_type="component_type"
+  :created_date="item.created_date"
+  >
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"
@@ -27,7 +30,7 @@ export default {
   components: {
     Row, ImageTitleLinkColumn, SoftwareProjectLinks, LanguageTag,
   },
-  props: ['item', 'projectType'],
+  props: ['item', 'component_type'],
 };
 </script>
 

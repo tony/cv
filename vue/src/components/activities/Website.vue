@@ -1,12 +1,12 @@
 <template>
-  <Row :component_type="'Website'" :item="item">
-    <div slot="left">
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock" label="Submitted"></octicon>
-        {{item.created_date | moment("YYYY")}}
-        <template v-if="item.end_date">-  {{item.end_date | moment("YYYY")}}</template>
-      </small></p>
-    </div>
+  <Row
+  :component_type="'Website'"
+  :created_date="item.created_date"
+  :languages="item.actor.languages"
+  :date_format="'YYYY'"
+  :is_current="true"
+  :show_from="false"
+  >
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"

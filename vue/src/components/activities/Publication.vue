@@ -1,5 +1,10 @@
 <template>
-  <Row :component_type="'Publication'" :item="item" :date_format="'YYYY'">
+  <Row
+  :component_type="'Publication'"
+  :created_date="item.created_date"
+  :date_format="'YYYY'"
+  :show_from="false"
+  >
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"

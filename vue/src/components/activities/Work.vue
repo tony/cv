@@ -1,20 +1,11 @@
 <template>
-  <Row :component_type="'Work'" :item="item">
-    <div slot="left">
-      <div class="languages">
-      <LanguageTag
-      v-for="language in item.actor.languages" :key="language.name" :index="language.name"
-      v-bind:language="language"
-      />
-      </div>
-
-      <br />
-      <p v-show="item.created_date" class="align-octicon"><small>
-        <octicon name="clock" label="Submitted"></octicon>
-        {{item.created_date | moment("YYYY")}} -
-        <template v-if="item.end_date">{{item.end_date | moment("YYYY")}}</template>
-      </small></p>
-    </div>
+  <Row
+  :component_type="'Work'"
+  :created_date="item.created_date"
+  :end_date="item.end_date"
+  :date_format="'YYYY'"
+  :show_from="false"
+  >
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"

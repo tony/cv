@@ -1,5 +1,9 @@
 <template>
-  <Row :component_type="'Article'" :item="item">
+  <Row
+  :component_type="'Article'"
+  :created_date="item.created_date"
+  :languages="item.actor.languages"
+  >
   <div slot="right">
     <ImageTitleLinkColumn
      :url="item.url"
