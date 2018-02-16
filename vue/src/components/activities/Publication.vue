@@ -1,5 +1,5 @@
 <template>
-  <Row :component_type="'Publication'" :item="item">
+  <Row :component_type="'Publication'" :item="item" :date_format="'YYYY'">
     <div slot="right">
       <ImageTitleLinkColumn
        :title="item.title"
@@ -29,12 +29,11 @@
 
 <script>
 import Row from '../partials/Row';
-import DateYearly from '../partials/DateYearly';
 import ImageTitleLinkColumn from '../partials/ImageTitleLinkColumn';
 
 export default {
   name: 'Publication',
-  components: { Row, DateYearly, ImageTitleLinkColumn },
+  components: { Row, ImageTitleLinkColumn },
   props: ['item'],
 };
 </script>

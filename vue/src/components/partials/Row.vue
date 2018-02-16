@@ -8,7 +8,9 @@
       <slot name="left">
         <Date
           :created_date="item.created_date"
-          :end_date="item.end_date" />
+          :end_date="item.end_date"
+          :date_format="date_format"
+          />
 
         <div class="languages hide-sm">
           <LanguageTag
@@ -36,6 +38,6 @@ import LanguageTag from '../partials/LanguageTag';
 export default {
   name: 'Row',
   components: { LanguageTag, Date },
-  props: ['component_type', 'item'],
+  props: ['component_type', 'item', 'date_format'],
 };
 </script>
