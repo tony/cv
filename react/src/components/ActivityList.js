@@ -146,6 +146,31 @@ class PublicationRightBox extends RightBox {
 }
 
 
+class ArticleRightBox extends RightBox {
+  render() {
+    return (
+      <div className="box">
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+          {this.props.title}
+      </a></h3>
+
+        <p><small>
+          Discussed on
+          {' '}
+          {this.props.featured ? (
+            Object.keys(this.props.featured).map((title) =>
+              <span key={title}><a href={this.props.featured[title]}
+                target="_blank"
+              >{title}</a>{' '}</span>
+            )
+          ) : null }
+        </small></p>
+      </div>
+    )
+  }
+}
+
+
 class SoftwareRightBox extends RightBox {
   render() {
     return (
@@ -306,6 +331,7 @@ const activityProp = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   actor: PropTypes.shape(actorProp).isRequired,
+  featured: PropTypes.object,
   created_date: PropTypes.string.isRequired,
   accepted_date: PropTypes.string,
   end_date: PropTypes.string
@@ -336,6 +362,10 @@ class Publication extends Activity {
   rightbox = <PublicationRightBox {...this.props}/>
 }
 
+class Article extends Activity {
+  rightbox = <ArticleRightBox {...this.props}/>
+}
+
 class SoftwareLib extends Activity {
   rightbox = <SoftwareRightBox {...this.props} />
 }
@@ -346,7 +376,7 @@ class SoftwareApp extends Activity {
 
 const Components = {
   Patch: Patch,
-  Article: Activity,
+  Article: Article,
   Work: Activity,
   SoftwareLib: SoftwareLib,
   SoftwareApp: SoftwareApp,
