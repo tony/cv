@@ -1,6 +1,6 @@
 <template>
   <Row
-  :component_type="'Open Source Contributions'"
+  :component_type="'Open Source Contribution'"
   :created_date="item.created_date"
   :languages="item.actor.languages"
   >
