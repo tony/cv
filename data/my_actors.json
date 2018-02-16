@@ -204,7 +204,7 @@
     "name": "devel.tech",
     "url": "https://devel.tech/",
     "logo": "/static/img/develtech.png",
-    "languages": ["Python", "JavaScript"]
+    "languages": ["JavaScript", "Python"]
   },
   {
     "id": 40001,
@@ -212,7 +212,7 @@
     "name": "HSK FlashCards",
     "url": "https://www.hskflashcards.com/",
     "logo": "/static/img/hsk.png",
-    "languages": ["Python", "JavaScript"]
+    "languages": ["JavaScript", "Python"]
   },
   {
     "id": 40002,
