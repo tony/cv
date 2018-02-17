@@ -1,7 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Moment from 'react-moment';
 import Octicon from 'react-octicon'
+import { activityProp, activityListProp } from '../props';
 import { activityTypes } from 'cv-lib/storage';
 
 class LeftBox extends React.Component {
@@ -309,35 +309,6 @@ class Row extends React.Component {
   }
 }
 
-const languageProp = {
-  color: PropTypes.string,
-  name: PropTypes.string.isRequired,
-};
-
-const actorProp = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  repo_url: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  url: PropTypes.string,
-  languages: PropTypes.arrayOf(
-    PropTypes.shape(languageProp).isRequired
-  ),
-};
-
-const activityProp = {
-  id: PropTypes.number.isRequired,
-  component: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  actor: PropTypes.shape(actorProp).isRequired,
-  featured: PropTypes.object,
-  created_date: PropTypes.string.isRequired,
-  accepted_date: PropTypes.string,
-  end_date: PropTypes.string
-};
-
-
 class Activity extends React.Component {
   leftbox = <LeftBox {...this.props}/>
   rightbox = <RightBox {...this.props}/>
@@ -352,7 +323,6 @@ class Activity extends React.Component {
 
   static propTypes = activityProp
 }
-
 
 class Patch extends Activity {
   rightbox = <PatchRightBox {...this.props}/>
@@ -406,11 +376,7 @@ class ActivityList extends React.Component {
       </div>
     );
   }
-  static propTypes = {
-    activities: PropTypes.arrayOf(
-      PropTypes.shape(activityProp).isRequired
-    ).isRequired,
-  }
+  static propTypes = activityListProp;
 }
 
 export default ActivityList
