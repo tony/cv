@@ -328,6 +328,8 @@ Computing / Composition / Filtering / Faceting data
 
 Vuex allows ``getters`` (global computed properties) to be aware from each
 other. This allows reuse / composability of siphoned/filter aspects of the data.
+According to the creator of Vue.js, `it has the same performance
+implications as reselect, too <https://github.com/vuejs/vuex/issues/144#issuecomment-209788079>`_.
 
 With redux, there isn't a concept of passing around sibing
 properties. You can easily be sent into a spiral of duplicated filtering
