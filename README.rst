@@ -323,8 +323,8 @@ get a good grasp of redux and your own data flow, then build your redux
 actions from scratch. Even simple examples like todo lists were
 over-engineered, when really everything could have been done in one file.
 
-Computing / Composition / Filtering / Faceting data
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+Selectors: Computing / Composition / Filtering / Faceting data
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Vuex allows ``getters`` (global computed properties) to be aware from each
 other. This allows reuse / composability of siphoned/filter aspects of the data.
