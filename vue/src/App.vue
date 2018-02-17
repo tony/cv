@@ -8,7 +8,7 @@
     <header-view/>
     <component
       v-for="item in sortedActivities"
-      :is="item.component"
+      :is="item.component_name"
       :item="item"
       :key="item.index"
       :opts="item.options">

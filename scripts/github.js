@@ -147,7 +147,7 @@ recursePRQuery(initialPrQuery).then(prs => {
   const pullRequests_final = prs.map(pr => {
     return {
       id: id++,
-      component: 'Patch',
+      component_name: 'Patch',
       qa_url: pr.url,
       diff_url: pr.url + '.diff',
       created_date: moment(pr.createdAt).format('YYYY-MM-DD'),

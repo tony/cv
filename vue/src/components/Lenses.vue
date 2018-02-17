@@ -24,11 +24,11 @@
       :multiple="true"
       placeholder="Filter by Activity Type(s) - e.g. Work, Open Source, Website, Volunteering"
       id="activityFilter"
-      track-by="name"
+      track-by="component_name"
       :options="availableActivityTypes"
       :value="selectedActivityTypes"
       @input="updateSelectedActivityTypeAction"
-      label="name"
+      label="component_name"
      >
     </multiselect>
 

@@ -37,7 +37,7 @@ const getVisibleActivities = createSelector(
     // only show selected activity types
     if (selectedActivityTypeList.length) {
       filteredActivities = filteredActivities.filter((i) => {
-        return selectedActivityTypeList.includes(i.component);
+        return selectedActivityTypeList.includes(i.component_name);
       });
     }
 

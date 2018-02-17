@@ -1,70 +1,70 @@
 [
   {
     "id": 20000,
-    "component": "SoftwareApp",
+    "component_name": "SoftwareApp",
     "created_date": "2013-10-08",
     "title": "Created the tmuxp project",
     "actor": 10000
   },
   {
     "id": 20001,
-    "component": "SoftwareApp",
+    "component_name": "SoftwareApp",
     "created_date": "2017-04-17",
     "title": "Created the unihan-etl project",
     "actor": 10004
   },
   {
     "id": 20002,
-    "component": "SoftwareApp",
+    "component_name": "SoftwareApp",
     "created_date": "2013-05-20",
     "title": "Created the CLI interface to the cihai project",
     "actor": 10003
   },
   {
     "id": 20003,
-    "component": "SoftwareLib",
+    "component_name": "SoftwareLib",
     "created_date": "2016-10-08",
     "title": "Created the libtmux project",
     "actor": 10001
   },
   {
     "id": 20004,
-    "component": "SoftwareLib",
+    "component_name": "SoftwareLib",
     "created_date": "2017-04-16",
     "title": "Created the cihai CJK (Chinese, Japanese, Korean) data project",
     "actor": 10002
   },
   {
     "id": 20005,
-    "component": "SoftwareLib",
+    "component_name": "SoftwareLib",
     "created_date": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
     "actor": 10005
   },
   {
     "id": 20006,
-    "component": "SoftwareLib",
+    "component_name": "SoftwareLib",
     "created_date": "2017-11-26",
     "title": "Created a django package, django-slugify-processor",
     "actor": 10006
   },
   {
     "id": 20007,
-    "component": "SoftwareLib",
+    "component_name": "SoftwareLib",
     "created_date": "2016-06-20",
     "title": "Decoupled libvcs from vcspull",
     "actor": 10008
   },
   {
     "id": 20008,
-    "component": "SoftwareApp",
+    "component_name": "SoftwareApp",
     "created_date": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
     "actor": 10007
   },
   {
     "id": 30000,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2007-04-12",
     "accepted_date": "2007-06-18",
     "qa_url": "https://www.drupal.org/project/event/issues/143542",
@@ -74,7 +74,7 @@
   },
   {
     "id": 30001,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2008-01-23",
     "accepted_date": "2008-02-06",
     "qa_url": "https://www.drupal.org/project/drupal/issues/213172",
@@ -84,7 +84,7 @@
   },
   {
     "id": 30002,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2014-12-27",
     "accepted_date": "2015-02-24",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
@@ -94,7 +94,7 @@
   },
   {
     "id": 30003,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2016-02-19",
     "accepted_date": "2016-04-06",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
@@ -104,7 +104,7 @@
   },
   {
     "id": 30004,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2016-02-19",
     "accepted_date": null,
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207337",
@@ -114,7 +114,7 @@
   },
   {
     "id": 30005,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2017-03-04",
     "accepted_date": "2017-03-30",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
@@ -124,7 +124,7 @@
   },
   {
     "id": 30006,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
@@ -134,7 +134,7 @@
   },
   {
     "id": 30007,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2016-01-07",
     "accepted_date": "2016-01-09",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205987",
@@ -144,7 +144,7 @@
   },
   {
     "id": 30008,
-    "component": "Patch",
+    "component_name": "Patch",
     "created_date": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
@@ -154,7 +154,7 @@
   },
   {
     "id": 40000,
-    "component": "Work",
+    "component_name": "Work",
     "created_date": "2014-04-01",
     "end_date": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
@@ -163,7 +163,7 @@
   },
   {
     "id": 40001,
-    "component": "Work",
+    "component_name": "Work",
     "created_date": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
@@ -171,7 +171,7 @@
   },
   {
     "id": 40002,
-    "component": "Work",
+    "component_name": "Work",
     "created_date": "2008-01-01",
     "end_date": "2011-01-01",
     "title": "Software Developer",
@@ -180,7 +180,7 @@
   },
   {
     "id": 40003,
-    "component": "Work",
+    "component_name": "Work",
     "created_date": "2011-10-01",
     "end_date": "2012-01-01",
     "title": "Software Developer",
@@ -189,7 +189,7 @@
   },
   {
     "id": 40004,
-    "component": "Work",
+    "component_name": "Work",
     "created_date": "2012-11-01",
     "end_date": "2013-04-01",
     "title": "Software Developer",
@@ -200,28 +200,28 @@
     "actor": 50002
   }, {
     "id": 50000,
-    "component": "Publication",
+    "component_name": "Publication",
     "created_date": "2017-01-01",
     "title": "Published The Tao of tmux",
     "actor": 30000
   },
   {
     "id": 60000,
-    "component": "Volunteer",
+    "component_name": "Volunteer",
     "created_date": "2013-01-01",
     "title": "System Administrator at Wengu",
     "actor": 40002
   },
   {
     "id": 70000,
-    "component": "Website",
+    "component_name": "Website",
     "created_date": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
     "actor": 40001
   },
   {
     "id": 70001,
-    "component": "Article",
+    "component_name": "Article",
     "created_date": "2017-07-04",
     "title": "Django vs Flask",
     "actor": 40000,

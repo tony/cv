@@ -19,7 +19,7 @@ const actorProp = {
 
 export const activityProp = {
   id: PropTypes.number.isRequired,
-  component: PropTypes.string.isRequired,
+  component_name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   actor: PropTypes.shape(actorProp).isRequired,
