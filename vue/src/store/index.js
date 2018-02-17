@@ -19,8 +19,14 @@ const store = new Vuex.Store({
   },
   getters: {
     availableLanguages: (state, getters) => availableLanguages(getters.filteredActivities),
-    filteredActivities: state => reduceActivities(state),
-    filteredActivitiesFinal: (state, getters) => reduceActivitiesFinal(state, getters),
+    filteredActivities: state => reduceActivities(
+      state.activities, state.selectedActivityTypes,
+      state.selectedFilters,
+    ),
+    filteredActivitiesFinal: (state, getters) => reduceActivitiesFinal(
+      state.selectedLanguages, state.selectedActors,
+      getters.filteredActivities,
+    ),
     sortedActivities: (state, getters) => (
       sortActivities(getters.filteredActivitiesFinal, Vue.moment)
     ),
