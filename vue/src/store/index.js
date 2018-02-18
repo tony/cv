@@ -12,6 +12,7 @@ const store = new Vuex.Store({
     count: 0,
     activities: null,
     actors: null,
+    activityIds: [],
     selectedActivityTypes: [],
     selectedActors: null,
     selectedFilters: null,
@@ -20,12 +21,12 @@ const store = new Vuex.Store({
   getters: {
     availableLanguages: (state, getters) => availableLanguages(getters.filteredActivities),
     filteredActivities: state => selectActivities(
-      state.activities, state.selectedActivityTypes,
+      state.activityIds, state.activities, state.selectedActivityTypes,
       state.selectedFilters,
     ),
     filteredActivitiesFinal: (state, getters) => selectActivitiesFinal(
       state.selectedLanguages, state.selectedActors,
-      getters.filteredActivities,
+      state.activities, getters.filteredActivities,
     ),
     sortedActivities: (state, getters) => (
       sortActivities(getters.filteredActivitiesFinal, Vue.moment)
@@ -56,7 +57,10 @@ const store = new Vuex.Store({
     [LOAD_INITIAL_DATA]: (state, data) => {
       state.activities = data.activities;
       state.actors = data.actors;
+      state.langauges = data.languages;
+      state.activityTypes = data.activityTypes;
       state.selectedFilters = data.selectedFilters;
+      state.activityIds = data.activityIds;
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;

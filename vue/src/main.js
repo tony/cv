@@ -3,7 +3,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
-import { ACTIVITIES, ACTORS, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
+import { normalize, schema } from 'normalizr';
+import { activityTypes } from 'cv-lib/storage';
+import { ACTIVITIES, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
 import App from './App';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
@@ -13,12 +15,35 @@ Vue.config.productionTip = false;
 
 Vue.use(require('vue-moment'));
 
+const activityType = new schema.Entity('activityTypes', {}, {
+  idAttribute: 'component_name',
+});
+
+const language = new schema.Entity('languages', {}, { idAttribute: 'name' });
+const actor = new schema.Entity('actors', { languages: [language] }, {
+  idAttribute: 'id',
+});
+const normalizedActivityTypes = normalize(activityTypes, [activityType]);
+const activity = new schema.Entity('activities', { actor, component_name: activityType }, {
+  processStrategy: entity => (
+    Object.assign({}, entity, {
+      component_name: normalizedActivityTypes.entities.activityTypes[entity.component_name],
+    })
+  ),
+});
+
+const normalizedData = normalize(ACTIVITIES, [activity]);
+console.log(normalizedData.entities);
+console.log(normalizedData);
+
 // Load initial data
 store.commit(
   LOAD_INITIAL_DATA,
   {
-    activities: ACTIVITIES,
-    actors: ACTORS,
+    // activities: ACTIVITIES,
+    // actors: ACTORS,
+    ...normalizedData.entities,
+    activityIds: normalizedData.result,
     selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );
