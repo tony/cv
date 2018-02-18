@@ -18,7 +18,7 @@
 <script>
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts';
 import LanguagePie from './charts/LanguagePie';
 import ActivityLine from './charts/ActivityLine';
@@ -27,11 +27,10 @@ export default {
   name: 'Charts',
   components: { LanguagePie, ActivityLine },
   computed: {
-    ...mapGetters(['visibleActivities']),
-    ...mapState(['actors', 'languages']),
+    ...mapGetters(['visibleActivities', 'countLanguagesFromVisibleActivities']),
     ...{
       languageData() {
-        return getActivityLanguagePieData(this.visibleActivities, this.languages, this.actors);
+        return getActivityLanguagePieData(this.countLanguagesFromVisibleActivities);
       },
       activityTimeData() {
         return getActivityTimeChartData(this.visibleActivities, Vue.moment);
