@@ -33,8 +33,6 @@ const activity = new schema.Entity('activities', { actor, component_name: activi
 });
 
 const normalizedData = normalize(ACTIVITIES, [activity]);
-console.log(normalizedData.entities);
-console.log(normalizedData);
 
 // Load initial data
 store.commit(

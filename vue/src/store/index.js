@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActivityTypes, availableActors, availableLanguages, filters, selectActivities, selectActivitiesFinal, sortActivities } from 'cv-lib/storage';
+import { availableActivityTypes, availableActorIds, availableLanguageIds, filters, selectActivityIds, selectVisibleActivityIds, sortActivities, activityTypes } from 'cv-lib/storage';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
@@ -17,26 +17,48 @@ const store = new Vuex.Store({
     selectedActors: null,
     selectedFilters: null,
     selectedLanguages: [],
+    languages: [],
   },
   getters: {
-    availableLanguages: (state, getters) => availableLanguages(getters.filteredActivities),
-    filteredActivities: state => selectActivities(
+    availableLanguageIds: (state, getters) => (
+      availableLanguageIds(getters.filteredActivities, state.languages, getters.availableActors)
+    ),
+    availableLanguages: (state, getters) => (
+      getters.availableLanguageIds.map(i => state.languages[i])
+    ),
+    filteredActivityIds: state => selectActivityIds(
       state.activityIds, state.activities, state.selectedActivityTypes,
       state.selectedFilters,
     ),
-    filteredActivitiesFinal: (state, getters) => selectActivitiesFinal(
+    filteredActivities: (state, getters) => (
+      getters.filteredActivityIds.map(i => state.activities[i])
+    ),
+    visibleActivityIds: (state, getters) => selectVisibleActivityIds(
       state.selectedLanguages, state.selectedActors,
-      state.activities, getters.filteredActivities,
+      state.activities, getters.filteredActivities, state.languages, state.actors,
+    ),
+    visibleActivities: (state, getters) => (
+      getters.visibleActivityIds.map(i => state.activities[i])
+    ),
+    visibleLanguageIds: (state, getters) => (
+      availableLanguageIds(getters.visibleActivities, state.languages, getters.availableActors)
+    ),
+    visibleLanguages: (state, getters) => (
+      getters.visibleLanguageIds.map(i => state.languages[i])
     ),
     sortedActivities: (state, getters) => (
-      sortActivities(getters.filteredActivitiesFinal, Vue.moment)
+      sortActivities(getters.visibleActivities, Vue.moment)
     ),
-    actors: state => state.actors, // actor items
     availableActorTypes: state => [
       ...new Set(state.actors.map(item => item)),
     ],
-    availableActors: (state, getters) => availableActors(state.actors, getters.filteredActivities),
-    availableActivityTypes: state => availableActivityTypes(state.activities),
+    availableActorIds: (state, getters) => (
+      availableActorIds(state.actors, getters.filteredActivities)
+    ),
+    availableActors: (state, getters) => (
+      getters.availableActorIds.map(i => state.actors[parseInt(i, 10)])
+    ),
+    availableActivityTypes: state => availableActivityTypes(state.activities, activityTypes),
     availableFilters: () => Object.keys(filters),
   },
   actions: {
@@ -57,7 +79,7 @@ const store = new Vuex.Store({
     [LOAD_INITIAL_DATA]: (state, data) => {
       state.activities = data.activities;
       state.actors = data.actors;
-      state.langauges = data.languages;
+      state.languages = data.languages;
       state.activityTypes = data.activityTypes;
       state.selectedFilters = data.selectedFilters;
       state.activityIds = data.activityIds;
