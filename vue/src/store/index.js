@@ -18,6 +18,7 @@ const store = new Vuex.Store({
     selectedFilters: null,
     selectedLanguages: [],
     languages: [],
+    filters: Object.keys(filterMap),
   },
   getters: {
     availableLanguageIds: (state, getters) => (
@@ -59,7 +60,6 @@ const store = new Vuex.Store({
     availableActivityTypes: state => (
       availableActivityTypes(state.activities, activityTypes)
     ),
-    availableFilters: () => Object.keys(filterMap),
   },
   actions: {
     updateSelectedActivityTypeAction({ commit }, value) {

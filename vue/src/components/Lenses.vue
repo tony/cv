@@ -46,7 +46,7 @@
     </multiselect>
 
     <div class="row choices">
-      <div v-for="fil in availableFilters" :key="fil.id" class="roundedOne col-sm">
+      <div v-for="fil in filters" :key="fil.id" class="roundedOne col-sm">
         <div class="box">
           <input type="checkbox" :id="fil" :value="fil" v-model="selectedFilters" >
           <label :for="fil">{{fil}}</label>
@@ -68,9 +68,14 @@ export default {
       'actors',
       'availableActors',
       'availableActivityTypes',
-      'availableFilters',
       'availableLanguages',
       'filteredActivitiesFinal',
+    ]),
+    ...mapState([
+      'filters',
+      'selectedActivityTypes',
+      'selectedActors',
+      'selectedLanguages',
     ]),
     ...{
       selectedFilters: {
@@ -82,7 +87,6 @@ export default {
         },
       },
     },
-    ...mapState(['selectedActivityTypes', 'selectedActors', 'selectedLanguages']),
   },
   methods: {
     ...mapActions([
