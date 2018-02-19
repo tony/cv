@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActivityTypes, availableActorIds, availableLanguageIds, filterMap, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
+import { availableActivityTypes, availableActorIds, availableLanguageIds, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
+import { filterMap } from 'cv-lib/selectors';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
