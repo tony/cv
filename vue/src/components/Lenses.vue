@@ -69,7 +69,6 @@ export default {
       'availableActors',
       'availableActivityTypes',
       'availableLanguages',
-      'filteredActivitiesFinal',
     ]),
     ...mapState([
       'filters',

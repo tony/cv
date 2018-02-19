@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActivityTypes, availableActorIds, availableLanguageIds, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
-import { filterMap } from 'cv-lib/selectors';
+import { availableActorIds, availableLanguageIds, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
+import { filterMap, availableActivityTypes } from 'cv-lib/selectors';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
@@ -28,16 +28,16 @@ const store = new Vuex.Store({
     availableLanguages: (state, getters) => (
       getters.availableLanguageIds.map(i => state.languages[i])
     ),
-    filteredActivityIds: state => selectActivityIds(
+    availableActivityIds: state => selectActivityIds(
       state.activityIds, state.activities, state.selectedActivityTypes,
       state.selectedFilters,
     ),
-    filteredActivities: (state, getters) => (
-      getters.filteredActivityIds.map(i => state.activities[i])
+    availableActivities: (state, getters) => (
+      getters.availableActivityIds.map(i => state.activities[i])
     ),
     visibleActivities: (state, getters) => selectVisibleActivities(
       state.selectedLanguages, state.selectedActors,
-      denormalizeActivities(getters.filteredActivities, state.actors, state.languages),
+      denormalizeActivities(getters.availableActivities, state.actors, state.languages),
       state.languages, state.actors,
     ),
     visibleLanguageIds: (state, getters) => (
@@ -53,7 +53,7 @@ const store = new Vuex.Store({
       sortActivities(getters.visibleActivities, Vue.moment)
     ),
     availableActorIds: (state, getters) => (
-      availableActorIds(state.actors, getters.filteredActivities)
+      availableActorIds(state.actors, getters.availableActivities)
     ),
     availableActors: (state, getters) => (
       getters.availableActorIds.map(i => state.actors[parseInt(i, 10)])
