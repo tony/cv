@@ -55,8 +55,8 @@ const store = new Vuex.Store({
     availableActors: (state, getters) => (
       getters.availableActorIds.map(i => state.actors[parseInt(i, 10)])
     ),
-    availableActivityTypes: (state, getters) => (
-      availableActivityTypes(getters.filteredActivities, activityTypes)
+    availableActivityTypes: state => (
+      availableActivityTypes(state.activities, activityTypes)
     ),
     availableFilters: () => Object.keys(filterMap),
   },

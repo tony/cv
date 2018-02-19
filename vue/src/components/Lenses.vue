@@ -28,7 +28,7 @@
       :options="availableActivityTypes"
       :value="selectedActivityTypes"
       @input="updateSelectedActivityTypeAction"
-      label="component_name"
+      label="name"
      >
     </multiselect>
 
