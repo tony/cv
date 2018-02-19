@@ -15,8 +15,8 @@ const store = new Vuex.Store({
     actors: null,
     activityIds: [],
     selectedActivityTypes: [],
-    selectedActors: null,
-    selectedFilters: null,
+    selectedActors: [],
+    selectedFilters: [],
     selectedLanguages: [],
     languages: [],
     filters: Object.keys(filterMap),
@@ -38,7 +38,6 @@ const store = new Vuex.Store({
     visibleActivities: (state, getters) => selectVisibleActivities(
       state.selectedLanguages, state.selectedActors,
       denormalizeActivities(getters.availableActivities, state.actors, state.languages),
-      state.languages, state.actors,
     ),
     visibleLanguageIds: (state, getters) => (
       availableLanguageIds(getters.visibleActivities, state.languages, getters.availableActors)
