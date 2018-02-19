@@ -52,9 +52,6 @@ const store = new Vuex.Store({
     sortedActivities: (state, getters) => (
       sortActivities(getters.visibleActivities, Vue.moment)
     ),
-    availableActorTypes: state => [
-      ...new Set(state.actors.map(item => item)),
-    ],
     availableActorIds: (state, getters) => (
       availableActorIds(state.actors, getters.filteredActivities)
     ),

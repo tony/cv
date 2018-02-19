@@ -67,7 +67,6 @@ export default {
     ...mapGetters([
       'actors',
       'availableActors',
-      'availableActorTypes',
       'availableActivityTypes',
       'availableFilters',
       'availableLanguages',
