@@ -49,6 +49,14 @@ Code decisions and rationale
 - Dates scaped in are in `ISO-8601`_ format, which is compatible
   with `moment.js`_. So something like ``2010-12-30`` is valid.
 
+Reactivity and performance considerations
+-----------------------------------------
+
+- https://vuejs.org/v2/style-guide/#Avoid-v-if-with-v-for-essential
+- https://gist.github.com/DawidMyslak/2b046cca5959427e8fb5c1da45ef7748
+- https://vuejs.org/v2/guide/reactivity.html
+- https://github.com/vuejs/vuex/issues/888#issuecomment-331702517
+
 Moving forward
 --------------
 
