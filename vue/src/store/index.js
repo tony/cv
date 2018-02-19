@@ -38,7 +38,7 @@ const store = new Vuex.Store({
       state.activities, getters.filteredActivities, state.languages, state.actors,
     ),
     visibleActivities: (state, getters) => (
-      getters.visibleActivityIds.map(i => state.activities[i])
+      Object.values(getters.visibleActivityIds).map(i => state.activities[i])
     ),
     visibleLanguageIds: (state, getters) => (
       availableLanguageIds(getters.visibleActivities, state.languages, getters.availableActors)

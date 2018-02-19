@@ -27,6 +27,7 @@ const normalizedActivityTypes = normalize(activityTypes, [activityType]);
 const activity = new schema.Entity('activities', { actor, component_name: activityType }, {
   processStrategy: entity => (
     Object.assign({}, entity, {
+      visible: false,
       component_name: normalizedActivityTypes.entities.activityTypes[entity.component_name],
     })
   ),
