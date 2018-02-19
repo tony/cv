@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActivityTypes, availableActorIds, availableLanguageIds, filterMap, selectActivityIds, selectVisibleActivityIds, sortActivities, activityTypes, countLanguagesFromActivities } from 'cv-lib/storage';
+import { availableActivityTypes, availableActorIds, availableLanguageIds, filterMap, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities } from 'cv-lib/storage';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
@@ -33,12 +33,9 @@ const store = new Vuex.Store({
     filteredActivities: (state, getters) => (
       getters.filteredActivityIds.map(i => state.activities[i])
     ),
-    visibleActivityIds: (state, getters) => selectVisibleActivityIds(
+    visibleActivities: (state, getters) => selectVisibleActivities(
       state.selectedLanguages, state.selectedActors,
       state.activities, getters.filteredActivities, state.languages, state.actors,
-    ),
-    visibleActivities: (state, getters) => (
-      Object.values(getters.visibleActivityIds).map(i => state.activities[i])
     ),
     visibleLanguageIds: (state, getters) => (
       availableLanguageIds(getters.visibleActivities, state.languages, getters.availableActors)
