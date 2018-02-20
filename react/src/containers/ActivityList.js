@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { activityTypes, sortActivities, availableLanguageIds, availableActorIds, denormalizeActivities } from 'cv-lib/storage'
+import { activityTypes, sortActivities, availableLanguageIds, availableActorIds, denormalizeActivities, countLanguagesFromActivities } from 'cv-lib/storage'
 import { filterMap } from 'cv-lib/selectors';
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
@@ -72,9 +72,13 @@ const getReactSelectValues = (actors) => {
   return Object.values(actors).map((actor => ({ value: actor.name, label: actor.name })));
 }
 
-const getAvailableLanguages = createSelector(
+const getAvailableLanguageIds = createSelector(
   [ getLanguages, getActors ],
   (languages, actors) => availableLanguageIds(languages, actors)
+);
+const getAvailableLanguages = createSelector(
+  [ getLanguages, getAvailableLanguageIds ],
+  (languages, languageIds) => languageIds.map(id => languages[id])
 );
 const getAvailableLanguagesReactSelectValues = createSelector(
   [ getAvailableLanguages ],
@@ -90,10 +94,15 @@ const getAvailableActorsReactSelectValues = createSelector(
   (actors) => getReactSelectValues(actors)
 );
 
+const getCountLanguagesFromActivities = createSelector(
+  [ getVisibleActivities ],
+  (activities) => countLanguagesFromActivities(activities)
+);
+
 export const mapStateToProps = state => {
   return {
     activities: getVisibleActivities(state),
-    activitiesPie: getActivityLanguagePieData(getVisibleActivities(state)),
+    activitiesPie: getActivityLanguagePieData(getCountLanguagesFromActivities(state)),
     activitiesLine: getActivityTimeChartData((getVisibleActivities(state)), moment),
     actors: state.actors,
     actors_select: getReactSelectValues(state.actors),
@@ -101,8 +110,9 @@ export const mapStateToProps = state => {
     availableActors_select: getAvailableActorsReactSelectValues(state),
     selectedActors: state.selectedActors,
     languages: state.languages,
-    availableLanguageIds: getAvailableLanguages(state),
-    availableLanguageIds_select: getAvailableLanguagesReactSelectValues(state),
+    availableLanguageIds: getAvailableLanguageIds(state),
+    availableLanguages: getAvailableLanguages(state),
+    availableLanguages_select: getAvailableLanguagesReactSelectValues(state),
     languages_select: getReactSelectValues(state.languages),
     selectedLanguages: state.selectedLanguages,
     activityTypes: state.activityTypes,
