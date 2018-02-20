@@ -10,8 +10,9 @@ import 'cv-lib/assets/favicon.ico';
 import App from './components/App';
 import cvReducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
-import { ACTORS, ACTIVITIES, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
-import { availableLanguages, availableActivityTypes, filters } from 'cv-lib/storage';
+import { INITIAL_DATA, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
+import { activityTypes } from 'cv-lib/storage';
+import { filterMap } from 'cv-lib/selectors';
 
 
 const logger = createLogger({
@@ -19,14 +20,12 @@ const logger = createLogger({
 });
 
 let store = createStore(cvReducers, {
-  actors: ACTORS,
-  activities: ACTIVITIES,
+  ...INITIAL_DATA.entities,
   selectedActors: [],
-  languages: availableLanguages(ACTIVITIES),
   selectedLanguages: [],
-  activityTypes: availableActivityTypes(ACTIVITIES),
+  activityTypes: activityTypes,
   selectedActivityTypes: [],
-  filters: filters,
+  filters: filterMap,
   selectedFilters: DEFAULT_SELECTED_FILTERS,
 
 }, applyMiddleware(logger));

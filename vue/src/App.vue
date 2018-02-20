@@ -38,7 +38,6 @@ export default {
     'header-view': Header,
   },
   computed: mapGetters([
-    'filteredActivities',
     'sortedActivities',
   ]),
 };

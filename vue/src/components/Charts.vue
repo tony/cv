@@ -2,13 +2,13 @@
   <div class="charts row padBottom">
     <div class="col-xs-12 col-sm-2 col-sm-offset-2">
       <language-pie
-        :chart-data="languages"
+        :chart-data="languageData"
         style="width: 100%; height: 250px; position: relative;"
         />
     </div>
     <div class="col-xs-12 col-sm-6">
       <activity-line
-        :chart-data="activityTimes"
+        :chart-data="activityTimeData"
          style="width: 100%; height: 250px; position: relative;"
         />
     </div>
@@ -27,13 +27,13 @@ export default {
   name: 'Charts',
   components: { LanguagePie, ActivityLine },
   computed: {
-    ...mapGetters(['filteredActivitiesFinal']),
+    ...mapGetters(['visibleActivities', 'countLanguagesFromVisibleActivities']),
     ...{
-      languages() {
-        return getActivityLanguagePieData(this.filteredActivitiesFinal);
+      languageData() {
+        return getActivityLanguagePieData(this.countLanguagesFromVisibleActivities);
       },
-      activityTimes() {
-        return getActivityTimeChartData(this.filteredActivitiesFinal, Vue.moment);
+      activityTimeData() {
+        return getActivityTimeChartData(this.visibleActivities, Vue.moment);
       },
     },
   },

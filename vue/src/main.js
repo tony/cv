@@ -1,9 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-// https://github.com/vuejs/vue/issues/3270#issuecomment-232269588
 import Vue from 'vue';
-import { ACTIVITIES, ACTORS, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
+import { INITIAL_DATA, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
 import App from './App';
 import store from './store';
 import { LOAD_INITIAL_DATA } from './store/mutation-types';
@@ -13,12 +10,11 @@ Vue.config.productionTip = false;
 
 Vue.use(require('vue-moment'));
 
-// Load initial data
-store.commit(
+store.commit( // Load initial data
   LOAD_INITIAL_DATA,
   {
-    activities: ACTIVITIES,
-    actors: ACTORS,
+    ...INITIAL_DATA.entities,
+    activityIds: INITIAL_DATA.result,
     selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );
