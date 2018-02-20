@@ -4,7 +4,8 @@
     "github-colors": "^2.2.16",
     "github-graphql-client": "^1.0.0",
     "invert-color": "^1.2.2",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "normalizr": "^3.2.4"
   },
   "workspaces": [
     "lib",
