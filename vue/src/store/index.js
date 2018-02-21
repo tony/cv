@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActorIds, availableLanguageIds, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
+import { availableActorIds, selectLanguagesFromActors, selectActivityIds, selectVisibleActivities, sortActivities, activityTypes, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
 import { filterMap, availableActivityTypes } from 'cv-lib/selectors';
 import { LOAD_INITIAL_DATA } from './mutation-types';
 
@@ -22,11 +22,12 @@ const store = new Vuex.Store({
     filters: Object.keys(filterMap),
   },
   getters: {
-    availableLanguageIds: (state, getters) => (
-      availableLanguageIds(state.languages, getters.availableActors)
-    ),
+
     availableLanguages: (state, getters) => (
-      getters.availableLanguageIds.map(i => state.languages[i])
+      selectLanguagesFromActors(
+        state.languages,
+        getters.availableActors,
+      ).map(i => state.languages[i])
     ),
     availableActivityIds: state => selectActivityIds(
       state.activityIds, state.activities, state.selectedActivityTypes,
@@ -38,12 +39,6 @@ const store = new Vuex.Store({
     visibleActivities: (state, getters) => selectVisibleActivities(
       state.selectedLanguages, state.selectedActors,
       denormalizeActivities(getters.availableActivities, state.actors, state.languages),
-    ),
-    visibleLanguageIds: (state, getters) => (
-      availableLanguageIds(getters.visibleActivities, state.languages, getters.availableActors)
-    ),
-    visibleLanguages: (state, getters) => (
-      getters.visibleLanguageIds.map(i => state.languages[i])
     ),
     countLanguagesFromVisibleActivities: (state, getters) => (
       countLanguagesFromActivities(getters.visibleActivities, state.languages, state.actors)
