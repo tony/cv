@@ -11,7 +11,7 @@ import App from './components/App';
 import cvReducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import { INITIAL_DATA, DEFAULT_SELECTED_FILTERS } from 'cv-lib/constants';
-import { activityTypes } from 'cv-lib/storage';
+import { activityTypes } from 'cv-lib/constants';
 import { filterMap } from 'cv-lib/selectors';
 
 

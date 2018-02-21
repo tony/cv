@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { activityTypes, sortActivities, availableLanguageIds, denormalizeActivities, countLanguagesFromActivities } from 'cv-lib/storage'
+import { sortActivities, selectLanguagesFromActors, denormalizeActivities, countLanguagesFromActivities } from 'cv-lib/storage'
+import { activityTypes } from 'cv-lib/constants'
 import { filterMap } from 'cv-lib/selectors';
 import { toggleActivity } from '../actions'
 import ActivityList from '../components/ActivityList'
@@ -74,7 +75,7 @@ const getReactSelectValues = (actors) => {
 
 const getAvailableLanguageIds = createSelector(
   [ getLanguages, getActors ],
-  (languages, actors) => availableLanguageIds(languages, actors)
+  (languages, actors) => selectLanguagesFromActors(languages, actors)
 );
 const getAvailableLanguages = createSelector(
   [ getLanguages, getAvailableLanguageIds ],
@@ -114,7 +115,7 @@ export const mapStateToProps = state => {
     availableActors_select: getAvailableActorsReactSelectValues(state),
     selectedActors: state.selectedActors,
     languages: state.languages,
-    availableLanguageIds: getAvailableLanguageIds(state),
+    selectLanguagesFromActors: getAvailableLanguageIds(state),
     availableLanguages: getAvailableLanguages(state),
     availableLanguages_select: getAvailableLanguagesReactSelectValues(state),
     languages_select: getReactSelectValues(state.languages),

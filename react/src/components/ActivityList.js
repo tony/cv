@@ -1,6 +1,6 @@
 import React from 'react';
 import { activityListProp } from '../props';
-import { activityTypes } from 'cv-lib/storage';
+import { activityTypes } from 'cv-lib/constants';
 import { Components } from './Activity';
 
 class ActivityList extends React.Component {
