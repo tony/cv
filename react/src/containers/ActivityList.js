@@ -73,13 +73,9 @@ const getReactSelectValues = (actors) => {
   return Object.values(actors).map((actor => ({ value: actor.name, label: actor.name })));
 }
 
-const getAvailableLanguageIds = createSelector(
-  [ getLanguages, getActors ],
-  (languages, actors) => selectLanguagesFromActors(languages, actors)
-);
 const getAvailableLanguages = createSelector(
-  [ getLanguages, getAvailableLanguageIds ],
-  (languages, languageIds) => languageIds.map(id => languages[id])
+  [ getLanguages, getActors ],
+  (languages, actors) => selectLanguagesFromActors(languages, Object.values(actors))
 );
 const getAvailableLanguagesReactSelectValues = createSelector(
   [ getAvailableLanguages ],
@@ -89,9 +85,9 @@ const getAvailableLanguagesReactSelectValues = createSelector(
 const getAvailableActors = createSelector(
   [ getActors, getVisibleActivities ],
   (actors, activities) => {
-    return Object.keys(actors).filter(actor => (
-      activities.find(activity => activity.actor.id === parseInt(actor, 10))
-    )).map(i => actors[parseInt(i, 10)]);
+    return Object.values(actors).filter(actor => (
+      activities.find(activity => activity.actor.id === actor.id)
+    ));
   }
 );
 const getAvailableActorsReactSelectValues = createSelector(
@@ -115,7 +111,6 @@ export const mapStateToProps = state => {
     availableActors_select: getAvailableActorsReactSelectValues(state),
     selectedActors: state.selectedActors,
     languages: state.languages,
-    selectLanguagesFromActors: getAvailableLanguageIds(state),
     availableLanguages: getAvailableLanguages(state),
     availableLanguages_select: getAvailableLanguagesReactSelectValues(state),
     languages_select: getReactSelectValues(state.languages),
