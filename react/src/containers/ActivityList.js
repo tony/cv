@@ -13,14 +13,13 @@ const getActivities = (state) => state.activities;
 const getSelectedLanguages = (state) => state.selectedLanguages;
 const getSelectedActivityTypes = (state) => state.selectedActivityTypes;
 const getSelectedFilters = (state) => state.selectedFilters;
-const getFilters = (state) => state.filters;
 const getActors = (state) => state.actors;
 const getLanguages = (state) => state.languages;
 const getSelectedActors = (state) => state.selectedActors;
 
-const getVisibleActivities = createSelector(
-  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getSelectedActors, getFilters, getActors, getLanguages],
-  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, selectedActors, filter, actors, languages) => {
+const getAvailableActivities = createSelector(
+  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getActors, getLanguages],
+  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, actors, languages) => {
     let visibleActivities = denormalizeActivities(Object.values(activities), actors, languages);
     const selectedLanguageList = selectedLanguages.length ? selectedLanguages.split(',') : [];
     let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes.split(',') : [];
@@ -28,14 +27,6 @@ const getVisibleActivities = createSelector(
     selectedActivityTypeList = selectedActivityTypeList.map(at => (
       activityTypes.find(vt => vt.name === at).component_name
     ));
-    const selectedActorList = selectedActors.length ? selectedActors.split(',') : [];
-
-    // for direct lookups
-    if (selectedActorList && selectedActorList.length) {
-      return visibleActivities.filter(
-        item => selectedActorList.find(s => s === item.actor.name),
-      );
-    }
 
     // only show selected activity types
     if (selectedActivityTypeList.length) {
@@ -58,13 +49,23 @@ const getVisibleActivities = createSelector(
     });
 
 
-    switch (filter) {
-      case 'SHOW_ACTIVE':
-        return visibleActivities.filter(t => !t.completed)
-      case 'SHOW_ALL':
-      default:
-        return sortActivities(visibleActivities, moment);
+    return sortActivities(visibleActivities, moment);
+  }
+)
+
+const getVisibleActivities = createSelector(
+  [getAvailableActivities, getSelectedActors, getActors, getLanguages],
+  (activities, selectedActors, actors, languages) => {
+    const selectedActorList = selectedActors.length ? selectedActors.split(',') : [];
+    let visibleActivities = activities;
+
+    // for direct lookups
+    if (selectedActorList && selectedActorList.length) {
+      return visibleActivities.filter(
+        item => selectedActorList.find(s => s === item.actor.name),
+      );
     }
+    return sortActivities(visibleActivities, moment);
   }
 )
 
@@ -77,19 +78,21 @@ const getAvailableLanguages = createSelector(
   [ getLanguages, getActors ],
   (languages, actors) => selectLanguagesFromActors(languages, Object.values(actors))
 );
+
 const getAvailableLanguagesReactSelectValues = createSelector(
   [ getAvailableLanguages ],
   (languages) => getReactSelectValues(languages)
 );
 
 const getAvailableActors = createSelector(
-  [ getActors, getVisibleActivities ],
+  [ getActors, getAvailableActivities ],
   (actors, activities) => {
     return Object.values(actors).filter(actor => (
       activities.find(activity => activity.actor.id === actor.id)
     ));
   }
 );
+
 const getAvailableActorsReactSelectValues = createSelector(
   [ getAvailableActors ],
   (actors) => getReactSelectValues(actors)
