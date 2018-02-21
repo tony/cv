@@ -27,7 +27,7 @@ const store = new Vuex.Store({
       selectLanguagesFromActors(
         state.languages,
         getters.availableActors,
-      ).map(i => state.languages[i])
+      )
     ),
     availableActivityIds: state => selectActivityIds(
       state.activityIds, state.activities, state.selectedActivityTypes,
