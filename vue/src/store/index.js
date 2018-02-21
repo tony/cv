@@ -1,7 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { availableActorIds, selectLanguagesFromActors, selectActivityIds, selectVisibleActivities, sortActivities, countLanguagesFromActivities, denormalizeActivities } from 'cv-lib/storage';
+import {
+  selectActorsFromActivities,
+  selectLanguagesFromActors,
+  selectActivities,
+  selectVisibleActivities,
+  sortActivities,
+  countLanguagesFromActivities,
+  denormalizeActivities,
+} from 'cv-lib/storage';
 import { activityTypes } from 'cv-lib/constants';
 import { filterMap, availableActivityTypes } from 'cv-lib/selectors';
 import { LOAD_INITIAL_DATA } from './mutation-types';
@@ -14,7 +22,6 @@ const store = new Vuex.Store({
     count: 0,
     activities: null,
     actors: null,
-    activityIds: [],
     selectedActivityTypes: [],
     selectedActors: [],
     selectedFilters: [],
@@ -30,12 +37,9 @@ const store = new Vuex.Store({
         getters.availableActors,
       )
     ),
-    availableActivityIds: state => selectActivityIds(
-      state.activityIds, state.activities, state.selectedActivityTypes,
+    availableActivities: state => selectActivities(
+      state.activities, state.selectedActivityTypes,
       state.selectedFilters,
-    ),
-    availableActivities: (state, getters) => (
-      getters.availableActivityIds.map(i => state.activities[i])
     ),
     visibleActivities: (state, getters) => selectVisibleActivities(
       state.selectedLanguages, state.selectedActors,
@@ -47,11 +51,8 @@ const store = new Vuex.Store({
     sortedActivities: (state, getters) => (
       sortActivities(getters.visibleActivities, Vue.moment)
     ),
-    availableActorIds: (state, getters) => (
-      availableActorIds(state.actors, getters.availableActivities)
-    ),
     availableActors: (state, getters) => (
-      getters.availableActorIds.map(i => state.actors[parseInt(i, 10)])
+      selectActorsFromActivities(state.actors, getters.availableActivities)
     ),
     availableActivityTypes: state => (
       availableActivityTypes(state.activities, activityTypes)
@@ -78,7 +79,6 @@ const store = new Vuex.Store({
       state.languages = data.languages;
       state.activityTypes = data.activityTypes;
       state.selectedFilters = data.selectedFilters;
-      state.activityIds = data.activityIds;
     },
     updateSelectedActivityType(state, value) {
       state.selectedActivityTypes = value;

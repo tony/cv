@@ -14,7 +14,6 @@ store.commit( // Load initial data
   LOAD_INITIAL_DATA,
   {
     ...INITIAL_DATA.entities,
-    activityIds: INITIAL_DATA.result,
     selectedFilters: DEFAULT_SELECTED_FILTERS,
   },
 );
