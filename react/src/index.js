@@ -21,12 +21,12 @@ const logger = createLogger({
 
 let store = createStore(cvReducers, {
   ...INITIAL_DATA.entities,
-  selectedActors: [],
-  selectedLanguages: [],
   activityTypes: activityTypes,
+  selectedActors: [],
   selectedActivityTypes: [],
-  filters: filterMap,
   selectedFilters: DEFAULT_SELECTED_FILTERS,
+  selectedLanguages: [],
+  filters: filterMap,
 
 }, applyMiddleware(logger));
 
