@@ -151,9 +151,9 @@ function.name@^1.0.3:
   dependencies:
     noop6 "^1.0.1"
 
-github-colors@^2.2.16:
-  version "2.2.16"
-  resolved "https://registry.yarnpkg.com/github-colors/-/github-colors-2.2.16.tgz#cfbe00726fe4cfcb9dc47d94e133f57b3f126060"
+github-colors@^2.2.17:
+  version "2.2.17"
+  resolved "https://registry.yarnpkg.com/github-colors/-/github-colors-2.2.17.tgz#81bb90034e8d7e4e53ecc840ba70a93f5087621b"
   dependencies:
     bug-killer "^4.0.0"
     js-yaml "^3.6.1"
