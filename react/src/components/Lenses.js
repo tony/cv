@@ -37,7 +37,13 @@ class Lenses extends React.Component {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}
       />
-      <CheckboxGroup name="selected-filters" value={this.props.selectedFilters} onChange={this.props.onSelectedFiltersChange} style={{ textAlign: 'center' }} className="row choices">
+      <CheckboxGroup name="selected-filters"
+        value={this.props.selectedFilters}
+        onChange={this.props.onSelectedFiltersChange}
+        style={{ textAlign: 'center' }}
+        className="row choices"
+        checkboxDepth={3}
+      >
          {Object.keys(this.props.filters).map(filterChoice => (
           <div className="col-sm" key={filterChoice}><div className="box">
             <Checkbox value={filterChoice} id={filterChoice} />
