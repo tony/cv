@@ -3,7 +3,7 @@
     <div class='github-fork'>
       Made with <span role="img" aria-label="love">❤️</span> by <a href="https://www.git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
       Written in Vue.js (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>).<br />
-      <a href="https://cv-react.git-pull.com">See React version (beta)</a>.
+      <a href="https://cv-react.git-pull.com">See also: React version</a>.
     </div>
     <header-view/>
     <component
