@@ -2,7 +2,7 @@
   <div class="header">
     <h1>{{ msg }}</h1>
 
-    <p><em>
+    <p class="hidden"><em>
       Seeking remote, senior programming roles.
       I'm also available for <a href="https://www.git-pull.com/consulting/" target="_blank" rel="noopener noreferrer">consulting</a> and
       <a href="https://www.git-pull.com/mentoring/" target="_blank" rel="noopener noreferrer">mentoring</a>.
