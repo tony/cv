@@ -3,6 +3,7 @@ start_directory: ./ # load session relative to config location (project root).
 windows:
 - window_name: main
   layout: main-horizontal
+  focus: true
   options:
     main-pane-height: 35
   start_directory: ./
