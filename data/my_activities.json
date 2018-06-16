@@ -198,7 +198,16 @@
       "Facebook API"
     ],
     "actor": 50002
-  }, {
+  },
+  {
+    "id": 40005,
+    "component_name": "Work",
+    "created_date": "2018-03-01",
+    "title": "Senior Developer at Peergrade",
+    "description": "Peer Grading Platform",
+    "actor": 50004
+  },
+  {
     "id": 50000,
     "component_name": "Publication",
     "created_date": "2017-01-01",

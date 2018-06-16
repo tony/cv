@@ -255,5 +255,13 @@
     "old_url": "https://boostable.com",
     "logo": "/static/img/boostable.png",
     "languages": ["JavaScript", "Python"]
+  },
+  {
+    "id": 50004,
+    "type": "Company",
+    "name": "Peergrade",
+    "url": "https://www.peergrade.io",
+    "logo": "/static/img/peergrade-blue.png",
+    "languages": ["JavaScript", "Python"]
   }
 ]
