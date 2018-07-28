@@ -131,13 +131,15 @@ export const mapDispatchToProps = dispatch => {
     onActivityClick: id => {
       dispatch(toggleActivity(id))
     },
-    onSelectedActorChange: value => {
+    onSelectedActorChange: actorOptions => {
+      const value = actorOptions.map(l => l.value).join(',')
       dispatch({
         type: 'CHANGE_SELECTED_ACTORS',
         value: value
       });
     },
-    onSelectedLanguageChange: value => {
+    onSelectedLanguageChange: languageOptions => {
+      const value = languageOptions.map(l => l.value).join(',')
       dispatch({
         type: 'CHANGE_SELECTED_LANGUAGES',
         value: value
@@ -150,6 +152,7 @@ export const mapDispatchToProps = dispatch => {
       });
     },
     onSelectedActivityTypesChange: value => {
+      value = value.map(l => l.value).join(',')
       dispatch({
         type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
         value: value
