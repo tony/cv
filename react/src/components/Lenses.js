@@ -1,6 +1,5 @@
 import React from 'react'
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 import { connect } from 'react-redux';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.js';
@@ -12,8 +11,7 @@ class Lenses extends React.Component {
       <div className="row lenses"><div className="col-xs-10 col-xs-offset-1" style={{ textAlign: 'left' }}>
       <Select
         name="selected-actors"
-        multi
-        simpleValue
+        isMulti
         options={this.props.availableActors_select}
         value={this.props.selectedActors.length ? this.props.selectedActors : ""}
         placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
@@ -21,8 +19,7 @@ class Lenses extends React.Component {
       />
       <Select
         name="selected-activity-types"
-        multi
-        simpleValue
+        isMulti
         options={this.props.activityTypes_select}
         value={this.props.selectedActivityTypes.length ? this.props.selectedActivityTypes : ""}
         placeholder="Filter by Activity Type(s) - e.g. Work, Open Source, Website, Volunteering"
@@ -30,8 +27,7 @@ class Lenses extends React.Component {
       />
       <Select
         name="selected-languages"
-        multi
-        simpleValue
+        isMulti
         options={this.props.availableLanguages_select}
         value={this.props.selectedLanguages.length ? this.props.selectedLanguages : ""}
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
