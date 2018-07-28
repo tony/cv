@@ -14,7 +14,7 @@ const App = () => (
     <div className="header">
       <h1>Tony Narlock's CV</h1>
 
-      <p class="hidden"><em>
+      <p className="hidden"><em>
         Seeking remote, senior programming roles.
         I'm also available for <a href="https://www.git-pull.com/consulting/" rel="noopener noreferrer" target="_blank">consulting</a> and <a href="https://www.git-pull.com/mentoring/" rel="noopener noreferrer" target="_blank">mentoring</a>.
       </em></p>
