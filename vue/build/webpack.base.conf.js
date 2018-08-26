@@ -3,16 +3,17 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
+  test: /\.(vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
-  include: [resolve('src'), resolve('../lib')],
+  include: [resolve('src')],
   options: {
     formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
@@ -38,6 +39,9 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  plugins: [
+    new VueLoaderPlugin(),
+  ],
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
@@ -67,6 +71,32 @@ module.exports = {
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
       },
+			{
+				test: /\.css$/,
+				oneOf: [
+					// this matches `<style module>`
+					{
+						resourceQuery: /module/,
+						use: [
+							'vue-style-loader',
+							{
+								loader: 'css-loader',
+								options: {
+									modules: true,
+									localIdentName: '[local]_[hash:base64:5]'
+								}
+							}
+						]
+					},
+					// this matches plain `<style>` or `<style scoped>`
+					{
+						use: [
+							'vue-style-loader',
+							'css-loader'
+						]
+					}
+				]
+			},
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
