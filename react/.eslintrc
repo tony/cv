@@ -1,0 +1,17 @@
+{
+  root: false,
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 6,
+  },
+  extends: [
+    'react-app',
+  ],
+  env: {
+    browser: true,
+  },
+  rules: {
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/397
+    'jsx-a11y/href-no-hash': [0],
+  }
+}
