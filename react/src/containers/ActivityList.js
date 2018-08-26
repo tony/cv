@@ -21,8 +21,8 @@ const getAvailableActivities = createSelector(
   [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getActors, getLanguages],
   (activities, selectedLanguages, selectedActivityTypes, selectedFilters, actors, languages) => {
     let visibleActivities = denormalizeActivities(Object.values(activities), actors, languages);
-    const selectedLanguageList = selectedLanguages.length ? selectedLanguages.split(',') : [];
-    let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes.split(',') : [];
+    const selectedLanguageList = selectedLanguages.length ? selectedLanguages : [];
+    let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes : [];
     // we need to filter against the component_name of the activity, so get that data
     selectedActivityTypeList = selectedActivityTypeList.map(at => (
       activityTypes.find(vt => vt.name === at).component_name
@@ -56,7 +56,7 @@ const getAvailableActivities = createSelector(
 const getVisibleActivities = createSelector(
   [getAvailableActivities, getSelectedActors, getActors, getLanguages],
   (activities, selectedActors, actors, languages) => {
-    const selectedActorList = selectedActors.length ? selectedActors.split(',') : [];
+    const selectedActorList = selectedActors.length ? selectedActors : [];
     let visibleActivities = activities;
 
     // for direct lookups
@@ -72,6 +72,11 @@ const getVisibleActivities = createSelector(
 const getReactSelectValues = (actors) => {
   /** (react-select only) Return available actors in format acceptable to react-select **/
   return Object.values(actors).map((actor => ({ value: actor.name, label: actor.name })));
+}
+
+const inflateArrayValuesForReactSelect = (vals) => {
+  /** (react-select only) Return available vals in format acceptable to react-select **/
+  return Object.values(vals).map((val=> ({ value: val, label: val })));
 }
 
 const getAvailableLanguages = createSelector(
@@ -114,13 +119,18 @@ export const mapStateToProps = state => {
     availableActors_select: getAvailableActorsReactSelectValues(state),
     selectedActors: state.selectedActors,
     languages: state.languages,
+    languages_select: getReactSelectValues(state.languages),
+    filterAvailableLanguages: ({ label, value }) => {
+      return getAvailableLanguages(state).some(o => o.name === value)
+    },
     availableLanguages: getAvailableLanguages(state),
     availableLanguages_select: getAvailableLanguagesReactSelectValues(state),
-    languages_select: getReactSelectValues(state.languages),
     selectedLanguages: state.selectedLanguages,
+    selectedLanguages_select: inflateArrayValuesForReactSelect(state.selectedLanguages),
     activityTypes: state.activityTypes,
     activityTypes_select: getReactSelectValues(state.activityTypes),
     selectedActivityTypes: state.selectedActivityTypes,
+    selectedActivityTypes_select: getReactSelectValues(state.selectedActivityTypes),
     filters: state.filters,
     selectedFilters: state.selectedFilters,
   }
@@ -132,14 +142,14 @@ export const mapDispatchToProps = dispatch => {
       dispatch(toggleActivity(id))
     },
     onSelectedActorChange: actorOptions => {
-      const value = actorOptions.map(l => l.value).join(',')
+      const value = actorOptions.map(l => l.value)
       dispatch({
         type: 'CHANGE_SELECTED_ACTORS',
         value: value
       });
     },
     onSelectedLanguageChange: languageOptions => {
-      const value = languageOptions.map(l => l.value).join(',')
+      const value = languageOptions.map(l => l.value)
       dispatch({
         type: 'CHANGE_SELECTED_LANGUAGES',
         value: value
@@ -152,7 +162,7 @@ export const mapDispatchToProps = dispatch => {
       });
     },
     onSelectedActivityTypesChange: value => {
-      value = value.map(l => l.value).join(',')
+      value = value.map(l => l.value)
       dispatch({
         type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
         value: value

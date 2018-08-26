@@ -13,7 +13,6 @@ class Lenses extends React.Component {
         name="selected-actors"
         isMulti
         options={this.props.availableActors_select}
-        value={this.props.selectedActors.length ? this.props.selectedActors : ""}
         placeholder="Lookup by Place/Project/Company - e.g. tmuxp, Social Amp, The Tao of tmux"
         onChange={this.props.onSelectedActorChange}
       />
@@ -21,15 +20,15 @@ class Lenses extends React.Component {
         name="selected-activity-types"
         isMulti
         options={this.props.activityTypes_select}
-        value={this.props.selectedActivityTypes.length ? this.props.selectedActivityTypes : ""}
         placeholder="Filter by Activity Type(s) - e.g. Work, Open Source, Website, Volunteering"
         onChange={this.props.onSelectedActivityTypesChange}
       />
       <Select
         name="selected-languages"
         isMulti
-        options={this.props.availableLanguages_select}
-        value={this.props.selectedLanguages.length ? this.props.selectedLanguages : ""}
+        options={this.props.languages_select}
+        filterOption={this.props.filterAvailableLanguages}
+        value={this.props.selectedLanguages_select}
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         onChange={this.props.onSelectedLanguageChange}
       />
