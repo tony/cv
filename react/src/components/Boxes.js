@@ -38,7 +38,7 @@ export class RightBox extends React.Component {
       <div className="box">
         { this.props.actor.logo && this.props.actor.logo.length > 0 &&
             <a href={this.props.actor.url}
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               className="align-octicon"
             >
               <img
@@ -50,7 +50,7 @@ export class RightBox extends React.Component {
             </a>
         }
 
-        <h3><a href={this.props.qa_url} target="_blank" className="activity-title">{this.props.title}</a></h3>
+        <h3><a href={this.props.qa_url} target="_blank" rel="noopener noreferrer" className="activity-title">{this.props.title}</a></h3>
       </div>
     )
   }
@@ -61,32 +61,32 @@ export class PatchRightBox extends RightBox {
   render() {
     return (
       <div className="box">
-        <h3 className="align-octicon-bottom"><a href={this.props.qa_url} target="_blank" className="activity-title">
+        <h3 className="align-octicon-bottom"><a href={this.props.qa_url} target="_blank" rel="noopener noreferrer" className="activity-title">
           <Octicon name="mark-github" label="View on GitHub"></Octicon> {this.props.title}
         </a></h3>
         <p>
-          <em>was contributed to the <a href={this.props.actor.url} target="_blank" className='muted-link'>{this.props.actor.name}</a> project</em>
+          <em>was contributed to the <a href={this.props.actor.url} target="_blank" rel="noopener noreferrer" className='muted-link'>{this.props.actor.name}</a> project</em>
         </p>
 
         <p><small>
-          <a href={this.props.actor.repo_url} target="_blank" className="muted-link align-octicon">
+          <a href={this.props.actor.repo_url} target="_blank" rel="noopener noreferrer" className="muted-link align-octicon">
             <Octicon name="repo" label="GH"></Octicon>
             Repository </a>
 
           { this.props.in_re_url && this.props.in_re_url.length > 0 &&
               <span>
-                <a href={this.props.in_re_url} target="_blank">issue</a>
+                <a href={this.props.in_re_url} target="_blank" rel="noopener noreferrer">issue</a>
               </span>
           }
 
           <span>
-            <a href={this.props.qa_url} target="_blank" className="muted-link align-octicon">
+            <a href={this.props.qa_url} target="_blank" rel="noopener noreferrer" className="muted-link align-octicon">
               <Octicon name="git-pull-request" label="Pull Request"></Octicon>
               Pull Request
             </a>
           </span>
 
-          <span> <a href={this.props.diff_url} target="_blank" className="muted-link align-octicon">
+          <span> <a href={this.props.diff_url} target="_blank" rel="noopener noreferrer" className="muted-link align-octicon">
             <Octicon name="diff" label="Diff"></Octicon>
             .diff File
           </a></span>
@@ -113,7 +113,7 @@ export class PublicationRightBox extends RightBox {
   render() {
     return (
       <div className="box">
-        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" rel="noopener noreferrer" className="activity-title">
           {this.props.title}
       </a></h3>
 
@@ -122,19 +122,23 @@ export class PublicationRightBox extends RightBox {
           {' '}
           { this.props.actor.leanpub_url && this.props.actor.leanpub_url.length > 0 &&
               <span>
-                <a href={this.props.actor.leanpub_url} target="_blank">Leanpub</a>
+                <a href={this.props.actor.leanpub_url} target="_blank" rel="noopener noreferrer">Leanpub</a>
               </span>
           }
           {' '}
           { this.props.actor.amazon_url && this.props.actor.amazon_url.length > 0 &&
               <span>
-                <a href={this.props.actor.amazon_url} target="_blank">Amazon</a>
+                <a href={this.props.actor.amazon_url} target="_blank" rel="noopener noreferrer">Amazon</a>
               </span>
           }
           {' '}
           { this.props.actor.goodreads_url && this.props.actor.goodreads_url.length > 0 &&
               <span>
-                <a href={this.props.actor.goodreads_url} target="_blank">Goodreads</a>
+                <a
+                  href={this.props.actor.goodreads_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Goodreads</a>
               </span>
           }
 
@@ -149,7 +153,7 @@ export class ArticleRightBox extends RightBox {
   render() {
     return (
       <div className="box">
-        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" rel="noopener noreferrer" className="activity-title">
           {this.props.title}
       </a></h3>
 
@@ -159,7 +163,7 @@ export class ArticleRightBox extends RightBox {
           {this.props.featured ? (
             Object.keys(this.props.featured).map((title) =>
               <span key={title}><a href={this.props.featured[title]}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >{title}</a>{' '}</span>
             )
           ) : null }
@@ -176,7 +180,7 @@ export class SoftwareRightBox extends RightBox {
       <div className="box">
         { this.props.actor.logo && this.props.actor.logo.length > 0 &&
             <a href={this.props.actor.url}
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               className="align-octicon"
             >
               <img
@@ -187,14 +191,14 @@ export class SoftwareRightBox extends RightBox {
               />
             </a>
         }
-        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" className="activity-title">
+        <h3 className="align-octicon-bottom"><a href={this.props.actor.url} target="_blank" rel="noopener noreferrer" className="activity-title">
           {this.props.title}
         </a></h3>
 
         <small className="bottompad10"><div className="software-project-links">
           { this.props.actor.url && this.props.actor.url.length > 0 &&
           <a href={this.props.actor.url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             <Octicon name="home" label="Website"></Octicon>
             {' '}
             Website
@@ -202,7 +206,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.repo_url && this.props.actor.repo_url.length > 0 &&
           <a href={this.props.actor.repo_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="mark-github" label="Repo"></Octicon>
             {' '}
@@ -211,7 +215,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.docs_url && this.props.actor.docs_url.length > 0 &&
             <a href={this.props.actor.docs_url}
-              target="_blank" className="align-octicon">
+              target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="book" label="Docs"></Octicon>
             {' '}
@@ -220,7 +224,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.api_url && this.props.actor.api_url.length > 0 &&
           <a href={this.props.actor.api_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="search" label="API"></Octicon>
             {' '}
@@ -229,7 +233,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.coverage_url && this.props.actor.coverage_url.length > 0 &&
           <a href={this.props.actor.coverage_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="graph" label="Coverage"></Octicon>
             {' '}
@@ -238,7 +242,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.ci_url && this.props.actor.ci_url.length > 0 &&
           <a href={this.props.actor.ci_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="dashboard" label="CI"></Octicon>
             {' '}
@@ -247,7 +251,7 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.browse_code_url && this.props.actor.browse_code_url.length > 0 &&
           <a href={this.props.actor.browse_code_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="code" label="CI"></Octicon>
             {' '}
@@ -256,14 +260,14 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.browse_code_tests_url && this.props.actor.browse_code_tests_url.length > 0 &&
           <a href={this.props.actor.browse_code_tests_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             (tests)
           </a>
           }
           { this.props.actor.issues_url && this.props.actor.issues_url.length > 0 &&
           <a href={this.props.actor.issues_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon">
             {' '}
             <Octicon name="comment-discussion" label="CI"></Octicon>
             {' '}
@@ -272,7 +276,8 @@ export class SoftwareRightBox extends RightBox {
           }
           { this.props.actor.changelog_url && this.props.actor.changelog_url.length > 0 &&
           <a href={this.props.actor.changelog_url}
-            target="_blank" className="align-octicon">
+            target="_blank" rel="noopener noreferrer" className="align-octicon"
+          >
             {' '}
             <Octicon name="list-unordered" label="Changelog"></Octicon>
             {' '}
