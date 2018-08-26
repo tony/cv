@@ -11,8 +11,8 @@ ansi-parser@^3.2.5:
   resolved "https://registry.yarnpkg.com/ansi-parser/-/ansi-parser-3.2.8.tgz#ad80a6351ac5e58cc7e8a761abc037b5505041d0"
 
 ansi-styles@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.0.tgz#c159b8d5be0f9e5a6f346dab94f16ce022161b88"
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
   dependencies:
     color-convert "^1.9.0"
 
@@ -26,12 +26,12 @@ ansy@^1.0.0:
     ul "^5.2.1"
 
 argparse@^1.0.7:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
   dependencies:
     sprintf-js "~1.0.2"
 
-assured@^1.0.6:
+assured@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/assured/-/assured-1.0.12.tgz#05f1d2ceef1f3498d123a6a1c7c69c91c47f4a87"
   dependencies:
@@ -57,14 +57,14 @@ class-methods@^1.0.4:
     ul "^5.2.1"
 
 color-convert@^1.0.0, color-convert@^1.9.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.2.tgz#49881b8fba67df12a96bdf3f56c0aab9e7913147"
   dependencies:
-    color-name "^1.1.1"
+    color-name "1.1.1"
 
-color-name@^1.1.1:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
+color-name@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.1.tgz#4b1415304cf50028ea81643643bd82ea05803689"
 
 couleurs@^6.0.6:
   version "6.0.9"
@@ -99,9 +99,9 @@ days@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/days/-/days-1.1.1.tgz#b039d1e5ad5335ca689401855546f02d4cfcb362"
 
-debug@^2.2.0:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -118,8 +118,8 @@ diff-dates@^1.0.0:
     date-unit-ms "^1.1.0"
 
 esprima@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
 
 exclude-arr@^1.0.0:
   version "1.0.9"
@@ -129,12 +129,11 @@ fillo@^1.0.0:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/fillo/-/fillo-1.0.11.tgz#6ac11437ff899d29979291e8f71f4822c0c4ccda"
 
-follow-redirects@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-0.2.0.tgz#e0229d7a388bb5ff7b29f44fc1e1b62e921272df"
+follow-redirects@^1.4.1:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.7.tgz#a39e4804dacb90202bca76a9e2ac10433ca6a69a"
   dependencies:
-    debug "^2.2.0"
-    stream-consume "^0.1.0"
+    debug "^3.1.0"
 
 formatoid@^1.0.0:
   version "1.2.2"
@@ -170,16 +169,16 @@ has-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
 
 invert-color@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/invert-color/-/invert-color-1.2.3.tgz#cbb0d0c3135ba83585da74b9044285c082496fbd"
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/invert-color/-/invert-color-1.5.0.tgz#d0cf98ec5a2d0e879c63d063ac9c33476c3b9bf2"
 
 iterate-object@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/iterate-object/-/iterate-object-1.3.2.tgz#24ec15affa5d0039e8839695a21c2cae1f45b66b"
 
 js-yaml@^3.6.1:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -194,9 +193,9 @@ mkdirp@^0.5.0:
   dependencies:
     minimist "0.0.8"
 
-moment@^2.20.1:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+moment@^2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
 months@^1.0.0:
   version "1.2.0"
@@ -206,7 +205,7 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-noop6@^1.0.0, noop6@^1.0.1, noop6@^1.0.6:
+noop6@^1.0.0, noop6@^1.0.1, noop6@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/noop6/-/noop6-1.0.7.tgz#96767bf2058ba59ca8cb91559347ddc80239fa8e"
 
@@ -236,10 +235,6 @@ static-methods@^1.0.0:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/static-methods/-/static-methods-1.0.10.tgz#9cd1f89a6919cb3c1c17b59388dc4a1b7e71e751"
 
-stream-consume@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/stream-consume/-/stream-consume-0.1.0.tgz#a41ead1a6d6081ceb79f65b061901b6d8f3d1d0f"
-
 streamp@^2.0.0:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/streamp/-/streamp-2.2.8.tgz#6f6f81441d0edca486421d63e5bb916d9ee6dea3"
@@ -254,13 +249,13 @@ supports-color@^3.1.2:
     has-flag "^1.0.0"
 
 tinyreq@^3.1.3:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/tinyreq/-/tinyreq-3.3.1.tgz#5130d25aeb00f173e741067404cccf1da71b796c"
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/tinyreq/-/tinyreq-3.4.0.tgz#8d9c803379bb1a0c2d1d61db24686f48d684d6f4"
   dependencies:
-    assured "^1.0.6"
-    follow-redirects "^0.2.0"
-    noop6 "^1.0.6"
-    ul "^5.0.0"
+    assured "^1.0.12"
+    follow-redirects "^1.4.1"
+    noop6 "^1.0.7"
+    ul "^5.2.13"
 
 typpy@^2.0.0, typpy@^2.3.1, typpy@^2.3.4, typpy@^2.3.6:
   version "2.3.10"
@@ -268,7 +263,7 @@ typpy@^2.0.0, typpy@^2.3.1, typpy@^2.3.4, typpy@^2.3.6:
   dependencies:
     function.name "^1.0.3"
 
-ul@^5.0.0, ul@^5.2.1:
+ul@^5.0.0, ul@^5.2.1, ul@^5.2.13:
   version "5.2.13"
   resolved "https://registry.yarnpkg.com/ul/-/ul-5.2.13.tgz#9ff0504ea35ca1f74c0bf59e6480def009bad7b5"
   dependencies:
