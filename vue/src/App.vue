@@ -17,6 +17,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import Header from '@/components/Header';
 import { mapGetters } from 'vuex';
 import {

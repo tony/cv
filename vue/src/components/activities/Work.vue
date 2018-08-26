@@ -27,6 +27,7 @@
 
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import Row from '../partials/Row';
 import ImageTitleLinkColumn from '../partials/ImageTitleLinkColumn';
 import LanguageTag from '../partials/LanguageTag';
