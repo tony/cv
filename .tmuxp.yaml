@@ -21,7 +21,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && yarn && reset; BROWSER=none npm start'
+  - '[ -d node_modules ] && yarn && reset; BROWSER=none yarn start'
 - window_name: cv (vue.js)
   layout: main-horizontal
   options:
@@ -31,4 +31,4 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && yarn && reset; npm start'
+  - '[ -d node_modules ] && yarn && reset; yarn serve'
