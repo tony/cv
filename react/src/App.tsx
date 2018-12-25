@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
+import { CVActivity } from "./lib/types";
+import cvReducers from "./reducers";
 const path = require("path");
 const process = require("process");
 
-interface IActivity {
-  id: string;
-  component_name: string;
-  created_date: string;
-  title: string;
-  actor: Number;
-}
-
-const myActivities: Array<IActivity> = require("./data/my_activities.json");
+const myActivities: Array<CVActivity> = require("./data/my_activities.json");
 console.log({ myActivities });
 
 class App extends Component {
