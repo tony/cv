@@ -6,7 +6,7 @@ import myActivities from "../data/my_activities.json";
 import myActors from "../data/my_actors.json";
 import { expandRelations } from "./expand-data";
 import { validateActors } from "./precheck-data";
-import { CVActivityType } from "./types";
+import { CVActivityType, CVActorRaw } from "./types";
 
 export const activityTypes: CVActivityType[] = [
   {
@@ -58,7 +58,7 @@ export const DEFAULT_SELECTED_FILTERS = [
   "Hide Unmerged Contributions"
 ];
 
-export const ACTORS = [...githubActors, ...myActors];
+export const ACTORS: CVActorRaw[] = [...githubActors, ...myActors];
 
 validateActors(ACTORS);
 

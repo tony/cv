@@ -8,21 +8,27 @@ export interface CVActorRaw {
   id: Number;
   type: string;
   name: string;
-  url: string;
-  repo_url: string;
-  docs_url: string;
-  api_url: string;
-  ci_url: string;
-  coverage_url: string;
-  changelog_url: string;
-  issues_url: string;
-  browser_code_tests_url: string;
-  logo: string;
-  languages: Array<string>;
+  url: string | null;
+  repo_url?: string;
+  docs_url?: string;
+  api_url?: string;
+  ci_url?: string;
+  qa_url?: string;
+  coverage_url?: string;
+  changelog_url?: string;
+  issues_url?: string;
+  browser_code_tests_url?: string;
+  old_url?: string;
+  diff_url?: string;
+  accepted_date?: string;
+  created_date?: string;
+  logo?: string;
+  languages?: Array<string>;
+  featured?: Array<{ [website: string]: string }>;
 }
 
 export type CVActor = CVActorRaw & {
-  languages: ReadonlyArray<CVLanguage>;
+  languages?: ReadonlyArray<CVLanguage>;
 };
 
 export type CVActivity = {
