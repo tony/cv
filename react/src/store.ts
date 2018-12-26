@@ -17,10 +17,6 @@ export var store = createStore(
   {
     ...INITIAL_DATA.entities,
     activityTypes,
-    selectedActors: [],
-    selectedActivityTypes: [],
-    selectedFilters: DEFAULT_SELECTED_FILTERS,
-    selectedLanguages: [],
     filters: filterMap
   },
   applyMiddleware(logger)
