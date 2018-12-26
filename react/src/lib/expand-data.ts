@@ -1,25 +1,19 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/**
- * Roles for propagating relationships in data
- */
-const colors = require('github-colors');
-const invert = require('invert-color');
+import colors from "github-colors";
+import invert from "invert-color";
+import { CVActivity, CVActivityType, CVActor, CVActorRaw } from "./types";
 
-
-function lookupActorById(actors, type, id) {
+function lookupActorById(actors: CVActor[], id: Number) {
   /* Lookup and resolve actor by ID */
   return actors.find(sub => sub.id === id);
 }
 
-function expandActor(item, actors) {
-  return Object.assign(
-    {},
-    item,
-    { actor: lookupActorById(actors, 'actor', item.actor) },
-  );
+function expandActor(item: CVActivity, actors: CVActor[]) {
+  return Object.assign({}, item, {
+    actor: lookupActorById(actors, item.actor)
+  });
 }
 
-function expandLanguage(actor) {
+function expandLanguage(actor: CVActorRaw): CVActor {
   /** Expand Array{string} of languages to a list of objects with name and color.
    *
    * @param {Array, String} actor
@@ -33,22 +27,26 @@ function expandLanguage(actor) {
    */
   if (actor.languages && actor.languages.length) {
     Object.assign(actor, {
-      languages: actor.languages.map((lang) => {
+      languages: actor.languages.map(lang => {
         // see https://github.com/IonicaBizau/github-colors/issues/26
-        const color = colors.get(lang, true).color ? colors.get(lang, true).color : '#ccc';
+        const color = colors.get(lang, true).color
+          ? colors.get(lang, true).color
+          : "#ccc";
         return {
           name: lang,
           color,
-          textColor: invert(color, true),
+          textColor: invert(color, true)
         };
-      }),
+      })
     });
   }
-  return actor;
+  return actor as CVActor;
 }
 
-
-export const expandRelations = (activities, rawActors) => {
+export const expandRelations = (
+  activities: CVActivity[],
+  rawActors: CVActorRaw[]
+) => {
   /**
    * Expands primary key/ID relations with other objects.
    *

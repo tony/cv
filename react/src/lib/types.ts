@@ -1,4 +1,10 @@
-export type CVActor = {
+export type CVLanguage = {
+  name: string;
+  color: string;
+  textColor: string;
+};
+
+export interface CVActorRaw {
   id: Number;
   type: string;
   name: string;
@@ -11,8 +17,12 @@ export type CVActor = {
   changelog_url: string;
   issues_url: string;
   browser_code_tests_url: string;
-  languages: ReadonlyArray<string>;
   logo: string;
+  languages: Array<string>;
+}
+
+export type CVActor = CVActorRaw & {
+  languages: ReadonlyArray<CVLanguage>;
 };
 
 export type CVActivity = {
@@ -22,12 +32,6 @@ export type CVActivity = {
   accepted_date?: string;
   title: string;
   actor: Number;
-};
-
-export type CVLanguage = {
-  name: string;
-  color: string;
-  textColor: string;
 };
 
 export type CVActivityType = {
