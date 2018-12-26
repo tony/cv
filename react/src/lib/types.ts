@@ -19,6 +19,7 @@ export type CVActivity = {
   id: string;
   component_name: string;
   created_date: string;
+  accepted_date?: string;
   title: string;
   actor: Number;
 };
