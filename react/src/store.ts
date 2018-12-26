@@ -1,11 +1,12 @@
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createStore, applyMiddleware } from "redux";
+import { createLogger } from "redux-logger";
 import {
   activityTypes,
   INITIAL_DATA,
   DEFAULT_SELECTED_FILTERS
 } from "./lib/constants";
 import { filterMap } from "./lib/selectors";
-import { createStore, applyMiddleware } from "redux";
-import { createLogger } from "redux-logger";
 import cvReducers from "./reducers";
 
 const logger = createLogger({
@@ -19,5 +20,5 @@ export var store = createStore(
     activityTypes,
     filters: filterMap
   },
-  applyMiddleware(logger)
+  composeWithDevTools(applyMiddleware(logger))
 );
