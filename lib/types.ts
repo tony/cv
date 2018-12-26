@@ -26,10 +26,18 @@ export type CVActivity = {
 export type CVLanguage = {
   name: string;
   color: string;
+  textColor: string;
+};
+
+export type CVActivityType = {
+  name: string;
+  singular_name: string;
+  component_name: string;
 };
 
 export type CVState = {
   readonly actors: CVActor[];
   readonly activities: CVActivity[];
+  readonly activityTypes: CVActivityType[];
   readonly languages: CVLanguage[];
 };
