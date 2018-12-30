@@ -28,7 +28,7 @@ export interface CVActorRaw {
 }
 
 export type CVActor = CVActorRaw & {
-  languages?: ReadonlyArray<CVLanguage>;
+  languages: ReadonlyArray<CVLanguage>;
 };
 
 export type CVActivity = {
@@ -37,7 +37,7 @@ export type CVActivity = {
   created_date: string;
   accepted_date?: string;
   title: string;
-  actor: Number;
+  actor: number;
 };
 
 export type CVActivityType = {
