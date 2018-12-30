@@ -1,6 +1,11 @@
 Tony Narlock's CV
 =================
 
+Requirements
+~~~~~~~~~~~~
+
+``npm install -g create-react-app @vue/cli typescript``
+
 Quickstart
 ----------
 
