@@ -49,9 +49,9 @@ export const selectLanguagesFromActors = (
 
 export const selectActivityIdsFromActivityTypes = (
   activityIds: number[],
-  activities: CVActivity[],
+  activities: { [id: number]: CVActivity },
   selectedActivityTypes: CVActivityType[]
-) => {
+): number[] => {
   if (selectedActivityTypes.length) {
     // only show selected activity types
     return activityIds.filter(i =>
@@ -65,7 +65,7 @@ export const selectActivityIdsFromActivityTypes = (
 
 export const selectActivityIdsFromFilters = (
   activityIds: number[],
-  activities: CVActivity[],
+  activities: { [id: number]: CVActivity },
   selectedFilters: any[]
 ) => {
   let selectedIds = activityIds;
@@ -92,7 +92,9 @@ export const selectActivities = (
    * eliminating individual actors, only applying category-type filters
    * and regex-type filters. Not direct actor lookups.
    */
-  let selectedIds = Object.keys(activities);
+  let selectedIds = Object.keys(activities).map(activityId =>
+    parseInt(activityId)
+  );
   selectedIds = selectActivityIdsFromActivityTypes(
     selectedIds,
     activities,
@@ -107,15 +109,15 @@ export const selectActivities = (
   return selectedIds.map(id => activities[id]);
 };
 
-export const sortActivities = (activities, moment) =>
-  activities.sort((activity1, activity2) =>
+export const sortActivities = (activities: CVActivity[], moment: any) =>
+  activities.sort((activity1: CVActivity, activity2: CVActivity) =>
     moment(activity2.created_date).diff(moment(activity1.created_date))
   );
 
 export const selectVisibleActivities = (
-  selectedLanguages,
-  selectedActors,
-  filteredActivities
+  selectedLanguages: CVLanguage[],
+  selectedActors: CVActor[],
+  filteredActivities: CVActivity[]
 ) => {
   /**
    * Final selctor, includes direct proejct lookups and programming languages.
@@ -123,12 +125,12 @@ export const selectVisibleActivities = (
   let visibleActivities = filteredActivities;
   visibleActivities = selectedLanguages.length
     ? visibleActivities.filter(activity => {
-        const activityLanguages = activity.actor.languages;
+        const activityLanguages = activity.actor.languages as CVLanguage[];
         if (!activityLanguages) {
           return false;
         }
         return activityLanguages.some(s =>
-          selectedLanguages.find(z => z.name === s.name)
+          selectedLanguages.some(z => z.name === s.name)
         );
       })
     : visibleActivities;
@@ -142,22 +144,29 @@ export const selectVisibleActivities = (
   return visibleActivities;
 };
 
-export const countLanguagesFromActivities = activities =>
-  activities.reduce((languages, activity) => {
-    const rLanguages = languages;
-    const activityLanguages = activity.actor.languages;
-    if (activityLanguages && activityLanguages.length) {
-      activityLanguages.forEach(lang => {
-        if (lang.name in rLanguages) {
-          rLanguages[lang.name].count += 1;
-        } else {
-          rLanguages[lang.name] = {
-            count: 1,
-            color: lang.color,
-            name: lang.name
-          };
-        }
-      });
-    }
-    return rLanguages;
-  }, {});
+export const countLanguagesFromActivities = (activities: CVActivity[]) =>
+  activities.reduce(
+    (
+      languages: { [id: string]: CVLanguage & { count: number } },
+      activity: CVActivity
+    ) => {
+      const rLanguages = languages;
+      const activityLanguages = activity.actor.languages as CVLanguage[];
+      if (activityLanguages && activityLanguages.length) {
+        activityLanguages.forEach(lang => {
+          if (lang.name in rLanguages) {
+            rLanguages[lang.name].count += 1;
+          } else {
+            rLanguages[lang.name] = {
+              count: 1,
+              color: lang.color,
+              name: lang.name,
+              textColor: lang.textColor
+            };
+          }
+        });
+      }
+      return rLanguages;
+    },
+    {}
+  );

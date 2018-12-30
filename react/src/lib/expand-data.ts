@@ -1,13 +1,19 @@
 import colors from "github-colors";
 import invert from "invert-color";
-import { CVActivity, CVActivityType, CVActor, CVActorRaw } from "./types";
+import {
+  CVActivity,
+  CVActivityRaw,
+  CVActivityType,
+  CVActor,
+  CVActorRaw
+} from "./types";
 
 function lookupActorById(actors: CVActor[], id: Number) {
   /* Lookup and resolve actor by ID */
   return actors.find(sub => sub.id === id);
 }
 
-function expandActor(item: CVActivity, actors: CVActor[]) {
+function expandActor(item: CVActivityRaw, actors: CVActor[]) {
   return Object.assign({}, item, {
     actor: lookupActorById(actors, item.actor)
   });

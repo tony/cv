@@ -28,16 +28,20 @@ export interface CVActorRaw {
 }
 
 export type CVActor = CVActorRaw & {
-  languages: ReadonlyArray<CVLanguage>;
+  languages: Array<CVLanguage>;
 };
 
-export type CVActivity = {
+export interface CVActivityRaw {
   id: string;
   component_name: string;
   created_date: string;
   accepted_date?: string;
   title: string;
   actor: number;
+}
+
+export type CVActivity = CVActivityRaw & {
+  actor: CVActor;
 };
 
 export type CVActivityType = {
