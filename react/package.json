@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
