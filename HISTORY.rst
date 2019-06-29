@@ -1,3 +1,22 @@
+June 29th, 2019 - Saturday
+--------------------------
+
+react
+"""""
+
+Setup webpack config (typescript based)
+
+There are many snags when configuring initially:
+
+webpack consumes configs via --configFile rather than a positional
+argument.
+
+It doesn't raise errors very obviously
+
+It's easy to generate a webpack.config.js from webpack.config.ts, have it
+sit there, and be reread while you update.
+
+
 June 28th, 2019 - Friday Evening
 --------------------------------
 
