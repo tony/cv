@@ -52,7 +52,7 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
       },
       {
         exclude: /node_modules/,
-        test: /\.ts?$/,
+        test: /\.ts$/,
         use: {
           loader: "ts-loader",
           options: {
