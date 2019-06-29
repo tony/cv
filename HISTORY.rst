@@ -16,3 +16,40 @@ and eventually even used it for webpack configs, and haven't
 looked back. So many interdependencies that can break in JS,
 typescript makes sure everything fits together like tetris
 (florian).
+
+
+``yarn create react-app my-app --typescript``
+``cd my-app``
+``npm run eject``
+
+
+``vue create my-project``
+``vue config``:
+
+.. code-block::
+
+   Resolved path: /home/x/.vuerc
+   {
+      "useTaobaoRegistry": false,
+      "packageManager": "npm",
+      "presets": {
+        "typescript + dart": {
+          "useConfigFiles": true,
+          "plugins": {
+            "@vue/cli-plugin-babel": {},
+            "@vue/cli-plugin-typescript": {
+              "classComponent": true,
+              "tsLint": true,
+              "lintOn": [
+                "save"
+              ],
+              "useTsWithBabel": true
+            },
+            "@vue/cli-plugin-pwa": {}
+          },
+          "vuex": true,
+          "cssPreprocessor": "dart-sass"
+        }
+      }
+    }
+
