@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack --config webpack/webpack.config.ts",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "tslint-prettier": "tslint-config-prettier-check ./tslint.json",
+    "tslint": "tslint --project tsconfig.json"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
