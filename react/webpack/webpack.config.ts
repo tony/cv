@@ -12,7 +12,7 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
   context: projectRoot,
   entry: path.join(projectRoot, "src/entry.tsx"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(projectRoot, "dist"),
     filename: "cv.js"
   },
   module: {
