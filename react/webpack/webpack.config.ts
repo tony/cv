@@ -10,7 +10,7 @@ const defaultEnvironment = {
 const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
   mode: env.production ? "production" : "development",
   context: projectRoot,
-  entry: path.join(projectRoot, "src/entry.tsx"),
+  entry: "./src/entry.tsx",
   output: {
     path: path.resolve(projectRoot, "dist"),
     filename: "cv.js"
@@ -23,7 +23,7 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
           loader: "babel-loader",
           options: {
             babelrc: true,
-            configFile: path.resolve(projectRoot, ".babelrc")
+            configFile: "./.babelrc"
           }
         },
         exclude: /node_modules/
@@ -33,7 +33,7 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
         use: {
           loader: "ts-loader",
           options: {
-            configFile: path.resolve(projectRoot, "tsconfig.json")
+            configFile: "./tsconfig.json"
           }
         },
         exclude: /node_modules/
