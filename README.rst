@@ -1,11 +1,17 @@
 Tony Narlock's CV
 =================
-It's summer of 2019. 
 
-v2 started! I'm still very open-minded about frontend frameworks.
+**Live Version** `v1 branch`_ (`react cv <https://cv.git-pull.com>`_, `vue.js cv <https://cv-vue.git-pull.com>`_)
+
+**Version 2 underway!**
+
+It's summer of 2019. I'm still very open-minded react and vue.js.
 
 Let's see what's the latest and greatest for both of these.
-This time we're using typescript and wiring in webpack from the ground up.
+
+This time we're using typescript and wiring-in webpack from the ground up.
+
+.. _v1 branch: https://github.com/tony/cv/tree/v1
 
 Quickstart
 ----------
@@ -48,13 +54,6 @@ Structure
 .. _Actors: https://www.w3.org/TR/activitystreams-core/#actors
 .. _Activities: https://www.w3.org/TR/activitystreams-core/#activities
 .. _Activity Streams: https://www.w3.org/TR/activitystreams-core/#introduction
-
-Live Version: `v1 branch`_
---------------------------
-React: https://cv.git-pull.com
-vue: https://cv-vue.git-pull.com
-
-.. _v1 branch: https://github.com/tony/cv/tree/v1
 
 Version 2 (Under development)
 -----------------------------
