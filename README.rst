@@ -29,8 +29,6 @@ Structure
 - `react/ <react/>`_: `React`_ version
 - `lib/ <lib/>`_: Common code (reducers/filters code, initial data collections)
 - `scripts/ <scripts/>`_: GitHub Scraper
-- `static/ <static/>`_: Static assets (images) shared across versions
-- yarn.lock / package.json: Packages for *scripts/* files
 - `data/ <data/>`_: initial data
 
   - *my_actors.json*: `Actors`_ noun, person, place, thing, etc.
