@@ -1,3 +1,16 @@
+June 30th, 2019 - Sunday
+------------------------
+Work dealing with Wepback Environmental parameters
+and default params. Passing in one param passes and object that overrides
+each item in the default structure.
+
+Updated both starters:
+- https://github.com/tony/vue-typescript-vanilla-starter
+- https://github.com/tony/react-typescript-vanilla-starter
+
+Lots of fixes for prettier, typescript, making sure all pieces fit
+together.
+
 June 29th, 2019 - Saturday
 --------------------------
 
