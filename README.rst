@@ -43,6 +43,12 @@ Structure
     - *gh_actors.json*: GitHub Repos. Same schema as
       *my_actors.json*), combined.
 
+.. _Vue.js: https://vuejs.org/
+.. _React: https://reactjs.org/
+.. _Actors: https://www.w3.org/TR/activitystreams-core/#actors
+.. _Activities: https://www.w3.org/TR/activitystreams-core/#activities
+.. _Activity Streams: https://www.w3.org/TR/activitystreams-core/#introduction
+
 Live Version: `v1 branch`_
 --------------------------
 React: https://cv.git-pull.com
