@@ -1,29 +1,34 @@
 import path from "path";
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
-// tslint:disable-next-line:no-submodule-imports
-import VueLoaderPlugin from "vue-loader/lib/plugin";
+import { VueLoaderPlugin } from "vue-loader";
 import webpack from "webpack";
 
 const projectRoot = path.join(__dirname, "../");
 
-const defaultEnvironment = {
+interface IWebpackEnv {
+  devServerHost: string;
+  devServerPort: string;
+  production: boolean;
+  watch: boolean;
+}
+
+const defaultEnvironment: IWebpackEnv = {
   devServerHost: "localhost",
-  devServerPort: 3091,
-  development: false,
+  devServerPort: "3093",
   production: true,
   watch: false
 };
 
-const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
+const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   context: projectRoot,
-  ...(env.watch
+  ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
     ? {
         devServer: {
           contentBase: "./dist",
           hot: true,
           open: true,
-          port: env.devServerPort,
+          port: parseInt(env.devServerPort, 10),
           publicPath: "/"
         }
       }
@@ -31,11 +36,9 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
   // devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
   devtool: "cheap-module-eval-source-map",
   entry: [
-    ...(env.watch
+    ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
       ? [
-          `webpack-dev-server/client?http://${env.devServerHost}:${
-            env.devServerPort
-          }`,
+          `webpack-dev-server/client?http://${env.devServerHost}:${env.devServerPort}`,
           "webpack/hot/dev-server"
         ]
       : []),
@@ -103,4 +106,6 @@ const getConfig = (env = defaultEnvironment): webpack.Configuration => ({
   watch: env.watch
 });
 
-export default getConfig;
+export default (
+  env: IWebpackEnv // Merge default environment params
+) => getConfig({ ...defaultEnvironment, ...env });
