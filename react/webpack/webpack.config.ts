@@ -25,6 +25,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     ? {
         devServer: {
           contentBase: "./dist",
+          host: env.devServerHost,
           hot: true,
           open: true,
           port: parseInt(env.devServerPort, 10),
