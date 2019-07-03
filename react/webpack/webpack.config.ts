@@ -1,3 +1,5 @@
+import fs from "fs";
+import os from "os";
 import path from "path";
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -12,8 +14,15 @@ interface IWebpackEnv {
   watch: boolean;
 }
 
+const defaultDevServer = fs
+  .readFileSync("/proc/version", "utf8")
+  .toLowerCase()
+  .includes("microsoft")
+  ? os.networkInterfaces().eth0[0].address
+  : "localhost";
+
 const defaultEnvironment: IWebpackEnv = {
-  devServerHost: "localhost",
+  devServerHost: defaultDevServer,
   devServerPort: "3099",
   production: true,
   watch: false
