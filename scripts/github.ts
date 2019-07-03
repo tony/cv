@@ -23,7 +23,8 @@ const config = {
     "vcs-python",
     "tmux-python",
     "nick-ma",
-    "emre"
+    "emre",
+    "peergradeio"
   ],
   output_dir: "data/scraped",
   ignore_private_repos: true
