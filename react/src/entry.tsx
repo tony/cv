@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
-import myActivities from "../../lib/data";
+import { myActivities } from "../../lib/data";
 
 console.log({ myActivities });
 
