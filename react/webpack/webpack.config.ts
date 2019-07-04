@@ -83,6 +83,9 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     path: path.resolve(projectRoot, "dist")
   },
   plugins: [new HtmlWebpackPlugin({ template: "../lib/assets/index.html" })],
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
   watch: env.watch
 });
 
