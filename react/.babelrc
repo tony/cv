@@ -2,6 +2,6 @@
   "presets": [
     "@babel/preset-react",
     "@babel/preset-typescript",
-    ["@babel/preset-env", {modules: false}]
+    ["@babel/preset-env", {modules: false, targets: {node: "current"}}]
   ]
 }
