@@ -1,5 +1,13 @@
 July 4th, 2019 - Thursday
 -------------------------
+webpack / babel torture day
+
+Wire in initial JSON data import
+
+Hours spent figuring out ``await import`` can't be ran at
+the root level.  This goes a long way to explaining why JS/TS
+isn't convenient as a backend language.
+
 Thanks for codesplitting help:
 - https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
 - https://webpack.js.org/guides/code-splitting/
