@@ -3,8 +3,16 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
-import { myActivities } from "../../lib/data";
+(async () => {
+  try {
+    const { myActivities } = await import(
+      /* webpackChunkName: "myData" */ "../../lib/data"
+    );
 
-console.log({ myActivities });
+    console.log({ myActivities });
+  } catch (e) {
+    console.error(e);
+  }
+})();
 
 ReactDOM.render(<App />, document.getElementById("root"));
