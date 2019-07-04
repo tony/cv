@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  }
+}
