@@ -45,15 +45,17 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     : {}),
   // devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
   devtool: "cheap-module-eval-source-map",
-  entry: [
-    ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
-      ? [
-          `webpack-dev-server/client?http://${env.devServerHost}:${env.devServerPort}`,
-          "webpack/hot/dev-server"
-        ]
-      : []),
-    "./src/index.ts"
-  ],
+  entry: {
+    cv: [
+      ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
+        ? [
+            `webpack-dev-server/client?http://${env.devServerHost}:${env.devServerPort}`,
+            "webpack/hot/dev-server"
+          ]
+        : []),
+      "./src/index.ts"
+    ]
+  },
   mode: env.production ? "production" : "development",
   module: {
     rules: [
@@ -99,8 +101,32 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
       }
     ]
   },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(mod) {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const packageName = mod.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+
+            // npm package names are URL-safe, but some servers don't like @ symbols
+            return `vendor.${packageName.replace("@", "")}`;
+          }
+        }
+      },
+      chunks: "all",
+      maxInitialRequests: Infinity,
+      minSize: 0
+    }
+  },
   output: {
-    filename: "cv.js",
+    chunkFilename: "[name].[chunkhash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(projectRoot, "dist")
   },
   plugins: [
