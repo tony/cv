@@ -1,3 +1,9 @@
+July 4th, 2019 - Thursday
+-------------------------
+Thanks for codesplitting help:
+- https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
+- https://webpack.js.org/guides/code-splitting/
+
 June 30th, 2019 - Sunday
 ------------------------
 Work dealing with Wepback Environmental parameters
