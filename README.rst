@@ -87,3 +87,12 @@ Version 2 (Under development)
 
   - Libraries / Common code: Typed Github commit fetcher
   - Libraries / Common code: Typed data structures
+- Lazy loaded, split chunks, smart initialization
+
+  Utilize new splitting, dynamic import, ``React.lazy`` support in
+  Webpack 4.x (https://webpack.js.org/guides/code-splitting/)
+
+  Care taken to load essential stuff first and packages like
+  moment (in itself split) last. Some experimentation is done here
+  to find a balance of how to present the interface initially and
+  can be tweaked overtime.
