@@ -66,16 +66,20 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           }
         }
       },
-      {
-        exclude: /node_modules/,
-        test: /\.ts$/,
-        use: {
-          loader: "ts-loader",
-          options: {
-            configFile: "./tsconfig.json"
-          }
-        }
-      }
+      ...[{ configFile: "./tsconfig.json", include: "./" }].map(
+        ({ configFile, include }) =>
+          (({
+            exclude: /node_modules/,
+            include,
+            test: /\.ts$/,
+            use: {
+              loader: "ts-loader",
+              options: {
+                configFile
+              }
+            }
+          } as any) as webpack.RuleSetRule)
+      )
     ]
   },
   output: {
