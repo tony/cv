@@ -18,6 +18,8 @@ Quickstart
 
 .. code-block:: bash
 
+   $ npm install  # Install root deps
+
    $ cd vue/  # or
    $ cd react/
 
