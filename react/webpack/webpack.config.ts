@@ -84,6 +84,22 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
+        data: {
+          test: /[\\/]data[\\/]/,
+          name(mod) {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const match = mod.context.match(/[\\/]data[\\/](.*?)(\.json|$)/);
+
+            if (match == null) {
+              return "data";
+            }
+            const packageName = match[0];
+
+            // npm package names are URL-safe, but some servers don't like @ symbols
+            return `data.${packageName.replace("@", "")}`;
+          }
+        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name(mod) {
