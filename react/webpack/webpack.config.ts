@@ -24,7 +24,7 @@ const defaultDevServer = fs
 const defaultEnvironment: IWebpackEnv = {
   devServerHost: defaultDevServer,
   devServerPort: "3099",
-  production: true,
+  production: false,
   watch: false
 };
 
