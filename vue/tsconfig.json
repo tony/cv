@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "target": "es5",
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*",

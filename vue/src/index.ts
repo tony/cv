@@ -2,6 +2,18 @@ import Vue from "vue";
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
 
+(async () => {
+  try {
+    const { myActivities } = await import(
+      /* webpackChunkName: "myData" */ "../../lib/data"
+    );
+
+    console.log({ myActivities });
+  } catch (e) {
+    console.error(e);
+  }
+})();
+
 const v = new Vue({
   components: {
     HelloComponent,
