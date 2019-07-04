@@ -66,8 +66,27 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           }
         }
       },
-      ...[{ configFile: "./tsconfig.json", include: "./" }].map(
-        ({ configFile, include }) =>
+      ...[
+        {
+          configFile: path.resolve(projectRoot, "./tsconfig.json"),
+          include: projectRoot,
+          instance: "react-project"
+        },
+        {
+          configFile: path.resolve(__dirname, "./tsconfig.json"),
+          include: __dirname,
+          instance: "webpack"
+        },
+        {
+          configFile: path.resolve(projectRoot, "../tsconfig.json"),
+          include: [
+            path.resolve(projectRoot, ".."),
+            path.resolve(projectRoot, "lib")
+          ],
+          instance: "lib"
+        }
+      ].map(
+        ({ configFile, include, instance }) =>
           (({
             exclude: /node_modules/,
             include,
@@ -75,7 +94,8 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
             use: {
               loader: "ts-loader",
               options: {
-                configFile
+                configFile,
+                instance
               }
             }
           } as any) as webpack.RuleSetRule)
