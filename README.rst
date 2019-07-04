@@ -31,6 +31,11 @@ Quickstart
 
 Structure
 ---------
+- ``tslint.json``/``tsconfig.json``/``package.json`` in root and/or ``lib/``
+
+  I can't find a way to get building/linting `lib/ <lib/>`_ working without having these
+  here and/or in ``lib/``. I'm looking for clean workarounds for this that
+  don't involve unnecessary duplication.
 - `vue/ <vue/>`_: `Vue.js`_ version
 - `react/ <react/>`_: `React`_ version
 - `lib/ <lib/>`_: Common code (reducers/filters code, initial data collections)
