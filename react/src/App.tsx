@@ -1,17 +1,9 @@
 import React from "react";
 
+import { IActivity } from "../../lib/types";
+
 interface IState {
-  myActivities: [];
-}
-interface IActivity {
-  created_date: string;
-  title: string;
-  actor: number;
-  accepted_date?: string;
-  qa_url?: string;
-  diff_url?: string;
-  end_date?: string;
-  start_date?: string;
+  myActivities: IActivity[];
 }
 
 const App: React.FC<IState> = () => {
