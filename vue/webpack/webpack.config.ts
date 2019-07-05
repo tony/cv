@@ -43,8 +43,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         }
       }
     : {}),
-  // devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
-  devtool: "cheap-module-eval-source-map",
+  devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
   entry: {
     cv: [
       ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
