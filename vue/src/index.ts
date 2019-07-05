@@ -4,10 +4,11 @@ import Vuex, { StoreOptions } from "vuex";
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
 
+import { IActivity } from "../../lib/types";
+
 interface IRootState {
-  activities: any[];
+  activities: IActivity[];
 }
-Vue.use(Vuex);
 
 const store: StoreOptions<IRootState> = {
   actions: {
@@ -28,7 +29,9 @@ const store: StoreOptions<IRootState> = {
   }
 };
 
+Vue.use(Vuex);
 const s = new Vuex.Store<IRootState>(store);
+
 const v = new Vue({
   created() {
     console.log("created");
