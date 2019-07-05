@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuex, { StoreOptions } from "vuex";
+import Vuex, { Commit, StoreOptions } from "vuex";
 
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
@@ -12,7 +12,10 @@ interface IRootState {
 
 const store: StoreOptions<IRootState> = {
   actions: {
-    async loadActivities({ commit }, activities) {
+    async loadActivities(
+      { commit }: { commit: Commit },
+      activities: IRootState["activities"]
+    ) {
       const { myActivities } = await import(
         /* webpackChunkName: "myData" */ "../../lib/data"
       );
@@ -20,7 +23,7 @@ const store: StoreOptions<IRootState> = {
     }
   },
   mutations: {
-    loadActivities(state, activities) {
+    loadActivities(state: IRootState, activities: IRootState["activities"]) {
       state.activities = activities;
     }
   },
