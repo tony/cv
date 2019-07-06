@@ -33,6 +33,10 @@ Quickstart
 
 Structure
 ---------
+- New framework: Angular
+
+  Excuse to try it for the first time. Very friendly toward typescript and
+  mature.
 - ``tslint.json``/``tsconfig.json``/``package.json`` in root and/or ``lib/``
 
   I can't find a way to get building/linting `lib/ <lib/>`_ working without having these
