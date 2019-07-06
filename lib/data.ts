@@ -6,7 +6,7 @@ import ghActorsRaw from "../data/scraped/gh_actors.json";
 import { IActivity, IActor } from "./types";
 
 // Join raw data from JSON into lists
-export const myActors: IActor[] = [
+export const myActorsRaw: IActor[] = [
   ...(handPickedActorsRaw as IActor[]),
   ...(ghActorsRaw as IActor[])
 ];
