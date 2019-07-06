@@ -10,7 +10,30 @@ export interface IActivity {
 }
 
 type ActorType = "Open Source" | "Company" | "Publication" | "Website";
-type ActorLanguage = "JavaScript" | "Python" | "PHP";
+type ActorLanguage =
+  | "Python"
+  | "PHP"
+  | "Makefile"
+  | "Markdown"
+  | "ShellScript"
+  | "JavaScript"
+  | "Vim script"
+  | undefined
+  | "Shell"
+  | "Ruby"
+  | "CSS"
+  | "OCaml"
+  | "SaltStack"
+  | "Batchfile"
+  | "C++"
+  | "Go"
+  | "C#"
+  | "TeX"
+  | "HTML"
+  | "sed"
+  | "C"
+  | "CMake"
+  | "TypeScript";
 
 export interface IActor {
   id: number;
@@ -31,5 +54,5 @@ export interface IActor {
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
   logo?: string;
-  languages: ActorLanguage[];
+  languages?: ActorLanguage[];
 }
