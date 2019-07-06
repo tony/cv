@@ -17,3 +17,5 @@ export const myActivitiesRaw: IActivity[] = [
   ...handPickedActivitiesRaw,
   ...ghActivitiesRaw
 ];
+
+export const myActivities = myActivitiesRaw;
