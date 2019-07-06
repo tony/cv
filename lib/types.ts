@@ -24,6 +24,9 @@ export interface IActor {
   ciUrl?: string;
   coverageUrl?: string;
   changelogUrl?: string;
+  leanpubUrl?: string;
+  amazonUrl?: string;
+  goodreadsUrl?: string;
   issuesUrl?: string;
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
