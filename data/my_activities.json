@@ -1,71 +1,71 @@
 [
   {
     "id": 20000,
-    "component_name": "SoftwareApp",
-    "created_date": "2013-10-08",
+    "componentName": "SoftwareApp",
+    "createdDate": "2013-10-08",
     "title": "Created the tmuxp project",
     "actor": 10000
   },
   {
     "id": 20001,
-    "component_name": "SoftwareApp",
-    "created_date": "2017-04-17",
+    "componentName": "SoftwareApp",
+    "createdDate": "2017-04-17",
     "title": "Created the unihan-etl project",
     "actor": 10004
   },
   {
     "id": 20002,
-    "component_name": "SoftwareApp",
-    "created_date": "2013-05-20",
+    "componentName": "SoftwareApp",
+    "createdDate": "2013-05-20",
     "title": "Created the CLI interface to the cihai project",
     "actor": 10003
   },
   {
     "id": 20003,
-    "component_name": "SoftwareLib",
-    "created_date": "2016-10-08",
+    "componentName": "SoftwareLib",
+    "createdDate": "2016-10-08",
     "title": "Created the libtmux project",
     "actor": 10001
   },
   {
     "id": 20004,
-    "component_name": "SoftwareLib",
-    "created_date": "2017-04-16",
+    "componentName": "SoftwareLib",
+    "createdDate": "2017-04-16",
     "title": "Created the cihai CJK (Chinese, Japanese, Korean) data project",
     "actor": 10002
   },
   {
     "id": 20005,
-    "component_name": "SoftwareLib",
-    "created_date": "2017-05-29",
+    "componentName": "SoftwareLib",
+    "createdDate": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
     "actor": 10005
   },
   {
     "id": 20006,
-    "component_name": "SoftwareLib",
-    "created_date": "2017-11-26",
+    "componentName": "SoftwareLib",
+    "createdDate": "2017-11-26",
     "title": "Created a django package, django-slugify-processor",
     "actor": 10006
   },
   {
     "id": 20007,
-    "component_name": "SoftwareLib",
-    "created_date": "2016-06-20",
+    "componentName": "SoftwareLib",
+    "createdDate": "2016-06-20",
     "title": "Decoupled libvcs from vcspull",
     "actor": 10008
   },
   {
     "id": 20008,
-    "component_name": "SoftwareApp",
-    "created_date": "2013-10-06",
+    "componentName": "SoftwareApp",
+    "createdDate": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
     "actor": 10007
   },
   {
     "id": 30000,
-    "component_name": "Patch",
-    "created_date": "2007-04-12",
+    "componentName": "Patch",
+    "createdDate": "2007-04-12",
     "accepted_date": "2007-06-18",
     "qa_url": "https://www.drupal.org/project/event/issues/143542",
     "diff_url": "https://www.drupal.org/files/issues/event_32.patch",
@@ -74,8 +74,8 @@
   },
   {
     "id": 30001,
-    "component_name": "Patch",
-    "created_date": "2008-01-23",
+    "componentName": "Patch",
+    "createdDate": "2008-01-23",
     "accepted_date": "2008-02-06",
     "qa_url": "https://www.drupal.org/project/drupal/issues/213172",
     "diff_url": "https://www.drupal.org/files/issues/color_imageless_0.patch",
@@ -84,8 +84,8 @@
   },
   {
     "id": 30002,
-    "component_name": "Patch",
-    "created_date": "2014-12-27",
+    "componentName": "Patch",
+    "createdDate": "2014-12-27",
     "accepted_date": "2015-02-24",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
     "diff_url": "https://bz-attachments.freebsd.org/attachment.cgi?id=150996",
@@ -94,8 +94,8 @@
   },
   {
     "id": 30003,
-    "component_name": "Patch",
-    "created_date": "2016-02-19",
+    "componentName": "Patch",
+    "createdDate": "2016-02-19",
     "accepted_date": "2016-04-06",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167177",
@@ -104,8 +104,8 @@
   },
   {
     "id": 30004,
-    "component_name": "Patch",
-    "created_date": "2016-02-19",
+    "componentName": "Patch",
+    "createdDate": "2016-02-19",
     "accepted_date": null,
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207337",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167179",
@@ -114,8 +114,8 @@
   },
   {
     "id": 30005,
-    "component_name": "Patch",
-    "created_date": "2017-03-04",
+    "componentName": "Patch",
+    "createdDate": "2017-03-04",
     "accepted_date": "2017-03-30",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=180483",
@@ -124,8 +124,8 @@
   },
   {
     "id": 30006,
-    "component_name": "Patch",
-    "created_date": "2014-12-29",
+    "componentName": "Patch",
+    "createdDate": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151072",
@@ -134,8 +134,8 @@
   },
   {
     "id": 30007,
-    "component_name": "Patch",
-    "created_date": "2016-01-07",
+    "componentName": "Patch",
+    "createdDate": "2016-01-07",
     "accepted_date": "2016-01-09",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205987",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=165189",
@@ -144,8 +144,8 @@
   },
   {
     "id": 30008,
-    "component_name": "Patch",
-    "created_date": "2014-12-29",
+    "componentName": "Patch",
+    "createdDate": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151080",
@@ -154,8 +154,8 @@
   },
   {
     "id": 40000,
-    "component_name": "Work",
-    "created_date": "2014-04-01",
+    "componentName": "Work",
+    "createdDate": "2014-04-01",
     "end_date": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
     "description": "Node.js / Sail.js -> Django. Stripe integration czar",
@@ -163,16 +163,16 @@
   },
   {
     "id": 40001,
-    "component_name": "Work",
-    "created_date": "2017-01-01",
+    "componentName": "Work",
+    "createdDate": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
     "actor": 40000
   },
   {
     "id": 40002,
-    "component_name": "Work",
-    "created_date": "2008-01-01",
+    "componentName": "Work",
+    "createdDate": "2008-01-01",
     "end_date": "2011-01-01",
     "title": "Software Developer",
     "description": "Developing Drupal based SAAS platform, attending conferences, sales via GoToMeeting/Video conferences",
@@ -180,8 +180,8 @@
   },
   {
     "id": 40003,
-    "component_name": "Work",
-    "created_date": "2011-10-01",
+    "componentName": "Work",
+    "createdDate": "2011-10-01",
     "end_date": "2012-01-01",
     "title": "Software Developer",
     "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. (Acquired by Merkle.)",
@@ -189,8 +189,8 @@
   },
   {
     "id": 40004,
-    "component_name": "Work",
-    "created_date": "2012-11-01",
+    "componentName": "Work",
+    "createdDate": "2012-11-01",
     "end_date": "2013-04-01",
     "title": "Software Developer",
     "description": "Back with MORE love for making social social media campaigns for awesome customers like 1-800-Flowers, Marie Claire, and Elle",
@@ -201,37 +201,37 @@
   },
   {
     "id": 40005,
-    "component_name": "Work",
-    "created_date": "2018-03-01",
+    "componentName": "Work",
+    "createdDate": "2018-03-01",
     "title": "Senior Developer at Peergrade",
     "description": "Peer Grading Platform",
     "actor": 50004
   },
   {
     "id": 50000,
-    "component_name": "Publication",
-    "created_date": "2017-01-01",
+    "componentName": "Publication",
+    "createdDate": "2017-01-01",
     "title": "Published The Tao of tmux",
     "actor": 30000
   },
   {
     "id": 60000,
-    "component_name": "Volunteer",
-    "created_date": "2013-01-01",
+    "componentName": "Volunteer",
+    "createdDate": "2013-01-01",
     "title": "System Administrator at Wengu",
     "actor": 40002
   },
   {
     "id": 70000,
-    "component_name": "Website",
-    "created_date": "2013-01-01",
+    "componentName": "Website",
+    "createdDate": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
     "actor": 40001
   },
   {
     "id": 70001,
-    "component_name": "Article",
-    "created_date": "2017-07-04",
+    "componentName": "Article",
+    "createdDate": "2017-07-04",
     "title": "Django vs Flask",
     "actor": 40000,
     "url": "https://devel.tech/features/django-vs-flask",
