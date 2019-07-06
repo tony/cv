@@ -6,5 +6,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
-  }
+  },
+  "include": [
+    "lib/**/*"
+  ]
 }
