@@ -55,5 +55,5 @@ export interface IActor {
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
   logo?: string;
-  languages?: ActorLanguage[];
+  languages: ActorLanguage[];
 }
