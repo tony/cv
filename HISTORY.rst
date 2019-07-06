@@ -1,3 +1,13 @@
+July 6th, 2019 - Saturday
+-------------------------
+Field names to camelcase
+
+Actor.type -> Actor.actorType - Avoid overlap with typescript reserved words
+
+Add typings for IActor
+
+Add Actors to data module
+
 July 5th, 2019 - Friday
 -----------------------
 Vue:
