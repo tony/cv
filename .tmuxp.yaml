@@ -32,3 +32,13 @@ windows:
   - pane
   - pane
   - '[ -d node_modules ] && npm install && reset; npm start'
+- window_name: cv (angular)
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./angular
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - '[ -d node_modules ] && npm install && reset; ng serve --host $(ip addr show eth0 | grep -Po "inet \K[\d.]+") --disableHostCheck'
