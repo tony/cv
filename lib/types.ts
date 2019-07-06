@@ -1,6 +1,7 @@
 export interface IActivity {
   createdDate: string;
   title: string;
+  componentName: string;
   actor: number;
   acceptedDate?: string;
   qaUrl?: string;
