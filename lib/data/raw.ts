@@ -17,15 +17,13 @@ export const myActivitiesRaw: IActivity[] = [
 ];
 
 export const myLanguagesRaw: ActorLanguage[] = Array.from(
-  new Set([].concat(...myActorsRaw.map(a => a.languages).filter(Boolean)))
+  new Set([...myActorsRaw.map(a => a.languages).flat()].filter(Boolean))
 );
 
 export const myActorTypeRaw: string[] = Array.from(
-  new Set([].concat(...myActorsRaw.map(a => a.actorType).filter(Boolean)))
+  new Set(myActorsRaw.map(a => a.actorType).filter(Boolean))
 );
 
 export const myActivityTypeRaw: string[] = Array.from(
-  new Set(
-    [].concat(...myActivitiesRaw.map(a => a.componentName).filter(Boolean))
-  )
+  new Set(myActivitiesRaw.map(a => a.componentName).filter(Boolean))
 );
