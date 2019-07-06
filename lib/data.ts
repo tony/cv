@@ -5,13 +5,11 @@ import ghActorsRaw from "../data/scraped/gh_actors.json";
 
 import { IActivity, IActor } from "./types";
 
-// Join JSON files into a normal list
+// Join raw data from JSON into lists
 export const myActors: IActor[] = [
   ...(handPickedActorsRaw as IActor[]),
   ...(ghActorsRaw as IActor[])
 ];
-
-// print all languages: new Set([].concat(...myActors.map(a => a.languages)))
 
 export const myActivitiesRaw: IActivity[] = [
   ...handPickedActivitiesRaw,
