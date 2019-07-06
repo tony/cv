@@ -3,7 +3,7 @@
     "start": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack-dev-server --config webpack/webpack.config.ts",
     "build": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack --config webpack/webpack.config.ts --env.production --mode=production",
     "tslint-prettier": "tslint-config-prettier-check ./tslint.json",
-    "tslint": "tslint --project tsconfig.json"
+    "lint": "tslint --project tsconfig.json"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
