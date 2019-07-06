@@ -90,7 +90,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           loader: "ts-loader",
           options: {
             appendTsSuffixTo: [/\.vue$/],
-            configFile: "tsconfig.json"
+            configFile: "../tsconfig.json"
           }
         }
       },
