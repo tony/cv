@@ -19,3 +19,13 @@ export const myActivitiesRaw: IActivity[] = [
 export const myLanguagesRaw: ActorLanguage[] = Array.from(
   new Set([].concat(...myActorsRaw.map(a => a.languages).filter(Boolean)))
 );
+
+export const myActorTypeRaw: string[] = Array.from(
+  new Set([].concat(...myActorsRaw.map(a => a.actorType).filter(Boolean)))
+);
+
+export const myActivityTypeRaw: string[] = Array.from(
+  new Set(
+    [].concat(...myActivitiesRaw.map(a => a.componentName).filter(Boolean))
+  )
+);
