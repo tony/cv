@@ -145,39 +145,39 @@ recursePRQuery(initialPrQuery)
     // console.log(projects.length);
 
     let id = 0;
-    const projects_final = projects.map(p => {
+    const projectsFinal = projects.map(p => {
       return {
+        actorType: "Open Source",
         id: id++,
-        type: "Open Source",
+        languages: p.languages,
         name: p.name,
-        url: p.homepageUrl,
         repo_url: p.url,
-        languages: p.languages
+        url: p.homepageUrl
       };
     });
 
-    let data = JSON.stringify(projects_final, null, "  ");
+    let data = JSON.stringify(projectsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_actors.json`, data);
 
     // we do this at the bottom because we want to associate the
     // project_final 'id' attribute with project in pr's
 
     id = 0;
-    const pullRequests_final = prs.map(pr => {
+    const pullRequestsFinal = prs.map(pr => {
       return {
-        id: id++,
-        component_name: "Patch",
-        qa_url: pr.url,
-        diff_url: pr.url + ".diff",
-        created_date: moment(pr.createdAt).format("YYYY-MM-DD"),
         accepted_date: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
-        title: pr.title,
-        actor: projects_final.find(p => pr.repository.name == p.name).id
+        actor: projectsFinal.find(p => pr.repository.name === p.name).id,
+        component_name: "Patch",
+        created_date: moment(pr.createdAt).format("YYYY-MM-DD"),
+        diff_url: pr.url + ".diff",
+        id: id++,
+        qa_url: pr.url,
+        title: pr.title
       };
     });
-    data = JSON.stringify(pullRequests_final, null, "  ");
+    data = JSON.stringify(pullRequestsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_activities.json`, data);
   })
   .catch(err => console.error(err));
