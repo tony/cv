@@ -1,3 +1,16 @@
+July 5th, 2019 - Friday
+-----------------------
+Vue:
+
+- Added basic lazy loaded listing of activities
+
+  Very basic, like just text in a for loop
+
+Angular:
+
+- Surprise! Angular 8
+- Wire in loading of data via paths
+
 July 4th, 2019 - Thursday
 -------------------------
 webpack / babel torture day
