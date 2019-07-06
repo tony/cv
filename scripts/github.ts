@@ -151,7 +151,7 @@ recursePRQuery(initialPrQuery)
         id: id++,
         languages: p.languages,
         name: p.name,
-        repo_url: p.url,
+        repoUrl: p.url,
         url: p.homepageUrl
       };
     });
@@ -165,15 +165,15 @@ recursePRQuery(initialPrQuery)
     id = 0;
     const pullRequestsFinal = prs.map(pr => {
       return {
-        accepted_date: pr.mergedAt
+        acceptedDate: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
         actor: projectsFinal.find(p => pr.repository.name === p.name).id,
-        component_name: "Patch",
-        created_date: moment(pr.createdAt).format("YYYY-MM-DD"),
-        diff_url: pr.url + ".diff",
+        componentName: "Patch",
+        createdDate: moment(pr.createdAt).format("YYYY-MM-DD"),
+        diffUrl: pr.url + ".diff",
         id: id++,
-        qa_url: pr.url,
+        qaUrl: pr.url,
         title: pr.title
       };
     });
