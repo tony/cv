@@ -10,7 +10,7 @@ export interface IActivity {
 }
 
 type ActorType = "Open Source" | "Company" | "Publication" | "Website";
-type ActorLanguage =
+export type ActorLanguage =
   | "Python"
   | "PHP"
   | "Makefile"
