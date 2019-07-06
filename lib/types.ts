@@ -1,12 +1,12 @@
 export interface IActivity {
-  created_date: string;
+  createdDate: string;
   title: string;
   actor: number;
-  accepted_date?: string;
-  qa_url?: string;
-  diff_url?: string;
-  end_date?: string;
-  start_date?: string;
+  acceptedDate?: string;
+  qaUrl?: string;
+  diffUrl?: string;
+  endDate?: string;
+  startDate?: string;
 }
 
 type ActorType = "Open Source" | "Company" | "Publication" | "Website";
@@ -17,16 +17,16 @@ export interface IActor {
   actorType: string;
   name: string;
   url: string;
-  old_url?: string;
-  repo_url?: string;
-  docs_url?: string;
-  api_url?: string;
-  ci_url?: string;
-  coverage_url?: string;
-  changelog_url?: string;
-  issues_url?: string;
-  browse_code_tests_url?: string;
-  browse_code_url?: string;
+  oldUrl?: string;
+  repoUrl?: string;
+  docsUrl?: string;
+  apiUrl?: string;
+  ciUrl?: string;
+  coverageUrl?: string;
+  changelogUrl?: string;
+  issuesUrl?: string;
+  browseCodeTestsUrl?: string;
+  browseCodeUrl?: string;
   logo?: string;
   languages: ActorLanguage[];
 }
