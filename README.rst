@@ -102,3 +102,7 @@ Version 2 (Under development)
   moment (in itself split) last. Some experimentation is done here
   to find a balance of how to present the interface initially and
   can be tweaked overtime.
+- Smaller stuff
+
+  Internal data props using underscores now are camelCase, e.g.
+  repo_url -> repoUrl
