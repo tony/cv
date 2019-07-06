@@ -8,6 +8,13 @@ Add typings for IActor
 
 Add Actors to data module
 
+Looked into doing normalizr again. Doesn't do much in practice since
+there's already typings and excellent map/filter functions.
+
+Split raw data from lib/data.ts to lib/data/raw.ts.
+
+Added ActorTypes, ActivityTypes, Languages
+
 July 5th, 2019 - Friday
 -----------------------
 Vue:
