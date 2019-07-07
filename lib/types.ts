@@ -1,7 +1,17 @@
+export type ActivityType =
+  | "SoftwareApp"
+  | "SoftwareLib"
+  | "Patch"
+  | "Work"
+  | "Publication"
+  | "Volunteer"
+  | "Website"
+  | "Article";
+
 export interface IActivity {
   createdDate: string;
   title: string;
-  componentName: string;
+  componentName: ActivityType;
   actor: number;
   acceptedDate?: string;
   qaUrl?: string;
@@ -10,7 +20,7 @@ export interface IActivity {
   startDate?: string;
 }
 
-type ActorType = "Open Source" | "Company" | "Publication" | "Website";
+export type ActorType = "Open Source" | "Company" | "Publication" | "Website";
 export type ActorLanguage =
   | "Python"
   | "PHP"
@@ -38,7 +48,7 @@ export type ActorLanguage =
 
 export interface IActor {
   id: number;
-  actorType: string;
+  actorType: ActorType;
   name: string;
   url: string;
   oldUrl?: string;
