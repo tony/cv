@@ -1,18 +1,23 @@
 import React from "react";
 
+import { Search } from "../../lib/search";
 import { IActivity } from "../../lib/types";
 
 interface IState {
   myActivities: IActivity[];
 }
 
+const search = new Search();
+
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[] | null>([]);
   const fetchActivities = async () => {
-    const { myActivities } = await import(
+    const { myActivities, myActors } = await import(
       /* webpackChunkName: "myData" */ "../../lib/data"
     );
     setActivities(myActivities as IActivity[]);
+
+    search.setState({ actors: myActors, activities: myActivities });
   };
   React.useEffect(() => {
     fetchActivities();
