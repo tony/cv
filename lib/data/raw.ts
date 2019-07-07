@@ -26,10 +26,10 @@ export const myLanguagesRaw: ActorLanguage[] = Array.from(
   new Set([...myActorsRaw.map(a => a.languages).flat()].filter(Boolean))
 );
 
-export const myActorTypeRaw: ActorType[] = Array.from(
+export const myActorTypesRaw: ActorType[] = Array.from(
   new Set(myActorsRaw.map(a => a.actorType).filter(Boolean))
 );
 
-export const myActivityTypeRaw: ActivityType[] = Array.from(
+export const myActivityTypesRaw: ActivityType[] = Array.from(
   new Set(myActivitiesRaw.map(a => a.componentName).filter(Boolean))
 );
