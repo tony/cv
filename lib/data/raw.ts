@@ -22,6 +22,7 @@ export const myActivitiesRaw: IActivity[] = [
   ...ghActivitiesRaw
 ];
 
+// Calculated at runtime, based on the content of above
 export const myLanguagesRaw: ActorLanguage[] = Array.from(
   new Set([...myActorsRaw.map(a => a.languages).flat()].filter(Boolean))
 );
