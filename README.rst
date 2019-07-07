@@ -56,6 +56,9 @@ Structure
 
   It has write inherent write protection and safety as it's just an
   ordinary `ES2015 class <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes>`_
+
+  ``lib/types.ts`` - Typing for data mappings used across the three apps
+  ``lib/data/raw.ts`` - Raw data imported via JSON + typed
 - `scripts/ <scripts/>`_: GitHub Scraper
 - `data/ <data/>`_: initial data
 
