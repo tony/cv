@@ -3,7 +3,13 @@ import handPickedActorsRaw from "../../data/my_actors.json";
 import ghActivitiesRaw from "../../data/scraped/gh_activities.json";
 import ghActorsRaw from "../../data/scraped/gh_actors.json";
 
-import { ActorLanguage, IActivity, IActor } from "../types";
+import {
+  ActivityType,
+  ActorLanguage,
+  ActorType,
+  IActivity,
+  IActor
+} from "../types";
 
 // Join raw data from JSON into lists
 export const myActorsRaw: IActor[] = [
@@ -20,10 +26,10 @@ export const myLanguagesRaw: ActorLanguage[] = Array.from(
   new Set([...myActorsRaw.map(a => a.languages).flat()].filter(Boolean))
 );
 
-export const myActorTypeRaw: string[] = Array.from(
+export const myActorTypeRaw: ActorType[] = Array.from(
   new Set(myActorsRaw.map(a => a.actorType).filter(Boolean))
 );
 
-export const myActivityTypeRaw: string[] = Array.from(
+export const myActivityTypeRaw: ActivityType[] = Array.from(
   new Set(myActivitiesRaw.map(a => a.componentName).filter(Boolean))
 );
