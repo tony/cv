@@ -1,1 +1,4 @@
-export { myActivitiesRaw as myActivities } from "./raw";
+export {
+  myActivitiesRaw as myActivities,
+  myActorsRaw as myActors
+} from "./raw";
