@@ -45,6 +45,17 @@ Structure
 - `vue/ <vue/>`_: `Vue.js`_ version
 - `react/ <react/>`_: `React`_ version
 - `lib/ <lib/>`_: Common code (reducers/filters code, initial data collections)
+
+  ``lib/search.ts`` - Search manager for filtering / faceting state. Each
+  application uses this to hold raw state (of all activities, places),
+  current filters, and filters/items available with filters applied.
+
+  This essentially replaces what a global storage, such as redux/vuex.
+  So there's no need to have three systems. And this is custom tailored to
+  the job being done. Which in a sense increases readability.
+
+  It has write inherent write protection and safety as it's just an
+  ordinary `ES2015 class <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes>`_
 - `scripts/ <scripts/>`_: GitHub Scraper
 - `data/ <data/>`_: initial data
 
