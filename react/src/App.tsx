@@ -12,18 +12,29 @@ const search = new Search();
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[] | null>([]);
   const fetchActivities = async () => {
-    const { myActivities, myActors } = await import(
-      /* webpackChunkName: "myData" */ "../../lib/data"
-    );
+    const {
+      myActivities,
+      myActors,
+      myLanguages,
+      myActorTypes,
+      myActivityTypes
+    } = await import(/* webpackChunkName: "myData" */ "../../lib/data");
     setActivities(myActivities as IActivity[]);
 
-    search.setState({ actors: myActors, activities: myActivities });
+    search.setState({
+      activities: myActivities,
+      activityTypes: myActivityTypes,
+      actorTypes: myActorTypes,
+      actors: myActors,
+      languages: myLanguages
+    });
   };
   React.useEffect(() => {
     fetchActivities();
   });
 
   console.log("renderState", { activities });
+  console.log("search data", { searchState: search.data });
 
   return (
     <div>
