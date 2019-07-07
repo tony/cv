@@ -1,20 +1,34 @@
-import { IActivity, IActor } from "./types";
+import {
+  ActivityType,
+  ActorLanguage,
+  ActorType,
+  IActivity,
+  IActor
+} from "./types";
+
+interface IStateData {
+  activities: IActivity[];
+  activityTypes: ActivityType[];
+  actorTypes: ActorType[];
+  actors: IActor[];
+  languages: ActorLanguage[];
+}
 
 export class Search {
-  private data: Readonly<{
-    actors: IActor[];
-    activities: IActivity[];
-  }>;
+  private data: Readonly<IStateData>;
   public setState({
+    activityTypes,
+    activities,
+    actorTypes,
     actors,
-    activities
-  }: {
-    actors: IActor[];
-    activities: IActivity[];
-  }) {
+    languages
+  }: IStateData) {
     this.data = {
       activities,
-      actors
+      activityTypes,
+      actorTypes,
+      actors,
+      languages
     };
   }
 }
