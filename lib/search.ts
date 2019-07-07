@@ -1,12 +1,20 @@
-class Search {
+import { IActivity, IActor } from "./types";
+
+export class Search {
   private data: Readonly<{
-    normalizedActors: any;
-    normalizedActivities: any;
+    actors: IActor[];
+    activities: IActivity[];
   }>;
-  constructor(normalizedActors, normalizedActivities) {
+  public setState({
+    actors,
+    activities
+  }: {
+    actors: IActor[];
+    activities: IActivity[];
+  }) {
     this.data = {
-      normalizedActivities,
-      normalizedActors
+      activities,
+      actors
     };
   }
 }
