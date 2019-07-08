@@ -74,7 +74,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         use: {
           loader: "ts-loader",
           options: {
-            configFile: "../tsconfig.json"
+            configFile: "./tsconfig.json"
           }
         }
       }
