@@ -1,3 +1,19 @@
+July 13th, 2019 - Saturday
+--------------------------
+Compilation issues
+
+There would be errors inside of vue/ where it would says "files" weren't
+found and no output emitted.
+
+Fixed by:
+
+- Closing all node processess ``killall -9 node``
+- ``rm -rf ~/.cache/typescript ~/.npm``  (I actually did ``rm -rf
+  ~/.cache`` since I'm on WSL, rm'ing all will crash Gnome on Linux.
+- ``rm -rf node_modules && npm install`` in each dir
+- ``npm install`` in src dir
+- Now compilation works
+
 July 6th, 2019 - Saturday
 -------------------------
 Field names to camelcase
