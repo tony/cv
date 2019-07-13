@@ -54,3 +54,33 @@ build_vue:
 
 build:
 	$(MAKE) build_angular build_react build_vue
+
+npm_outdated_local:
+	npm outdated
+
+npm_outdated_angular:
+	cd angular/ && npm outdated
+
+npm_outdated_react:
+	cd react/ && npm outdated
+
+npm_outdated_vue:
+	cd vue/ && npm outdated
+
+npm_outdated:
+	$(MAKE) npm_outdated_local npm_outdated_angular npm_outdated_react npm_outdated_vue
+
+npm_update_local:
+	npm update
+
+npm_update_angular:
+	cd angular/ && npm update
+
+npm_update_react:
+	cd react/ && npm update
+
+npm_update_vue:
+	cd vue/ && npm update
+
+npm_update:
+	$(MAKE) npm_update_local npm_outdated_angular npm_outdated_react npm_outdated_vue
