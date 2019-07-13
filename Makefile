@@ -31,3 +31,26 @@ install_vue:
 install:
 	$(MAKE) install_local install_angular install_react install_vue
 
+distclean_angular:
+	rm -rf angular/dist/
+
+distclean_react:
+	rm -rf react/dist/
+
+distclean_vue:
+	rm -rf vue/dist/
+
+distclean:
+	$(MAKE) distclean_angular distclean_react distclean_vue
+
+build_angular:
+	cd angular/ && ng build
+
+build_react:
+	cd react/ && npm run build
+
+build_vue:
+	cd vue/ && npm run build
+
+build:
+	$(MAKE) build_angular build_react build_vue
