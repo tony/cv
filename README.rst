@@ -18,6 +18,8 @@ Quickstart
 
 .. code-block:: bash
 
+   $ sudo npm install -g @angular/cli  # If building angular
+
    $ npm install  # Install root deps
 
    $ cd vue/  # or
