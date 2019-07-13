@@ -16,8 +16,8 @@ const store: StoreOptions<IRootState> = {
       { commit }: { commit: Commit },
       activities: IRootState["activities"]
     ) {
-      const { myActivities } = await import(
-        /* webpackChunkName: "myData" */ "../../lib/data"
+      const { myActivitiesRaw: myActivities } = await import(
+        /* webpackChunkName: "myData" */ "../../lib/data/raw"
       );
       commit("loadActivities", myActivities);
     }
