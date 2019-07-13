@@ -7,14 +7,14 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.5.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/html-webpack-plugin": "^3.2.0",
-    "@types/node": "^12.0.10",
-    "@types/webpack": "^4.4.34",
-    "@types/webpack-dev-server": "^3.1.6",
+    "@types/html-webpack-plugin": "^3.2.1",
+    "@types/node": "^12.6.2",
+    "@types/webpack": "^4.4.35",
+    "@types/webpack-dev-server": "^3.1.7",
     "babel-loader": "^8.0.6",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
@@ -27,7 +27,7 @@
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.5.2",
+    "typescript": "^3.5.3",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack-cli": "^3.3.4",
@@ -40,6 +40,6 @@
     "vue-loader": "^15.7.0",
     "vue-property-decorator": "^8.2.1",
     "vuex": "^3.1.1",
-    "webpack": "^4.34.0"
+    "webpack": "^4.35.3"
   }
 }
