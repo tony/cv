@@ -14,6 +14,9 @@ Fixed by:
 - ``npm install`` in src dir
 - Now compilation works
 
+Added a ``Makefile`` to clean *node_modules* and reinstall across all
+projects. This should check to see if the setup works or not.
+
 July 6th, 2019 - Saturday
 -------------------------
 Field names to camelcase
