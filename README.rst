@@ -33,6 +33,19 @@ Quickstart
    # or
    $ npm run build  # Build to dist/
 
+Make tasks
+----------
+Common tasks across 3 projects (+1 if you include root scripts)
+are the in `Makefile <Makefile>`_:
+
+.. code-block:: bash
+
+   $ make clean  # deletes typescript, npm cache, node_modules/ in all projects
+   $ make distclean  # removes dist/ in all projects
+   $ make install  # runs npm install for all projects
+   $ make npm_outdated # runs npm outdated for all projects
+   $ make npm_update  # runs npm update for all projects
+
 Structure
 ---------
 - New framework: Angular
