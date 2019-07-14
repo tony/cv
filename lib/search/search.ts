@@ -4,7 +4,7 @@ import {
   ActorType,
   IActivity,
   IActor
-} from "./types";
+} from "../types";
 
 interface IStateData {
   activities: IActivity[];
