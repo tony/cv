@@ -72,10 +72,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         exclude: /node_modules/,
         test: /\.ts$/,
         use: {
-          loader: "ts-loader",
-          options: {
-            configFile: "./tsconfig.json"
-          }
+          loader: "ts-loader"
         }
       }
     ]
