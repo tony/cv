@@ -1,3 +1,6 @@
+The Making Of
+=============
+
 July 13th, 2019 - Saturday
 --------------------------
 Compilation issues
@@ -16,6 +19,9 @@ Fixed by:
 
 Added a ``Makefile`` to clean *node_modules* and reinstall across all
 projects. This should check to see if the setup works or not.
+
+More headaches arisen after splitting search.ts in to search/search.ts.
+Fixed by removing configFile option from ts-loader.
 
 July 6th, 2019 - Saturday
 -------------------------
