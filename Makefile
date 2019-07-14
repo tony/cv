@@ -5,31 +5,16 @@ clean_local:
 	rm -rf node_modules
 
 clean_angular:
-	rm -rf angular/node_modules/
+	$(MAKE) -C angular clean
 
 clean_react:
-	rm -rf react/node_modules/
+	$(MAKE) -C react clean
 
 clean_vue:
-	rm -rf vue/node_modules/
+	$(MAKE) -C vue clean
 
 clean:
 	$(MAKE) clean_system clean_local clean_angular clean_react clean_vue
-
-install_local:
-	npm install --no-save
-
-install_angular:
-	cd angular/ && npm install --no-save
-
-install_react:
-	cd react/ && npm install --no-save
-
-install_vue:
-	cd vue/ && npm install --no-save
-
-install:
-	$(MAKE) install_local install_angular install_react install_vue
 
 distclean_angular:
 	rm -rf angular/dist/
@@ -43,29 +28,32 @@ distclean_vue:
 distclean:
 	$(MAKE) distclean_angular distclean_react distclean_vue
 
-build_angular:
-	cd angular/ && ng build
+install_local:
+	npm install --no-save
 
-build_react:
-	cd react/ && npm run build
+install_angular:
+	$(MAKE) -C angular install
 
-build_vue:
-	cd vue/ && npm run build
+install_react:
+	$(MAKE) -C react install
 
-build:
-	$(MAKE) build_angular build_react build_vue
+install_vue:
+	$(MAKE) -C vue install
+
+install:
+	$(MAKE) install_local install_angular install_react install_vue
 
 npm_outdated_local:
 	npm outdated
 
 npm_outdated_angular:
-	cd angular/ && npm outdated
+	$(MAKE) -C angular npm_outdated
 
 npm_outdated_react:
-	cd react/ && npm outdated
+	$(MAKE) -C react npm_outdated
 
 npm_outdated_vue:
-	cd vue/ && npm outdated
+	$(MAKE) -C vue npm_outdated
 
 npm_outdated:
 	$(MAKE) npm_outdated_local npm_outdated_angular npm_outdated_react npm_outdated_vue
@@ -74,13 +62,49 @@ npm_update_local:
 	npm update
 
 npm_update_angular:
-	cd angular/ && npm update
+	$(MAKE) -C angular update
 
 npm_update_react:
-	cd react/ && npm update
+	$(MAKE) -C react update
 
 npm_update_vue:
-	cd vue/ && npm update
+	$(MAKE) -C vue update
 
 npm_update:
 	$(MAKE) npm_update_local npm_outdated_angular npm_outdated_react npm_outdated_vue
+
+lint_angular:
+	$(MAKE) -C angular lint
+
+lint_react:
+	$(MAKE) -C react lint
+
+lint_vue:
+	$(MAKE) -C vue lint
+
+lint:
+	$(MAKE) -j lint_angular lint_react lint_vue
+
+start_angular:
+	$(MAKE) -C angular start
+
+start_react:
+	$(MAKE) -C react start
+
+start_vue:
+	$(MAKE) -C vue start
+
+start:
+	$(MAKE) -j start_angular start_react start_vue
+
+build_angular:
+	$(MAKE) -C angular build
+
+build_react:
+	$(MAKE) -C react build
+
+build_vue:
+	$(MAKE) -C vue build
+
+build:
+	$(MAKE) build_angular build_react build_vue

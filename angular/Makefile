@@ -1,0 +1,23 @@
+clean:
+	rm -rf node_modules/
+
+install:
+	npm install --no-save
+
+distclean:
+	rm -rf dist/
+
+npm_outdated:
+	npm outdated
+
+npm_update:
+	npm update
+
+lint:
+	npm run lint
+
+build:
+	ng build
+
+start:
+	ng serve --host $(ip addr show eth0 | grep -Po "inet \K[\d.]+") --disableHostCheck
