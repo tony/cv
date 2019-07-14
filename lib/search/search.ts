@@ -23,7 +23,15 @@ export type PredicateFn<ValueT> = (value: ValueT) => boolean;
 export class Search<ValueT> {
   private data: Readonly<IStateData>;
 
-  constructor(data?: IStateData) {
+  //
+  // Parent (creating) state. null for root-level
+  //
+  private parent: Search<ValueT> | null;
+
+  constructor(data?: IStateData, parent: Search<ValueT> = null) {
+    if (parent !== null) {
+      this.parent = parent;
+    }
     if (data) {
       this.setState(data);
     }
@@ -54,14 +62,17 @@ export class Search<ValueT> {
 
     const activities = this.data.activities.filter(predicate);
     const actors = this.data.actors.filter(() => true);
-    return new Search({
-      activities,
-      activityTypes: this.data.activityTypes.filter(() => true),
-      actorTypes: this.data.actorTypes.filter(() => true),
-      actors,
-      languages: this.data.languages.filter(language =>
-        actors.some(actor => actor.languages.includes(language))
-      )
-    });
+    return new Search(
+      {
+        activities,
+        activityTypes: this.data.activityTypes.filter(() => true),
+        actorTypes: this.data.actorTypes.filter(() => true),
+        actors,
+        languages: this.data.languages.filter(language =>
+          actors.some(actor => actor.languages.includes(language))
+        )
+      },
+      this
+    );
   }
 }
