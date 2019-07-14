@@ -30,8 +30,8 @@ export class Search<ValueT> {
   }
 
   public setState({
-    activityTypes,
     activities,
+    activityTypes,
     actorTypes,
     actors,
     languages
@@ -55,8 +55,11 @@ export class Search<ValueT> {
     const activities = this.data.activities.filter(predicate);
 
     return new Search({
-      ...this.data,
-      activities
+      activities,
+      activityTypes: this.data.activityTypes.filter(() => true),
+      actorTypes: this.data.actorTypes.filter(() => true),
+      actors: this.data.actors.filter(() => true),
+      languages: this.data.languages.filter(() => true)
     });
   }
 }
