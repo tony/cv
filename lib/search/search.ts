@@ -53,13 +53,15 @@ export class Search<ValueT> {
     }
 
     const activities = this.data.activities.filter(predicate);
-
+    const actors = this.data.actors.filter(() => true);
     return new Search({
       activities,
       activityTypes: this.data.activityTypes.filter(() => true),
       actorTypes: this.data.actorTypes.filter(() => true),
-      actors: this.data.actors.filter(() => true),
-      languages: this.data.languages.filter(() => true)
+      actors,
+      languages: this.data.languages.filter(language =>
+        actors.some(actor => actor.languages.includes(language))
+      )
     });
   }
 }
