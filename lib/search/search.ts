@@ -5,6 +5,7 @@ import {
   IActivity,
   IActor
 } from "../types";
+import { Lense } from "./lense";
 
 interface IStateData {
   activities: IActivity[];
@@ -31,4 +32,6 @@ export class Search {
       languages
     };
   }
+
+  public addLense(lense: Lense) {}
 }
