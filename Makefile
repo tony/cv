@@ -62,16 +62,16 @@ npm_update_local:
 	npm update
 
 npm_update_angular:
-	$(MAKE) -C angular update
+	$(MAKE) -C angular npm_update
 
 npm_update_react:
-	$(MAKE) -C react update
+	$(MAKE) -C react npm_update
 
 npm_update_vue:
-	$(MAKE) -C vue update
+	$(MAKE) -C vue npm_update
 
 npm_update:
-	$(MAKE) npm_update_local npm_outdated_angular npm_outdated_react npm_outdated_vue
+	$(MAKE) npm_update_local npm_update_angular npm_update_react npm_update_vue
 
 lint_angular:
 	$(MAKE) -C angular lint
