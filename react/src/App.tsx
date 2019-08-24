@@ -9,18 +9,32 @@ interface IState {
 
 const search = new Search();
 
+const useAsyncEffect = (
+  effect: (isCanceled: () => boolean) => Promise<void>,
+  dependencies?: any[]
+) => {
+  return React.useEffect(() => {
+    let canceled = false;
+    effect(() => canceled);
+    return () => {
+      canceled = true;
+    };
+  }, dependencies);
+};
+
 const App: React.FC<IState> = () => {
-  const [activities, setActivities] = React.useState<IActivity[] | null>([]);
+  const [activities, setActivities] = React.useState<IActivity[]>([]);
   const fetchActivities = async () => {
+    return import(/* webpackChunkName: "myData" */ "../../lib/data");
+  };
+  useAsyncEffect(async () => {
     const {
       myActivities,
       myActors,
       myLanguages,
       myActorTypes,
       myActivityTypes
-    } = await import(/* webpackChunkName: "myData" */ "../../lib/data");
-    setActivities(myActivities as IActivity[]);
-
+    } = await fetchActivities();
     search.setState({
       activities: myActivities,
       activityTypes: myActivityTypes,
@@ -28,13 +42,16 @@ const App: React.FC<IState> = () => {
       actors: myActors,
       languages: myLanguages
     });
-  };
-  React.useEffect(() => {
-    fetchActivities();
+    setActivities(myActivities as IActivity[]);
   });
 
-  console.log("renderState", { activities });
-  console.log("search data", { searchState: search.data });
+  if (!activities.length) {
+    return (
+      <div>
+        <header>Loading CV Data</header>
+      </div>
+    );
+  }
 
   return (
     <div>

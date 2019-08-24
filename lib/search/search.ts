@@ -21,7 +21,7 @@ interface IStateData {
 export type PredicateFn<ValueT> = (value: ValueT) => boolean;
 
 export class Search<ValueT> {
-  private data: Readonly<IStateData>;
+  public data: Readonly<IStateData>;
 
   //
   // Parent (creating) state. null for root-level
