@@ -13,15 +13,14 @@ const search = new Search();
 const useAsyncEffect = (
   effect: (isCanceled: () => boolean) => Promise<void>,
   dependencies?: any[]
-) => {
-  return React.useEffect(() => {
+) =>
+  React.useEffect(() => {
     let canceled = false;
     effect(() => canceled);
     return () => {
       canceled = true;
     };
   }, dependencies);
-};
 
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
