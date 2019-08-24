@@ -1,4 +1,5 @@
 import React from "react";
+import Select, { Option } from "react-select";
 
 import { Search } from "../../lib/search";
 import { IActivity } from "../../lib/types";
@@ -53,9 +54,16 @@ const App: React.FC<IState> = () => {
     );
   }
 
+  const languageOptions = (((search || {}).data || {}).languages || []).length
+    ? (search.data.languages.map(language => ({
+        label: language,
+        value: language
+      })) as Option[])
+    : [];
   return (
     <div>
       <header>
+        <Select options={languageOptions} />
         {activities &&
           activities.map((activity, idx) => (
             <div key={idx}>{activity.title}</div>
