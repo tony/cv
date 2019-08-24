@@ -1,5 +1,6 @@
 import React from "react";
-import Select, { Option } from "react-select";
+import Select from "react-select";
+import { OptionProps } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
 import { IActivity } from "../../lib/types";
@@ -7,6 +8,8 @@ import { IActivity } from "../../lib/types";
 interface IState {
   myActivities: IActivity[];
 }
+
+type ISelectOption = Pick<OptionProps, "label" | "value">;
 
 const search = new Search();
 
@@ -57,7 +60,7 @@ const App: React.FC<IState> = () => {
     ? (search.data.languages.map(language => ({
         label: language,
         value: language
-      })) as Option[])
+      })) as ISelectOption[])
     : [];
   return (
     <div>
