@@ -1,6 +1,16 @@
 The Making Of
 =============
 
+July 24th, 2019 - Saturday
+--------------------------
+React:
+- Improvements to fetching activities / useEffect
+- Introduce react-select and basic data representation
+
+July 23rd, 2019 - Friday
+------------------------
+Update NPM packages all around
+
 July 13th, 2019 - Saturday
 --------------------------
 Compilation issues
