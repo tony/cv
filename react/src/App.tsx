@@ -1,9 +1,9 @@
 import React from "react";
 import Select from "react-select";
-import { OptionProps } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
+import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
-import { IActivity } from "../../lib/types";
+import { ActorLanguage, IActivity } from "../../lib/types";
 
 interface IState {
   myActivities: IActivity[];
@@ -27,6 +27,7 @@ const useAsyncEffect = (
 
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
+  const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
@@ -62,10 +63,20 @@ const App: React.FC<IState> = () => {
         value: language
       })) as ISelectOption[])
     : [];
+  const onLanguageChange = (
+    newLanguages: ISelectOption[],
+    actionMeta: ActionMeta
+  ) => {
+    setLanguages(newLanguages.map(lang => lang.value));
+  };
   return (
     <div>
       <header>Tony Narlock's CV</header>
-      <Select options={languageOptions} />
+      <Select
+        options={languageOptions}
+        isMulti={true}
+        onChange={onLanguageChange}
+      />
       {activities &&
         activities.map((activity, idx) => (
           <div key={idx}>{activity.title}</div>
