@@ -64,24 +64,12 @@ const App: React.FC<IState> = () => {
     : [];
   return (
     <div>
-      <header>
-        <Select options={languageOptions} />
-        {activities &&
-          activities.map((activity, idx) => (
-            <div key={idx}>{activity.title}</div>
-          ))}
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>Tony Narlock's CV</header>
+      <Select options={languageOptions} />
+      {activities &&
+        activities.map((activity, idx) => (
+          <div key={idx}>{activity.title}</div>
+        ))}
     </div>
   );
 };
