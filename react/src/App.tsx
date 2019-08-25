@@ -46,6 +46,18 @@ const App: React.FC<IState> = () => {
       actors: myActors,
       languages: myLanguages
     });
+    if (languages.length && myActors !== undefined) {
+      search.filter(activity => {
+        const actor = myActors.find(({ id }) => id === activity.actor);
+        return languages.some(
+          language =>
+            actor &&
+            actor.languages &&
+            actor.languages.length &&
+            actor.languages.includes(language)
+        );
+      });
+    }
     setActivities(myActivities as IActivity[]);
   });
 
