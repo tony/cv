@@ -6,9 +6,14 @@ July 31st, 2019 - Saturday
 All:
 - Packcage updates,  including TypeScript 3.5 -> 3.6
 
+lib/search:
+- Move ``predicateFn`` to ``Lense.filterFn``, allow lenses to be added
+  to ``Search`` instance.
+
 react:
 - Typing issues with react-select
   https://github.com/JedWatson/react-select/issues/2902#issuecomment-526842362
+- Basic filtering of activities by language
 
 July 24th, 2019 - Saturday
 --------------------------
