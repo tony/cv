@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
+
 import { GitHub } from "github-graphql-api";
-import util from "util";
 import moment from "moment";
 
-const gh_token =
+const ghToken =
   process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;
 
-if (!gh_token) {
+if (!ghToken) {
   console.error(
     "GITHUB_API_TOKEN or HOMEBREW_GITHUB_API_TOKEN must be set in ENV"
   );
@@ -16,18 +16,18 @@ if (!gh_token) {
 
 const config = {
   exclude_own_repo: true,
-  gh_user: "tony",
   exclude_users: [
     "cihai",
-    "git-pull",
-    "vcs-python",
-    "tmux-python",
-    "nick-ma",
     "emre",
-    "peergradeio"
+    "git-pull",
+    "nick-ma",
+    "peergradeio",
+    "tmux-python",
+    "vcs-python"
   ],
-  output_dir: "data/scraped",
-  ignore_private_repos: true
+  gh_user: "tony",
+  ignore_private_repos: true,
+  output_dir: "data/scraped"
 };
 
 if (!fs.existsSync(config.output_dir)) {
@@ -50,10 +50,10 @@ const prQuery = fs.readFileSync(
   "utf8"
 );
 
-const c = new GitHub({ token: gh_token });
+const c = new GitHub({ token: ghToken });
 
 async function ghQuery(query) {
-  return await c.query(query);
+  return c.query(query);
 }
 
 // ghQuery(testQuery).then(data => {
@@ -94,7 +94,7 @@ const recursePRQuery = async query => {
 
   issues = issues.concat(res.pullRequests);
   if (res.nextQuery) {
-    return await recursePRQuery(res.nextQuery);
+    return recursePRQuery(res.nextQuery);
   } else {
     return issues;
   }
@@ -108,7 +108,7 @@ recursePRQuery(initialPrQuery)
       );
     }
     if (config.exclude_users) {
-      for (let user of config.exclude_users) {
+      for (const user of config.exclude_users) {
         prs = prs.filter(
           pr => !pr.node.url.includes(`https://github.com/${user}/`)
         );
