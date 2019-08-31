@@ -8,7 +8,7 @@ import {
   IActivity,
   IActor
 } from "../types";
-import { Lense } from "./lense";
+import { ILense } from "./lense";
 
 interface IStateData {
   activities: IActivity[];
@@ -18,10 +18,9 @@ interface IStateData {
   languages: ActorLanguage[];
 }
 
-export type PredicateFn<ValueT> = (value: ValueT) => boolean;
-
 export class Search<ValueT> {
   public data: Readonly<IStateData>;
+  public lenses: Array<ILense<any>> = [];
 
   //
   // Parent (creating) state. null for root-level
@@ -53,26 +52,32 @@ export class Search<ValueT> {
     };
   }
 
-  public filter(predicate: PredicateFn<IActivity>): Search<ValueT> {
-    if (typeof predicate !== "function") {
+  public addLense(lense: ILense<any>) {
+    if (typeof lense.filterFn !== "function") {
       throw new Error(
-        "Expected 'predicate' param to 'Search.where' method to be a function."
+        "Expected 'filterFn' param to 'Search.addLense' method to be a function."
       );
     }
 
-    const activities = this.data.activities.filter(predicate);
+    this.lenses.push(lense);
+  }
+
+  public getResults(): IStateData {
+    let activities = this.data.activities;
     const actors = this.data.actors.filter(() => true);
-    return new Search(
-      {
-        activities,
-        activityTypes: this.data.activityTypes.filter(() => true),
-        actorTypes: this.data.actorTypes.filter(() => true),
-        actors,
-        languages: this.data.languages.filter(language =>
-          actors.some(actor => actor.languages.includes(language))
-        )
-      },
-      this
-    );
+    for (const lense of this.lenses) {
+      activities = activities.filter(lense.filterFn);
+    }
+    return {
+      activities,
+      activityTypes: this.data.activityTypes.filter(() => true),
+      actorTypes: this.data.actorTypes.filter(() => true),
+      actors,
+      languages: this.data.languages.filter(language => {
+        return actors
+          .filter(actor => actor && actor.languages && actor.languages.length)
+          .some(actor => actor.languages.includes(language));
+      })
+    };
   }
 }
