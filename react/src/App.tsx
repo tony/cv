@@ -55,12 +55,11 @@ const App: React.FC<IState> = () => {
         search.addLense({
           filterFn: activity => {
             const actor = myActors.find(({ id }) => id === activity.actor);
-            return languages.some(
-              language =>
-                actor &&
-                actor.languages &&
-                actor.languages.length &&
-                actor.languages.includes(language)
+            if (!actor || !actor.languages || !actor.languages.length) {
+              return false;
+            }
+            return languages.some(language =>
+              actor.languages.includes(language)
             );
           },
           label: "Filter by language"
