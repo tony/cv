@@ -51,18 +51,25 @@ const App: React.FC<IState> = () => {
       languages: myLanguages
     });
     if (languages.length && myActors !== undefined) {
-      search.filter(activity => {
-        const actor = myActors.find(({ id }) => id === activity.actor);
-        return languages.some(
-          language =>
-            actor &&
-            actor.languages &&
-            actor.languages.length &&
-            actor.languages.includes(language)
-        );
-      });
+      if (!search.lenses.length) {
+        search.addLense({
+          filterFn: activity => {
+            const actor = myActors.find(({ id }) => id === activity.actor);
+            return languages.some(
+              language =>
+                actor &&
+                actor.languages &&
+                actor.languages.length &&
+                actor.languages.includes(language)
+            );
+          },
+          label: "Filter by language"
+        });
+        setActivities(search.getResults().activities as IActivity[]);
+      }
+    } else {
+      setActivities(myActivities as IActivity[]);
     }
-    setActivities(myActivities as IActivity[]);
   });
 
   if (!activities.length) {
