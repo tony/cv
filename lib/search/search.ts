@@ -63,10 +63,12 @@ export class Search<ValueT> {
   }
 
   public getResults(): IStateData {
-    let activities = this.data.activities;
+    const initialActivities = this.data.activities;
+    let activities: IActivity[] = [];
     const actors = this.data.actors.filter(() => true);
     for (const lense of this.lenses) {
-      activities = activities.filter(lense.filterFn);
+      // append behavior, so adding a language widens scope to an additional language
+      activities = activities.concat(initialActivities.filter(lense.filterFn));
     }
     return {
       activities,
