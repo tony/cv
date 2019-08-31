@@ -6,6 +6,10 @@ July 31st, 2019 - Saturday
 All:
 - Packcage updates,  including TypeScript 3.5 -> 3.6
 
+react:
+- Typing issues with react-select
+  https://github.com/JedWatson/react-select/issues/2902#issuecomment-526842362
+
 July 24th, 2019 - Saturday
 --------------------------
 React:
