@@ -79,18 +79,13 @@ const App: React.FC<IState> = () => {
         value: language
       })) as ISelectOption[])
     : [];
-  const onLanguageChange = (value: IOptionType[], _: ActionMeta) => {
+  const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
     setLanguages(
-      value
+      (value as IOptionType[])
         .filter(lang => lang && lang.value)
         .map(lang => lang.value as ActorLanguage)
     );
   };
-  // https://github.com/JedWatson/react-select/issues/2902
-  const castOnLanguageChange = (
-    selectedOption: ValueType<IOptionType>,
-    e: ActionMeta
-  ) => onLanguageChange(selectedOption as IOptionType[], e);
 
   return (
     <div>
@@ -98,7 +93,7 @@ const App: React.FC<IState> = () => {
       <Select
         options={languageOptions}
         isMulti={true}
-        onChange={castOnLanguageChange}
+        onChange={onLanguageChange}
       />
       {activities &&
         activities.map((activity, idx) => (
