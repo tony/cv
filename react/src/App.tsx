@@ -10,6 +10,10 @@ interface IState {
 }
 
 type ISelectOption = Pick<OptionProps, "label" | "value">;
+interface IOptionType {
+  label: string;
+  value: string;
+}
 
 const search = new Search();
 
@@ -75,19 +79,26 @@ const App: React.FC<IState> = () => {
         value: language
       })) as ISelectOption[])
     : [];
-  const onLanguageChange = (
-    newLanguages: ISelectOption[],
-    actionMeta: ActionMeta
-  ) => {
-    setLanguages(newLanguages.map(lang => lang.value));
+  const onLanguageChange = (value: IOptionType[], _: ActionMeta) => {
+    setLanguages(
+      value
+        .filter(lang => lang && lang.value)
+        .map(lang => lang.value as ActorLanguage)
+    );
   };
+  // https://github.com/JedWatson/react-select/issues/2902
+  const castOnLanguageChange = (
+    selectedOption: ValueType<IOptionType>,
+    e: ActionMeta
+  ) => onLanguageChange(selectedOption as IOptionType[], e);
+
   return (
     <div>
       <header>Tony Narlock's CV</header>
       <Select
         options={languageOptions}
         isMulti={true}
-        onChange={onLanguageChange}
+        onChange={castOnLanguageChange}
       />
       {activities &&
         activities.map((activity, idx) => (
