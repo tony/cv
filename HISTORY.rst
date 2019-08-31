@@ -1,6 +1,11 @@
 The Making Of
 =============
 
+July 31st, 2019 - Saturday
+--------------------------
+All:
+- Packcage updates,  including TypeScript 3.5 -> 3.6
+
 July 24th, 2019 - Saturday
 --------------------------
 React:
