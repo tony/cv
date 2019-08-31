@@ -73,12 +73,10 @@ const App: React.FC<IState> = () => {
     );
   }
 
-  const languageOptions = (((search || {}).data || {}).languages || []).length
-    ? (search.data.languages.map(language => ({
-        label: language,
-        value: language
-      })) as ISelectOption[])
-    : [];
+  const languageOptions = search.data.languages.map(language => ({
+    label: language,
+    value: language
+  })) as ISelectOption[];
   const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
     setLanguages(
       (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
