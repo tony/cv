@@ -52,6 +52,10 @@ export class Search<ValueT> {
     };
   }
 
+  public lenseExists(lense: ILense<any>) {
+    return this.lenses.some(oldLense => lense.label === oldLense.label);
+  }
+
   public addLense(lense: ILense<any>) {
     if (typeof lense.filterFn !== "function") {
       throw new Error(
