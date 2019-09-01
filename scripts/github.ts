@@ -143,6 +143,19 @@ recursePRQuery(initialPrQuery)
     );
     // console.log(projects);
     // console.log(projects.length);
+    /**
+     * Manually add languages GitHub projects missing them
+     */
+    const fillMissingLanguages = (projectName: string) => {
+      switch (projectName) {
+        case "kohana-modules":
+          return ["PHP"];
+        case "awesome-minimalist":
+          return ["Markdown"];
+        default:
+          return [];
+      }
+    };
 
     let id = 0;
     const projectsFinal = projects.reduce(
@@ -151,7 +164,8 @@ recursePRQuery(initialPrQuery)
         [p.name]: {
           actorType: "Open Source",
           id: id++,
-          languages: p.languages,
+          // missing language in kohana-modules
+          languages: p.languages || fillMissingLanguages(p.name),
           name: p.name,
           repoUrl: p.url,
           url: p.homepageUrl
