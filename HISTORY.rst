@@ -1,6 +1,20 @@
 The Making Of
 =============
 
+September 1st, 2019 - Sunday
+----------------------------
+data:
+- Actors: Convert from list to object with name of workplace /
+  project as key.
+- Activities: ``actor`` renamed to ``actorId``
+- Activities: ``actorId`` now points to the human readable key
+  of the actor instead of a number
+
+github:
+- Update for the aforementioned changes (e.g. ``actorId`` being the
+  new named key instead of ``10000`` and outputting an object of
+  actors)
+
 July 31st, 2019 - Saturday
 --------------------------
 All:
