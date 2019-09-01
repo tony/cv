@@ -54,7 +54,7 @@ const App: React.FC<IState> = () => {
     if (languages.length && myActors !== undefined) {
       let addedLense = false;
       for (const language of languages) {
-        const lense: ILense<any> = {
+        const lense: ILense<IActivity> = {
           filterFn: activity => {
             const actor = myActors.find(({ id }) => id === activity.actor);
             if (!actor || !actor.languages || !actor.languages.length) {
