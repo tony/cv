@@ -168,7 +168,7 @@ recursePRQuery(initialPrQuery)
           languages: p.languages || fillMissingLanguages(p.name),
           name: p.name,
           repoUrl: p.url,
-          url: p.homepageUrl
+          ...(p.homepageUrl ? { url: p.homepageUrl } : {})
         }
       }),
       {}
