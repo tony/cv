@@ -12,7 +12,7 @@ export interface IActivity {
   createdDate: string;
   title: string;
   componentName: ActivityType;
-  actor: number;
+  actorId: string;
   acceptedDate?: string;
   qaUrl?: string;
   diffUrl?: string;
@@ -66,4 +66,8 @@ export interface IActor {
   browseCodeUrl?: string;
   logo?: string;
   languages: ActorLanguage[];
+}
+
+export interface IActors {
+  [key: string]: IActor;
 }

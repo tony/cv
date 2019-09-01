@@ -6,7 +6,8 @@ import {
   ActorLanguage,
   ActorType,
   IActivity,
-  IActor
+  IActor,
+  IActors
 } from "../types";
 import { ILense } from "./lense";
 
@@ -14,7 +15,7 @@ interface IStateData {
   activities: IActivity[];
   activityTypes: ActivityType[];
   actorTypes: ActorType[];
-  actors: IActor[];
+  actors: IActors;
   languages: ActorLanguage[];
 }
 
@@ -69,7 +70,13 @@ export class Search<ValueT> {
   public getResults(): IStateData {
     const initialActivities = this.data.activities;
     let activities: IActivity[] = [];
-    const actors = this.data.actors.filter(() => true);
+    const actors = Object.entries(this.data.actors).reduce(
+      (acc, [k, v]) => ({
+        ...acc,
+        [k]: v
+      }),
+      {}
+    );
     for (const lense of this.lenses) {
       // append behavior, so adding a language widens scope to an additional language
       activities = activities.concat(initialActivities.filter(lense.filterFn));
@@ -80,7 +87,7 @@ export class Search<ValueT> {
       actorTypes: this.data.actorTypes.filter(() => true),
       actors,
       languages: this.data.languages.filter(language => {
-        return actors
+        return (Object.values(actors) as IActor[])
           .filter(actor => actor && actor.languages && actor.languages.length)
           .some(actor => actor.languages.includes(language));
       })

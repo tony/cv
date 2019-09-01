@@ -8,14 +8,15 @@ import {
   ActorLanguage,
   ActorType,
   IActivity,
-  IActor
+  IActor,
+  IActors
 } from "../types";
 
 // Join raw data from JSON into lists
-export const myActorsRaw: IActor[] = [
-  ...(handPickedActorsRaw as IActor[]),
-  ...(ghActorsRaw as IActor[])
-];
+export const myActorsRaw: IActors = {
+  ...(handPickedActorsRaw as IActors),
+  ...(ghActorsRaw as IActors)
+};
 
 export const myActivitiesRaw: IActivity[] = [
   ...handPickedActivitiesRaw,
@@ -24,11 +25,21 @@ export const myActivitiesRaw: IActivity[] = [
 
 // Calculated at runtime, based on the content of above
 export const myLanguagesRaw: ActorLanguage[] = Array.from(
-  new Set([...myActorsRaw.map(a => a.languages).flat()].filter(Boolean))
+  new Set(
+    [
+      ...Object.values(myActorsRaw)
+        .map(a => a.languages)
+        .flat()
+    ].filter(Boolean)
+  )
 );
 
 export const myActorTypesRaw: ActorType[] = Array.from(
-  new Set(myActorsRaw.map(a => a.actorType).filter(Boolean))
+  new Set(
+    Object.values(myActorsRaw)
+      .map(a => a.actorType)
+      .filter(Boolean)
+  )
 );
 
 export const myActivityTypesRaw: ActivityType[] = Array.from(
