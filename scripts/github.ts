@@ -145,16 +145,20 @@ recursePRQuery(initialPrQuery)
     // console.log(projects.length);
 
     let id = 0;
-    const projectsFinal = projects.map(p => {
-      return {
-        actorType: "Open Source",
-        id: id++,
-        languages: p.languages,
-        name: p.name,
-        repoUrl: p.url,
-        url: p.homepageUrl
-      };
-    });
+    const projectsFinal = projects.reduce(
+      (acc, p) => ({
+        ...acc,
+        [p.name]: {
+          actorType: "Open Source",
+          id: id++,
+          languages: p.languages,
+          name: p.name,
+          repoUrl: p.url,
+          url: p.homepageUrl
+        }
+      }),
+      {}
+    );
 
     let data = JSON.stringify(projectsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_actors.json`, data);
@@ -168,7 +172,9 @@ recursePRQuery(initialPrQuery)
         acceptedDate: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
-        actor: projectsFinal.find(p => pr.repository.name === p.name).id,
+        actorId: Object.keys(projectsFinal).find(
+          projectName => pr.repository.name === projectName
+        ),
         componentName: "Patch",
         createdDate: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
