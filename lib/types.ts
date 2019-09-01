@@ -50,7 +50,7 @@ export interface IActor {
   id: number;
   actorType: ActorType;
   name: string;
-  url: string;
+  url?: string;
   oldUrl?: string;
   repoUrl?: string;
   docsUrl?: string;
