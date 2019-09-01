@@ -3,6 +3,7 @@ import Select from "react-select";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
+import { ILense } from "../../lib/search/lense";
 import { ActorLanguage, IActivity } from "../../lib/types";
 
 interface IState {
@@ -14,7 +15,6 @@ interface IOptionType {
   label: string;
   value: string;
 }
-
 const search = new Search();
 
 const useAsyncEffect = (
@@ -35,6 +35,7 @@ const App: React.FC<IState> = () => {
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
+
   useAsyncEffect(async () => {
     const {
       myActivities,
@@ -51,19 +52,25 @@ const App: React.FC<IState> = () => {
       languages: myLanguages
     });
     if (languages.length && myActors !== undefined) {
-      if (!search.lenses.length) {
-        search.addLense({
+      let addedLense = false;
+      for (const language of languages) {
+        const lense: ILense<any> = {
           filterFn: activity => {
             const actor = myActors.find(({ id }) => id === activity.actor);
             if (!actor || !actor.languages || !actor.languages.length) {
               return false;
             }
-            return languages.some(language =>
-              actor.languages.includes(language)
-            );
+            return actor.languages.includes(language);
           },
-          label: "Filter by language"
-        });
+          label: `Filter by ${language}`
+        };
+        if (!search.lenseExists(lense)) {
+          search.addLense(lense);
+          addedLense = true;
+        }
+      }
+
+      if (addedLense) {
         setActivities(search.getResults().activities as IActivity[]);
       }
     } else {
@@ -83,6 +90,7 @@ const App: React.FC<IState> = () => {
     label: language,
     value: language
   })) as ISelectOption[];
+
   const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
     setLanguages(
       (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
