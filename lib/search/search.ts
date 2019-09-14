@@ -47,6 +47,12 @@ const SearchFilters: ISearchFilters = {
   }
 };
 
+const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
+  const a = new Set(left);
+  const b = new Set(right);
+  return Array.from(a).filter(x => !b.has(x));
+};
+
 export class Search<ValueT> {
   public data: Readonly<IStateData>;
   public lenses: ILenses = {
@@ -96,6 +102,29 @@ export class Search<ValueT> {
 
   public deleteLense(lenseType, value) {
     this.lenses[lenseType].delete(value);
+  }
+
+  /* Returns true if updated */
+  public setLenses(lenseType, values): boolean {
+    let updated = false;
+    const added = difference(values, this.lenses[lenseType]);
+    const removed = difference(this.lenses[lenseType], values);
+
+    for (const v of added) {
+      if (!this.lenseExists(lenseType, v)) {
+        this.addLense(lenseType, v);
+        updated = true;
+      }
+    }
+
+    for (const v of removed) {
+      if (this.lenseExists(lenseType, v)) {
+        this.deleteLense(lenseType, v);
+        updated = true;
+      }
+    }
+
+    return updated;
   }
 
   public getResults(): IStateData {
