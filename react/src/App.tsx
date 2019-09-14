@@ -28,11 +28,6 @@ const useAsyncEffect = (
     };
   }, dependencies);
 
-const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
-  const a = new Set(left);
-  const b = new Set(right);
-  return Array.from(a).filter(x => !b.has(x));
-};
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
   const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
@@ -57,24 +52,7 @@ const App: React.FC<IState> = () => {
     });
 
     if (languages.length && myActors !== undefined) {
-      let updated = false;
-
-      const added = difference(languages, search.lenses.languages);
-      const removed = difference(search.lenses.languages, languages);
-
-      for (const language of added) {
-        if (!search.lenseExists("languages", language)) {
-          search.addLense("languages", language);
-          updated = true;
-        }
-      }
-
-      for (const language of removed) {
-        if (search.lenseExists("languages", language)) {
-          search.deleteLense("languages", language);
-          updated = true;
-        }
-      }
+      const updated = search.setLenses("languages", languages);
 
       if (updated) {
         setActivities(search.getResults().activities as IActivity[]);
