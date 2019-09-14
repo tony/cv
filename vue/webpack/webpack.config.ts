@@ -15,15 +15,8 @@ interface IWebpackEnv {
   watch: boolean;
 }
 
-const defaultDevServer = fs
-  .readFileSync("/proc/version", "utf8")
-  .toLowerCase()
-  .includes("microsoft")
-  ? os.networkInterfaces().eth0[0].address
-  : "localhost";
-
 const defaultEnvironment: IWebpackEnv = {
-  devServerHost: defaultDevServer,
+  devServerHost: "localhost",
   devServerPort: "3093",
   production: false,
   watch: false
