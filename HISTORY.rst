@@ -7,6 +7,11 @@ search:
 - Move list of current lenses into a set of strings. Filter functions now
   exist within search itself.
 
+all / webpack:
+- Removed WSL 2 specific behavior where we'd set an internal IP address.
+  No longer needed since recent WSL 2 builds fixed localhost / dev server
+  issues.
+
 September 1st, 2019 - Sunday
 ----------------------------
 data:
