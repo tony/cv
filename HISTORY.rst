@@ -1,6 +1,12 @@
 The Making Of
 =============
 
+September 14th, 2019 - Saturday
+-------------------------------
+search:
+- Move list of current lenses into a set of strings. Filter functions now
+  exist within search itself.
+
 September 1st, 2019 - Sunday
 ----------------------------
 data:
