@@ -2,8 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
-import { Search } from "../../lib/search";
-import { ILense } from "../../lib/search/lense";
+import { FilterFn, LenseType, Search } from "../../lib/search";
 import { ActorLanguage, IActivity } from "../../lib/types";
 
 interface IState {
@@ -29,6 +28,11 @@ const useAsyncEffect = (
     };
   }, dependencies);
 
+const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
+  const a = new Set(left);
+  const b = new Set(right);
+  return Array.from(a).filter(x => !b.has(x));
+};
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
   const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
@@ -51,26 +55,28 @@ const App: React.FC<IState> = () => {
       actors: myActors,
       languages: myLanguages
     });
+
     if (languages.length && myActors !== undefined) {
-      let addedLense = false;
-      for (const language of languages) {
-        const lense: ILense<IActivity> = {
-          filterFn: activity => {
-            const actor = myActors[activity.actorId];
-            if (!actor || !actor.languages || !actor.languages.length) {
-              return false;
-            }
-            return actor.languages.includes(language);
-          },
-          label: `Filter by ${language}`
-        };
-        if (!search.lenseExists(lense)) {
-          search.addLense(lense);
-          addedLense = true;
+      let updated = false;
+
+      const added = difference(languages, search.lenses.languages);
+      const removed = difference(search.lenses.languages, languages);
+
+      for (const language of added) {
+        if (!search.lenseExists("languages", language)) {
+          search.addLense("languages", language);
+          updated = true;
         }
       }
 
-      if (addedLense) {
+      for (const language of removed) {
+        if (search.lenseExists("languages", language)) {
+          search.deleteLense("languages", language);
+          updated = true;
+        }
+      }
+
+      if (updated) {
         setActivities(search.getResults().activities as IActivity[]);
       }
     } else {
