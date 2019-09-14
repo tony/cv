@@ -1,5 +1,6 @@
 session_name: cv
 start_directory: ./ # load session relative to config location (project root).
+before_script: make install
 windows:
 - window_name: main
   layout: main-horizontal
@@ -11,7 +12,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && npm install && reset'
+  - pane
 - window_name: cv (react)
   layout: main-horizontal
   options:
@@ -21,7 +22,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && npm install && reset; BROWSER=none npm start'
+  - npm start
 - window_name: cv (vue.js)
   layout: main-horizontal
   options:
@@ -31,7 +32,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && npm install && reset; npm start'
+  - npm start
 - window_name: cv (angular)
   layout: main-horizontal
   options:
@@ -41,4 +42,4 @@ windows:
   - focus: true
   - pane
   - pane
-  - '[ -d node_modules ] && npm install && reset; ng serve --host $(ip addr show eth0 | grep -Po "inet \K[\d.]+") --disableHostCheck'
+  - ng serve
