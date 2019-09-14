@@ -80,6 +80,8 @@ const App: React.FC<IState> = () => {
       setLanguages(
         (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
       );
+    } else {
+      setLanguages([]);
     }
   };
 
