@@ -92,9 +92,11 @@ const App: React.FC<IState> = () => {
   })) as ISelectOption[];
 
   const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
-    setLanguages(
-      (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
-    );
+    if (value) {
+      setLanguages(
+        (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
+      );
+    }
   };
 
   return (
