@@ -131,6 +131,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     },
     extensions: [".ts", ".js", ".vue", ".json"]
   },
+  stats: { children: false },
   watch: env.watch
 });
 

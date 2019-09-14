@@ -102,6 +102,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
+  stats: { children: false },
   watch: env.watch
 });
 
