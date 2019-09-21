@@ -73,11 +73,6 @@ const App: React.FC<IState> = () => {
     );
   }
 
-  const languageOptions = search.data.languages.map(language => ({
-    label: language,
-    value: language
-  })) as ISelectOption[];
-
   const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
     if (value) {
       setLanguages(
@@ -88,10 +83,11 @@ const App: React.FC<IState> = () => {
     }
   };
 
-  const actorOptions = Object.keys(search.data.actors).map(actorName => ({
-    label: actorName,
-    value: actorName
-  })) as ISelectOption[];
+  const getReactSelectOptions = (items: string[]) =>
+    items.map(actorName => ({
+      label: actorName,
+      value: actorName
+    })) as ISelectOption[];
 
   const onActorChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
     if (value) {
@@ -105,11 +101,15 @@ const App: React.FC<IState> = () => {
     <div>
       <header>Tony Narlock's CV</header>
       <Select
-        options={languageOptions}
+        options={getReactSelectOptions(search.data.languages as string[])}
         isMulti={true}
         onChange={onLanguageChange}
       />
-      <Select options={actorOptions} isMulti={true} onChange={onActorChange} />
+      <Select
+        options={getReactSelectOptions(Object.keys(search.data.actors))}
+        isMulti={true}
+        onChange={onActorChange}
+      />
 
       {activities &&
         activities.map((activity, idx) => (
