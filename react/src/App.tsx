@@ -7,7 +7,7 @@ import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 
 interface IState {
-  myActivities: IActivity[];
+  activities: IActivity[];
 }
 
 const search = new Search();
@@ -25,43 +25,45 @@ const useAsyncEffect = (
   }, dependencies);
 
 const App: React.FC<IState> = () => {
-  const [activities, setActivities] = React.useState<IActivity[]>([]);
-  const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
-  const [actors, setActors] = React.useState<ActorName[]>([]);
+  const [results, setResults] = React.useState<IActivity[]>([]);
+  const [selectedLanguages, setSelectedLanguages] = React.useState<
+    ActorLanguage[]
+  >([]);
+  const [selectedActors, setSelectedActors] = React.useState<ActorName[]>([]);
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
 
   useAsyncEffect(async () => {
     const {
-      myActivities,
-      myActors,
-      myLanguages,
-      myActorTypes,
-      myActivityTypes
+      activities,
+      actors,
+      languages,
+      actorTypes,
+      activityTypes
     } = await fetchActivities();
     search.setState({
-      activities: myActivities,
-      activityTypes: myActivityTypes,
-      actorTypes: myActorTypes,
-      actors: myActors,
-      languages: myLanguages
+      activities,
+      activityTypes,
+      actorTypes,
+      actors,
+      languages
     });
 
-    if (languages.length && myActors !== undefined) {
+    if (selectedLanguages.length && actors !== undefined) {
       const updated =
-        search.setLenses("languages", languages) ||
-        search.setLenses("actors", actors);
+        search.setLenses("languages", selectedLanguages) ||
+        search.setLenses("actors", selectedActors);
 
       if (updated) {
-        setActivities(search.getResults().activities as IActivity[]);
+        setResults(search.getResults().activities as IActivity[]);
       }
     } else {
-      setActivities(myActivities as IActivity[]);
+      setResults(activities as IActivity[]);
     }
   });
 
-  if (!activities.length) {
+  if (!results.length) {
     return (
       <div>
         <header>Loading CV Data</header>
@@ -69,8 +71,8 @@ const App: React.FC<IState> = () => {
     );
   }
 
-  const onLanguageChange = onSelectChange(setLanguages);
-  const onActorChange = onSelectChange(setActors);
+  const onLanguageChange = onSelectChange(setSelectedLanguages);
+  const onActorChange = onSelectChange(setSelectedActors);
 
   return (
     <div>
@@ -86,10 +88,8 @@ const App: React.FC<IState> = () => {
         onChange={onActorChange}
       />
 
-      {activities &&
-        activities.map((activity, idx) => (
-          <div key={idx}>{activity.title}</div>
-        ))}
+      {results &&
+        results.map((activity, idx) => <div key={idx}>{activity.title}</div>)}
     </div>
   );
 };
