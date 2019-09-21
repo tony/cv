@@ -4,7 +4,11 @@ The Making Of
 September 21th, 2019 - Saturday
 -------------------------------
 all:
-- paackage updates (ts-node, react-select)
+- package updates (ts-node, react-select)
+
+react:
+- Split + consolidaate react-select fnuctions
+- Add actor select box
 
 September 14th, 2019 - Saturday
 -------------------------------
