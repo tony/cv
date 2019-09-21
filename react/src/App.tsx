@@ -4,16 +4,12 @@ import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // 
 
 import { Search } from "../../lib/search";
 import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
+import { getSelectOptions, onSelectChange } from "./react-select";
 
 interface IState {
   myActivities: IActivity[];
 }
 
-type ISelectOption = Pick<OptionProps, "label" | "value">;
-interface IOptionType {
-  label: string;
-  value: string;
-}
 const search = new Search();
 
 const useAsyncEffect = (
@@ -31,7 +27,7 @@ const useAsyncEffect = (
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
   const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
-  const [actors, setActors] = React.useState<IActor["name"]>([]);
+  const [actors, setActors] = React.useState<ActorName[]>([]);
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
@@ -73,40 +69,19 @@ const App: React.FC<IState> = () => {
     );
   }
 
-  const onLanguageChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
-    if (value) {
-      setLanguages(
-        (value as IOptionType[]).map(({ value: v }) => v as ActorLanguage)
-      );
-    } else {
-      setLanguages([]);
-    }
-  };
-
-  const getReactSelectOptions = (items: string[]) =>
-    items.map(actorName => ({
-      label: actorName,
-      value: actorName
-    })) as ISelectOption[];
-
-  const onActorChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
-    if (value) {
-      setActors((value as IOptionType[]).map(({ value: v }) => v as ActorName));
-    } else {
-      setActors([]);
-    }
-  };
+  const onLanguageChange = onSelectChange(setLanguages);
+  const onActorChange = onSelectChange(setActors);
 
   return (
     <div>
       <header>Tony Narlock's CV</header>
       <Select
-        options={getReactSelectOptions(search.data.languages as string[])}
+        options={getSelectOptions(search.data.languages as string[])}
         isMulti={true}
         onChange={onLanguageChange}
       />
       <Select
-        options={getReactSelectOptions(Object.keys(search.data.actors))}
+        options={getSelectOptions(Object.keys(search.data.actors))}
         isMulti={true}
         onChange={onActorChange}
       />
