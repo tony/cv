@@ -46,10 +46,12 @@ export type ActorLanguage =
   | "CMake"
   | "TypeScript";
 
+export type ActorName = string;
+
 export interface IActor {
   id: number;
   actorType: ActorType;
-  name: string;
+  name: ActorName;
   url?: string;
   oldUrl?: string;
   repoUrl?: string;
