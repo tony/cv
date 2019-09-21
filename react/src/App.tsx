@@ -3,7 +3,7 @@ import Select from "react-select";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
-import { ActorLanguage, IActivity } from "../../lib/types";
+import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
 
 interface IState {
   myActivities: IActivity[];
@@ -31,6 +31,7 @@ const useAsyncEffect = (
 const App: React.FC<IState> = () => {
   const [activities, setActivities] = React.useState<IActivity[]>([]);
   const [languages, setLanguages] = React.useState<ActorLanguage[]>([]);
+  const [actors, setActors] = React.useState<IActor["name"]>([]);
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
@@ -52,7 +53,9 @@ const App: React.FC<IState> = () => {
     });
 
     if (languages.length && myActors !== undefined) {
-      const updated = search.setLenses("languages", languages);
+      const updated =
+        search.setLenses("languages", languages) ||
+        search.setLenses("actors", actors);
 
       if (updated) {
         setActivities(search.getResults().activities as IActivity[]);
@@ -85,6 +88,19 @@ const App: React.FC<IState> = () => {
     }
   };
 
+  const actorOptions = Object.keys(search.data.actors).map(actorName => ({
+    label: actorName,
+    value: actorName
+  })) as ISelectOption[];
+
+  const onActorChange = (value: ValueType<IOptionType>, _: ActionMeta) => {
+    if (value) {
+      setActors((value as IOptionType[]).map(({ value: v }) => v as ActorName));
+    } else {
+      setActors([]);
+    }
+  };
+
   return (
     <div>
       <header>Tony Narlock's CV</header>
@@ -93,6 +109,8 @@ const App: React.FC<IState> = () => {
         isMulti={true}
         onChange={onLanguageChange}
       />
+      <Select options={actorOptions} isMulti={true} onChange={onActorChange} />
+
       {activities &&
         activities.map((activity, idx) => (
           <div key={idx}>{activity.title}</div>
