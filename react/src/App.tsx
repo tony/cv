@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
-import { FilterFn, LenseType, Search } from "../../lib/search";
+import { Search } from "../../lib/search";
 import { ActorLanguage, IActivity } from "../../lib/types";
 
 interface IState {
