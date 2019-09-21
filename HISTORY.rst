@@ -1,6 +1,11 @@
 The Making Of
 =============
 
+September 21th, 2019 - Saturday
+-------------------------------
+all:
+- paackage updates (ts-node, react-select)
+
 September 14th, 2019 - Saturday
 -------------------------------
 search:
