@@ -1,7 +1,7 @@
 export {
-  myActivitiesRaw as myActivities,
-  myActorsRaw as myActors,
-  myLanguagesRaw as myLanguages,
-  myActorTypesRaw as myActorTypes,
-  myActivityTypesRaw as myActivityTypes
+  myActivitiesRaw as activities,
+  myActorsRaw as actors,
+  myLanguagesRaw as languages,
+  myActorTypesRaw as actorTypes,
+  myActivityTypesRaw as activityTypes
 } from "./raw";
