@@ -41,7 +41,7 @@ const App: React.FC<IState> = () => {
 
     if (selectedLanguages.length && actors !== undefined) {
       const updated =
-        search.setLenses("languages", selectedLanguages) ||
+        search.setLenses("languages", selectedLanguages as string[]) ||
         search.setLenses("actors", selectedActors);
 
       if (updated) {
