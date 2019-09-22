@@ -14,7 +14,7 @@ npm_update:
 	npm update
 
 ncu:
-	ncu
+	npx ncu
 
 lint:
 	npm run lint

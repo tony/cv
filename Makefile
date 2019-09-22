@@ -74,7 +74,7 @@ npm_update:
 	$(MAKE) npm_update_local npm_update_angular npm_update_react npm_update_vue
 
 ncu_local:
-	ncu 
+	npx ncu
 
 ncu_angular:
 	$(MAKE) -C angular ncu
