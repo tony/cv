@@ -63,16 +63,18 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header>Tony Narlock's CV</header>
+      <header className="site-name">Tony Narlock's CV</header>
       <Select
         options={getSelectOptions(search.data.languages as string[])}
         isMulti={true}
         onChange={onLanguageChange}
+        className="react-select"
       />
       <Select
         options={getSelectOptions(Object.keys(search.data.actors))}
         isMulti={true}
         onChange={onActorChange}
+        className="react-select"
       />
 
       {results &&
