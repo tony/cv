@@ -30,6 +30,7 @@ export interface ISearchFilters {
 }
 
 interface ILenses {
+  [key: string]: Set<string | ActorLanguage>;
   activityTypes: Set<string>;
   actorTypes: Set<string>;
   actors: Set<string>;
@@ -62,18 +63,16 @@ export class Search<ValueT> {
     languages: new Set()
   };
 
-  //
-  // Parent (creating) state. null for root-level
-  //
-  private parent: Search<ValueT> | null;
-
-  constructor(data?: IStateData, parent: Search<ValueT> = null) {
-    if (parent !== null) {
-      this.parent = parent;
+  constructor(
+    data: IStateData = {
+      activities: [],
+      activityTypes: [],
+      actorTypes: [],
+      actors: {},
+      languages: []
     }
-    if (data) {
-      this.setState(data);
-    }
+  ) {
+    this.data = data;
   }
 
   public setState({
@@ -92,20 +91,20 @@ export class Search<ValueT> {
     };
   }
 
-  public lenseExists(lenseType, value) {
+  public lenseExists(lenseType: LenseType, value: any) {
     return this.lenses[lenseType].has(value);
   }
 
-  public addLense(lenseType, value) {
+  public addLense(lenseType: LenseType, value: any) {
     this.lenses[lenseType].add(value);
   }
 
-  public deleteLense(lenseType, value) {
+  public deleteLense(lenseType: LenseType, value: any) {
     this.lenses[lenseType].delete(value);
   }
 
   /* Returns true if updated */
-  public setLenses(lenseType, values): boolean {
+  public setLenses(lenseType: LenseType, values: string[]): boolean {
     let updated = false;
     const added = difference(values, this.lenses[lenseType]);
     const removed = difference(this.lenses[lenseType], values);
