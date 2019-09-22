@@ -13,6 +13,9 @@ npm_outdated:
 npm_update:
 	npm update
 
+ncu:
+	ncu
+
 lint:
 	npm run lint
 

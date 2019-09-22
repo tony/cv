@@ -73,6 +73,21 @@ npm_update_vue:
 npm_update:
 	$(MAKE) npm_update_local npm_update_angular npm_update_react npm_update_vue
 
+ncu_local:
+	ncu 
+
+ncu_angular:
+	$(MAKE) -C angular ncu
+
+ncu_react:
+	$(MAKE) -C react ncu
+
+ncu_vue:
+	$(MAKE) -C vue ncu
+
+ncu:
+	$(MAKE) ncu_local ncu_angular ncu_react ncu_vue
+
 lint_angular:
 	$(MAKE) -C angular lint
 
