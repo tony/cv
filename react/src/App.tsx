@@ -76,7 +76,11 @@ const App: React.FC = () => {
       />
 
       {results &&
-        results.map((activity, idx) => <div key={idx}>{activity.title}</div>)}
+        results.map((activity, idx) => (
+          <div key={idx} className="card">
+            {activity.title}
+          </div>
+        ))}
     </div>
   );
 };
