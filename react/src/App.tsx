@@ -7,6 +7,8 @@ import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
+import "./style.scss";
+
 const search = new Search();
 
 const App: React.FC = () => {
