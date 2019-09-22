@@ -5,24 +5,13 @@ import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // 
 import { Search } from "../../lib/search";
 import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
+import { useAsyncEffect } from "./utils";
 
 interface IState {
   activities: IActivity[];
 }
 
 const search = new Search();
-
-const useAsyncEffect = (
-  effect: (isCanceled: () => boolean) => Promise<void>,
-  dependencies?: any[]
-) =>
-  React.useEffect(() => {
-    let canceled = false;
-    effect(() => canceled);
-    return () => {
-      canceled = true;
-    };
-  }, dependencies);
 
 const App: React.FC<IState> = () => {
   const [results, setResults] = React.useState<IActivity[]>([]);
