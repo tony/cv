@@ -1,7 +1,12 @@
 The Making Of
 =============
 
-September 21th, 2019 - Saturday
+September 22nd, 2019 - Sunday
+-----------------------------
+all:
+  Add ``ncu`` and ``ncu_update`` (imply ``-u``) make task for ``npm-check-updates``
+
+September 21st, 2019 - Saturday
 -------------------------------
 all:
 - package updates (ts-node, react-select)
