@@ -14,7 +14,7 @@ npm_update:
 	npm update
 
 ncu:
-	npx ncu
+	npx ncu $(args)
 
 lint:
 	npm run lint

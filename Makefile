@@ -74,19 +74,22 @@ npm_update:
 	$(MAKE) npm_update_local npm_update_angular npm_update_react npm_update_vue
 
 ncu_local:
-	npx ncu
+	npx ncu $(args)
 
 ncu_angular:
-	$(MAKE) -C angular ncu
+	$(MAKE) -C angular ncu args=$(args)
 
 ncu_react:
-	$(MAKE) -C react ncu
+	$(MAKE) -C react ncu args=$(args)
 
 ncu_vue:
-	$(MAKE) -C vue ncu
+	$(MAKE) -C vue ncu args=$(args)
 
 ncu:
-	$(MAKE) ncu_local ncu_angular ncu_react ncu_vue
+	$(MAKE) ncu_local ncu_angular ncu_react ncu_vue args=$(args)
+
+ncu_update:
+	$(MAKE) ncu_local ncu_angular ncu_react ncu_vue args=-u
 
 lint_angular:
 	$(MAKE) -C angular lint
