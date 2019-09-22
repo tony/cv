@@ -7,13 +7,9 @@ import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
-interface IState {
-  activities: IActivity[];
-}
-
 const search = new Search();
 
-const App: React.FC<IState> = () => {
+const App: React.FC = () => {
   const [results, setResults] = React.useState<IActivity[]>([]);
   const [selectedLanguages, setSelectedLanguages] = React.useState<
     ActorLanguage[]
