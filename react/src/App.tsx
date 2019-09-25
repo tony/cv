@@ -11,6 +11,20 @@ import "./style.scss";
 
 const search = new Search();
 
+interface IActivityCardProps {
+  activity: IActivity;
+  actor: IActor;
+}
+
+const ActivityCard: React.FC<IActivityCardProps> = ({ activity, actor }) => (
+  <div className="card">
+    {activity.title}
+    {actor &&
+      actor.languages &&
+      actor.languages.map((language, idx) => <div key={idx}>{language}</div>)}
+  </div>
+);
+
 const App: React.FC = () => {
   const [results, setResults] = React.useState<IActivity[]>([]);
   const [selectedLanguages, setSelectedLanguages] = React.useState<
@@ -79,9 +93,11 @@ const App: React.FC = () => {
 
       {results &&
         results.map((activity, idx) => (
-          <div key={idx} className="card">
-            {activity.title}
-          </div>
+          <ActivityCard
+            activity={activity}
+            actor={search.data.actors[activity.actorId]}
+            key={idx}
+          />
         ))}
     </div>
   );
