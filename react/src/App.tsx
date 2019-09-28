@@ -43,7 +43,7 @@ const App: React.FC = () => {
     ActorLanguage[]
   >([]);
   const [selectedActors, setSelectedActors] = React.useState<ActorName[]>([]);
-  const [selectedActivityType, setSelectedActivityType] = React.useState<
+  const [selectedActivityTypes, setSelectedActivityTypes] = React.useState<
     ActivityType[]
   >([]);
   const fetchActivities = async () => {
@@ -69,7 +69,8 @@ const App: React.FC = () => {
     if (selectedLanguages.length && actors !== undefined) {
       const updated =
         search.setLenses("languages", selectedLanguages as string[]) ||
-        search.setLenses("actors", selectedActors);
+        search.setLenses("actors", selectedActors) ||
+        search.setLenses("activityTypes", selectedActivityTypes);
 
       if (updated) {
         setResults(search.getResults().activities as IActivity[]);
@@ -89,7 +90,7 @@ const App: React.FC = () => {
 
   const onLanguageChange = onSelectChange(setSelectedLanguages);
   const onActorChange = onSelectChange(setSelectedActors);
-  const onActivityTypeChange = onSelectChange(setSelectedActivityType);
+  const onActivityTypeChange = onSelectChange(setSelectedActivityTypes);
 
   return (
     <div>
