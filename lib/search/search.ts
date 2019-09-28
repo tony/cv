@@ -182,7 +182,7 @@ export class Search<ValueT> {
       activityTypes: activities.reduce(
         (acc, activity) => {
           const { componentName } = activity;
-          if (componentName in acc === false) {
+          if (acc.includes(componentName) === false) {
             return acc.concat(componentName);
           }
           return acc;
