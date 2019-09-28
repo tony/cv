@@ -63,7 +63,12 @@ export class Search<ValueT> {
   /**
    * Filters based on results returned
    */
-  // public availableFacets: Readonly<IStateData>;
+  public availableFacets: IFacets = {
+    activityTypes: new Set(),
+    actorTypes: new Set(),
+    actors: new Set(),
+    languages: new Set()
+  };
 
   /**
    * activeFacets
@@ -156,16 +161,34 @@ export class Search<ValueT> {
         })
       );
     }
+    const languages = this.data.languages.filter(language => {
+      return (Object.values(actors) as IActor[])
+        .filter(actor => actor && actor.languages && actor.languages.length)
+        .some(actor => actor.languages.includes(language));
+    });
+    const { activityTypes, actorTypes } = this.data;
     return {
       activities,
-      activityTypes: this.data.activityTypes.filter(() => true),
-      actorTypes: this.data.actorTypes.filter(() => true),
+      activityTypes,
+      actorTypes,
       actors,
-      languages: this.data.languages.filter(language => {
-        return (Object.values(actors) as IActor[])
-          .filter(actor => actor && actor.languages && actor.languages.length)
-          .some(actor => actor.languages.includes(language));
-      })
+      languages
+    };
+  }
+
+  public getAvailableFacets() {
+    const { activities } = this.getResults();
+    return {
+      activityTypes: activities.reduce(
+        (acc, activity) => {
+          const { componentName } = activity;
+          if (componentName in acc === false) {
+            return acc.concat(componentName);
+          }
+          return acc;
+        },
+        [] as ActivityType[]
+      )
     };
   }
 }
