@@ -18,10 +18,16 @@ interface IActivityCardProps {
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, actor }) => (
   <div className="card">
-    {activity.title}
+    <a href={actor && actor.url ? actor.url : "#"} title={activity.title}>
+      {activity.title}
+    </a>
     {actor &&
       actor.languages &&
-      actor.languages.map((language, idx) => <div key={idx}>{language}</div>)}
+      actor.languages.map((language, idx) => (
+        <div key={idx} className="language fr">
+          {language}
+        </div>
+      ))}
   </div>
 );
 
