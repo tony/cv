@@ -23,13 +23,13 @@ export type FilterFn<ValueT> = (
   activity: IActivity,
   data: IStateData
 ) => boolean;
-export type LenseType = keyof IStateData;
+export type FacetType = keyof IStateData;
 export interface ISearchFilters {
-  [LenseType: string]: FilterFn<any>;
+  [FacetType: string]: FilterFn<any>;
   languages: FilterFn<ActorLanguage>;
 }
 
-interface ILenses {
+interface IFacets {
   [key: string]: Set<string | ActorLanguage>;
   activityTypes: Set<string>;
   actorTypes: Set<string>;
@@ -37,7 +37,7 @@ interface ILenses {
   languages: Set<ActorLanguage>;
 }
 
-// const SearchFilters: Map<LenseType, FilterFn<any>> = new Map({
+// const SearchFilters: Map<FacetType, FilterFn<any>> = new Map({
 const SearchFilters: ISearchFilters = {
   languages: (value, activity, data) => {
     const actor = data.actors[activity.actorId];
@@ -55,8 +55,20 @@ const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
 };
 
 export class Search<ValueT> {
+  /**
+   * Raw data
+   */
   public data: Readonly<IStateData>;
-  public lenses: ILenses = {
+
+  /**
+   * Filters based on results returned
+   */
+  // public availableFacets: Readonly<IStateData>;
+
+  /**
+   * activeFacets
+   */
+  public activeFacets: IFacets = {
     activityTypes: new Set(),
     actorTypes: new Set(),
     actors: new Set(),
@@ -91,34 +103,34 @@ export class Search<ValueT> {
     };
   }
 
-  public lenseExists(lenseType: LenseType, value: any) {
-    return this.lenses[lenseType].has(value);
+  public facetExists(facetType: FacetType, value: any) {
+    return this.activeFacets[facetType].has(value);
   }
 
-  public addLense(lenseType: LenseType, value: any) {
-    this.lenses[lenseType].add(value);
+  public addFacet(facetType: FacetType, value: any) {
+    this.activeFacets[facetType].add(value);
   }
 
-  public deleteLense(lenseType: LenseType, value: any) {
-    this.lenses[lenseType].delete(value);
+  public deleteFacet(facetType: FacetType, value: any) {
+    this.activeFacets[facetType].delete(value);
   }
 
   /* Returns true if updated */
-  public setLenses(lenseType: LenseType, values: string[]): boolean {
+  public setFacets(facetType: FacetType, values: string[]): boolean {
     let updated = false;
-    const added = difference(values, this.lenses[lenseType]);
-    const removed = difference(this.lenses[lenseType], values);
+    const added = difference(values, this.activeFacets[facetType]);
+    const removed = difference(this.activeFacets[facetType], values);
 
     for (const v of added) {
-      if (!this.lenseExists(lenseType, v)) {
-        this.addLense(lenseType, v);
+      if (!this.facetExists(facetType, v)) {
+        this.addFacet(facetType, v);
         updated = true;
       }
     }
 
     for (const v of removed) {
-      if (this.lenseExists(lenseType, v)) {
-        this.deleteLense(lenseType, v);
+      if (this.facetExists(facetType, v)) {
+        this.deleteFacet(facetType, v);
         updated = true;
       }
     }
@@ -136,7 +148,7 @@ export class Search<ValueT> {
       }),
       {}
     );
-    for (const language of Array.from(this.lenses.languages.values())) {
+    for (const language of Array.from(this.activeFacets.languages.values())) {
       // append behavior, so adding a language widens scope to an additional language
       activities = activities.concat(
         initialActivities.filter(activity => {
