@@ -3,6 +3,9 @@ The Making Of
 
 September 28th, 2019 - Saturday
 -------------------------------
+lib/search:
+- ``Lense`` -> ``Facet``
+
 react:
 - styling for language button, add links to activities
 - add select for activity type
