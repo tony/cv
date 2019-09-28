@@ -99,18 +99,21 @@ const App: React.FC = () => {
         isMulti={true}
         onChange={onLanguageChange}
         className="react-select"
+        placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
       />
       <Select
         options={getSelectOptions(Object.keys(search.data.actors))}
         isMulti={true}
         onChange={onActorChange}
         className="react-select"
+        placeholder="Filter by Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
       />
       <Select
         options={getSelectOptions(search.data.activityTypes)}
         isMulti={true}
         onChange={onActivityTypeChange}
         className="react-select"
+        placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
       {results &&
