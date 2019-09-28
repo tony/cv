@@ -68,9 +68,9 @@ const App: React.FC = () => {
 
     if (selectedLanguages.length && actors !== undefined) {
       const updated =
-        search.setLenses("languages", selectedLanguages as string[]) ||
-        search.setLenses("actors", selectedActors) ||
-        search.setLenses("activityTypes", selectedActivityTypes);
+        search.setFacets("languages", selectedLanguages as string[]) ||
+        search.setFacets("actors", selectedActors) ||
+        search.setFacets("activityTypes", selectedActivityTypes);
 
       if (updated) {
         setResults(search.getResults().activities as IActivity[]);
