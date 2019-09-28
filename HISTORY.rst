@@ -1,6 +1,12 @@
 The Making Of
 =============
 
+September 28th, 2019 - Saturday
+-------------------------------
+react:
+- styling for language button, add links to activities
+- add select for activity type
+
 September 22nd, 2019 - Sunday
 -----------------------------
 all:
