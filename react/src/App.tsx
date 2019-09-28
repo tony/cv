@@ -3,7 +3,13 @@ import Select from "react-select";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
-import { ActorLanguage, ActorName, IActivity, IActor } from "../../lib/types";
+import {
+  ActivityType,
+  ActorLanguage,
+  ActorName,
+  IActivity,
+  IActor
+} from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
@@ -37,6 +43,9 @@ const App: React.FC = () => {
     ActorLanguage[]
   >([]);
   const [selectedActors, setSelectedActors] = React.useState<ActorName[]>([]);
+  const [selectedActivityType, setSelectedActivityType] = React.useState<
+    ActivityType[]
+  >([]);
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
@@ -80,6 +89,7 @@ const App: React.FC = () => {
 
   const onLanguageChange = onSelectChange(setSelectedLanguages);
   const onActorChange = onSelectChange(setSelectedActors);
+  const onActivityTypeChange = onSelectChange(setSelectedActivityType);
 
   return (
     <div>
@@ -94,6 +104,12 @@ const App: React.FC = () => {
         options={getSelectOptions(Object.keys(search.data.actors))}
         isMulti={true}
         onChange={onActorChange}
+        className="react-select"
+      />
+      <Select
+        options={getSelectOptions(search.data.activityTypes)}
+        isMulti={true}
+        onChange={onActivityTypeChange}
         className="react-select"
       />
 
