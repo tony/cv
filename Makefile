@@ -126,3 +126,9 @@ build_vue:
 
 build:
 	$(MAKE) build_angular build_react build_vue
+
+test:
+	npx test
+
+test_watch:
+	npx jest --watch
