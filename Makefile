@@ -29,16 +29,16 @@ distclean:
 	$(MAKE) distclean_angular distclean_react distclean_vue
 
 install_local:
-	npm install --no-save
+	npm install $(args)
 
 install_angular:
-	$(MAKE) -C angular install
+	$(MAKE) -C angular install args=$(args)
 
 install_react:
-	$(MAKE) -C react install
+	$(MAKE) -C react install args=$(args)
 
 install_vue:
-	$(MAKE) -C vue install
+	$(MAKE) -C vue install args=$(args)
 
 install:
 	$(MAKE) install_local install_angular install_react install_vue

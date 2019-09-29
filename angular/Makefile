@@ -2,7 +2,7 @@ clean:
 	rm -rf node_modules/
 
 install:
-	npm install --no-save
+	npm install $(args)
 
 distclean:
 	rm -rf dist/
