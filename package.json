@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "github": "ts-node scripts/github.ts",
-    "lint": "tslint --project tsconfig.json"
+    "lint": "tslint --project tsconfig.json",
+    "test": "jest"
   },
   "dependencies": {
     "github-colors": "~2.2",
@@ -13,7 +14,10 @@
     "prettier": "^1.18.2"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.18",
     "@types/node": "^12.7.8",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.0",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
