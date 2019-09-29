@@ -1,6 +1,11 @@
 The Making Of
 =============
 
+September 29th, 2019 - Sunday
+-----------------------------
+root / base:
+- Add jest for search tests
+
 September 28th, 2019 - Saturday
 -------------------------------
 lib/search:
