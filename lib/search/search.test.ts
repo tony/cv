@@ -6,24 +6,7 @@ test("init", () => {
 });
 
 test("fetch", async () => {
-  const fetchActivities = async () => {
-    return import(/* webpackChunkName: "myData" */ "../../lib/data");
-  };
-  const {
-    activities,
-    actors,
-    languages,
-    actorTypes,
-    activityTypes
-  } = await fetchActivities();
-
-  const s = new Search();
-  s.setState({
-    activities,
-    activityTypes,
-    actorTypes,
-    actors,
-    languages
-  });
+  const data = await import(/* webpackChunkName: "myData" */ "../../lib/data");
+  const s = new Search(data);
   expect(s.data.activities).not.toStrictEqual([]);
 });
