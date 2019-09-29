@@ -117,7 +117,7 @@ const App: React.FC = () => {
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      {search.getAvailableFacets().activityTypes.map(activityType => (
+      {Array.from(search.availableFacets.activityTypes).map(activityType => (
         <>{activityType}</>
       ))}
 
