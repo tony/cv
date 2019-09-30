@@ -22,10 +22,29 @@ describe("test with data", () => {
       /* webpackChunkName: "myData" */ "../../lib/data"
     );
     search = new Search(data);
-    return search;
   });
 
-  test("search has data loaded for beforerEach", () => {
-    expect(search.data.activities).not.toStrictEqual([]);
+  test("search has data loaded for beforeEach", () => {
+    expect(search.data).toHaveProperty("activities");
+    expect(search.data.activities.length).toBeGreaterThan(10);
+  });
+
+  describe("getResults()", async () => {
+    test("search has data loaded for beforeEach", () => {
+      const results = search.getResults();
+      expect(results).toHaveProperty("activities");
+      expect(results.activities.length).toBeGreaterThan(10);
+    });
+  });
+
+  describe("getSelectedStats()", async () => {
+    test("search has data loaded for beforeEach", async () => {
+      const results = search.getSelectedStats();
+      expect(results).toHaveProperty("activityTypes");
+      console.log(results.activityTypes);
+
+      expect(results.activityTypes).toEqual({});
+      expect(Object.keys(results.activityTypes).length).toBeGreaterThan(1);
+    });
   });
 });

@@ -154,19 +154,25 @@ export class Search<ValueT> {
       }),
       {}
     );
-    for (const language of Array.from(this.activeFacets.languages.values())) {
-      // append behavior, so adding a language widens scope to an additional language
-      activities = activities.concat(
-        initialActivities.filter(activity => {
-          return SearchFilters.languages(language, activity, this.data);
-        })
-      );
-    }
+
     const languages = this.data.languages.filter(language => {
       return (Object.values(actors) as IActor[])
         .filter(actor => actor && actor.languages && actor.languages.length)
         .some(actor => actor.languages.includes(language));
     });
+    const langs = this.activeFacets.languages || languages;
+
+    if (langs) {
+      for (const language of Array.from(langs.values())) {
+        // append behavior, so adding a language widens scope to an additional language
+        activities = activities.concat(
+          initialActivities.filter(activity => {
+            return SearchFilters.languages(language, activity, this.data);
+          })
+        );
+      }
+    } else {
+    }
     const { activityTypes, actorTypes } = this.data;
     return {
       activities,
@@ -174,6 +180,37 @@ export class Search<ValueT> {
       actorTypes,
       actors,
       languages
+    };
+  }
+
+  /**
+   * Stats for search filters based on results
+   */
+  public getSelectedStats() {
+    const { activities, actors } = this.getResults();
+
+    interface IStatCell {
+      [FacetType: string]: {
+        count: number;
+      };
+    }
+    interface IStats {
+      languages: IStatCell;
+    }
+    console.log("ok", activities);
+    return {
+      activityTypes: activities.reduce(
+        (acc: IStats["languages"], activity: IActivity) => {
+          const { componentName } = activity;
+          //if (acc[componentName] === undefined) {
+          acc[componentName] = { count: 0 };
+          //}
+
+          acc[componentName].count = +1;
+          return acc;
+        },
+        {}
+      )
     };
   }
 
