@@ -160,7 +160,9 @@ export class Search<ValueT> {
         .filter(actor => actor && actor.languages && actor.languages.length)
         .some(actor => actor.languages.includes(language));
     });
-    const langs = this.activeFacets.languages || languages;
+    const langs = this.activeFacets.languages.size
+      ? this.activeFacets.languages
+      : languages;
 
     if (langs) {
       for (const language of Array.from(langs.values())) {
@@ -171,7 +173,6 @@ export class Search<ValueT> {
           })
         );
       }
-    } else {
     }
     const { activityTypes, actorTypes } = this.data;
     return {
@@ -197,16 +198,14 @@ export class Search<ValueT> {
     interface IStats {
       languages: IStatCell;
     }
-    console.log("ok", activities);
     return {
       activityTypes: activities.reduce(
         (acc: IStats["languages"], activity: IActivity) => {
           const { componentName } = activity;
-          //if (acc[componentName] === undefined) {
-          acc[componentName] = { count: 0 };
-          //}
-
-          acc[componentName].count = +1;
+          if (acc[componentName] === undefined) {
+            acc[componentName] = { count: 0 };
+          }
+          acc[componentName].count++;
           return acc;
         },
         {}
