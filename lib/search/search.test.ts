@@ -29,7 +29,7 @@ describe("test with data", () => {
     expect(search.data.activities.length).toBeGreaterThan(10);
   });
 
-  describe("getResults()", async () => {
+  describe("getResults()", () => {
     test("search has data loaded for beforeEach", () => {
       const results = search.getResults();
       expect(results).toHaveProperty("activities");
@@ -37,7 +37,7 @@ describe("test with data", () => {
     });
   });
 
-  describe("getSelectedStats()", async () => {
+  describe("getSelectedStats()", () => {
     test("search has data loaded for beforeEach", async () => {
       const results = search.getSelectedStats();
       expect(results).toHaveProperty("activityTypes");
