@@ -41,10 +41,10 @@ describe("test with data", () => {
     test("search has data loaded for beforeEach", async () => {
       const results = search.getSelectedStats();
       expect(results).toHaveProperty("activityTypes");
-      console.log(results.activityTypes);
 
-      expect(results.activityTypes).toEqual({});
-      expect(Object.keys(results.activityTypes).length).toBeGreaterThan(1);
+      expect(results.activityTypes).toHaveProperty("SoftwareApp");
+      expect(results.activityTypes).toHaveProperty("SoftwareApp.count");
+      expect(results.activityTypes).toHaveProperty("SoftwareApp.count", 4);
     });
   });
 });
