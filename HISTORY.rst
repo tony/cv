@@ -1,6 +1,12 @@
 The Making Of
 =============
 
+October 6th, 2019 - Sunday
+--------------------------
+lib/search:
+- Fix search initial results, counting
+- Fix test initialization
+
 September 29th, 2019 - Sunday
 -----------------------------
 root / base:
