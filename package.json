@@ -11,7 +11,7 @@
     "invert-color": "^2.0.0",
     "moment": "^2.24.0",
     "normalizr": "^3.4.1",
-    "prettier": "^1.19.0"
+    "prettier": "^1.19.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.22",
