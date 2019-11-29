@@ -1,0 +1,38 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: root - install, test
+      run: |
+        yarn
+        # yarn test
+    - name: angular - install, lint, and test
+      run: |
+        make install_angular
+        make lint_angular
+        make build_angular
+    - name: react - install, lint, and test
+      run: |
+        make install_react
+        make lint_react
+        make build_react
+    - name: vue - install, lint, and test
+      run: |
+        make install_vue
+        make lint_vue
+        make build_vue
