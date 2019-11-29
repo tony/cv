@@ -17,10 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: root - install, test
+    - name: root - install, pull gh repos, test
       run: |
         yarn
-        # yarn test
+        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn github
+        yarn test
     - name: angular - install, lint, and test
       run: |
         npm install -g @angular/cli
