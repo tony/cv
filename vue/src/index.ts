@@ -37,7 +37,6 @@ const s = new Vuex.Store<IRootState>(store);
 
 const v = new Vue({
   created() {
-    console.log("created");
     s.dispatch("loadActivities");
   },
   components: {
