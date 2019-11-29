@@ -23,6 +23,7 @@ jobs:
         # yarn test
     - name: angular - install, lint, and test
       run: |
+        npm install -g @angular/cli
         make install_angular
         make lint_angular
         make build_angular
