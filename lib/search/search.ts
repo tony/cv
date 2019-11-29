@@ -217,54 +217,42 @@ export class Search<ValueT> {
     const { activities, actors } = this.getResults();
     this.availableFacets = {
       activityTypes: new Set(
-        activities.reduce(
-          (acc, activity) => {
-            const { componentName } = activity;
-            if (acc.includes(componentName) === false) {
-              return acc.concat(componentName);
-            }
-            return acc;
-          },
-          [] as ActivityType[]
-        )
+        activities.reduce((acc, activity) => {
+          const { componentName } = activity;
+          if (acc.includes(componentName) === false) {
+            return acc.concat(componentName);
+          }
+          return acc;
+        }, [] as ActivityType[])
       ),
       actorTypes: new Set(
-        activities.reduce(
-          (acc, activity) => {
-            const actorType = actors[activity.actorId].actorType;
-            if (acc.includes(actorType) === false) {
-              return acc.concat(actorType);
-            }
-            return acc;
-          },
-          [] as ActorType[]
-        )
+        activities.reduce((acc, activity) => {
+          const actorType = actors[activity.actorId].actorType;
+          if (acc.includes(actorType) === false) {
+            return acc.concat(actorType);
+          }
+          return acc;
+        }, [] as ActorType[])
       ),
       actors: new Set(
-        activities.reduce(
-          (acc, activity) => {
-            const actor = activity.actorId;
-            if (acc.includes(actor) === false) {
-              return acc.concat(actor);
-            }
-            return acc;
-          },
-          [] as ActorName[]
-        )
+        activities.reduce((acc, activity) => {
+          const actor = activity.actorId;
+          if (acc.includes(actor) === false) {
+            return acc.concat(actor);
+          }
+          return acc;
+        }, [] as ActorName[])
       ),
       languages: new Set(
-        activities.reduce(
-          (acc, activity) => {
-            const { languages } = actors[activity.actorId];
-            languages.map(language => {
-              if (acc.includes(language) === false) {
-                return acc.concat(language);
-              }
-            });
-            return acc;
-          },
-          [] as ActorLanguage[]
-        )
+        activities.reduce((acc, activity) => {
+          const { languages } = actors[activity.actorId];
+          languages.map(language => {
+            if (acc.includes(language) === false) {
+              return acc.concat(language);
+            }
+          });
+          return acc;
+        }, [] as ActorLanguage[])
       )
     };
   }
