@@ -40,7 +40,7 @@ interface IFacets {
 
 // const SearchFilters: Map<FacetType, FilterFn<any>> = new Map({
 const SearchFilters: ISearchFilters = {
-  languages: (value, activity, data) => {
+  languages: (value, activity, data): boolean => {
     const actor = data.actors[activity.actorId];
     if (!actor || !actor.languages || !actor.languages.length) {
       return false;
@@ -145,13 +145,18 @@ export class Search<ValueT> {
   }
 
   public getData(): IStateData {
-    const {
-      actors,
-      activityTypes,
-      actorTypes,
-      activities,
-      languages
-    } = this.data;
+    const { actors, activityTypes, actorTypes, languages } = this.data;
+    let activities: IActivity[] = [];
+
+    if (languages) {
+      for (const language of Array.from(languages.values())) {
+        activities = activities.concat(
+          this.data.activities.filter(activity => {
+            return SearchFilters.languages(language, activity, this.data);
+          })
+        );
+      }
+    }
 
     return {
       activities,
@@ -204,7 +209,7 @@ export class Search<ValueT> {
    * Get global counts, without filters
    */
   public getCounts() {
-    const { activities, actors } = this.getResults();
+    const { activities, actors } = this.getData();
 
     interface IStatCell {
       [FacetType: string]: {
