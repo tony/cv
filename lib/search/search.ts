@@ -213,6 +213,9 @@ export class Search<ValueT> {
     }
     interface IStats {
       activityTypes: IStatCell;
+      actors: IStatCell;
+      actorTypes: IStatCell;
+      languages: IStatCell;
     }
     return {
       activityTypes: activities.reduce(
@@ -222,6 +225,19 @@ export class Search<ValueT> {
             acc[componentName] = { count: 0 };
           }
           acc[componentName].count++;
+          return acc;
+        },
+        {}
+      ),
+      languages: activities.reduce(
+        (acc: IStats["languages"], activity: IActivity) => {
+          const actor = actors[activity.actorId];
+          for (const language of Array.from(actor.languages.values())) {
+            if (acc[language] === undefined) {
+              acc[language] = { count: 0 };
+            }
+            acc[language].count++;
+          }
           return acc;
         },
         {}

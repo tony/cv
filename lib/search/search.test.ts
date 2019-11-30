@@ -46,13 +46,32 @@ describe("test with data", () => {
   });
 
   describe("getCounts()", () => {
-    test("search has data loaded for beforeEach", async () => {
-      const results = search.getCounts();
-      expect(results).toHaveProperty("activityTypes");
+    describe("activityTypes", () => {
+      test("search has data loaded for beforeEach", async () => {
+        const results = search.getCounts();
+        expect(results).toHaveProperty("activityTypes");
 
-      expect(results.activityTypes).toHaveProperty("SoftwareApp");
-      expect(results.activityTypes).toHaveProperty("SoftwareApp.count");
-      expect(results.activityTypes).toHaveProperty("SoftwareApp.count", 4);
+        expect(results.activityTypes).toHaveProperty("SoftwareApp");
+        expect(results.activityTypes).toHaveProperty("SoftwareApp.count");
+        expect(results.activityTypes).toHaveProperty("SoftwareApp.count", 4);
+      });
+    });
+
+    describe("languages", () => {
+      test("search has data loaded for beforeEach", async () => {
+        const results = search.getCounts();
+        expect(results).toHaveProperty("languages");
+
+        expect(results.languages).toHaveProperty("Shell");
+        expect(results.languages).toHaveProperty("Shell.count");
+        expect(results.languages).toHaveProperty("Shell.count", 5);
+        expect(results.languages).toHaveProperty("Python");
+        expect(results.languages).toHaveProperty("Python.count");
+        expect(results.languages).toHaveProperty("Python.count", 186);
+        expect(results.languages).toHaveProperty("TypeScript");
+        expect(results.languages).toHaveProperty("TypeScript.count");
+        expect(results.languages).toHaveProperty("TypeScript.count", 4);
+      });
     });
   });
 });
