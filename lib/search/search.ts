@@ -196,11 +196,11 @@ export class Search<ValueT> {
       };
     }
     interface IStats {
-      languages: IStatCell;
+      activityTypes: IStatCell;
     }
     return {
       activityTypes: activities.reduce(
-        (acc: IStats["languages"], activity: IActivity) => {
+        (acc: IStats["activityTypes"], activity: IActivity) => {
           const { componentName } = activity;
           if (acc[componentName] === undefined) {
             acc[componentName] = { count: 0 };
