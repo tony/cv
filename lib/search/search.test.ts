@@ -29,6 +29,14 @@ describe("test with data", () => {
     expect(search.data.activities.length).toBeGreaterThan(10);
   });
 
+  describe("getData()", () => {
+    test("search has data loaded for beforeEach", () => {
+      const data = search.getData();
+      expect(data).toHaveProperty("activities");
+      expect(data.activities.length).toBeGreaterThan(10);
+    });
+  });
+
   describe("getResults()", () => {
     test("search has data loaded for beforeEach", () => {
       const results = search.getResults();
@@ -37,9 +45,9 @@ describe("test with data", () => {
     });
   });
 
-  describe("getSelectedStats()", () => {
+  describe("getCounts()", () => {
     test("search has data loaded for beforeEach", async () => {
-      const results = search.getSelectedStats();
+      const results = search.getCounts();
       expect(results).toHaveProperty("activityTypes");
 
       expect(results.activityTypes).toHaveProperty("SoftwareApp");

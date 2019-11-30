@@ -144,6 +144,27 @@ export class Search<ValueT> {
     return updated;
   }
 
+  public getData(): IStateData {
+    const initialActivities = this.data.activities;
+    const activities: IActivity[] = initialActivities;
+    const actors = Object.entries(this.data.actors).reduce(
+      (acc, [k, v]) => ({
+        ...acc,
+        [k]: v
+      }),
+      {}
+    );
+
+    const { activityTypes, actorTypes, languages } = this.data;
+    return {
+      activities,
+      activityTypes,
+      actorTypes,
+      actors,
+      languages
+    };
+  }
+
   public getResults(): IStateData {
     const initialActivities = this.data.activities;
     let activities: IActivity[] = [];
@@ -185,9 +206,9 @@ export class Search<ValueT> {
   }
 
   /**
-   * Stats for search filters based on results
+   * Get global counts, without filters
    */
-  public getSelectedStats() {
+  public getCounts() {
     const { activities, actors } = this.getResults();
 
     interface IStatCell {
