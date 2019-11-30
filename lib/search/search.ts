@@ -145,17 +145,14 @@ export class Search<ValueT> {
   }
 
   public getData(): IStateData {
-    const initialActivities = this.data.activities;
-    const activities: IActivity[] = initialActivities;
-    const actors = Object.entries(this.data.actors).reduce(
-      (acc, [k, v]) => ({
-        ...acc,
-        [k]: v
-      }),
-      {}
-    );
+    const {
+      actors,
+      activityTypes,
+      actorTypes,
+      activities,
+      languages
+    } = this.data;
 
-    const { activityTypes, actorTypes, languages } = this.data;
     return {
       activities,
       activityTypes,
@@ -166,15 +163,14 @@ export class Search<ValueT> {
   }
 
   public getResults(): IStateData {
-    const initialActivities = this.data.activities;
+    const {
+      actors,
+      activityTypes,
+      actorTypes,
+      activities: initialActivities
+    } = this.data;
+
     let activities: IActivity[] = [];
-    const actors = Object.entries(this.data.actors).reduce(
-      (acc, [k, v]) => ({
-        ...acc,
-        [k]: v
-      }),
-      {}
-    );
 
     const languages = this.data.languages.filter(language => {
       return (Object.values(actors) as IActor[])
@@ -195,7 +191,6 @@ export class Search<ValueT> {
         );
       }
     }
-    const { activityTypes, actorTypes } = this.data;
     return {
       activities,
       activityTypes,
