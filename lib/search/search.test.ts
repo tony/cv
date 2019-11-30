@@ -57,6 +57,32 @@ describe("test with data", () => {
       });
     });
 
+    describe("actorTypes", () => {
+      test("search has data loaded for beforeEach", async () => {
+        const results = search.getCounts();
+        expect(results).toHaveProperty("actorTypes");
+
+        expect(results.actorTypes).toHaveProperty("Company");
+        expect(results.actorTypes).toHaveProperty("Company.count");
+        expect(results.actorTypes).toHaveProperty("Company.count", 14);
+
+        expect(results.actorTypes).toHaveProperty("Website");
+        expect(results.actorTypes).toHaveProperty("Website.count");
+        expect(results.actorTypes).toHaveProperty("Website.count", 3);
+      });
+    });
+
+    describe("actors", () => {
+      test("search has data loaded for beforeEach", async () => {
+        const results = search.getCounts();
+        expect(results).toHaveProperty("actors");
+
+        expect(results.actors).toHaveProperty("werkzeug");
+        expect(results.actors).toHaveProperty("werkzeug.count");
+        expect(results.actors).toHaveProperty("werkzeug.count", 3);
+      });
+    });
+
     describe("languages", () => {
       test("search has data loaded for beforeEach", async () => {
         const results = search.getCounts();

@@ -229,6 +229,28 @@ export class Search<ValueT> {
         },
         {}
       ),
+      actorTypes: activities.reduce(
+        (acc: IStats["actorTypes"], activity: IActivity) => {
+          const { actorType } = actors[activity.actorId];
+          if (acc[actorType] === undefined) {
+            acc[actorType] = { count: 0 };
+          }
+          acc[actorType].count++;
+          return acc;
+        },
+        {}
+      ),
+      actors: activities.reduce(
+        (acc: IStats["actors"], activity: IActivity) => {
+          const { actorId } = activity;
+          if (acc[actorId] === undefined) {
+            acc[actorId] = { count: 0 };
+          }
+          acc[actorId].count++;
+          return acc;
+        },
+        {}
+      ),
       languages: activities.reduce(
         (acc: IStats["languages"], activity: IActivity) => {
           const actor = actors[activity.actorId];
