@@ -147,15 +147,15 @@ export class Search {
   public getData(): IStateData {
     const { actors, activityTypes, actorTypes, languages } = this.data;
     let activities: IActivity[] = [];
-
-    if (languages) {
-      for (const language of Array.from(languages.values())) {
-        activities = activities.concat(
-          this.data.activities.filter(activity => {
-            return SearchFilters.languages(language, activity, this.data);
-          })
-        );
-      }
+    const langs = Array.from(languages.values());
+    if (langs) {
+      activities = activities.concat(
+        this.data.activities.filter(activity => {
+          return langs.some(language =>
+            SearchFilters.languages(language, activity, this.data)
+          );
+        })
+      );
     }
 
     return {
