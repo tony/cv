@@ -100,6 +100,9 @@ lint_react:
 lint_vue:
 	$(MAKE) -C vue lint
 
+lint_local:
+	npm run lint
+
 lint:
 	$(MAKE) -j lint_angular lint_react lint_vue
 
