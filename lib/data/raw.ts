@@ -8,7 +8,6 @@ import {
   ActorLanguage,
   ActorType,
   IActivity,
-  IActor,
   IActors
 } from "../types";
 
