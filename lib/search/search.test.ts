@@ -60,11 +60,11 @@ describe("test with data", () => {
 
         expect(results.actorTypes).toHaveProperty("Company");
         expect(results.actorTypes).toHaveProperty("Company.count");
-        expect(results.actorTypes).toHaveProperty("Company.count", 14);
+        expect(results.actorTypes).toHaveProperty("Company.count", 7);
 
         expect(results.actorTypes).toHaveProperty("Website");
         expect(results.actorTypes).toHaveProperty("Website.count");
-        expect(results.actorTypes).toHaveProperty("Website.count", 3);
+        expect(results.actorTypes).toHaveProperty("Website.count", 2);
       });
     });
 
@@ -89,7 +89,7 @@ describe("test with data", () => {
         expect(results.languages).toHaveProperty("Shell.count", 3);
         expect(results.languages).toHaveProperty("Python");
         expect(results.languages).toHaveProperty("Python.count");
-        expect(results.languages).toHaveProperty("Python.count", 188);
+        expect(results.languages).toHaveProperty("Python.count", 183);
         expect(results.languages).toHaveProperty("TypeScript");
         expect(results.languages).toHaveProperty("TypeScript.count");
         expect(results.languages).toHaveProperty("TypeScript.count", 4);
