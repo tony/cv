@@ -55,7 +55,7 @@ const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
   return Array.from(a).filter(x => !b.has(x));
 };
 
-export class Search<ValueT> {
+export class Search {
   /**
    * Raw data
    */
