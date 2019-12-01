@@ -7,9 +7,7 @@ describe("object initialization", () => {
   });
 
   test("fetch", async () => {
-    const data = await import(
-      /* webpackChunkName: "myData" */ "../../lib/data"
-    );
+    const data = await import("../../lib/data");
     const s = new Search(data);
     expect(s.data.activities).not.toStrictEqual([]);
   });
@@ -18,9 +16,7 @@ describe("object initialization", () => {
 describe("test with data", () => {
   let search;
   beforeEach(async () => {
-    const data = await import(
-      /* webpackChunkName: "myData" */ "../../lib/data"
-    );
+    const data = await import("../../lib/data");
     search = new Search(data);
   });
 
