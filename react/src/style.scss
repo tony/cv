@@ -41,6 +41,12 @@ a {
   line-height: 1.5;
   padding: .5em .75em;
   white-space: nowrap;
+
+  margin-left: 1rem;
+  &:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .fr {
