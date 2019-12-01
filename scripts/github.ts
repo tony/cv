@@ -125,11 +125,9 @@ recursePRQuery(initialPrQuery)
 
     // join languages
     projects = projects.map(p => {
-      if (p.languages.edges.length) {
-        p.languages = [p.languages.edges[0].node.name];
-      } else {
-        p.languages = undefined;
-      }
+      p.languages = p.languages.edges.length
+        ? [p.languages.edges[0].node.name]
+        : undefined;
       return p;
     });
     // console.log(projects);
