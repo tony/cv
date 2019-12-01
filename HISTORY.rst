@@ -1,6 +1,15 @@
 The Making Of
 =============
 
+November 30th, 2019 - Saturday
+------------------------------
+lib/search:
+- Rename ``getSelectedStats()`` to ``getCounts()``
+- Add ``getData()`` for grabbing immutable, raw results
+- Add ``getCounts()`` for activityTypes, actorTypes,
+  actors, and languages
+- Update tests for lib/search changes
+
 October 6th, 2019 - Sunday
 --------------------------
 lib/search:
