@@ -92,6 +92,8 @@ const App: React.FC = () => {
   const onActorChange = onSelectChange(setSelectedActors);
   const onActivityTypeChange = onSelectChange(setSelectedActivityTypes);
 
+  const resultsCount = results ? results.length : 0;
+
   return (
     <div>
       <header className="site-name">Tony Narlock's CV</header>
@@ -120,6 +122,8 @@ const App: React.FC = () => {
       {Array.from(search.availableFacets.activityTypes).map(activityType => (
         <>{activityType}</>
       ))}
+
+      <div>Found {resultsCount}</div>
 
       {results &&
         results.map((activity, idx) => (
