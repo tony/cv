@@ -260,6 +260,9 @@ export class Search {
         (acc: IStats["languages"], activity: IActivity) => {
           const actor = actors[activity.actorId];
           for (const language of Array.from(actor.languages.values())) {
+            if (language === undefined) {
+              continue;
+            }
             if (acc[language] === undefined) {
               acc[language] = { count: 0 };
             }
