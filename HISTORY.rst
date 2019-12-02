@@ -1,6 +1,14 @@
 The Making Of
 =============
 
+December 1st, 2019 - Sunday
+---------------------------
+lib/search:
+- Fix counting / remove duplicates from results
+
+react:
+- CSS tweak for buttons
+
 November 30th, 2019 - Saturday
 ------------------------------
 lib/search:
