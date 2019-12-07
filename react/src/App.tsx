@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "react-select";
-import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 
 import { Search } from "../../lib/search";
 import {
