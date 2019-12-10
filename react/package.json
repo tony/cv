@@ -20,7 +20,7 @@
     "@types/webpack-dev-server": "^3.9.0",
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.3",
-    "css-loader": "^3.2.1",
+    "css-loader": "^3.3.0",
     "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.18",
     "sass-loader": "^8.0.0",
