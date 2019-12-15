@@ -3,6 +3,9 @@
     "strict": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "lib": [
+      "esnext"
+    ],
     "target": "es5",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
