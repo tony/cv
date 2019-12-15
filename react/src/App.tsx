@@ -65,7 +65,12 @@ const App: React.FC = () => {
       languages
     });
 
-    if (selectedLanguages.length && actors !== undefined) {
+    if (
+      actors !== undefined &&
+      (selectedLanguages.length ||
+        selectedActors.length ||
+        selectedActivityTypes.length)
+    ) {
       const updated =
         search.setSearches("languages", selectedLanguages as string[]) ||
         search.setSearches("actors", selectedActors) ||
