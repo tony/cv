@@ -19,18 +19,18 @@ interface IStateData {
   languages: ActorLanguage[];
 }
 
-export type FilterFn<ValueT> = (
+export type SearchFn<ValueT> = (
   value: ValueT,
   activity: IActivity,
   data: IStateData
 ) => boolean;
-export type FacetType = keyof IStateData;
+export type SearchType = keyof IStateData;
 export interface ISearchFilters {
-  [FacetType: string]: FilterFn<any>;
-  languages: FilterFn<ActorLanguage>;
+  [SearchType: string]: SearchFn<any>;
+  languages: SearchFn<ActorLanguage>;
 }
 
-interface IFacets {
+interface ISearches {
   [key: string]: Set<string | ActorLanguage>;
   activityTypes: Set<string>;
   actorTypes: Set<string>;
@@ -38,7 +38,7 @@ interface IFacets {
   languages: Set<ActorLanguage>;
 }
 
-// const SearchFilters: Map<FacetType, FilterFn<any>> = new Map({
+// const SearchFilters: Map<SearchType, SearchFn<any>> = new Map({
 const SearchFilters: ISearchFilters = {
   languages: (value, activity, data): boolean => {
     const actor = data.actors[activity.actorId];
@@ -64,7 +64,7 @@ export class Search {
   /**
    * Filters based on results returned
    */
-  public availableFacets: IFacets = {
+  public availableSearches: ISearches = {
     activityTypes: new Set(),
     actorTypes: new Set(),
     actors: new Set(),
@@ -72,9 +72,9 @@ export class Search {
   };
 
   /**
-   * activeFacets
+   * activeSearches
    */
-  public activeFacets: IFacets = {
+  public activeSearches: ISearches = {
     activityTypes: new Set(),
     actorTypes: new Set(),
     actors: new Set(),
@@ -109,34 +109,34 @@ export class Search {
     };
   }
 
-  public facetExists(facetType: FacetType, value: any) {
-    return this.activeFacets[facetType].has(value);
+  public searchExists(searchType: SearchType, value: any) {
+    return this.activeSearches[searchType].has(value);
   }
 
-  public addFacet(facetType: FacetType, value: any) {
-    this.activeFacets[facetType].add(value);
+  public addSearch(searchType: SearchType, value: any) {
+    this.activeSearches[searchType].add(value);
   }
 
-  public deleteFacet(facetType: FacetType, value: any) {
-    this.activeFacets[facetType].delete(value);
+  public deleteSearch(searchType: SearchType, value: any) {
+    this.activeSearches[searchType].delete(value);
   }
 
   /* Returns true if updated */
-  public setFacets(facetType: FacetType, values: string[]): boolean {
+  public setSearches(searchType: SearchType, values: string[]): boolean {
     let updated = false;
-    const added = difference(values, this.activeFacets[facetType]);
-    const removed = difference(this.activeFacets[facetType], values);
+    const added = difference(values, this.activeSearches[searchType]);
+    const removed = difference(this.activeSearches[searchType], values);
 
     for (const v of added) {
-      if (!this.facetExists(facetType, v)) {
-        this.addFacet(facetType, v);
+      if (!this.searchExists(searchType, v)) {
+        this.addSearch(searchType, v);
         updated = true;
       }
     }
 
     for (const v of removed) {
-      if (this.facetExists(facetType, v)) {
-        this.deleteFacet(facetType, v);
+      if (this.searchExists(searchType, v)) {
+        this.deleteSearch(searchType, v);
         updated = true;
       }
     }
@@ -182,10 +182,9 @@ export class Search {
         .filter(actor => actor && actor.languages && actor.languages.length)
         .some(actor => actor.languages.includes(language));
     });
-    const langs = this.activeFacets.languages.size
-      ? this.activeFacets.languages
+    const langs = this.activeSearches.languages.size
+      ? this.activeSearches.languages
       : languages;
-
     if (langs) {
       for (const language of Array.from(langs.values())) {
         // append behavior, so adding a language widens scope to an additional language
@@ -212,7 +211,7 @@ export class Search {
     const { activities, actors } = this.getData();
 
     interface IStatCell {
-      [FacetType: string]: {
+      [SearchType: string]: {
         count: number;
       };
     }
@@ -275,9 +274,9 @@ export class Search {
     };
   }
 
-  public getAvailableFacets() {
+  public getAvailableSearches() {
     const { activities, actors } = this.getResults();
-    this.availableFacets = {
+    this.availableSearches = {
       activityTypes: new Set(
         activities.reduce((acc, activity) => {
           const { componentName } = activity;
