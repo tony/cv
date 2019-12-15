@@ -67,9 +67,9 @@ const App: React.FC = () => {
 
     if (selectedLanguages.length && actors !== undefined) {
       const updated =
-        search.setFacets("languages", selectedLanguages as string[]) ||
-        search.setFacets("actors", selectedActors) ||
-        search.setFacets("activityTypes", selectedActivityTypes);
+        search.setSearches("languages", selectedLanguages as string[]) ||
+        search.setSearches("actors", selectedActors) ||
+        search.setSearches("activityTypes", selectedActivityTypes);
 
       if (updated) {
         setResults(search.getResults().activities as IActivity[]);
@@ -118,7 +118,7 @@ const App: React.FC = () => {
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      {Array.from(search.availableFacets.activityTypes).map(activityType => (
+      {Array.from(search.availableSearches.activityTypes).map(activityType => (
         <>{activityType}</>
       ))}
 
