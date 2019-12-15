@@ -1,6 +1,11 @@
 The Making Of
 =============
 
+December 15th, 2019 - Sunday
+----------------------------
+lib/search:
+- Rename "Facet" to "Search"
+
 December 1st, 2019 - Sunday
 ---------------------------
 lib/search:
