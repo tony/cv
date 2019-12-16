@@ -40,6 +40,6 @@
     "vue-loader": "^15.7.2",
     "vue-property-decorator": "^8.3.0",
     "vuex": "^3.1.2",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.3"
   }
 }
