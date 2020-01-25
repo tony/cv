@@ -92,7 +92,7 @@ describe("test with data", () => {
         expect(results.languages).toHaveProperty("Python.count", 190);
         expect(results.languages).toHaveProperty("TypeScript");
         expect(results.languages).toHaveProperty("TypeScript.count");
-        expect(results.languages).toHaveProperty("TypeScript.count", 5);
+        expect(results.languages).toHaveProperty("TypeScript.count", 6);
       });
     });
   });
