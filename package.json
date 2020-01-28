@@ -14,7 +14,7 @@
     "prettier": "^1.19.1"
   },
   "devDependencies": {
-    "@types/jest": "^24.9.1",
+    "@types/jest": "^25.1.0",
     "@types/node": "^13.5.0",
     "jest": "^25.1.0",
     "ts-jest": "^25.0.0",
