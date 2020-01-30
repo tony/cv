@@ -28,7 +28,7 @@
     "@angular/cli": "^8.3.23",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
-    "@types/node": "^13.5.1",
+    "@types/node": "^13.5.2",
     "codelyzer": "^5.2.1",
     "prettier": "^1.19.1",
     "protractor": "~5.4.3",
