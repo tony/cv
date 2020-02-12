@@ -12,7 +12,7 @@
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@types/html-webpack-plugin": "^3.2.2",
-    "@types/node": "^13.7.0",
+    "@types/node": "^13.7.1",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/react-select": "^3.0.10",
@@ -33,7 +33,7 @@
     "tslint-plugin-prettier": "^2.1.0",
     "tslint-react": "^4.2.0",
     "typescript": "^3.7.5",
-    "webpack-cli": "3.3.10",
+    "webpack-cli": "3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
@@ -42,6 +42,6 @@
     "react-dom": "^16.12.0",
     "react-select": "^3.0.8",
     "sass": "^1.25.0",
-    "webpack": "~4.41.5"
+    "webpack": "~4.41.6"
   }
 }
