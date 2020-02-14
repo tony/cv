@@ -35,7 +35,8 @@ const store: StoreOptions<IRootState> = {
 Vue.use(Vuex);
 const s = new Vuex.Store<IRootState>(store);
 
-const v = new Vue({
+// tslint:disable-next-line:no-unused-expression
+new Vue({
   created() {
     s.dispatch("loadActivities");
   },
