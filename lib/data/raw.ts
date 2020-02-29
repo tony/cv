@@ -18,8 +18,8 @@ export const myActorsRaw: IActors = {
 };
 
 export const myActivitiesRaw: IActivity[] = [
-  ...handPickedActivitiesRaw,
-  ...ghActivitiesRaw
+  ...(handPickedActivitiesRaw as IActivity[]),
+  ...(ghActivitiesRaw as IActivity[])
 ];
 
 // Calculated at runtime, based on the content of above
