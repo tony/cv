@@ -7,7 +7,7 @@ import {
   ActorLanguage,
   ActorName,
   IActivity,
-  IActor
+  IActor,
 } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 import { useAsyncEffect } from "./utils";
@@ -55,14 +55,14 @@ const App: React.FC = () => {
       actors,
       languages,
       actorTypes,
-      activityTypes
+      activityTypes,
     } = await fetchActivities();
     search.setState({
       activities,
       activityTypes,
       actorTypes,
       actors,
-      languages
+      languages,
     });
 
     if (
@@ -123,9 +123,11 @@ const App: React.FC = () => {
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      {Array.from(search.availableSearches.activityTypes).map(activityType => (
-        <>{activityType}</>
-      ))}
+      {Array.from(search.availableSearches.activityTypes).map(
+        (activityType) => (
+          <>{activityType}</>
+        )
+      )}
 
       <div>Found {resultsCount}</div>
 

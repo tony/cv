@@ -1,8 +1,12 @@
-h1.logo { font-size: 13px; }
-img.logo { margin: 0 0 20px 0; }
+h1.logo {
+  font-size: 13px;
+}
+img.logo {
+  margin: 0 0 20px 0;
+}
 
 div.book-container > p {
-    text-align: center;
+  text-align: center;
 }
 
 div.book-container {
@@ -17,18 +21,17 @@ div.book-container:hover {
 }
 
 div.book-container .hsk-right p:first-of-type,
-div.book-container .rightside-book p:first-of-type
-{
-   padding-top: 10px;
+div.book-container .rightside-book p:first-of-type {
+  padding-top: 10px;
 }
 
 /* flexbox.css overrides */
 
 @media only screen and (min-width: 75em),
-@media only screen and (min-width: 64em),
-@media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 64em),
+  @media only screen and (min-width: 48em) {
   .container {
-    width: auto !important 
+    width: auto !important;
   }
 }
 

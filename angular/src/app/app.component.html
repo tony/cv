@@ -1,13 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div style="text-align: center;">
+  <h1>Welcome to {{ title }}!</h1>
 </div>
 <h2>My activities</h2>
 <ul>
   <li *ngFor="let activity of activities; let i = index">
-    {{activity.title}}
+    {{ activity.title }}
   </li>
 </ul>
-

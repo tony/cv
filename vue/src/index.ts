@@ -20,16 +20,16 @@ const store: StoreOptions<IRootState> = {
         /* webpackChunkName: "myData" */ "../../lib/data/raw"
       );
       commit("loadActivities", myActivities);
-    }
+    },
   },
   mutations: {
     loadActivities(state: IRootState, activities: IRootState["activities"]) {
       state.activities = activities;
-    }
+    },
   },
   state: {
-    activities: []
-  }
+    activities: [],
+  },
 };
 
 Vue.use(Vuex);
@@ -42,7 +42,7 @@ new Vue({
   },
   components: {
     HelloComponent,
-    HelloDecoratorComponent
+    HelloDecoratorComponent,
   },
   computed: { ...Vuex.mapState(["activities"]) },
   data: { name: "World" },
@@ -59,7 +59,7 @@ new Vue({
             {{activity.title}}
           </div>
         </div>
-    `
+    `,
 });
 
 export default s;

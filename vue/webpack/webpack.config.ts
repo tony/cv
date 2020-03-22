@@ -19,12 +19,12 @@ const defaultEnvironment: IWebpackEnv = {
   devServerHost: "localhost",
   devServerPort: "3093",
   production: false,
-  watch: false
+  watch: false,
 };
 
 const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   context: projectRoot,
-  ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
+  ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
     ? {
         devServer: {
           contentBase: "./dist",
@@ -32,21 +32,21 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           hot: true,
           open: true,
           port: parseInt(env.devServerPort, 10),
-          publicPath: "/"
-        }
+          publicPath: "/",
+        },
       }
     : {}),
   devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
   entry: {
     cv: [
-      ...(process.argv.some(arg => arg.includes("webpack-dev-server"))
+      ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
         ? [
             `webpack-dev-server/client?http://${env.devServerHost}:${env.devServerPort}`,
-            "webpack/hot/dev-server"
+            "webpack/hot/dev-server",
           ]
         : []),
-      "./src/index.ts"
-    ]
+      "./src/index.ts",
+    ],
   },
   mode: env.production ? "production" : "development",
   module: {
@@ -60,10 +60,10 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
             // other preprocessors should work out of the box, no loader config like this necessary.
             sass: "vue-style-loader!css-loader!sass-loader?indentedSyntax",
             scss: "vue-style-loader!css-loader!sass-loader",
-            ts: "babel-loader!ts-loader"
-          }
+            ts: "babel-loader!ts-loader",
+          },
         },
-        test: /\.vue$/
+        test: /\.vue$/,
       },
       {
         exclude: /node_modules/,
@@ -72,9 +72,9 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           loader: "babel-loader",
           options: {
             babelrc: true,
-            configFile: "./.babelrc"
-          }
-        }
+            configFile: "./.babelrc",
+          },
+        },
       },
       {
         exclude: /node_modules/,
@@ -83,15 +83,15 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           loader: "ts-loader",
           options: {
             appendTsSuffixTo: [/\.vue$/],
-            configFile: "../tsconfig.json"
-          }
-        }
+            configFile: "../tsconfig.json",
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"]
-      }
-    ]
+        use: ["vue-style-loader", "css-loader"],
+      },
+    ],
   },
   optimization: {
     runtimeChunk: "single",
@@ -108,31 +108,31 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
 
             // npm package names are URL-safe, but some servers don't like @ symbols
             return `vendor.${packageName.replace("@", "")}`;
-          }
-        }
+          },
+        },
       },
       chunks: "all",
       maxInitialRequests: Infinity,
-      minSize: 0
-    }
+      minSize: 0,
+    },
   },
   output: {
     chunkFilename: "[name].[chunkhash].js",
     filename: "[name].[hash].js",
-    path: path.resolve(projectRoot, "dist")
+    path: path.resolve(projectRoot, "dist"),
   },
   plugins: [
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({ template: "../lib/assets/index.html" })
+    new HtmlWebpackPlugin({ template: "../lib/assets/index.html" }),
   ],
   resolve: {
     alias: {
-      vue$: "vue/dist/vue.esm.js"
+      vue$: "vue/dist/vue.esm.js",
     },
-    extensions: [".ts", ".js", ".vue", ".json"]
+    extensions: [".ts", ".js", ".vue", ".json"],
   },
   stats: { children: false },
-  watch: env.watch
+  watch: env.watch,
 });
 
 export default (

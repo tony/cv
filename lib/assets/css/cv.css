@@ -1,5 +1,6 @@
-#app, #root {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#app,
+#root {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -18,7 +19,8 @@
   margin-top: 1rem;
 }
 
-.header h1, .header h2 {
+.header h1,
+.header h2 {
   font-weight: normal;
 }
 .header a {
@@ -31,21 +33,21 @@
   border-radius: 3px;
   color: #4a4a4a;
   //display: inline-flex;
-  font-size: .75rem;
+  font-size: 0.75rem;
   justify-content: center;
   line-height: 1.5;
   padding-top: 0.5em;
   margin-top: -0.5em;
   padding-bottom: 0.5em;
   margin-bottom: -0.5em;
-  padding-left: .75em;
-  padding-right: .75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   white-space: nowrap;
 }
 
 .footnote {
   text-decoration: none;
-  font-size: .7em;
+  font-size: 0.7em;
   vertical-align: top;
   border-bottom: 1px dotted #004b6b;
 }
@@ -58,24 +60,25 @@
 }
 
 .roundedOne {
-  margin: .5em 0 0 0;
+  margin: 0.5em 0 0 0;
 }
 @media (min-width: 500px) {
   .choices {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
-
 }
 @media (max-width: 499px) {
   .choices {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
-  h3, h2, p {
+  h3,
+  h2,
+  p {
     margin: 0;
   }
   h2 {
     padding-top: 2em;
-    padding-bottom: .25em;
+    padding-bottom: 0.25em;
   }
 }
 
@@ -100,13 +103,13 @@
   border-radius: 3px;
   color: #4a4a4a;
   display: inline-flex;
-  font-size: .75rem;
+  font-size: 0.75rem;
   justify-content: center;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  padding-left: .75em;
-  padding-right: .75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   white-space: nowrap;
 }
 
@@ -175,7 +178,8 @@ a {
   text-decoration: none;
 }
 
-.header a:hover, .item a:hover {
+.header a:hover,
+.item a:hover {
   text-decoration: underline;
 }
 .item a.muted-link {
@@ -185,7 +189,6 @@ a {
   color: #0366d6;
   text-decoration: none;
 }
-
 
 .github-fork {
   width: 15em;
@@ -203,18 +206,19 @@ a {
   display: block;
   padding: 1em;
 
-  opacity: .3;
-  transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -webkit-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
 }
 
 .github-fork a {
   color: rgba(74, 74, 74, 0.6);
 }
 
-.github-fork:hover, .github-fork:active {
+.github-fork:hover,
+.github-fork:active {
   opacity: 1;
 }
 

@@ -120,7 +120,7 @@
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
     "diff_url": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=180483",
     "title": "[NEW PORT] devel/py-libtmux: python API for tmux",
-    "actorId": "freebsd-ports" 
+    "actorId": "freebsd-ports"
   },
   {
     "id": 30006,
@@ -167,7 +167,7 @@
     "createdDate": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
-    "actorId": "devel.tech" 
+    "actorId": "devel.tech"
   },
   {
     "id": 40002,
@@ -194,9 +194,7 @@
     "end_date": "2013-04-01",
     "title": "Software Developer",
     "description": "Back with MORE love for making social social media campaigns for awesome customers like 1-800-Flowers, Marie Claire, and Elle",
-    "duties": [
-      "Facebook API"
-    ],
+    "duties": ["Facebook API"],
     "actorId": "merkle"
   },
   {

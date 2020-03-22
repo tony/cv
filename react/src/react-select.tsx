@@ -8,9 +8,9 @@ interface IOptionType {
 }
 
 export const getSelectOptions = (items: string[]) =>
-  items.map(actorName => ({
+  items.map((actorName) => ({
     label: actorName,
-    value: actorName
+    value: actorName,
   })) as ISelectOption[];
 
 export const onSelectChange = (setState: (_: any) => void) => (
