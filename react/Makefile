@@ -24,3 +24,6 @@ build:
 
 start:
 	npm run start
+
+prettier:
+	npm run prettier

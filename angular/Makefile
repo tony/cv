@@ -24,3 +24,6 @@ build:
 
 start:
 	ng serve --host $(ip addr show eth0 | grep -Po "inet \K[\d.]+") --disableHostCheck
+
+prettier:
+	npm run prettier

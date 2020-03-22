@@ -106,6 +106,21 @@ lint_local:
 lint:
 	$(MAKE) -j lint_angular lint_react lint_vue
 
+prettier:
+	$(MAKE) -j prettier_local prettier_angular prettier_react prettier_vue
+
+prettier_local:
+	npm run prettier
+
+prettier_angular:
+	$(MAKE) -C angular prettier
+
+prettier_react:
+	$(MAKE) -C react prettier
+
+prettier_vue:
+	$(MAKE) -C vue prettier
+
 start_angular:
 	$(MAKE) -C angular start
 
