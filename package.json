@@ -3,7 +3,8 @@
   "scripts": {
     "github": "ts-node scripts/github.ts",
     "lint": "tslint --project tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier data lib scripts --write"
   },
   "dependencies": {
     "github-colors": "~2.2",
