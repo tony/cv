@@ -1,4 +1,4 @@
-session_name: cv
+session_name: cv-old
 start_directory: ./ # load session relative to config location (project root).
 windows:
 - window_name: main
