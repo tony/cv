@@ -86,7 +86,7 @@ describe("test with data", () => {
 
         expect(results.languages).toHaveProperty("Shell");
         expect(results.languages).toHaveProperty("Shell.count");
-        expect(results.languages).toHaveProperty("Shell.count", 3);
+        expect(results.languages).toHaveProperty("Shell.count", 4);
         expect(results.languages).toHaveProperty("Python");
         expect(results.languages).toHaveProperty("Python.count");
         expect(results.languages).toHaveProperty("Python.count", 192);
