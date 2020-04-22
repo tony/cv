@@ -20,7 +20,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.2",
     "node-sass": "^4.13.1",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "sass-loader": "^8.0.2",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^7.0.0",
