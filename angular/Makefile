@@ -16,6 +16,9 @@ npm_update:
 ncu:
 	npx ncu -x typescript $(args)
 
+ng_update:
+	ng update
+
 lint:
 	npm run lint
 
