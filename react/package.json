@@ -23,7 +23,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "prettier": "^2.0.5",
-    "react-hot-loader": "^4.12.20",
+    "react-hot-loader": "^4.12.21",
     "sass-loader": "^8.0.2",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.2.0",
