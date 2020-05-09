@@ -15,7 +15,7 @@ export const getSelectOptions = (items: string[]) =>
 
 export const onSelectChange = (setState: (_: any) => void) => (
   value: ValueType<IOptionType>,
-  _: ActionMeta
+  _: ActionMeta<IOptionType>
 ) => {
   if (value) {
     setState((value as IOptionType[]).map(({ value: v }) => v));
