@@ -15,7 +15,7 @@
     "@types/html-webpack-plugin": "^3.2.2",
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
+    "@types/react-dom": "^16.9.8",
     "@types/react-select": "^3.0.12",
     "@types/webpack": "^4.41.12",
     "@types/webpack-dev-server": "^3.10.1",
