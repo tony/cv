@@ -14,7 +14,7 @@ npm_update:
 	npm update
 
 ncu:
-	npx ncu -x typescript $(args)
+	npx ncu $(args)
 
 ng_update:
 	ng update
