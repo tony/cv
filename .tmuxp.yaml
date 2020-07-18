@@ -42,4 +42,4 @@ windows:
   - focus: true
   - pane
   - pane
-  - ng serve
+  - ng serve --open
