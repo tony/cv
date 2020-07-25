@@ -2,16 +2,16 @@ clean:
 	rm -rf node_modules/
 
 install:
-	npm install $(args)
+	yarn install $(args)
 
 distclean:
 	rm -rf dist/
 
-npm_outdated:
-	npm outdated
+yarn_outdated:
+	yarn outdated
 
-npm_update:
-	npm update
+yarn_upgrade:
+	$(MAKE) ng_update; yarn upgrade
 
 ncu:
 	npx ncu $(args)
@@ -20,7 +20,7 @@ ng_update:
 	ng update
 
 lint:
-	npm run lint
+	yarn run lint
 
 build:
 	ng build
@@ -29,4 +29,4 @@ start:
 	ng serve --host $(ip addr show eth0 | grep -Po "inet \K[\d.]+") --disableHostCheck
 
 prettier:
-	npm run prettier
+	yarn run prettier

@@ -22,7 +22,7 @@ jobs:
         yarn
         env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn github
         yarn test
-        make lint_local 
+        make lint_local
     - name: angular - install, lint, and test
       run: |
         npm install -g @angular/cli
