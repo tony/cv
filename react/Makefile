@@ -2,28 +2,28 @@ clean:
 	rm -rf node_modules/
 
 install:
-	npm install $(args)
+	yarn install $(args)
 
 distclean:
 	rm -rf dist/
 
-npm_outdated:
-	npm outdated
+yarn_outdated:
+	yarn outdated
 
-npm_update:
-	npm update
+yarn_upgrade:
+	yarn upgrade
 
 ncu:
 	npx ncu $(args)
 
 lint:
-	npm run lint
+	yarn run lint
 
 build:
-	npm run build
+	yarn run build
 
 start:
-	npm run start
+	yarn run start
 
 prettier:
-	npm run prettier
+	yarn run prettier

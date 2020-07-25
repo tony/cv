@@ -18,20 +18,20 @@ Quickstart
 
 .. code-block:: bash
 
-   $ sudo npm install -g @angular/cli  # If building angular
+   $ yarn global add @angular/cli  # If building angular
 
-   $ npm install  # Install root deps
+   $ make install  # Install root deps
 
    $ cd vue/  # or
    $ cd react/
 
-   # Inside either vue/react
-   $ npm install
+   # Inside either angular/vue/react
+   $ yarn
 
    # and
-   $ npm run start  # Launch dev server / hot reloading
+   $ yarn start  # Launch dev server / hot reloading
    # or
-   $ npm run build  # Build to dist/
+   $ yarn build  # Build to dist/
 
 Make tasks
 ----------
@@ -40,11 +40,11 @@ are the in `Makefile <Makefile>`_:
 
 .. code-block:: bash
 
-   $ make clean  # deletes typescript, npm cache, node_modules/ in all projects
+   $ make clean  # deletes typescript, yarn cache, node_modules/ in all projects
    $ make distclean  # removes dist/ in all projects
-   $ make install  # runs npm install for all projects
-   $ make npm_outdated # runs npm outdated for all projects
-   $ make npm_update  # runs npm update for all projects
+   $ make install  # runs yarn install for all projects
+   $ make yarn_outdated # runs yarn outdated for all projects
+   $ make yarn_update  # runs yarn update for all projects
 
 Structure
 ---------

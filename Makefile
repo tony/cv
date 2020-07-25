@@ -1,5 +1,5 @@
 clean_system:
-	rm -rf ~/.cache/typescript ~/.npm
+	rm -rf ~/.cache/typescript; yarn cache clean
 
 clean_local:
 	rm -rf node_modules
@@ -29,7 +29,7 @@ distclean:
 	$(MAKE) distclean_angular distclean_react distclean_vue
 
 install_local:
-	npm install $(args)
+	yarn install $(args)
 
 install_angular:
 	$(MAKE) -C angular install args=$(args)
@@ -43,35 +43,35 @@ install_vue:
 install:
 	$(MAKE) install_local install_angular install_react install_vue
 
-npm_outdated_local:
-	npm outdated
+yarn_outdated_local:
+	yarn outdated
 
-npm_outdated_angular:
-	$(MAKE) -C angular npm_outdated
+yarn_outdated_angular:
+	$(MAKE) -C angular yarn_outdated
 
-npm_outdated_react:
-	$(MAKE) -C react npm_outdated
+yarn_outdated_react:
+	$(MAKE) -C react yarn_outdated
 
-npm_outdated_vue:
-	$(MAKE) -C vue npm_outdated
+yarn_outdated_vue:
+	$(MAKE) -C vue yarn_outdated
 
-npm_outdated:
-	$(MAKE) npm_outdated_local npm_outdated_angular npm_outdated_react npm_outdated_vue
+yarn_outdated:
+	$(MAKE) yarn_outdated_local yarn_outdated_angular yarn_outdated_react yarn_outdated_vue
 
-npm_update_local:
-	npm update
+yarn_upgrade_local:
+	yarn upgrade
 
-npm_update_angular:
-	$(MAKE) -C angular npm_update
+yarn_upgrade_angular:
+	$(MAKE) -C angular yarn_upgrade
 
-npm_update_react:
-	$(MAKE) -C react npm_update
+yarn_upgrade_react:
+	$(MAKE) -C react yarn_upgrade
 
-npm_update_vue:
-	$(MAKE) -C vue npm_update
+yarn_upgrade_vue:
+	$(MAKE) -C vue yarn_upgrade
 
-npm_update:
-	$(MAKE) npm_update_local npm_update_angular npm_update_react npm_update_vue
+yarn_upgrade:
+	$(MAKE) yarn_upgrade_local yarn_upgrade_angular yarn_upgrade_react yarn_upgrade_vue
 
 ncu_local:
 	npx ncu $(args)
@@ -101,7 +101,7 @@ lint_vue:
 	$(MAKE) -C vue lint
 
 lint_local:
-	npm run lint
+	yarn run lint
 
 lint:
 	$(MAKE) -j lint_angular lint_react lint_vue
@@ -110,7 +110,7 @@ prettier:
 	$(MAKE) -j prettier_local prettier_angular prettier_react prettier_vue
 
 prettier_local:
-	npm run prettier
+	yarn run prettier
 
 prettier_angular:
 	$(MAKE) -C angular prettier
