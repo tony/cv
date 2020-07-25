@@ -1,4 +1,5 @@
 {
+  "license": "All rights reserved",
   "private": true,
   "scripts": {
     "github": "ts-node scripts/github.ts",

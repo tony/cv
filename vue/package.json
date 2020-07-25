@@ -1,4 +1,6 @@
 {
+  "license": "All rights reserved",
+  "private": true,
   "scripts": {
     "start": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack-dev-server --config webpack/webpack.config.ts",
     "build": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.json\" webpack --config webpack/webpack.config.ts --env.production --mode=production",
