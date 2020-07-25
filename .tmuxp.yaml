@@ -22,7 +22,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - yarn start
+  - pane
 - window_name: cv (vue.js)
   layout: main-horizontal
   options:
@@ -32,7 +32,7 @@ windows:
   - focus: true
   - pane
   - pane
-  - yarn start
+  - pane
 - window_name: cv (angular)
   layout: main-horizontal
   options:
@@ -42,4 +42,4 @@ windows:
   - focus: true
   - pane
   - pane
-  - ng serve --open
+  - pane
