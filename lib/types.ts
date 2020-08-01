@@ -12,7 +12,7 @@ export interface IActivity {
   createdDate: string;
   title: string;
   componentName: ActivityType;
-  actorId: string;
+  orgId: string;
   acceptedDate?: string;
   qaUrl?: string;
   diffUrl?: string;
@@ -20,8 +20,8 @@ export interface IActivity {
   startDate?: string;
 }
 
-export type ActorType = "Open Source" | "Company" | "Publication" | "Website";
-export type ActorLanguage =
+export type OrgType = "Open Source" | "Company" | "Publication" | "Website";
+export type OrgLanguage =
   | "Python"
   | "PHP"
   | "Makefile"
@@ -46,12 +46,12 @@ export type ActorLanguage =
   | "CMake"
   | "TypeScript";
 
-export type ActorName = string;
+export type OrgName = string;
 
-export interface IActor {
+export interface IOrg {
   id: number;
-  actorType: ActorType;
-  name: ActorName;
+  orgType: OrgType;
+  name: OrgName;
   url?: string;
   oldUrl?: string;
   repoUrl?: string;
@@ -67,9 +67,9 @@ export interface IActor {
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
   logo?: string;
-  languages: ActorLanguage[];
+  languages: OrgLanguage[];
 }
 
-export interface IActors {
-  [key: string]: IActor;
+export interface IOrgs {
+  [key: string]: IOrg;
 }

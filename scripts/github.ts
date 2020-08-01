@@ -161,7 +161,7 @@ recursePRQuery(initialPrQuery)
       (acc, p) => ({
         ...acc,
         [p.name]: {
-          actorType: "Open Source",
+          orgType: "Open Source",
           id: id++,
           // missing language in kohana-modules
           languages: p.languages || fillMissingLanguages(p.name),
@@ -174,7 +174,7 @@ recursePRQuery(initialPrQuery)
     );
 
     let data = JSON.stringify(projectsFinal, null, "  ");
-    fs.writeFileSync(`${config.output_dir}/gh_actors.json`, data);
+    fs.writeFileSync(`${config.output_dir}/gh_orgs.json`, data);
 
     // we do this at the bottom because we want to associate the
     // project_final 'id' attribute with project in pr's
@@ -185,7 +185,7 @@ recursePRQuery(initialPrQuery)
         acceptedDate: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
-        actorId: Object.keys(projectsFinal).find(
+        orgId: Object.keys(projectsFinal).find(
           (projectName) => pr.repository.name === projectName
         ),
         componentName: "Patch",

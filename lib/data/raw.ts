@@ -1,20 +1,14 @@
 import handPickedActivitiesRaw from "../../data/my_activities.json";
-import handPickedActorsRaw from "../../data/my_actors.json";
+import handPickedOrgsRaw from "../../data/my_orgs.json";
 import ghActivitiesRaw from "../../data/scraped/gh_activities.json";
-import ghActorsRaw from "../../data/scraped/gh_actors.json";
+import ghOrgsRaw from "../../data/scraped/gh_orgs.json";
 
-import {
-  ActivityType,
-  ActorLanguage,
-  ActorType,
-  IActivity,
-  IActors,
-} from "../types";
+import { ActivityType, OrgLanguage, OrgType, IActivity, IOrgs } from "../types";
 
 // Join raw data from JSON into lists
-export const myActorsRaw: IActors = {
-  ...(handPickedActorsRaw as IActors),
-  ...(ghActorsRaw as IActors),
+export const myOrgsRaw: IOrgs = {
+  ...(handPickedOrgsRaw as IOrgs),
+  ...(ghOrgsRaw as IOrgs),
 };
 
 export const myActivitiesRaw: IActivity[] = [
@@ -23,20 +17,20 @@ export const myActivitiesRaw: IActivity[] = [
 ];
 
 // Calculated at runtime, based on the content of above
-export const myLanguagesRaw: ActorLanguage[] = Array.from(
+export const myLanguagesRaw: OrgLanguage[] = Array.from(
   new Set(
     [
-      ...Object.values(myActorsRaw)
+      ...Object.values(myOrgsRaw)
         .map((a) => a.languages)
         .flat(),
     ].filter(Boolean)
   )
 );
 
-export const myActorTypesRaw: ActorType[] = Array.from(
+export const myOrgTypesRaw: OrgType[] = Array.from(
   new Set(
-    Object.values(myActorsRaw)
-      .map((a) => a.actorType)
+    Object.values(myOrgsRaw)
+      .map((a) => a.orgType)
       .filter(Boolean)
   )
 );

@@ -4,10 +4,10 @@ import Select from "react-select";
 import { Search } from "../../lib/search";
 import {
   ActivityType,
-  ActorLanguage,
-  ActorName,
+  OrgLanguage,
+  OrgName,
   IActivity,
-  IActor,
+  IOrg,
 } from "../../lib/types";
 import { getSelectOptions, onSelectChange } from "./react-select";
 import { useAsyncEffect } from "./utils";
@@ -18,17 +18,17 @@ const search = new Search();
 
 interface IActivityCardProps {
   activity: IActivity;
-  actor: IActor;
+  org: IOrg;
 }
 
-const ActivityCard: React.FC<IActivityCardProps> = ({ activity, actor }) => (
+const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
   <div className="card">
-    <a href={actor && actor.url ? actor.url : "#"} title={activity.title}>
+    <a href={org && org.url ? org.url : "#"} title={activity.title}>
       {activity.title}
     </a>
-    {actor &&
-      actor.languages &&
-      actor.languages.map((language, idx) => (
+    {org &&
+      org.languages &&
+      org.languages.map((language, idx) => (
         <div key={idx} className="language fr">
           {language}
         </div>
@@ -39,9 +39,9 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, actor }) => (
 const App: React.FC = () => {
   const [results, setResults] = React.useState<IActivity[]>([]);
   const [selectedLanguages, setSelectedLanguages] = React.useState<
-    ActorLanguage[]
+    OrgLanguage[]
   >([]);
-  const [selectedActors, setSelectedActors] = React.useState<ActorName[]>([]);
+  const [selectedOrgs, setSelectedOrgs] = React.useState<OrgName[]>([]);
   const [selectedActivityTypes, setSelectedActivityTypes] = React.useState<
     ActivityType[]
   >([]);
@@ -52,28 +52,28 @@ const App: React.FC = () => {
   useAsyncEffect(async () => {
     const {
       activities,
-      actors,
+      orgs,
       languages,
-      actorTypes,
+      orgTypes,
       activityTypes,
     } = await fetchActivities();
     search.setState({
       activities,
       activityTypes,
-      actorTypes,
-      actors,
+      orgTypes,
+      orgs,
       languages,
     });
 
     if (
-      actors !== undefined &&
+      orgs !== undefined &&
       (selectedLanguages.length ||
-        selectedActors.length ||
+        selectedOrgs.length ||
         selectedActivityTypes.length)
     ) {
       const updated =
         search.setSearches("languages", selectedLanguages as string[]) ||
-        search.setSearches("actors", selectedActors) ||
+        search.setSearches("orgs", selectedOrgs) ||
         search.setSearches("activityTypes", selectedActivityTypes);
 
       if (updated) {
@@ -93,7 +93,7 @@ const App: React.FC = () => {
   }
 
   const onLanguageChange = onSelectChange(setSelectedLanguages);
-  const onActorChange = onSelectChange(setSelectedActors);
+  const onOrgChange = onSelectChange(setSelectedOrgs);
   const onActivityTypeChange = onSelectChange(setSelectedActivityTypes);
 
   const resultsCount = results ? results.length : 0;
@@ -109,9 +109,9 @@ const App: React.FC = () => {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
       />
       <Select
-        options={getSelectOptions(Object.keys(search.data.actors))}
+        options={getSelectOptions(Object.keys(search.data.orgs))}
         isMulti={true}
-        onChange={onActorChange}
+        onChange={onOrgChange}
         className="react-select"
         placeholder="Filter by Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
       />
@@ -135,7 +135,7 @@ const App: React.FC = () => {
         results.map((activity, idx) => (
           <ActivityCard
             activity={activity}
-            actor={search.data.actors[activity.actorId]}
+            org={search.data.orgs[activity.orgId]}
             key={idx}
           />
         ))}
