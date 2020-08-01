@@ -8,7 +8,7 @@ import {
   OrgType,
   IActivity,
   IOrg,
-  IOrgs
+  IOrgs,
 } from "../types";
 
 interface IStateData {
@@ -46,13 +46,13 @@ const SearchFilters: ISearchFilters = {
       return false;
     }
     return org.languages.includes(value);
-  }
+  },
 };
 
 const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
   const a = new Set(left);
   const b = new Set(right);
-  return Array.from(a).filter(x => !b.has(x));
+  return Array.from(a).filter((x) => !b.has(x));
 };
 
 export class Search {
@@ -68,7 +68,7 @@ export class Search {
     activityTypes: new Set(),
     orgTypes: new Set(),
     orgs: new Set(),
-    languages: new Set()
+    languages: new Set(),
   };
 
   /**
@@ -78,7 +78,7 @@ export class Search {
     activityTypes: new Set(),
     orgTypes: new Set(),
     orgs: new Set(),
-    languages: new Set()
+    languages: new Set(),
   };
 
   constructor(
@@ -87,7 +87,7 @@ export class Search {
       activityTypes: [],
       orgTypes: [],
       orgs: {},
-      languages: []
+      languages: [],
     }
   ) {
     this.data = data;
@@ -98,14 +98,14 @@ export class Search {
     activityTypes,
     orgTypes,
     orgs,
-    languages
+    languages,
   }: IStateData) {
     this.data = {
       activities,
       activityTypes,
       orgTypes,
       orgs,
-      languages
+      languages,
     };
   }
 
@@ -150,8 +150,8 @@ export class Search {
     const langs = Array.from(languages.values());
     if (langs) {
       activities = activities.concat(
-        this.data.activities.filter(activity => {
-          return langs.some(language =>
+        this.data.activities.filter((activity) => {
+          return langs.some((language) =>
             SearchFilters.languages(language, activity, this.data)
           );
         })
@@ -163,7 +163,7 @@ export class Search {
       activityTypes,
       orgTypes,
       orgs,
-      languages
+      languages,
     };
   }
 
@@ -172,15 +172,15 @@ export class Search {
       orgs,
       activityTypes,
       orgTypes,
-      activities: initialActivities
+      activities: initialActivities,
     } = this.data;
 
     let activities: IActivity[] = [];
 
-    const languages = this.data.languages.filter(language => {
+    const languages = this.data.languages.filter((language) => {
       return (Object.values(orgs) as IOrg[])
-        .filter(org => org && org.languages && org.languages.length)
-        .some(org => org.languages.includes(language));
+        .filter((org) => org && org.languages && org.languages.length)
+        .some((org) => org.languages.includes(language));
     });
     const langs = this.activeSearches.languages.size
       ? this.activeSearches.languages
@@ -189,7 +189,7 @@ export class Search {
       for (const language of Array.from(langs.values())) {
         // append behavior, so adding a language widens scope to an additional language
         activities = activities.concat(
-          initialActivities.filter(activity => {
+          initialActivities.filter((activity) => {
             return SearchFilters.languages(language, activity, this.data);
           })
         );
@@ -200,7 +200,7 @@ export class Search {
       activityTypes,
       orgTypes,
       orgs,
-      languages
+      languages,
     };
   }
 
@@ -267,7 +267,7 @@ export class Search {
           return acc;
         },
         {}
-      )
+      ),
     };
   }
 
@@ -304,14 +304,14 @@ export class Search {
       languages: new Set(
         activities.reduce((acc, activity) => {
           const { languages } = orgs[activity.orgId];
-          languages.map(language => {
+          languages.map((language) => {
             if (acc.includes(language) === false) {
               return acc.concat(language);
             }
           });
           return acc;
         }, [] as OrgLanguage[])
-      )
+      ),
     };
   }
 }

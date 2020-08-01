@@ -3,5 +3,5 @@ export {
   myOrgsRaw as orgs,
   myLanguagesRaw as languages,
   myOrgTypesRaw as orgTypes,
-  myActivityTypesRaw as activityTypes
+  myActivityTypesRaw as activityTypes,
 } from "./raw";
