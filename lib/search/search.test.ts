@@ -53,29 +53,29 @@ describe("test with data", () => {
       });
     });
 
-    describe("actorTypes", () => {
+    describe("orgTypes", () => {
       test("search has data loaded for beforeEach", async () => {
         const results = search.getCounts();
-        expect(results).toHaveProperty("actorTypes");
+        expect(results).toHaveProperty("orgTypes");
 
-        expect(results.actorTypes).toHaveProperty("Company");
-        expect(results.actorTypes).toHaveProperty("Company.count");
-        expect(results.actorTypes).toHaveProperty("Company.count", 7);
+        expect(results.orgTypes).toHaveProperty("Company");
+        expect(results.orgTypes).toHaveProperty("Company.count");
+        expect(results.orgTypes).toHaveProperty("Company.count", 7);
 
-        expect(results.actorTypes).toHaveProperty("Website");
-        expect(results.actorTypes).toHaveProperty("Website.count");
-        expect(results.actorTypes).toHaveProperty("Website.count", 2);
+        expect(results.orgTypes).toHaveProperty("Website");
+        expect(results.orgTypes).toHaveProperty("Website.count");
+        expect(results.orgTypes).toHaveProperty("Website.count", 2);
       });
     });
 
-    describe("actors", () => {
+    describe("orgs", () => {
       test("search has data loaded for beforeEach", async () => {
         const results = search.getCounts();
-        expect(results).toHaveProperty("actors");
+        expect(results).toHaveProperty("orgs");
 
-        expect(results.actors).toHaveProperty("werkzeug");
-        expect(results.actors).toHaveProperty("werkzeug.count");
-        expect(results.actors).toHaveProperty("werkzeug.count", 3);
+        expect(results.orgs).toHaveProperty("werkzeug");
+        expect(results.orgs).toHaveProperty("werkzeug.count");
+        expect(results.orgs).toHaveProperty("werkzeug.count", 3);
       });
     });
 

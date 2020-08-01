@@ -1,7 +1,7 @@
 {
   "tmuxp": {
     "id": 10000,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "tmuxp",
     "url": "https://tmuxp.git-pull.com/",
     "repoUrl": "https://github.com/tmux-python/tmuxp/",
@@ -18,7 +18,7 @@
   },
   "libtmux": {
     "id": 10001,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "libtmux",
     "url": "https://libtmux.git-pull.com/",
     "repoUrl": "https://github.com/tmux-python/libtmux/",
@@ -35,7 +35,7 @@
   },
   "cihai": {
     "id": 10002,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "cihai",
     "url": "https://cihai.git-pull.com/",
     "repoUrl": "https://github.com/cihai/cihai/",
@@ -52,7 +52,7 @@
   },
   "cihai-cli": {
     "id": 10003,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "cihai-cli",
     "url": "https://cihai-cli.git-pull.com/",
     "repoUrl": "https://github.com/cihai-cli/cihai-cli/",
@@ -69,7 +69,7 @@
   },
   "unihan-etl": {
     "id": 10004,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "unihan-etl",
     "url": "https://unihan-etl.git-pull.com/",
     "repoUrl": "https://github.com/cihai/unihan-etl/",
@@ -86,7 +86,7 @@
   },
   "unihan-db": {
     "id": 10005,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "unihan-db",
     "url": "https://unihan-db.git-pull.com/",
     "repoUrl": "https://github.com/cihai/unihan-db/",
@@ -103,7 +103,7 @@
   },
   "django-slugify-processor": {
     "id": 10006,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "django-slugify-processor",
     "url": "https://django-slugify-processor.devel.tech/",
     "repoUrl": "https://github.com/develtech/django-slugify-processor/",
@@ -119,7 +119,7 @@
   },
   "vcspull": {
     "id": 10007,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "vcspull",
     "url": "https://vcspull.git-pull.com/",
     "repoUrl": "https://github.com/vcs-python/vcspull/",
@@ -136,7 +136,7 @@
   },
   "libvcs": {
     "id": 10008,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "libvcs",
     "url": "https://libvcs.git-pull.com/",
     "repoUrl": "https://github.com/vcs-python/libvcs/",
@@ -153,7 +153,7 @@
   },
   "drupal-events": {
     "id": 20000,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "Drupal Events",
     "url": "https://www.drupal.org/project/event",
     "repoUrl": "https://cgit.drupalcode.org/event",
@@ -165,7 +165,7 @@
   },
   "drupal": {
     "id": 20001,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "Drupal",
     "url": "https://www.drupal.org/project/drupal",
     "repoUrl": "https://cgit.drupalcode.org/drupal",
@@ -177,7 +177,7 @@
   },
   "freebsd-main": {
     "id": 20002,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "FreeBSD (Base/Main tracker/bugzilla)",
     "url": "https://www.freebsd.org",
     "repoUrl": "https://svn.freebsd.org/",
@@ -189,7 +189,7 @@
   },
   "freebsd-ports": {
     "id": 20003,
-    "actorType": "Open Source",
+    "orgType": "Open Source",
     "name": "FreeBSD (Ports)",
     "url": "https://www.freebsd.org",
     "repoUrl": "https://svn.freebsd.org/",
@@ -201,7 +201,7 @@
   },
   "the-tao-of-tmux": {
     "id": 30000,
-    "actorType": "Publication",
+    "orgType": "Publication",
     "name": "The Tao of tmux",
     "url": "https://leanpub.com/the-tao-of-tmux",
     "logo": "/static/img/taooftmux.png",
@@ -212,7 +212,7 @@
   },
   "devel.tech": {
     "id": 40000,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "devel.tech",
     "url": "https://devel.tech/",
     "logo": "/static/img/develtech.png",
@@ -220,7 +220,7 @@
   },
   "hskflashcards": {
     "id": 40001,
-    "actorType": "Website",
+    "orgType": "Website",
     "name": "HSK FlashCards",
     "url": "https://www.hskflashcards.com/",
     "logo": "/static/img/hsk.png",
@@ -228,7 +228,7 @@
   },
   "wengu": {
     "id": 40002,
-    "actorType": "Website",
+    "orgType": "Website",
     "name": "Wengu",
     "url": "http://wengu.tartarie.com/",
     "logo": "/static/img/wengu.jpg",
@@ -236,7 +236,7 @@
   },
   "buzzr": {
     "id": 50000,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "Buzzr",
     "url": "https://buzzr.com",
     "logo": "/static/img/buzzr.jpg",
@@ -244,7 +244,7 @@
   },
   "social-amp": {
     "id": 50001,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "Social Amp",
     "url": "https://web.archive.org/web/20160302231819/http://www.socialamp.com:80/",
     "oldUrl": "https://socialamp.com",
@@ -253,7 +253,7 @@
   },
   "merkle": {
     "id": 50002,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "Merkle",
     "url": "https://www.merkleinc.com",
     "logo": "/static/img/merkle.png",
@@ -261,7 +261,7 @@
   },
   "boostable": {
     "id": 50003,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "Boostable",
     "url": "https://web.archive.org/web/20150727124553/https://www.boostable.com/",
     "oldUrl": "https://boostable.com",
@@ -270,7 +270,7 @@
   },
   "peergrade": {
     "id": 50004,
-    "actorType": "Company",
+    "orgType": "Company",
     "name": "Peergrade",
     "url": "https://www.peergrade.io",
     "logo": "/static/img/peergrade-blue.png",

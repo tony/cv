@@ -24,11 +24,11 @@ const config = {
     "nick-ma",
     "peergradeio",
     "tmux-python",
-    "vcs-python",
+    "vcs-python"
   ],
   gh_user: "tony",
   ignore_private_repos: true,
-  output_dir: "data/scraped",
+  output_dir: "data/scraped"
 };
 
 if (!fs.existsSync(config.output_dir)) {
@@ -70,13 +70,13 @@ const initialPrQuery = userPrQuery.replace(
   "first: 100"
 );
 
-const makePRQuery = async (query) => {
+const makePRQuery = async query => {
   // wraps ghQuery
   const res = await ghQuery(query);
   const data = {
     // create a compact response (non-standard)
     ...{ pullRequests: res.user.pullRequests.edges },
-    ...res.user.pullRequests.pageInfo,
+    ...res.user.pullRequests.pageInfo
   };
   if (data.hasNextPage) {
     data.nextQuery = userPrQuery.replace(
@@ -89,7 +89,7 @@ const makePRQuery = async (query) => {
 
 let issues = [];
 
-const recursePRQuery = async (query) => {
+const recursePRQuery = async query => {
   // on first invocation, add initial query
   const res = await makePRQuery(query);
 
@@ -102,30 +102,30 @@ const recursePRQuery = async (query) => {
 };
 
 recursePRQuery(initialPrQuery)
-  .then((prs) => {
+  .then(prs => {
     if (config.exclude_own_repo) {
       prs = prs.filter(
-        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`)
+        pr => !pr.node.url.includes(`https://github.com/${config.gh_user}/`)
       );
     }
     if (config.exclude_users) {
       for (const user of config.exclude_users) {
         prs = prs.filter(
-          (pr) => !pr.node.url.includes(`https://github.com/${user}/`)
+          pr => !pr.node.url.includes(`https://github.com/${user}/`)
         );
       }
     }
 
     if (config.ignore_private_repos) {
-      prs = prs.filter((pr) => !pr.node.repository.isPrivate);
+      prs = prs.filter(pr => !pr.node.repository.isPrivate);
     }
 
-    prs = prs.map((pr) => pr.node); // zoom in on "node"
+    prs = prs.map(pr => pr.node); // zoom in on "node"
 
-    let projects = prs.map((pr) => pr.repository);
+    let projects = prs.map(pr => pr.repository);
 
     // join languages
-    projects = projects.map((p) => {
+    projects = projects.map(p => {
       p.languages = p.languages.edges.length
         ? [p.languages.edges[0].node.name]
         : undefined;
@@ -138,7 +138,7 @@ recursePRQuery(initialPrQuery)
     // projects = [ ... new Set(projects) ];
     projects = projects.filter(
       (project, index, self) =>
-        self.findIndex((p) => p.name === project.name) === index
+        self.findIndex(p => p.name === project.name) === index
     );
     // console.log(projects);
     // console.log(projects.length);
@@ -161,42 +161,42 @@ recursePRQuery(initialPrQuery)
       (acc, p) => ({
         ...acc,
         [p.name]: {
-          actorType: "Open Source",
+          orgType: "Open Source",
           id: id++,
           // missing language in kohana-modules
           languages: p.languages || fillMissingLanguages(p.name),
           name: p.name,
           repoUrl: p.url,
-          ...(p.homepageUrl ? { url: p.homepageUrl } : {}),
-        },
+          ...(p.homepageUrl ? { url: p.homepageUrl } : {})
+        }
       }),
       {}
     );
 
     let data = JSON.stringify(projectsFinal, null, "  ");
-    fs.writeFileSync(`${config.output_dir}/gh_actors.json`, data);
+    fs.writeFileSync(`${config.output_dir}/gh_orgs.json`, data);
 
     // we do this at the bottom because we want to associate the
     // project_final 'id' attribute with project in pr's
 
     id = 0;
-    const pullRequestsFinal = prs.map((pr) => {
+    const pullRequestsFinal = prs.map(pr => {
       return {
         acceptedDate: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
-        actorId: Object.keys(projectsFinal).find(
-          (projectName) => pr.repository.name === projectName
+        orgId: Object.keys(projectsFinal).find(
+          projectName => pr.repository.name === projectName
         ),
         componentName: "Patch",
         createdDate: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
         id: id++,
         qaUrl: pr.url,
-        title: pr.title,
+        title: pr.title
       };
     });
     data = JSON.stringify(pullRequestsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_activities.json`, data);
   })
-  .catch((err) => console.error(err));
+  .catch(err => console.error(err));

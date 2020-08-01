@@ -3,20 +3,20 @@
  */
 import {
   ActivityType,
-  ActorLanguage,
-  ActorName,
-  ActorType,
+  OrgLanguage,
+  OrgName,
+  OrgType,
   IActivity,
-  IActor,
-  IActors,
+  IOrg,
+  IOrgs
 } from "../types";
 
 interface IStateData {
   activities: IActivity[];
   activityTypes: ActivityType[];
-  actorTypes: ActorType[];
-  actors: IActors;
-  languages: ActorLanguage[];
+  orgTypes: OrgType[];
+  orgs: IOrgs;
+  languages: OrgLanguage[];
 }
 
 export type SearchFn<ValueT> = (
@@ -27,32 +27,32 @@ export type SearchFn<ValueT> = (
 export type SearchType = keyof IStateData;
 export interface ISearchFilters {
   [SearchType: string]: SearchFn<any>;
-  languages: SearchFn<ActorLanguage>;
+  languages: SearchFn<OrgLanguage>;
 }
 
 interface ISearches {
-  [key: string]: Set<string | ActorLanguage>;
+  [key: string]: Set<string | OrgLanguage>;
   activityTypes: Set<string>;
-  actorTypes: Set<string>;
-  actors: Set<string>;
-  languages: Set<ActorLanguage>;
+  orgTypes: Set<string>;
+  orgs: Set<string>;
+  languages: Set<OrgLanguage>;
 }
 
 // const SearchFilters: Map<SearchType, SearchFn<any>> = new Map({
 const SearchFilters: ISearchFilters = {
   languages: (value, activity, data): boolean => {
-    const actor = data.actors[activity.actorId];
-    if (!actor || !actor.languages || !actor.languages.length) {
+    const org = data.orgs[activity.orgId];
+    if (!org || !org.languages || !org.languages.length) {
       return false;
     }
-    return actor.languages.includes(value);
-  },
+    return org.languages.includes(value);
+  }
 };
 
 const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
   const a = new Set(left);
   const b = new Set(right);
-  return Array.from(a).filter((x) => !b.has(x));
+  return Array.from(a).filter(x => !b.has(x));
 };
 
 export class Search {
@@ -66,9 +66,9 @@ export class Search {
    */
   public availableSearches: ISearches = {
     activityTypes: new Set(),
-    actorTypes: new Set(),
-    actors: new Set(),
-    languages: new Set(),
+    orgTypes: new Set(),
+    orgs: new Set(),
+    languages: new Set()
   };
 
   /**
@@ -76,18 +76,18 @@ export class Search {
    */
   public activeSearches: ISearches = {
     activityTypes: new Set(),
-    actorTypes: new Set(),
-    actors: new Set(),
-    languages: new Set(),
+    orgTypes: new Set(),
+    orgs: new Set(),
+    languages: new Set()
   };
 
   constructor(
     data: IStateData = {
       activities: [],
       activityTypes: [],
-      actorTypes: [],
-      actors: {},
-      languages: [],
+      orgTypes: [],
+      orgs: {},
+      languages: []
     }
   ) {
     this.data = data;
@@ -96,16 +96,16 @@ export class Search {
   public setState({
     activities,
     activityTypes,
-    actorTypes,
-    actors,
-    languages,
+    orgTypes,
+    orgs,
+    languages
   }: IStateData) {
     this.data = {
       activities,
       activityTypes,
-      actorTypes,
-      actors,
-      languages,
+      orgTypes,
+      orgs,
+      languages
     };
   }
 
@@ -145,13 +145,13 @@ export class Search {
   }
 
   public getData(): IStateData {
-    const { actors, activityTypes, actorTypes, languages } = this.data;
+    const { orgs, activityTypes, orgTypes, languages } = this.data;
     let activities: IActivity[] = [];
     const langs = Array.from(languages.values());
     if (langs) {
       activities = activities.concat(
-        this.data.activities.filter((activity) => {
-          return langs.some((language) =>
+        this.data.activities.filter(activity => {
+          return langs.some(language =>
             SearchFilters.languages(language, activity, this.data)
           );
         })
@@ -161,26 +161,26 @@ export class Search {
     return {
       activities,
       activityTypes,
-      actorTypes,
-      actors,
-      languages,
+      orgTypes,
+      orgs,
+      languages
     };
   }
 
   public getResults(): IStateData {
     const {
-      actors,
+      orgs,
       activityTypes,
-      actorTypes,
-      activities: initialActivities,
+      orgTypes,
+      activities: initialActivities
     } = this.data;
 
     let activities: IActivity[] = [];
 
-    const languages = this.data.languages.filter((language) => {
-      return (Object.values(actors) as IActor[])
-        .filter((actor) => actor && actor.languages && actor.languages.length)
-        .some((actor) => actor.languages.includes(language));
+    const languages = this.data.languages.filter(language => {
+      return (Object.values(orgs) as IOrg[])
+        .filter(org => org && org.languages && org.languages.length)
+        .some(org => org.languages.includes(language));
     });
     const langs = this.activeSearches.languages.size
       ? this.activeSearches.languages
@@ -189,7 +189,7 @@ export class Search {
       for (const language of Array.from(langs.values())) {
         // append behavior, so adding a language widens scope to an additional language
         activities = activities.concat(
-          initialActivities.filter((activity) => {
+          initialActivities.filter(activity => {
             return SearchFilters.languages(language, activity, this.data);
           })
         );
@@ -198,9 +198,9 @@ export class Search {
     return {
       activities,
       activityTypes,
-      actorTypes,
-      actors,
-      languages,
+      orgTypes,
+      orgs,
+      languages
     };
   }
 
@@ -208,7 +208,7 @@ export class Search {
    * Get global counts, without filters
    */
   public getCounts() {
-    const { activities, actors } = this.getData();
+    const { activities, orgs } = this.getData();
 
     interface IStatCell {
       [SearchType: string]: {
@@ -217,8 +217,8 @@ export class Search {
     }
     interface IStats {
       activityTypes: IStatCell;
-      actors: IStatCell;
-      actorTypes: IStatCell;
+      orgs: IStatCell;
+      orgTypes: IStatCell;
       languages: IStatCell;
     }
     return {
@@ -233,32 +233,29 @@ export class Search {
         },
         {}
       ),
-      actorTypes: activities.reduce(
-        (acc: IStats["actorTypes"], activity: IActivity) => {
-          const { actorType } = actors[activity.actorId];
-          if (acc[actorType] === undefined) {
-            acc[actorType] = { count: 0 };
+      orgTypes: activities.reduce(
+        (acc: IStats["orgTypes"], activity: IActivity) => {
+          const { orgType } = orgs[activity.orgId];
+          if (acc[orgType] === undefined) {
+            acc[orgType] = { count: 0 };
           }
-          acc[actorType].count++;
+          acc[orgType].count++;
           return acc;
         },
         {}
       ),
-      actors: activities.reduce(
-        (acc: IStats["actors"], activity: IActivity) => {
-          const { actorId } = activity;
-          if (acc[actorId] === undefined) {
-            acc[actorId] = { count: 0 };
-          }
-          acc[actorId].count++;
-          return acc;
-        },
-        {}
-      ),
+      orgs: activities.reduce((acc: IStats["orgs"], activity: IActivity) => {
+        const { orgId } = activity;
+        if (acc[orgId] === undefined) {
+          acc[orgId] = { count: 0 };
+        }
+        acc[orgId].count++;
+        return acc;
+      }, {}),
       languages: activities.reduce(
         (acc: IStats["languages"], activity: IActivity) => {
-          const actor = actors[activity.actorId];
-          for (const language of Array.from(actor.languages.values())) {
+          const org = orgs[activity.orgId];
+          for (const language of Array.from(org.languages.values())) {
             if (language === undefined) {
               continue;
             }
@@ -270,12 +267,12 @@ export class Search {
           return acc;
         },
         {}
-      ),
+      )
     };
   }
 
   public getAvailableSearches() {
-    const { activities, actors } = this.getResults();
+    const { activities, orgs } = this.getResults();
     this.availableSearches = {
       activityTypes: new Set(
         activities.reduce((acc, activity) => {
@@ -286,35 +283,35 @@ export class Search {
           return acc;
         }, [] as ActivityType[])
       ),
-      actorTypes: new Set(
+      orgTypes: new Set(
         activities.reduce((acc, activity) => {
-          const actorType = actors[activity.actorId].actorType;
-          if (acc.includes(actorType) === false) {
-            return acc.concat(actorType);
+          const orgType = orgs[activity.orgId].orgType;
+          if (acc.includes(orgType) === false) {
+            return acc.concat(orgType);
           }
           return acc;
-        }, [] as ActorType[])
+        }, [] as OrgType[])
       ),
-      actors: new Set(
+      orgs: new Set(
         activities.reduce((acc, activity) => {
-          const actor = activity.actorId;
-          if (acc.includes(actor) === false) {
-            return acc.concat(actor);
+          const org = activity.orgId;
+          if (acc.includes(org) === false) {
+            return acc.concat(org);
           }
           return acc;
-        }, [] as ActorName[])
+        }, [] as OrgName[])
       ),
       languages: new Set(
         activities.reduce((acc, activity) => {
-          const { languages } = actors[activity.actorId];
-          languages.map((language) => {
+          const { languages } = orgs[activity.orgId];
+          languages.map(language => {
             if (acc.includes(language) === false) {
               return acc.concat(language);
             }
           });
           return acc;
-        }, [] as ActorLanguage[])
-      ),
+        }, [] as OrgLanguage[])
+      )
     };
   }
 }
