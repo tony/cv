@@ -151,5 +151,5 @@ test:
 test_watch:
 	npx jest --watch
 
-update_packages:
-	$(MAKE) ncu_update install
+sync_packages:
+	$(MAKE) ncu_update install yarn_upgrade
