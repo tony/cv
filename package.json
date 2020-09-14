@@ -11,7 +11,7 @@
     "github-colors": "~2.2",
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
-    "moment": "^2.27.0",
+    "moment": "^2.28.0",
     "normalizr": "^3.6.0",
     "prettier": "^2.1.1"
   },
