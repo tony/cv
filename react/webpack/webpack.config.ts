@@ -45,7 +45,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           ]
         : []),
       "./src/entry.tsx",
-    ],
+    ] as [string, ...string[]],
   },
   mode: env.production ? "production" : "development",
   module: {
@@ -100,12 +100,13 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
-        vendor: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          name(mod) {
+          // @ts-nocheck-next-line
+          name(mod: webpack.DynamicEntryPlugin) {
             // get the name. E.g. node_modules/packageName/not/this/part.js
             // or node_modules/packageName
-            const packageName = mod.context.match(
+            const packageName = mod?.context.match(
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
 
