@@ -3,5 +3,6 @@
     "@babel/preset-react",
     "@babel/preset-typescript",
     ["@babel/preset-env", {modules: false, targets: {node: "current"}}]
-  ]
+  ],
+  "plugins": ["react-refresh/babel"]
 }
