@@ -4,6 +4,12 @@ Tony Narlock's CV
 Quickstart
 ----------
 
+Preparation:
+
+Create a `GitHub Personal Access Token`_ and set it in your *.bashrc* /
+*.zshrc* / etc. as ``export GITHUB_API_TOKEN=INSERT_TOKEN_HERE``. Check
+``env | grep GITHUB_API`` to verify terminal has the variable set.
+
 .. code-block:: bash
 
    $ yarn
@@ -24,6 +30,8 @@ Quickstart
    $ cd react/
    $ yarn
    $ npm run build
+
+.. _GitHub Personal Access Token: https://github.com/settings/tokens
 
 Structure
 --------
