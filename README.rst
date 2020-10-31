@@ -16,17 +16,17 @@ This time we're using typescript and wiring-in webpack from the ground up.
 Quickstart
 ----------
 
-Required: Set GH API Key
-
-Create a `GitHub Personal Access Token`_ and set it in your *.bashrc* /
-*.zshrc* / etc. as ``export GITHUB_API_TOKEN=INSERT_TOKEN_HERE``. Check
-``env | grep GITHUB_API`` to verify terminal has the variable set.
+*Required:* Create a `GitHub Personal Access Token`_ and set it in env,
+ideally *.bashrc* / *.zshrc* / etc. via ``export GITHUB_API_TOKEN=INSERT_TOKEN_HERE``.
+Check ``env | grep GITHUB_API`` to verify terminal has the variable set.
 
 .. code-block:: bash
 
    $ yarn global add @angular/cli  # If building angular
 
    $ make install  # Install root deps
+
+   $ yarn github  # Assure GITHUB_API_TOKEN is set
 
    $ cd vue/  # or
    $ cd react/
