@@ -16,6 +16,12 @@ This time we're using typescript and wiring-in webpack from the ground up.
 Quickstart
 ----------
 
+Required: Set GH API Key
+
+Create a `GitHub Personal Access Token`_ and set it in your *.bashrc* /
+*.zshrc* / etc. as ``export GITHUB_API_TOKEN=INSERT_TOKEN_HERE``. Check
+``env | grep GITHUB_API`` to verify terminal has the variable set.
+
 .. code-block:: bash
 
    $ yarn global add @angular/cli  # If building angular
@@ -32,6 +38,8 @@ Quickstart
    $ yarn start  # Launch dev server / hot reloading
    # or
    $ yarn build  # Build to dist/
+
+.. _GitHub Personal Access Token: https://github.com/settings/tokens
 
 Make tasks
 ----------
