@@ -22,7 +22,7 @@
     "@types/webpack": "^4.41.25",
     "@types/webpack-dev-server": "^3.11.1",
     "babel-loader": "^8.2.2",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
     "prettier": "^2.2.1",
     "react-hot-loader": "^4.13.0",
