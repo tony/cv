@@ -8,6 +8,7 @@
     "prettier": "prettier data lib scripts --write"
   },
   "dependencies": {
+    "@datorama/akita": "^5.3.0",
     "github-colors": "~2.2",
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
