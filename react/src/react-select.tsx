@@ -1,8 +1,9 @@
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
+import type { EntityStore, MultiActiveState, Store } from "@datorama/akita";
 
-type ISelectOption = Pick<OptionProps, "label" | "value">;
+export type ISelectOption = Pick<OptionProps, "label" | "value">;
 
-interface IOptionType {
+export interface IOptionType {
   label: string;
   value: string;
 }

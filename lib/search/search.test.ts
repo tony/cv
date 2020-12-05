@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Search } from "./search";
 
 describe("object initialization", () => {
