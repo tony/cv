@@ -14,7 +14,7 @@ export const getSelectOptions = (items: string[]) =>
   })) as ISelectOption[];
 
 export const onSelectChange = (setState: (_: any) => void) => (
-  value: ValueType<IOptionType>,
+  value: ValueType<IOptionType, boolean>,
   _: ActionMeta<IOptionType>
 ) => {
   if (value) {
