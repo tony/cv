@@ -1,6 +1,13 @@
 The Making Of
 =============
 
+December 12th, 2020 - Saturday
+------------------------------
+- tslint -> eslint
+
+react / vue:
+- Add optional --open flag for webpack
+
 December 15th, 2019 - Sunday
 ----------------------------
 lib/search:
