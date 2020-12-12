@@ -11,6 +11,7 @@ const projectRoot = path.join(__dirname, "../");
 interface IWebpackEnv {
   devServerHost: string;
   devServerPort: string;
+  open: boolean;
   production: boolean;
   watch: boolean;
 }
@@ -18,6 +19,7 @@ interface IWebpackEnv {
 const defaultEnvironment: IWebpackEnv = {
   devServerHost: "localhost",
   devServerPort: "3093",
+  open: true,
   production: false,
   watch: false,
 };
@@ -30,7 +32,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           contentBase: "./dist",
           host: env.devServerHost,
           hot: true,
-          open: true,
+          open: env.open,
           port: parseInt(env.devServerPort, 10),
           publicPath: "/",
         },
