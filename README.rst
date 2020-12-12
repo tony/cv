@@ -146,3 +146,10 @@ Version 2 (Under development)
 
   Internal data props using underscores now are camelCase, e.g.
   repo_url -> repoUrl
+
+Thanks
+------
+`@IonicaBizao/github-colors`_ - For ``data/gh_colors.json`` (via ``yarn
+github-colors.json``), `license MIT <https://github.com/IonicaBizau/github-colors/blob/2ed4842/LICENSE>`_
+
+.. _@IonicaBizao/github-colors: https://github.com/IonicaBizau/github-colors
