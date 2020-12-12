@@ -6,7 +6,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "lib": ["esnext.array"] 
+    "lib": ["esnext.array"],
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",

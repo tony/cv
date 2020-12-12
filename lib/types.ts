@@ -1,4 +1,4 @@
-export type ActivityType =
+export type ActivityTypeName =
   | "SoftwareApp"
   | "SoftwareLib"
   | "Patch"
@@ -8,10 +8,15 @@ export type ActivityType =
   | "Website"
   | "Article";
 
+export interface ActivityType {
+  id: ActivityTypeName;
+  name: ActivityTypeName;
+}
+
 export interface IActivity {
   createdDate: string;
   title: string;
-  componentName: ActivityType;
+  componentName: ActivityTypeName;
   orgId: string;
   acceptedDate?: string;
   qaUrl?: string;
@@ -20,8 +25,14 @@ export interface IActivity {
   startDate?: string;
 }
 
-export type OrgType = "Open Source" | "Company" | "Publication" | "Website";
-export type OrgLanguage =
+export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
+
+export interface OrgType {
+  id: OrgTypeName;
+  name: OrgTypeName;
+}
+
+export type LanguageName =
   | "Python"
   | "PHP"
   | "Makefile"
@@ -46,11 +57,17 @@ export type OrgLanguage =
   | "CMake"
   | "TypeScript";
 
+export interface Language {
+  id: LanguageName;
+  color?: string;
+  textColor?: string;
+}
+
 export type OrgName = string;
 
 export interface IOrg {
   id: number;
-  orgType: OrgType;
+  orgType: OrgTypeName;
   name: OrgName;
   url?: string;
   oldUrl?: string;
@@ -67,7 +84,7 @@ export interface IOrg {
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
   logo?: string;
-  languages: OrgLanguage[];
+  languages: LanguageName[];
 }
 
 export interface IOrgs {

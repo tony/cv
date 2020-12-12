@@ -5,7 +5,10 @@ Tony Narlock's CV
 
 **Version 2 underway!**
 
-It's summer of 2019. I'm still very open-minded react and vue.js.
+It's winter of 2020. I'm still very open-minded react and vue.js.
+
+.. image:: lib/assets/architecture.png
+   :align: center
 
 Let's see what's the latest and greatest for both of these.
 
@@ -143,3 +146,10 @@ Version 2 (Under development)
 
   Internal data props using underscores now are camelCase, e.g.
   repo_url -> repoUrl
+
+Thanks
+------
+`@IonicaBizao/github-colors`_ - For ``data/gh_colors.json`` (via ``yarn
+github-colors.json``), `license MIT <https://github.com/IonicaBizau/github-colors/blob/2ed4842/LICENSE>`_
+
+.. _@IonicaBizao/github-colors: https://github.com/IonicaBizau/github-colors

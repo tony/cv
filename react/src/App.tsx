@@ -1,20 +1,33 @@
 import React from "react";
 import Select from "react-select";
-
-import { Search } from "../../lib/search";
+import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 import {
   ActivityType,
-  OrgLanguage,
+  LanguageName,
   OrgName,
   IActivity,
   IOrg,
 } from "../../lib/types";
+import {
+  activityTypesStore,
+  activitiesStore,
+  activitiesQuery,
+  activityTypesQuery,
+  orgsStore,
+  orgTypesStore,
+  orgsQuery,
+  orgTypesQuery,
+  cvStore,
+  search,
+  query,
+  languagesStore,
+  languagesQuery,
+} from "../../lib/hub";
 import { getSelectOptions, onSelectChange } from "./react-select";
+import type { ISelectOption, IOptionType } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
 import "./style.scss";
-
-const search = new Search();
 
 interface IActivityCardProps {
   activity: IActivity;
@@ -29,7 +42,14 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
     {org &&
       org.languages &&
       org.languages.map((language, idx) => (
-        <div key={idx} className="language fr">
+        <div
+          key={idx}
+          className="language fr"
+          style={{
+            backgroundColor: languagesQuery.getEntity(language)?.color,
+            color: languagesQuery.getEntity(language)?.textColor,
+          }}
+        >
           {language}
         </div>
       ))}
@@ -38,17 +58,10 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
 
 const App: React.FC = () => {
   const [results, setResults] = React.useState<IActivity[]>([]);
-  const [selectedLanguages, setSelectedLanguages] = React.useState<
-    OrgLanguage[]
-  >([]);
-  const [selectedOrgs, setSelectedOrgs] = React.useState<OrgName[]>([]);
-  const [selectedActivityTypes, setSelectedActivityTypes] = React.useState<
-    ActivityType[]
-  >([]);
+
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
-
   useAsyncEffect(async () => {
     const {
       activities,
@@ -57,32 +70,45 @@ const App: React.FC = () => {
       orgTypes,
       activityTypes,
     } = await fetchActivities();
-    search.setState({
+    if (
+      !languages ||
+      orgsStore.getValue().entities.length ||
+      cvStore.getValue()?.activities?.length
+    ) {
+      return;
+    }
+    console.log("setting storage");
+    cvStore.update({
       activities,
       activityTypes,
       orgTypes,
       orgs,
       languages,
     });
-
-    if (
-      orgs !== undefined &&
-      (selectedLanguages.length ||
-        selectedOrgs.length ||
-        selectedActivityTypes.length)
-    ) {
-      const updated =
-        search.setSearches("languages", selectedLanguages as string[]) ||
-        search.setSearches("orgs", selectedOrgs) ||
-        search.setSearches("activityTypes", selectedActivityTypes);
-
-      if (updated) {
-        setResults(search.getResults().activities as IActivity[]);
-      }
-    } else {
-      setResults(activities as IActivity[]);
+    orgsStore.set(orgs);
+    orgTypesStore.set(orgTypes);
+    languagesStore.set(languages);
+    activityTypesStore.set(activityTypes);
+    activitiesStore.set(activities);
+    if (!results.length) {
+      setResults(activitiesQuery.getAll() as IActivity[]);
     }
   });
+
+  React.useEffect(() => {
+    const myResults = query.activities$().subscribe((resultsUpdated) => {
+      console.log("results updated", resultsUpdated);
+
+      if (
+        resultsUpdated != results &&
+        resultsUpdated.length != results.length
+      ) {
+        setResults(resultsUpdated);
+      }
+    });
+
+    return () => myResults.unsubscribe();
+  }, []);
 
   if (!results.length) {
     return (
@@ -92,9 +118,41 @@ const App: React.FC = () => {
     );
   }
 
-  const onLanguageChange = onSelectChange(setSelectedLanguages);
-  const onOrgChange = onSelectChange(setSelectedOrgs);
-  const onActivityTypeChange = onSelectChange(setSelectedActivityTypes);
+  const onLanguageChange = (
+    value: ValueType<IOptionType, boolean>,
+    _: ActionMeta<IOptionType>
+  ) => {
+    if (value) {
+      languagesStore.setActive(
+        (value as IOptionType[]).map(({ value: v }) => v)
+      );
+    } else {
+      languagesStore.setActive([]);
+    }
+  };
+  const onOrgChange = (
+    value: ValueType<IOptionType, boolean>,
+    _: ActionMeta<IOptionType>
+  ) => {
+    console.log("onOrgChange", value);
+    if (value) {
+      orgsStore.setActive((value as IOptionType[]).map(({ label }) => label));
+    } else {
+      orgsStore.setActive([]);
+    }
+  };
+  const onActivityTypeChange = (
+    value: ValueType<IOptionType, boolean>,
+    _: ActionMeta<IOptionType>
+  ) => {
+    if (value) {
+      activityTypesStore.setActive(
+        (value as IOptionType[]).map(({ value: v }) => v)
+      );
+    } else {
+      activityTypesStore.setActive([]);
+    }
+  };
 
   const resultsCount = results ? results.length : 0;
 
@@ -102,43 +160,51 @@ const App: React.FC = () => {
     <div>
       <header className="site-name">Tony Narlock's CV</header>
       <Select
-        options={getSelectOptions(search.data.languages as string[])}
+        options={getSelectOptions(
+          query.getResults.languages.map((lang) => lang.id as string)
+        )}
         isMulti={true}
         onChange={onLanguageChange}
         className="react-select"
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
       />
       <Select
-        options={getSelectOptions(Object.keys(search.data.orgs))}
+        options={
+          orgsQuery.getAll().map((org) => ({
+            label: org.name,
+            value: org.id,
+          })) as ISelectOption[]
+        }
         isMulti={true}
         onChange={onOrgChange}
         className="react-select"
         placeholder="Filter by Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
       />
       <Select
-        options={getSelectOptions(search.data.activityTypes)}
+        options={
+          activityTypesQuery.getAll().map((a) => ({
+            label: a.name,
+            value: a.id,
+          })) as ISelectOption[]
+        }
         isMulti={true}
         onChange={onActivityTypeChange}
         className="react-select"
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      {Array.from(search.availableSearches.activityTypes).map(
-        (activityType) => (
-          <>{activityType}</>
-        )
-      )}
+      {Array.from(activityTypesQuery.getAll()).map((activityType) => (
+        <>{activityType.name}</>
+      ))}
 
       <div>Found {resultsCount}</div>
 
       {results &&
-        results.map((activity, idx) => (
-          <ActivityCard
-            activity={activity}
-            org={search.data.orgs[activity.orgId]}
-            key={idx}
-          />
-        ))}
+        results.map((activity, idx) => {
+          const org = orgsQuery.getEntity(activity.orgId);
+          if (!org) return;
+          return <ActivityCard activity={activity} org={org} key={idx} />;
+        })}
     </div>
   );
 };

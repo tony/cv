@@ -3,17 +3,20 @@
   "private": true,
   "scripts": {
     "github": "ts-node scripts/github.ts",
+    "github-colors": "curl https://raw.githubusercontent.com/IonicaBizau/github-colors/master/lib/colors.json -o data/gh_colors.json",
     "lint": "tslint --project tsconfig.json",
     "test": "jest",
     "prettier": "prettier data lib scripts --write"
   },
   "dependencies": {
+    "@datorama/akita": "^5.3.0",
     "github-colors": "~2.2",
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
     "moment": "^2.29.1",
     "normalizr": "^3.6.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "rxjs": "^6.6.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.19",
