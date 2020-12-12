@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "github": "ts-node scripts/github.ts",
+    "github-colors": "curl https://raw.githubusercontent.com/IonicaBizau/github-colors/master/lib/colors.json -o data/gh_colors.json",
     "lint": "tslint --project tsconfig.json",
     "test": "jest",
     "prettier": "prettier data lib scripts --write"
