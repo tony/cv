@@ -18,7 +18,6 @@ import {
   orgTypesStore,
   orgsQuery,
   orgTypesQuery,
-  cvStore,
   search,
   query,
   languagesStore,
@@ -100,19 +99,12 @@ const App: React.FC = () => {
     } = await fetchActivities();
     if (
       !languages ||
-      orgsStore.getValue().entities.length ||
-      cvStore.getValue()?.activities?.length
+      !!Object.keys(orgsStore.getValue().entities).length ||
+      !!Object.keys(activitiesStore.getValue().entities).length
     ) {
       return;
     }
     console.log("setting storage");
-    cvStore.update({
-      activities,
-      activityTypes,
-      orgTypes,
-      orgs,
-      languages,
-    });
     orgsStore.set(orgs);
     orgTypesStore.set(orgTypes);
     languagesStore.set(languages);
