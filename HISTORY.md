@@ -2,9 +2,10 @@
 
 ## December 13th, 2020 - Sunday
 
-- Merge \#1067: Akita / rxjs state management overhaul
+- Merge #1067: Akita / rxjs state management overhaul
 - react: Get toggling of activities working
 - react: Color for programming languages based on github colors
+- Move README/HISTORY files from reStructuredText to Markdown
 
 ## December 12th, 2020 - Saturday
 
