@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import type { Subscription, Observable } from "rxjs";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 import {
   ActivityType,
@@ -32,6 +33,13 @@ import "./style.scss";
 interface IActivityCardProps {
   activity: IActivity;
   org: IOrg;
+}
+
+function onEmit<T>(
+  source$: Observable<T>,
+  nextFn: (value: T) => void
+): Subscription {
+  return source$.subscribe(nextFn, console.error);
 }
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
@@ -96,18 +104,20 @@ const App: React.FC = () => {
   });
 
   React.useEffect(() => {
-    const myResults = query.activities$().subscribe((resultsUpdated) => {
-      console.log("results updated", resultsUpdated);
+    const subscriptions: Subscription[] = [
+      onEmit<IActivity[]>(query.activities$(), (resultsUpdated) => {
+        console.log("results updated", resultsUpdated);
 
-      if (
-        resultsUpdated != results &&
-        resultsUpdated.length != results.length
-      ) {
-        setResults(resultsUpdated);
-      }
-    });
+        if (
+          resultsUpdated != results &&
+          resultsUpdated.length != results.length
+        ) {
+          setResults(resultsUpdated);
+        }
+      }),
+    ];
 
-    return () => myResults.unsubscribe();
+    return () => subscriptions.map((it) => it.unsubscribe());
   }, [results]);
 
   if (!results.length) {
