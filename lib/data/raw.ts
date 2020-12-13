@@ -17,14 +17,14 @@ import {
   IOrg,
 } from "../types";
 
-// Join raw data from JSON into lists
-// export const myOrgsRaw: IOrgs = {
-//   ...(handPickedOrgsRaw as IOrgs),
-//   ...(ghOrgsRaw as IOrgs),
-// };
 export const myOrgsRaw: IOrg[] = [
-  ...(Object.values(handPickedOrgsRaw) as IOrg[]),
-  ...(Object.values(ghOrgsRaw) as IOrg[]),
+  // Make Object Key the ID
+  ...Object.entries(handPickedOrgsRaw).map(
+    ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
+  ),
+  ...Object.entries(ghOrgsRaw).map(
+    ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
+  ),
 ];
 
 export const myActivitiesRaw: IActivity[] = [
