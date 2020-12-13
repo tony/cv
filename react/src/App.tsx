@@ -2,6 +2,8 @@ import React from "react";
 import Select, { components as ReactSelectComponents } from "react-select";
 import type { Subscription, Observable } from "rxjs";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
+import chroma from "chroma-js";
+
 import {
   ActivityType,
   LanguageName,
@@ -42,6 +44,31 @@ function onEmit<T>(
 }
 
 const languagesStyles = {
+  option: (styles, { data }) => {
+    const language = $$queries.languages.getEntity(data.value);
+    if (!language?.color && !language?.textColor) {
+      return styles;
+    }
+    const backgroundColor = chroma(language.color).alpha(0.1).css();
+    return {
+      ...styles,
+      backgroundColor,
+      color: chroma(backgroundColor).get("lab.l") < 90 ? "black" : "white",
+      "&:hover": {
+        backgroundColor: "#DEEBFF",
+      },
+    };
+  },
+
+  multiValue: (styles, { data }) => {
+    const language = $$queries.languages.getEntity(data.value);
+    // const color = chroma(data.color);
+    return {
+      ...styles,
+      // backgroundColor: color.alpha(0.1).css(),
+      backgroundColor: language.color,
+    };
+  },
   multiValueLabel: (styles, { data }) => {
     const language = $$queries.languages.getEntity(data.value);
     return {
