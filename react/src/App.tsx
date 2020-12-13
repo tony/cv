@@ -67,10 +67,13 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
 interface ReducerState {
   activities: IActivity[];
 }
-type Action = { type: "set_results"; activities: IActivity[] };
+enum ActionType {
+  SetResults,
+}
+type Action = { type: ActionType.SetResults; activities: IActivity[] };
 const reducer = (state: ReducerState, action: Action) => {
   switch (action.type) {
-    case "set_results": {
+    case ActionType.SetResults: {
       return {
         ...state,
         activities: action.activities,
@@ -117,7 +120,7 @@ const App: React.FC = () => {
     activitiesStore.set(activities);
     if (!results?.activities.length) {
       dispatch({
-        type: "set_results",
+        type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
       });
     }
@@ -133,7 +136,7 @@ const App: React.FC = () => {
           resultsUpdated.length != results.length
         ) {
           dispatch({
-            type: "set_results",
+            type: ActionType.SetResults,
             activities: resultsUpdated,
           });
         }
