@@ -1,6 +1,12 @@
 The Making Of
 =============
 
+December 13th, 2020 - Sunday
+----------------------------
+- Merge #1067: Akita / rxjs state management overhaul
+- react: Get toggling of activities working
+- react: Color for programming languages based on github colors
+
 December 12th, 2020 - Saturday
 ------------------------------
 - tslint -> eslint
