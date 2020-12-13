@@ -51,18 +51,23 @@ const LanguageMultiValueLabel = (props) => {
       }}
       innerProps={{
         ...props.innerProps,
-        ...(language?.color && language?.textColor
-          ? {
-              style: {
+        style: {
+          ...props.innerProps.style,
+          borderBottomRightRadius: 0,
+          borderTopRightRadius: 0,
+          ...(language?.color && language?.textColor
+            ? {
                 backgroundColor: language?.color ?? "white",
                 color: language?.textColor ?? "white",
-              },
-            }
-          : {}),
+                borderRight: "rgba(0,0,0, .1) 1px solid",
+              }
+            : {}),
+        },
       }}
     />
   );
 };
+
 const LanguageMultiValueRemove = (props) => {
   const language = $$queries.languages.getEntity(props.data.value);
   return (
@@ -73,14 +78,17 @@ const LanguageMultiValueRemove = (props) => {
       }}
       innerProps={{
         ...props.innerProps,
-        ...(language?.color && language?.textColor
-          ? {
-              style: {
+        style: {
+          ...props.innerProps.style,
+          borderBottomLeftRadius: 0,
+          borderTopLeftRadius: 0,
+          ...(language?.color && language?.textColor
+            ? {
                 backgroundColor: language?.color ?? "white",
                 color: language?.textColor ?? "white",
-              },
-            }
-          : {}),
+              }
+            : {}),
+        },
       }}
     />
   );
