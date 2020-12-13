@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "react-select";
+import Select, { components as ReactSelectComponents } from "react-select";
 import type { Subscription, Observable } from "rxjs";
 import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
 import {
@@ -40,6 +40,11 @@ function onEmit<T>(
 ): Subscription {
   return source$.subscribe(nextFn, console.error);
 }
+
+const LanguageMultiValueLabel = (props) => {
+  console.log(props);
+  return <ReactSelectComponents.MultiValueLabel {...props} />;
+};
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
   <div className="card">
@@ -193,10 +198,13 @@ const App: React.FC = () => {
             (lang) => lang.id as string
           )
         )}
-        isMulti={true}
+        isMulti
         onChange={onLanguageChange}
         className="react-select"
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
+        components={{
+          MultiValueLabel: LanguageMultiValueLabel,
+        }}
       />
       <Select
         options={
