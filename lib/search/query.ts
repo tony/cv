@@ -130,4 +130,33 @@ export class CVQuery extends Query<CVState> {
       })
     );
   }
+
+  languages$() {
+    /* Return available languages based on currently visible activities */
+    return combineQueries([this.activities$()]).pipe(
+      map(([visibleActivities]) => {
+        let a = visibleActivities;
+        let l = Object.values(this.languagesQuery.getValue().entities);
+        if (!visibleActivities.length) {
+          // If no filters selected, return all activities
+          return [];
+        }
+
+        return Array.from(
+          new Set(
+            a
+              .map((activity) => {
+                const org = this.orgsQuery.getEntity(activity.orgId);
+                if (!org?.languages) {
+                  return [];
+                }
+
+                return org?.languages;
+              })
+              .flat()
+          )
+        ).filter(Boolean);
+      })
+    );
+  }
 }
