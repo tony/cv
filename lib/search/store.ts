@@ -19,13 +19,7 @@ import {
   IOrg,
 } from "../types";
 
-export interface CVState {
-  activities: IActivity[];
-  activityTypes: ActivityType[];
-  orgTypes: OrgType[];
-  orgs: IOrg[];
-  languages: Language[];
-}
+export interface CVState {}
 
 export interface ActivitiesState
   extends EntityState<IActivity>,
