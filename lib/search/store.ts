@@ -59,7 +59,7 @@ export class OrgTypesStore extends EntityStore<OrgTypesState, OrgType> {
 
 export interface OrgsState extends EntityState<IOrg>, MultiActiveState {}
 
-@StoreConfig({ name: "orgs", idKey: "name" })
+@StoreConfig({ name: "orgs" })
 export class OrgsStore extends EntityStore<OrgsState, IOrg> {
   constructor() {
     super({ active: [] });
