@@ -19,13 +19,6 @@ import {
   IOrg,
 } from "../types";
 
-export interface ISearches {
-  [key: string]: Set<string | LanguageName>;
-  activityTypes: Set<string>;
-  orgTypes: Set<string>;
-  orgs: Set<string>;
-  languages: Set<LanguageName>;
-}
 export interface CVState {
   activities: IActivity[];
   activityTypes: ActivityType[];
@@ -90,16 +83,9 @@ export class LanguagesStore extends EntityStore<LanguagesState, Language> {
   }
 }
 
-export function createInitialState(): Partial<CVState> {
-  return {
-    // State
-    languages: [],
-  };
-}
-
 @StoreConfig({ name: "CV" })
 export class CVStore extends Store<CVState> {
   constructor() {
-    super(createInitialState());
+    super({});
   }
 }

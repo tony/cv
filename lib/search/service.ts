@@ -6,7 +6,7 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { CVState, ISearches } from "./store";
+import type { CVState } from "./store";
 
 import {
   ActivityType,
@@ -32,14 +32,6 @@ export class CVService {
       return {
         ...state,
         newState,
-      };
-    });
-  }
-
-  setSearches(newActiveSearches: ISearches["activities"], category: string) {
-    this.cvStore.update((state) => {
-      return {
-        ...state,
       };
     });
   }
