@@ -79,51 +79,10 @@ export class CVQuery extends Query<CVState> {
   ) {
     super(store);
   }
-  // get getData() {
-  //   const data = this.getValue();
-  //   const { orgs, activityTypes, orgTypes, languages } = data;
-  //   let activities: IActivity[] = [];
-  //   const langs = Array.from(languages.values());
-  //   if (langs) {
-  //     activities = activities.concat(
-  //       data.activities.filter((activity) => {
-  //         return langs.some((language) =>
-  //           SearchFilters.languages(language, activity, data)
-  //         );
-  //       })
-  //     );
-  //   }
-  //
-  //   return {
-  //     activities,
-  //     activityTypes,
-  //     orgTypes,
-  //     orgs,
-  //     languages,
-  //   };
-  // }
-
-  get getResults(): CVState & { orgs: IOrg[] } {
-    // const data = this.getValue();
-    const data = this.store.getValue();
-
-    const orgs = this.orgsQuery.getAll();
-    const activityTypes = this.activityTypesQuery.getAll();
-    const orgTypes = this.orgTypesQuery.getAll();
-
-    return {
-      activityTypes: this.activityTypesQuery.getAll(),
-      activities: this.activitiesQuery.getAll(),
-      languages: this.languagesQuery.getAll(),
-      orgs: this.orgsQuery.getAll(),
-      orgTypes: this.orgTypesQuery.getAll(),
-    };
-  }
 
   activities$() {
     return combineQueries([
       this.activitiesQuery.selectAll(),
-
       this.languagesQuery.selectActive((language) => {
         return language.id;
       }),
