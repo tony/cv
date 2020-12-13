@@ -108,7 +108,7 @@ const App: React.FC = () => {
     });
 
     return () => myResults.unsubscribe();
-  }, []);
+  }, [results]);
 
   if (!results.length) {
     return (
@@ -161,7 +161,9 @@ const App: React.FC = () => {
       <header className="site-name">Tony Narlock's CV</header>
       <Select
         options={getSelectOptions(
-          query.getResults.languages.map((lang) => lang.id as string)
+          Object.values(languagesQuery.getValue().entities).map(
+            (lang) => lang.id as string
+          )
         )}
         isMulti={true}
         onChange={onLanguageChange}
