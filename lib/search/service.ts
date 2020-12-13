@@ -6,7 +6,6 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { CVState } from "./store";
 
 import {
   ActivityType,
@@ -26,13 +25,4 @@ export class CVService {
     private orgsStore: OrgsStore,
     private orgTypesStore: OrgTypesStore
   ) {}
-
-  setState(newState: Partial<CVState>) {
-    this.cvStore.update((state) => {
-      return {
-        ...state,
-        newState,
-      };
-    });
-  }
 }
