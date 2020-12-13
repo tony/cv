@@ -43,9 +43,30 @@ function onEmit<T>(
 
 const LanguageMultiValueLabel = (props) => {
   const language = $$queries.languages.getEntity(props.data.value);
-  console.log(props, language);
   return (
     <ReactSelectComponents.MultiValueLabel
+      {...props}
+      style={{
+        backgroundColor: language?.color ?? "white",
+      }}
+      innerProps={{
+        ...props.innerProps,
+        ...(language?.color && language?.textColor
+          ? {
+              style: {
+                backgroundColor: language?.color ?? "white",
+                color: language?.textColor ?? "white",
+              },
+            }
+          : {}),
+      }}
+    />
+  );
+};
+const LanguageMultiValueRemove = (props) => {
+  const language = $$queries.languages.getEntity(props.data.value);
+  return (
+    <ReactSelectComponents.MultiValueRemove
       {...props}
       style={{
         backgroundColor: language?.color ?? "white",
@@ -223,6 +244,7 @@ const App: React.FC = () => {
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         components={{
           MultiValueLabel: LanguageMultiValueLabel,
+          MultiValueRemove: LanguageMultiValueRemove,
         }}
       />
       <Select
