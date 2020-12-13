@@ -64,8 +64,25 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
   </div>
 );
 
+interface ReducerState {
+  activities: IActivity[];
+}
+type Action = { type: "set_results"; activities: IActivity[] };
+const reducer = (state: ReducerState, action: Action) => {
+  switch (action.type) {
+    case "set_results": {
+      return {
+        ...state,
+        activities: action.activities,
+      };
+    }
+    default:
+      return state;
+  }
+};
+
 const App: React.FC = () => {
-  const [results, setResults] = React.useState<IActivity[]>([]);
+  const [results, dispatch] = React.useReducer(reducer, { activities: [] });
 
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
@@ -98,8 +115,11 @@ const App: React.FC = () => {
     languagesStore.set(languages);
     activityTypesStore.set(activityTypes);
     activitiesStore.set(activities);
-    if (!results.length) {
-      setResults(activitiesQuery.getAll() as IActivity[]);
+    if (!results?.activities.length) {
+      dispatch({
+        type: "set_results",
+        activities: activitiesQuery.getAll() as IActivity[],
+      });
     }
   });
 
@@ -112,15 +132,18 @@ const App: React.FC = () => {
           resultsUpdated != results &&
           resultsUpdated.length != results.length
         ) {
-          setResults(resultsUpdated);
+          dispatch({
+            type: "set_results",
+            activities: resultsUpdated,
+          });
         }
       }),
     ];
 
     return () => subscriptions.map((it) => it.unsubscribe());
-  }, [results]);
+  }, []);
 
-  if (!results.length) {
+  if (!results?.activities?.length) {
     return (
       <div>
         <header>Loading CV Data</header>
@@ -211,8 +234,8 @@ const App: React.FC = () => {
 
       <div>Found {resultsCount}</div>
 
-      {results &&
-        results.map((activity, idx) => {
+      {results.activities &&
+        results.activities.map((activity, idx) => {
           const org = orgsQuery.getEntity(activity.orgId);
           if (!org) return;
           return <ActivityCard activity={activity} org={org} key={idx} />;
