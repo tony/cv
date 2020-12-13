@@ -42,8 +42,27 @@ function onEmit<T>(
 }
 
 const LanguageMultiValueLabel = (props) => {
-  console.log(props);
-  return <ReactSelectComponents.MultiValueLabel {...props} />;
+  const language = $$queries.languages.getEntity(props.data.value);
+  console.log(props, language);
+  return (
+    <ReactSelectComponents.MultiValueLabel
+      {...props}
+      style={{
+        backgroundColor: language?.color ?? "white",
+      }}
+      innerProps={{
+        ...props.innerProps,
+        ...(language?.color && language?.textColor
+          ? {
+              style: {
+                backgroundColor: language?.color ?? "white",
+                color: language?.textColor ?? "white",
+              },
+            }
+          : {}),
+      }}
+    />
+  );
 };
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
