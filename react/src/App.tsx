@@ -182,7 +182,7 @@ const App: React.FC = () => {
     }
   };
 
-  const resultsCount = results ? results.length : 0;
+  const resultsCount = results?.activities ? results.activities.length : 0;
 
   return (
     <div>
