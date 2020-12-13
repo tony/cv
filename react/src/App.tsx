@@ -36,6 +36,32 @@ interface IActivityCardProps {
   org: IOrg;
 }
 
+const OrgOption = ({ children, data, ...props }) => {
+  console.log("<OrgOption />", props, data?.value);
+  const org = $$queries.orgs.getEntity(data?.value);
+  return (
+    <ReactSelectComponents.Option {...props}>
+      {children}{" "}
+      {org?.orgType && (
+        <div
+          style={{
+            display: "inline-flex",
+            fontSize: ".75rem",
+            lineHeight: 1.5,
+            whiteSpace: "nowrap",
+            color: "#4a4a4a",
+            backgroundColor: "#f5f5f5",
+            padding: ".3rem .5rem",
+            borderRadius: ".3rem",
+          }}
+        >
+          {org.orgType}
+        </div>
+      )}
+    </ReactSelectComponents.Option>
+  );
+};
+
 function onEmit<T>(
   source$: Observable<T>,
   nextFn: (value: T) => void
@@ -269,6 +295,7 @@ const App: React.FC = () => {
         onChange={onOrgChange}
         className="react-select"
         placeholder="Filter by Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
+        components={{ Option: OrgOption }}
       />
       <Select
         options={
