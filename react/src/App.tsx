@@ -41,57 +41,36 @@ function onEmit<T>(
   return source$.subscribe(nextFn, console.error);
 }
 
-const LanguageMultiValueLabel = (props) => {
-  const language = $$queries.languages.getEntity(props.data.value);
-  return (
-    <ReactSelectComponents.MultiValueLabel
-      {...props}
-      style={{
-        backgroundColor: language?.color ?? "white",
-      }}
-      innerProps={{
-        ...props.innerProps,
-        style: {
-          ...props.innerProps.style,
-          borderBottomRightRadius: 0,
-          borderTopRightRadius: 0,
-          ...(language?.color && language?.textColor
-            ? {
-                backgroundColor: language?.color ?? "white",
-                color: language?.textColor ?? "white",
-                borderRight: "rgba(0,0,0, .1) 1px solid",
-              }
-            : {}),
-        },
-      }}
-    />
-  );
-};
-
-const LanguageMultiValueRemove = (props) => {
-  const language = $$queries.languages.getEntity(props.data.value);
-  return (
-    <ReactSelectComponents.MultiValueRemove
-      {...props}
-      style={{
-        backgroundColor: language?.color ?? "white",
-      }}
-      innerProps={{
-        ...props.innerProps,
-        style: {
-          ...props.innerProps.style,
-          borderBottomLeftRadius: 0,
-          borderTopLeftRadius: 0,
-          ...(language?.color && language?.textColor
-            ? {
-                backgroundColor: language?.color ?? "white",
-                color: language?.textColor ?? "white",
-              }
-            : {}),
-        },
-      }}
-    />
-  );
+const languagesStyles = {
+  multiValueLabel: (styles, { data }) => {
+    const language = $$queries.languages.getEntity(data.value);
+    return {
+      ...styles,
+      borderBottomRightRadius: 0,
+      borderTopRightRadius: 0,
+      ...(language?.color && language?.textColor
+        ? {
+            backgroundColor: language?.color ?? "white",
+            color: language?.textColor ?? "white",
+            borderRight: "rgba(0,0,0, .1) 1px solid",
+          }
+        : {}),
+    };
+  },
+  multiValueRemove: (styles, { data }) => {
+    const language = $$queries.languages.getEntity(data.value);
+    return {
+      ...styles,
+      borderBottomLeftRadius: 0,
+      borderTopLeftRadius: 0,
+      ...(language?.color && language?.textColor
+        ? {
+            backgroundColor: language?.color ?? "white",
+            color: language?.textColor ?? "white",
+          }
+        : {}),
+    };
+  },
 };
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
@@ -250,10 +229,7 @@ const App: React.FC = () => {
         onChange={onLanguageChange}
         className="react-select"
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
-        components={{
-          MultiValueLabel: LanguageMultiValueLabel,
-          MultiValueRemove: LanguageMultiValueRemove,
-        }}
+        styles={languagesStyles}
       />
       <Select
         options={
