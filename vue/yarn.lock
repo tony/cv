@@ -2953,15 +2953,15 @@ eslint-plugin-promise@^4.2.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
   integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
 
-eslint-plugin-vue@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.2.0.tgz#dd8323fe7ca28fe9377ce3f5f6cf17afe2686f2a"
-  integrity sha512-4mt0yIv6rBDNtvis/g22a0ozJ12GfcdEzX77u0ICYjKlxOVtGrKGEvo0cbOObHaKDg9a9kJcoaNodqE4TPfS2A==
+eslint-plugin-vue@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.3.0.tgz#0faf0fcf0e1b1052bf800d4dee42d64f50679cb0"
+  integrity sha512-4rc9xrZgwT4aLz3XE6lrHu+FZtDLWennYvtzVvvS81kW9c65U4DUzQQWAFjDCgCFvN6HYWxi7ueEtxZVSB+f0g==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
     semver "^7.3.2"
-    vue-eslint-parser "^7.2.0"
+    vue-eslint-parser "^7.3.0"
 
 eslint-scope@^4.0.3:
   version "4.0.3"
@@ -7085,7 +7085,7 @@ vue-class-component@^7.2.6:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
-vue-eslint-parser@^7.2.0:
+vue-eslint-parser@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.3.0.tgz#894085839d99d81296fa081d19643733f23d7559"
   integrity sha512-n5PJKZbyspD0+8LnaZgpEvNCrjQx1DyDHw8JdWwoxhhC+yRip4TAvSDpXGf9SWX6b0umeB5aR61gwUo6NVvFxw==
