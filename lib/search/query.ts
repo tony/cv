@@ -80,7 +80,7 @@ export class CVQuery extends Query<CVState> {
     super(store);
   }
 
-  activities$() {
+  visibleActivities$() {
     return combineQueries([
       this.activitiesQuery.selectAll(),
       this.languagesQuery.selectActive((language) => {
@@ -131,9 +131,9 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  languages$() {
+  visibleLanguages$() {
     /* Return available languages based on currently visible activities */
-    return combineQueries([this.activities$()]).pipe(
+    return combineQueries([this.visibleActivities$()]).pipe(
       map(([visibleActivities]) => {
         let a = visibleActivities;
         let l = Object.values(this.languagesQuery.getValue().entities);
