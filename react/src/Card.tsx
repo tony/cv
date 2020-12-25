@@ -12,7 +12,7 @@ interface IActivityCardProps {
 export const ActivityCard: React.FC<IActivityCardProps> = ({
   activity,
   org,
-}: IActivityCardProps) => (
+}) => (
   <div className="card">
     <a
       href={org && org.url ? org.url : "#"}
