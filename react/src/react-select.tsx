@@ -1,12 +1,8 @@
 import React from "react";
 
 import { components as ReactSelectComponents } from "react-select";
-import type {
-  ActionMeta,
-  OptionProps,
-  ValueType,
-} from "react-select/src/types";
-import type { EntityStore, MultiActiveState, Store } from "@datorama/akita";
+import { SelectComponentsProps } from "react-select";
+import type { OptionProps, ValueType } from "react-select/src/types";
 
 import chroma from "chroma-js";
 
@@ -23,9 +19,8 @@ export const getSelectOptions = (items: string[]) =>
     value: actorName,
   })) as ISelectOption[];
 
-export const onSelectChange = (setState: (_: any) => void) => (
-  value: ValueType<IOptionType, boolean>,
-  _: ActionMeta<IOptionType>
+export const onSelectChange = (setState: () => void) => (
+  value: ValueType<IOptionType, boolean>
 ) => {
   if (value) {
     setState((value as IOptionType[]).map(({ value: v }) => v));
@@ -34,7 +29,11 @@ export const onSelectChange = (setState: (_: any) => void) => (
   }
 };
 
-export const OrgOption = ({ children, data, ...props }) => {
+export const OrgOption: React.FC<SelectComponentsProps> = ({
+  children,
+  data,
+  ...props
+}: SelectComponentsProps) => {
   const org = $$queries.orgs.getEntity(data?.value);
   return (
     <ReactSelectComponents.Option {...props}>
