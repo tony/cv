@@ -208,7 +208,7 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
-      onEmit<IActivity[]>(query.activities$(), (resultsUpdated) => {
+      onEmit<IActivity[]>(query.visibleActivities$(), (resultsUpdated) => {
         console.log("results updated", resultsUpdated);
 
         if (
@@ -221,7 +221,7 @@ const App: React.FC = () => {
           });
         }
       }),
-      onEmit<Language[]>(query.languages$(), (languagesUpdated) => {
+      onEmit<Language[]>(query.visibleLanguages$(), (languagesUpdated) => {
         console.log("languages updated", languagesUpdated, results);
 
         if (
