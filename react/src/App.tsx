@@ -24,6 +24,7 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
+import { ActivityCard } from "./Card";
 import { getSelectOptions, languagesStyles, OrgOption } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { useAsyncEffect } from "./utils";
@@ -36,37 +37,6 @@ function onEmit<T>(
 ): Subscription {
   return source$.subscribe(nextFn, console.error);
 }
-
-interface IActivityCardProps {
-  activity: IActivity;
-  org: IOrg;
-}
-
-const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
-  <div className="card">
-    <a
-      href={org && org.url ? org.url : "#"}
-      title={activity.title}
-      className="title"
-    >
-      {activity.title}
-    </a>
-    {org &&
-      org.languages &&
-      org.languages.map((language, idx) => (
-        <div
-          key={idx}
-          className="language fr"
-          style={{
-            backgroundColor: languagesQuery.getEntity(language)?.color,
-            color: languagesQuery.getEntity(language)?.textColor,
-          }}
-        >
-          {language}
-        </div>
-      ))}
-  </div>
-);
 
 interface ReducerState {
   activities: IActivity[];
