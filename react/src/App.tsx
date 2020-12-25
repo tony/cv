@@ -149,7 +149,9 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
 
 interface ReducerState {
   activities: IActivity[];
+  languages: Language[];
 }
+
 enum ActionType {
   SetResults,
 }
@@ -159,7 +161,7 @@ const reducer = (state: ReducerState, action: Action) => {
     case ActionType.SetResults: {
       return {
         ...state,
-        activities: action.activities,
+        ...action,
       };
     }
     default:
@@ -167,8 +169,10 @@ const reducer = (state: ReducerState, action: Action) => {
   }
 };
 
+const DEFAULT_STORE: ReducerState = { activities: [], languages: [] };
+
 const App: React.FC = () => {
-  const [results, dispatch] = React.useReducer(reducer, { activities: [] });
+  const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
 
   const fetchActivities = async () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
@@ -214,6 +218,19 @@ const App: React.FC = () => {
           dispatch({
             type: ActionType.SetResults,
             activities: resultsUpdated,
+          });
+        }
+      }),
+      onEmit<Language[]>(query.languages$(), (languagesUpdated) => {
+        console.log("languages updated", languagesUpdated, results);
+
+        if (
+          languagesUpdated != results &&
+          languagesUpdated.length != results.length
+        ) {
+          dispatch({
+            type: ActionType.SetResults,
+            languages: languagesUpdated,
           });
         }
       }),
