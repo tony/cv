@@ -42,20 +42,50 @@ const OrgOption = ({ children, data, ...props }) => {
     <ReactSelectComponents.Option {...props}>
       {children}{" "}
       {org?.orgType && (
-        <div
-          style={{
-            display: "inline-flex",
-            fontSize: ".75rem",
-            lineHeight: 1.5,
-            whiteSpace: "nowrap",
-            color: "#4a4a4a",
-            backgroundColor: "#f5f5f5",
-            padding: ".3rem .5rem",
-            borderRadius: ".3rem",
-          }}
-        >
-          {org.orgType}
-        </div>
+        <>
+          <div
+            style={{
+              display: "inline-flex",
+              fontSize: ".75rem",
+              lineHeight: 1.5,
+              whiteSpace: "nowrap",
+              color: "#4a4a4a",
+              backgroundColor: "#f5f5f5",
+              padding: ".3rem .5rem",
+              borderRadius: ".3rem",
+            }}
+          >
+            {org.orgType}
+          </div>
+
+          {org.languages.map((languageId) => {
+            const language = $$queries.languages.getEntity(languageId);
+            if (!language) {
+              return null;
+            }
+            return (
+              <div
+                style={{
+                  display: "inline-flex",
+                  fontSize: ".75rem",
+                  lineHeight: 1.5,
+                  whiteSpace: "nowrap",
+                  color: language?.color
+                    ? chroma(language?.color).get("lab.l") > 70
+                      ? "black"
+                      : "white"
+                    : "#4a4a4a",
+                  backgroundColor: language?.color ?? "#f5f5f5",
+                  padding: ".3rem .5rem",
+                  marginLeft: ".5rem",
+                  borderRadius: ".3rem",
+                }}
+              >
+                {languageId}
+              </div>
+            );
+          })}
+        </>
       )}
     </ReactSelectComponents.Option>
   );
