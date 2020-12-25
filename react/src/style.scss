@@ -10,17 +10,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.card {
-  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
-    0 0 0 rgba(16, 22, 26, 0);
-  padding: 1rem;
-
-  margin-bottom: 1rem;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .react-select {
   margin-bottom: 1rem;
   &:last-child {
@@ -32,6 +21,29 @@ a {
   color: rgb(28, 28, 28);
   font-size: 1.2rem;
   text-decoration: none;
+}
+
+.card {
+  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
+    0 0 0 rgba(16, 22, 26, 0);
+  border-radius: 0.5rem;
+  padding: .7rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  a {
+    font-size: 0.875rem;
+  }
+
+  .title  {}
+
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .card .language {
