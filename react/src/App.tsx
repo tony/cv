@@ -67,12 +67,18 @@ const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
+  ui: {
+    isLoading: boolean;
+  };
 }
 
 enum ActionType {
   SetResults,
+  IsLoading,
 }
-type Action = { type: ActionType.SetResults; activities: IActivity[] };
+type Action =
+  | { type: ActionType.SetResults; activities: IActivity[] }
+  | { type: ActionType.IsLoading; isLoading: boolean };
 const reducer = (state: ReducerState, action: Action) => {
   switch (action.type) {
     case ActionType.SetResults: {
@@ -81,12 +87,25 @@ const reducer = (state: ReducerState, action: Action) => {
         ...action,
       };
     }
+    case ActionType.IsLoading: {
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          isLoading: action.isLoading,
+        },
+      };
+    }
     default:
       return state;
   }
 };
 
-const DEFAULT_STORE: ReducerState = { activities: [], languages: [] };
+const DEFAULT_STORE: ReducerState = {
+  activities: [],
+  languages: [],
+  ui: { isLoading: false },
+};
 
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
@@ -107,14 +126,19 @@ const App: React.FC = () => {
       !!Object.keys(orgsStore.getValue().entities).length ||
       !!Object.keys(activitiesStore.getValue().entities).length
     ) {
+      if (activitiesStore.getValue().ui.isLoading) {
+        activitiesStore.setLoading(false);
+      }
       return;
     }
+    activitiesStore.setLoading(true);
     console.log("setting storage");
     orgsStore.set(orgs);
     orgTypesStore.set(orgTypes);
     languagesStore.set(languages);
     activityTypesStore.set(activityTypes);
     activitiesStore.set(activities);
+    activitiesStore.setLoading(false);
     if (!results?.activities.length) {
       dispatch({
         type: ActionType.SetResults,
@@ -151,12 +175,19 @@ const App: React.FC = () => {
           });
         }
       }),
+      onEmit<Language[]>(activitiesQuery.selectLoading$(), (isLoading) => {
+        console.log("isLoading", isLoading);
+        dispatch({
+          type: ActionType.IsLoading,
+          isLoading,
+        });
+      }),
     ];
 
     return () => subscriptions.map((it) => it.unsubscribe());
   }, []);
 
-  if (!results?.activities?.length) {
+  if (results.ui.isLoading) {
     return (
       <div>
         <header>Loading CV Data</header>
