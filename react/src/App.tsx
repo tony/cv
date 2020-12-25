@@ -104,11 +104,11 @@ const languagesStyles = {
     if (!language?.color && !language?.textColor) {
       return styles;
     }
-    const backgroundColor = chroma(language.color).alpha(0.1).css();
+    const backgroundColor = chroma(language.color).alpha(0.5).css();
     return {
       ...styles,
       backgroundColor,
-      color: chroma(backgroundColor).get("lab.l") < 90 ? "black" : "white",
+      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
       "&:hover": {
         backgroundColor: "#DEEBFF",
       },
