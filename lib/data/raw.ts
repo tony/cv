@@ -3,7 +3,7 @@ import handPickedOrgsRaw from "../../data/my_orgs.json";
 import ghColors from "../../data/gh_colors.json";
 import ghActivitiesRaw from "../../data/scraped/gh_activities.json";
 import ghOrgsRaw from "../../data/scraped/gh_orgs.json";
-import { ActivityTypeNameMap } from "../constants";
+import { ActivityTypeNameMap, LANGUAGE_FALLBACK_COLOR } from "../constants";
 import invert from "invert-color";
 
 import {
@@ -42,7 +42,7 @@ export const myLanguagesRaw: Language[] = Array.from(
         id: languageName,
         ...(languageName in ghColors && ghColors[languageName]?.color
           ? {
-              color: ghColors[languageName]?.color,
+              color: ghColors[languageName]?.color ?? LANGUAGE_FALLBACK_COLOR,
               textColor: invert(ghColors[languageName]?.color, true),
             }
           : {}),

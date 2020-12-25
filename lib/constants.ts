@@ -20,3 +20,5 @@ export const ActivityTypeNameMap: {
   Website: "Website",
   Article: "Article",
 };
+
+export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";
