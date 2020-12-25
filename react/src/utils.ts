@@ -1,13 +1,10 @@
 import React from "react";
 
 export const useAsyncEffect = (
-  effect: (isCanceled: () => boolean) => Promise<void>,
+  effect: () => Promise<void>,
   dependencies?: any[]
 ) =>
   React.useEffect(() => {
-    let canceled = false;
-    effect(() => canceled);
-    return () => {
-      canceled = true;
-    };
+    effect();
+    return () => {};
   }, dependencies);
