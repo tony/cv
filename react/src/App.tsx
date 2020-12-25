@@ -44,7 +44,11 @@ interface IActivityCardProps {
 
 const ActivityCard: React.FC<IActivityCardProps> = ({ activity, org }) => (
   <div className="card">
-    <a href={org && org.url ? org.url : "#"} title={activity.title}>
+    <a
+      href={org && org.url ? org.url : "#"}
+      title={activity.title}
+      className="title"
+    >
       {activity.title}
     </a>
     {org &&
