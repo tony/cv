@@ -1,8 +1,13 @@
 import React from "react";
 
 import { components as ReactSelectComponents } from "react-select";
-import { ActionMeta, OptionProps, ValueType } from "react-select/src/types"; // tslint:disable-line no-submodule-imports
+import type {
+  ActionMeta,
+  OptionProps,
+  ValueType,
+} from "react-select/src/types";
 import type { EntityStore, MultiActiveState, Store } from "@datorama/akita";
+
 import chroma from "chroma-js";
 
 export type ISelectOption = Pick<OptionProps, "label" | "value">;

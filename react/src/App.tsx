@@ -5,7 +5,7 @@ import type {
   ActionMeta,
   OptionProps,
   ValueType,
-} from "react-select/src/types"; // tslint:disable-line no-submodule-imports
+} from "react-select/src/types";
 
 import type {
   ActivityType,
