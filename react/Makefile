@@ -1,3 +1,6 @@
+WATCH_FILES= find .. -type f -not -path '*/\.*' -and -not -path '*/node_modules.*' | grep -i '.*[.]tsx\?$$\|.*[.].md\|.*[.]json$$\|CHANGES\|TODO' 2> /dev/null
+
+
 clean:
 	rm -rf node_modules/
 
@@ -27,3 +30,6 @@ start:
 
 prettier:
 	yarn run prettier
+
+lint_watch:
+	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) lint; else $(MAKE) lint; fi
