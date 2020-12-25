@@ -37,7 +37,6 @@ interface IActivityCardProps {
 }
 
 const OrgOption = ({ children, data, ...props }) => {
-  console.log("<OrgOption />", props, data?.value);
   const org = $$queries.orgs.getEntity(data?.value);
   return (
     <ReactSelectComponents.Option {...props}>
