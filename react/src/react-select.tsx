@@ -33,7 +33,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
   children,
   data,
   ...props
-}: SelectComponentsProps) => {
+}) => {
   const org = $$queries.orgs.getEntity(data?.value);
   return (
     <ReactSelectComponents.Option {...props}>
