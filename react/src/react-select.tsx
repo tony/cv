@@ -103,6 +103,7 @@ export const languagesStyles = {
       color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
       "&:hover": {
         backgroundColor: "#DEEBFF",
+        color: "black",
       },
     };
   },
