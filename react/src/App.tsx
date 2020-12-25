@@ -25,7 +25,7 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
-import { getSelectOptions, onSelectChange } from "./react-select";
+import { getSelectOptions } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
