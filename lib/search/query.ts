@@ -39,6 +39,10 @@ const hasAny = (left: Set<any> | any[], right: Set<any> | any[]) => {
 };
 
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
+  selectLoading$() {
+    return this.select((state) => state.ui.isLoading);
+  }
+
   constructor(protected store: ActivitiesStore) {
     super(store);
   }

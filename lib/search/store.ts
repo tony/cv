@@ -4,6 +4,7 @@
 import {
   EntityState,
   EntityStore,
+  EntityUIStore,
   MultiActiveState,
   Store,
   StoreConfig,
@@ -23,12 +24,18 @@ export interface CVState {}
 
 export interface ActivitiesState
   extends EntityState<IActivity>,
-    MultiActiveState {}
+    MultiActiveState {
+  ui: { isLoading: boolean };
+}
 
 @StoreConfig({ name: "activities" })
 export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
   constructor() {
-    super({ active: [] });
+    super({ active: [], ui: { isLoading: false } });
+  }
+
+  setLoading(isLoading: boolean) {
+    this.update({ ui: { isLoading } });
   }
 }
 
