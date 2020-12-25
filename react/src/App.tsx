@@ -244,7 +244,9 @@ const App: React.FC = () => {
       />
 
       {Array.from(activityTypesQuery.getAll()).map((activityType) => (
-        <>{activityType.name}</>
+        <React.Fragment key={activityType.id}>
+          {activityType.name}
+        </React.Fragment>
       ))}
 
       <div>Found {resultsCount}</div>
