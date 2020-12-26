@@ -4,23 +4,14 @@
 import {
   EntityState,
   EntityStore,
-  EntityUIStore,
   MultiActiveState,
   Store,
   StoreConfig,
 } from "@datorama/akita";
 
-import {
-  ActivityType,
-  LanguageName,
-  Language,
-  OrgName,
-  OrgType,
-  IActivity,
-  IOrg,
-} from "../types";
+import { ActivityType, Language, OrgType, IActivity, IOrg } from "../types";
 
-export interface CVState {}
+export type CVState = Record<string, never>;
 
 export interface ActivitiesState
   extends EntityState<IActivity>,
@@ -34,7 +25,7 @@ export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
     super({ active: [], ui: { isLoading: false } });
   }
 
-  setLoading(isLoading: boolean) {
+  setLoading(isLoading: boolean): void {
     this.update({ ui: { isLoading } });
   }
 }
