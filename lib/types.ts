@@ -59,8 +59,10 @@ export type LanguageName =
 
 export interface Language {
   id: LanguageName;
-  color?: string;
-  textColor?: string;
+  ui?: {
+    backgroundColor?: string;
+    textColor?: string;
+  };
 }
 
 export type OrgName = string;

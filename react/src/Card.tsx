@@ -28,8 +28,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
           key={idx}
           className="tag fr"
           style={{
-            backgroundColor: languagesQuery.getEntity(language)?.color,
-            color: languagesQuery.getEntity(language)?.textColor,
+            backgroundColor: languagesQuery.getEntity(language)?.ui
+              ?.backgroundColor,
+            color: languagesQuery.getEntity(language)?.ui?.textColor,
           }}
         >
           {language}

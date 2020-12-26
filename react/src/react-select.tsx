@@ -66,12 +66,12 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
                 key={languageId}
                 className="tag"
                 style={{
-                  color: language?.color
-                    ? chroma(language?.color).get("lab.l") > 70
+                  color: language?.ui?.backgroundColor
+                    ? chroma(language?.ui?.backgroundColor).get("lab.l") > 70
                       ? "black"
                       : "white"
                     : "#4a4a4a",
-                  backgroundColor: language?.color ?? "#f5f5f5",
+                  backgroundColor: language?.ui?.backgroundColor ?? "#f5f5f5",
                   marginLeft: ".5rem",
                 }}
               >
@@ -88,10 +88,12 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
 export const languagesStyles: StylesConfig = {
   option: (styles, { data }) => {
     const language = $$queries.languages.getEntity(data.value);
-    if (!language?.color && !language?.textColor) {
+    if (!language?.ui?.backgroundColor && !language?.ui?.textColor) {
       return styles;
     }
-    const backgroundColor = chroma(language.color).alpha(0.8).css();
+    const backgroundColor = chroma(language.ui.backgroundColor)
+      .alpha(0.8)
+      .css();
     return {
       ...styles,
       backgroundColor,
@@ -105,11 +107,9 @@ export const languagesStyles: StylesConfig = {
 
   multiValue: (styles, { data }) => {
     const language = $$queries.languages.getEntity(data.value);
-    // const color = chroma(data.color);
     return {
       ...styles,
-      // backgroundColor: color.alpha(0.1).css(),
-      backgroundColor: language.color,
+      backgroundColor: language?.ui?.backgroundColor,
     };
   },
   multiValueLabel: (styles, { data }) => {
@@ -118,10 +118,10 @@ export const languagesStyles: StylesConfig = {
       ...styles,
       borderBottomRightRadius: 0,
       borderTopRightRadius: 0,
-      ...(language?.color && language?.textColor
+      ...(language?.ui?.backgroundColor && language?.ui?.textColor
         ? {
-            backgroundColor: language?.color ?? "white",
-            color: language?.textColor ?? "white",
+            backgroundColor: language?.ui?.backgroundColor ?? "white",
+            color: language?.ui?.textColor ?? "white",
             borderRight: "rgba(0,0,0, .1) 1px solid",
           }
         : {}),
@@ -133,10 +133,10 @@ export const languagesStyles: StylesConfig = {
       ...styles,
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
-      ...(language?.color && language?.textColor
+      ...(language?.ui?.backgroundColor && language?.ui?.textColor
         ? {
-            backgroundColor: language?.color ?? "white",
-            color: language?.textColor ?? "white",
+            backgroundColor: language?.ui?.backgroundColor ?? "white",
+            color: language?.ui?.textColor ?? "white",
           }
         : {}),
     };
