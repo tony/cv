@@ -7,15 +7,6 @@ import {
   OrgTypesStore,
 } from "./store";
 
-import {
-  ActivityType,
-  LanguageName,
-  OrgName,
-  OrgType,
-  IActivity,
-  IOrg,
-} from "../types";
-
 export class CVService {
   constructor(
     private cvStore: CVStore,
