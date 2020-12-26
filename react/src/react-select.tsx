@@ -7,6 +7,8 @@ import type { OptionProps, ValueType } from "react-select/src/types";
 
 import chroma from "chroma-js";
 
+import { languagesQuery, orgsQuery } from "../../lib/hub";
+
 export type ISelectOption = Pick<OptionProps, "label" | "value">;
 
 export interface IOptionType {
@@ -35,7 +37,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
   data,
   ...props
 }) => {
-  const org = $$queries.orgs.getEntity(data?.value);
+  const org = orgsQuery.getEntity(data?.value);
   return (
     <ReactSelectComponents.Option {...props}>
       {children}{" "}
@@ -57,7 +59,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
           </div>
 
           {org.languages.map((languageId) => {
-            const language = $$queries.languages.getEntity(languageId);
+            const language = languagesQuery.getEntity(languageId);
             if (!language) {
               return null;
             }
@@ -87,7 +89,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
 
 export const languagesStyles: StylesConfig = {
   option: (styles, { data }) => {
-    const language = $$queries.languages.getEntity(data.value);
+    const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor && !language?.ui?.color) {
       return styles;
     }
@@ -106,14 +108,14 @@ export const languagesStyles: StylesConfig = {
   },
 
   multiValue: (styles, { data }) => {
-    const language = $$queries.languages.getEntity(data.value);
+    const language = languagesQuery.getEntity(data.value);
     return {
       ...styles,
       backgroundColor: language?.ui?.backgroundColor,
     };
   },
   multiValueLabel: (styles, { data }) => {
-    const language = $$queries.languages.getEntity(data.value);
+    const language = languagesQuery.getEntity(data.value);
     return {
       ...styles,
       borderBottomRightRadius: 0,
@@ -128,7 +130,7 @@ export const languagesStyles: StylesConfig = {
     };
   },
   multiValueRemove: (styles, { data }) => {
-    const language = $$queries.languages.getEntity(data.value);
+    const language = languagesQuery.getEntity(data.value);
     return {
       ...styles,
       borderBottomLeftRadius: 0,
