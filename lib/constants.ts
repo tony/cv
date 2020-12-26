@@ -1,5 +1,3 @@
-import type { ActivityTypeName, OrgTypeName, LanguageName } from "./types";
-
 export const ActivityTypeNameMap: {
   // [key: ActivityTypeName]: string;
   SoftwareApp: string;

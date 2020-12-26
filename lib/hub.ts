@@ -8,14 +8,6 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./search/store";
-import type {
-  ActivitiesState,
-  ActivityTypesState,
-  CVState,
-  LanguagesState,
-  OrgsState,
-  OrgTypesState,
-} from "./search/store";
 import {
   ActivitiesQuery,
   ActivityTypesQuery,
