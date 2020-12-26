@@ -1,19 +1,9 @@
 import React from "react";
 import Select from "react-select";
 import type { Subscription, Observable } from "rxjs";
-import type {
-  ActionMeta,
-  OptionProps,
-  ValueType,
-} from "react-select/src/types";
+import type { ValueType } from "react-select/src/types";
 
-import type {
-  ActivityType,
-  LanguageName,
-  OrgName,
-  IActivity,
-  IOrg,
-} from "../../lib/types";
+import type { IActivity } from "../../lib/types";
 import {
   activityTypesStore,
   activitiesStore,
@@ -22,8 +12,6 @@ import {
   orgsStore,
   orgTypesStore,
   orgsQuery,
-  orgTypesQuery,
-  search,
   query,
   languagesStore,
   languagesQuery,
@@ -173,10 +161,7 @@ const App: React.FC = () => {
     );
   }
 
-  const onLanguageChange = (
-    value: ValueType<IOptionType, boolean>,
-    _: ActionMeta<IOptionType>
-  ) => {
+  const onLanguageChange = (value: ValueType<IOptionType, boolean>) => {
     if (value) {
       languagesStore.setActive(
         (value as IOptionType[]).map(({ value: v }) => v)
@@ -185,10 +170,7 @@ const App: React.FC = () => {
       languagesStore.setActive([]);
     }
   };
-  const onOrgChange = (
-    value: ValueType<IOptionType, boolean>,
-    _: ActionMeta<IOptionType>
-  ) => {
+  const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
     console.log("onOrgChange", value);
     if (value) {
       orgsStore.setActive((value as IOptionType[]).map(({ label }) => label));
@@ -196,10 +178,7 @@ const App: React.FC = () => {
       orgsStore.setActive([]);
     }
   };
-  const onActivityTypeChange = (
-    value: ValueType<IOptionType, boolean>,
-    _: ActionMeta<IOptionType>
-  ) => {
+  const onActivityTypeChange = (value: ValueType<IOptionType, boolean>) => {
     if (value) {
       activityTypesStore.setActive(
         (value as IOptionType[]).map(({ value: v }) => v)
@@ -213,7 +192,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header className="site-name">Tony Narlock's CV</header>
+      <header className="site-name">Tony Narlock{"'"}s CV</header>
       <Select
         options={getSelectOptions(
           Object.values(languagesQuery.getValue().entities).map(
