@@ -1,10 +1,11 @@
 import React from "react";
 
 export const useAsyncEffect = (
-  effect: () => Promise<void>,
-  dependencies?: any[]
-) =>
+  // effect: () => Promise<void>,
+  effect: React.EffectCallback,
+  dependencies?: unknown[]
+): void =>
   React.useEffect(() => {
     effect();
-    return () => {};
+    return () => void 0;
   }, dependencies);
