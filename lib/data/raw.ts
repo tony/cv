@@ -1,8 +1,8 @@
-import handPickedActivitiesRaw from "../../data/my_activities.json";
-import handPickedOrgsRaw from "../../data/my_orgs.json";
-import ghColors from "../../data/gh_colors.json";
-import ghActivitiesRaw from "../../data/scraped/gh_activities.json";
-import ghOrgsRaw from "../../data/scraped/gh_orgs.json";
+import handPickedActivitiesJson from "../../data/my_activities.json";
+import handPickedOrgsJson from "../../data/my_orgs.json";
+import ghColorsJson from "../../data/gh_colors.json";
+import ghActivitiesJson from "../../data/scraped/gh_activities.json";
+import ghOrgsJson from "../../data/scraped/gh_orgs.json";
 import { ActivityTypeNameMap, LANGUAGE_FALLBACK_COLOR } from "../constants";
 import invert from "invert-color";
 
@@ -19,20 +19,20 @@ import {
 
 export const myOrgsRaw: IOrg[] = [
   // Make Object Key the ID
-  ...Object.entries(handPickedOrgsRaw).map(
+  ...Object.entries(handPickedOrgsJson).map(
     ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
   ),
-  ...Object.entries(ghOrgsRaw).map(
+  ...Object.entries(ghOrgsJson).map(
     ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
   ),
 ];
 
 export const myActivitiesRaw: IActivity[] = [
-  ...(handPickedActivitiesRaw as IActivity[]),
-  ...(ghActivitiesRaw as IActivity[]),
+  ...(handPickedActivitiesJson as IActivity[]),
+  ...(ghActivitiesJson as IActivity[]),
 ];
 
-const ghColorsMissing: { [key: string]: { color: string } } = {
+const ghColorsJsonMissing: { [key: string]: { color: string } } = {
   Sass: {
     color: "#a53b70",
   },
@@ -56,16 +56,16 @@ export const myLanguagesRaw: Language[] = Array.from(
     new Set([...myOrgsRaw.map((a) => a.languages).flat()].filter(Boolean))
   ).map((languageName: LanguageName) => {
     const ghColor =
-      languageName in ghColorsMissing
-        ? ghColorsMissing[languageName]
-        : ghColors[languageName];
+      languageName in ghColorsJsonMissing
+        ? ghColorsJsonMissing[languageName]
+        : ghColorsJson[languageName];
 
     if (!ghColor) {
-      if (!(languageName in ghColors)) {
+      if (!(languageName in ghColorsJson)) {
         console.warn(`${languageName} not found in colors`);
-      } else if (!ghColors?.[languageName]?.color) {
+      } else if (!ghColorsJson?.[languageName]?.color) {
         console.groupCollapsed(`${languageName} missing color`);
-        console.table(ghColors?.[languageName]);
+        console.table(ghColorsJson?.[languageName]);
         console.groupEnd();
       }
     }
