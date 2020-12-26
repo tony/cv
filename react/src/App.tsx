@@ -231,7 +231,7 @@ const App: React.FC = () => {
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      <div className="resultsMessage">Found {resultsCount}</div>
+      <div className="resultsMessage">Found {resultsCount} results</div>
 
       {results.activities &&
         results.activities.map((activity, idx) => {
