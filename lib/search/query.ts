@@ -1,5 +1,6 @@
 import { combineQueries, Query, QueryEntity } from "@datorama/akita";
-import { filter, map, tap } from "rxjs/operators";
+import { map } from "rxjs/operators";
+import type { Observable } from "rxjs";
 
 import type {
   ActivitiesState,
@@ -17,29 +18,28 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import {
-  ActivityType,
-  LanguageName,
-  OrgName,
-  OrgType,
-  IActivity,
-  IOrg,
-} from "../types";
+import type { LanguageName, IActivity } from "../types";
 
-const difference = (left: Set<any> | any[], right: Set<any> | any[]) => {
+export const difference = (
+  left: Set<unknown> | unknown[],
+  right: Set<unknown> | unknown[]
+): unknown[] => {
   const a = new Set(left);
   const b = new Set(right);
   return Array.from(a).filter((x) => !b.has(x));
 };
 
-const hasAny = (left: Set<any> | any[], right: Set<any> | any[]) => {
+export const hasAny = (
+  left: Set<unknown> | unknown[],
+  right: Set<unknown> | unknown[]
+): unknown[] => {
   const a = new Set(left);
   const b = new Set(right);
   return Array.from(a).filter((x) => b.has(x));
 };
 
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
-  selectLoading$() {
+  selectLoading$(): Observable<boolean> {
     return this.select((state) => state.ui.isLoading);
   }
 
@@ -84,7 +84,7 @@ export class CVQuery extends Query<CVState> {
     super(store);
   }
 
-  visibleActivities$() {
+  visibleActivities$(): Observable<IActivity[]> {
     return combineQueries([
       this.activitiesQuery.selectAll(),
       this.languagesQuery.selectActive((language) => {
@@ -135,12 +135,11 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  visibleLanguages$() {
+  visibleLanguages$(): Observable<LanguageName[]> {
     /* Return available languages based on currently visible activities */
     return combineQueries([this.visibleActivities$()]).pipe(
       map(([visibleActivities]) => {
-        let a = visibleActivities;
-        let l = Object.values(this.languagesQuery.getValue().entities);
+        const a = visibleActivities;
         if (!visibleActivities.length) {
           // If no filters selected, return all activities
           return [];
