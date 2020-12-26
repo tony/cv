@@ -38,10 +38,8 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     >
       {activity.title}
     </a>
-    {org &&
-      org.languages &&
-      org.languages.map((languageName, idx) => (
-        <LanguageTag languageName={languageName} key={languageName} />
-      ))}
+    {org?.languages?.map((languageName) => (
+      <LanguageTag languageName={languageName} key={languageName} />
+    ))}
   </div>
 );
