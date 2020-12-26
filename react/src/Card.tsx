@@ -23,18 +23,21 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     </a>
     {org &&
       org.languages &&
-      org.languages.map((language, idx) => (
-        <div
-          key={idx}
-          className="tag fr"
-          style={{
-            backgroundColor: languagesQuery.getEntity(language)?.ui
-              ?.backgroundColor,
-            color: languagesQuery.getEntity(language)?.ui?.color,
-          }}
-        >
-          {language}
-        </div>
-      ))}
+      org.languages.map((languageName, idx) => {
+        const language = languagesQuery.getEntity(languageName);
+        if (!language || !language.ui) {
+          console.groupCollapsed(
+            `${org.name} missing language for ${languageName}`
+          );
+          console.table(org);
+          console.groupEnd();
+        }
+
+        return (
+          <div key={idx} className="tag fr" style={language.ui}>
+            {languageName}
+          </div>
+        );
+      })}
   </div>
 );
