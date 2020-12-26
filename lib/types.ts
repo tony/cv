@@ -1,3 +1,5 @@
+import CSS from "csstype";
+
 export type ActivityTypeName =
   | "SoftwareApp"
   | "SoftwareLib"
@@ -59,10 +61,7 @@ export type LanguageName =
 
 export interface Language {
   id: LanguageName;
-  ui?: {
-    backgroundColor?: string;
-    textColor?: string;
-  };
+  ui?: CSS.Properties;
 }
 
 export type OrgName = string;
