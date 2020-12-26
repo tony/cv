@@ -231,13 +231,7 @@ const App: React.FC = () => {
         placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
       />
 
-      {Array.from(activityTypesQuery.getAll()).map((activityType) => (
-        <React.Fragment key={activityType.id}>
-          {activityType.name}
-        </React.Fragment>
-      ))}
-
-      <div>Found {resultsCount}</div>
+      <div className="resultsMessage">Found {resultsCount}</div>
 
       {results.activities &&
         results.activities.map((activity, idx) => {
