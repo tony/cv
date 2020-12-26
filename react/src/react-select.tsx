@@ -96,7 +96,7 @@ export const languagesStyles: StylesConfig = {
     if (!language?.color && !language?.textColor) {
       return styles;
     }
-    const backgroundColor = chroma(language.color).alpha(0.5).css();
+    const backgroundColor = chroma(language.color).alpha(0.8).css();
     return {
       ...styles,
       backgroundColor,
