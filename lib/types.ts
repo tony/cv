@@ -61,7 +61,7 @@ export type LanguageName =
 
 export interface Language {
   id: LanguageName;
-  ui?: CSS.Properties;
+  ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
 export type OrgName = string;
