@@ -1,10 +1,12 @@
+import invert from "invert-color";
+
 import handPickedActivitiesJson from "../../data/my_activities.json";
 import handPickedOrgsJson from "../../data/my_orgs.json";
 import ghColorsJson from "../../data/gh_colors.json";
 import ghActivitiesJson from "../../data/scraped/gh_activities.json";
 import ghOrgsJson from "../../data/scraped/gh_orgs.json";
+
 import { ActivityTypeNameMap, LANGUAGE_FALLBACK_COLOR } from "../constants";
-import invert from "invert-color";
 
 import {
   ActivityType,
