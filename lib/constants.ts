@@ -1,3 +1,5 @@
+import CSS from "csstype";
+
 export const ActivityTypeNameMap: {
   // [key: ActivityTypeName]: string;
   SoftwareApp: string;
@@ -17,6 +19,43 @@ export const ActivityTypeNameMap: {
   Volunteer: "Volunteer",
   Website: "Website",
   Article: "Article",
+};
+
+export const ActivityTypeColors: {
+  // [key: ActivityTypeName]: string;
+  SoftwareApp: CSS.Properties;
+  SoftwareLib: CSS.Properties;
+  Patch: CSS.Properties;
+  Work: CSS.Properties;
+  Publication: CSS.Properties;
+  Volunteer: CSS.Properties;
+  Website: CSS.Properties;
+  Article: CSS.Properties;
+} = {
+  SoftwareApp: {
+    color: "#f1f8ff", // blue
+  },
+  SoftwareLib: {
+    color: "#f1f8ff", // blue
+  },
+  Patch: {
+    color: "#f1f8ff", // blue
+  },
+  Work: {
+    color: "#f1f8ff", // blue
+  },
+  Publication: {
+    color: "#f1f8ff", // blue
+  },
+  Volunteer: {
+    color: "#f1f8ff", // blue
+  },
+  Website: {
+    color: "#f1f8ff", // blue
+  },
+  Article: {
+    color: "#f1f8ff", // blue
+  },
 };
 
 export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";

@@ -6,7 +6,11 @@ import ghColorsJson from "../../data/gh_colors.json";
 import ghActivitiesJson from "../../data/scraped/gh_activities.json";
 import ghOrgsJson from "../../data/scraped/gh_orgs.json";
 
-import { ActivityTypeNameMap, LANGUAGE_FALLBACK_COLOR } from "../constants";
+import {
+  ActivityTypeNameMap,
+  ActivityTypeColors,
+  LANGUAGE_FALLBACK_COLOR,
+} from "../constants";
 
 import {
   ActivityType,
@@ -102,5 +106,6 @@ export const activityTypeData: ActivityType[] = Array.from(
     ({
       id: activityTypeName,
       name: ActivityTypeNameMap[activityTypeName] ?? activityTypeName,
+      ui: ActivityTypeColors[activityTypeName],
     } as ActivityType)
 );

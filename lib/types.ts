@@ -1,5 +1,9 @@
 import CSS from "csstype";
 
+interface IThemeable {
+  ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
+}
+
 export type ActivityTypeName =
   | "SoftwareApp"
   | "SoftwareLib"
@@ -10,7 +14,7 @@ export type ActivityTypeName =
   | "Website"
   | "Article";
 
-export interface ActivityType {
+export interface ActivityType extends IThemeable {
   id: ActivityTypeName;
   name: ActivityTypeName;
 }
@@ -59,9 +63,8 @@ export type LanguageName =
   | "CMake"
   | "TypeScript";
 
-export interface Language {
+export interface Language extends IThemeable {
   id: LanguageName;
-  ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
 export type OrgName = string;
