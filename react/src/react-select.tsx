@@ -64,20 +64,15 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
             return (
               <div
                 key={languageId}
+                className="tag"
                 style={{
-                  display: "inline-flex",
-                  fontSize: ".75rem",
-                  lineHeight: 1.5,
-                  whiteSpace: "nowrap",
                   color: language?.color
                     ? chroma(language?.color).get("lab.l") > 70
                       ? "black"
                       : "white"
                     : "#4a4a4a",
                   backgroundColor: language?.color ?? "#f5f5f5",
-                  padding: ".3rem .5rem",
                   marginLeft: ".5rem",
-                  borderRadius: ".3rem",
                 }}
               >
                 {languageId}

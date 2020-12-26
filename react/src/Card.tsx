@@ -26,7 +26,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
       org.languages.map((language, idx) => (
         <div
           key={idx}
-          className="language fr"
+          className="tag fr"
           style={{
             backgroundColor: languagesQuery.getEntity(language)?.color,
             color: languagesQuery.getEntity(language)?.textColor,
