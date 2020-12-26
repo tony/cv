@@ -45,7 +45,7 @@ export const myLanguagesRaw: Language[] = Array.from(
               ui: {
                 backgroundColor:
                   ghColors?.[languageName]?.color ?? LANGUAGE_FALLBACK_COLOR,
-                textColor: invert(ghColors[languageName]?.color, true),
+                color: invert(ghColors[languageName]?.color, true),
               },
             }
           : {}),

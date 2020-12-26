@@ -30,7 +30,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
           style={{
             backgroundColor: languagesQuery.getEntity(language)?.ui
               ?.backgroundColor,
-            color: languagesQuery.getEntity(language)?.ui?.textColor,
+            color: languagesQuery.getEntity(language)?.ui?.color,
           }}
         >
           {language}

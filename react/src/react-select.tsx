@@ -88,7 +88,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
 export const languagesStyles: StylesConfig = {
   option: (styles, { data }) => {
     const language = $$queries.languages.getEntity(data.value);
-    if (!language?.ui?.backgroundColor && !language?.ui?.textColor) {
+    if (!language?.ui?.backgroundColor && !language?.ui?.color) {
       return styles;
     }
     const backgroundColor = chroma(language.ui.backgroundColor)
@@ -118,10 +118,10 @@ export const languagesStyles: StylesConfig = {
       ...styles,
       borderBottomRightRadius: 0,
       borderTopRightRadius: 0,
-      ...(language?.ui?.backgroundColor && language?.ui?.textColor
+      ...(language?.ui?.backgroundColor && language?.ui?.color
         ? {
             backgroundColor: language?.ui?.backgroundColor ?? "white",
-            color: language?.ui?.textColor ?? "white",
+            color: language?.ui?.color ?? "white",
             borderRight: "rgba(0,0,0, .1) 1px solid",
           }
         : {}),
@@ -133,10 +133,10 @@ export const languagesStyles: StylesConfig = {
       ...styles,
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
-      ...(language?.ui?.backgroundColor && language?.ui?.textColor
+      ...(language?.ui?.backgroundColor && language?.ui?.color
         ? {
             backgroundColor: language?.ui?.backgroundColor ?? "white",
-            color: language?.ui?.textColor ?? "white",
+            color: language?.ui?.color ?? "white",
           }
         : {}),
     };
