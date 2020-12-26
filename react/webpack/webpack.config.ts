@@ -122,4 +122,4 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
 
 export default (
   env: IWebpackEnv // Merge default environment params
-) => getConfig({ ...defaultEnvironment, ...env });
+): webpack.Configuration => getConfig({ ...defaultEnvironment, ...env });
