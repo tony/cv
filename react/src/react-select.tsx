@@ -2,6 +2,7 @@ import React from "react";
 
 import { components as ReactSelectComponents } from "react-select";
 import { SelectComponentsProps } from "react-select";
+import type { StylesConfig } from "react-select";
 import type { OptionProps, ValueType } from "react-select/src/types";
 
 import chroma from "chroma-js";
@@ -13,13 +14,13 @@ export interface IOptionType {
   value: string;
 }
 
-export const getSelectOptions = (items: string[]) =>
+export const getSelectOptions = (items: string[]): ISelectOption[] =>
   items.map((actorName) => ({
     label: actorName,
     value: actorName,
   })) as ISelectOption[];
 
-export const onSelectChange = (setState: () => void) => (
+export const onSelectChange = (setState: () => void): void => (
   value: ValueType<IOptionType, boolean>
 ) => {
   if (value) {
@@ -89,7 +90,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
   );
 };
 
-export const languagesStyles = {
+export const languagesStyles: StylesConfig = {
   option: (styles, { data }) => {
     const language = $$queries.languages.getEntity(data.value);
     if (!language?.color && !language?.textColor) {
