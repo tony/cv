@@ -5,9 +5,6 @@ module.exports = {
     node: true,
     "jest/globals": true,
   },
-  globals: {
-    $$queries: "readable",
-  },
   extends: [
     "plugin:react/recommended",
     "eslint:recommended",
