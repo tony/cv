@@ -32,25 +32,55 @@ export const myActivitiesRaw: IActivity[] = [
   ...(ghActivitiesRaw as IActivity[]),
 ];
 
+const ghColorsMissing: { [key: string]: { color: string } } = {
+  Sass: {
+    color: "#a53b70",
+  },
+  ShellScript: {
+    color: "#89e051",
+  },
+  "Vim Snippet": {
+    color: "#199f4b",
+  },
+  Markdown: {
+    color: "#083fa1",
+  },
+  CMake: {
+    color: "#ccc",
+  },
+};
+
 // Calculated at runtime, based on the content of above
 export const myLanguagesRaw: Language[] = Array.from(
   Array.from(
     new Set([...myOrgsRaw.map((a) => a.languages).flat()].filter(Boolean))
-  ).map(
-    (languageName: LanguageName) =>
-      ({
-        id: languageName,
-        ...(languageName in ghColors && ghColors?.[languageName]?.color
-          ? {
-              ui: {
-                backgroundColor:
-                  ghColors?.[languageName]?.color ?? LANGUAGE_FALLBACK_COLOR,
-                color: invert(ghColors[languageName]?.color, true),
-              },
-            }
-          : {}),
-      } as Language)
-  )
+  ).map((languageName: LanguageName) => {
+    const ghColor =
+      languageName in ghColorsMissing
+        ? ghColorsMissing[languageName]
+        : ghColors[languageName];
+
+    if (!ghColor) {
+      if (!(languageName in ghColors)) {
+        console.warn(`${languageName} not found in colors`);
+      } else if (!ghColors?.[languageName]?.color) {
+        console.groupCollapsed(`${languageName} missing color`);
+        console.table(ghColors?.[languageName]);
+        console.groupEnd();
+      }
+    }
+    return {
+      id: languageName, // identify under original name
+      ...(ghColor.color
+        ? {
+            ui: {
+              backgroundColor: ghColor.color ?? LANGUAGE_FALLBACK_COLOR,
+              color: invert(ghColor.color, true),
+            },
+          }
+        : {}),
+    } as Language;
+  })
 );
 
 export const myOrgTypesRaw: OrgType[] = Array.from(
