@@ -32,7 +32,7 @@ module.exports = {
   rules: {},
   overrides: [
     {
-      files: ["**/*.tsx"],
+      files: ["**/*.tsx", "**/*.ts"],
       rules: {
         "react/prop-types": "off",
       },
