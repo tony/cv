@@ -58,4 +58,29 @@ export const ActivityTypeColors: {
   },
 };
 
+export const OrgTypeColors: {
+  // [key: OrgTypeName]: string;
+  "Open Source": CSS.Properties;
+  Company: CSS.Properties;
+  Publication: CSS.Properties;
+  Website: CSS.Properties;
+} = {
+  "Open Source": {
+    color: "#4a4a4a",
+    backgroundColor: "#f5f5f5",
+  },
+  Company: {
+    color: "#4a4a4a",
+    backgroundColor: "#f5f5f5",
+  },
+  Publication: {
+    color: "#4a4a4a",
+    backgroundColor: "#f5f5f5",
+  },
+  Website: {
+    color: "#4a4a4a",
+    backgroundColor: "#f5f5f5",
+  },
+};
+
 export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";

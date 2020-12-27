@@ -33,7 +33,7 @@ export interface IActivity {
 
 export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
 
-export interface OrgType {
+export interface OrgType extends IThemeable {
   id: OrgTypeName;
   name: OrgTypeName;
 }

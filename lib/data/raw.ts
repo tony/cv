@@ -10,6 +10,7 @@ import {
   ActivityTypeNameMap,
   ActivityTypeColors,
   LANGUAGE_FALLBACK_COLOR,
+  OrgTypeColors,
 } from "../constants";
 
 import {
@@ -96,6 +97,7 @@ export const orgTypesData: OrgType[] = Array.from(
     ({
       id: orgTypeName,
       name: orgTypeName,
+      ui: OrgTypeColors[orgTypeName],
     } as OrgType)
 );
 
