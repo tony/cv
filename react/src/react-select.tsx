@@ -8,7 +8,7 @@ import type { OptionProps, ValueType } from "react-select/src/types";
 import chroma from "chroma-js";
 
 import { languagesQuery, orgsQuery } from "../../lib/hub";
-import { LanguageTag } from "./Card";
+import { LanguageTag, OrgTypeTag } from "./Card";
 
 export type ISelectOption = Pick<OptionProps, "label" | "value">;
 
@@ -44,20 +44,7 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
       {children}{" "}
       {org?.orgType && (
         <>
-          <div
-            style={{
-              display: "inline-flex",
-              fontSize: ".75rem",
-              lineHeight: 1.5,
-              whiteSpace: "nowrap",
-              color: "#4a4a4a",
-              backgroundColor: "#f5f5f5",
-              padding: ".3rem .5rem",
-              borderRadius: ".3rem",
-            }}
-          >
-            {org.orgType}
-          </div>
+          <OrgTypeTag orgTypeName={org.orgType}>{org.orgType}</OrgTypeTag>
 
           {org.languages.map((languageId) => (
             <LanguageTag
