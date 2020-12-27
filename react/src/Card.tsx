@@ -9,9 +9,12 @@ interface IActivityCardProps {
   org: IOrg;
 }
 
-export const LanguageTag: React.FC<{ languageName: LanguageName }> = ({
-  languageName,
-}) => {
+export const LanguageTag: React.FC<
+  { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
+> = ({ languageName, children, style = {}, ...props }) => {
+  if (!languageName) {
+    return null;
+  }
   const language = languagesQuery.getEntity(languageName);
   if (!language || !language.ui) {
     console.groupCollapsed(`${org.name} missing language for ${languageName}`);
@@ -20,8 +23,8 @@ export const LanguageTag: React.FC<{ languageName: LanguageName }> = ({
   }
 
   return (
-    <div className="tag fr" style={language.ui}>
-      {languageName}
+    <div className="tag fr" style={{ ...language.ui, ...style }} {...props}>
+      {children || languageName}
     </div>
   );
 };
