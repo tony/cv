@@ -8,6 +8,7 @@ import type { OptionProps, ValueType } from "react-select/src/types";
 import chroma from "chroma-js";
 
 import { languagesQuery, orgsQuery } from "../../lib/hub";
+import { LanguageTag } from "./Card";
 
 export type ISelectOption = Pick<OptionProps, "label" | "value">;
 
@@ -58,29 +59,16 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
             {org.orgType}
           </div>
 
-          {org.languages.map((languageId) => {
-            const language = languagesQuery.getEntity(languageId);
-            if (!language) {
-              return null;
-            }
-            return (
-              <div
-                key={languageId}
-                className="tag"
-                style={{
-                  color: language?.ui?.backgroundColor
-                    ? chroma(language?.ui?.backgroundColor).get("lab.l") > 70
-                      ? "black"
-                      : "white"
-                    : "#4a4a4a",
-                  backgroundColor: language?.ui?.backgroundColor ?? "#f5f5f5",
-                  marginLeft: ".5rem",
-                }}
-              >
-                {languageId}
-              </div>
-            );
-          })}
+          {org.languages.map((languageId) => (
+            <LanguageTag
+              languageName={languageId}
+              key={languageId}
+              className="tag"
+              style={{
+                marginLeft: ".5rem",
+              }}
+            />
+          ))}
         </>
       )}
     </ReactSelectComponents.Option>
