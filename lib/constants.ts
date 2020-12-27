@@ -202,20 +202,32 @@ export const OrgTypeColors: {
   Website: CSS.Properties;
 } = {
   "Open Source": {
-    color: "#4a4a4a",
     backgroundColor: "#f5f5f5",
+    borderColor: Colors["gray.300"],
+    borderStyle: "solid",
+    borderWidth: "1px",
+    color: Colors["gray.500"],
   },
   Company: {
-    color: "#4a4a4a",
     backgroundColor: "#f5f5f5",
+    borderColor: Colors["gray.500"],
+    borderStyle: "solid",
+    borderWidth: "1px",
+    color: Colors["gray.700"],
   },
   Publication: {
-    color: "#4a4a4a",
     backgroundColor: "#f5f5f5",
+    borderColor: Colors["green.300"],
+    borderStyle: "solid",
+    borderWidth: "1px",
+    color: Colors["green.500"],
   },
   Website: {
-    color: "#4a4a4a",
     backgroundColor: "#f5f5f5",
+    borderColor: Colors["blue.300"],
+    borderStyle: "solid",
+    borderWidth: "1px",
+    color: Colors["blue.500"],
   },
 };
 
