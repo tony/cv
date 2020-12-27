@@ -1,7 +1,16 @@
 import React from "react";
 
-import { languagesQuery } from "../../lib/hub";
-import type { IActivity, IOrg, LanguageName } from "../../lib/types";
+import {
+  activityTypesQuery,
+  languagesQuery,
+  orgTypesQuery,
+} from "../../lib/hub";
+import type {
+  ActivityTypeName,
+  IActivity,
+  IOrg,
+  LanguageName,
+} from "../../lib/types";
 import "./style.scss";
 
 interface IActivityCardProps {
@@ -25,6 +34,50 @@ export const LanguageTag: React.FC<
   return (
     <div className="tag fr" style={{ ...language.ui, ...style }} {...props}>
       {children || languageName}
+    </div>
+  );
+};
+
+export const ActivityTypeTag: React.FC<
+  { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
+> = ({ activityTypeName, children, style = {}, ...props }) => {
+  if (!activityTypeName) {
+    return null;
+  }
+  const activityType = activityTypesQuery.getEntity(activityTypeName);
+  if (!activityType || !activityType.ui) {
+    console.groupCollapsed(
+      `${activityType?.name} missing activity type for ${activityTypeName}`
+    );
+    console.table(activityType);
+    console.groupEnd();
+  }
+
+  return (
+    <div className="tag fr" style={{ ...activityType.ui, ...style }} {...props}>
+      {children || activityTypeName}
+    </div>
+  );
+};
+
+export const OrgTypeTag: React.FC<
+  { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>
+> = ({ orgTypeName, children, style = {}, ...props }) => {
+  if (!orgTypeName) {
+    return null;
+  }
+  const orgType = orgTypesQuery.getEntity(orgTypeName);
+  if (!orgType || !orgType.ui) {
+    console.groupCollapsed(
+      `${orgType?.name} missing org type for ${orgTypeName}`
+    );
+    console.table(orgType);
+    console.groupEnd();
+  }
+
+  return (
+    <div className="tag" style={{ ...orgType.ui, ...style }} {...props}>
+      {children || orgTypeName}
     </div>
   );
 };
