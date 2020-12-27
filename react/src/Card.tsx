@@ -97,5 +97,6 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     {org?.languages?.map((languageName) => (
       <LanguageTag languageName={languageName} key={languageName} />
     ))}
+    {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
   </div>
 );
