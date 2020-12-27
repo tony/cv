@@ -17,7 +17,12 @@ import {
   languagesQuery,
 } from "../../lib/hub";
 import { ActivityCard } from "./Card";
-import { getSelectOptions, languagesStyles, OrgOption } from "./react-select";
+import {
+  getSelectOptions,
+  languagesStyles,
+  LanguageOption,
+  OrgOption,
+} from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { useAsyncEffect } from "./utils";
 
@@ -204,6 +209,7 @@ const App: React.FC = () => {
         className="react-select"
         placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
         styles={languagesStyles}
+        components={{ Option: LanguageOption }}
       />
       <Select
         options={

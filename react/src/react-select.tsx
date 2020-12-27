@@ -62,6 +62,29 @@ export const OrgOption: React.FC<SelectComponentsProps> = ({
   );
 };
 
+export const LanguageOption: React.FC<SelectComponentsProps> = ({
+  children,
+  data,
+  ...props
+}) => {
+  console.log({ data });
+  const languageName = data?.value;
+  if (!languageName) {
+    console.warn(`${languageName} missing from option`);
+    return null;
+  }
+  const language = languagesQuery.getEntity(languageName);
+  return (
+    <ReactSelectComponents.Option {...props} data={data}>
+      <LanguageTag
+        languageName={languageName}
+        key={languageName}
+        className="tag"
+      />
+    </ReactSelectComponents.Option>
+  );
+};
+
 export const languagesStyles: StylesConfig = {
   option: (styles, { data }) => {
     const language = languagesQuery.getEntity(data.value);
