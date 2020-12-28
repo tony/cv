@@ -98,7 +98,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
       <LanguageTag languageName={languageName} key={languageName} />
     ))}
     {org?.orgType && (
-      <OrgTypeTag orgTypeName={org.orgType} style={{ marginLeft: ".5rem" }} />
+      <OrgTypeTag orgTypeName={org.orgType} style={{ marginLeft: ".75rem" }} />
     )}
   </div>
 );
