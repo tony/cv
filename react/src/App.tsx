@@ -204,6 +204,18 @@ const App: React.FC = () => {
         />
         <Select
           options={
+            activityTypesQuery.getAll().map((a) => ({
+              label: a.name,
+              value: a.id,
+            })) as ISelectOption[]
+          }
+          isMulti={true}
+          onChange={onActivityTypeChange}
+          className="react-select"
+          placeholder="Activity type - e.g. Work, Open Source, Website, Volunteering"
+        />
+        <Select
+          options={
             orgsQuery.getAll().map((org) => ({
               label: org.name,
               value: org.id,
@@ -214,18 +226,6 @@ const App: React.FC = () => {
           className="react-select"
           placeholder="Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
           components={{ Option: OrgOption }}
-        />
-        <Select
-          options={
-            activityTypesQuery.getAll().map((a) => ({
-              label: a.name,
-              value: a.id,
-            })) as ISelectOption[]
-          }
-          isMulti={true}
-          onChange={onActivityTypeChange}
-          className="react-select"
-          placeholder="Activity type - e.g. Work, Open Source, Website, Volunteering"
         />
       </div>
 
