@@ -12,14 +12,14 @@ export const ActivityTypeNameMap: {
   Website: string;
   Article: string;
 } = {
-  SoftwareApp: "App",
-  SoftwareLib: "Software Component (Library)",
-  Patch: "Software Contribution (Patch)",
-  Work: "Work",
-  Publication: "Publication",
-  Volunteer: "Volunteer",
-  Website: "Website",
-  Article: "Article",
+  SoftwareApp: "Published software",
+  SoftwareLib: "Published software (library, component)",
+  Patch: "Contributed software patch",
+  Work: "Employed",
+  Volunteer: "Volunteered",
+  Publication: "Published book",
+  Website: "Published website",
+  Article: "Published article",
 };
 
 export const ActivityTypeColors: {
