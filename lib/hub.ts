@@ -46,6 +46,9 @@ export const query = new CVQuery(
   orgTypesQuery
 );
 
+/**
+ * Load lib/data/raw's fixtures into akita's stores
+ */
 export const loadStores = ({
   activities,
   orgs,
