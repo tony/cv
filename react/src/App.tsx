@@ -188,44 +188,46 @@ const App: React.FC = () => {
   return (
     <div>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
-      <Select
-        options={getSelectOptions(
-          Object.values(languagesQuery.getValue().entities).map(
-            (lang) => lang.id as string
-          )
-        )}
-        isMulti
-        onChange={onLanguageChange}
-        className="react-select"
-        placeholder="Filter by Programming Language(s) - e.g. Python, JavaScript, C++"
-        styles={languagesStyles}
-        components={{ Option: LanguageOption }}
-      />
-      <Select
-        options={
-          orgsQuery.getAll().map((org) => ({
-            label: org.name,
-            value: org.id,
-          })) as ISelectOption[]
-        }
-        isMulti={true}
-        onChange={onOrgChange}
-        className="react-select"
-        placeholder="Filter by Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
-        components={{ Option: OrgOption }}
-      />
-      <Select
-        options={
-          activityTypesQuery.getAll().map((a) => ({
-            label: a.name,
-            value: a.id,
-          })) as ISelectOption[]
-        }
-        isMulti={true}
-        onChange={onActivityTypeChange}
-        className="react-select"
-        placeholder="Filter by Type of Activity - e.g. Work, Open Source, Website, Volunteering"
-      />
+      <div className="dropdownRow">
+        <Select
+          options={getSelectOptions(
+            Object.values(languagesQuery.getValue().entities).map(
+              (lang) => lang.id as string
+            )
+          )}
+          isMulti
+          onChange={onLanguageChange}
+          className="react-select"
+          placeholder="Programming Language - e.g. Python, JavaScript, C++"
+          styles={languagesStyles}
+          components={{ Option: LanguageOption }}
+        />
+        <Select
+          options={
+            orgsQuery.getAll().map((org) => ({
+              label: org.name,
+              value: org.id,
+            })) as ISelectOption[]
+          }
+          isMulti={true}
+          onChange={onOrgChange}
+          className="react-select"
+          placeholder="Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
+          components={{ Option: OrgOption }}
+        />
+        <Select
+          options={
+            activityTypesQuery.getAll().map((a) => ({
+              label: a.name,
+              value: a.id,
+            })) as ISelectOption[]
+          }
+          isMulti={true}
+          onChange={onActivityTypeChange}
+          className="react-select"
+          placeholder="Activity type - e.g. Work, Open Source, Website, Volunteering"
+        />
+      </div>
 
       <div className="resultsMessage">Found {resultsCount} results</div>
 
