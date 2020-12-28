@@ -1,5 +1,6 @@
 import {
   combineQueries,
+  EntityUIQuery,
   Query,
   QueryConfig,
   QueryEntity,
@@ -15,6 +16,7 @@ import type {
   OrgTypesState,
   LanguagesState,
   ActivityTypesState,
+  ActivitiesUIState,
 } from "./store";
 import {
   CVStore,
@@ -49,12 +51,15 @@ export const hasAny = (
   sortByOrder: Order.DESC,
 })
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
+  ui: EntityUIQuery<ActivitiesUIState>;
+
   selectLoading$(): Observable<boolean> {
     return this.select((state) => state.ui.isLoading);
   }
 
   constructor(protected store: ActivitiesStore) {
     super(store);
+    this.createUIQuery();
   }
 }
 

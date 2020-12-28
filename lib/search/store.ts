@@ -2,6 +2,7 @@
  * Naming conventions inspired by data-forge-ts
  */
 import {
+  EntityUIStore,
   EntityState,
   EntityStore,
   MultiActiveState,
@@ -16,8 +17,32 @@ import type {
   IActivity,
   IOrg,
 } from "../types";
+import {
+  isActivityTypoFix,
+  isActivityDocImprovement,
+  isActivityCodeStyleTweak,
+  isActivityMerged,
+} from "./utils";
 
 export type CVState = Record<string, never>;
+
+interface ActivityUI {
+  isOptionSelected: boolean;
+  isOptionDisabled: boolean;
+  isTypo: boolean;
+  isDocImprovement: boolean;
+  isCodeStyleTweak: boolean;
+  isMerged: boolean;
+}
+
+const ACTIVITY_UI_DEFAULTS: ActivityUI = {
+  isOptionDisabled: false,
+  isOptionSelected: false,
+  isTypo: false,
+  isDocImprovement: false,
+  isCodeStyleTweak: false,
+  isMerged: false,
+};
 
 export interface ActivitiesState
   extends EntityState<IActivity>,
@@ -25,10 +50,29 @@ export interface ActivitiesState
   ui: { isLoading: boolean };
 }
 
+export type ActivitiesUIState = EntityState<ActivityUI>;
+
 @StoreConfig({ name: "activities" })
 export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
+  ui: EntityUIStore<ActivitiesUIState>;
+
   constructor() {
     super({ active: [], ui: { isLoading: false } });
+
+    // Set state of item being selected, disabled, etc.
+    // $$queries.activities.ui.getAll({filterBy: (entity) => entity.isTypo})
+    // $$queries.activities.ui.getAll({filterBy: (entity) => entity.isTypo && entity.isMerged})
+    // $$queries.activities.ui.getCount((entity) => entity.isTypo)
+    const setDefaults = (activity: IActivity): ActivityUI => {
+      return {
+        ...ACTIVITY_UI_DEFAULTS,
+        isTypo: isActivityTypoFix(activity),
+        isDocImprovement: isActivityDocImprovement(activity),
+        isCodeStyleTweak: isActivityCodeStyleTweak(activity),
+        isMerged: isActivityMerged(activity),
+      };
+    };
+    this.createUIStore().setInitialEntityState(setDefaults);
   }
 
   setLoading(isLoading: boolean): void {
