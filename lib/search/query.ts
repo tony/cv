@@ -1,4 +1,10 @@
-import { combineQueries, Query, QueryEntity } from "@datorama/akita";
+import {
+  combineQueries,
+  Query,
+  QueryConfig,
+  QueryEntity,
+  Order,
+} from "@datorama/akita";
 import { map } from "rxjs/operators";
 import type { Observable } from "rxjs";
 
@@ -38,6 +44,10 @@ export const hasAny = (
   return Array.from(a).filter((x) => b.has(x));
 };
 
+@QueryConfig({
+  sortBy: "createdDate",
+  sortByOrder: Order.DESC,
+})
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
   selectLoading$(): Observable<boolean> {
     return this.select((state) => state.ui.isLoading);
