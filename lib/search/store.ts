@@ -27,7 +27,6 @@ import {
 export type CVState = Record<string, never>;
 
 interface ActivityUI {
-  isOptionSelected: boolean;
   isOptionDisabled: boolean;
   isTypo: boolean;
   isDocImprovement: boolean;
@@ -37,7 +36,6 @@ interface ActivityUI {
 
 const ACTIVITY_UI_DEFAULTS: ActivityUI = {
   isOptionDisabled: false,
-  isOptionSelected: false,
   isTypo: false,
   isDocImprovement: false,
   isCodeStyleTweak: false,
