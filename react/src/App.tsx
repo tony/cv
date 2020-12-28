@@ -9,6 +9,7 @@ import {
   activitiesStore,
   activitiesQuery,
   activityTypesQuery,
+  loadStores,
   orgsStore,
   orgTypesStore,
   orgsQuery,
@@ -85,15 +86,9 @@ const App: React.FC = () => {
     return import(/* webpackChunkName: "myData" */ "../../lib/data");
   };
   useAsyncEffect(async () => {
-    const {
-      activities,
-      orgs,
-      languages,
-      orgTypes,
-      activityTypes,
-    } = await fetchActivities();
+    const data = await fetchActivities();
     if (
-      !languages ||
+      !data.languages ||
       !!Object.keys(orgsStore.getValue().entities).length ||
       !!Object.keys(activitiesStore.getValue().entities).length
     ) {
@@ -102,14 +97,8 @@ const App: React.FC = () => {
       }
       return;
     }
-    activitiesStore.setLoading(true);
-    console.log("setting storage");
-    orgsStore.set(orgs);
-    orgTypesStore.set(orgTypes);
-    languagesStore.set(languages);
-    activityTypesStore.set(activityTypes);
-    activitiesStore.set(activities);
-    activitiesStore.setLoading(false);
+
+    loadStores(data);
     if (!results?.activities.length) {
       dispatch({
         type: ActionType.SetResults,

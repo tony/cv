@@ -16,6 +16,17 @@ import {
   OrgTypesQuery,
 } from "./search/query";
 
+import type {
+  ActivityType,
+  ActivityTypeName,
+  Language,
+  LanguageName,
+  OrgType,
+  OrgTypeName,
+  IActivity,
+  IOrg,
+} from "./types";
+
 export const activityTypesStore = new ActivityTypesStore();
 export const activitiesStore = new ActivitiesStore();
 export const orgsStore = new OrgsStore();
@@ -43,3 +54,26 @@ export const query = new CVQuery(
   orgsQuery,
   orgTypesQuery
 );
+
+export const loadStores = async ({
+  activities,
+  orgs,
+  languages,
+  orgTypes,
+  activityTypes,
+}: {
+  activities: IActivity[];
+  orgs: IOrg[];
+  languages: Language[];
+  orgTypes: OrgType[];
+  activityTypes: ActivityType[];
+}) => {
+  activitiesStore.setLoading(true);
+  console.log("setting storage");
+  orgsStore.set(orgs);
+  orgTypesStore.set(orgTypes);
+  languagesStore.set(languages);
+  activityTypesStore.set(activityTypes);
+  activitiesStore.set(activities);
+  activitiesStore.setLoading(false);
+};
