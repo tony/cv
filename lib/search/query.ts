@@ -6,7 +6,7 @@ import {
   QueryEntity,
   Order,
 } from "@datorama/akita";
-import { map } from "rxjs/operators";
+import { map, take } from "rxjs/operators";
 import type { Observable } from "rxjs";
 
 import type {
@@ -27,6 +27,14 @@ import {
   OrgTypesStore,
 } from "./store";
 import type { LanguageName, IActivity } from "../types";
+
+interface CVCount {
+  activities: number;
+  languages: number;
+  orgTypes: number;
+  orgs: number;
+  activityTypes: number;
+}
 
 export const difference = (
   left: Set<unknown> | unknown[],
@@ -174,5 +182,23 @@ export class CVQuery extends Query<CVState> {
         ).filter(Boolean);
       })
     );
+  }
+
+  selectCountAll$(): Observable<CVCount> {
+    return combineQueries([this.visibleActivities$()]).pipe(
+      map(([visibleActivities]) => {
+        return {
+          activities: visibleActivities.length,
+          languages: 0,
+          orgTypes: 0,
+          orgs: 0,
+          activityTypes: 0,
+        };
+      })
+    );
+  }
+
+  getCountAll(): Promise<CVCount> {
+    return this.selectCountAll$().pipe(take(1)).toPromise();
   }
 }
