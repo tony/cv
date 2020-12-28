@@ -11,12 +11,12 @@ import {
   activityTypesQuery,
   loadStores,
   orgsStore,
-  orgTypesStore,
   orgsQuery,
   query,
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
+import { fetchDataFn } from "../../lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
   getSelectOptions,
@@ -79,14 +79,15 @@ const DEFAULT_STORE: ReducerState = {
   ui: { isLoading: false },
 };
 
+const fetchData: fetchDataFn = async () => {
+  return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
+};
+
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
 
-  const fetchActivities = async () => {
-    return import(/* webpackChunkName: "myData" */ "../../lib/data/raw");
-  };
   useAsyncEffect(async () => {
-    const data = await fetchActivities();
+    const data = await fetchData({ path: "./raw" });
     if (
       !data.languages ||
       !!Object.keys(orgsStore.getValue().entities).length ||
