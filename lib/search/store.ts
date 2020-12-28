@@ -9,7 +9,13 @@ import {
   StoreConfig,
 } from "@datorama/akita";
 
-import { ActivityType, Language, OrgType, IActivity, IOrg } from "../types";
+import type {
+  ActivityType,
+  Language,
+  OrgType,
+  IActivity,
+  IOrg,
+} from "../types";
 
 export type CVState = Record<string, never>;
 
