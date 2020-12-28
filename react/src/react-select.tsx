@@ -91,11 +91,11 @@ export const languagesStyles: StylesConfig = {
     const backgroundColor = chroma(language.ui.backgroundColor)
       .alpha(0.8)
       .css();
-
     const highlightStyle = {
       backgroundColor,
       color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
+
     return {
       ...styles,
       ...(isFocused || isSelected ? highlightStyle : {}),
@@ -103,40 +103,33 @@ export const languagesStyles: StylesConfig = {
     };
   },
 
-  multiValue: (styles, { data }) => {
-    const language = languagesQuery.getEntity(data.value);
-    return {
-      ...styles,
-      backgroundColor: language?.ui?.backgroundColor,
-    };
-  },
   multiValueLabel: (styles, { data }) => {
     const language = languagesQuery.getEntity(data.value);
     return {
       ...styles,
       borderBottomRightRadius: 0,
       borderTopRightRadius: 0,
-      ...(language?.ui?.backgroundColor && language?.ui?.color
-        ? {
-            backgroundColor: language?.ui?.backgroundColor ?? "white",
-            color: language?.ui?.color ?? "white",
-            borderRight: "rgba(0,0,0, .1) 1px solid",
-          }
-        : {}),
+      paddingRight: "4px",
+      ...language.ui,
     };
   },
   multiValueRemove: (styles, { data }) => {
     const language = languagesQuery.getEntity(data.value);
+    const backgroundColor =
+      chroma(language.ui.backgroundColor).get("lab.l") > 80
+        ? chroma(language.ui.backgroundColor).brighten(0.2)
+        : chroma(language.ui.backgroundColor).brighten(0.4);
+    const highlightStyle = {
+      backgroundColor: backgroundColor.css(),
+      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    };
+
     return {
       ...styles,
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
-      ...(language?.ui?.backgroundColor && language?.ui?.color
-        ? {
-            backgroundColor: language?.ui?.backgroundColor ?? "white",
-            color: language?.ui?.color ?? "white",
-          }
-        : {}),
+      ...language.ui,
+      ":hover": highlightStyle,
     };
   },
 };
