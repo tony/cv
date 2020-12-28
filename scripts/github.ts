@@ -188,7 +188,7 @@ recursePRQuery(initialPrQuery)
         orgId: Object.keys(projectsFinal).find(
           (projectName) => pr.repository.name === projectName
         ),
-        componentName: "Patch",
+        activityType: "Patch",
         createdDate: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
         id: id++,

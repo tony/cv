@@ -102,7 +102,7 @@ export const orgTypes: OrgType[] = Array.from(
 );
 
 export const activityTypes: ActivityType[] = Array.from(
-  new Set(activities.map((a) => a.componentName).filter(Boolean))
+  new Set(activities.map((a) => a.activityType).filter(Boolean))
 ).map(
   (activityTypeName: ActivityTypeName) =>
     ({

@@ -1,70 +1,70 @@
 [
   {
     "id": 20000,
-    "componentName": "SoftwareApp",
+    "activityType": "SoftwareApp",
     "createdDate": "2013-10-08",
     "title": "Created the tmuxp project",
     "orgId": "tmuxp"
   },
   {
     "id": 20001,
-    "componentName": "SoftwareApp",
+    "activityType": "SoftwareApp",
     "createdDate": "2017-04-17",
     "title": "Created the unihan-etl project",
     "orgId": "unihan-etl"
   },
   {
     "id": 20002,
-    "componentName": "SoftwareApp",
+    "activityType": "SoftwareApp",
     "createdDate": "2013-05-20",
     "title": "Created the CLI interface to the cihai project",
     "orgId": "cihai-cli"
   },
   {
     "id": 20003,
-    "componentName": "SoftwareLib",
+    "activityType": "SoftwareLib",
     "createdDate": "2016-10-08",
     "title": "Created the libtmux project",
     "orgId": "libtmux"
   },
   {
     "id": 20004,
-    "componentName": "SoftwareLib",
+    "activityType": "SoftwareLib",
     "createdDate": "2017-04-16",
     "title": "Created the cihai CJK (Chinese, Japanese, Korean) data project",
     "orgId": "cihai"
   },
   {
     "id": 20005,
-    "componentName": "SoftwareLib",
+    "activityType": "SoftwareLib",
     "createdDate": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
     "orgId": "unihan-db"
   },
   {
     "id": 20006,
-    "componentName": "SoftwareLib",
+    "activityType": "SoftwareLib",
     "createdDate": "2017-11-26",
     "title": "Created a django package, django-slugify-processor",
     "orgId": "django-slugify-processor"
   },
   {
     "id": 20007,
-    "componentName": "SoftwareLib",
+    "activityType": "SoftwareLib",
     "createdDate": "2016-06-20",
     "title": "Decoupled libvcs from vcspull",
     "orgId": "libvcs"
   },
   {
     "id": 20008,
-    "componentName": "SoftwareApp",
+    "activityType": "SoftwareApp",
     "createdDate": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
     "orgId": "vcspull"
   },
   {
     "id": 30000,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2007-04-12",
     "accepted_date": "2007-06-18",
     "qa_url": "https://www.drupal.org/project/event/issues/143542",
@@ -74,7 +74,7 @@
   },
   {
     "id": 30001,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2008-01-23",
     "accepted_date": "2008-02-06",
     "qa_url": "https://www.drupal.org/project/drupal/issues/213172",
@@ -84,7 +84,7 @@
   },
   {
     "id": 30002,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2014-12-27",
     "accepted_date": "2015-02-24",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
@@ -94,7 +94,7 @@
   },
   {
     "id": 30003,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2016-02-19",
     "accepted_date": "2016-04-06",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
@@ -104,7 +104,7 @@
   },
   {
     "id": 30004,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2016-02-19",
     "accepted_date": null,
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207337",
@@ -114,7 +114,7 @@
   },
   {
     "id": 30005,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2017-03-04",
     "accepted_date": "2017-03-30",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
@@ -124,7 +124,7 @@
   },
   {
     "id": 30006,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
@@ -134,7 +134,7 @@
   },
   {
     "id": 30007,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2016-01-07",
     "accepted_date": "2016-01-09",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205987",
@@ -144,7 +144,7 @@
   },
   {
     "id": 30008,
-    "componentName": "Patch",
+    "activityType": "Patch",
     "createdDate": "2014-12-29",
     "accepted_date": "2015-03-22",
     "qa_url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
@@ -154,7 +154,7 @@
   },
   {
     "id": 40000,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2014-04-01",
     "end_date": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
@@ -163,7 +163,7 @@
   },
   {
     "id": 40001,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
@@ -171,7 +171,7 @@
   },
   {
     "id": 40002,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2008-01-01",
     "end_date": "2011-01-01",
     "title": "Software Developer",
@@ -180,7 +180,7 @@
   },
   {
     "id": 40003,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2011-10-01",
     "end_date": "2012-01-01",
     "title": "Software Developer",
@@ -189,7 +189,7 @@
   },
   {
     "id": 40004,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2012-11-01",
     "end_date": "2013-04-01",
     "title": "Software Developer",
@@ -199,7 +199,7 @@
   },
   {
     "id": 40005,
-    "componentName": "Work",
+    "activityType": "Work",
     "createdDate": "2018-03-01",
     "title": "Senior Developer at Peergrade",
     "description": "Peer Grading Platform",
@@ -207,28 +207,28 @@
   },
   {
     "id": 50000,
-    "componentName": "Publication",
+    "activityType": "Publication",
     "createdDate": "2017-01-01",
     "title": "Published The Tao of tmux",
     "orgId": "the-tao-of-tmux"
   },
   {
     "id": 60000,
-    "componentName": "Volunteer",
+    "activityType": "Volunteer",
     "createdDate": "2013-01-01",
     "title": "System Administrator at Wengu",
     "orgId": "wengu"
   },
   {
     "id": 70000,
-    "componentName": "Website",
+    "activityType": "Website",
     "createdDate": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
     "orgId": "hskflashcards"
   },
   {
     "id": 70001,
-    "componentName": "Article",
+    "activityType": "Article",
     "createdDate": "2017-07-04",
     "title": "Django vs Flask",
     "orgId": "devel.tech",

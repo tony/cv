@@ -22,7 +22,7 @@ export interface ActivityType extends IThemeable {
 export interface IActivity {
   createdDate: string;
   title: string;
-  componentName: ActivityTypeName;
+  activityType: ActivityTypeName;
   orgId: string;
   acceptedDate?: string;
   qaUrl?: string;

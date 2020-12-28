@@ -140,9 +140,7 @@ export class CVQuery extends Query<CVState> {
         }
         if (activeActivityTypes.length) {
           a = a.filter((activity) => {
-            return activeActivityTypes.some(
-              (v) => v === activity.componentName
-            );
+            return activeActivityTypes.some((v) => v === activity.activityType);
           });
         }
         return a;
