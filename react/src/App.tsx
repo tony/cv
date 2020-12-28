@@ -16,7 +16,7 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
-import { fetchDataFn } from "../../lib/data/fetch";
+import type { fetchDataFn } from "../../lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
   getSelectOptions,
