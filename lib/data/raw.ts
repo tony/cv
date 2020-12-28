@@ -24,7 +24,7 @@ import {
   IOrg,
 } from "../types";
 
-export const orgData: IOrg[] = [
+export const orgs: IOrg[] = [
   // Make Object Key the ID
   ...Object.entries(handPickedOrgsJson).map(
     ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
@@ -34,7 +34,7 @@ export const orgData: IOrg[] = [
   ),
 ];
 
-export const activityData: IActivity[] = [
+export const activities: IActivity[] = [
   ...(handPickedActivitiesJson as IActivity[]),
   ...(ghActivitiesJson as IActivity[]),
 ];
@@ -58,9 +58,9 @@ const ghColorsJsonMissing: { [key: string]: { color: string } } = {
 };
 
 // Calculated at runtime, based on the content of above
-export const languageData: Language[] = Array.from(
+export const languages: Language[] = Array.from(
   Array.from(
-    new Set([...orgData.map((a) => a.languages).flat()].filter(Boolean))
+    new Set([...orgs.map((a) => a.languages).flat()].filter(Boolean))
   ).map((languageName: LanguageName) => {
     const ghColor =
       languageName in ghColorsJsonMissing
@@ -90,8 +90,8 @@ export const languageData: Language[] = Array.from(
   })
 );
 
-export const orgTypesData: OrgType[] = Array.from(
-  new Set(orgData.map((a) => a.orgType as OrgTypeName).filter(Boolean))
+export const orgTypes: OrgType[] = Array.from(
+  new Set(orgs.map((a) => a.orgType as OrgTypeName).filter(Boolean))
 ).map(
   (orgTypeName: OrgTypeName) =>
     ({
@@ -101,8 +101,8 @@ export const orgTypesData: OrgType[] = Array.from(
     } as OrgType)
 );
 
-export const activityTypeData: ActivityType[] = Array.from(
-  new Set(activityData.map((a) => a.componentName).filter(Boolean))
+export const activityTypes: ActivityType[] = Array.from(
+  new Set(activities.map((a) => a.componentName).filter(Boolean))
 ).map(
   (activityTypeName: ActivityTypeName) =>
     ({

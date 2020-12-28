@@ -83,7 +83,7 @@ const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
 
   const fetchActivities = async () => {
-    return import(/* webpackChunkName: "myData" */ "../../lib/data");
+    return import(/* webpackChunkName: "myData" */ "../../lib/data/raw");
   };
   useAsyncEffect(async () => {
     const data = await fetchActivities();
