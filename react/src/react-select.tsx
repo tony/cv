@@ -83,7 +83,7 @@ export const LanguageOption: React.FC<SelectComponentsProps> = ({
 };
 
 export const languagesStyles: StylesConfig = {
-  option: (styles, { data }) => {
+  option: (styles, { data, isFocused, isSelected }) => {
     const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor && !language?.ui?.color) {
       return styles;
@@ -91,14 +91,15 @@ export const languagesStyles: StylesConfig = {
     const backgroundColor = chroma(language.ui.backgroundColor)
       .alpha(0.8)
       .css();
-    return {
-      ...styles,
+
+    const highlightStyle = {
       backgroundColor,
       color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
-      "&:hover": {
-        backgroundColor: "#DEEBFF",
-        color: "black",
-      },
+    };
+    return {
+      ...styles,
+      ...(isFocused || isSelected ? highlightStyle : {}),
+      "&:hover": highlightStyle,
     };
   },
 
