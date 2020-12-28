@@ -84,7 +84,7 @@ export const OrgTypeTag: React.FC<
 
 export const PatchInfoBox: React.FC<
   React.ComponentProps<typeof PatchInfoBox>
-> = ({ activity, org }) => {
+> = ({ activity }) => {
   return (
     <>
       {activity?.qaUrl && activity?.qaUrl !== "" && (
