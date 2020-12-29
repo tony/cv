@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import type { Subscription, Observable } from "rxjs";
+import type { Subscription } from "rxjs";
 import type { ValueType } from "react-select/src/types";
 
 import type { IActivity } from "../../lib/types";
@@ -25,16 +25,8 @@ import {
   OrgOption,
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
-import { useAsyncEffect } from "./utils";
-
+import { onEmit, useAsyncEffect } from "./utils";
 import "./style.scss";
-
-function onEmit<T>(
-  source$: Observable<T>,
-  nextFn: (value: T) => void
-): Subscription {
-  return source$.subscribe(nextFn, console.error);
-}
 
 interface ReducerState {
   activities: IActivity[];
