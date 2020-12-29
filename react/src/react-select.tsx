@@ -114,7 +114,7 @@ export const LanguageOption: React.FC<SelectComponentsProps> = ({
         key={languageName}
         className="tag ml0"
       />
-      <div className="activityCount">x{totalActivitiesCount}</div>
+      <div className="activityCount">{totalActivitiesCount} results</div>
     </ReactSelectComponents.Option>
   );
 };
