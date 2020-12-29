@@ -15,10 +15,10 @@ export default class HelloDecorator extends Vue {
   @Prop() name!: string;
   @Prop() initialEnthusiasm!: number;
   enthusiasm = this.initialEnthusiasm;
-  increment() {
+  increment(): void {
     this.enthusiasm++;
   }
-  decrement() {
+  decrement(): void {
     if (this.enthusiasm > 1) {
       this.enthusiasm--;
     }

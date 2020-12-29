@@ -12,10 +12,12 @@ interface IRootState {
 
 const store: StoreOptions<IRootState> = {
   actions: {
-    async loadActivities(
-      { commit }: { commit: Commit },
-      activities: IRootState["activities"]
-    ) {
+    async loadActivities({
+      commit,
+    }: {
+      commit: Commit;
+    }) // activities: IRootState["activities"]
+    {
       const { myActivitiesRaw: myActivities } = await import(
         /* webpackChunkName: "myData" */ "../../lib/data/raw"
       );
