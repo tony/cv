@@ -113,8 +113,6 @@ export const LanguageOption: React.FC<SelectComponentsProps> = ({
         languageName={languageName}
         key={languageName}
         className="tag ml0"
-        availableActivitiesCount={availableActivitiesCount}
-        totalActivitiesCount={totalActivitiesCount}
       />
       <div className="activityCount">x{totalActivitiesCount}</div>
     </ReactSelectComponents.Option>
