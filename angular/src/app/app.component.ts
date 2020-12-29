@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   activities: IActivity[] = [];
   async ngOnInit() {
     console.log('ngOnInit');
-    const { activities } = await import(/* webpackChunkName: "myData" */ '@lib/data');
+    const { activities } = await import(/* webpackChunkName: "cvData" */ '@lib/data/raw');
     console.log({ activities });
     this.activities = activities;
   }
