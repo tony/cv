@@ -28,6 +28,10 @@ import {
 } from "./store";
 import type { LanguageName, IActivity } from "../types";
 
+export interface LanguageCount {
+  [key: string]: number;
+}
+
 interface CVCount {
   activities: number;
   languages: number;
@@ -191,7 +195,7 @@ export class CVQuery extends Query<CVState> {
     }: {
       onlyVisible: boolean;
     } = { onlyVisible: false }
-  ): Observable<{ [key: string]: number }> {
+  ): Observable<LanguageCount> {
     const selectActivity = onlyVisible
       ? this.visibleActivities$()
       : this.activitiesQuery.selectAll();
@@ -211,9 +215,7 @@ export class CVQuery extends Query<CVState> {
             }
           });
           return languages;
-        }, Object.fromEntries<number>(this.languagesQuery.getAll().map((language) => [language.id as string, 0]))) as {
-          [key: string]: number;
-        };
+        }, Object.fromEntries<number>(this.languagesQuery.getAll().map((language) => [language.id as string, 0]))) as LanguageCount;
       })
     );
   }
