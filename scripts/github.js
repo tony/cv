@@ -18,7 +18,7 @@ if (!gh_token) {
 const config = {
   exclude_own_repo: true,
   gh_user: 'tony',
-  exclude_users: ['cihai', 'git-pull', 'vcs-python', 'tmux-python', 'nick-ma', 'emre'],
+  exclude_users: ['cihai', 'git-pull', 'vcs-python', 'tmux-python', 'nick-ma', 'emre', 'joseph-flinn'],
   output_dir: 'data/scraped',
   ignore_private_repos: true,
 }
