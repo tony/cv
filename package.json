@@ -4,7 +4,7 @@
   "scripts": {
     "github": "ts-node scripts/github.ts",
     "github-colors": "curl https://raw.githubusercontent.com/IonicaBizau/github-colors/master/lib/colors.json -o data/gh_colors.json",
-    "lint": "tslint --project tsconfig.json",
+    "lint": "echo \"noop\"",
     "test": "jest",
     "prettier": "prettier data lib scripts --write"
   },
@@ -28,9 +28,6 @@
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.12",
     "ts-node": "^9.1.1",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0",
     "typescript": "^4.1.3"
   }
 }
