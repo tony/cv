@@ -21,6 +21,7 @@ const config = {
     "cihai",
     "emre",
     "git-pull",
+    "joseph-flinn",
     "nick-ma",
     "peergradeio",
     "tmux-python",
