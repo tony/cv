@@ -39,7 +39,9 @@ export const activities: IActivity[] = [
   ...(ghActivitiesJson as IActivity[]),
 ];
 
-const ghColorsJsonMissing: { [key: string]: { color: string } } = {
+const ghColorsJsonMissing: {
+  [key: string]: { color: string };
+} = {
   Sass: {
     color: "#a53b70",
   },
@@ -59,20 +61,35 @@ const ghColorsJsonMissing: { [key: string]: { color: string } } = {
 
 // Calculated at runtime, based on the content of above
 export const languages: Language[] = Array.from(
-  Array.from(
-    new Set([...orgs.map((a) => a.languages).flat()].filter(Boolean))
-  ).map((languageName: LanguageName) => {
+  new Set([
+    ...orgs
+      .filter((a) => a.languages)
+      .map((a) => a.languages)
+      .flat(),
+  ])
+)
+  .filter(Boolean)
+  .map((languageName: LanguageName) => {
+    if (!languageName) {
+      throw new Error("empty languageName");
+    }
+
+    if (!ghColorsJson) {
+      throw new Error("ghColorsJson not found");
+    }
+
     const ghColor =
       languageName in ghColorsJsonMissing
         ? ghColorsJsonMissing[languageName]
-        : ghColorsJson[languageName];
+        : // @ts-ignore
+          ghColorsJson[languageName];
 
     if (!ghColor) {
       if (!(languageName in ghColorsJson)) {
         console.warn(`${languageName} not found in colors`);
-      } else if (!ghColorsJson?.[languageName]?.color) {
+      } else if (!ghColor?.color) {
         console.groupCollapsed(`${languageName} missing color`);
-        console.table(ghColorsJson?.[languageName]);
+        console.table(ghColor);
         console.groupEnd();
       }
     }
@@ -87,8 +104,7 @@ export const languages: Language[] = Array.from(
           }
         : {}),
     } as Language;
-  })
-);
+  });
 
 export const orgTypes: OrgType[] = Array.from(
   new Set(orgs.map((a) => a.orgType as OrgTypeName).filter(Boolean))
