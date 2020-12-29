@@ -191,7 +191,7 @@ export class CVQuery extends Query<CVState> {
     }: {
       onlyVisible: boolean;
     } = { onlyVisible: false }
-  ): Observable<{ [keyof: string]: number }> {
+  ): Observable<{ [key: string]: number }> {
     const selectActivity = onlyVisible
       ? this.visibleActivities$()
       : this.activitiesQuery.selectAll();
@@ -211,7 +211,9 @@ export class CVQuery extends Query<CVState> {
             }
           });
           return languages;
-        }, {});
+        }, Object.fromEntries<number>(this.languagesQuery.getAll().map((language) => [language.id as string, 0]))) as {
+          [key: string]: number;
+        };
       })
     );
   }
