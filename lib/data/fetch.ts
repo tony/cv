@@ -6,7 +6,7 @@ import type {
   IOrg,
 } from "../types";
 
-interface IData {
+export interface IData {
   activities: IActivity[];
   orgs: IOrg[];
   languages: Language[];
