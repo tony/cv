@@ -7,8 +7,10 @@ import type { OptionProps, ValueType } from "react-select/src/types";
 
 import chroma from "chroma-js";
 
-import { languagesQuery, orgsQuery } from "../../lib/hub";
+import { languagesQuery, orgsQuery, query } from "../../lib/hub";
+import type { LanguageCount } from "../../lib/search/query";
 import { LanguageTag, OrgTypeTag } from "./Card";
+import { onEmit } from "./utils";
 
 export type ISelectOption = Pick<OptionProps, "label" | "value">;
 
@@ -67,17 +69,54 @@ export const LanguageOption: React.FC<SelectComponentsProps> = ({
   ...props
 }) => {
   const languageName = data?.value;
+
+  const [
+    availableActivitiesCount,
+    setAvailableActivitiesCount,
+  ] = React.useState<number>(0);
+  const [
+    totalActivitiesCount,
+    setTotalActivitiesCount,
+  ] = React.useState<number>(0);
   if (!languageName) {
     console.warn(`${languageName} missing from option`);
     return null;
   }
+  React.useEffect(() => {
+    const subscriptions: Subscription[] = [
+      onEmit<LanguageCount>(
+        query.selectLanguageActivitiesCount$({ onlyVisible: true }),
+        (languageCounts) => {
+          const count = languageCounts[languageName];
+          if (count != availableActivitiesCount) {
+            setAvailableActivitiesCount(count);
+          }
+        }
+      ),
+      onEmit<LanguageCount>(
+        query.selectLanguageActivitiesCount$(),
+        (languageCounts) => {
+          const count = languageCounts[languageName];
+          if (count != totalActivitiesCount) {
+            setTotalActivitiesCount(count);
+          }
+        }
+      ),
+    ];
+
+    return () => subscriptions.map((it) => it.unsubscribe());
+  }, []);
+
   return (
-    <ReactSelectComponents.Option {...props} data={data}>
+    <ReactSelectComponents.Option {...props} data={data} className="df">
       <LanguageTag
         languageName={languageName}
         key={languageName}
-        className="tag"
+        className="tag ml0"
+        availableActivitiesCount={availableActivitiesCount}
+        totalActivitiesCount={totalActivitiesCount}
       />
+      <div className="activityCount">x{totalActivitiesCount}</div>
     </ReactSelectComponents.Option>
   );
 };
