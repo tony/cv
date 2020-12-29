@@ -1,6 +1,3 @@
-// @ts-nocheck
-import { CVQuery } from "./query";
-import { CVService } from "./service";
 import { ActivitiesStore, CVStore } from "./store";
 import type { IData } from "../data/fetch";
 
@@ -19,7 +16,8 @@ describe("ActivitiesStore", () => {
 
   test("init with data", async () => {
     const data: IData = await import("../../lib/data/raw");
-    const s = new ActivitiesStore(data.activities);
+    const s = new ActivitiesStore();
+    s.set(data.activities);
     expect(s.getValue()).not.toStrictEqual([]);
   });
 });

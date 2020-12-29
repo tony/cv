@@ -1,4 +1,3 @@
-// tslint:disable:no-console
 import fs from "fs";
 import path from "path";
 
@@ -36,13 +35,13 @@ if (!fs.existsSync(config.output_dir)) {
   fs.mkdirSync(config.output_dir);
 }
 
-const testQuery = `
-  query {
-    viewer {
-      login
-    }
-  }
-`;
+// const testQuery = `
+//   query {
+//     viewer {
+//       login
+//     }
+//   }
+// `;
 
 // note, this requires .replace of:
 // 1. {{user_params}} -> 'login: "yourusername"'
