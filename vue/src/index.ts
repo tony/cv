@@ -12,14 +12,15 @@ interface IRootState {
 
 const store: StoreOptions<IRootState> = {
   actions: {
-    async loadActivities({
-      commit,
-    }: {
-      commit: Commit;
-    }) // activities: IRootState["activities"]
-    {
-      const { myActivitiesRaw: myActivities } = await import(
-        /* webpackChunkName: "myData" */ "../../lib/data/raw"
+    async loadActivities(
+      {
+        commit,
+      }: {
+        commit: Commit;
+      } // activities: IRootState["activities"]
+    ) {
+      const { activities: myActivities } = await import(
+        /* webpackChunkName: "cvData" */ "../../lib/data/raw"
       );
       commit("loadActivities", myActivities);
     },
