@@ -91,6 +91,10 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"],
       },
+      {
+        test: /\.svg$/,
+        use: ["babel-loader", "vue-svg-loader"],
+      },
     ],
   },
   optimization: {
