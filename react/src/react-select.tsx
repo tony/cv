@@ -2,9 +2,7 @@ import React from "react";
 import type { Subscription } from "rxjs";
 
 import { components as ReactSelectComponents } from "react-select";
-import { SelectComponentsConfig } from "react-select";
-import type { StylesConfig } from "react-select";
-import type { OptionProps } from "react-select/src/types";
+import type { StylesConfig, OptionProps } from "react-select";
 
 import chroma from "chroma-js";
 
@@ -26,7 +24,7 @@ export const getSelectOptions = (items: string[]): ISelectOption[] =>
     value: actorName,
   })) as ISelectOption[];
 
-export const OrgOption: React.FC<SelectComponentsConfig> = ({
+export const OrgOption: React.FC<OptionProps<string, boolean>> = ({
   children,
   data,
   ...props
