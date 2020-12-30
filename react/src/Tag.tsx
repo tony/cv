@@ -20,14 +20,14 @@ export const LanguageTag: React.FC<
   const language = languagesQuery.getEntity(languageName);
   if (!language || !language.ui) {
     console.groupCollapsed(`missing language for ${languageName}`);
-    console.table(org);
+    console.table(language);
     console.groupEnd();
   }
 
   return (
     <div
       className="tag fr"
-      style={{ ...(language.ui ?? {}), ...style }}
+      style={{ ...(language?.ui ?? {}), ...style }}
       {...props}
     >
       {children || languageName}
@@ -53,7 +53,7 @@ export const ActivityTypeTag: React.FC<
   return (
     <div
       className="tag fr"
-      style={{ ...(activityType.ui ?? {}), ...style }}
+      style={{ ...(activityType?.ui ?? {}), ...style }}
       {...props}
     >
       {children || activityTypeName}

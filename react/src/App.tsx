@@ -3,7 +3,7 @@ import Select from "react-select";
 import type { Subscription } from "rxjs";
 import type { ValueType } from "react-select/src/types";
 
-import type { IActivity } from "../../lib/types";
+import type { IActivity, Language } from "../../lib/types";
 import {
   activityTypesStore,
   activitiesStore,
@@ -41,7 +41,11 @@ enum ActionType {
   IsLoading,
 }
 type Action =
-  | { type: ActionType.SetResults; activities: IActivity[] }
+  | {
+      type: ActionType.SetResults;
+      activities?: IActivity[];
+      languages?: Language[];
+    }
   | { type: ActionType.IsLoading; isLoading: boolean };
 const reducer = (state: ReducerState, action: Action) => {
   switch (action.type) {
@@ -79,16 +83,16 @@ const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
 
   useAsyncEffect(async () => {
-    const data = await fetchData({ path: "./raw" });
+    const data = await fetchData();
     if (
       !data.languages ||
-      !!Object.keys(orgsStore.getValue().entities).length ||
-      !!Object.keys(activitiesStore.getValue().entities).length
+      !!Object.keys(orgsStore.getValue().entities ?? {}).length ||
+      !!Object.keys(activitiesStore.getValue().entities ?? {}).length
     ) {
       if (activitiesStore.getValue().ui.isLoading) {
         activitiesStore.setLoading(false);
       }
-      return;
+      return void 0;
     }
 
     loadStores(data);
@@ -98,6 +102,7 @@ const App: React.FC = () => {
         activities: activitiesQuery.getAll() as IActivity[],
       });
     }
+    return void 0;
   });
 
   React.useEffect(() => {
@@ -106,8 +111,8 @@ const App: React.FC = () => {
         console.log("results updated", resultsUpdated);
 
         if (
-          resultsUpdated != results &&
-          resultsUpdated.length != results.length
+          resultsUpdated != results.activities &&
+          resultsUpdated.length != results.activities.length
         ) {
           dispatch({
             type: ActionType.SetResults,
@@ -119,8 +124,8 @@ const App: React.FC = () => {
         console.log("languages updated", languagesUpdated, results);
 
         if (
-          languagesUpdated != results &&
-          languagesUpdated.length != results.length
+          languagesUpdated != results.languages &&
+          languagesUpdated.length != results.languages.length
         ) {
           dispatch({
             type: ActionType.SetResults,
@@ -128,7 +133,7 @@ const App: React.FC = () => {
           });
         }
       }),
-      onEmit<Language[]>(activitiesQuery.selectLoading$(), (isLoading) => {
+      onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
         dispatch({
           type: ActionType.IsLoading,
@@ -137,7 +142,9 @@ const App: React.FC = () => {
       }),
     ];
 
-    return () => subscriptions.map((it) => it.unsubscribe());
+    return () => {
+      subscriptions.map((it) => it.unsubscribe());
+    };
   }, []);
 
   if (results.ui.isLoading) {
@@ -183,7 +190,7 @@ const App: React.FC = () => {
       <div className="dropdownRow">
         <Select
           options={getSelectOptions(
-            Object.values(languagesQuery.getValue().entities).map(
+            Object.values(languagesQuery?.getValue()?.entities ?? {}).map(
               (lang) => lang.id as string
             )
           )}
@@ -199,7 +206,7 @@ const App: React.FC = () => {
             activityTypesQuery.getAll().map((a) => ({
               label: a.name,
               value: a.id,
-            })) as ISelectOption[]
+            })) as ISelectOption
           }
           isMulti={true}
           onChange={onActivityTypeChange}
@@ -210,8 +217,8 @@ const App: React.FC = () => {
           options={
             orgsQuery.getAll().map((org) => ({
               label: org.name,
-              value: org.id,
-            })) as ISelectOption[]
+              value: org.id?.toString() ?? org.id,
+            })) as ISelectOption
           }
           isMulti={true}
           onChange={onOrgChange}

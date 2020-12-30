@@ -2,7 +2,7 @@ import React from "react";
 import type { Subscription } from "rxjs";
 
 import { components as ReactSelectComponents } from "react-select";
-import type { StylesConfig, OptionProps } from "react-select";
+import type { StylesConfig, OptionProps, OptionsType } from "react-select";
 
 import chroma from "chroma-js";
 
@@ -11,25 +11,25 @@ import type { LanguageCount } from "../../lib/search/query";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
 
-export type ISelectOption = Pick<OptionProps, "label" | "value">;
+// export type ISelectOption = Pick<OptionProps<any, any>, "label" | "value">;
 
 export interface IOptionType {
   label: string;
   value: string;
 }
+export type ISelectOption = OptionsType<IOptionType>;
 
-export const getSelectOptions = (items: string[]): ISelectOption[] =>
+export const getSelectOptions = (items: string[]): ISelectOption =>
   items.map((actorName) => ({
     label: actorName,
     value: actorName,
-  })) as ISelectOption[];
+  })) as ISelectOption;
 
 export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   children,
-  data,
   ...props
 }) => {
-  const org = orgsQuery.getEntity(data?.value);
+  const org = orgsQuery.getEntity(props.data?.value);
   return (
     <ReactSelectComponents.Option {...props}>
       {children}{" "}
@@ -93,7 +93,9 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
       ),
     ];
 
-    return () => subscriptions.map((it) => it.unsubscribe());
+    return () => {
+      subscriptions.map((it) => it.unsubscribe());
+    };
   }, []);
 
   return (
