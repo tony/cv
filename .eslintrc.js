@@ -20,5 +20,7 @@ module.exports = {
     project: "./tsconfig.json",
   },
   plugins: ["@typescript-eslint", "jest"],
-  rules: {},
+  rules: {
+    "@typescript-eslint/ban-ts-comment": 1,
+  },
 };

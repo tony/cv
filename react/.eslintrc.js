@@ -26,7 +26,9 @@ module.exports = {
       version: "detect",
     },
   },
-  rules: {},
+  rules: {
+    "@typescript-eslint/ban-ts-comment": 0,
+  },
   overrides: [
     {
       files: ["**/*.tsx", "**/*.ts"],
