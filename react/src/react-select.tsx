@@ -8,7 +8,7 @@ import chroma from "chroma-js";
 
 import { languagesQuery, orgsQuery, query } from "../../lib/hub";
 import type { LanguageCount } from "../../lib/search/query";
-import { LanguageTag, OrgTypeTag } from "./Card";
+import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
 
 export type ISelectOption = Pick<OptionProps, "label" | "value">;
