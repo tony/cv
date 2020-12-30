@@ -26,8 +26,8 @@ import {
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
+import codeMergeDuotoneSvg from "./code-merge-duotone.svg";
 import "./style.scss";
-
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
@@ -228,7 +228,10 @@ const App: React.FC = () => {
         />
       </div>
 
-      <div className="resultsMessage">Found {resultsCount} results</div>
+      <div className="resultsMessage">
+        Found {resultsCount} results{" "}
+        <img src={codeMergeDuotoneSvg} width="16" />
+      </div>
 
       {results.activities &&
         results.activities.map((activity, idx) => {
