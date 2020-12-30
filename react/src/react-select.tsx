@@ -4,7 +4,7 @@ import type { Subscription } from "rxjs";
 import { components as ReactSelectComponents } from "react-select";
 import { SelectComponentsConfig } from "react-select";
 import type { StylesConfig } from "react-select";
-import type { OptionProps, ValueType } from "react-select/src/types";
+import type { OptionProps } from "react-select/src/types";
 
 import chroma from "chroma-js";
 
