@@ -10,6 +10,7 @@ import type {
   IActivity,
   IOrg,
   LanguageName,
+  OrgTypeName,
 } from "../../lib/types";
 import "./style.scss";
 
@@ -26,13 +27,17 @@ export const LanguageTag: React.FC<
   }
   const language = languagesQuery.getEntity(languageName);
   if (!language || !language.ui) {
-    console.groupCollapsed(`${org.name} missing language for ${languageName}`);
+    console.groupCollapsed(`missing language for ${languageName}`);
     console.table(org);
     console.groupEnd();
   }
 
   return (
-    <div className="tag fr" style={{ ...language.ui, ...style }} {...props}>
+    <div
+      className="tag fr"
+      style={{ ...(language.ui ?? {}), ...style }}
+      {...props}
+    >
       {children || languageName}
     </div>
   );
@@ -54,7 +59,11 @@ export const ActivityTypeTag: React.FC<
   }
 
   return (
-    <div className="tag fr" style={{ ...activityType.ui, ...style }} {...props}>
+    <div
+      className="tag fr"
+      style={{ ...(activityType.ui ?? {}), ...style }}
+      {...props}
+    >
       {children || activityTypeName}
     </div>
   );
@@ -76,14 +85,18 @@ export const OrgTypeTag: React.FC<
   }
 
   return (
-    <div className="tag" style={{ ...orgType.ui, ...style }} {...props}>
+    <div
+      className="tag"
+      style={{ ...(orgType?.ui ?? {}), ...style }}
+      {...props}
+    >
       {children || orgTypeName}
     </div>
   );
 };
 
 export const PatchInfoBox: React.FC<
-  React.ComponentProps<typeof PatchInfoBox>
+  React.ComponentProps<typeof ActivityInfoBox>
 > = ({ activity }) => {
   return (
     <>
