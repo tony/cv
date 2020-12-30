@@ -44,7 +44,6 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.9",
     "eslint-plugin-prefer-arrow": "1.2.2",
-    "eslint-plugin-react": "latest",
     "prettier": "^2.2.1",
     "protractor": "~7.0.0",
     "ts-node": "~9.1.1",

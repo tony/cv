@@ -78,9 +78,6 @@
         "no-extra-semi": "off",
         "no-irregular-whitespace": "off",
         "no-trailing-spaces": "off",
-        "react/jsx-curly-spacing": "off",
-        "react/jsx-equals-spacing": "off",
-        "react/jsx-wrap-multilines": "off",
         "space-before-function-paren": "off",
         "space-in-parens": [
           "off",
