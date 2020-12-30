@@ -20,9 +20,9 @@ interface IActivityCardProps {
   org: IOrg;
 }
 
-export const PatchInfoBox: React.FC<
-  React.ComponentProps<typeof ActivityInfoBox>
-> = ({ activity }) => {
+export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
+  activity,
+}) => {
   return (
     <>
       {activity?.qaUrl && activity?.qaUrl !== "" && (
@@ -39,13 +39,13 @@ export const PatchInfoBox: React.FC<
   );
 };
 
-export const ActivityInfoBox: React.FC<
+export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
     <div style={{ paddingLeft: "1rem", flexGrow: 1 }}>
       {["Patch"].includes(activity.activityType) && (
-        <PatchInfoBox activity={activity} org={org} />
+        <PatchInfo activity={activity} org={org} />
       )}
     </div>
   );
@@ -61,7 +61,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         {activity.title}
       </a>
     </div>
-    <ActivityInfoBox activity={activity} org={org} />
+    <ActivityInfo activity={activity} org={org} />
 
     {org?.languages?.map((languageName) => (
       <LanguageTag languageName={languageName} key={languageName} />
