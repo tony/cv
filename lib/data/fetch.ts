@@ -14,4 +14,4 @@ export interface IData {
   activityTypes: ActivityType[];
 }
 
-export type fetchDataFn = Promise<IData>;
+export type fetchDataFn = () => Promise<IData>;
