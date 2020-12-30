@@ -26,7 +26,7 @@ import {
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
-import codeMergeDuotoneSvg from "./code-merge-duotone.svg";
+import codeMergeDuotoneSvg from "../../data/img/icons/code-merge-duotone.svg";
 import "./style.scss";
 interface ReducerState {
   activities: IActivity[];

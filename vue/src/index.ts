@@ -3,6 +3,7 @@ import Vuex, { Commit, StoreOptions } from "vuex";
 
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
+import codeMergeDuotoneSvg from "../../data/img/icons/code-merge-duotone.svg";
 
 import { IActivity } from "../../lib/types";
 
@@ -46,6 +47,7 @@ new Vue({
   components: {
     HelloComponent,
     HelloDecoratorComponent,
+    codeMergeDuotoneSvg,
   },
   computed: { ...Vuex.mapState(["activities"]) },
   data: { name: "World" },
@@ -57,6 +59,7 @@ new Vue({
         <h1>Hello Component</h1>
         <hello-component :name="name" :initialEnthusiasm="5" />
         <h1>Hello Decorator Component</h1>
+        <codeMergeDuotoneSvg :width="16" />
         <hello-decorator-component :name="name" :initialEnthusiasm="5" />
           <div v-for="(activity, idx) in activities">
             {{activity.title}}
