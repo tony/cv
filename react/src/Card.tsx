@@ -1,17 +1,6 @@
 import React from "react";
 
-import {
-  activityTypesQuery,
-  languagesQuery,
-  orgTypesQuery,
-} from "../../lib/hub";
-import type {
-  ActivityTypeName,
-  IActivity,
-  IOrg,
-  LanguageName,
-  OrgTypeName,
-} from "../../lib/types";
+import type { IActivity, IOrg } from "../../lib/types";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import "./style.scss";
 
@@ -25,7 +14,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
 }) => {
   return (
     <>
-      {activity?.qaUrl && activity?.qaUrl !== "" && (
+      {activity?.qaUrl && (
         <a
           href={activity.qaUrl}
           target="_blank"

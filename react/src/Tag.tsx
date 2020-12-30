@@ -5,6 +5,12 @@ import {
   languagesQuery,
   orgTypesQuery,
 } from "../../lib/hub";
+import type {
+  ActivityTypeName,
+  LanguageName,
+  OrgTypeName,
+} from "../../lib/types";
+
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
 > = ({ languageName, children, style = {}, ...props }) => {
