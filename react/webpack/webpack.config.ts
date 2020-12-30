@@ -82,6 +82,18 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           },
         ],
       },
+
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
     ],
   },
   optimization: {
