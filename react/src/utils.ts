@@ -3,8 +3,7 @@ import React from "react";
 import type { Observable, Subscription } from "rxjs";
 
 export const useAsyncEffect = (
-  // effect: () => Promise<void>,
-  effect: React.EffectCallback,
+  effect: React.EffectCallback | (() => Promise<void>),
   dependencies?: unknown[]
 ): void =>
   React.useEffect(() => {
