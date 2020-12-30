@@ -24,7 +24,7 @@ export const getSelectOptions = (items: string[]): ISelectOption[] =>
     value: actorName,
   })) as ISelectOption[];
 
-export const OrgOption: React.FC<OptionProps<string, boolean>> = ({
+export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   children,
   data,
   ...props
@@ -53,7 +53,7 @@ export const OrgOption: React.FC<OptionProps<string, boolean>> = ({
   );
 };
 
-export const LanguageOption: React.FC<SelectComponentsProps> = ({
+export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   data,
   ...props
 }) => {
