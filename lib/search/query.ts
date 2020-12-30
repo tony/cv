@@ -63,7 +63,7 @@ export const hasAny = (
   sortByOrder: Order.DESC,
 })
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
-  ui: EntityUIQuery<ActivitiesUIState>;
+  ui!: EntityUIQuery<ActivitiesUIState>;
 
   selectLoading$(): Observable<boolean> {
     return this.select((state) => state.ui.isLoading);
@@ -201,21 +201,31 @@ export class CVQuery extends Query<CVState> {
       : this.activitiesQuery.selectAll();
     return combineQueries([selectActivity]).pipe(
       map(([activities]) => {
-        return activities.reduce((languages, activity) => {
-          const org = this.orgsQuery.getEntity(activity.orgId);
-          if (!org?.languages) {
-            return [];
-          }
-
-          org?.languages.forEach((languageName) => {
-            if (languageName in languages) {
-              languages[languageName] += 1;
-            } else {
-              languages[languageName] = 1;
+        return activities.reduce(
+          (languages, activity) => {
+            const org = this.orgsQuery.getEntity(activity.orgId);
+            if (!org?.languages || !org?.languages?.length) {
+              return languages;
             }
-          });
-          return languages;
-        }, Object.fromEntries<number>(this.languagesQuery.getAll().map((language) => [language.id as string, 0]))) as LanguageCount;
+
+            org.languages.forEach((languageName) => {
+              if (languageName) {
+                if (languageName in languages) {
+                  languages[languageName] += 1;
+                } else {
+                  languages[languageName] = 1;
+                }
+              }
+            });
+            return languages;
+          },
+          Object.fromEntries<number>(
+            this.languagesQuery
+              .getAll()
+              .filter((language) => language?.id)
+              .map((language) => [language.id as string, 0])
+          )
+        ) as LanguageCount;
       })
     );
   }

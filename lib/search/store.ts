@@ -49,28 +49,33 @@ export interface ActivitiesState
 }
 
 export type ActivitiesUIState = EntityState<ActivityUI>;
+// export interface ActivitiesUIState extends EntityState<ActivityUI> {}
+
+const setUIDefaults = (activity: IActivity): ActivityUI => {
+  return {
+    ...ACTIVITY_UI_DEFAULTS,
+    isTypo: isActivityTypoFix(activity),
+    isDocImprovement: isActivityDocImprovement(activity),
+    isCodeStyleTweak: isActivityCodeStyleTweak(activity),
+    isMerged: isActivityMerged(activity),
+  };
+};
 
 @StoreConfig({ name: "activities" })
 export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
-  ui: EntityUIStore<ActivitiesUIState>;
+  ui!: EntityUIStore<ActivitiesUIState>;
 
   constructor() {
-    super({ active: [], ui: { isLoading: false } });
+    super({
+      active: [],
+      ui: { isLoading: false },
+    });
 
     // Set state of item being selected, disabled, etc.
     // $$queries.activities.ui.getAll({filterBy: (entity) => entity.isTypo})
     // $$queries.activities.ui.getAll({filterBy: (entity) => entity.isTypo && entity.isMerged})
     // $$queries.activities.ui.getCount((entity) => entity.isTypo)
-    const setDefaults = (activity: IActivity): ActivityUI => {
-      return {
-        ...ACTIVITY_UI_DEFAULTS,
-        isTypo: isActivityTypoFix(activity),
-        isDocImprovement: isActivityDocImprovement(activity),
-        isCodeStyleTweak: isActivityCodeStyleTweak(activity),
-        isMerged: isActivityMerged(activity),
-      };
-    };
-    this.createUIStore().setInitialEntityState(setDefaults);
+    this.createUIStore().setInitialEntityState(setUIDefaults);
   }
 
   setLoading(isLoading: boolean): void {

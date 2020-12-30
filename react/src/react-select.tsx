@@ -1,9 +1,8 @@
 import React from "react";
+import type { Subscription } from "rxjs";
 
 import { components as ReactSelectComponents } from "react-select";
-import { SelectComponentsProps } from "react-select";
-import type { StylesConfig } from "react-select";
-import type { OptionProps, ValueType } from "react-select/src/types";
+import type { StylesConfig, OptionProps } from "react-select";
 
 import chroma from "chroma-js";
 
@@ -25,17 +24,7 @@ export const getSelectOptions = (items: string[]): ISelectOption[] =>
     value: actorName,
   })) as ISelectOption[];
 
-export const onSelectChange = (setState: () => void): void => (
-  value: ValueType<IOptionType, boolean>
-) => {
-  if (value) {
-    setState((value as IOptionType[]).map(({ value: v }) => v));
-  } else {
-    setState([]);
-  }
-};
-
-export const OrgOption: React.FC<SelectComponentsProps> = ({
+export const OrgOption: React.FC<OptionProps<string, boolean>> = ({
   children,
   data,
   ...props
@@ -122,7 +111,7 @@ export const LanguageOption: React.FC<SelectComponentsProps> = ({
 export const languagesStyles: StylesConfig = {
   option: (styles, { data, isFocused, isSelected }) => {
     const language = languagesQuery.getEntity(data.value);
-    if (!language?.ui?.backgroundColor && !language?.ui?.color) {
+    if (!language?.ui?.backgroundColor || !language?.ui?.color) {
       return styles;
     }
     const backgroundColor = chroma(language.ui.backgroundColor)
@@ -142,6 +131,11 @@ export const languagesStyles: StylesConfig = {
 
   multiValueLabel: (styles, { data }) => {
     const language = languagesQuery.getEntity(data.value);
+
+    if (!language?.ui) {
+      return styles;
+    }
+
     return {
       ...styles,
       borderBottomRightRadius: 0,
@@ -152,6 +146,11 @@ export const languagesStyles: StylesConfig = {
   },
   multiValueRemove: (styles, { data }) => {
     const language = languagesQuery.getEntity(data.value);
+
+    if (!language?.ui?.backgroundColor) {
+      return styles;
+    }
+
     const backgroundColor =
       chroma(language.ui.backgroundColor).get("lab.l") > 80
         ? chroma(language.ui.backgroundColor).brighten(0.2)
