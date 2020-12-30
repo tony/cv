@@ -59,7 +59,7 @@ jobs:
       run: |
         cd angular
         yarn --frozen-lockfile
-        yarn build
+        yarn build --prod
     - name: push to s3 (react)
       uses: jakejarvis/s3-sync-action@master
       with:
