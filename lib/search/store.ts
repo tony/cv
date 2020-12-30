@@ -48,8 +48,8 @@ export interface ActivitiesState
   ui: { isLoading: boolean };
 }
 
-// export type ActivitiesUIState = EntityState<ActivityUI>;
-export interface ActivitiesUIState extends EntityState<ActivityUI> {}
+export type ActivitiesUIState = EntityState<ActivityUI>;
+// export interface ActivitiesUIState extends EntityState<ActivityUI> {}
 
 const setUIDefaults = (activity: IActivity): ActivityUI => {
   return {
