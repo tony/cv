@@ -26,7 +26,7 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { LanguageName, IActivity } from "../types";
+import type { Language, IActivity } from "../types";
 
 export interface LanguageCount {
   [key: string]: number;
@@ -160,17 +160,20 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  visibleLanguages$(): Observable<LanguageName[]> {
+  visibleLanguages$(): Observable<Language[]> {
     /* Return available languages based on currently visible activities */
-    return combineQueries([this.visibleActivities$()]).pipe(
-      map(([visibleActivities]) => {
+    return combineQueries([
+      this.visibleActivities$(),
+      this.languagesQuery.selectAll(),
+    ]).pipe(
+      map(([visibleActivities, languages]) => {
         const a = visibleActivities;
         if (!visibleActivities.length) {
           // If no filters selected, return all activities
           return [];
         }
 
-        return Array.from(
+        const languageNames = Array.from(
           new Set(
             a
               .map((activity) => {
@@ -184,6 +187,9 @@ export class CVQuery extends Query<CVState> {
               .flat()
           )
         ).filter(Boolean);
+        return languages.filter((language) =>
+          languageNames.includes(language.id)
+        );
       })
     );
   }
