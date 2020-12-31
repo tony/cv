@@ -16,7 +16,7 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
-import type { fetchDataFn } from "../../lib/data/fetch";
+import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
   getSelectOptions,
@@ -26,7 +26,7 @@ import {
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
-import christmasTreeSvg from "../../data/img/icons/christmas-tree.svg";
+import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "./style.scss";
 interface ReducerState {
   activities: IActivity[];

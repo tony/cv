@@ -17,25 +17,25 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: root - install, pull gh repos, test
+    - name: project - install
+      run: yarn
+    - name: lib - pull gh repos
       run: |
-        yarn
-        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn github
-        yarn test
-        make lint_local
-    - name: angular - install, lint, and test
+        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
+    - name: lib - lint, test
+      run: |
+        yarn workspace @tony/cv-lib run lint
+        yarn workspace @tony/cv-lib run test
+    - name: angular - install cli, lint, and test
       run: |
         npm install -g @angular/cli
-        make install_angular
-        make lint_angular
-        make build_angular
-    - name: react - install, lint, and test
+        yarn workspace @tony/cv-angular run lint
+        yarn workspace @tony/cv-angular run build
+    - name: react - lint, and test
       run: |
-        make install_react
-        make lint_react
-        make build_react
-    - name: vue - install, lint, and test
+        yarn workspace @tony/cv-react run lint
+        yarn workspace @tony/cv-react run build
+    - name: vue - lint, and test
       run: |
-        make install_vue
-        make lint_vue
-        make build_vue
+        yarn workspace @tony/cv-vue run lint
+        yarn workspace @tony/cv-vue run build

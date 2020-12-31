@@ -110,8 +110,8 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   );
 };
 
-export const languagesStyles: StylesConfig = {
-  option: (styles, { data, isFocused, isSelected }) => {
+export const languagesStyles: StylesConfig<IOptionType, boolean> = {
+  option: (styles: React.CSSProperties, { data, isFocused, isSelected }) => {
     const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
       return styles;
@@ -146,9 +146,9 @@ export const languagesStyles: StylesConfig = {
       ...language.ui,
     };
   },
-  multiValueRemove: (styles, { data }) => {
-    const language = languagesQuery.getEntity(data.value);
-
+  // @ts-ignore
+  multiValueRemove: (styles, { data = {}}) => { // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/50348
+     const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor) {
       return styles;
     }

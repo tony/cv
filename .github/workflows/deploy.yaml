@@ -44,21 +44,18 @@ jobs:
       run: yarn install --frozen-lockfile
     - name: pull gh repos
       run: |
-        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn github
+        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
     - name: react
       run: |
-        cd react
-        yarn install --frozen-lockfile
+        cd packages/react
         yarn build
     - name: vue
       run: |
-        cd vue
-        yarn --frozen-lockfile
+        cd packages/vue
         yarn build
     - name: angular
       run: |
-        cd angular
-        yarn --frozen-lockfile
+        cd packages/angular
         yarn build --prod
     - name: push to s3 (react)
       uses: jakejarvis/s3-sync-action@master
@@ -68,7 +65,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_REACT_V2 }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'react/dist/'
+        SOURCE_DIR: 'packages/react/dist/'
     - name: push to s3 (vue)
       uses: jakejarvis/s3-sync-action@master
       with:
@@ -77,7 +74,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_VUE_V2 }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'vue/dist/'
+        SOURCE_DIR: 'packages/vue/dist/'
     - name: push to s3 (angular)
       uses: jakejarvis/s3-sync-action@master
       with:
@@ -86,7 +83,7 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_ANGULAR_V2 }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'angular/dist/angular/'
+        SOURCE_DIR: 'packages/angular/dist/angular/'
     - name: Invalidate (react)
       if: env.PUBLISH == 'true'
       uses: chetan/invalidate-cloudfront-action@master

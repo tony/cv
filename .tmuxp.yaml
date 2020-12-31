@@ -1,6 +1,6 @@
 session_name: cv
 start_directory: ./ # load session relative to config location (project root).
-before_script: make install
+before_script: yarn
 windows:
 - window_name: main
   layout: main-horizontal
@@ -13,31 +13,41 @@ windows:
   - pane
   - pane
   - pane
-- window_name: cv (react)
+- window_name: react
   layout: main-horizontal
   options:
     main-pane-height: 35
-  start_directory: ./react
+  start_directory: ./packages/react
   panes:
   - focus: true
   - pane
   - pane
   - pane
-- window_name: cv (vue.js)
+- window_name: vue.js
   layout: main-horizontal
   options:
     main-pane-height: 35
-  start_directory: ./vue
+  start_directory: ./packages/vue
   panes:
   - focus: true
   - pane
   - pane
   - pane
-- window_name: cv (angular)
+- window_name: angular
   layout: main-horizontal
   options:
     main-pane-height: 35
-  start_directory: ./angular
+  start_directory: ./packages/angular
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - pane
+- window_name: lib
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./packages/lib
   panes:
   - focus: true
   - pane
