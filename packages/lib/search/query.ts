@@ -26,11 +26,12 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { Language, IActivity } from "../types";
+import type { IActivity, Language, LanguageName } from "../types";
 
-export interface LanguageCount {
-  [key: string]: number;
-}
+// export interface LanguageCount {
+//   [key: string]: number;
+// }
+export type LanguageCount = Record<LanguageName, number>;
 
 interface CVCount {
   activities: number;
@@ -244,7 +245,7 @@ export class CVQuery extends Query<CVState> {
     }: {
       onlyVisible: boolean;
     } = { onlyVisible: false }
-  ): Promise<{ [keyof: string]: number }> {
+  ): Promise<Record<LanguageName, number>> {
     return this.selectLanguageActivitiesCount$({ onlyVisible })
       .pipe(take(1))
       .toPromise();
