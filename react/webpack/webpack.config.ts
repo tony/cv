@@ -124,7 +124,12 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     filename: "[name].[hash].js",
     path: path.resolve(projectRoot, "dist"),
   },
-  plugins: [new HtmlWebpackPlugin({ template: "../lib/assets/index.html" })],
+  plugins: [
+    new webpack.DefinePlugin({
+      __TITLE__: JSON.stringify("Tony Narlock's CV"),
+    }),
+    new HtmlWebpackPlugin({ template: "../lib/assets/index.html" }),
+  ],
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },

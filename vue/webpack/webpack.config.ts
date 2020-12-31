@@ -126,6 +126,9 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     path: path.resolve(projectRoot, "dist"),
   },
   plugins: [
+    new webpack.DefinePlugin({
+      __TITLE__: JSON.stringify("Tony Narlock's CV"),
+    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({ template: "../lib/assets/index.html" }),
   ],

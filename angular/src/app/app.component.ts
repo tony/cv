@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { IActivity } from '@lib/types';
+
+declare const __TITLE__: string;
 
 @Component({
   selector: 'app-root',
@@ -7,8 +10,12 @@ import { IActivity } from '@lib/types';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'angular';
+  title: string = __TITLE__;
   activities: IActivity[] = [];
+  public constructor(private titleService: Title) {
+    titleService.setTitle(__TITLE__);
+  }
+
   async ngOnInit() {
     console.log('ngOnInit');
     const { activities } = await import(/* webpackChunkName: "cvData" */ '@lib/data/raw');

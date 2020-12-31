@@ -11,6 +11,8 @@ interface IRootState {
   activities: IActivity[];
 }
 
+declare const __TITLE__: string;
+
 const store: StoreOptions<IRootState> = {
   actions: {
     async loadActivities(
@@ -39,10 +41,10 @@ const store: StoreOptions<IRootState> = {
 Vue.use(Vuex);
 const s = new Vuex.Store<IRootState>(store);
 
-// tslint:disable-next-line:no-unused-expression
 new Vue({
   created() {
     s.dispatch("loadActivities");
+    document.title = __TITLE__;
   },
   components: {
     HelloComponent,
@@ -60,6 +62,7 @@ new Vue({
         <hello-component :name="name" :initialEnthusiasm="5" />
         <h1>Hello Decorator Component</h1>
         <ChristmasTreeSVG :width="16" :height="16" />
+        <vue-title :title="$data.__TITLE__"></vue-title>
         <hello-decorator-component :name="name" :initialEnthusiasm="5" />
           <div v-for="(activity, idx) in activities">
             {{activity.title}}

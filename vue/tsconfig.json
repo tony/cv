@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
+      "dom",
       "esnext"
     ],
     "target": "es5",
