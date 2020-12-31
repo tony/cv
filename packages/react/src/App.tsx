@@ -229,6 +229,12 @@ const App: React.FC = () => {
           options={{
             title: "Languages",
             resizable: true,
+            getFillColor: (datasetLabel, label, data, defaultFillColor) => {
+              return (
+                languagesQuery.getEntity(datasetLabel)?.ui?.backgroundColor ??
+                defaultFillColor
+              );
+            },
             donut: {
               center: {
                 label: "Results",
