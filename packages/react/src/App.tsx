@@ -117,28 +117,41 @@ const App: React.FC = () => {
   });
 
   const languageChartRef = React.useRef<DonutChart>();
+  const languageSelectRef = React.useRef<Select>();
   React.useEffect(() => {
     const chart = languageChartRef?.current?.chart;
+    const languageSelect = languageSelectRef?.current?.select;
     if (!chart) {
       return;
     }
 
     chart.services.events.addEventListener(Events.Legend.ITEMS_UPDATE, (e) => {
-      languagesStore.setActive(
-        e.detail.dataGroups
-          .filter(({ status }) => status)
-          .map(({ name }) => name)
-      );
+      const selected = e.detail.dataGroups
+        .filter(({ status }) => status)
+        .map(({ name }) => name);
+      languagesStore.setActive(selected);
       languagesStore.removeActive(
         e.detail.dataGroups
           .filter(({ status }) => !status)
           .map(({ name }) => name)
       );
+
+      if (languageSelect) {
+        console.log({ selected });
+        if (
+          selected.length > 0 &&
+          selected.length !== languagesQuery.getCount()
+        ) {
+          languageSelect.setValue(getSelectOptions(selected));
+        } else {
+          languageSelect.clearValue();
+        }
+      }
     });
 
     return () =>
       chart.services.events.removeEventListener(Events.Legend.ITEMS_UPDATE);
-  }, [languageChartRef.current]);
+  }, [languageChartRef.current, languageSelectRef.current]);
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
@@ -256,7 +269,8 @@ const App: React.FC = () => {
             data: {
               selectedGroups: languagesQuery
                 .getActive()
-                .map((lang) => lang.id as string),
+                .map((lang) => lang?.id as string)
+                .filter(Boolean),
             },
             title: "Languages",
             resizable: true,
@@ -284,6 +298,7 @@ const App: React.FC = () => {
               (lang) => lang.id as string
             )
           )}
+          ref={languageSelectRef}
           isMulti
           onChange={onLanguageChange}
           className="react-select"
