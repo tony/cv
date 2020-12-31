@@ -21,7 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # generated files from scripts/github.js
-data/scraped/
+packages/data/scraped/
 
 # WSL
 *:Zone.Identifier

@@ -1,16 +1,20 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "name": "@tony/cv-angular",
   "license": "All rights reserved",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prettier": "prettier src --write"
+    "test": "ng test",
+    "prettier": "prettier --write '{src,webpack}/*.{ts,scss,html}'",
+    "format": "yarn run prettier",
+    "update": "ng upgrade",
+    "ncu": "ncu",
+    "clean": "rm -rf dist/"
   },
   "dependencies": {
     "@angular/animations": "^11.0.5",

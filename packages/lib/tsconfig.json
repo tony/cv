@@ -10,9 +10,6 @@
     "experimentalDecorators": true
   },
   "exclude": [
-    "node_modules",
-    "angular",
-    "react",
-    "vue"
+    "node_modules"
   ]
 }

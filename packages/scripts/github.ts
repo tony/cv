@@ -28,7 +28,7 @@ const config = {
   ],
   gh_user: "tony",
   ignore_private_repos: true,
-  output_dir: "data/scraped",
+  output_dir: "../data/scraped",
 };
 
 if (!fs.existsSync(config.output_dir)) {
