@@ -146,9 +146,8 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
       ...language.ui,
     };
   },
-  // @ts-ignore
-  multiValueRemove: (styles, { data = {}}) => { // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/50348
-     const language = languagesQuery.getEntity(data.value);
+  multiValueRemove: (styles, { data = {} }) => {
+    const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor) {
       return styles;
     }
