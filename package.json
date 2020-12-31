@@ -10,7 +10,8 @@
     "ncu": "yarn workspaces run ncu",
     "ncu-local": "ncu",
     "prettier": "yarn workspaces run prettier",
-    "update": "yarn workspaces run update"
+    "update": "yarn workspaces run update",
+    "github": "yarn workspace @tony/cv-scripts run github"
   },
   "workspaces": {
     "packages": ["packages/*"],
