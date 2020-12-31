@@ -1,3 +1,4 @@
+import { DonutChart } from "@carbon/charts-react";
 import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
@@ -16,6 +17,8 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
+import type { LanguageCount } from "@tony/cv-lib/search/query";
+import { difference } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
@@ -27,10 +30,14 @@ import {
 import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
+
+import "@carbon/charts/styles.css";
 import "./style.scss";
+
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
+  languageActivitiesCount: LanguageCount;
   ui: {
     isLoading: boolean;
   };
@@ -45,6 +52,7 @@ type Action =
       type: ActionType.SetResults;
       activities?: IActivity[];
       languages?: Language[];
+      languageActivitiesCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 const reducer = (state: ReducerState, action: Action) => {
@@ -72,6 +80,7 @@ const reducer = (state: ReducerState, action: Action) => {
 const DEFAULT_STORE: ReducerState = {
   activities: [],
   languages: [],
+  languageActivitiesCount: {},
   ui: { isLoading: false },
 };
 
@@ -100,6 +109,7 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
+        languageActivitiesCount: query.getLanguageActivitiesCount() as LanguageCount,
       });
     }
     return void 0;
@@ -133,6 +143,28 @@ const App: React.FC = () => {
           });
         }
       }),
+      onEmit<LanguageCount>(
+        query.selectLanguageActivitiesCount$({ onlyVisible: true }),
+        (newLanguageCounts) => {
+          console.log(
+            "language counts updated",
+            newLanguageCounts,
+            results.languageActivitiesCount
+          );
+
+          if (
+            difference(
+              new Set(Object.values(newLanguageCounts)),
+              new Set(Object.values(results.languageActivitiesCount))
+            )
+          ) {
+            dispatch({
+              type: ActionType.SetResults,
+              languageActivitiesCount: newLanguageCounts,
+            });
+          }
+        }
+      ),
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
         dispatch({
@@ -187,6 +219,26 @@ const App: React.FC = () => {
   return (
     <div>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
+      <div className="charts">
+        <DonutChart
+          data={Object.entries(results.languageActivitiesCount).map(
+            ([languageName, count]) => {
+              return { group: languageName, value: count };
+            }
+          )}
+          options={{
+            title: "Languages",
+            resizable: true,
+            donut: {
+              center: {
+                label: "Results",
+              },
+            },
+            height: "400px",
+            width: "50%",
+          }}
+        ></DonutChart>
+      </div>
       <div className="dropdownRow">
         <Select
           options={getSelectOptions(
