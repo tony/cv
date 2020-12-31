@@ -1,4 +1,3 @@
-import moment from "moment";
 import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
@@ -40,7 +39,7 @@ import { onEmit, useAsyncEffect } from "./utils";
 import {
   LanguagePieChart,
   ActivityLineChart,
-} from "@tony/cv-chart-react-plotly/src/charts";
+} from "@tony/cv-chart-react-carbon/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
@@ -132,6 +131,8 @@ const App: React.FC = () => {
     return void 0;
   });
 
+  const languageSelectRef = React.useRef<Select>(null);
+
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
       onEmit<ReducerState>(query.subResults$(), (newResults) => {
@@ -151,23 +152,6 @@ const App: React.FC = () => {
       subscriptions.map((it) => it.unsubscribe());
     };
   }, []);
-
-  const activitiesYearCountMap = results.activities.reduce(
-    (jsonData, activity) => {
-      if (activity.createdDate) {
-        const year = moment(activity.createdDate).get("year").toString();
-        if (year in jsonData) {
-          jsonData[year] += 1;
-        } else {
-          jsonData[year] = 1;
-        }
-      }
-      return jsonData;
-    },
-    {} as { [key: string]: number }
-  );
-
-  console.log("activitiesYearCountMap", activitiesYearCountMap);
 
   const resultsCount = results?.activities ? results.activities.length : 0;
 
@@ -197,6 +181,7 @@ const App: React.FC = () => {
                   (lang) => lang.id as string
                 )
               )}
+              ref={languageSelectRef}
               isMulti
               onChange={onLanguageChange}
               className="react-select"
