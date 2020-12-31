@@ -253,9 +253,13 @@ const App: React.FC = () => {
           )}
           ref={languageChartRef}
           options={{
+            data: {
+              selectedGroups: languagesQuery
+                .getActive()
+                .map((lang) => lang.id as string),
+            },
             title: "Languages",
             resizable: true,
-
             getFillColor: (datasetLabel, label, data, defaultFillColor) => {
               return (
                 languagesQuery.getEntity(datasetLabel)?.ui?.backgroundColor ??
