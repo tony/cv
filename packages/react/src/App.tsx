@@ -38,6 +38,7 @@ import "./style.scss";
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
+  languagesActive: Language[];
   languageActivitiesCount: LanguageCount;
   ui: {
     isLoading: boolean;
@@ -53,6 +54,7 @@ type Action =
       type: ActionType.SetResults;
       activities?: IActivity[];
       languages?: Language[];
+      languagesActive?: Language[];
       languageActivitiesCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
@@ -81,6 +83,7 @@ const reducer = (state: ReducerState, action: Action) => {
 const DEFAULT_STORE: ReducerState = {
   activities: [],
   languages: [],
+  languagesActive: [],
   languageActivitiesCount: {},
   ui: { isLoading: false },
 };
@@ -137,14 +140,13 @@ const App: React.FC = () => {
       );
 
       if (languageSelect) {
-        console.log({ selected });
         if (
-          selected.length > 0 &&
-          selected.length !== languagesQuery.getCount()
+          selected.length === 0 ||
+          selected.length === languagesQuery.getCount()
         ) {
-          languageSelect.setValue(getSelectOptions(selected));
-        } else {
           languageSelect.clearValue();
+        } else {
+          languageSelect.setValue(getSelectOptions(selected));
         }
       }
     });
@@ -203,6 +205,28 @@ const App: React.FC = () => {
           }
         }
       ),
+      onEmit<Language[]>(
+        languagesQuery.selectActive(),
+        (newLanguagesActive) => {
+          console.log(
+            "language active updated",
+            newLanguagesActive,
+            results.languagesActive
+          );
+
+          if (
+            difference(
+              new Set(Object.values(newLanguagesActive)),
+              new Set(Object.values(results.languagesActive))
+            )
+          ) {
+            dispatch({
+              type: ActionType.SetResults,
+              languagesActive: newLanguagesActive,
+            });
+          }
+        }
+      ),
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
         dispatch({
@@ -225,13 +249,31 @@ const App: React.FC = () => {
     );
   }
 
+  window.chart = languageChartRef?.current?.chart;
   const onLanguageChange = (value: ValueType<IOptionType, boolean>) => {
+    console.log("onLanguageChange", value);
     if (value) {
       languagesStore.setActive(
         (value as IOptionType[]).map(({ value: v }) => v)
       );
+      const chart = languageChartRef?.current?.chart;
+      if (chart) {
+        // chart.model.setOptions({
+        //   ...chart.model.getOptions(),
+        //   data: {
+        //     ...chart.model.getOptions().data,
+        //     // selectedOptions: ["Python"],
+        //     selectedOptions: (value as IOptionType[]).map(({ value: v }) => v),
+        //   },
+        // });
+        // chart.services.events.dispatchEvent("legend-items-update", {
+        //   dataGroups: [],
+        // });
+      }
     } else {
-      languagesStore.setActive([]);
+      // languagesStore.setActive([]);
+      console.log("removing active");
+      languagesStore.removeActive(languagesQuery.getActiveId());
     }
   };
   const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
@@ -253,7 +295,6 @@ const App: React.FC = () => {
   };
 
   const resultsCount = results?.activities ? results.activities.length : 0;
-
   return (
     <div>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
@@ -267,10 +308,11 @@ const App: React.FC = () => {
           ref={languageChartRef}
           options={{
             data: {
-              selectedGroups: languagesQuery
-                .getActive()
-                .map((lang) => lang?.id as string)
-                .filter(Boolean),
+              selectedGroups: results.languagesActive.map(
+                (language) => language.id
+              ),
+              // selectedGroups:
+              //   results.languagesActive ?? languagesQuery.getActiveId(),
             },
             title: "Languages",
             resizable: true,
