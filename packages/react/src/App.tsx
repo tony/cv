@@ -1,4 +1,5 @@
 import { DonutChart } from "@carbon/charts-react";
+import { Events } from "@carbon/charts/interfaces";
 import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
@@ -115,6 +116,30 @@ const App: React.FC = () => {
     return void 0;
   });
 
+  const languageChartRef = React.useRef<DonutChart>();
+  React.useEffect(() => {
+    const chart = languageChartRef?.current?.chart;
+    if (!chart) {
+      return;
+    }
+
+    chart.services.events.addEventListener(Events.Legend.ITEMS_UPDATE, (e) => {
+      languagesStore.setActive(
+        e.detail.dataGroups
+          .filter(({ status }) => status)
+          .map(({ name }) => name)
+      );
+      languagesStore.removeActive(
+        e.detail.dataGroups
+          .filter(({ status }) => !status)
+          .map(({ name }) => name)
+      );
+    });
+
+    return () =>
+      chart.services.events.removeEventListener(Events.Legend.ITEMS_UPDATE);
+  }, [languageChartRef.current]);
+
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
       onEmit<IActivity[]>(query.visibleActivities$(), (resultsUpdated) => {
@@ -226,15 +251,18 @@ const App: React.FC = () => {
               return { group: languageName, value: count };
             }
           )}
+          ref={languageChartRef}
           options={{
             title: "Languages",
             resizable: true,
+
             getFillColor: (datasetLabel, label, data, defaultFillColor) => {
               return (
                 languagesQuery.getEntity(datasetLabel)?.ui?.backgroundColor ??
                 defaultFillColor
               );
             },
+
             donut: {
               center: {
                 label: "Results",
