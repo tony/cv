@@ -165,7 +165,7 @@ function.name@^1.0.3:
   dependencies:
     noop6 "^1.0.1"
 
-github-colors@^2.2.18:
+github-colors@^2.2.19:
   version "2.2.19"
   resolved "https://registry.yarnpkg.com/github-colors/-/github-colors-2.2.19.tgz#e78a0f49c82781cb872caaa80eebb76d11a217cd"
   integrity sha512-xk3EuvPBHuP7rLWmjTMP54O8uaE8wWajDgbfXN5Ne9xZm6oOremigcVo/v13imlHzy6ku4UvhevDJakNNLllUA==
@@ -216,7 +216,7 @@ mkdirp@^0.5.0:
   dependencies:
     minimist "^1.2.5"
 
-moment@^2.24.0:
+moment@^2.29.1:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -231,7 +231,7 @@ noop6@^1.0.0, noop6@^1.0.1, noop6@^1.0.7:
   resolved "https://registry.yarnpkg.com/noop6/-/noop6-1.0.9.tgz#8749944c15c09f2cd2d562ac24f5a8341762a950"
   integrity sha512-DB3Hwyd89dPr5HqEPg3YHjzvwh/mCqizC1zZ8vyofqc+TQRyPDnT4wgXXbLGF4z9YAzwwTLi8pNLhGqcbSjgkA==
 
-normalizr@^3.6.0:
+normalizr@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/normalizr/-/normalizr-3.6.1.tgz#d367ab840e031ff382141b8d81ce279292ff69fe"
   integrity sha512-8iEmqXmPtll8PwbEFrbPoDxVw7MKnNvt3PZzR2Xvq9nggEEOgBlNICPXYzyZ4w4AkHUzCU998mdatER3n2VaMA==

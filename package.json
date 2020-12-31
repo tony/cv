@@ -1,14 +1,17 @@
 {
   "private": true,
   "dependencies": {
-    "github-colors": "^2.2.18",
+    "github-colors": "^2.2.19",
     "github-graphql-client": "^1.0.0",
     "invert-color": "^2.0.0",
-    "moment": "^2.24.0",
-    "normalizr": "^3.6.0"
+    "moment": "^2.29.1",
+    "normalizr": "^3.6.1"
   },
   "workspaces": [
     "lib",
     "data"
-  ]
+  ],
+  "scripts": {
+    "github": "node scripts/github.js"
+  }
 }
