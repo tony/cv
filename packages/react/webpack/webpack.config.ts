@@ -84,7 +84,10 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
           },
         ],
       },
-
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
       {
         test: /\.svg$/,
         use: [
