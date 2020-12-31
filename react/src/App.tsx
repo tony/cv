@@ -82,14 +82,6 @@ const fetchData: fetchDataFn = async () => {
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
 
-  React.useEffect(() => {
-    const title = __TITLE__;
-    // "Tony Narlock's CV";
-    if (title !== document.title) {
-      document.title = title;
-    }
-  }, []);
-
   useAsyncEffect(async () => {
     const data = await fetchData();
     if (

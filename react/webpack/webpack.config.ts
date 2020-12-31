@@ -21,6 +21,8 @@ const defaultEnvironment: IWebpackEnv = {
   watch: false,
 };
 
+const __TITLE__ = "Tony Narlock's CV - React - v2 (WIP)";
+
 const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   context: projectRoot,
   ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
@@ -126,9 +128,12 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   },
   plugins: [
     new webpack.DefinePlugin({
-      __TITLE__: JSON.stringify("Tony Narlock's CV"),
+      __TITLE__: JSON.stringify(__TITLE__),
     }),
-    new HtmlWebpackPlugin({ template: "../lib/assets/index.html" }),
+    new HtmlWebpackPlugin({
+      template: "../lib/assets/index.html",
+      title: __TITLE__,
+    }),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js"],

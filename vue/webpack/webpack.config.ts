@@ -22,6 +22,8 @@ const defaultEnvironment: IWebpackEnv = {
   watch: false,
 };
 
+const __TITLE__ = "Tony Narlock's CV - Vue.js - v2 (WIP)";
+
 const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   context: projectRoot,
   ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
@@ -127,10 +129,13 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   },
   plugins: [
     new webpack.DefinePlugin({
-      __TITLE__: JSON.stringify("Tony Narlock's CV"),
+      __TITLE__: JSON.stringify(__TITLE__),
     }),
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({ template: "../lib/assets/index.html" }),
+    new HtmlWebpackPlugin({
+      template: "../lib/assets/index.html",
+      title: __TITLE__,
+    }),
   ],
   resolve: {
     alias: {
