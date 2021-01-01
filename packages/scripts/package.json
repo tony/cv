@@ -7,7 +7,11 @@
     "lint": "eslint . -c .eslintrc.js --ext .ts",
     "test": "echo 'NOOP'",
     "prettier": "prettier . --write",
-    "github": "ts-node github.ts"
+    "github": "ts-node github.ts",
+    "format": "yarn run prettier",
+    "update": "yarn run ncu",
+    "ncu": "ncu",
+    "clean": "rm -rf dist/"
   },
   "dependencies": {
     "github-colors": "~2.2",
