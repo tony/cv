@@ -156,41 +156,41 @@
     "@angular-devkit/core" "7.3.10"
     rxjs "6.3.3"
 
-"@angular-eslint/builder@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-1.0.0-beta.3.tgz#7343f3e6fd9dd32979ff7e03fed1f51903e4ce6b"
-  integrity sha512-SxVkjb8hPGz8OEhC83kWaWR3qw8QBMgueaVTZflD58nQNT05MzMFY5LEUx1gXPUOcMCCCSY2wshaQvnLod8HXA==
+"@angular-eslint/builder@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-1.0.0.tgz#8014e71fd81137ce764c350301f0eea0562a4475"
+  integrity sha512-KAWeL6s2F7EHZlcsxCV+ZkQCziGv18RS6oTODJzrFcpKe3rYCcbdy7sbg1w0cISyTIh1MjJ6rcB4J/wtGSltTg==
 
-"@angular-eslint/eslint-plugin-template@1.0.0-beta.3", "@angular-eslint/eslint-plugin-template@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-1.0.0-beta.3.tgz#fe1ee413e6ac7ff03871da3bb19e9cd8cba33661"
-  integrity sha512-ZwpJO8WOd6SgmeEWjDMWnZpQjenTN7y3pIbi0oaYtTrZ0RJiMKEJzCvlqif7NXWmn6zWJROEASt6oDjX1z6prw==
+"@angular-eslint/eslint-plugin-template@1.0.0", "@angular-eslint/eslint-plugin-template@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-1.0.0.tgz#a969070b4df0628aed8e30164fb86a8002c0385c"
+  integrity sha512-+LrAypsGUaW98aoDb/ITWWDKYHYp6UcJraJU7/bih7AQOJyDs6AnpbMPLscTcxkcCP2ylmJ31pEzYz4ItNKRTQ==
   dependencies:
     "@typescript-eslint/experimental-utils" "4.3.0"
     aria-query "^4.2.2"
     axobject-query "^2.2.0"
 
-"@angular-eslint/eslint-plugin@1.0.0-beta.3", "@angular-eslint/eslint-plugin@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin/-/eslint-plugin-1.0.0-beta.3.tgz#7452d143195dfc3306a2b00243d0c72506bd556b"
-  integrity sha512-MzCnl2VpzHeTF7NiFa6iJ4Ev9G5nuiBaCCfvC+1uBMWwoSTEBh/pd+3dEoAVMlu0O5/Ol0kXvokImzGd+c45Pg==
+"@angular-eslint/eslint-plugin@1.0.0", "@angular-eslint/eslint-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin/-/eslint-plugin-1.0.0.tgz#741a98c351ee02edb7d7f70473da699ee2eafa09"
+  integrity sha512-oar+5WhqFMVrK8ywTAJAnnisIQyG6I2STHHwVURx4rPyzjk3pZN10c3KgJuOF5FExfO2bewwr8FBy1CEZsh90w==
   dependencies:
     "@typescript-eslint/experimental-utils" "4.3.0"
 
-"@angular-eslint/schematics@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/schematics/-/schematics-1.0.0-beta.3.tgz#cb4ada55d5ed33fcb9f35ecf3c14014615265ebb"
-  integrity sha512-Wf008FADnTu+I/gDkk01hXwyOf160/RnJaXtY7VqKVS4k/klhY4YIFrQAo95jeeBMgBtCC0d94bBnkgAXa+fgw==
+"@angular-eslint/schematics@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/schematics/-/schematics-1.0.0.tgz#53e4c77eb196f2da27bb6d61e8e6caa11ea2e4a2"
+  integrity sha512-5xdUjLrSi6Jis3Cd7Z7/+/Q5K2mKNMDD9fU7pjIEPZhxXNl0wrOMGLdoYvvWq69f8x5y9wlPCnWCSZK+kW0NFQ==
   dependencies:
-    "@angular-eslint/eslint-plugin" "^1.0.0-beta.3"
-    "@angular-eslint/eslint-plugin-template" "^1.0.0-beta.3"
+    "@angular-eslint/eslint-plugin" "^1.0.0"
+    "@angular-eslint/eslint-plugin-template" "^1.0.0"
     strip-json-comments "3.1.1"
     tslint-to-eslint-config "2.0.1"
 
-"@angular-eslint/template-parser@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/template-parser/-/template-parser-1.0.0-beta.3.tgz#4ee32cafe4aede7ed04e53c67306692b0e62b6d0"
-  integrity sha512-bdo6tSjVCUKTk3oEKMPgbgAQzldMVXasjs5Sitzt4xa3YUFALxLM0u5f6DK4yJ6AWfg5RBEjo574oUsigR+5zw==
+"@angular-eslint/template-parser@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/template-parser/-/template-parser-1.0.0.tgz#e4d431db36e64bf14cca90e19f40eb48c3c20402"
+  integrity sha512-M7rj907yOoEzq10FO5BDX7Ylw24V+YfdsYfyEi/TzzQtNGxCwQhbEwXc1PAZgsQ+P1wbGFbg9mb3yFkps7/LEA==
   dependencies:
     eslint-scope "^5.1.0"
 
@@ -1964,10 +1964,15 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@^14.14.17":
+"@types/node@*":
   version "14.14.17"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.17.tgz#29fab92f3986c0e379968ad3c2043683d8020dbb"
   integrity sha512-G0lD1/7qD60TJ/mZmhog76k7NcpLWkPVGgzkRy3CTlnFu4LUQh5v2Wa661z6vnXmD8EQrnALUyf0VRtrACYztw==
+
+"@types/node@^14.14.19":
+  version "14.14.19"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.19.tgz#5135176a8330b88ece4e9ab1fdcfc0a545b4bab4"
+  integrity sha512-4nhBPStMK04rruRVtVc6cDqhu7S9GZai0fpXgPXrFpcPX6Xul8xnrjSdGB4KPBVYG/R5+fXWdCM8qBoiULWGPQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
