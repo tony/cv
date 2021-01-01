@@ -89,7 +89,7 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
             .filter((language) => language.id)
             .map((language) => [
               language.id as LanguageName,
-              language.ui.backgroundColor,
+              language.ui.backgroundColor as string,
             ])
         );
       })
@@ -114,7 +114,7 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
         return Object.fromEntries<string>(
           languages
             .filter((language) => language.id)
-            .map((language) => [language.id, language.ui.color])
+            .map((language) => [language.id, language.ui.color as string])
         );
       })
     ) as Observable<Record<LanguageName, string>>;
