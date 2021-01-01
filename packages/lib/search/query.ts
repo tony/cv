@@ -226,17 +226,9 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  // await $$queries.CV.selectLanguageActivitiesCount$().forEach((count) => console.log(count))
-  selectLanguageActivitiesCount$(
-    {
-      onlyVisible,
-    }: {
-      onlyVisible: boolean;
-    } = { onlyVisible: false }
+  _activitiesToLanguageCountMap(
+    selectActivity: Observable<IActivity[]>
   ): Observable<LanguageCount> {
-    const selectActivity = onlyVisible
-      ? this.visibleActivities$()
-      : this.activitiesQuery.selectAll();
     return selectActivity.pipe(
       map((activities) => {
         return activities.reduce(
@@ -266,6 +258,21 @@ export class CVQuery extends Query<CVState> {
         ) as LanguageCount;
       })
     );
+  }
+
+  // await $$queries.CV.selectLanguageActivitiesCount$().forEach((count) => console.log(count))
+  selectLanguageActivitiesCount$(
+    {
+      onlyVisible,
+    }: {
+      onlyVisible: boolean;
+    } = { onlyVisible: false }
+  ): Observable<LanguageCount> {
+    const selectActivity = onlyVisible
+      ? this.visibleActivities$()
+      : this.activitiesQuery.selectAll();
+
+    return this._activitiesToLanguageCountMap(selectActivity);
   }
 
   // await $$queries.CV.getLanguageActivitiesCount()
