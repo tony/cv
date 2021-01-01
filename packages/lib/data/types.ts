@@ -38,30 +38,31 @@ export interface OrgType extends IThemeable {
   name: OrgTypeName;
 }
 
-export type LanguageName =
-  | "Python"
-  | "PHP"
-  | "Makefile"
-  | "Markdown"
-  | "ShellScript"
-  | "JavaScript"
-  | "Vim script"
-  | undefined
-  | "Shell"
-  | "Ruby"
-  | "CSS"
-  | "OCaml"
-  | "SaltStack"
-  | "Batchfile"
-  | "C++"
-  | "Go"
-  | "C#"
-  | "TeX"
-  | "HTML"
-  | "sed"
-  | "C"
-  | "CMake"
-  | "TypeScript";
+export type LanguageName = string;
+// export type LanguageName =
+//   | "Python"
+//   | "PHP"
+//   | "Makefile"
+//   | "Markdown"
+//   | "ShellScript"
+//   | "JavaScript"
+//   | "Vim script"
+//   | undefined
+//   | "Shell"
+//   | "Ruby"
+//   | "CSS"
+//   | "OCaml"
+//   | "SaltStack"
+//   | "Batchfile"
+//   | "C++"
+//   | "Go"
+//   | "C#"
+//   | "TeX"
+//   | "HTML"
+//   | "sed"
+//   | "C"
+//   | "CMake"
+//   | "TypeScript";
 
 export interface Language extends IThemeable {
   id: LanguageName;
