@@ -16,6 +16,8 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
+import { difference } from "@tony/cv-lib/search/query";
+import type { LanguageCount } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
@@ -31,6 +33,7 @@ import "./style.scss";
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
+  languageActivitiesCount: LanguageCount;
   ui: {
     isLoading: boolean;
   };
@@ -45,6 +48,7 @@ type Action =
       type: ActionType.SetResults;
       activities?: IActivity[];
       languages?: Language[];
+      languageActivitiesCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 const reducer = (state: ReducerState, action: Action) => {
@@ -72,6 +76,7 @@ const reducer = (state: ReducerState, action: Action) => {
 const DEFAULT_STORE: ReducerState = {
   activities: [],
   languages: [],
+  languageActivitiesCount: [],
   ui: { isLoading: false },
 };
 
@@ -100,6 +105,7 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
+        languageActivitiesCount: query.getLanguageActivitiesCount() as LanguageCount,
       });
     }
     return void 0;
@@ -133,6 +139,28 @@ const App: React.FC = () => {
           });
         }
       }),
+      onEmit<LanguageCount>(
+        query.selectLanguageActivitiesCount$({ onlyVisible: true }),
+        (newLanguageCounts) => {
+          console.log(
+            "language counts updated",
+            newLanguageCounts,
+            results.languageActivitiesCount
+          );
+
+          if (
+            difference(
+              new Set(Object.values(newLanguageCounts)),
+              new Set(Object.values(results.languageActivitiesCount))
+            )
+          ) {
+            dispatch({
+              type: ActionType.SetResults,
+              languageActivitiesCount: newLanguageCounts,
+            });
+          }
+        }
+      ),
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
         dispatch({
