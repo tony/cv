@@ -237,8 +237,8 @@ export class CVQuery extends Query<CVState> {
     const selectActivity = onlyVisible
       ? this.visibleActivities$()
       : this.activitiesQuery.selectAll();
-    return combineQueries([selectActivity]).pipe(
-      map(([activities]) => {
+    return selectActivity.pipe(
+      map((activities) => {
         return activities.reduce(
           (languages, activity) => {
             const org = this.orgsQuery.getEntity(activity.orgId);
