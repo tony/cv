@@ -1,3 +1,5 @@
+import bb, { donut, line } from "billboard.js";
+import moment from "moment";
 import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
@@ -41,6 +43,7 @@ import { onEmit, useAsyncEffect } from "./utils";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
+import "billboard.js/dist/billboard.css";
 import "./style.scss";
 
 enum ActionType {
@@ -100,6 +103,51 @@ const AppContainer: React.FC = ({ children }) => {
   );
 };
 
+// tks akita https://github.com/datorama/akita/blob/49b6391934ba1f5c6ca63eebcf4a118955c14f65/libs/akita/src/lib/isObject.ts
+// export function isObject(value: any) {
+//   const type = typeof value;
+//   return value != null && (type == "object" || type == "function");
+// }
+// // https://github.com/datorama/akita/blob/49b6391934ba1f5c6ca63eebcf4a118955c14f65/libs/akita/src/lib/isUndefined.ts
+// export function isUndefined(value: any): value is undefined {
+//   return value === undefined;
+// }
+export const Chart: React.FC<bb.ChartOptions> = ({ data, ...props }) => {
+  //| Parameters<bb.Chart["load"]>
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [chart, setChart] = React.useState<bb.Chart | null>(null);
+  // const data = props?.data ? props?.data : undefined;
+  // data.json = undefined;
+  // // if (isObject(data?.json) || isUndefined(data?.json)) {
+  // //   data.json = [] as bb.Data["json"];
+  // // }
+  React.useEffect(() => {
+    if (!chart) {
+      const newChart = bb.generate({ bindto: ref.current, data, ...props });
+      setChart(newChart);
+      return () => newChart.unload();
+    }
+  }, [props, data]);
+
+  React.useEffect(() => {
+    if (!chart || !data) {
+      return;
+    }
+    if (chart && chart?.load && data) {
+      // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
+      chart.load(data);
+    }
+  }, [data]);
+
+  // React.useLayoutEffect(() => {
+  //   if (chart?.resize) {
+  //     chart.resize();
+  //   }
+  // });
+  //
+  return <div ref={ref} />;
+};
+
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
 
@@ -147,7 +195,25 @@ const App: React.FC = () => {
     };
   }, []);
 
+  const activitiesYearCountMap = results.activities.reduce(
+    (jsonData, activity) => {
+      if (activity.createdDate) {
+        const year = moment(activity.createdDate).get("year").toString();
+        if (year in jsonData) {
+          jsonData[year] += 1;
+        } else {
+          jsonData[year] = 1;
+        }
+      }
+      return jsonData;
+    },
+    {} as { [key: string]: number }
+  );
+
+  console.log("activitiesYearCountMap", activitiesYearCountMap);
+
   const resultsCount = results?.activities ? results.activities.length : 0;
+
   return (
     <AppContainer>
       {results.ui.isLoading ? (
@@ -159,8 +225,71 @@ const App: React.FC = () => {
               Object.keys(results.donutChart).length ? "" : "noCharts"
             }`}
           >
-            <div className="chartRow--donut"></div>
-            <div className="chartRow--line"></div>
+            <div className="chartRow--donut">
+              <Chart
+                data={{
+                  columns: Object.entries(results.languageCount).map(
+                    ([languageName, count]) => {
+                      return [languageName, count];
+                    }
+                  ),
+                  type: donut(),
+                  color: (color, languageName) =>
+                    languagesQuery.getEntity(languageName)?.ui
+                      ?.backgroundColor ?? color,
+                  labels: {
+                    // billboard.js doesn't accept callbacks here
+                    // issue: https://github.com/naver/billboard.js/issues/1845
+                    colors: languagesQuery
+                      .getAll()
+                      .reduce((languageColorMap, language) => {
+                        if (language) {
+                          if (!(language.id in languageColorMap)) {
+                            languageColorMap[language.id] = language.ui
+                              .color as string;
+                          }
+                        }
+                        return languageColorMap;
+                      }, {} as { [key: string]: string }),
+                  },
+                }}
+                legend={{
+                  show: false,
+                }}
+                size={{
+                  height: 300,
+                  width: 300,
+                }}
+              />
+            </div>
+            <div className="chartRow--line">
+              <Chart
+                data={{
+                  x: "x",
+                  columns: [
+                    [
+                      "x",
+                      ...Object.keys(activitiesYearCountMap).map(
+                        (year) => `${year}-01-01`
+                      ),
+                    ],
+                    ["activityCount", ...Object.values(activitiesYearCountMap)],
+                  ],
+                  type: line(),
+                }}
+                axis={{
+                  x: {
+                    type: "timeseries",
+                    tick: {
+                      format: "%Y-%m-%d",
+                    },
+                  },
+                }}
+                legend={{
+                  show: false,
+                }}
+              />
+            </div>
           </div>
 
           <div className="dropdownRow">
