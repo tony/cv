@@ -81,7 +81,7 @@ const reducer = (state: ReducerState, action: Action) => {
 const DEFAULT_STORE: ReducerState = {
   activities: [],
   languages: [],
-  languageActivitiesCount: [],
+  languageActivitiesCount: {},
   ui: { isLoading: false },
 };
 
@@ -110,7 +110,7 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
-        languageActivitiesCount: query.getLanguageActivitiesCount() as LanguageCount,
+        languageActivitiesCount: (await query.getLanguageActivitiesCount()) as LanguageCount,
       });
     }
     return void 0;
