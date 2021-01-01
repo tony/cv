@@ -118,6 +118,23 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   getBackgroundColors(): Promise<Record<LanguageName, string>> {
     return this.selectBackgroundColors$().pipe(take(1)).toPromise();
   }
+
+  selectTextColors$(): Observable<Record<LanguageName, string>> {
+    return this.selectAll().pipe(
+      map((languages) => {
+        return Object.fromEntries<string>(
+          languages
+            .filter((language) => language.id)
+            .map((language) => [language.id, language.ui.color])
+        );
+      })
+    ) as Observable<Record<LanguageName, string>>;
+  }
+
+  // await $$queries.languages.getBackgroundColors()
+  getTextColors(): Promise<Record<LanguageName, string>> {
+    return this.selectTextColors$().pipe(take(1)).toPromise();
+  }
 }
 
 export class CVQuery extends Query<CVState> {
