@@ -28,8 +28,11 @@ import {
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
+
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
+
 import "./style.scss";
+
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
@@ -43,6 +46,7 @@ enum ActionType {
   SetResults,
   IsLoading,
 }
+
 type Action =
   | {
       type: ActionType.SetResults;
@@ -51,6 +55,7 @@ type Action =
       languageActivitiesCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
+
 const reducer = (state: ReducerState, action: Action) => {
   switch (action.type) {
     case ActionType.SetResults: {
