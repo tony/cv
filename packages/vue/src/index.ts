@@ -3,9 +3,9 @@ import Vuex, { Commit, StoreOptions } from "vuex";
 
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
-import ChristmasTreeSVG from "../../data/img/icons/christmas-tree.svg";
+import ChristmasTreeSVG from "@tony/cv-data/img/icons/christmas-tree.svg";
 
-import { IActivity } from "../../lib/types";
+import { IActivity } from "@tony/cv-lib/data/types";
 
 interface IRootState {
   activities: IActivity[];

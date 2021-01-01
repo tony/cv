@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { IActivity } from '@lib/types';
+import { IActivity } from '@tony/cv-lib/data/types';
 
 declare const __TITLE__: string;
 
