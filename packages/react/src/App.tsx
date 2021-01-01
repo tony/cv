@@ -110,7 +110,7 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
-        languageActivitiesCount: (await query.getLanguageActivitiesCount()) as LanguageCount,
+        languageActivitiesCount: (await query.getVisibleLanguageActivitiesCount()) as LanguageCount,
       });
     }
     return void 0;
@@ -145,7 +145,7 @@ const App: React.FC = () => {
         }
       }),
       onEmit<LanguageCount>(
-        query.selectLanguageActivitiesCount$({ onlyVisible: true }),
+        query.selectVisibleLanguageActivitiesCount$(),
         (newLanguageCounts) => {
           console.log(
             "language counts updated",

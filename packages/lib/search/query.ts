@@ -260,31 +260,19 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  // await $$queries.CV.selectLanguageActivitiesCount$().forEach((count) => console.log(count))
-  selectLanguageActivitiesCount$(
-    {
-      onlyVisible,
-    }: {
-      onlyVisible: boolean;
-    } = { onlyVisible: false }
-  ): Observable<LanguageCount> {
-    const selectActivity = onlyVisible
-      ? this.visibleActivities$()
-      : this.activitiesQuery.selectAll();
-
-    return this._activitiesToLanguageCountMap(selectActivity);
+  // await $$queries.CV.selectAllLanguageActivitiesCount$().forEach((count) => console.log(count))
+  selectAllLanguageActivitiesCount$(): Observable<LanguageCount> {
+    return this._activitiesToLanguageCountMap(this.activitiesQuery.selectAll());
   }
 
-  // await $$queries.CV.getLanguageActivitiesCount()
-  // await $$queries.CV.getLanguageActivitiesCount({onlyVisible: true})
-  getLanguageActivitiesCount(
-    {
-      onlyVisible,
-    }: {
-      onlyVisible: boolean;
-    } = { onlyVisible: false }
-  ): Promise<Record<LanguageName, number>> {
-    return this.selectLanguageActivitiesCount$({ onlyVisible })
+  // await $$queries.CV.selectLanguageVisibleActivitiesCount$().forEach((count) => console.log(count))
+  selectVisibleLanguageActivitiesCount$(): Observable<LanguageCount> {
+    return this._activitiesToLanguageCountMap(this.visibleActivities$());
+  }
+
+  // await $$queries.CV.getLanguageVisibleActivitiesCount()
+  getVisibleLanguageActivitiesCount(): Promise<Record<LanguageName, number>> {
+    return this.selectVisibleLanguageActivitiesCount$()
       .pipe(take(1))
       .toPromise();
   }
