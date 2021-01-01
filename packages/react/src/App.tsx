@@ -16,7 +16,7 @@ import {
   languagesStore,
   languagesQuery,
 } from "../../lib/hub";
-import { difference } from "@tony/cv-lib/search/query";
+import { difference } from "@tony/cv-lib/utils";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
