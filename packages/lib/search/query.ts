@@ -29,9 +29,6 @@ import {
 import type { IActivity, Language, LanguageName } from "../types";
 import { hasAny } from "../utils";
 
-// export interface LanguageCount {
-//   [key: string]: number;
-// }
 export type LanguageCount = Record<LanguageName, number>;
 
 interface CVCount {
