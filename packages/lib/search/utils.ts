@@ -1,9 +1,9 @@
-import type { IActivity } from "../types";
+import type { IActivity } from "../data/types";
 import {
   reActivityTypoFix,
   reActivityDocImprovement,
   reActivityCodeStyleTweak,
-} from "../constants";
+} from "../data/constants";
 
 // via v1: https://github.com/tony/cv/blob/v1/lib/selectors.js
 export const isActivityTypoFix = (activity: IActivity): boolean =>

@@ -3,7 +3,7 @@ import Select from "react-select";
 import type { Subscription } from "rxjs";
 import type { ValueType } from "react-select/src/types";
 
-import type { IActivity, Language } from "../../lib/types";
+import type { IActivity, Language } from "@tony/cv-lib/data/types";
 import {
   activityTypesStore,
   activitiesStore,
@@ -15,7 +15,7 @@ import {
   query,
   languagesStore,
   languagesQuery,
-} from "../../lib/hub";
+} from "@tony/cv-lib/hub";
 import { difference } from "@tony/cv-lib/utils";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";

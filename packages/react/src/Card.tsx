@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { IActivity, IOrg } from "../../lib/types";
+import type { IActivity, IOrg } from "@tony/cv-lib/data/types";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import "./style.scss";
 

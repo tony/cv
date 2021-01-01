@@ -6,8 +6,8 @@ import type { StylesConfig, OptionProps, OptionsType } from "react-select";
 
 import chroma from "chroma-js";
 
-import { languagesQuery, orgsQuery, query } from "../../lib/hub";
-import type { LanguageCount } from "../../lib/search/query";
+import { languagesQuery, orgsQuery, query } from "@tony/cv-lib/hub";
+import type { LanguageCount } from "@tony/cv-lib/search/query";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
 

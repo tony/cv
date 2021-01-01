@@ -11,8 +11,7 @@ import {
   ActivityTypeColors,
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
-} from "../constants";
-
+} from "./constants";
 import {
   ActivityType,
   ActivityTypeName,
@@ -22,7 +21,7 @@ import {
   OrgTypeName,
   IActivity,
   IOrg,
-} from "../types";
+} from "./types";
 
 export const orgs: IOrg[] = [
   // Make Object Key the ID

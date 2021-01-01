@@ -1,10 +1,4 @@
-import type {
-  ActivityType,
-  Language,
-  OrgType,
-  IActivity,
-  IOrg,
-} from "../types";
+import type { ActivityType, Language, OrgType, IActivity, IOrg } from "./types";
 
 export interface IData {
   activities: IActivity[];

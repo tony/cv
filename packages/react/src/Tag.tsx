@@ -4,12 +4,12 @@ import {
   activityTypesQuery,
   languagesQuery,
   orgTypesQuery,
-} from "../../lib/hub";
+} from "@tony/cv-lib/hub";
 import type {
   ActivityTypeName,
   LanguageName,
   OrgTypeName,
-} from "../../lib/types";
+} from "@tony/cv-lib/data/types";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>

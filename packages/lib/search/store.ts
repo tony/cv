@@ -16,7 +16,7 @@ import type {
   OrgType,
   IActivity,
   IOrg,
-} from "../types";
+} from "../data/types";
 import {
   isActivityTypoFix,
   isActivityDocImprovement,

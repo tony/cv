@@ -16,7 +16,13 @@ import {
   OrgTypesQuery,
 } from "./search/query";
 
-import type { ActivityType, Language, OrgType, IActivity, IOrg } from "./types";
+import type {
+  ActivityType,
+  Language,
+  OrgType,
+  IActivity,
+  IOrg,
+} from "./data/types";
 
 export const activityTypesStore = new ActivityTypesStore();
 export const activitiesStore = new ActivitiesStore();
