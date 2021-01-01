@@ -156,41 +156,41 @@
     "@angular-devkit/core" "7.3.10"
     rxjs "6.3.3"
 
-"@angular-eslint/builder@0.8.0-beta.7":
-  version "0.8.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-0.8.0-beta.7.tgz#858565aa97d4a2dcd09dee8fd18fd82562aed36b"
-  integrity sha512-aRTaa6a3R0est5PSLzkK2qlEiXOiDGFt65MSTMGElb0mKR4hdKF6d+rFdNqSgK/6kAJXF8/fp2Os8BETowE7JQ==
+"@angular-eslint/builder@1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-1.0.0-beta.3.tgz#7343f3e6fd9dd32979ff7e03fed1f51903e4ce6b"
+  integrity sha512-SxVkjb8hPGz8OEhC83kWaWR3qw8QBMgueaVTZflD58nQNT05MzMFY5LEUx1gXPUOcMCCCSY2wshaQvnLod8HXA==
 
-"@angular-eslint/eslint-plugin-template@0.8.0-beta.7", "@angular-eslint/eslint-plugin-template@^0.8.0-beta.7":
-  version "0.8.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-0.8.0-beta.7.tgz#c5210deed2f4936076f119ae274df48ef9723a7e"
-  integrity sha512-NaypVRYR+AjC/LXuBEZSHv6EpyjIVu2+YpMI2CPWuPDjmBi/x+g+jZXkqD/QtT6voKGtlII77QfuZMbGgfNhiQ==
+"@angular-eslint/eslint-plugin-template@1.0.0-beta.3", "@angular-eslint/eslint-plugin-template@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-1.0.0-beta.3.tgz#fe1ee413e6ac7ff03871da3bb19e9cd8cba33661"
+  integrity sha512-ZwpJO8WOd6SgmeEWjDMWnZpQjenTN7y3pIbi0oaYtTrZ0RJiMKEJzCvlqif7NXWmn6zWJROEASt6oDjX1z6prw==
   dependencies:
     "@typescript-eslint/experimental-utils" "4.3.0"
     aria-query "^4.2.2"
     axobject-query "^2.2.0"
 
-"@angular-eslint/eslint-plugin@0.8.0-beta.7", "@angular-eslint/eslint-plugin@^0.8.0-beta.7":
-  version "0.8.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin/-/eslint-plugin-0.8.0-beta.7.tgz#fcdb33e2fc83e0448c09c6f00d0a6e9021936b10"
-  integrity sha512-MsOzL+7O6bzNA18MZoPKc2SZCD5oavQQEnBeHNGERvZuqrj2Omf/9xjFzoRmAlvGqYUmsF8x6qTdSjLmE5IDVQ==
+"@angular-eslint/eslint-plugin@1.0.0-beta.3", "@angular-eslint/eslint-plugin@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/eslint-plugin/-/eslint-plugin-1.0.0-beta.3.tgz#7452d143195dfc3306a2b00243d0c72506bd556b"
+  integrity sha512-MzCnl2VpzHeTF7NiFa6iJ4Ev9G5nuiBaCCfvC+1uBMWwoSTEBh/pd+3dEoAVMlu0O5/Ol0kXvokImzGd+c45Pg==
   dependencies:
     "@typescript-eslint/experimental-utils" "4.3.0"
 
-"@angular-eslint/schematics@^0.8.0-beta.7":
-  version "0.8.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/schematics/-/schematics-0.8.0-beta.7.tgz#0413893bf36e1433982a86f4e74c00174e5a6bf2"
-  integrity sha512-aDcLDY3zypHXFktebirQWURa6dw3H2qELKTvNH790em+Q9za0sr7D6bNbOn44Gb1mAajYrwZXdw4h0v7hs5Jlg==
+"@angular-eslint/schematics@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/schematics/-/schematics-1.0.0-beta.3.tgz#cb4ada55d5ed33fcb9f35ecf3c14014615265ebb"
+  integrity sha512-Wf008FADnTu+I/gDkk01hXwyOf160/RnJaXtY7VqKVS4k/klhY4YIFrQAo95jeeBMgBtCC0d94bBnkgAXa+fgw==
   dependencies:
-    "@angular-eslint/eslint-plugin" "^0.8.0-beta.7"
-    "@angular-eslint/eslint-plugin-template" "^0.8.0-beta.7"
+    "@angular-eslint/eslint-plugin" "^1.0.0-beta.3"
+    "@angular-eslint/eslint-plugin-template" "^1.0.0-beta.3"
     strip-json-comments "3.1.1"
     tslint-to-eslint-config "2.0.1"
 
-"@angular-eslint/template-parser@0.8.0-beta.7":
-  version "0.8.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/template-parser/-/template-parser-0.8.0-beta.7.tgz#af244060addde3a8f4a26d86136fb9c7cc10d935"
-  integrity sha512-e2nzNQlnbcB8G8/lUSA1ZH+UUvyD+WVXO8hgAOvBWjslXvpkrKhwMSvF7N2A9VBDPFD4K4jEX2/KSiFQAB6/fA==
+"@angular-eslint/template-parser@1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/template-parser/-/template-parser-1.0.0-beta.3.tgz#4ee32cafe4aede7ed04e53c67306692b0e62b6d0"
+  integrity sha512-bdo6tSjVCUKTk3oEKMPgbgAQzldMVXasjs5Sitzt4xa3YUFALxLM0u5f6DK4yJ6AWfg5RBEjo574oUsigR+5zw==
   dependencies:
     eslint-scope "^5.1.0"
 
