@@ -79,8 +79,10 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
     super(store);
   }
 
-  selectBackgroundColors$(): Observable<Record<LanguageName, string>> {
-    return this.selectAll().pipe(
+  selectBackgroundColors$(
+    ...args: Parameters<typeof LanguagesQuery.prototype.selectAll>
+  ): Observable<Record<LanguageName, string>> {
+    return this.selectAll(...args).pipe(
       map((languages) => {
         return Object.fromEntries<string>(
           languages
@@ -95,12 +97,19 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   }
 
   // await $$queries.languages.getBackgroundColors()
-  getBackgroundColors(): Promise<Record<LanguageName, string>> {
-    return this.selectBackgroundColors$().pipe(take(1)).toPromise();
+  // await $$queries.languages.getBackgroundColors({filterBy: (lang) => lang.id == 'Python'})
+  getBackgroundColors(
+    ...args: Parameters<typeof LanguagesQuery.prototype.selectBackgroundColors$>
+  ): Promise<Record<LanguageName, string>> {
+    return this.selectBackgroundColors$(...args)
+      .pipe(take(1))
+      .toPromise();
   }
 
-  selectTextColors$(): Observable<Record<LanguageName, string>> {
-    return this.selectAll().pipe(
+  selectTextColors$(
+    ...args: Parameters<typeof LanguagesQuery.prototype.selectAll>
+  ): Observable<Record<LanguageName, string>> {
+    return this.selectAll(...args).pipe(
       map((languages) => {
         return Object.fromEntries<string>(
           languages
@@ -112,8 +121,13 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   }
 
   // await $$queries.languages.getBackgroundColors()
-  getTextColors(): Promise<Record<LanguageName, string>> {
-    return this.selectTextColors$().pipe(take(1)).toPromise();
+  // await $$queries.languages.getTextColors({filterBy: (lang) => lang.id == 'Python'})
+  getTextColors(
+    ...args: Parameters<typeof LanguagesQuery.prototype.selectTextColors$>
+  ): Promise<Record<LanguageName, string>> {
+    return this.selectTextColors$(...args)
+      .pipe(take(1))
+      .toPromise();
   }
 }
 
