@@ -38,8 +38,8 @@ interface ReducerState {
   languages: Language[];
 
   // Counts
-  languageActivitiesCount: LanguageCount;
-  activitiesToYearCount: ActivityCount;
+  languageCount: LanguageCount;
+  activityCount: ActivityCount;
 
   // UX
   ui: {
@@ -59,8 +59,8 @@ type Action =
       languages?: Language[];
 
       // Counts
-      activitiesToYearCount?: ActivityCount;
-      languageActivitiesCount?: LanguageCount;
+      activityCount?: ActivityCount;
+      languageCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 
@@ -91,8 +91,8 @@ const DEFAULT_STORE: ReducerState = {
   languages: [],
 
   // Counts
-  languageActivitiesCount: {},
-  activitiesToYearCount: {},
+  languageCount: {},
+  activityCount: {},
   ui: { isLoading: false },
 };
 
@@ -121,8 +121,8 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
-        languageActivitiesCount: (await query.getVisibleLanguageActivitiesCount()) as LanguageCount,
-        activitiesToYearCount: (await query.getVisibleActivitiesToYearMap()) as ActivityCount,
+        languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
+        activityCount: (await query.getVisibleActivitiesToYearMap()) as ActivityCount,
       });
     }
     return void 0;
@@ -157,23 +157,23 @@ const App: React.FC = () => {
         }
       }),
       onEmit<LanguageCount>(
-        query.selectVisibleLanguageActivitiesCount$(),
+        query.visibleLanguageCount$(),
         (newLanguageCounts) => {
           console.log(
             "language counts updated",
             newLanguageCounts,
-            results.languageActivitiesCount
+            results.languageCount
           );
 
           if (
             difference(
               new Set(Object.values(newLanguageCounts)),
-              new Set(Object.values(results.languageActivitiesCount))
+              new Set(Object.values(results.languageCount))
             )
           ) {
             dispatch({
               type: ActionType.SetResults,
-              languageActivitiesCount: newLanguageCounts,
+              languageCount: newLanguageCounts,
             });
           }
         }
@@ -184,18 +184,18 @@ const App: React.FC = () => {
           console.log(
             "activity year count updated",
             newValue,
-            results.activitiesToYearCount
+            results.activityCount
           );
 
           if (
             difference(
               new Set(Object.values(newValue)),
-              new Set(Object.values(results.activitiesToYearCount))
+              new Set(Object.values(results.activityCount))
             )
           ) {
             dispatch({
               type: ActionType.SetResults,
-              activitiesToYearCount: newValue,
+              activityCount: newValue,
             });
           }
         }

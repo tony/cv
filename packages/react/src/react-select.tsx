@@ -73,24 +73,18 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   }
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
-      onEmit<LanguageCount>(
-        query.selectVisibleLanguageActivitiesCount$(),
-        (languageCounts) => {
-          const count = languageCounts[languageName];
-          if (count != availableActivitiesCount) {
-            setAvailableActivitiesCount(count);
-          }
+      onEmit<LanguageCount>(query.visibleLanguageCount$(), (languageCounts) => {
+        const count = languageCounts[languageName];
+        if (count != availableActivitiesCount) {
+          setAvailableActivitiesCount(count);
         }
-      ),
-      onEmit<LanguageCount>(
-        query.selectAllLanguageActivitiesCount$(),
-        (languageCounts) => {
-          const count = languageCounts[languageName];
-          if (count != totalActivitiesCount) {
-            setTotalActivitiesCount(count);
-          }
+      }),
+      onEmit<LanguageCount>(query.languageCount$(), (languageCounts) => {
+        const count = languageCounts[languageName];
+        if (count != totalActivitiesCount) {
+          setTotalActivitiesCount(count);
         }
-      ),
+      }),
     ];
 
     return () => {
