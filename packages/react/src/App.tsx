@@ -17,7 +17,7 @@ import {
   languagesQuery,
 } from "@tony/cv-lib/hub";
 import { difference } from "@tony/cv-lib/utils";
-import type { LanguageCount } from "@tony/cv-lib/search/query";
+import type { ActivityCount, LanguageCount } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
@@ -36,7 +36,12 @@ import "./style.scss";
 interface ReducerState {
   activities: IActivity[];
   languages: Language[];
+
+  // Counts
   languageActivitiesCount: LanguageCount;
+  activitiesToYearCount: ActivityCount;
+
+  // UX
   ui: {
     isLoading: boolean;
   };
@@ -52,6 +57,9 @@ type Action =
       type: ActionType.SetResults;
       activities?: IActivity[];
       languages?: Language[];
+
+      // Counts
+      activitiesToYearCount?: ActivityCount;
       languageActivitiesCount?: LanguageCount;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
@@ -81,7 +89,10 @@ const reducer = (state: ReducerState, action: Action) => {
 const DEFAULT_STORE: ReducerState = {
   activities: [],
   languages: [],
+
+  // Counts
   languageActivitiesCount: {},
+  activitiesToYearCount: {},
   ui: { isLoading: false },
 };
 
@@ -111,6 +122,7 @@ const App: React.FC = () => {
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
         languageActivitiesCount: (await query.getVisibleLanguageActivitiesCount()) as LanguageCount,
+        activitiesToYearCount: (await query.getVisibleActivitiesToYearMap()) as ActivityCount,
       });
     }
     return void 0;
@@ -166,6 +178,29 @@ const App: React.FC = () => {
           }
         }
       ),
+      onEmit<ActivityCount>(
+        query.selectVisibleActivitiesToYearMap$(),
+        (newValue) => {
+          console.log(
+            "activity year count updated",
+            newValue,
+            results.activitiesToYearCount
+          );
+
+          if (
+            difference(
+              new Set(Object.values(newValue)),
+              new Set(Object.values(results.activitiesToYearCount))
+            )
+          ) {
+            dispatch({
+              type: ActionType.SetResults,
+              activitiesToYearCount: newValue,
+            });
+          }
+        }
+      ),
+
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
         dispatch({
