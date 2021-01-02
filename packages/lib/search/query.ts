@@ -248,21 +248,21 @@ export class CVQuery extends Query<CVState> {
     );
   }
 
-  // await $$queries.CV.selectAllActivitiesToYearMap$().forEach((count) => console.log(count))
-  selectAllActivitiesToYearMap$(
+  // await $$queries.CV.activityYearCount$().forEach((count) => console.log(count))
+  activityYearCount$(
     ...args: Parameters<typeof LanguagesQuery.prototype.selectTextColors$>
   ): Observable<ActivityCount> {
     return this._activitiesToYearMap(this.activitiesQuery.selectAll(...args));
   }
 
-  // await $$queries.CV.selectVisibleActivitiesToYearMap$().forEach((count) => console.log(count))
-  selectVisibleActivitiesToYearMap$(): Observable<ActivityCount> {
+  // await $$queries.CV.visibleActivityYearCount$().forEach((count) => console.log(count))
+  visibleActivityYearCount$(): Observable<ActivityCount> {
     return this._activitiesToYearMap(this.visibleActivities$());
   }
 
-  // await $$queries.CV.getVisibleActivitiesToYearMap()
-  getVisibleActivitiesToYearMap(): Promise<ActivityCount> {
-    return this.selectVisibleActivitiesToYearMap$().pipe(take(1)).toPromise();
+  // await $$queries.CV.getVisibleActivityYearCount()
+  getVisibleActivityYearCount(): Promise<ActivityCount> {
+    return this.visibleActivityYearCount$().pipe(take(1)).toPromise();
   }
 
   _activitiesToLanguageCountMap(

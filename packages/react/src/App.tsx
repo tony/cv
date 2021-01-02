@@ -122,7 +122,7 @@ const App: React.FC = () => {
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
-        activityCount: (await query.getVisibleActivitiesToYearMap()) as ActivityCount,
+        activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
       });
     }
     return void 0;
@@ -178,28 +178,25 @@ const App: React.FC = () => {
           }
         }
       ),
-      onEmit<ActivityCount>(
-        query.selectVisibleActivitiesToYearMap$(),
-        (newValue) => {
-          console.log(
-            "activity year count updated",
-            newValue,
-            results.activityCount
-          );
+      onEmit<ActivityCount>(query.visibleActivityYearCount$(), (newValue) => {
+        console.log(
+          "activity year count updated",
+          newValue,
+          results.activityCount
+        );
 
-          if (
-            difference(
-              new Set(Object.values(newValue)),
-              new Set(Object.values(results.activityCount))
-            )
-          ) {
-            dispatch({
-              type: ActionType.SetResults,
-              activityCount: newValue,
-            });
-          }
+        if (
+          difference(
+            new Set(Object.values(newValue)),
+            new Set(Object.values(results.activityCount))
+          )
+        ) {
+          dispatch({
+            type: ActionType.SetResults,
+            activityCount: newValue,
+          });
         }
-      ),
+      }),
 
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
