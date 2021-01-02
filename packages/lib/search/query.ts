@@ -260,6 +260,11 @@ export class CVQuery extends Query<CVState> {
     return this._activitiesToYearMap(this.visibleActivities$());
   }
 
+  // await $$queries.CV.getVisibleActivitiesToYearMap()
+  getVisibleActivitiesToYearMap(): Promise<ActivityCount> {
+    return this.selectVisibleActivitiesToYearMap$().pipe(take(1)).toPromise();
+  }
+
   _activitiesToLanguageCountMap(
     selectActivity: Observable<IActivity[]>
   ): Observable<LanguageCount> {
