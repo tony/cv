@@ -2512,13 +2512,6 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@*":
-  version "1.54.6"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.6.tgz#33791f64b4652ca39812f22f4a1d84df21fa4296"
-  integrity sha512-H0nT9SaPf/MvEne0YSRvYvFVFF7ATAa6q0k20SRsx7bUnQdTEUI+enU9/CHko9D/0y/K/M1akuKo3OevtN3YJg==
-  dependencies:
-    "@types/d3" "^3"
-
 "@types/plotly.js@^1.54.7":
   version "1.54.7"
   resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.7.tgz#db784d781e17d66482cee91ea5e72d61589ab043"
@@ -2561,14 +2554,6 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.0.tgz#b3b691eb956c4b3401777ee67b900cb28415d95a"
   integrity sha512-lUqY7OlkF/RbNtD5nIq7ot8NquXrdFrjSOR6+w9a9RFQevGi1oZO1dcJbXMeONAPKtZ2UrZOEJ5UOCVsxbLk/g==
   dependencies:
-    "@types/react" "*"
-
-"@types/react-plotly.js@^2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@types/react-plotly.js/-/react-plotly.js-2.2.4.tgz#360fcfcace64d0ef173cf0c7d67fc2441b39f659"
-  integrity sha512-dsvngno7Ar13XoF2eJXM609Msoc5DPboNp8x4NE4L+rsBEEsu16/0b0Fze8REx3fA4HEUk4rcn3uJsx48m2sew==
-  dependencies:
-    "@types/plotly.js" "*"
     "@types/react" "*"
 
 "@types/react-select@^3.1.2":
@@ -12771,13 +12756,6 @@ react-motion@^0.5.2:
     performance-now "^0.2.0"
     prop-types "^15.5.8"
     raf "^3.1.0"
-
-react-plotly.js@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/react-plotly.js/-/react-plotly.js-2.5.1.tgz#11182bf599ef11a0dbfcd171c6f5645535a2b486"
-  integrity sha512-Oya14whSHvPsYXdI0nHOGs1pZhMzV2edV7HAW1xFHD58Y73m/LbG2Encvyz1tztL0vfjph0JNhiwO8cGBJnlhg==
-  dependencies:
-    prop-types "^15.7.2"
 
 react-select@^3.2.0:
   version "3.2.0"
