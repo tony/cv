@@ -8,6 +8,7 @@ import {
 } from "@datorama/akita";
 import { map, take } from "rxjs/operators";
 import type { Observable } from "rxjs";
+import moment from "moment";
 
 import type {
   ActivitiesState,
@@ -30,6 +31,7 @@ import type { IActivity, Language, LanguageName } from "../data/types";
 import { hasAny } from "../utils";
 
 export type LanguageCount = Record<LanguageName, number>;
+export type ActivityCount = Record<string, number>;
 
 interface CVCount {
   activities: number;
@@ -224,6 +226,38 @@ export class CVQuery extends Query<CVState> {
         );
       })
     );
+  }
+
+  _activitiesToYearMap(
+    selectActivity: Observable<IActivity[]>
+  ): Observable<ActivityCount> {
+    return selectActivity.pipe(
+      map((activities) => {
+        return activities.reduce((jsonData, activity) => {
+          if (activity.createdDate) {
+            const year = moment(activity.createdDate).get("year").toString();
+            if (year in jsonData) {
+              jsonData[year] += 1;
+            } else {
+              jsonData[year] = 1;
+            }
+          }
+          return jsonData;
+        }, {} as ActivityCount);
+      })
+    );
+  }
+
+  // await $$queries.CV.selectAllActivitiesToYearMap$().forEach((count) => console.log(count))
+  selectAllActivitiesToYearMap$(
+    ...args: Parameters<typeof LanguagesQuery.prototype.selectTextColors$>
+  ): Observable<ActivityCount> {
+    return this._activitiesToYearMap(this.activitiesQuery.selectAll(...args));
+  }
+
+  // await $$queries.CV.selectVisibleActivitiesToYearMap$().forEach((count) => console.log(count))
+  selectVisibleActivitiesToYearMap$(): Observable<ActivityCount> {
+    return this._activitiesToYearMap(this.visibleActivities$());
   }
 
   _activitiesToLanguageCountMap(
