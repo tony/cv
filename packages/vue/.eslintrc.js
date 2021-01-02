@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    "jest/globals": true,
   },
   extends: ["plugin:vue/essential", "eslint:recommended"],
 
@@ -14,12 +13,6 @@ module.exports = {
     extraFileExtensions: [".vue"],
     project: "./tsconfig.json",
   },
-  plugins: ["vue", "@typescript-eslint", "jest"],
+  plugins: ["vue", "@typescript-eslint"],
   rules: {},
-  overrides: [
-    {
-      files: ["lib/**/*.tsx", "lib/**/*.ts"],
-      parser: "@typescript-eslint/parser",
-    },
-  ],
 };
