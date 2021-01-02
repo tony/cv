@@ -14,10 +14,7 @@
     "github": "yarn workspace @tony/cv-scripts run github"
   },
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": [
-      "eslint"
-    ]
+    "packages": ["packages/*"]
   },
   "dependencies": {},
   "devDependencies": {

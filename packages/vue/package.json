@@ -13,6 +13,15 @@
     "ncu": "ncu",
     "clean": "rm -rf dist/"
   },
+  "dependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.6",
+    "vue-loader": "^15.9.6",
+    "vue-property-decorator": "^9.1.2",
+    "vuex": "^3.6.0",
+    "webpack": "^4.44.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
@@ -26,10 +35,6 @@
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
-    "eslint": "^7.17.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^7.4.0",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
@@ -47,15 +52,10 @@
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
-    "eslint-plugin-jest": "^24.1.3"
-  },
-  "dependencies": {
-    "html-webpack-plugin": "^4.5.0",
-    "vue": "^2.6.12",
-    "vue-class-component": "^7.2.6",
-    "vue-loader": "^15.9.6",
-    "vue-property-decorator": "^9.1.2",
-    "vuex": "^3.6.0",
-    "webpack": "^4.44.2"
+    "eslint": "^7.17.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
   }
 }
