@@ -19,6 +19,7 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
+      "plugins": ["tsc"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -34,6 +35,31 @@
             "type": "element",
             "prefix": "app",
             "style": "kebab-case"
+          }
+        ],
+        "tsc/config": [
+          1,
+          {
+            "configFile": "tsconfig.json"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.spec.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "tsc/config": [
+          1,
+          {
+            "configFile": "tsconfig.spec.json"
           }
         ]
       }

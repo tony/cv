@@ -18,7 +18,7 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "tsc"],
   settings: {
     react: {
       version: "detect",
@@ -26,6 +26,12 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/ban-ts-comment": 0,
+    "tsc/config": [
+      1,
+      {
+        configFile: "tsconfig.json",
+      },
+    ],
   },
   overrides: [
     {

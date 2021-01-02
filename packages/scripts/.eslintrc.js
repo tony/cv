@@ -14,8 +14,14 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "tsc"],
   rules: {
     "@typescript-eslint/ban-ts-comment": 0,
+    "tsc/config": [
+      1,
+      {
+        configFile: "tsconfig.json",
+      },
+    ],
   },
 };
