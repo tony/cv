@@ -20,7 +20,7 @@ jobs:
     - name: Extract Branch Name
       run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
     - name: Should publish
-      if: env.BRANCH == 'v2'
+      if: env.BRANCH == 'master'
       run: echo "PUBLISH=$(echo true)" >> $GITHUB_ENV
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
