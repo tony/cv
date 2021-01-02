@@ -127,6 +127,7 @@
   },
   "defaultProject": "angular",
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

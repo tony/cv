@@ -16,19 +16,10 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/ng-cli-compat",
-        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -37,53 +28,13 @@
             "style": "camelCase"
           }
         ],
-        "@typescript-eslint/explicit-member-accessibility": [
-          "off",
+        "@angular-eslint/component-selector": [
+          "error",
           {
-            "accessibility": "explicit"
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
           }
-        ],
-        "@typescript-eslint/member-delimiter-style": [
-          "off",
-          {
-            "multiline": {
-              "delimiter": "none",
-              "requireLast": true
-            },
-            "singleline": {
-              "delimiter": "semi",
-              "requireLast": false
-            }
-          }
-        ],
-        "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/no-use-before-define": "error",
-        "@typescript-eslint/semi": [
-          "off",
-          null
-        ],
-        "@typescript-eslint/type-annotation-spacing": "off",
-        "arrow-parens": [
-          "off",
-          "always"
-        ],
-        "brace-style": [
-          "off",
-          "off"
-        ],
-        "eol-last": "off",
-        "import/order": "off",
-        "linebreak-style": "off",
-        "new-parens": "off",
-        "newline-per-chained-call": "off",
-        "no-extra-semi": "off",
-        "no-irregular-whitespace": "off",
-        "no-trailing-spaces": "off",
-        "no-underscore-dangle": "off",
-        "space-before-function-paren": "off",
-        "space-in-parens": [
-          "off",
-          "never"
         ]
       }
     },
