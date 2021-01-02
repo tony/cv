@@ -304,12 +304,12 @@ export class CVQuery extends Query<CVState> {
     return this._activitiesToLanguageCountMap(this.activitiesQuery.selectAll());
   }
 
-  // await $$queries.CV.selectLanguageVisibleActivitiesCount$().forEach((count) => console.log(count))
+  // await $$queries.CV.visibleLanguageCount$().forEach((count) => console.log(count))
   visibleLanguageCount$(): Observable<LanguageCount> {
     return this._activitiesToLanguageCountMap(this.visibleActivities$());
   }
 
-  // await $$queries.CV.getLanguageVisibleActivitiesCount()
+  // await $$queries.CV.getVisibleLanguageCount()
   getVisibleLanguageCount(): Promise<Record<LanguageName, number>> {
     return this.visibleLanguageCount$().pipe(take(1)).toPromise();
   }
