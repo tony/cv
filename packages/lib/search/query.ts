@@ -28,7 +28,7 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { IActivity, Language, LanguageName } from "../data/types";
+import type { IActivity, IOrg, Language, LanguageName } from "../data/types";
 import { hasAny } from "../utils";
 
 export type LanguageCount = Record<LanguageName, number>;
@@ -93,7 +93,20 @@ export class ActivityTypesQuery extends QueryEntity<ActivityTypesState> {
     super(store);
   }
 }
+const ORG_WEIGHT_MAP = {
+  Company: 0,
+  Publication: 1,
+  Website: 2,
+  "Open Source": 3,
+};
 
+@QueryConfig({
+  sortBy: (orgA: IOrg, orgB: IOrg) => {
+    return ORG_WEIGHT_MAP[orgA.orgType] == ORG_WEIGHT_MAP[orgB.orgType]
+      ? 1
+      : -1;
+  },
+})
 export class OrgsQuery extends QueryEntity<OrgsState> {
   constructor(protected store: OrgsStore) {
     super(store);
