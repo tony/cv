@@ -190,7 +190,7 @@ const App: React.FC = () => {
           isMulti
           onChange={onLanguageChange}
           className="react-select"
-          placeholder="Programming Language - e.g. Python, JavaScript, C++"
+          placeholder="Language"
           styles={languagesStyles}
           components={{ Option: LanguageOption }}
         />
@@ -204,7 +204,7 @@ const App: React.FC = () => {
           isMulti={true}
           onChange={onActivityTypeChange}
           className="react-select"
-          placeholder="Activity type - e.g. Work, Open Source, Website, Volunteering"
+          placeholder="Event type"
         />
         <Select
           options={
@@ -216,7 +216,7 @@ const App: React.FC = () => {
           isMulti={true}
           onChange={onOrgChange}
           className="react-select"
-          placeholder="Place / project / company - e.g. tmuxp, Social Amp, The Tao of tmux"
+          placeholder="Topic"
           components={{ Option: OrgOption }}
         />
       </div>
