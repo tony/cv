@@ -59,6 +59,7 @@
     "react-dom": "^17.0.1",
     "react-select": "^3.2.0",
     "sass": "^1.32.4",
+    "victory": "^35.4.6",
     "webpack": "~5.15.0"
   }
 }
