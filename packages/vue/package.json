@@ -14,7 +14,7 @@
     "clean": "rm -rf dist/"
   },
   "dependencies": {
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^4.5.1",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
     "vue-loader": "^15.9.6",
