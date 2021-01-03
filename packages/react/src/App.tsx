@@ -31,6 +31,7 @@ import {
   getSelectOptions,
   languagesStyles,
   LanguageOption,
+  ActivityTypeOption,
   OrgOption,
 } from "./react-select";
 import type { ISelectOption, IOptionType } from "./react-select";
@@ -205,6 +206,7 @@ const App: React.FC = () => {
           onChange={onActivityTypeChange}
           className="react-select"
           placeholder="Event type"
+          components={{ Option: ActivityTypeOption }}
         />
 
         <Select

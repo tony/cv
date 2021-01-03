@@ -1,7 +1,7 @@
 import chroma from "chroma-js";
 import CSS from "csstype";
 
-export const ActivityTypeNameMap: {
+interface IActivityTypeNameStringMap {
   // [key: ActivityTypeName]: string;
   SoftwareApp: string;
   SoftwareLib: string;
@@ -11,7 +11,8 @@ export const ActivityTypeNameMap: {
   Volunteer: string;
   Website: string;
   Article: string;
-} = {
+}
+export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
   SoftwareApp: "Published software",
   SoftwareLib: "Published software (library, component)",
   Patch: "Contributed software patch",
@@ -20,6 +21,17 @@ export const ActivityTypeNameMap: {
   Publication: "Published book",
   Website: "Published website",
   Article: "Published article",
+};
+
+export const ActivityTypeSVGIconMap: IActivityTypeNameStringMap = {
+  SoftwareApp: "package",
+  SoftwareLib: "settings",
+  Patch: "file-diff",
+  Work: "briefcase",
+  Volunteer: "heart",
+  Publication: "book",
+  Website: "browser",
+  Article: "news",
 };
 
 export const ActivityTypeColors: {
