@@ -19,9 +19,13 @@ This time we're using typescript and wiring-in webpack from the ground up.
 
 ## Status
 
-- React: 🟡 In-progress (https://cv-react-v2.git-pull.com, [packages/react/][])
-- Angular: ❌ Unstarted (https://cv-angular-v2.git-pull.com, [packages/angular/][])
-- Vue: ❌ Unstarted (https://cv-vue-v2.git-pull.com, [packages/vue/][])
+| Package     | Source                | Website                            | Status         |
+| ----------- | --------------------- | ---------------------------------- | -------------- |
+| React       | [packages/react/][]   | https://cv-react-v2.git-pull.com   | 🟡 In-progress |
+| Vue         | [packages/vue/][]     | https://cv-vue-v2.git-pull.com     | ❌ Unstarted   |
+| Angular     | [packages/angular/][] | https://cv-angular-v2.git-pull.com | ❌ Unstarted   |
+| Common code | [packages/lib/][]     | N/A                                | 🟡 In-progress |
+| Scripts     | [packages/data/][]    | N/A                                | ✔️ Stable      |
 
 ## Quickstart
 
