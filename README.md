@@ -19,9 +19,9 @@ This time we're using typescript and wiring-in webpack from the ground up.
 
 ## Status
 
-- React: 🟡 In-progress (https://cv-react-v2.git-pull.com)
-- Angular: ❌ Unstarted (https://cv-angular-v2.git-pull.com)
-- Vue: ❌ Unstarted (https://cv-vue-v2.git-pull.com)
+- React: 🟡 In-progress (https://cv-react-v2.git-pull.com, [packages/react/][])
+- Angular: ❌ Unstarted (https://cv-angular-v2.git-pull.com, [packages/angular/][])
+- Vue: ❌ Unstarted (https://cv-vue-v2.git-pull.com, [packages/vue/][])
 
 ## Quickstart
 
@@ -126,10 +126,7 @@ yarn workspaces run lint
 
 ## Structure
 
-- New framework: Angular
-
-  I can't find a way to get building/linting [lib/] working without having these here and/or in
-  `packages/lib/`. I'm looking for clean workarounds for this that don't involve unnecessary duplication.
+- [packages/angular/][]: Angular
 
 - [packages/vue/][]: [Vue.js] version
 
@@ -160,6 +157,7 @@ yarn workspaces run lint
 
   [packages/lib/]: packages/lib/
   [packages/vue/]: packages/vue/
+  [packages/angular/]: packages/angular/
   [vue.js]: https://vuejs.org/
   [packages/react/]: packages/react/
   [react]: https://reactjs.org/
