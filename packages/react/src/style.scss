@@ -99,3 +99,16 @@ a {
   gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
+
+.chartRow {
+  padding-bottom: 1rem;
+  display: flex;
+  height: 25rem;
+  // &--donut {
+  //   width: 300px;
+  // }
+  &--line {
+    flex-grow: 1;
+    width: 100%;
+  }
+}

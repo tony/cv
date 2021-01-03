@@ -297,6 +297,11 @@ const App: React.FC = () => {
         Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
       </div>
 
+      <div className="chartRow">
+        <div className="chartRow--donut"></div>
+        <div className="chartRow--line"></div>
+      </div>
+
       {results.activities &&
         results.activities.map((activity, idx) => {
           const org = orgsQuery.getEntity(activity.orgId);
