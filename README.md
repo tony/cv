@@ -80,7 +80,7 @@ yarn build
 Lint project
 
 ```bash
-lint
+yarn lint
 ```
 
 Package updates (requires [ncu]):
@@ -158,14 +158,14 @@ yarn workspaces run lint
       format as _my_activities.json_, combined.
     - _gh_actors.json_: GitHub Repos. Same schema as _my_actors.json_), combined.
 
-  [lib/]: lib/
-  [vue/]: vue/
+  [packages/lib/]: packages/lib/
+  [packages/vue/]: packages/vue/
   [vue.js]: https://vuejs.org/
-  [react/]: react/
+  [packages/react/]: packages/react/
   [react]: https://reactjs.org/
   [es2015 class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
-  [scripts/]: scripts/
-  [data/]: data/
+  [packages/scripts/]: packages/scripts/
+  [packages/data/]: packages/data/
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
 
