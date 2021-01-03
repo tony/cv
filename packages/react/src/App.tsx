@@ -17,8 +17,14 @@ import {
   languagesStore,
   languagesQuery,
 } from "@tony/cv-lib/hub";
-import { difference } from "@tony/cv-lib/utils";
-import type { ActivityCount, LanguageCount } from "@tony/cv-lib/search/query";
+import type {
+  ActivityCount,
+  LanguageCount,
+  DonutChartProps,
+  LineChartProps,
+  Results as ReducerState,
+} from "@tony/cv-lib/search/query";
+import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
@@ -34,20 +40,6 @@ import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 
 import "./style.scss";
 
-interface ReducerState {
-  activities: IActivity[];
-  languages: Language[];
-
-  // Counts
-  languageCount: LanguageCount;
-  activityCount: ActivityCount;
-
-  // UX
-  ui: {
-    isLoading: boolean;
-  };
-}
-
 enum ActionType {
   SetResults,
   IsLoading,
@@ -62,6 +54,10 @@ type Action =
       // Counts
       activityCount?: ActivityCount;
       languageCount?: LanguageCount;
+
+      // Charts
+      donutChart: DonutChartProps;
+      lineChart: LineChartProps;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 
@@ -87,33 +83,16 @@ const reducer = (state: ReducerState, action: Action) => {
   }
 };
 
-const DEFAULT_STORE: ReducerState = {
-  activities: [],
-  languages: [],
-
-  // Counts
-  languageCount: {},
-  activityCount: {},
-  ui: { isLoading: false },
-};
-
 const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
 };
 
 const App: React.FC = () => {
-  const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
+  const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
 
   useAsyncEffect(async () => {
     const data = await fetchData();
-    if (
-      !data.languages ||
-      !!Object.keys(orgsStore.getValue().entities ?? {}).length ||
-      !!Object.keys(activitiesStore.getValue().entities ?? {}).length
-    ) {
-      if (activitiesStore.getValue().ui.isLoading) {
-        activitiesStore.setLoading(false);
-      }
+    if (Object.keys(activitiesStore.getValue().entities ?? {}).length) {
       return void 0;
     }
 
@@ -122,8 +101,14 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
+
+        // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
         activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
+
+        // Charts
+        donutChart: (await query.getDonutChart()) as DonutChartProps,
+        lineChart: (await query.getLineChart()) as LineChartProps,
       });
     }
     return void 0;
@@ -131,67 +116,16 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
-      onEmit<IActivity[]>(query.visibleActivities$(), (newValue) => {
-        const isChanged = !equal(newValue, results.activities);
-        console.log("results updated", newValue, { isChanged });
+      onEmit<ReducerState>(query.subResults$(), (newResults) => {
+        const isChanged = !equal(newResults, results);
+        console.log("results published", newResults, results, { isChanged });
 
         if (isChanged) {
           dispatch({
             type: ActionType.SetResults,
-            activities: newValue,
+            ...newResults,
           });
         }
-      }),
-      onEmit<Language[]>(query.visibleLanguages$(), (newValue) => {
-        const isChanged = !equal(newValue, results.languages);
-        console.log("languages updated", newValue, results, { isChanged });
-
-        if (isChanged) {
-          dispatch({
-            type: ActionType.SetResults,
-            languages: newValue,
-          });
-        }
-      }),
-      onEmit<LanguageCount>(query.visibleLanguageCount$(), (newValue) => {
-        const isChanged = !equal(newValue, results.languageCount);
-        console.log(
-          "language counts updated",
-          newValue,
-          results.languageCount,
-          { isChanged }
-        );
-
-        if (isChanged) {
-          dispatch({
-            type: ActionType.SetResults,
-            languageCount: newValue,
-          });
-        }
-      }),
-      onEmit<ActivityCount>(query.visibleActivityYearCount$(), (newValue) => {
-        const isChanged = !equal(newValue, results.activityCount);
-        console.log(
-          "activity year count updated",
-          newValue,
-          results.activityCount,
-          { isChanged }
-        );
-
-        if (isChanged) {
-          dispatch({
-            type: ActionType.SetResults,
-            activityCount: newValue,
-          });
-        }
-      }),
-      onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
-        console.log("isLoading", isLoading);
-
-        dispatch({
-          type: ActionType.IsLoading,
-          isLoading,
-        });
       }),
     ];
 

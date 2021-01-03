@@ -7,6 +7,7 @@ import {
   Order,
 } from "@datorama/akita";
 import { map, take } from "rxjs/operators";
+import { of } from "rxjs";
 import type { Observable } from "rxjs";
 import moment from "moment";
 
@@ -33,13 +34,42 @@ import { hasAny } from "../utils";
 export type LanguageCount = Record<LanguageName, number>;
 export type ActivityCount = Record<string, number>;
 
-interface CVCount {
-  activities: number;
-  languages: number;
-  orgTypes: number;
-  orgs: number;
-  activityTypes: number;
+export type DonutChartProps = Record<string, never>;
+export type LineChartProps = Record<string, never>;
+
+export interface Results {
+  activities: IActivity[];
+  languages: Language[];
+
+  // Counts
+  languageCount: LanguageCount;
+  activityCount: ActivityCount;
+
+  // Charts
+  donutChart: DonutChartProps;
+  lineChart: LineChartProps;
+
+  // UX
+  ui: {
+    isLoading: boolean;
+  };
 }
+
+export const DEFAULT_RESULTS: Results = {
+  activities: [],
+  languages: [],
+
+  // Counts
+  languageCount: {},
+  activityCount: {},
+
+  // Charts
+  donutChart: {},
+  lineChart: {},
+
+  // UX
+  ui: { isLoading: false },
+};
 
 @QueryConfig({
   sortBy: "createdDate",
@@ -196,11 +226,8 @@ export class CVQuery extends Query<CVState> {
 
   visibleLanguages$(): Observable<Language[]> {
     /* Return available languages based on currently visible activities */
-    return combineQueries([
-      this.visibleActivities$(),
-      this.languagesQuery.selectAll(),
-    ]).pipe(
-      map(([visibleActivities, languages]) => {
+    return this.visibleActivities$().pipe(
+      map((visibleActivities) => {
         const a = visibleActivities;
         if (!visibleActivities.length) {
           // If no filters selected, return all activities
@@ -221,9 +248,9 @@ export class CVQuery extends Query<CVState> {
               .flat()
           )
         ).filter(Boolean);
-        return languages.filter((language) =>
-          languageNames.includes(language.id)
-        );
+        return this.languagesQuery
+          .getAll()
+          .filter((language) => languageNames.includes(language.id));
       })
     );
   }
@@ -314,23 +341,65 @@ export class CVQuery extends Query<CVState> {
     return this.visibleLanguageCount$().pipe(take(1)).toPromise();
   }
 
-  // $$queries.CV.countAll$().forEach((count) => console.log(count))
-  countAll$(): Observable<CVCount> {
-    return combineQueries([this.visibleActivities$()]).pipe(
-      map(([visibleActivities]) => {
-        return {
-          activities: visibleActivities.length,
-          languages: 0,
-          orgTypes: 0,
-          orgs: 0,
-          activityTypes: 0,
-        };
-      })
+  //
+  // Chart
+  //
+  subDonutChart$(): Observable<DonutChartProps> {
+    return of({});
+  }
+
+  // await $queries.CV.getDonutChart()
+  getDonutChart(): Promise<DonutChartProps> {
+    return this.subDonutChart$().pipe(take(1)).toPromise();
+  }
+
+  subLineChart$(): Observable<LineChartProps> {
+    return of({});
+  }
+
+  // await $queries.CV.getLineChart()
+  getLineChart(): Promise<LineChartProps> {
+    return this.subLineChart$().pipe(take(1)).toPromise();
+  }
+
+  subResults$(): Observable<Results> {
+    // return DEFAULT_RESULTS;
+    return combineQueries([
+      this.visibleActivities$(),
+      this.visibleLanguages$(),
+      this.visibleLanguageCount$(),
+      this.visibleActivityYearCount$(),
+      this.subLineChart$(),
+      this.subDonutChart$(),
+      this.activitiesQuery.selectLoading(),
+    ]).pipe(
+      map(
+        ([
+          activities,
+          languages,
+          languageCount,
+          activityCount,
+          lineChart,
+          donutChart,
+          isLoading,
+        ]) => {
+          return {
+            ...DEFAULT_RESULTS,
+            activities,
+            languages,
+            languageCount,
+            activityCount,
+            donutChart,
+            lineChart,
+            ui: { isLoading },
+          };
+        }
+      )
     );
   }
 
-  // await $$queries.CV.getCountAll()
-  getCountAll(): Promise<CVCount> {
-    return this.countAll$().pipe(take(1)).toPromise();
+  // await $queries.CV.getResults()
+  getResults(): Promise<Results> {
+    return this.subResults$().pipe(take(1)).toPromise();
   }
 }
