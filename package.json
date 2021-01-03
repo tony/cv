@@ -2,6 +2,7 @@
   "license": "All rights reserved",
   "private": true,
   "scripts": {
+    "preinstall": "yarn workspace @tony/cv-data preinstall",
     "build": "yarn workspaces run build",
     "clean": "yarn workspaces run clean",
     "distclean": "yarn workspaces run distclean",

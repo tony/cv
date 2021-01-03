@@ -4,6 +4,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
+    "preinstall": "cp --no-clobber placeholder/* scraped/ || true",
     "github-colors": "curl https://raw.githubusercontent.com/IonicaBizau/github-colors/master/lib/colors.json -o gh_colors.json",
     "lint": "echo 'NOOP'",
     "test": "echo 'NOOP'",
