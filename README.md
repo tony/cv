@@ -4,8 +4,6 @@
 
 **Version 2 underway!**
 
-It's winter of 2020. I'm still very open-minded react and vue.js.
-
 ![image]
 
 Let's see what's the latest and greatest for both of these.
