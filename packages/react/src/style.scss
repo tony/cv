@@ -100,6 +100,12 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 
+.dropdownActivityTypeOption {
+  display: flex !important;
+  place-items: center;
+  line-height: 24px;
+}
+
 .chartRow {
   display: grid;
   grid-template-columns: 400px 1fr;

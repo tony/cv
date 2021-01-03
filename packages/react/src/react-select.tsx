@@ -6,10 +6,17 @@ import type { StylesConfig, OptionProps, OptionsType } from "react-select";
 
 import chroma from "chroma-js";
 
-import { languagesQuery, orgsQuery, query } from "@tony/cv-lib/hub";
+import {
+  activityTypesQuery,
+  languagesQuery,
+  orgsQuery,
+  query,
+} from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
+import { Colors } from "@tony/cv-lib/data/constants";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
+import { ActivityTypeIcon } from "./Icons";
 
 // export type ISelectOption = Pick<OptionProps<any, any>, "label" | "value">;
 
@@ -163,4 +170,29 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
       ":hover": highlightStyle,
     };
   },
+};
+
+export const ActivityTypeOption: React.FC<
+  OptionProps<IOptionType, boolean>
+> = ({ children, ...props }) => {
+  const activityType = activityTypesQuery.getEntity(props.data?.value);
+  if (!activityType) {
+    console.warn(`activityType ${props?.data?.value} could not be found`);
+    return null;
+  }
+  return (
+    <ReactSelectComponents.Option
+      {...props}
+      className="dropdownActivityTypeOption"
+    >
+      {activityType.id && (
+        <ActivityTypeIcon
+          activityTypeId={activityType.id}
+          style={{ paddingRight: ".25rem" }}
+          color={Colors["gray.500"]}
+        />
+      )}
+      {children}
+    </ReactSelectComponents.Option>
+  );
 };
