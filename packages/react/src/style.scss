@@ -101,14 +101,31 @@ a {
 }
 
 .chartRow {
-  padding-bottom: 1rem;
-  display: flex;
-  max-height: 25rem;
-  // &--donut {
-  //   width: 300px;
-  // }
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 400px;
+  grid-auto-rows: 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: minmax(250px, 33%) auto;
+    grid-template-rows: 300px;
+    &--donut,
+    &--line {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-rows: 400px;
+    &--line {
+      height: 400px;
+    }
+  }
   &--line {
-    flex-grow: 1;
     width: 100%;
   }
 }
