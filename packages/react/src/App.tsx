@@ -252,6 +252,12 @@ const App: React.FC = () => {
   return (
     <div>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
+
+      <div className="chartRow">
+        <div className="chartRow--donut"></div>
+        <div className="chartRow--line"></div>
+      </div>
+
       <div className="dropdownRow">
         <Select
           options={getSelectOptions(
@@ -295,11 +301,6 @@ const App: React.FC = () => {
 
       <div className="resultsMessage">
         Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
-      </div>
-
-      <div className="chartRow">
-        <div className="chartRow--donut"></div>
-        <div className="chartRow--line"></div>
       </div>
 
       {results.activities &&

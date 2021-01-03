@@ -103,7 +103,7 @@ a {
 .chartRow {
   padding-bottom: 1rem;
   display: flex;
-  height: 25rem;
+  max-height: 25rem;
   // &--donut {
   //   width: 300px;
   // }
