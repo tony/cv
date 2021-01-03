@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
 import type { ValueType } from "react-select/src/types";
+import equal from "fast-deep-equal";
 
 import type { IActivity, Language } from "@tony/cv-lib/data/types";
 import {
@@ -130,76 +131,63 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
-      onEmit<IActivity[]>(query.visibleActivities$(), (resultsUpdated) => {
-        console.log("results updated", resultsUpdated);
+      onEmit<IActivity[]>(query.visibleActivities$(), (newValue) => {
+        const isChanged = !equal(newValue, results.activities);
+        console.log("results updated", newValue, { isChanged });
 
-        if (
-          resultsUpdated != results.activities &&
-          resultsUpdated.length != results.activities.length
-        ) {
+        if (isChanged) {
           dispatch({
             type: ActionType.SetResults,
-            activities: resultsUpdated,
+            activities: newValue,
           });
         }
       }),
-      onEmit<Language[]>(query.visibleLanguages$(), (languagesUpdated) => {
-        console.log("languages updated", languagesUpdated, results);
+      onEmit<Language[]>(query.visibleLanguages$(), (newValue) => {
+        const isChanged = !equal(newValue, results.languages);
+        console.log("languages updated", newValue, results, { isChanged });
 
-        if (
-          languagesUpdated != results.languages &&
-          languagesUpdated.length != results.languages.length
-        ) {
+        if (isChanged) {
           dispatch({
             type: ActionType.SetResults,
-            languages: languagesUpdated,
+            languages: newValue,
           });
         }
       }),
-      onEmit<LanguageCount>(
-        query.visibleLanguageCount$(),
-        (newLanguageCounts) => {
-          console.log(
-            "language counts updated",
-            newLanguageCounts,
-            results.languageCount
-          );
+      onEmit<LanguageCount>(query.visibleLanguageCount$(), (newValue) => {
+        const isChanged = !equal(newValue, results.languageCount);
+        console.log(
+          "language counts updated",
+          newValue,
+          results.languageCount,
+          { isChanged }
+        );
 
-          if (
-            difference(
-              new Set(Object.values(newLanguageCounts)),
-              new Set(Object.values(results.languageCount))
-            )
-          ) {
-            dispatch({
-              type: ActionType.SetResults,
-              languageCount: newLanguageCounts,
-            });
-          }
+        if (isChanged) {
+          dispatch({
+            type: ActionType.SetResults,
+            languageCount: newValue,
+          });
         }
-      ),
+      }),
       onEmit<ActivityCount>(query.visibleActivityYearCount$(), (newValue) => {
+        const isChanged = !equal(newValue, results.activityCount);
         console.log(
           "activity year count updated",
           newValue,
-          results.activityCount
+          results.activityCount,
+          { isChanged }
         );
 
-        if (
-          difference(
-            new Set(Object.values(newValue)),
-            new Set(Object.values(results.activityCount))
-          )
-        ) {
+        if (isChanged) {
           dispatch({
             type: ActionType.SetResults,
             activityCount: newValue,
           });
         }
       }),
-
       onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
         console.log("isLoading", isLoading);
+
         dispatch({
           type: ActionType.IsLoading,
           isLoading,
