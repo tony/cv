@@ -71,7 +71,7 @@ export interface Language extends IThemeable {
 export type OrgName = string;
 
 export interface IOrg {
-  id: number;
+  id: string;
   orgType: OrgTypeName;
   name: OrgName;
   url?: string;

@@ -154,7 +154,7 @@ const App: React.FC = () => {
   const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
     console.log("onOrgChange", value);
     if (value) {
-      orgsStore.setActive((value as IOptionType[]).map(({ label }) => label));
+      orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
     } else {
       orgsStore.setActive([]);
     }
@@ -206,6 +206,7 @@ const App: React.FC = () => {
           className="react-select"
           placeholder="Event type"
         />
+
         <Select
           options={
             orgsQuery.getAll().map((org) => ({

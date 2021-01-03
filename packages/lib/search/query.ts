@@ -182,7 +182,7 @@ export class CVQuery extends Query<CVState> {
         return language.id;
       }),
       this.orgsQuery.selectActive((org) => {
-        return org.name;
+        return org.id;
       }),
       this.activityTypesQuery.selectActive((activityType) => {
         return activityType.id;
