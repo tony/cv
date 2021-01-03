@@ -15,65 +15,127 @@ This time we're using typescript and wiring-in webpack from the ground up.
 [v1 branch]: https://github.com/tony/cv/tree/v1
 [react cv]: https://cv.git-pull.com
 [vue.js cv]: https://cv-vue.git-pull.com
-[image]: lib/assets/architecture.png
+[image]: packages/lib/assets/architecture.png
+
+## Status
+
+- React: 🟡 In-progress (https://cv-react-v2.git-pull.com)
+- Angular: ❌ Unstarted (https://cv-angular-v2.git-pull.com)
+- Vue: ❌ Unstarted (https://cv-vue-v2.git-pull.com)
 
 ## Quickstart
 
-_Required:_ Create a [GitHub Personal Access Token] and set it in env, ideally _.bashrc_ / _.zshrc_
-/ etc. via `export GITHUB_API_TOKEN=INSERT_TOKEN_HERE`. Check `env | grep GITHUB_API` to verify
-terminal has the variable set.
-
 ```bash
-$ yarn global add @angular/cli  # If building angular
-
-$ make install  # Install root deps
-
-$ yarn github  # Assure GITHUB_API_TOKEN is set
-
-$ cd vue/  # or
-$ cd react/
-
-# Inside either angular/vue/react
 $ yarn
 
-# and
-$ yarn start  # Launch dev server / hot reloading
-# or
+# Optional: Sync GitHub contributions to data/scraped/
+$ yarn github  # Assure GITHUB_API_TOKEN is set
+
+# React
+$ cd packages/react/
+$ yarn start
+
+# Vue
+$ cd packages/vue/
+$ yarn start
+
+# Angular
+$ cd packages/angular/
+$ yarn global add @angular/cli
+$ yarn start
+
+# inside any of the 3, to build:
 $ yarn build  # Build to dist/
 ```
 
+### Optional: Pull GitHub contributions
+
+This isn't required as stub data preexists in `packages/data/scraped`.
+
+Create a [GitHub Personal Access Token] and set it in env, ideally _.bashrc_ / _.zshrc_
+/ etc. via `export GITHUB_API_TOKEN=INSERT_TOKEN_HERE`. Check `env | grep GITHUB_API` to verify
+terminal has the variable set.
+
+Edit your username in `packages/scripts/github.ts` and run `yarn github` in the
+project root.
+
 [github personal access token]: https://github.com/settings/tokens
 
-## Make tasks
+## Project specific tasks
 
-Common tasks across 3 projects (+1 if you include root scripts) are the in [Makefile][]:
+#### react, vue, angular
+
+Start dev server / live reload:
 
 ```bash
-$ make clean  # deletes typescript, yarn cache, node_modules/ in all projects
-$ make distclean  # removes dist/ in all projects
-$ make install  # runs yarn install for all projects
-$ make yarn_outdated # runs yarn outdated for all projects
-$ make yarn_update  # runs yarn update for all projects
+yarn start
 ```
 
-[makefile]: Makefile
+Build to `dist/`:
+
+```bash
+yarn build
+```
+
+Lint project
+
+```bash
+lint
+```
+
+Package updates (requires [ncu]):
+
+```bash
+yarn ncu
+
+# Apply package updates to `package.json`
+yarn ncu -u
+```
+
+[ncu]: https://www.npmjs.com/package/npm-check-updates
+
+#### data
+
+Download latest github color mapping:
+
+```bash
+$ yarn workspace @tony/cv-data run github-colors
+```
+
+#### lib
+
+Run jest tests
+
+```bash
+yarn workspace @tony/cv-lib run jest
+```
+
+## Global tasks
+
+Install all packages:
+
+```bash
+$ yarn
+```
+
+Lint all packages:
+
+```bash
+yarn workspaces run lint
+```
 
 ## Structure
 
 - New framework: Angular
 
-  Excuse to try it for the first time. Very friendly toward typescript and mature.
-
-- `tslint.json`/`tsconfig.json`/`package.json` in root and/or `lib/`
-
   I can't find a way to get building/linting [lib/] working without having these here and/or in
-  `lib/`. I'm looking for clean workarounds for this that don't involve unnecessary duplication.
+  `packages/lib/`. I'm looking for clean workarounds for this that don't involve unnecessary duplication.
 
-- [vue/][]: [Vue.js] version
+- [packages/vue/][]: [Vue.js] version
 
-- [react/][]: [React] version
+- [packages/react/][]: [React] version
 
-- [lib/][]: Common code (reducers/filters code, initial data collections)
+- [packages/lib/][]: Common code (reducers/filters code, initial data collections)
 
   `lib/search.ts` - Search manager for filtering / faceting state. Each application uses this to
   hold raw state (of all activities, places), current filters, and filters/items available with
@@ -85,12 +147,9 @@ $ make yarn_update  # runs yarn update for all projects
 
   It has write inherent write protection and safety as it's just an ordinary [ES2015 class]
 
-  `lib/types.ts` - Typing for data mappings used across the three apps `lib/data/raw.ts` - Raw
-  data imported via JSON + typed
+- [packages/scripts/][]: GitHub Scraper
 
-- [scripts/][]: GitHub Scraper
-
-- [data/][]: initial data
+- [packages/data/][]: initial data
 
   - _my_actors.json_: [Actors] noun, person, place, thing, etc.
   - _my_activities.json_: [Activities] verb, action, event, happening in relation to an _actor_
@@ -151,7 +210,7 @@ $ make yarn_update  # runs yarn update for all projects
 
 ## Thanks
 
-[@IonicaBizao/github-colors] - For `data/gh_colors.json` (via `yarn github-colors.json`), [license
+[@IonicaBizao/github-colors] - For `data/gh_colors.json` (via `yarn workspace @tony/cv-data run github-colors`), [license
 MIT]
 
 [@ionicabizao/github-colors]: https://github.com/IonicaBizau/github-colors

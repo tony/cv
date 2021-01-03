@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
 import type { ValueType } from "react-select/src/types";
+import equal from "fast-deep-equal";
 
 import type { IActivity, Language } from "@tony/cv-lib/data/types";
 import {
@@ -16,8 +17,14 @@ import {
   languagesStore,
   languagesQuery,
 } from "@tony/cv-lib/hub";
-import { difference } from "@tony/cv-lib/utils";
-import type { ActivityCount, LanguageCount } from "@tony/cv-lib/search/query";
+import type {
+  ActivityCount,
+  LanguageCount,
+  DonutChartProps,
+  LineChartProps,
+  Results as ReducerState,
+} from "@tony/cv-lib/search/query";
+import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
@@ -33,20 +40,6 @@ import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 
 import "./style.scss";
 
-interface ReducerState {
-  activities: IActivity[];
-  languages: Language[];
-
-  // Counts
-  languageCount: LanguageCount;
-  activityCount: ActivityCount;
-
-  // UX
-  ui: {
-    isLoading: boolean;
-  };
-}
-
 enum ActionType {
   SetResults,
   IsLoading,
@@ -61,6 +54,10 @@ type Action =
       // Counts
       activityCount?: ActivityCount;
       languageCount?: LanguageCount;
+
+      // Charts
+      donutChart: DonutChartProps;
+      lineChart: LineChartProps;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 
@@ -86,33 +83,16 @@ const reducer = (state: ReducerState, action: Action) => {
   }
 };
 
-const DEFAULT_STORE: ReducerState = {
-  activities: [],
-  languages: [],
-
-  // Counts
-  languageCount: {},
-  activityCount: {},
-  ui: { isLoading: false },
-};
-
 const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
 };
 
 const App: React.FC = () => {
-  const [results, dispatch] = React.useReducer(reducer, DEFAULT_STORE);
+  const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
 
   useAsyncEffect(async () => {
     const data = await fetchData();
-    if (
-      !data.languages ||
-      !!Object.keys(orgsStore.getValue().entities ?? {}).length ||
-      !!Object.keys(activitiesStore.getValue().entities ?? {}).length
-    ) {
-      if (activitiesStore.getValue().ui.isLoading) {
-        activitiesStore.setLoading(false);
-      }
+    if (Object.keys(activitiesStore.getValue().entities ?? {}).length) {
       return void 0;
     }
 
@@ -121,8 +101,14 @@ const App: React.FC = () => {
       dispatch({
         type: ActionType.SetResults,
         activities: activitiesQuery.getAll() as IActivity[],
+
+        // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
         activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
+
+        // Charts
+        donutChart: (await query.getDonutChart()) as DonutChartProps,
+        lineChart: (await query.getLineChart()) as LineChartProps,
       });
     }
     return void 0;
@@ -130,80 +116,16 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
-      onEmit<IActivity[]>(query.visibleActivities$(), (resultsUpdated) => {
-        console.log("results updated", resultsUpdated);
+      onEmit<ReducerState>(query.subResults$(), (newResults) => {
+        const isChanged = !equal(newResults, results);
+        console.log("results published", newResults, results, { isChanged });
 
-        if (
-          resultsUpdated != results.activities &&
-          resultsUpdated.length != results.activities.length
-        ) {
+        if (isChanged) {
           dispatch({
             type: ActionType.SetResults,
-            activities: resultsUpdated,
+            ...newResults,
           });
         }
-      }),
-      onEmit<Language[]>(query.visibleLanguages$(), (languagesUpdated) => {
-        console.log("languages updated", languagesUpdated, results);
-
-        if (
-          languagesUpdated != results.languages &&
-          languagesUpdated.length != results.languages.length
-        ) {
-          dispatch({
-            type: ActionType.SetResults,
-            languages: languagesUpdated,
-          });
-        }
-      }),
-      onEmit<LanguageCount>(
-        query.visibleLanguageCount$(),
-        (newLanguageCounts) => {
-          console.log(
-            "language counts updated",
-            newLanguageCounts,
-            results.languageCount
-          );
-
-          if (
-            difference(
-              new Set(Object.values(newLanguageCounts)),
-              new Set(Object.values(results.languageCount))
-            )
-          ) {
-            dispatch({
-              type: ActionType.SetResults,
-              languageCount: newLanguageCounts,
-            });
-          }
-        }
-      ),
-      onEmit<ActivityCount>(query.visibleActivityYearCount$(), (newValue) => {
-        console.log(
-          "activity year count updated",
-          newValue,
-          results.activityCount
-        );
-
-        if (
-          difference(
-            new Set(Object.values(newValue)),
-            new Set(Object.values(results.activityCount))
-          )
-        ) {
-          dispatch({
-            type: ActionType.SetResults,
-            activityCount: newValue,
-          });
-        }
-      }),
-
-      onEmit<boolean>(activitiesQuery.selectLoading$(), (isLoading) => {
-        console.log("isLoading", isLoading);
-        dispatch({
-          type: ActionType.IsLoading,
-          isLoading,
-        });
       }),
     ];
 
