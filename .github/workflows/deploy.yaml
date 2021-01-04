@@ -43,6 +43,7 @@ jobs:
     - name: Installing dependencies
       run: yarn install --frozen-lockfile
     - name: pull gh repos
+      if: env.PUBLISH == 'true'
       run: |
         env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
     - name: react
@@ -58,6 +59,7 @@ jobs:
         cd packages/angular
         yarn build --prod
     - name: push to s3 (react)
+      if: env.PUBLISH == 'true'
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
@@ -67,6 +69,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SOURCE_DIR: 'packages/react/dist/'
     - name: push to s3 (vue)
+      if: env.PUBLISH == 'true'
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
@@ -76,6 +79,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SOURCE_DIR: 'packages/vue/dist/'
     - name: push to s3 (angular)
+      if: env.PUBLISH == 'true'
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
