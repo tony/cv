@@ -39,7 +39,6 @@ export const ActivityTypeIcon: React.FC<
     activityTypeId: ActivityTypeName;
   }
 > = ({ activityTypeId, ...props }) => {
-  console.log({ activityTypeId });
   const Icon = activityTypeNameToIcon[activityTypeId];
   return <Icon {...props} />;
 };
