@@ -34,43 +34,6 @@ export const ActivityTypeSVGIconMap: IActivityTypeNameStringMap = {
   Article: "news",
 };
 
-export const ActivityTypeColors: {
-  // [key: ActivityTypeName]: string;
-  SoftwareApp: CSS.Properties;
-  SoftwareLib: CSS.Properties;
-  Patch: CSS.Properties;
-  Work: CSS.Properties;
-  Publication: CSS.Properties;
-  Volunteer: CSS.Properties;
-  Website: CSS.Properties;
-  Article: CSS.Properties;
-} = {
-  SoftwareApp: {
-    color: "#f1f8ff", // blue
-  },
-  SoftwareLib: {
-    color: "#f1f8ff", // blue
-  },
-  Patch: {
-    color: "#f1f8ff", // blue
-  },
-  Work: {
-    color: "#f1f8ff", // blue
-  },
-  Publication: {
-    color: "#f1f8ff", // blue
-  },
-  Volunteer: {
-    color: "#f1f8ff", // blue
-  },
-  Website: {
-    color: "#f1f8ff", // blue
-  },
-  Article: {
-    color: "#f1f8ff", // blue
-  },
-};
-
 // Thanks @primer/css, license MIT
 // https://github.com/primer/css/blob/cdaaba6/src/support/variables/color-system.scss
 export const ColorsBase: {
@@ -240,6 +203,68 @@ export const OrgTypeColors: {
     borderStyle: "solid",
     borderWidth: "1px",
     color: Colors["blue.500"],
+  },
+};
+
+export const ActivityTypeColors: {
+  // [key: ActivityTypeName]: string;
+  SoftwareApp: CSS.Properties;
+  SoftwareLib: CSS.Properties;
+  Patch: CSS.Properties;
+  Work: CSS.Properties;
+  Publication: CSS.Properties;
+  Volunteer: CSS.Properties;
+  Website: CSS.Properties;
+  Article: CSS.Properties;
+} = {
+  SoftwareApp: {
+    backgroundColor: Colors["gray.300"],
+    borderStyle: "none",
+    borderWidth: 0,
+    color: Colors["gray.800"],
+  },
+  SoftwareLib: {
+    backgroundColor: Colors["gray.200"],
+    borderStyle: "none",
+    borderWidth: 0,
+    color: Colors["gray.:00"],
+  },
+  Patch: {
+    backgroundColor: "#f5f5f5",
+    borderColor: Colors["gray.300"],
+    borderStyle: "none",
+    borderWidth: "0",
+    color: Colors["gray.500"],
+  },
+  Work: {
+    backgroundColor: Colors["blue.300"],
+    borderStyle: "none",
+    borderWidth: 0,
+    color: Colors["white"],
+  },
+  Publication: {
+    backgroundColor: Colors["green.400"],
+    borderStyle: "none",
+    borderWidth: "0",
+    color: Colors["gray.800"],
+  },
+  Volunteer: {
+    backgroundColor: Colors["red.300"],
+    borderStyle: "none",
+    borderWidth: "0",
+    color: Colors["white"],
+  },
+  Website: {
+    backgroundColor: Colors["orange.400"],
+    borderStyle: "none",
+    borderWidth: "0",
+    color: Colors["white"],
+  },
+  Article: {
+    backgroundColor: Colors["blue.200"],
+    borderStyle: "none",
+    borderWidth: "0",
+    color: Colors["black"],
   },
 };
 
