@@ -1,3 +1,5 @@
+import { applyTransaction } from "@datorama/akita";
+
 import { CVQuery } from "./search/query";
 import { CVService } from "./search/service";
 import {
@@ -68,12 +70,14 @@ export const loadStores = ({
   orgTypes: OrgType[];
   activityTypes: ActivityType[];
 }): void => {
-  activitiesStore.setLoading(true);
-  console.log("setting storage");
-  orgsStore.set(orgs);
-  orgTypesStore.set(orgTypes);
-  languagesStore.set(languages);
-  activityTypesStore.set(activityTypes);
-  activitiesStore.set(activities);
-  activitiesStore.setLoading(false);
+  applyTransaction(() => {
+    activitiesStore.setLoading(true);
+    console.log("setting storage");
+    orgsStore.set(orgs);
+    orgTypesStore.set(orgTypes);
+    languagesStore.set(languages);
+    activityTypesStore.set(activityTypes);
+    activitiesStore.set(activities);
+    activitiesStore.setLoading(false);
+  });
 };
