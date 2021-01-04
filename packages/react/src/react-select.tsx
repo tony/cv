@@ -172,6 +172,68 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
+export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
+  option: (styles: React.CSSProperties, { data, isFocused, isSelected }) => {
+    const activityType = activityTypesQuery.getEntity(data.value);
+    if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
+      return styles;
+    }
+    const backgroundColor = chroma(activityType.ui.backgroundColor)
+      .alpha(0.8)
+      .css();
+    const highlightStyle = {
+      backgroundColor,
+      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    };
+
+    return {
+      ...styles,
+      ...(isFocused || isSelected ? highlightStyle : {}),
+      "&:hover": highlightStyle,
+    };
+  },
+
+  multiValueLabel: (styles, { data }) => {
+    const activityType = activityTypesQuery.getEntity(data.value);
+    if (!activityType?.ui) {
+      return styles;
+    }
+    return {
+      ...styles,
+      borderBottomRightRadius: 0,
+      borderTopRightRadius: 0,
+      paddingRight: "4px",
+      display: "flex",
+      placeItems: "center",
+      fontSize: "85%",
+      ...activityType.ui,
+    };
+  },
+  multiValueRemove: (styles, { data = {} }) => {
+    const activityType = activityTypesQuery.getEntity(data.value);
+    if (!activityType?.ui?.backgroundColor) {
+      return styles;
+    }
+
+    const backgroundColor =
+      chroma(activityType.ui.backgroundColor).get("lab.l") > 80
+        ? chroma(activityType.ui.backgroundColor).brighten(0.2)
+        : chroma(activityType.ui.backgroundColor).brighten(0.4);
+    const highlightStyle = {
+      backgroundColor: backgroundColor.css(),
+      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    };
+
+    return {
+      ...styles,
+      borderBottomLeftRadius: 0,
+      borderTopLeftRadius: 0,
+      ...activityType.ui,
+      ":hover": highlightStyle,
+    };
+  },
+};
+
 export const ActivityTypeOption: React.FC<
   OptionProps<IOptionType, boolean>
 > = ({ children, ...props }) => {
@@ -206,10 +268,7 @@ export const ActivityMultiValueLabel: React.FC<
     return null;
   }
   return (
-    <ReactSelectComponents.MultiValueLabel
-      {...props}
-      innerProps={{ className: "dropdownActivityTypeMultiValueLabel" }}
-    >
+    <ReactSelectComponents.MultiValueLabel {...props}>
       <ActivityTypeIcon
         activityTypeId={activityType.id}
         style={{ paddingRight: ".25rem" }}

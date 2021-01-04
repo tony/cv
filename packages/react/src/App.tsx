@@ -29,6 +29,7 @@ import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
 import { ActivityCard } from "./Card";
 import {
   ActivityMultiValueLabel,
+  activityTypeStyles,
   getSelectOptions,
   languagesStyles,
   LanguageOption,
@@ -207,12 +208,12 @@ const App: React.FC = () => {
           onChange={onActivityTypeChange}
           className="react-select"
           placeholder="Event type"
+          styles={activityTypeStyles}
           components={{
             Option: ActivityTypeOption,
             MultiValueLabel: ActivityMultiValueLabel,
           }}
         />
-
         <Select
           options={
             orgsQuery.getAll().map((org) => ({
