@@ -196,3 +196,26 @@ export const ActivityTypeOption: React.FC<
     </ReactSelectComponents.Option>
   );
 };
+
+export const ActivityMultiValueLabel: React.FC<
+  OptionProps<IOptionType, boolean>
+> = ({ children, ...props }) => {
+  const activityType = activityTypesQuery.getEntity(props.data?.value);
+  if (!activityType) {
+    console.warn(`activityType ${props?.data?.value} could not be found`);
+    return null;
+  }
+  return (
+    <ReactSelectComponents.MultiValueLabel
+      {...props}
+      innerProps={{ className: "dropdownActivityTypeMultiValueLabel" }}
+    >
+      <ActivityTypeIcon
+        activityTypeId={activityType.id}
+        style={{ paddingRight: ".25rem" }}
+        color={Colors["gray.500"]}
+      />
+      {children}
+    </ReactSelectComponents.MultiValueLabel>
+  );
+};
