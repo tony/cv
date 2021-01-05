@@ -19,6 +19,23 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Extract Branch Name
       run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+    - name: Filter changed file paths to outputs
+      uses: dorny/paths-filter@v2.7.0
+      id: filter
+      with:
+        filters: |
+          root:
+            - package.json
+          lib:
+            - 'packages/lib/**'
+          data:
+            - 'packages/data/**'
+          angular:
+            - 'packages/angular/**'
+          vue:
+            - 'packages/vue/**'
+          react:
+            - 'packages/react/**'
     - name: Should publish
       # if: env.BRANCH == 'master'
       run: echo "PUBLISH=$(echo true)" >> $GITHUB_ENV
