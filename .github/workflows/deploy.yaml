@@ -37,7 +37,7 @@ jobs:
           react:
             - 'packages/react/**'
     - name: Should publish
-      # if: env.BRANCH == 'master'
+      if: steps.changes.outputs.angular == 'true' || steps.changes.outputs.react == 'true' || steps.changes.outputs.vue == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true'
       run: echo "PUBLISH=$(echo true)" >> $GITHUB_ENV
     - name: Set dest dir (branch)
       if: env.BRANCH != 'master'
@@ -68,25 +68,29 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: Installing dependencies
+      if: env.PUBLISH == 'true'
       run: yarn install --frozen-lockfile
     - name: pull gh repos
       if: env.PUBLISH == 'true'
       run: |
         env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
     - name: react
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.react == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       run: |
         cd packages/react
         yarn build
     - name: vue
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.vue == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       run: |
         cd packages/vue
         yarn build
     - name: angular
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.angular == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       run: |
         cd packages/angular
         yarn build --prod
     - name: push to s3 (react)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.react == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks
@@ -97,7 +101,7 @@ jobs:
         SOURCE_DIR: 'packages/react/dist/'
         DEST_DIR: ${{ env.AWS_S3_DEST_DIR }}
     - name: push to s3 (vue)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.vue == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
@@ -108,7 +112,7 @@ jobs:
         SOURCE_DIR: 'packages/vue/dist/'
         DEST_DIR: ${{ env.AWS_S3_DEST_DIR }}
     - name: push to s3 (angular)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.angular == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
@@ -119,7 +123,7 @@ jobs:
         SOURCE_DIR: 'packages/angular/dist/angular/'
         DEST_DIR: ${{ env.AWS_S3_DEST_DIR }}
     - name: Invalidate (react)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.react == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: chetan/invalidate-cloudfront-action@master
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_REACT_V2 }}
@@ -128,7 +132,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Invalidate (vue)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.vue == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: chetan/invalidate-cloudfront-action@master
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_VUE_V2 }}
@@ -137,7 +141,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Invalidate (angular)
-      if: env.PUBLISH == 'true'
+      if: env.PUBLISH == 'true' && (steps.changes.outputs.angular == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: chetan/invalidate-cloudfront-action@master
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ANGULAR_V2 }}
