@@ -135,6 +135,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     }),
     new HtmlWebpackPlugin({
       template: "../lib/assets/index.html",
+      favicon: "../data/img/favicon.ico",
       title: __TITLE__,
     }),
   ],
