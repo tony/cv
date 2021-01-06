@@ -43,12 +43,12 @@ jobs:
       if: env.BRANCH != 'master'
       run: |
         echo "AWS_S3_DEST_DIR=dev/branch/${{ env.BRANCH }}" >> $GITHUB_ENV
-        echo "AWS_CLOUDFRONT_INVALIDATION_PATHS=/dev/branch/${{ env.BRANCH }}/index.html" >> $GITHUB_ENV
+        echo "AWS_CLOUDFRONT_INVALIDATION_PATHS=/dev/branch/${{ env.BRANCH }}/ /dev/branch/${{ env.BRANCH }}/index.html" >> $GITHUB_ENV
     - name: Set dest dir (master)
       if: env.BRANCH == 'master'
       run: |
         echo "AWS_S3_DEST_DIR=" >> $GITHUB_ENV
-        echo "AWS_CLOUDFRONT_INVALIDATION_PATHS=/index.html" >> $GITHUB_ENV
+        echo "AWS_CLOUDFRONT_INVALIDATION_PATHS=/ /index.html" >> $GITHUB_ENV
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
