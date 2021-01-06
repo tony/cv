@@ -106,6 +106,18 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
       },
     ],
   },
+  cache: {
+    // 1. Set cache type to filesystem
+    type: "filesystem",
+
+    buildDependencies: {
+      // 2. Add your config as buildDependency to get cache invalidation on config change
+      config: [__filename],
+
+      // 3. If you have other things the build depends on you can add them here
+      // Note that webpack, loaders and all modules referenced from your config are automatically added
+    },
+  },
   optimization: {
     runtimeChunk: "single",
   },
