@@ -9,23 +9,29 @@ interface IWebpackEnv {
   devServerHost: string;
   devServerPort: string;
   open: boolean;
-  production: boolean;
   watch: boolean;
+
+  // Injected by webpack-cli
+  WEBPACK_SERVE: boolean;
+  WEBPACK_BUNDLE: boolean;
 }
 
 const defaultEnvironment: IWebpackEnv = {
   devServerHost: "localhost",
   devServerPort: "3099",
   open: false,
-  production: false,
   watch: false,
+
+  // Injected by webpack-cli
+  WEBPACK_SERVE: false,
+  WEBPACK_BUNDLE: false,
 };
 
 const __TITLE__ = "Tony Narlock's CV - React - v2 (WIP)";
 
 const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   context: projectRoot,
-  ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
+  ...(env.WEBPACK_SERVE
     ? {
         devServer: {
           contentBase: "./dist",
@@ -37,10 +43,10 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         },
       }
     : {}),
-  devtool: env.production ? "source-map" : "inline-source-map",
+  devtool: env.WEBPACK_BUNDLE ? "source-map" : "inline-source-map",
   entry: {
     cv: [
-      ...(process.argv.some((arg) => arg.includes("webpack-dev-server"))
+      ...(env.WEBPACK_SERVE
         ? [
             `webpack-dev-server/client?http://${env.devServerHost}:${env.devServerPort}`,
             "webpack/hot/dev-server",
@@ -49,7 +55,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
       "./src/entry.tsx",
     ],
   },
-  mode: env.production ? "production" : "development",
+  mode: env.WEBPACK_BUNDLE ? "production" : "development",
   module: {
     rules: [
       {
@@ -90,39 +96,12 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: "svg-url-loader",
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
+        type: "asset/inline",
       },
     ],
   },
   optimization: {
     runtimeChunk: "single",
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(mod) {
-            // get the name. E.g. node_modules/packageName/not/this/part.js
-            // or node_modules/packageName
-            const packageName = mod.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
-
-            // npm package names are URL-safe, but some servers don't like @ symbols
-            return `vendor.${packageName.replace("@", "")}`;
-          },
-        },
-      },
-      chunks: "all",
-      maxInitialRequests: Infinity,
-      minSize: 0,
-    },
   },
   output: {
     chunkFilename: "[name].[chunkhash].js",
