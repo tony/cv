@@ -80,15 +80,6 @@ a {
 
 }
 
-.activityCount {
-  text-align: right;
-  flex-grow: 1;
-
-  &:hover {
-    color: white;
-  }
-}
-
 .ml0 {
   margin-left: 0;
 }
@@ -114,6 +105,19 @@ a {
   grid-template-rows: 1fr;
   gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+  .activityCount, // On languages
+  .topicTags // on Tags
+  {
+    text-align: right;
+    flex-grow: 1;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+
 }
 
 .dropdownActivityTypeOption {

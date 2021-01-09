@@ -38,10 +38,10 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
 }) => {
   const org = orgsQuery.getEntity(props.data?.value);
   return (
-    <ReactSelectComponents.Option {...props}>
+    <ReactSelectComponents.Option {...props} className="df">
       {children}{" "}
       {org?.orgType && (
-        <>
+        <div className="topicTags">
           <OrgTypeTag
             orgTypeName={org.orgType}
             style={{
@@ -61,7 +61,7 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
               }}
             />
           ))}
-        </>
+        </div>
       )}
     </ReactSelectComponents.Option>
   );
