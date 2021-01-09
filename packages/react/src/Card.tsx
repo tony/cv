@@ -18,7 +18,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
         <div
           style={{
             display: "inline",
-            paddingRight: "0.5rem",
+            paddingRight: "0.75rem",
           }}
         >
           <a
