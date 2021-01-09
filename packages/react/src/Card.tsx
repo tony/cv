@@ -24,9 +24,9 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           Pull Request
         </a>
       )}
-      {activity?.diff_url && (
+      {activity?.diffUrl && (
         <a
-          href={activity.diff_url}
+          href={activity.diffUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="activity-link"
