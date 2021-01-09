@@ -42,7 +42,14 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
       {children}{" "}
       {org?.orgType && (
         <>
-          <OrgTypeTag orgTypeName={org.orgType}>{org.orgType}</OrgTypeTag>
+          <OrgTypeTag
+            orgTypeName={org.orgType}
+            style={{
+              marginLeft: "0.75rem",
+            }}
+          >
+            {org.orgType}
+          </OrgTypeTag>
 
           {org.languages.map((languageId) => (
             <LanguageTag

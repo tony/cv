@@ -82,7 +82,11 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     <div className="right-center"></div>
     <div className="left-bottom">
       {org?.languages?.map((languageName) => (
-        <LanguageTag languageName={languageName} key={languageName} />
+        <LanguageTag
+          languageName={languageName}
+          key={languageName}
+          style={{ display: "inline-flex" }}
+        />
       ))}
     </div>
     <div className="bottom-content">

@@ -51,7 +51,6 @@ a {
   letter-spacing: 0.07272727em;
   line-height: 1rem;
   padding: 0.5em 0.75em;
-  margin-left: 0.75rem;
 
   white-space: nowrap;
   -webkit-box-align: center;
@@ -168,7 +167,11 @@ a {
     margin-bottom: auto;
   }
 
-  .left-top, .left-center {
+  .left-top, .left-center, .left-bottom {
+    display: inline-grid;
+    padding-right: 0.5rem;
+  }
+  .left-top, .left-center { // Left cell padding
     padding-bottom: 0.5rem
   }
   .left-top {
@@ -177,8 +180,15 @@ a {
   .left-center {
     grid-area: left-center;
   }
-  .left-bottom {
+  .left-bottom {  // Languages
     grid-area: left-bottom;
+
+    .tag {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .top-content {
