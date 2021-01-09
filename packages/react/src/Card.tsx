@@ -15,7 +15,12 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
   return (
     <>
       {activity?.qaUrl && (
-        <div>
+        <div
+          style={{
+            display: "inline",
+            paddingRight: "0.5rem",
+          }}
+        >
           <a
             href={activity.qaUrl}
             target="_blank"
@@ -27,7 +32,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
         </div>
       )}
       {activity?.diffUrl && (
-        <div style={{ paddingTop: "0.5rem" }}>
+        <div style={{ paddingTop: "0.5rem", display: "inline" }}>
           <a
             href={activity.diffUrl}
             target="_blank"
@@ -73,16 +78,16 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     <div className="left-center">
       {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
     </div>
-    <div className="content">
-      <ActivityInfo activity={activity} org={org} />
-    </div>
+    <div className="content"></div>
     <div className="right-center"></div>
     <div className="left-bottom">
       {org?.languages?.map((languageName) => (
         <LanguageTag languageName={languageName} key={languageName} />
       ))}
     </div>
-    <div className="bottom-content"></div>
+    <div className="bottom-content">
+      <ActivityInfo activity={activity} org={org} />
+    </div>
     <div className="right-bottom"></div>
   </div>
 );
