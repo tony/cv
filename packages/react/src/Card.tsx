@@ -21,7 +21,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           rel="noopener noreferrer"
           className="activity-title"
         >
-          PR
+          Pull Request
         </a>
       )}
     </>
@@ -32,7 +32,7 @@ export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
-    <div style={{ paddingLeft: "1rem", flexGrow: 1 }}>
+    <div style={{ flexGrow: 1 }}>
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
@@ -44,19 +44,34 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
   activity,
   org,
 }) => (
-  <div className="card">
-    <div style={{ fontWeight: 600 }}>
-      <a href={org && org.url ? org.url : "#"} title={activity.title}>
-        {activity.title}
-      </a>
+  <div className="card cardGrid">
+    <div className="left-top"></div>
+    <div className="top-content">
+      <strong>
+        <a href={org && org.url ? org.url : "#"} title={activity.title}>
+          {activity.title}
+        </a>
+      </strong>
     </div>
-    <ActivityInfo activity={activity} org={org} />
+    <div className="right-top"></div>
+    <div className="left-center">
+      <ActivityInfo activity={activity} org={org} />
+    </div>
 
-    {org?.languages?.map((languageName) => (
-      <LanguageTag languageName={languageName} key={languageName} />
-    ))}
-    {org?.orgType && (
-      <OrgTypeTag orgTypeName={org.orgType} style={{ marginLeft: ".75rem" }} />
-    )}
+    <div className="content">Details</div>
+    <div className="right-center"></div>
+    <div className="left-bottom"></div>
+    <div className="bottom-content"></div>
+    <div className="right-bottom">
+      {org?.languages?.map((languageName) => (
+        <LanguageTag languageName={languageName} key={languageName} />
+      ))}
+      {org?.orgType && (
+        <OrgTypeTag
+          orgTypeName={org.orgType}
+          style={{ marginLeft: ".75rem" }}
+        />
+      )}
+    </div>
   </div>
 );

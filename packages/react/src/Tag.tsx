@@ -13,7 +13,7 @@ import type {
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
-> = ({ languageName, children, style = {}, ...props }) => {
+> = ({ languageName, children, className = "", style = {}, ...props }) => {
   if (!languageName) {
     return null;
   }
@@ -26,7 +26,7 @@ export const LanguageTag: React.FC<
 
   return (
     <div
-      className="tag fr"
+      className={`tag` + (className ? ` ${className}` : "")}
       style={{ ...(language?.ui ?? {}), ...style }}
       {...props}
     >

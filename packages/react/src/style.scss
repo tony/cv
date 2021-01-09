@@ -136,3 +136,48 @@ a {
     width: 100%;
   }
 }
+
+.cardGrid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "left-top top-content right-top"
+    "left-center content right-center"
+    "left-bottom bottom-content right-bottom";
+  grid-template-columns: 150px 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  .left-top {
+    grid-area: left-top;
+  }
+  .top-content {
+    grid-area: top-content;
+  }
+  .right-top {
+    grid-area: right-top;
+  }
+  .left-center {
+    grid-area: left-center;
+  }
+  .content {
+    grid-area: content;
+  }
+  .right-center {
+    grid-area: right-center;
+  }
+  .left-bottom {
+    grid-area: left-bottom;
+  }
+  .bottom-content {
+    grid-area: bottom-content;
+  }
+  .right-bottom {
+    grid-area: right-bottom;
+    text-align: right;
+  }
+}
+
+.container > div {
+  border: 1px dashed #888;
+}
