@@ -125,6 +125,10 @@ a {
 }
 
 .chartRow {
+  &.noCharts {
+    grid-template-rows: initial;
+  }
+
   display: grid;
   grid-template-columns: 400px 1fr;
   grid-template-rows: 400px;

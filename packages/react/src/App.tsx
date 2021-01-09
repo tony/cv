@@ -178,7 +178,11 @@ const App: React.FC = () => {
     <div>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
 
-      <div className="chartRow">
+      <div
+        className={`chartRow ${
+          Object.keys(results.donutChart).length ? "" : "noCharts"
+        }`}
+      >
         <div className="chartRow--donut"></div>
         <div className="chartRow--line"></div>
       </div>
