@@ -147,10 +147,14 @@ a {
   height: 100%;
   grid-template-areas:
     "left-top top-content right-top"
-    "left-center content right-center"
-    "left-bottom bottom-content right-bottom";
+    "left-center content right-center";
+    // "left-bottom bottom-content right-bottom";
   grid-template-columns: 150px 3fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  & > div {
+    margin-bottom: auto;
+  }
 
   .left-top {
     grid-area: left-top;

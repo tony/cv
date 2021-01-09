@@ -15,24 +15,28 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
   return (
     <>
       {activity?.qaUrl && (
-        <a
-          href={activity.qaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="activity-link"
-        >
-          Pull Request
-        </a>
+        <div>
+          <a
+            href={activity.qaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="activity-link"
+          >
+            Pull Request
+          </a>
+        </div>
       )}
       {activity?.diffUrl && (
-        <a
-          href={activity.diffUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="activity-link"
-        >
-          Pull Request
-        </a>
+        <div style={{ paddingTop: "0.5rem" }}>
+          <a
+            href={activity.diffUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="activity-link"
+          >
+            .diff
+          </a>
+        </div>
       )}
     </>
   );
@@ -42,7 +46,7 @@ export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
-    <div style={{ flexGrow: 1 }}>
+    <div style={{ textAlign: "right", paddingRight: "0.5rem" }}>
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
@@ -69,10 +73,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     </div>
 
     <div className="content">Details</div>
-    <div className="right-center"></div>
-    <div className="left-bottom"></div>
-    <div className="bottom-content"></div>
-    <div className="right-bottom">
+    <div className="right-center">
       {org?.languages?.map((languageName) => (
         <LanguageTag languageName={languageName} key={languageName} />
       ))}
@@ -83,5 +84,8 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         />
       )}
     </div>
+    {/*<div className="left-bottom"></div>
+    <div className="bottom-content"></div>
+    <div className="right-bottom"></div>*/}
   </div>
 );
