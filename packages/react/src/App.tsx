@@ -233,12 +233,14 @@ const App: React.FC = () => {
         Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
       </div>
 
-      {results.activities &&
-        results.activities.map((activity, idx) => {
-          const org = orgsQuery.getEntity(activity.orgId);
-          if (!org) return;
-          return <ActivityCard activity={activity} org={org} key={idx} />;
-        })}
+      <div className="activityCardList">
+        {results.activities &&
+          results.activities.map((activity, idx) => {
+            const org = orgsQuery.getEntity(activity.orgId);
+            if (!org) return;
+            return <ActivityCard activity={activity} org={org} key={idx} />;
+          })}
+      </div>
     </div>
   );
 };
