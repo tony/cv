@@ -37,7 +37,7 @@ export const LanguageTag: React.FC<
 
 export const ActivityTypeTag: React.FC<
   { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ activityTypeName, children, style = {}, ...props }) => {
+> = ({ activityTypeName, children, className = "", style = {}, ...props }) => {
   if (!activityTypeName) {
     return null;
   }
@@ -52,7 +52,7 @@ export const ActivityTypeTag: React.FC<
 
   return (
     <div
-      className="tag fr"
+      className={`tag` + (className ? ` ${className}` : "")}
       style={{ ...(activityType?.ui ?? {}), ...style }}
       {...props}
     >
@@ -63,7 +63,7 @@ export const ActivityTypeTag: React.FC<
 
 export const OrgTypeTag: React.FC<
   { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ orgTypeName, children, style = {}, ...props }) => {
+> = ({ orgTypeName, children, className = "", style = {}, ...props }) => {
   if (!orgTypeName) {
     return null;
   }
@@ -78,7 +78,7 @@ export const OrgTypeTag: React.FC<
 
   return (
     <div
-      className="tag"
+      className={`tag` + (className ? ` ${className}` : "")}
       style={{ ...(orgType?.ui ?? {}), ...style }}
       {...props}
     >

@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { IActivity, IOrg } from "@tony/cv-lib/data/types";
-import { LanguageTag, OrgTypeTag } from "./Tag";
+import { ActivityTypeTag, LanguageTag, OrgTypeTag } from "./Tag";
 import "./style.scss";
 
 interface IActivityCardProps {
@@ -46,7 +46,7 @@ export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
-    <div style={{ textAlign: "right", paddingRight: "0.5rem" }}>
+    <div style={{ paddingRight: "0.5rem" }}>
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
@@ -59,7 +59,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
   org,
 }) => (
   <div className="card cardGrid">
-    <div className="left-top"></div>
+    <div className="left-top">
+      <ActivityTypeTag activityTypeName={activity.activityType} />
+    </div>
     <div className="top-content">
       <strong>
         <a href={org && org.url ? org.url : "#"} title={activity.title}>
@@ -69,23 +71,18 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     </div>
     <div className="right-top"></div>
     <div className="left-center">
+      {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
+    </div>
+    <div className="content">
       <ActivityInfo activity={activity} org={org} />
     </div>
-
-    <div className="content">Details</div>
-    <div className="right-center">
+    <div className="right-center"></div>
+    <div className="left-bottom">
       {org?.languages?.map((languageName) => (
         <LanguageTag languageName={languageName} key={languageName} />
       ))}
-      {org?.orgType && (
-        <OrgTypeTag
-          orgTypeName={org.orgType}
-          style={{ marginLeft: ".75rem" }}
-        />
-      )}
     </div>
-    {/*<div className="left-bottom"></div>
     <div className="bottom-content"></div>
-    <div className="right-bottom"></div>*/}
+    <div className="right-bottom"></div>
   </div>
 );

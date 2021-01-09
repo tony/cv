@@ -159,8 +159,8 @@ a {
   height: 100%;
   grid-template-areas:
     "left-top top-content right-top"
-    "left-center content right-center";
-    // "left-bottom bottom-content right-bottom";
+    "left-center content right-center"
+     "left-bottom bottom-content right-bottom";
   grid-template-columns: 150px 3fr 1fr;
   grid-template-rows: 1fr 1fr;
 
@@ -185,7 +185,6 @@ a {
   }
   .right-center {
     grid-area: right-center;
-    text-align: right;
   }
   .left-bottom {
     grid-area: left-bottom;
@@ -195,7 +194,6 @@ a {
   }
   .right-bottom {
     grid-area: right-bottom;
-    text-align: right;
   }
 }
 
