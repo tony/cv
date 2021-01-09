@@ -19,7 +19,17 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           href={activity.qaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-title"
+          className="activity-link"
+        >
+          Pull Request
+        </a>
+      )}
+      {activity?.diff_url && (
+        <a
+          href={activity.diff_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
         >
           Pull Request
         </a>
