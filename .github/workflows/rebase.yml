@@ -16,4 +16,4 @@ jobs:
       - name: Automatic Rebase
         uses: cirrus-actions/rebase@1.4
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
