@@ -163,65 +163,33 @@ a {
 .cardGrid {
   display: grid;
   height: 100%;
-  grid-template-areas:
-    "left-top top-content right-top"
-    "left-center content right-center"
-     "left-bottom bottom-content right-bottom";
-  grid-template-columns: 150px 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "headline languages"
+  "content content"
+  "footer footer";
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
 
   & > div {
     margin-bottom: auto;
   }
 
-  .left-top, .left-center, .left-bottom {
-    display: inline-grid;
-    padding-right: 0.5rem;
-  }
-  .left-top, .left-center { // Left cell padding
-    padding-bottom: 0.5rem
-  }
-  .left-top {
-    grid-area: left-top;
-  }
-  .left-center {
-    grid-area: left-center;
-  }
-  .left-bottom {  // Languages
-    grid-area: left-bottom;
-
+  .footer {
+    grid-area: footer;
     .tag {
-      margin-bottom: 0.5rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-right: 0.5rem;
     }
-  }
-
-  .top-content {
-    grid-area: top-content;
+    margin-bottom: 0;
   }
   .content {
     grid-area: content;
   }
-  .bottom-content {
-    grid-area: bottom-content;
-  }
 
-  .right-top {
-    grid-area: right-top;
-  }
-  .right-center {
-    grid-area: right-center;
-  }
-  .right-bottom {
-    grid-area: right-bottom;
-  }
-
-  // bottom row
-  .left-bottom, .bottom-content, .right-bottom {
-    place-self: bottom;
-    margin-bottom: 0;
+  .languages {
+    grid-area: languages;
+    text-align: right;
+    .tag {
+      margin-left: 0.5rem;
+    }
   }
 }
 

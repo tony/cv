@@ -64,23 +64,23 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
   org,
 }) => (
   <div className="card cardGrid">
-    <div className="left-top">
-      <ActivityTypeTag activityTypeName={activity.activityType} />
-    </div>
-    <div className="top-content">
+    <div className="headline">
+      <ActivityTypeTag
+        activityTypeName={activity.activityType}
+        style={{ marginRight: "0.5rem" }}
+      />
       <strong>
         <a href={org && org.url ? org.url : "#"} title={activity.title}>
           {activity.title}
         </a>
+        <em
+          style={{ marginLeft: "0.5rem", color: "gray", fontWeight: "normal" }}
+        >
+          {activity.createdDate}
+        </em>
       </strong>
     </div>
-    <div className="right-top"></div>
-    <div className="left-center">
-      {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
-    </div>
-    <div className="content"></div>
-    <div className="right-center"></div>
-    <div className="left-bottom">
+    <div className="languages">
       {org?.languages?.map((languageName) => (
         <LanguageTag
           languageName={languageName}
@@ -89,9 +89,11 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         />
       ))}
     </div>
-    <div className="bottom-content">
+    <div className="content">
       <ActivityInfo activity={activity} org={org} />
     </div>
-    <div className="right-bottom"></div>
+    <div className="footer">
+      {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
+    </div>
   </div>
 );
