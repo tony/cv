@@ -53,3 +53,13 @@ windows:
   - pane
   - pane
   - pane
+- window_name: nav
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ./packages/nav
+  panes:
+  - focus: true
+  - pane
+  - pane
+  - pane
