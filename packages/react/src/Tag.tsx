@@ -56,7 +56,7 @@ export const ActivityTypeTag: React.FC<
       style={{ ...(activityType?.ui ?? {}), ...style }}
       {...props}
     >
-      {children || activityType.name}
+      {children || activityType?.name || activityTypeName}
     </div>
   );
 };
