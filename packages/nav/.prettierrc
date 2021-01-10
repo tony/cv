@@ -1,4 +1,6 @@
 {
+  "printWidth": 110,
   "trailingComma": "es5",
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "embeddedLanguageFormatting": "auto"
 }

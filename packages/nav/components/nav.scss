@@ -77,11 +77,14 @@ $nav-height: 2rem;
   ul li ul.submenu {
     li {
       background: $bg-color-400;
-      &:hover {
+      &:hover, &.active {
         background: $bg-color;
         &.section-title {
           background: $bg-color-400;
         }
+      }
+      &.active a {
+        cursor: default;
       }
     }
     width: 15rem;
