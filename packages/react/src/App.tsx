@@ -40,6 +40,7 @@ import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
+import "@tony/cv-nav/components";
 
 import "./style.scss";
 
@@ -176,6 +177,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <cv-nav>Test</cv-nav>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
 
       <div
