@@ -98,6 +98,13 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         test: /\.svg$/,
         type: "asset/inline",
       },
+      {
+        test: /\.html$/,
+        exclude: [/lib\/assets\/index.html/], // or else our template replacements won't work here
+        use: {
+          loader: "html-loader",
+        },
+      },
     ],
   },
   cache: {
@@ -131,7 +138,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     }),
   ],
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".html", ".scss"],
   },
   stats: { children: false },
   watch: env.watch,
