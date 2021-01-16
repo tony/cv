@@ -17,9 +17,10 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-						"customWebpackConfig": {
-						  "path": "./webpack/webpack.custom.ts"
-						},
+            "customWebpackConfig": {
+              "path": "./webpack/webpack.custom.ts"
+            },
+            "preserveSymlinks": true,
             "outputPath": "dist/angular",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -67,7 +68,7 @@
           }
         },
         "serve": {
-				  "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "angular:build"
           },

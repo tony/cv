@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any,no-unused-vars */
 declare module "*.svg" {
   const content: any;
   export default content;

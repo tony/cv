@@ -7,7 +7,7 @@
       "dom",
       "esnext"
     ],
-    "target": "es5",
+    "target": "es2015",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
