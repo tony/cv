@@ -31,7 +31,12 @@ export const orgs: IOrg[] = [
   ...Object.entries(ghOrgsJson).map(
     ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
   ),
-];
+].map((org) => {
+  if (!org.languages.length) {
+    org.languages = ["Text"];
+  }
+  return org;
+});
 
 export const activities: IActivity[] = [
   ...(handPickedActivitiesJson as IActivity[]),
@@ -55,6 +60,9 @@ const ghColorsJsonMissing: {
   },
   CMake: {
     color: "#ccc",
+  },
+  Text: {
+    color: LANGUAGE_FALLBACK_COLOR,
   },
 };
 
@@ -98,7 +106,7 @@ export const languages: Language[] = Array.from(
         ? {
             ui: {
               backgroundColor: ghColor.color ?? LANGUAGE_FALLBACK_COLOR,
-              color: invert(ghColor.color, true),
+              color: invert(ghColor.color ?? LANGUAGE_FALLBACK_COLOR, true),
             },
           }
         : {}),
