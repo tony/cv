@@ -17,5 +17,6 @@ declare module "*.html" {
 declare namespace JSX {
   interface IntrinsicElements {
     "cv-nav": any;
+    "ui5-shellbar": any;
   }
 }

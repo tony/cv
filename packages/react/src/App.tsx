@@ -40,7 +40,8 @@ import type { ISelectOption, IOptionType } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
-import "@tony/cv-nav/components";
+// import "@tony/cv-nav/components";
+import "@ui5/webcomponents-fiori/dist/ShellBar";
 
 import "./style.scss";
 
@@ -177,7 +178,12 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <cv-nav>Test</cv-nav>
+      <ui5-shellbar
+        id="shellbar"
+        primary-title="Tony Narlock's CV"
+        secondary-title="v2"
+        show-co-pilot
+      ></ui5-shellbar>
       <header className="site-name">Tony Narlock{"'"}s CV</header>
 
       <div
