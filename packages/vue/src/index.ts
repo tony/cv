@@ -3,9 +3,14 @@ import Vuex, { Commit, StoreOptions } from "vuex";
 
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
+
+import type { IActivity } from "@tony/cv-lib/data/types";
+
 import ChristmasTreeSVG from "@tony/cv-data/img/icons/christmas-tree.svg";
 
-import { IActivity } from "@tony/cv-lib/data/types";
+import "@tony/cv-nav/components";
+
+import style from "!raw-loader!sass-loader!./style.scss";
 
 interface IRootState {
   activities: IActivity[];
@@ -45,6 +50,10 @@ new Vue({
   created() {
     s.dispatch("loadActivities");
     document.title = __TITLE__;
+    let st = document.createElement("style");
+    st.type = "text/css";
+    st.innerHTML = style;
+    document.head.appendChild(st);
   },
   components: {
     HelloComponent,
@@ -57,17 +66,18 @@ new Vue({
   store: s,
   template: `
     <div>
-        Name: <input v-model="name" type="text">
-        <h1>Hello Component</h1>
-        <hello-component :name="name" :initialEnthusiasm="5" />
-        <h1>Hello Decorator Component</h1>
-        <ChristmasTreeSVG :width="16" :height="16" />
-        <vue-title :title="$data.__TITLE__"></vue-title>
-        <hello-decorator-component :name="name" :initialEnthusiasm="5" />
-          <div v-for="(activity, idx) in activities">
-            {{activity.title}}
-          </div>
-        </div>
+      <cv-nav />
+      Name: <input v-model="name" type="text">
+      <h1>Hello Component</h1>
+      <hello-component :name="name" :initialEnthusiasm="5" />
+      <h1>Hello Decorator Component</h1>
+      <ChristmasTreeSVG :width="16" :height="16" />
+      <vue-title :title="$data.__TITLE__"></vue-title>
+      <hello-decorator-component :name="name" :initialEnthusiasm="5" />
+      <div v-for="(activity, idx) in activities">
+        {{activity.title}}
+      </div>
+    </div>
     `,
 });
 

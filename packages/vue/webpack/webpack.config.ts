@@ -100,9 +100,20 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         use: ["vue-style-loader", "css-loader"],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: ["vue-style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.svg$/,
         // use: ["babel-loader", "vue-svg-loader"],
         type: "asset/inline",
+      },
+      {
+        test: /\.html$/,
+        exclude: [/lib\/assets\/index.html/], // or else our template replacements won't work here
+        use: {
+          loader: "html-loader",
+        },
       },
     ],
   },
@@ -142,7 +153,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     alias: {
       vue$: "vue/dist/vue.esm.js",
     },
-    extensions: [".ts", ".js", ".vue", ".json"],
+    extensions: [".ts", ".js", ".vue", ".json", ".html", ".scss"],
   },
   stats: { children: false },
   watch: env.watch,
