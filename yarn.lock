@@ -2752,6 +2752,11 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@webcomponents/webcomponentsjs@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.5.0.tgz#61b27785a6ad5bfd68fa018201fe418b118cb38d"
+  integrity sha512-C0l51MWQZ9kLzcxOZtniOMohpIFdCLZum7/TEHv3XWFc1Fvt5HCpbSX84x8ltka/JuNKcuiDnxXFkiB2gaePcg==
+
 "@webpack-cli/info@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@webpack-cli/info/-/info-1.2.1.tgz#af98311f983d0b9fce7284cfcf1acaf1e9f4879c"
@@ -4791,6 +4796,11 @@ currently-unhandled@^0.4.1:
   integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
   dependencies:
     array-find-index "^1.0.1"
+
+custom-elements-ts@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/custom-elements-ts/-/custom-elements-ts-0.0.16.tgz#a271707c7b897d78a4e9f26271dcfb0f7d35c24d"
+  integrity sha512-dIWEwGlpVdm8vPRWXXVALTE1rHWwZfJIUd9JPaYDzmrcfni61Z0NkxCcx2dcg6sM0WvW8RUFxxZ5dL8VDd0gwA==
 
 custom-return@^1.0.0:
   version "1.0.12"
