@@ -93,7 +93,6 @@ export class ActivityTypesStore extends EntityStore<
   ActivityType
 > {
   constructor() {
-    super();
     super({ active: [] });
   }
 }
@@ -103,7 +102,6 @@ export interface OrgTypesState extends EntityState<OrgType>, MultiActiveState {}
 @StoreConfig({ name: "orgTypes" })
 export class OrgTypesStore extends EntityStore<OrgTypesState, OrgType> {
   constructor() {
-    super();
     super({ active: [] });
   }
 }
