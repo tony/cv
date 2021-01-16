@@ -6,7 +6,8 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "../../node_modules/@tony/cv-nav/components.ts"
   ],
   "include": [
     "src/**/*.d.ts"

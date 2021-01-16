@@ -88,7 +88,7 @@ jobs:
       if: env.PUBLISH == 'true' && (steps.changes.outputs.angular == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       run: |
         cd packages/angular
-        yarn build --prod
+        yarn build --prod --source-map
     - name: push to s3 (react)
       if: env.PUBLISH == 'true' && (steps.changes.outputs.react == 'true' || steps.changes.outputs.lib == 'true' || steps.changes.outputs.data == 'true' || steps.changes.outputs.root == 'true')
       uses: jakejarvis/s3-sync-action@master
