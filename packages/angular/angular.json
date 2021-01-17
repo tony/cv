@@ -46,6 +46,7 @@
                 }
               ],
               "deployUrl": "./",
+              "baseHref": "./",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
