@@ -234,9 +234,9 @@ const App: React.FC = () => {
                     }
                   ),
                   type: donut(),
-                  color: (color, languageName) =>
-                    languagesQuery.getEntity(languageName)?.ui
-                      ?.backgroundColor ?? color,
+                  color: (color, d) =>
+                    languagesQuery.getEntity(d.id)?.ui?.backgroundColor ??
+                    color,
                   labels: {
                     // billboard.js doesn't accept callbacks here
                     // issue: https://github.com/naver/billboard.js/issues/1845
