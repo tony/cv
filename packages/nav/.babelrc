@@ -2,5 +2,9 @@
   "presets": [
     ["@babel/typescript", { jsxPragma: "h" }], // Add jsxPragma here
     ["@babel/preset-env", {modules: false, targets: {node: "current"}}],
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose" : true }]
   ]
 }

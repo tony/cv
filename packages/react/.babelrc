@@ -3,5 +3,9 @@
     "@babel/preset-react",
     "@babel/preset-typescript",
     ["@babel/preset-env", {modules: false, targets: {node: "current"}}]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose" : true }]
   ]
 }

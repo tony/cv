@@ -3,7 +3,7 @@ import reactSvg from "@tony/cv-data/img/icons/react.svg";
 import angularSvg from "@tony/cv-data/img/icons/angular.svg";
 import vueSvg from "@tony/cv-data/img/icons/vue.svg";
 
-import { CustomElement, Prop } from "custom-elements-ts";
+import { Component, Prop, h } from "@stencil/core";
 
 import template from "./nav.html";
 import style from "!raw-loader!sass-loader!./nav.scss";
@@ -102,7 +102,7 @@ const ChartFrameworkURLMapping: Partial<
 
 console.log("ChartFrameworkURLMapping", ChartFrameworkURLMapping);
 
-@CustomElement({
+@Component({
   tag: "cv-nav",
   template: template
     .replace("${reactSvg}", reactSvg)
