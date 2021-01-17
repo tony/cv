@@ -5,13 +5,13 @@ $bg-color-700: darken($bg-color, 20);
 $bg-color-800: darken($bg-color, 30);
 $bg-color-900: darken($bg-color, 40);
 
-$height: 2rem;
+$nav-height: 2rem;
 
 #our-nav {
   background: $bg-color;
   display: flex;
   place-items: center;
-  height: $height;
+  height: $nav-height;
 
   .logo {
     padding: 0 1rem;
@@ -41,7 +41,7 @@ $height: 2rem;
 
   li {
     padding: 0 1rem;
-    height: $height;
+    height: $nav-height;
     color: #fff;
     position: relative;
     text-decoration: none;
@@ -91,7 +91,7 @@ $height: 2rem;
     min-width: 5rem;
     position: absolute;
     transition: all 0.5s ease;
-    top: $height;
+    top: $nav-height;
     left: 0;
     display: none;
   }
