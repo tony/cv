@@ -2,7 +2,12 @@ import React from "react";
 import type { Subscription } from "rxjs";
 
 import { components as ReactSelectComponents } from "react-select";
-import type { StylesConfig, OptionProps, OptionsType } from "react-select";
+import type {
+  StylesConfig,
+  OptionProps,
+  OptionsType,
+  ValueType,
+} from "react-select";
 
 import chroma from "chroma-js";
 
@@ -11,6 +16,9 @@ import {
   languagesQuery,
   orgsQuery,
   query,
+  languagesStore,
+  orgsStore,
+  activityTypesStore,
 } from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
 import { Colors } from "@tony/cv-lib/data/constants";
@@ -25,6 +33,35 @@ export interface IOptionType {
   value: string;
 }
 export type ISelectOption = OptionsType<IOptionType>;
+
+export const onLanguageChange = (
+  value: ValueType<IOptionType, boolean>
+): void => {
+  if (value) {
+    languagesStore.setActive((value as IOptionType[]).map(({ value: v }) => v));
+  } else {
+    languagesStore.setActive([]);
+  }
+};
+export const onOrgChange = (value: ValueType<IOptionType, boolean>): void => {
+  console.log("onOrgChange", value);
+  if (value) {
+    orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
+  } else {
+    orgsStore.setActive([]);
+  }
+};
+export const onActivityTypeChange = (
+  value: ValueType<IOptionType, boolean>
+): void => {
+  if (value) {
+    activityTypesStore.setActive(
+      (value as IOptionType[]).map(({ value: v }) => v)
+    );
+  } else {
+    activityTypesStore.setActive([]);
+  }
+};
 
 export const getSelectOptions = (items: string[]): ISelectOption =>
   items.map((actorName) => ({

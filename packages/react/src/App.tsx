@@ -1,20 +1,16 @@
 import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
-import type { ValueType } from "react-select/src/types";
 import equal from "fast-deep-equal";
 
 import type { IActivity, Language } from "@tony/cv-lib/data/types";
 import {
-  activityTypesStore,
   activitiesStore,
   activitiesQuery,
   activityTypesQuery,
   loadStores,
-  orgsStore,
   orgsQuery,
   query,
-  languagesStore,
   languagesQuery,
 } from "@tony/cv-lib/hub";
 import type {
@@ -35,8 +31,11 @@ import {
   LanguageOption,
   ActivityTypeOption,
   OrgOption,
+  onLanguageChange,
+  onOrgChange,
+  onActivityTypeChange,
 } from "./react-select";
-import type { ISelectOption, IOptionType } from "./react-select";
+import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
@@ -89,31 +88,6 @@ const reducer = (state: ReducerState, action: Action) => {
 
 const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
-};
-
-const onLanguageChange = (value: ValueType<IOptionType, boolean>) => {
-  if (value) {
-    languagesStore.setActive((value as IOptionType[]).map(({ value: v }) => v));
-  } else {
-    languagesStore.setActive([]);
-  }
-};
-const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
-  console.log("onOrgChange", value);
-  if (value) {
-    orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
-  } else {
-    orgsStore.setActive([]);
-  }
-};
-const onActivityTypeChange = (value: ValueType<IOptionType, boolean>) => {
-  if (value) {
-    activityTypesStore.setActive(
-      (value as IOptionType[]).map(({ value: v }) => v)
-    );
-  } else {
-    activityTypesStore.setActive([]);
-  }
 };
 
 const AppContainer: React.FC = ({ children }) => {
