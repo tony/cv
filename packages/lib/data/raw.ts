@@ -1,10 +1,10 @@
 import invert from "invert-color";
 
-import handPickedActivitiesJson from "../../data/my_activities.json";
-import handPickedOrgsJson from "../../data/my_orgs.json";
-import ghColorsJson from "../../data/gh_colors.json";
-import ghActivitiesJson from "../../data/scraped/gh_activities.json";
-import ghOrgsJson from "../../data/scraped/gh_orgs.json";
+import handPickedActivitiesJson from "@tony/cv-data/my_activities.json";
+import handPickedOrgsJson from "@tony/cv-data/my_orgs.json";
+import ghColorsJson from "@tony/cv-data/gh_colors.json";
+import ghActivitiesJson from "@tony/cv-data/scraped/gh_activities.json";
+import ghOrgsJson from "@tony/cv-data/scraped/gh_orgs.json";
 
 import {
   ActivityTypeNameMap,

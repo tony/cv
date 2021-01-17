@@ -87,7 +87,7 @@ const reducer = (state: ReducerState, action: Action) => {
 };
 
 const fetchData: fetchDataFn = async () => {
-  return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
+  return import(/* webpackChunkName: "cvData" */ "@tony/cv-lib/data/raw");
 };
 
 const AppContainer: React.FC = ({ children }) => {

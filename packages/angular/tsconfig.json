@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@lib/*": ["../lib/*"]
+      "@tony/cv-data/*": ["../data/*"],
+      "@tony/cv-lib/*": ["../lib/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     console.log('ngOnInit');
-    const { activities } = await import(/* webpackChunkName: "cvData" */ '@lib/data/raw');
+    const { activities } = await import(/* webpackChunkName: "cvData" */ '@tony/cv-lib/data/raw');
     console.log({ activities });
     this.activities = activities;
   }

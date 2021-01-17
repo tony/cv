@@ -28,7 +28,7 @@ const store: StoreOptions<IRootState> = {
       } // activities: IRootState["activities"]
     ) {
       const { activities: myActivities } = await import(
-        /* webpackChunkName: "cvData" */ "../../lib/data/raw"
+        /* webpackChunkName: "cvData" */ "@tony/cv-lib/data/raw"
       );
       commit("loadActivities", myActivities);
     },
