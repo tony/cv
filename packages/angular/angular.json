@@ -22,6 +22,7 @@
             },
             "preserveSymlinks": true,
             "outputPath": "dist/angular",
+            "deployUrl": "./",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
