@@ -91,6 +91,41 @@ const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "../../lib/data/raw");
 };
 
+const onLanguageChange = (value: ValueType<IOptionType, boolean>) => {
+  if (value) {
+    languagesStore.setActive((value as IOptionType[]).map(({ value: v }) => v));
+  } else {
+    languagesStore.setActive([]);
+  }
+};
+const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
+  console.log("onOrgChange", value);
+  if (value) {
+    orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
+  } else {
+    orgsStore.setActive([]);
+  }
+};
+const onActivityTypeChange = (value: ValueType<IOptionType, boolean>) => {
+  if (value) {
+    activityTypesStore.setActive(
+      (value as IOptionType[]).map(({ value: v }) => v)
+    );
+  } else {
+    activityTypesStore.setActive([]);
+  }
+};
+
+const AppContainer: React.FC = ({ children }) => {
+  return (
+    <div>
+      <cv-nav />
+      <header className="site-name">Tony Narlock{"'"}s CV</header>
+      {children}
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
 
@@ -138,118 +173,84 @@ const App: React.FC = () => {
     };
   }, []);
 
-  if (results.ui.isLoading) {
-    return (
-      <div>
-        <cv-nav />
-        <header className="site-name">Tony Narlock{"'"}s CV</header>
-        <div id="loading-screen">Loading CV Data</div>
-      </div>
-    );
-  }
-
-  const onLanguageChange = (value: ValueType<IOptionType, boolean>) => {
-    if (value) {
-      languagesStore.setActive(
-        (value as IOptionType[]).map(({ value: v }) => v)
-      );
-    } else {
-      languagesStore.setActive([]);
-    }
-  };
-  const onOrgChange = (value: ValueType<IOptionType, boolean>) => {
-    console.log("onOrgChange", value);
-    if (value) {
-      orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
-    } else {
-      orgsStore.setActive([]);
-    }
-  };
-  const onActivityTypeChange = (value: ValueType<IOptionType, boolean>) => {
-    if (value) {
-      activityTypesStore.setActive(
-        (value as IOptionType[]).map(({ value: v }) => v)
-      );
-    } else {
-      activityTypesStore.setActive([]);
-    }
-  };
-
   const resultsCount = results?.activities ? results.activities.length : 0;
-
   return (
-    <div>
-      <cv-nav />
-      <header className="site-name">Tony Narlock{"'"}s CV</header>
+    <AppContainer>
+      {results.ui.isLoading ? (
+        <div id="loading-screen">Loading CV Data</div>
+      ) : (
+        <>
+          <div
+            className={`chartRow ${
+              Object.keys(results.donutChart).length ? "" : "noCharts"
+            }`}
+          >
+            <div className="chartRow--donut"></div>
+            <div className="chartRow--line"></div>
+          </div>
 
-      <div
-        className={`chartRow ${
-          Object.keys(results.donutChart).length ? "" : "noCharts"
-        }`}
-      >
-        <div className="chartRow--donut"></div>
-        <div className="chartRow--line"></div>
-      </div>
+          <div className="dropdownRow">
+            <Select
+              options={getSelectOptions(
+                Object.values(languagesQuery?.getValue()?.entities ?? {}).map(
+                  (lang) => lang.id as string
+                )
+              )}
+              isMulti
+              onChange={onLanguageChange}
+              className="react-select"
+              placeholder="Language"
+              styles={languagesStyles}
+              components={{ Option: LanguageOption }}
+            />
+            <Select
+              options={
+                activityTypesQuery.getAll().map((a) => ({
+                  label: a.name,
+                  value: a.id,
+                })) as ISelectOption
+              }
+              isMulti={true}
+              onChange={onActivityTypeChange}
+              className="react-select"
+              placeholder="Event type"
+              styles={activityTypeStyles}
+              components={{
+                Option: ActivityTypeOption,
+                MultiValueLabel: ActivityMultiValueLabel,
+              }}
+            />
+            <Select
+              options={
+                orgsQuery.getAll().map((org) => ({
+                  label: org.name,
+                  value: org.id?.toString() ?? org.id,
+                })) as ISelectOption
+              }
+              isMulti={true}
+              onChange={onOrgChange}
+              className="react-select"
+              placeholder="Topic"
+              components={{ Option: OrgOption }}
+            />
+          </div>
 
-      <div className="dropdownRow">
-        <Select
-          options={getSelectOptions(
-            Object.values(languagesQuery?.getValue()?.entities ?? {}).map(
-              (lang) => lang.id as string
-            )
-          )}
-          isMulti
-          onChange={onLanguageChange}
-          className="react-select"
-          placeholder="Language"
-          styles={languagesStyles}
-          components={{ Option: LanguageOption }}
-        />
-        <Select
-          options={
-            activityTypesQuery.getAll().map((a) => ({
-              label: a.name,
-              value: a.id,
-            })) as ISelectOption
-          }
-          isMulti={true}
-          onChange={onActivityTypeChange}
-          className="react-select"
-          placeholder="Event type"
-          styles={activityTypeStyles}
-          components={{
-            Option: ActivityTypeOption,
-            MultiValueLabel: ActivityMultiValueLabel,
-          }}
-        />
-        <Select
-          options={
-            orgsQuery.getAll().map((org) => ({
-              label: org.name,
-              value: org.id?.toString() ?? org.id,
-            })) as ISelectOption
-          }
-          isMulti={true}
-          onChange={onOrgChange}
-          className="react-select"
-          placeholder="Topic"
-          components={{ Option: OrgOption }}
-        />
-      </div>
+          <div className="resultsMessage">
+            Found {resultsCount} results{" "}
+            <img src={christmasTreeSvg} width="16" />
+          </div>
 
-      <div className="resultsMessage">
-        Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
-      </div>
-
-      <div className="activityCardList">
-        {results.activities &&
-          results.activities.map((activity, idx) => {
-            const org = orgsQuery.getEntity(activity.orgId);
-            if (!org) return;
-            return <ActivityCard activity={activity} org={org} key={idx} />;
-          })}
-      </div>
-    </div>
+          <div className="activityCardList">
+            {results.activities &&
+              results.activities.map((activity, idx) => {
+                const org = orgsQuery.getEntity(activity.orgId);
+                if (!org) return;
+                return <ActivityCard activity={activity} org={org} key={idx} />;
+              })}
+          </div>
+        </>
+      )}
+    </AppContainer>
   );
 };
 
