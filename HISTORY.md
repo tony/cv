@@ -22,9 +22,17 @@
 - Framework-agnostic, typed, reactive data with Akita
 - GitHub actions to automatically fetch my PRs from GH API
 
-[Web Components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
+[web components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 
 ### Contributions
+
+- React + Webpack + TypeScript starter
+
+  https://github.com/tony/react-typescript-vanilla-starter
+
+- Vue + Webpack + TypeScript starter
+
+  https://github.com/tony/vue-typescript-vanilla-starter
 
 - plotly.js:
 
