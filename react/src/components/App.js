@@ -6,6 +6,9 @@ import Charts from './Charts.js'
 
 const App = () => (
   <div id="app">
+    <div id="v2-notice">
+      Psst. I'm working on something new! <a href="https://cv-react-v2.git-pull.com">Take a peek?</a>
+    </div>
     <div className='github-fork'>
       Made with <span role="img" aria-label="love">❤️</span> by <a href="https://www.git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.<br/>
       Written in React (<a href="https://github.com/tony/cv" rel="noopener noreferrer" target="_blank">source</a>).<br/>
