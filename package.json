@@ -15,7 +15,12 @@
     "github": "yarn workspace @tony/cv-scripts run github"
   },
   "workspaces": {
-    "nohoist": ["**/@types/jest", "**/@types/jasmine"],
+    "nohoist": [
+      "**/@types/jest",
+      "**/@types/jasmine",
+      "**/@angular*",
+      "**/@angular*/**"
+    ],
     "packages": [
       "packages/*"
     ]
