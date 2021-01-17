@@ -141,7 +141,9 @@ const App: React.FC = () => {
   if (results.ui.isLoading) {
     return (
       <div>
-        <header>Loading CV Data</header>
+        <cv-nav />
+        <header className="site-name">Tony Narlock{"'"}s CV</header>
+        <div id="loading-screen">Loading CV Data</div>
       </div>
     );
   }
