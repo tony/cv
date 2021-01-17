@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "esnext",
+    "module": "es2020",
     "moduleResolution": "node",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "target": "es2015",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "sourceMap": true
   },
-  "include": [
-    "src/**/*",
-    "webpack/*"
-  ]
+  "include": ["src/**/*", "webpack/*"]
 }

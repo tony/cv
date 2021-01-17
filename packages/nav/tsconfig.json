@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": [
-      "dom",
-      "es5",
-      "es6"
-    ],
+    "lib": ["dom", "es5", "es6"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "importHelpers":true,
+    "importHelpers": true,
     "isolatedModules": true,
     "sourceMap": true,
     "experimentalDecorators": true,
