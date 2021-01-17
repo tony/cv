@@ -19,7 +19,12 @@
       "**/@types/jest",
       "**/@types/jasmine",
       "**/@angular*",
-      "**/@angular*/**"
+      "**/@angular*/**",
+      "**/react*",
+      "**/vue*",
+      "**/@vue*",
+      "**/@vue*/**",
+      "**/@types/react*"
     ],
     "packages": [
       "packages/*"
