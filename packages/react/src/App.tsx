@@ -2,8 +2,6 @@ import React from "react";
 import Select from "react-select";
 import type { Subscription } from "rxjs";
 import equal from "fast-deep-equal";
-import { ResponsivePie } from "@nivo/pie";
-import { ResponsiveLine } from "@nivo/line";
 
 import type { IActivity, Language } from "@tony/cv-lib/data/types";
 import {
@@ -18,8 +16,6 @@ import {
 import type {
   ActivityCount,
   LanguageCount,
-  DonutChartProps,
-  LineChartProps,
   Results as ReducerState,
 } from "@tony/cv-lib/search/query";
 import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
@@ -40,14 +36,14 @@ import {
 import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
+import {
+  LanguagePieChart,
+  ActivityLineChart,
+} from "@tony/cv-chart-react-nivo/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
 import "./style.scss";
-
-function isString(x: unknown): x is string {
-  return typeof x === "string";
-}
 
 enum ActionType {
   SetResults,
@@ -63,10 +59,6 @@ type Action =
       // Counts
       activityCount?: ActivityCount;
       languageCount?: LanguageCount;
-
-      // Charts
-      donutChart: DonutChartProps;
-      lineChart: LineChartProps;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 
@@ -124,10 +116,6 @@ const App: React.FC = () => {
         // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
         activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
-
-        // Charts
-        donutChart: (await query.getDonutChart()) as DonutChartProps,
-        lineChart: (await query.getLineChart()) as LineChartProps,
       });
     }
     return void 0;
@@ -163,56 +151,14 @@ const App: React.FC = () => {
         <>
           <div
             className={`chartRow ${
-              Object.keys(results.donutChart).length ? "" : "noCharts"
+              Object.keys(results.activityCount).length ? "" : "noCharts"
             }`}
           >
             <div className="chartRow--donut">
-              <ResponsivePie
-                data={Object.entries(results.languageCount).map(
-                  ([languageName, count]) => {
-                    return {
-                      id: languageName,
-                      label: languageName,
-                      value: count,
-                    };
-                  }
-                )}
-                colors={(item) => {
-                  const color = results.languages.find(
-                    (language) => language.id == item.id
-                  )?.ui?.backgroundColor;
-
-                  if (color && isString(color)) {
-                    return color;
-                  }
-                  return "gray";
-                }}
-                margin={{ top: 60, right: 80, bottom: 60, left: 80 }}
-                innerRadius={0.5}
-                padAngle={0.7}
-                cornerRadius={3}
-                borderWidth={1}
-                radialLabelsSkipAngle={15}
-                radialLabelsLinkOffset={0.1}
-                radialLabelsLinkDiagonalLength={0.1}
-                radialLabelsLinkColor={{ from: "color" }}
-                radialLabelsTextColor="#333333"
-                sortByValue
-                sliceLabelsSkipAngle={10}
-                sliceLabelsTextColor={(item) => {
-                  const color = results.languages.find(
-                    (language) => language.id == item.id
-                  )?.ui?.color;
-
-                  if (color && isString(color)) {
-                    return color;
-                  }
-                  return "gray";
-                }}
-              />
+              <LanguagePieChart />
             </div>
             <div className="chartRow--line">
-              <ResponsiveLine {...results.lineChart} />
+              <ActivityLineChart />
             </div>
           </div>
 
