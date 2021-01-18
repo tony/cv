@@ -16,7 +16,7 @@ import style from "!raw-loader!sass-loader!./nav.scss";
     .replace("${vueSvg}", vueSvg),
   style,
 })
-export class MyNav extends HTMLElement {
+export class CVNav extends HTMLElement {
   @Prop() message = "test";
   @Prop() reactSvg: string = reactSvg;
 
