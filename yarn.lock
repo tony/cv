@@ -1510,17 +1510,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.25":
-  version "0.41.25"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.25.tgz#afc3be96a57572cbaa2dff1c27d8d354566491b5"
-  integrity sha512-Xd8HWP8GNOM/qfzZCyylJpLlbehKBkOwchmkSrHmAbzPyBRlK+bqsOxGNvETy/2/vkbPesyNQfbgHjrCWqXa0g==
+"@carbon/charts-react@^0.41.26":
+  version "0.41.26"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.26.tgz#6ba962a02763492dfec0e3d5eb263eaafa078f6d"
+  integrity sha512-fhtg7kNRlpCtBkucE29NRj3Kp35dtRRnwi6pJV+0iRiJzZLF1GbryGUE70P3vCXQP1aC6IuryQoRZBO+pc10Uw==
   dependencies:
-    "@carbon/charts" "^0.41.25"
+    "@carbon/charts" "^0.41.26"
 
-"@carbon/charts@^0.41.25":
-  version "0.41.25"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.25.tgz#7763339c4a14669b0dcad26a32e756d9b26c7595"
-  integrity sha512-h84Zh2wEHN+Tmm6Syaq7kxbqF+ty/rdbyHJPgEgZjI56VFWidQJwCOSBYC7GxE1wiqVfcUwRPrhzmiXZYzs6lQ==
+"@carbon/charts@^0.41.26":
+  version "0.41.26"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.26.tgz#8e334e2c2749566464e2ada6ed48899a1ae6ddca"
+  integrity sha512-VhNyCFw4kCDJtfDUfBRI8uMgkJBkPTbIfULW0vhG0/X6vHsUrWGk/NEOl9+UYqafOJUB8F96CxDcoIGYxOGUgQ==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/utils-position" "1.1.1"
@@ -16599,10 +16599,10 @@ webpack@4.44.2:
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
-webpack@^5.15.0, webpack@~5.15.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.15.0.tgz#63d7b6228a4e15ee8c89899c2cfdd993e809bdd2"
-  integrity sha512-y/xG+ONDz78yn3VvP6gAvGr1/gkxOgitvHSXBmquyN8KDtrGEyE3K9WkXOPB7QmfcOBCpO4ELXwNcCYQnEmexA==
+webpack@^5.16.0, webpack@~5.16.0:
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.16.0.tgz#796e093c2d92c229f013aefefde82b50c0572570"
+  integrity sha512-QOkctcjYfEGxcYg4AzPJafyAQ7ANc266/URkX881uFA7b2k31E0Dmpy1ExfppHOTp1kHDTsRh9sXojVUvgPF0g==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.45"
