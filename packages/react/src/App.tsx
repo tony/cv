@@ -181,9 +181,7 @@ const LINE_CHART_MAP = {
 
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
-
   const [chart, setChart] = React.useState<Charts>(Charts.Carbon);
-  console.log(chart, PIE_CHART_MAP);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
 
