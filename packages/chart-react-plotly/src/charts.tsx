@@ -1,4 +1,4 @@
-import "./custom.d.ts";
+/// <reference path="./custom.d.ts" />
 import React from "react";
 import Plotly from "plotly.js/dist/plotly";
 import type { Observable, Subscription } from "rxjs";
