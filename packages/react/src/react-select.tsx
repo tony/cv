@@ -21,7 +21,7 @@ import {
   activityTypesStore,
 } from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
-import { Colors } from "@tony/cv-lib/data/constants";
+import { Colors } from "@tony/cv-data/constants";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
 import { ActivityTypeIcon } from "./Icons";

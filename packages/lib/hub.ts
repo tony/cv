@@ -24,7 +24,7 @@ import type {
   OrgType,
   IActivity,
   IOrg,
-} from "./data/types";
+} from "@tony/cv-data/types";
 
 export const activityTypesStore = new ActivityTypesStore();
 export const activitiesStore = new ActivitiesStore();

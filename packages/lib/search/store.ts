@@ -16,7 +16,7 @@ import type {
   OrgType,
   IActivity,
   IOrg,
-} from "../data/types";
+} from "@tony/cv-data/types";
 import {
   isActivityTypoFix,
   isActivityDocImprovement,

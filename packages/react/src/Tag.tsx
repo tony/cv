@@ -9,7 +9,7 @@ import type {
   ActivityTypeName,
   LanguageName,
   OrgTypeName,
-} from "@tony/cv-lib/data/types";
+} from "@tony/cv-data/types";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
