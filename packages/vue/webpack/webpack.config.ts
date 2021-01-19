@@ -134,7 +134,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   },
   output: {
     chunkFilename: "[name].[chunkhash].js",
-    filename: "[name].[fullHash].js",
+    filename: "[name].[fullhash].js",
     path: path.resolve(projectRoot, "dist"),
   },
   plugins: [
