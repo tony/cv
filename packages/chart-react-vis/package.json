@@ -39,7 +39,6 @@
     "@datorama/akita": "^6.0.0",
     "@tony/cv-lib": "*",
     "carbon-components": "^10.26.0",
-    "d3": "5.x",
     "fast-deep-equal": "^3.1.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
