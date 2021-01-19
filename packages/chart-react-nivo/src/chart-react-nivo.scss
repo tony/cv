@@ -1,0 +1,8 @@
+.chartRow:not(.noCharts) {
+  height: 400px;
+  max-height: 400px;
+
+  .chartRow--pie, .chartRow--line {
+    height: 400px;
+  }
+}
