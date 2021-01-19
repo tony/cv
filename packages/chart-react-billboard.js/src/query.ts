@@ -87,8 +87,8 @@ export class BillboardJSChartQuery extends CVQuery {
             show: false,
           },
           size: {
-            height: 300,
-            width: 300,
+            height: 400,
+            width: 400,
           },
         } as bb.ChartOptions;
       })
