@@ -8,6 +8,7 @@ import { DonutChartProps, LineChartProps } from "./query";
 import equal from "fast-deep-equal";
 
 import "@carbon/charts/styles.css";
+import "./chart-react-carbon.scss";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
