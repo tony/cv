@@ -1,4 +1,3 @@
-import bb, { donut, line } from "billboard.js";
 import moment from "moment";
 import React from "react";
 import Select from "react-select";
@@ -41,11 +40,10 @@ import { onEmit, useAsyncEffect } from "./utils";
 import {
   LanguagePieChart,
   ActivityLineChart,
-} from "@tony/cv-chart-react-nivo/src/charts";
+} from "@tony/cv-chart-react-billboard.js/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
-import "billboard.js/dist/billboard.css";
 import "./style.scss";
 
 enum ActionType {
@@ -110,41 +108,6 @@ const AppContainer: React.FC = ({ children }) => {
 // export function isUndefined(value: any): value is undefined {
 //   return value === undefined;
 // }
-export const Chart: React.FC<bb.ChartOptions> = ({ data, ...props }) => {
-  //| Parameters<bb.Chart["load"]>
-  const ref = React.useRef<HTMLDivElement>(null);
-  const [chart, setChart] = React.useState<bb.Chart | null>(null);
-  // const data = props?.data ? props?.data : undefined;
-  // data.json = undefined;
-  // // if (isObject(data?.json) || isUndefined(data?.json)) {
-  // //   data.json = [] as bb.Data["json"];
-  // // }
-  React.useEffect(() => {
-    if (!chart) {
-      const newChart = bb.generate({ bindto: ref.current, data, ...props });
-      setChart(newChart);
-      return () => newChart.unload();
-    }
-  }, [props, data]);
-
-  React.useEffect(() => {
-    if (!chart || !data) {
-      return;
-    }
-    if (chart && chart?.load && data) {
-      // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
-      chart.load(data);
-    }
-  }, [data]);
-
-  // React.useLayoutEffect(() => {
-  //   if (chart?.resize) {
-  //     chart.resize();
-  //   }
-  // });
-  //
-  return <div ref={ref} />;
-};
 
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
@@ -220,71 +183,10 @@ const App: React.FC = () => {
             }`}
           >
             <div className="chartRow--donut">
-              {/* <LanguagePieChart /> */}
-              <Chart
-                data={{
-                  columns: Object.entries(results.languageCount).map(
-                    ([languageName, count]) => {
-                      return [languageName, count];
-                    }
-                  ),
-                  type: donut(),
-                  color: (color, languageName) =>
-                    languagesQuery.getEntity(languageName)?.ui
-                      ?.backgroundColor ?? color,
-                  labels: {
-                    // billboard.js doesn't accept callbacks here
-                    // issue: https://github.com/naver/billboard.js/issues/1845
-                    colors: languagesQuery
-                      .getAll()
-                      .reduce((languageColorMap, language) => {
-                        if (language) {
-                          if (!(language.id in languageColorMap)) {
-                            languageColorMap[language.id] = language.ui
-                              .color as string;
-                          }
-                        }
-                        return languageColorMap;
-                      }, {} as { [key: string]: string }),
-                  },
-                }}
-                legend={{
-                  show: false,
-                }}
-                size={{
-                  height: 300,
-                  width: 300,
-                }}
-              />
+              <LanguagePieChart />
             </div>
             <div className="chartRow--line">
-              {/* <ActivityLineChart /> */}
-              <Chart
-                data={{
-                  x: "x",
-                  columns: [
-                    [
-                      "x",
-                      ...Object.keys(activitiesYearCountMap).map(
-                        (year) => `${year}-01-01`
-                      ),
-                    ],
-                    ["activityCount", ...Object.values(activitiesYearCountMap)],
-                  ],
-                  type: line(),
-                }}
-                axis={{
-                  x: {
-                    type: "timeseries",
-                    tick: {
-                      format: "%Y-%m-%d",
-                    },
-                  },
-                }}
-                legend={{
-                  show: false,
-                }}
-              />
+              <ActivityLineChart />
             </div>
           </div>
 
