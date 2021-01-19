@@ -2,17 +2,24 @@
 
 **Live Version** [v1 branch] ([react cv], [vue.js cv])
 
-**Version 2 underway!**
+## What's new?
+
+- 100% TypeScript
+- yarn monorepo
+- Webpack from the ground up (no CRA / create-react-app or @vue/cli)
+- Shared code: Framework agnostic
+  - Typed reactive state through [akita]
+  - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
+    [billboard.js]
+  - Common navigation: Typed [web component] built with [lit-element]
+- Angular
 
 ![image]
-
-Let's see what's the latest and greatest for both of these.
-
-This time we're using typescript and wiring-in webpack from the ground up.
 
 [v1 branch]: https://github.com/tony/cv/tree/v1
 [react cv]: https://cv.git-pull.com
 [vue.js cv]: https://cv-vue.git-pull.com
+[akita]: https://github.com/datorama/akita
 [image]: packages/lib/assets/architecture.png
 
 ## Status
