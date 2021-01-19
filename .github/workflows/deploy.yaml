@@ -43,6 +43,7 @@ jobs:
             - 'packages/vue/**'
           react:
             - 'packages/react/**'
+            - 'packages/chart-react-*/**'
     - name: Should publish
       if: steps.changes.outputs.angular == 'true' || steps.changes.outputs.react == 'true' || steps.changes.outputs.vue == 'true' || steps.changes.outputs.common == 'true'
       run: echo "PUBLISH=$(echo true)" >> $GITHUB_ENV
