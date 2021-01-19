@@ -4,7 +4,7 @@ import Vuex, { Commit, StoreOptions } from "vuex";
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
 
-import type { IActivity } from "@tony/cv-lib/data/types";
+import type { IActivity } from "@tony/cv-data/types";
 
 import ChristmasTreeSVG from "@tony/cv-data/img/icons/christmas-tree.svg";
 
@@ -28,7 +28,7 @@ const store: StoreOptions<IRootState> = {
       } // activities: IRootState["activities"]
     ) {
       const { activities: myActivities } = await import(
-        /* webpackChunkName: "cvData" */ "@tony/cv-lib/data/raw"
+        /* webpackChunkName: "cvData" */ "@tony/cv-data/raw"
       );
       commit("loadActivities", myActivities);
     },

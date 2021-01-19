@@ -27,7 +27,12 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import type { IActivity, IOrg, Language, LanguageName } from "../data/types";
+import type {
+  IActivity,
+  IOrg,
+  Language,
+  LanguageName,
+} from "@tony/cv-data/types";
 import { hasAny } from "../utils";
 
 export type LanguageCount = Record<LanguageName, number>;

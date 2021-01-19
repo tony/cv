@@ -10,7 +10,7 @@ import {
   IconNews,
 } from "@tabler/icons";
 import type { TablerIconProps } from "@tabler/icons";
-import type { ActivityTypeName } from "@tony/cv-lib/data/types";
+import type { ActivityTypeName } from "@tony/cv-data/types";
 
 type TablerIcon = React.FC<TablerIconProps>;
 const activityTypeNameToIcon: {

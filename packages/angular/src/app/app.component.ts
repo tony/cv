@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import type { IActivity } from '@tony/cv-lib/data/types';
+import type { IActivity } from '@tony/cv-data/types';
 
 import '@tony/cv-nav/components';
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     console.log('ngOnInit');
-    const { activities } = await import(/* webpackChunkName: "cvData" */ '@tony/cv-lib/data/raw');
+    const { activities } = await import(/* webpackChunkName: "cvData" */ '@tony/cv-data/raw');
     console.log({ activities });
     this.activities = activities;
   }

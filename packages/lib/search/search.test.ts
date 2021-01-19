@@ -1,5 +1,5 @@
 import { ActivitiesStore, CVStore } from "./store";
-import type { IData } from "../data/fetch";
+import type { IData } from "@tony/cv-data/fetch";
 
 describe("CVStore", () => {
   test("init", () => {
@@ -15,7 +15,7 @@ describe("ActivitiesStore", () => {
   });
 
   test("init with data", async () => {
-    const data: IData = await import("../../lib/data/raw");
+    const data: IData = await import("@tony/cv-data/raw");
     const s = new ActivitiesStore();
     s.set(data.activities);
     expect(s.getValue()).not.toStrictEqual([]);
@@ -24,7 +24,7 @@ describe("ActivitiesStore", () => {
 
 describe("test with data", () => {
   beforeEach(async () => {
-    const data: IData = await import("../../lib/data/raw");
+    const data: IData = await import("@tony/cv-data/raw");
     const { loadStores } = await import("../../lib/hub");
     loadStores(data);
   });

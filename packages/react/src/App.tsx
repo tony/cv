@@ -3,7 +3,7 @@ import Select from "react-select";
 import type { Subscription } from "rxjs";
 import equal from "fast-deep-equal";
 
-import type { IActivity, Language } from "@tony/cv-lib/data/types";
+import type { IActivity, Language } from "@tony/cv-data/types";
 import {
   activitiesStore,
   activitiesQuery,
@@ -19,7 +19,7 @@ import type {
   Results as ReducerState,
 } from "@tony/cv-lib/search/query";
 import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
-import type { fetchDataFn } from "@tony/cv-lib/data/fetch";
+import type { fetchDataFn } from "@tony/cv-data/fetch";
 import { ActivityCard } from "./Card";
 import {
   ActivityMultiValueLabel,
@@ -81,7 +81,7 @@ const reducer = (state: ReducerState, action: Action) => {
 };
 
 const fetchData: fetchDataFn = async () => {
-  return import(/* webpackChunkName: "cvData" */ "@tony/cv-lib/data/raw");
+  return import(/* webpackChunkName: "cvData" */ "@tony/cv-data/raw");
 };
 
 const AppContainer: React.FC = ({ children }) => {
