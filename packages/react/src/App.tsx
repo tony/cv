@@ -36,10 +36,6 @@ import {
 import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
-import {
-  LanguagePieChart,
-  ActivityLineChart,
-} from "@tony/cv-chart-react-carbon/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
@@ -98,19 +94,20 @@ const AppContainer: React.FC = ({ children }) => {
   );
 };
 
-// tks akita https://github.com/datorama/akita/blob/49b6391934ba1f5c6ca63eebcf4a118955c14f65/libs/akita/src/lib/isObject.ts
-// export function isObject(value: any) {
-//   const type = typeof value;
-//   return value != null && (type == "object" || type == "function");
-// }
-// // https://github.com/datorama/akita/blob/49b6391934ba1f5c6ca63eebcf4a118955c14f65/libs/akita/src/lib/isUndefined.ts
-// export function isUndefined(value: any): value is undefined {
-//   return value === undefined;
-// }
-
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
-
+  const LanguagePieChart = React.lazy(() =>
+    import(
+      /* webpackChunkName: "pie" */
+      "@tony/cv-chart-react-victory/src/charts"
+    ).then((module) => ({ default: module.LanguagePieChart }))
+  );
+  const ActivityLineChart = React.lazy(() =>
+    import(
+      /* webpackChunkName: "line" */
+      "@tony/cv-chart-react-victory/src/charts"
+    ).then((module) => ({ default: module.ActivityLineChart }))
+  );
   useAsyncEffect(async () => {
     const data = await fetchData();
     if (Object.keys(activitiesStore.getValue().entities ?? {}).length) {
@@ -173,10 +170,15 @@ const App: React.FC = () => {
             }`}
           >
             <div className="chartRow--donut">
-              <LanguagePieChart />
+              <React.Suspense fallback="Loading pie chart">
+                <LanguagePieChart />
+              </React.Suspense>
             </div>
             <div className="chartRow--line">
-              <ActivityLineChart />
+              <React.Suspense fallback="Loading pie chart">
+                {" "}
+                <ActivityLineChart />
+              </React.Suspense>
             </div>
           </div>
 
