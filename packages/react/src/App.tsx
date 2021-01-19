@@ -16,8 +16,6 @@ import {
 import type {
   ActivityCount,
   LanguageCount,
-  DonutChartProps,
-  LineChartProps,
   Results as ReducerState,
 } from "@tony/cv-lib/search/query";
 import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
@@ -38,6 +36,10 @@ import {
 import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
+import {
+  LanguagePieChart,
+  ActivityLineChart,
+} from "@tony/cv-chart-react-nivo/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
@@ -57,10 +59,6 @@ type Action =
       // Counts
       activityCount?: ActivityCount;
       languageCount?: LanguageCount;
-
-      // Charts
-      donutChart: DonutChartProps;
-      lineChart: LineChartProps;
     }
   | { type: ActionType.IsLoading; isLoading: boolean };
 
@@ -118,10 +116,6 @@ const App: React.FC = () => {
         // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
         activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
-
-        // Charts
-        donutChart: (await query.getDonutChart()) as DonutChartProps,
-        lineChart: (await query.getLineChart()) as LineChartProps,
       });
     }
     return void 0;
@@ -148,6 +142,7 @@ const App: React.FC = () => {
   }, []);
 
   const resultsCount = results?.activities ? results.activities.length : 0;
+
   return (
     <AppContainer>
       {results.ui.isLoading ? (
@@ -156,11 +151,15 @@ const App: React.FC = () => {
         <>
           <div
             className={`chartRow ${
-              Object.keys(results.donutChart).length ? "" : "noCharts"
+              Object.keys(results.activityCount).length ? "" : "noCharts"
             }`}
           >
-            <div className="chartRow--donut"></div>
-            <div className="chartRow--line"></div>
+            <div className="chartRow--donut">
+              <LanguagePieChart />
+            </div>
+            <div className="chartRow--line">
+              <ActivityLineChart />
+            </div>
           </div>
 
           <div className="dropdownRow">
