@@ -67,8 +67,8 @@ export class BillboardJSChartQuery extends CVQuery {
               }
             ),
             type: donut(),
-            color: (color, languageName) =>
-              languages.find((language) => language.id === languageName.id)?.ui
+            color: (color, data) =>
+              languages.find((language) => language.id === data.id)?.ui
                 ?.backgroundColor ?? color,
             labels: {
               // billboard.js doesn't accept callbacks here
