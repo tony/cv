@@ -39,7 +39,7 @@ import { onEmit, useAsyncEffect } from "./utils";
 import {
   LanguagePieChart,
   ActivityLineChart,
-} from "@tony/cv-chart-react-vis/src/charts";
+} from "@tony/cv-chart-react-victory/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
@@ -152,6 +152,12 @@ const App: React.FC = () => {
       subscriptions.map((it) => it.unsubscribe());
     };
   }, []);
+
+  const colorScale = Object.values(results.languages).map(
+    (language) => language?.ui?.backgroundColor
+  );
+  // languagesQuery.getBackgroundColors());
+  console.log("colorScale", colorScale);
 
   const resultsCount = results?.activities ? results.activities.length : 0;
 
