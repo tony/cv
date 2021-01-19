@@ -39,7 +39,7 @@ import { onEmit, useAsyncEffect } from "./utils";
 import {
   LanguagePieChart,
   ActivityLineChart,
-} from "@tony/cv-chart-react-victory/src/charts";
+} from "@tony/cv-chart-react-carbon/src/charts";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
