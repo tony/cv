@@ -1,5 +1,7 @@
 @use "@tony/cv-nav/components/nav.scss" as nav;
 
+$chart-height: 400px;
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
@@ -135,7 +137,7 @@ a {
   }
 
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: $chart-height 1fr;
   grid-auto-rows: 1fr;
   justify-items: stretch;
   align-items: stretch;
@@ -152,9 +154,9 @@ a {
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     width: 100%;
-    grid-template-rows: 400px;
+    grid-template-rows: $chart-height;
     &--line {
-      height: 400px;
+      height: $chart-height;
     }
   }
 }
@@ -203,6 +205,31 @@ a {
   align-items: center;
   text-align: center;
   min-height: calc(100vh - #{nav.$nav-height});
+}
+
+.loading-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: $chart-height;
+}
+
+
+#chart-links {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  a {
+    font-size: 0.9rem;
+    color: #666;
+    &.active {
+      font-weight: 600;
+    }
+    &:hover {
+      color: #999;
+    }
+  }
 }
 
 .callouts { // https://github.com/carbon-design-system/carbon-charts/issues/917
