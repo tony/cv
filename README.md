@@ -17,13 +17,43 @@ This time we're using typescript and wiring-in webpack from the ground up.
 
 ## Status
 
-| Package     | Source                | Website                            | Status         |
-| ----------- | --------------------- | ---------------------------------- | -------------- |
-| React       | [packages/react/][]   | https://cv-react-v2.git-pull.com   | 🟡 In-progress |
-| Vue         | [packages/vue/][]     | https://cv-vue-v2.git-pull.com     | ❌ Unstarted   |
-| Angular     | [packages/angular/][] | https://cv-angular-v2.git-pull.com | ❌ Unstarted   |
-| Common code | [packages/lib/][]     | N/A                                | 🟡 In-progress |
-| Scripts     | [packages/data/][]    | N/A                                | ✔️ Stable      |
+### 🏗️ Frameworks
+
+| Package | Source                | Website                            | Status         |
+| ------- | --------------------- | ---------------------------------- | -------------- |
+| React   | [packages/react/][]   | https://cv-react-v2.git-pull.com   | 🟡 In-progress |
+| Vue     | [packages/vue/][]     | https://cv-vue-v2.git-pull.com     | ❌ Unstarted   |
+| Angular | [packages/angular/][] | https://cv-angular-v2.git-pull.com | ❌ Unstarted   |
+
+### ⚙️ Shared code
+
+| Package     | Source             | Details                             | Status         |
+| ----------- | ------------------ | ----------------------------------- | -------------- |
+| Top bar     | [packages/nav/][]  | [lit-element]-based [web component] | 🟡 In-progress |
+| Common code | [packages/lib/][]  | N/A                                 | 🟡 In-progress |
+| Data        | [packages/data/][] | N/A                                 | ✔️ Stable      |
+| Scripts     | [packages/data/][] | N/A                                 | ✔️ Stable      |
+
+[lit-element]: https://lit-element.polymer-project.org/
+[web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
+
+### 📈 Charts
+
+| Package                   | React                                                  | Angular      | Vue          |
+| ------------------------- | ------------------------------------------------------ | ------------ | ------------ |
+| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       | ❌ Unstarted | ❌ Unstarted |
+| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       | ❌ Unstarted | ❌ Unstarted |
+| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] | ❌ Unstarted | ❌ Unstarted |
+| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         | N/A          | N/A          |
+| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      | N/A          | N/A          |
+| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          | N/A          | N/A          |
+
+[@carbon/charts]: https://github.com/carbon-design-system/carbon-charts
+[plotly]: https://github.com/plotly/plotly.js
+[billboard.js]: https://github.com/naver/billboard.js
+[victory]: https://github.com/FormidableLabs/victory
+[nivo]: https://github.com/plouc/nivo
+[react-vis]: https://github.com/uber/react-vis
 
 ## Quickstart
 
@@ -166,6 +196,14 @@ yarn workspaces run lint
   [es2015 class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
   [packages/scripts/]: packages/scripts/
   [packages/data/]: packages/data/
+  [packages/chart-react-vis/]: packages/chart-react-vis/
+  [packages/chart-react-nivo/]: packages/chart-react-nivo/
+  [packages/chart-react-victory/]: packages/chart-react-victory/
+  [packages/chart-react-carbon/]: packages/chart-react-carbon/
+  [packages/chart-react-billboard.js/]: packages/chart-react-billboard.js/
+  [packages/chart-react-plotly/]: packages/chart-react-plotly/
+  [packages/nav/]: packages/nav/
+
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
 
