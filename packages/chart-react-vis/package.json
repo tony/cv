@@ -34,11 +34,8 @@
     "eslint-plugin-promise": "^4.2.1"
   },
   "dependencies": {
-    "@carbon/charts": "^0.41.24",
-    "@carbon/charts-react": "^0.41.24",
     "@datorama/akita": "^6.0.0",
     "@tony/cv-lib": "*",
-    "carbon-components": "^10.26.0",
     "fast-deep-equal": "^3.1.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
