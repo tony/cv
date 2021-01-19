@@ -204,3 +204,7 @@ a {
   text-align: center;
   min-height: calc(100vh - #{nav.$nav-height});
 }
+
+.callouts { // https://github.com/carbon-design-system/carbon-charts/issues/917
+  display: none;
+}

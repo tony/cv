@@ -1,11 +1,13 @@
-import "./custom.d.ts";
+import { DonutChart, StackedAreaChart } from "@carbon/charts-react";
 import React from "react";
-import Plotly from "plotly.js/dist/plotly";
+
 import type { Observable, Subscription } from "rxjs";
 
-import { plotlyJSChartQuery as query } from "./hub";
+import { carbonChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 import equal from "fast-deep-equal";
+
+import "@carbon/charts/styles.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
@@ -25,46 +27,10 @@ export const useAsyncEffect = (
     return () => void 0;
   }, dependencies);
 
-export interface ChartProps {
-  data?: Plotly.Data[];
-  layout: Partial<Plotly.Layout>;
-  frames?: Plotly.Frame[];
-  config?: Partial<Plotly.Config>;
-
-  // react-specific
-  style?: React.CSSProperties;
-}
-
-export const Chart: React.FC<ChartProps> = ({ style = {}, data, ...props }) => {
-  const ref = React.useRef<Plotly.Chart>(null);
-
-  React.useEffect(() => {
-    if (!Object.prototype.hasOwnProperty.call(ref?.current, "data")) {
-      Plotly.newPlot(ref.current, { data, ...props });
-    } else {
-      Plotly.animate(
-        ref.current,
-        { data, ...props },
-        {
-          transition: {
-            duration: 500,
-            easing: "cubic-in-out",
-          },
-          frame: {
-            duration: 100,
-          },
-        }
-      );
-    }
-  }, [props, data]);
-  return <div ref={ref} style={style} />;
-};
-
-export const LanguagePieChart: React.FC<
-  // Partial<React.ComponentProps<typeof ResponsivePie>>
-  Partial<DonutChartProps>
-> = (props) => {
+export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
   const [chartData, setChartData] = React.useState<DonutChartProps>();
+  const languageChartRef = React.useRef<DonutChart>(null);
+
   useAsyncEffect(async () => {
     if (!chartData) {
       setChartData((await query.getDonutChart()) as DonutChartProps);
@@ -94,21 +60,13 @@ export const LanguagePieChart: React.FC<
     return null;
   }
 
-  return (
-    <Chart
-      data={[chartData]}
-      layout={{
-        margin: { t: 0, b: 0, l: 0, r: 0 },
-        showlegend: false,
-      }}
-      style={{ width: "100%", maxHeight: "400px" }}
-      {...props}
-    />
-  );
+  return <DonutChart ref={languageChartRef} {...chartData} {...props} />;
 };
 
 export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
   const [chartData, setChartData] = React.useState<LineChartProps>();
+  const lineChartRef = React.useRef<StackedAreaChart>(null);
+
   useAsyncEffect(async () => {
     if (!chartData) {
       setChartData((await query.getLineChart()) as LineChartProps);
@@ -139,12 +97,10 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
   }
 
   return (
-    <Chart
-      data={[chartData]}
-      layout={{ title: "A Fancy Plot" }}
-      config={{ responsive: true }}
-      style={{ width: "100%" }}
+    <StackedAreaChart
+      ref={lineChartRef}
+      {...chartData}
       {...props}
-    />
+    ></StackedAreaChart>
   );
 };
