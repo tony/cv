@@ -34,12 +34,12 @@
 
 ### ⚙️ Shared code
 
-| Package     | Source             | Details                             | Status         |
-| ----------- | ------------------ | ----------------------------------- | -------------- |
-| Top bar     | [packages/nav/][]  | [lit-element]-based [web component] | 🟡 In-progress |
-| Common code | [packages/lib/][]  | N/A                                 | 🟡 In-progress |
-| Data        | [packages/data/][] | N/A                                 | ✔️ Stable      |
-| Scripts     | [packages/data/][] | N/A                                 | ✔️ Stable      |
+| Package     | Source                | Details                             | Status         |
+| ----------- | --------------------- | ----------------------------------- | -------------- |
+| Top bar     | [packages/nav/][]     | [lit-element]-based [web component] | 🟡 In-progress |
+| Common code | [packages/lib/][]     | N/A                                 | 🟡 In-progress |
+| Data        | [packages/data/][]    | N/A                                 | ✔️ Stable      |
+| Scripts     | [packages/scripts/][] | N/A                                 | ✔️ Stable      |
 
 [lit-element]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
