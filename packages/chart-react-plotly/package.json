@@ -17,7 +17,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^14.14.21",
+    "@types/node": "^14.14.22",
     "@types/plotly.js": "^1.54.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
