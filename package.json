@@ -17,9 +17,7 @@
   "workspaces": {
     "nohoist": [
       "**/@types/jest",
-      "**/@types/jasmine",
-      "**/@angular*",
-      "**/@angular*/**"
+      "**/@types/jasmine"
     ],
     "packages": [
       "packages/*"
