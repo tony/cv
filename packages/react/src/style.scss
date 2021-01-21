@@ -186,6 +186,10 @@ a {
   .content {
     grid-area: content;
   }
+  .headline {
+    display: flex;
+    align-items: center;
+  }
 
   .languages {
     grid-area: languages;

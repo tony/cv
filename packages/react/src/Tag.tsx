@@ -10,6 +10,8 @@ import type {
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
+import { Colors } from "@tony/cv-data/constants";
+import { ActivityTypeIcon } from "./Icons";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
@@ -56,6 +58,18 @@ export const ActivityTypeTag: React.FC<
       style={{ ...(activityType?.ui ?? {}), ...style }}
       {...props}
     >
+      {activityType?.id && (
+        <ActivityTypeIcon
+          activityTypeId={activityType.id}
+          style={{
+            paddingRight: ".25rem",
+            marginTop: "-.25rem",
+            marginBottom: "-.25rem",
+            marginLeft: "-.25rem",
+          }}
+          color={Colors["gray.500"]}
+        />
+      )}
       {children || activityType?.name || activityTypeName}
     </div>
   );
