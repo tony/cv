@@ -22,6 +22,26 @@ export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
   Website: "Published website",
   Article: "Published article",
 };
+export const ActivityTypeVerbMap: IActivityTypeNameStringMap = {
+  SoftwareApp: "Published",
+  SoftwareLib: "Published",
+  Patch: "Patched",
+  Work: "Worked",
+  Volunteer: "Volunteered",
+  Publication: "Published",
+  Website: "Published",
+  Article: "Published",
+};
+export const ActivityTypeEmojiMap: IActivityTypeNameStringMap = {
+  SoftwareApp: "",
+  SoftwareLib: "⚙️",
+  Patch: "",
+  Work: "",
+  Volunteer: "",
+  Publication: "",
+  Website: "",
+  Article: "",
+};
 
 export const ActivityTypeSVGIconMap: IActivityTypeNameStringMap = {
   SoftwareApp: "package",
@@ -136,18 +156,38 @@ export const ColorsComputed: {
   [key: string]: string;
 } = {
   // ........ Fades ........
-  "black.fade.15": chroma(ColorsBase["black"]).alpha(0.15).hex(),
-  "black.fade.30": chroma(ColorsBase["black"]).alpha(0.3).hex(),
-  "black.fade.50": chroma(ColorsBase["black"]).alpha(0.5).hex(),
-  "black.fade.70": chroma(ColorsBase["black"]).alpha(0.7).hex(),
-  "black.fade.85": chroma(ColorsBase["black"]).alpha(0.85).hex(),
+  "black.fade.15": chroma(ColorsBase["black"])
+    .alpha(0.15)
+    .hex(),
+  "black.fade.30": chroma(ColorsBase["black"])
+    .alpha(0.3)
+    .hex(),
+  "black.fade.50": chroma(ColorsBase["black"])
+    .alpha(0.5)
+    .hex(),
+  "black.fade.70": chroma(ColorsBase["black"])
+    .alpha(0.7)
+    .hex(),
+  "black.fade.85": chroma(ColorsBase["black"])
+    .alpha(0.85)
+    .hex(),
 
   // White
-  "white.fade.15": chroma(ColorsBase["white"]).alpha(0.15).hex(),
-  "white.fade.30": chroma(ColorsBase["white"]).alpha(0.3).hex(),
-  "white.fade.50": chroma(ColorsBase["white"]).alpha(0.5).hex(),
-  "white.fade.70": chroma(ColorsBase["white"]).alpha(0.7).hex(),
-  "white.fade.85": chroma(ColorsBase["white"]).alpha(0.85).hex(),
+  "white.fade.15": chroma(ColorsBase["white"])
+    .alpha(0.15)
+    .hex(),
+  "white.fade.30": chroma(ColorsBase["white"])
+    .alpha(0.3)
+    .hex(),
+  "white.fade.50": chroma(ColorsBase["white"])
+    .alpha(0.5)
+    .hex(),
+  "white.fade.70": chroma(ColorsBase["white"])
+    .alpha(0.7)
+    .hex(),
+  "white.fade.85": chroma(ColorsBase["white"])
+    .alpha(0.85)
+    .hex(),
 };
 
 // ........ Color defaults ........
