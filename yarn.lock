@@ -1510,17 +1510,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.26":
-  version "0.41.26"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.26.tgz#6ba962a02763492dfec0e3d5eb263eaafa078f6d"
-  integrity sha512-fhtg7kNRlpCtBkucE29NRj3Kp35dtRRnwi6pJV+0iRiJzZLF1GbryGUE70P3vCXQP1aC6IuryQoRZBO+pc10Uw==
+"@carbon/charts-react@^0.41.27":
+  version "0.41.27"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.27.tgz#435c28e803bce3595e1efbb5bf762a2d0791fcc5"
+  integrity sha512-R9T/1BzR9oreTXUumZkMEuZWvyWreRUOTcyVJgCMf8p6I6FL6C1Qq3dwVu41pmgxG0XHpk1nxB+/Pd6MoV/MRw==
   dependencies:
-    "@carbon/charts" "^0.41.26"
+    "@carbon/charts" "^0.41.27"
 
-"@carbon/charts@^0.41.26":
-  version "0.41.26"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.26.tgz#8e334e2c2749566464e2ada6ed48899a1ae6ddca"
-  integrity sha512-VhNyCFw4kCDJtfDUfBRI8uMgkJBkPTbIfULW0vhG0/X6vHsUrWGk/NEOl9+UYqafOJUB8F96CxDcoIGYxOGUgQ==
+"@carbon/charts@^0.41.27":
+  version "0.41.27"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.27.tgz#b45c0fb41c01513dde6149681723c494826188c5"
+  integrity sha512-rqAvsz3wXpihi8dwJ4yp8cfARnhC0QdWmRU/jJj4aAsUIblDvwyxIWBY0KZ0J5kl5MYIYRbjJpuQJ1RT35BxXQ==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/utils-position" "1.1.1"
@@ -2306,10 +2306,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tabler/icons@^1.38.1":
-  version "1.38.1"
-  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.38.1.tgz#11e43f7c41bf2a91c5e7c28cea60841a6caabdb8"
-  integrity sha512-hWEsUwCKo2sdiDNUG74IHhDEUIz+f1Kq5kQ36BP8YiqVrNHTsblbL8vNj5n+KMqxzScF2mjqKJffRxqkvqnJNg==
+"@tabler/icons@^1.39.0":
+  version "1.39.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.39.0.tgz#5280436f4c295c40bef447b0ff171fad38298dce"
+  integrity sha512-aqcGi7eJDiDXzJwlVEIYmZkkPf1bBEg95ErMceKIUT1gkcGI5fqXQwcQG+84q6izeBecz2SemKQv6cTqNjpQqQ==
 
 "@turf/area@^6.0.1":
   version "6.0.1"
@@ -14401,10 +14401,10 @@ sass@1.27.0:
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
-sass@^1.32.4:
-  version "1.32.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.4.tgz#308bf29dd7f53d44ae4f06580e9a910ad9aa411e"
-  integrity sha512-N0BT0PI/t3+gD8jKa83zJJUb7ssfQnRRfqN+GIErokW6U4guBpfYl8qYB+OFLEho+QvnV5ZH1R9qhUC/Z2Ch9w==
+sass@^1.32.5:
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.5.tgz#2882d22ad5748c05fa9bff6c3b0ffbc4f4b9e1dc"
+  integrity sha512-kU1yJ5zUAmPxr7f3q0YXTAd1oZjSR1g3tYyv+xu0HZSl5JiNOaE987eiz7wCUvbm4I9fGWGU2TgApTtcP4GMNQ==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
