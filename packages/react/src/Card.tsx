@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
-import { ActivityTypeTag, LanguageTag, OrgTypeTag } from "./Tag";
+import { ActivityTypeText, LanguageTag, OrgTypeTag } from "./Tag";
 import "./style.scss";
 
 interface IActivityCardProps {
@@ -65,11 +65,17 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
 }) => (
   <div className="card cardGrid">
     <div className="headline">
-      <ActivityTypeTag
+      <ActivityTypeText
         activityTypeName={activity.activityType}
         style={{ marginRight: "0.5rem" }}
       />
-      <strong>
+      <div style={{ paddingLeft: "0.25rem" }}>
+        <a href={org.url} target="_blank" rel="noopener noreferrer">
+          {org.name}
+        </a>
+        :
+      </div>
+      <strong style={{ paddingLeft: "0.5rem" }}>
         <a href={org && org.url ? org.url : "#"} title={activity.title}>
           {activity.title}
         </a>

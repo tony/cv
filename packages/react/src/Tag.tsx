@@ -10,7 +10,11 @@ import type {
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
-import { Colors } from "@tony/cv-data/constants";
+import {
+  ActivityTypeEmojiMap,
+  ActivityTypeVerbMap,
+  Colors,
+} from "@tony/cv-data/constants";
 import { ActivityTypeIcon } from "./Icons";
 
 export const LanguageTag: React.FC<
@@ -71,6 +75,33 @@ export const ActivityTypeTag: React.FC<
         />
       )}
       {children || activityType?.name || activityTypeName}
+    </div>
+  );
+};
+
+export const ActivityTypeText: React.FC<
+  { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
+> = ({ activityTypeName, children, className = "", style = {}, ...props }) => {
+  if (!activityTypeName) {
+    return null;
+  }
+  const activityType = activityTypesQuery.getEntity(activityTypeName);
+  if (!activityType || !activityType.ui) {
+    console.groupCollapsed(
+      `${activityType?.name} missing activity type for ${activityTypeName}`
+    );
+    console.table(activityType);
+    console.groupEnd();
+  }
+
+  return (
+    <div {...props}>
+      {activityType?.id && (
+        <>
+          {ActivityTypeEmojiMap[activityType.id]}{" "}
+          {ActivityTypeVerbMap[activityType.id]}
+        </>
+      )}
     </div>
   );
 };

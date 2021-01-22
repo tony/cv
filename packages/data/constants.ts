@@ -33,14 +33,14 @@ export const ActivityTypeVerbMap: IActivityTypeNameStringMap = {
   Article: "Published",
 };
 export const ActivityTypeEmojiMap: IActivityTypeNameStringMap = {
-  SoftwareApp: "",
+  SoftwareApp: "📦",
   SoftwareLib: "⚙️",
-  Patch: "",
-  Work: "",
-  Volunteer: "",
-  Publication: "",
-  Website: "",
-  Article: "",
+  Patch: "🔨",
+  Work: "💼",
+  Volunteer: "💗",
+  Publication: "📚",
+  Website: "🖥️",
+  Article: "📃",
 };
 
 export const ActivityTypeSVGIconMap: IActivityTypeNameStringMap = {
