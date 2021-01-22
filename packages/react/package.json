@@ -57,8 +57,8 @@
     "html-webpack-plugin": "^4.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-select": "^3.2.0",
+    "react-select": "^4.0.1",
     "sass": "^1.32.5",
-    "webpack": "~5.16.0"
+    "webpack": "~5.17.0"
   }
 }
