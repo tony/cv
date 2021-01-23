@@ -65,7 +65,7 @@ export const DEFAULT_RESULTS: Results = {
 };
 
 @QueryConfig({
-  sortBy: "createdDate",
+  sortBy: "createdAt",
   sortByOrder: Order.DESC,
 })
 export class ActivitiesQuery extends QueryEntity<ActivitiesState> {
@@ -267,8 +267,8 @@ export class CVQuery extends Query<CVState> {
     return selectActivity.pipe(
       map((activities) => {
         return activities.reduce((jsonData, activity) => {
-          if (activity.createdDate) {
-            const year = moment(activity.createdDate).get("year").toString();
+          if (activity.createdAt) {
+            const year = moment(activity.createdAt).get("year").toString();
             if (year in jsonData) {
               jsonData[year] += 1;
             } else {

@@ -88,9 +88,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
             color: "gray",
             fontWeight: "normal",
           }}
-          title={format(new Date(activity.createdDate), "MMMM do, yyyy")}
+          title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
         >
-          {formatDistance(new Date(activity.createdDate), new Date())} ago
+          {formatDistance(new Date(activity.createdAt), new Date())} ago
         </em>
       </div>
     </div>

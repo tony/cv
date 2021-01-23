@@ -20,15 +20,19 @@ export interface ActivityType extends IThemeable {
 }
 
 export interface IActivity {
-  createdDate: string;
   title: string;
   activityType: ActivityTypeName;
   orgId: string;
-  acceptedDate?: string;
+
+  // URLs
   qaUrl?: string;
   diffUrl?: string;
-  endDate?: string;
-  startDate?: string;
+
+  // Dates
+  createdAt: string;
+  acceptedAt?: string;
+  startedAt?: string;
+  endedAt?: string;
 }
 
 export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";

@@ -2,71 +2,71 @@
   {
     "id": 20000,
     "activityType": "SoftwareApp",
-    "createdDate": "2013-10-08",
+    "createdAt": "2013-10-08",
     "title": "Created the tmuxp project",
     "orgId": "tmuxp"
   },
   {
     "id": 20001,
     "activityType": "SoftwareApp",
-    "createdDate": "2017-04-17",
+    "createdAt": "2017-04-17",
     "title": "Created the unihan-etl project",
     "orgId": "unihan-etl"
   },
   {
     "id": 20002,
     "activityType": "SoftwareApp",
-    "createdDate": "2013-05-20",
+    "createdAt": "2013-05-20",
     "title": "Created the CLI interface to the cihai project",
     "orgId": "cihai-cli"
   },
   {
     "id": 20003,
     "activityType": "SoftwareLib",
-    "createdDate": "2016-10-08",
+    "createdAt": "2016-10-08",
     "title": "Created the libtmux project",
     "orgId": "libtmux"
   },
   {
     "id": 20004,
     "activityType": "SoftwareLib",
-    "createdDate": "2017-04-16",
+    "createdAt": "2017-04-16",
     "title": "Created the cihai CJK (Chinese, Japanese, Korean) data project",
     "orgId": "cihai"
   },
   {
     "id": 20005,
     "activityType": "SoftwareLib",
-    "createdDate": "2017-05-29",
+    "createdAt": "2017-05-29",
     "title": "Created a database backend for UNIHAN",
     "orgId": "unihan-db"
   },
   {
     "id": 20006,
     "activityType": "SoftwareLib",
-    "createdDate": "2017-11-26",
+    "createdAt": "2017-11-26",
     "title": "Created a django package, django-slugify-processor",
     "orgId": "django-slugify-processor"
   },
   {
     "id": 20007,
     "activityType": "SoftwareLib",
-    "createdDate": "2016-06-20",
+    "createdAt": "2016-06-20",
     "title": "Decoupled libvcs from vcspull",
     "orgId": "libvcs"
   },
   {
     "id": 20008,
     "activityType": "SoftwareApp",
-    "createdDate": "2013-10-06",
+    "createdAt": "2013-10-06",
     "title": "Created vcspull synchronization tool for git/mercurial/subversion",
     "orgId": "vcspull"
   },
   {
     "id": 30000,
     "activityType": "Patch",
-    "createdDate": "2007-04-12",
-    "acceptedDate": "2007-06-18",
+    "createdAt": "2007-04-12",
+    "acceptedAt": "2007-06-18",
     "qaUrl": "https://www.drupal.org/project/event/issues/143542",
     "diffUrl": "https://www.drupal.org/files/issues/event_32.patch",
     "title": "Improving RSS feeds",
@@ -75,8 +75,8 @@
   {
     "id": 30001,
     "activityType": "Patch",
-    "createdDate": "2008-01-23",
-    "acceptedDate": "2008-02-06",
+    "createdAt": "2008-01-23",
+    "acceptedAt": "2008-02-06",
     "qaUrl": "https://www.drupal.org/project/drupal/issues/213172",
     "diffUrl": "https://www.drupal.org/files/issues/color_imageless_0.patch",
     "title": "Eliminate Color.module base_image requirement on 6.0",
@@ -85,8 +85,8 @@
   {
     "id": 30002,
     "activityType": "Patch",
-    "createdDate": "2014-12-27",
-    "acceptedDate": "2015-02-24",
+    "createdAt": "2014-12-27",
+    "acceptedAt": "2015-02-24",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196303",
     "diffUrl": "https://bz-attachments.freebsd.org/attachment.cgi?id=150996",
     "title": "x11-fonts/lohit: Fix typo in files/pkg-message.in",
@@ -95,8 +95,8 @@
   {
     "id": 30003,
     "activityType": "Patch",
-    "createdDate": "2016-02-19",
-    "acceptedDate": "2016-04-06",
+    "createdAt": "2016-02-19",
+    "acceptedAt": "2016-04-06",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207336",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167177",
     "title": "Storage Controller Interface driver - typo in unimplemented macro in scic_sds_controller_registers.h",
@@ -105,8 +105,8 @@
   {
     "id": 30004,
     "activityType": "Patch",
-    "createdDate": "2016-02-19",
-    "acceptedDate": null,
+    "createdAt": "2016-02-19",
+    "acceptedAt": null,
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207337",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=167179",
     "title": "libi386: typo in struct in pxe.h",
@@ -115,8 +115,8 @@
   {
     "id": 30005,
     "activityType": "Patch",
-    "createdDate": "2017-03-04",
-    "acceptedDate": "2017-03-30",
+    "createdAt": "2017-03-04",
+    "acceptedAt": "2017-03-30",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216672",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=180483",
     "title": "[NEW PORT] devel/py-libtmux: python API for tmux",
@@ -125,8 +125,8 @@
   {
     "id": 30006,
     "activityType": "Patch",
-    "createdDate": "2014-12-29",
-    "acceptedDate": "2015-03-22",
+    "createdAt": "2014-12-29",
+    "acceptedAt": "2015-03-22",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151072",
     "title": "[NEW PORT] devel/py-kaptan: Config file parser for json, yaml and ini files",
@@ -135,8 +135,8 @@
   {
     "id": 30007,
     "activityType": "Patch",
-    "createdDate": "2016-01-07",
-    "acceptedDate": "2016-01-09",
+    "createdAt": "2016-01-07",
+    "acceptedAt": "2016-01-09",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205987",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=165189",
     "title": "sysutils/py-tmuxp: Update to 0.9.3 for tmux 2.1 compatibility",
@@ -145,8 +145,8 @@
   {
     "id": 30008,
     "activityType": "Patch",
-    "createdDate": "2014-12-29",
-    "acceptedDate": "2015-03-22",
+    "createdAt": "2014-12-29",
+    "acceptedAt": "2015-03-22",
     "qaUrl": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196306",
     "diffUrl": "https://bugs.freebsd.org/bugzilla/attachment.cgi?id=151080",
     "title": "[NEW PORT] sysutils/py-tmuxp: Session manager for tmux",
@@ -155,8 +155,8 @@
   {
     "id": 40000,
     "activityType": "Work",
-    "createdDate": "2014-04-01",
-    "endDate": "2015-02-05",
+    "createdAt": "2014-04-01",
+    "endedAt": "2015-02-05",
     "title": "Full-stack Developer at Boostable",
     "description": "Node.js / Sail.js -> Django. Stripe integration czar",
     "orgId": "boostable"
@@ -164,7 +164,7 @@
   {
     "id": 40001,
     "activityType": "Work",
-    "createdDate": "2017-01-01",
+    "createdAt": "2017-01-01",
     "title": "Founder and Programmer at devel.tech",
     "description": "What happens when a scrappy open source programmer wants to build his own utopia for programmers.",
     "orgId": "devel.tech"
@@ -172,8 +172,8 @@
   {
     "id": 40002,
     "activityType": "Work",
-    "createdDate": "2008-01-01",
-    "endDate": "2011-01-01",
+    "createdAt": "2008-01-01",
+    "endedAt": "2011-01-01",
     "title": "Software Developer",
     "description": "Developing Drupal based SAAS platform, attending conferences, sales via GoToMeeting/Video conferences",
     "orgId": "buzzr"
@@ -181,8 +181,8 @@
   {
     "id": 40003,
     "activityType": "Work",
-    "createdDate": "2011-10-01",
-    "endDate": "2012-01-01",
+    "createdAt": "2011-10-01",
+    "endedAt": "2012-01-01",
     "title": "Software Developer",
     "description": "NYU Poly + Bloomberg incubator on Varick. Social media campaign at 1-800-Flowers. Single Page JS applications and Facebook API. (Acquired by Merkle.)",
     "orgId": "social-amp"
@@ -190,8 +190,8 @@
   {
     "id": 40004,
     "activityType": "Work",
-    "createdDate": "2012-11-01",
-    "endDate": "2013-04-01",
+    "createdAt": "2012-11-01",
+    "endedAt": "2013-04-01",
     "title": "Software Developer",
     "description": "Back with MORE love for making social social media campaigns for awesome customers like 1-800-Flowers, Marie Claire, and Elle",
     "duties": ["Facebook API"],
@@ -200,7 +200,7 @@
   {
     "id": 40005,
     "activityType": "Work",
-    "createdDate": "2018-03-01",
+    "createdAt": "2018-03-01",
     "title": "Senior Developer at Peergrade",
     "description": "Peer Grading Platform",
     "orgId": "peergrade"
@@ -208,28 +208,28 @@
   {
     "id": 50000,
     "activityType": "Publication",
-    "createdDate": "2017-01-01",
+    "createdAt": "2017-01-01",
     "title": "Published The Tao of tmux",
     "orgId": "the-tao-of-tmux"
   },
   {
     "id": 60000,
     "activityType": "Volunteer",
-    "createdDate": "2013-01-01",
+    "createdAt": "2013-01-01",
     "title": "System Administrator at Wengu",
     "orgId": "wengu"
   },
   {
     "id": 70000,
     "activityType": "Website",
-    "createdDate": "2013-01-01",
+    "createdAt": "2013-01-01",
     "title": "Inherited HSKFlashCards from Xoogler, Jacob Marble",
     "orgId": "hskflashcards"
   },
   {
     "id": 70001,
     "activityType": "Article",
-    "createdDate": "2017-07-04",
+    "createdAt": "2017-07-04",
     "title": "Django vs Flask",
     "orgId": "devel.tech",
     "url": "https://devel.tech/features/django-vs-flask",

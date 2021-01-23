@@ -13,4 +13,4 @@ export const isActivityDocImprovement = (activity: IActivity): boolean =>
 export const isActivityCodeStyleTweak = (activity: IActivity): boolean =>
   !!activity.title.match(reActivityCodeStyleTweak);
 export const isActivityMerged = (activity: IActivity): boolean =>
-  activity?.acceptedDate ? true : false;
+  activity?.acceptedAt ? true : false;

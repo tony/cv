@@ -182,14 +182,14 @@ recursePRQuery(initialPrQuery)
     id = 0;
     const pullRequestsFinal = prs.map((pr) => {
       return {
-        acceptedDate: pr.mergedAt
+        acceptedAt: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
         orgId: Object.keys(projectsFinal).find(
           (projectName) => pr.repository.name === projectName
         ),
         activityType: "Patch",
-        createdDate: moment(pr.createdAt).format("YYYY-MM-DD"),
+        createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
         id: id++,
         qaUrl: pr.url,
