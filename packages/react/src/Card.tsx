@@ -69,6 +69,16 @@ export const ActivityInfo: React.FC<
   );
 };
 
+const DateText = ({ date }: { date: string }) =>
+  date && (
+    <span
+      title={format(new Date(date), "MMMM do, yyyy")}
+      style={{ paddingLeft: "0.25rem" }}
+    >
+      {formatDistance(new Date(date), new Date())} ago
+    </span>
+  );
+
 export const ActivityCard: React.FC<IActivityCardProps> = ({
   activity,
   org,
@@ -100,12 +110,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
             startedAt={activity.startedAt}
             endedAt={activity.endedAt}
           />
-          <span
-            title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
-            style={{ paddingLeft: "0.25rem" }}
-          >
-            {formatDistance(new Date(activity.createdAt), new Date())} ago
-          </span>
+          <DateText date={activity.createdAt} />
         </span>
       </div>
       <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>

@@ -87,7 +87,14 @@ export const ActivityTypeText: React.FC<
     "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
   > &
     React.HTMLProps<HTMLDivElement>
-> = ({ activityTypeName, acceptedAt, endedAt, ...props }) => {
+> = ({
+  activityTypeName,
+  acceptedAt,
+  endedAt,
+  startedAt,
+  createdAt,
+  ...props
+}) => {
   if (!activityTypeName) {
     return null;
   }
