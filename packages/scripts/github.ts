@@ -23,6 +23,7 @@ const config = {
     "joseph-flinn",
     "nick-ma",
     "peergradeio",
+    "eduflow",
     "tmux-python",
     "vcs-python",
   ],
