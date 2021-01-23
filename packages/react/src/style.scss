@@ -9,6 +9,11 @@ body {
   margin: 0;
 }
 
+body {
+  position: absolute;
+  width: 100%;
+}
+
 .site-name {
   font-size: 2rem;
   text-align: center;
