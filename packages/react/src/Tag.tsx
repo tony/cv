@@ -81,7 +81,7 @@ export const ActivityTypeTag: React.FC<
 
 export const ActivityTypeText: React.FC<
   { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ activityTypeName, children, className = "", style = {}, ...props }) => {
+> = ({ activityTypeName, ...props }) => {
   if (!activityTypeName) {
     return null;
   }
