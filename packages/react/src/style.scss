@@ -85,10 +85,12 @@ a {
 .activityCardList {
   margin: 0 auto;
   max-width: 40%;
+  min-width: 900px;
 
   @media (max-width: 1023px) {
     width: 90%;
     max-width: initial;
+    min-width: none;
     margin: 3rem auto;
   }
 }
