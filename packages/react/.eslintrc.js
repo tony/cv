@@ -38,6 +38,10 @@ module.exports = {
       files: ["**/*.tsx", "**/*.ts"],
       rules: {
         "react/prop-types": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+        ],
       },
     },
   ],
