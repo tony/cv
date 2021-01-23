@@ -21,12 +21,9 @@ import {
   activityTypesStore,
 } from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
-import { Colors } from "@tony/cv-data/constants";
+import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
-import { ActivityTypeIcon } from "./Icons";
-
-// export type ISelectOption = Pick<OptionProps<any, any>, "label" | "value">;
 
 export interface IOptionType {
   label: string;
@@ -291,13 +288,7 @@ export const ActivityTypeOption: React.FC<
       {...props}
       className="dropdownActivityTypeOption"
     >
-      {activityType.id && (
-        <ActivityTypeIcon
-          activityTypeId={activityType.id}
-          style={{ paddingRight: ".25rem" }}
-          color={Colors["gray.500"]}
-        />
-      )}
+      {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
       {children}
     </ReactSelectComponents.Option>
   );
@@ -313,12 +304,7 @@ export const ActivityMultiValueLabel: React.FC<
   }
   return (
     <ReactSelectComponents.MultiValueLabel {...props}>
-      <ActivityTypeIcon
-        activityTypeId={activityType.id}
-        style={{ paddingRight: ".25rem" }}
-        color={Colors["gray.500"]}
-      />
-      {children}
+      {ActivityTypeEmojiMap[activityType.id]} {children}
     </ReactSelectComponents.MultiValueLabel>
   );
 };
