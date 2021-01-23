@@ -254,8 +254,8 @@ const App: React.FC = () => {
         <>
           <ChartLinks />
           <div
-            className={`chartRow ${
-              Object.keys(results.activityCount).length ? "" : "noCharts"
+            className={`chartRow ${chart}${
+              Object.keys(results.activityCount).length ? "" : " noCharts"
             }`}
           >
             <div className="chartRow--donut">
