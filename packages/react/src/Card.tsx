@@ -76,8 +76,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
   <div className="card cardGrid">
     <div className="left-side">
       <div>
-        <ActivityTypeText activityTypeName={activity.activityType} />
-        <span style={{ paddingLeft: "0.25rem" }}>
+        <span style={{ fontWeight: 600 }}>
           <a
             href={org.url}
             target="_blank"
@@ -87,18 +86,20 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
             {org.name}
           </a>
         </span>
-        <span style={{ paddingLeft: "0.25rem" }}>
-          <span style={{ paddingLeft: "0.25rem" }}>·</span>
-          <em
-            style={{
-              paddingLeft: "0.25rem",
-              color: "gray",
-              fontWeight: "normal",
-            }}
+        <span style={{ padding: "0 0.5rem" }}>·</span>
+        <span
+          style={{
+            color: "gray",
+            fontWeight: "normal",
+          }}
+        >
+          <ActivityTypeText activityTypeName={activity.activityType} />
+          <span
             title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
+            style={{ paddingLeft: "0.25rem" }}
           >
             {formatDistance(new Date(activity.createdAt), new Date())} ago
-          </em>
+          </span>
         </span>
       </div>
       <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
