@@ -1,5 +1,5 @@
 import React from "react";
-import { format, formatDistance, formatRelative } from "date-fns";
+import { format, formatDistance } from "date-fns";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag, OrgTypeTag } from "./Tag";
