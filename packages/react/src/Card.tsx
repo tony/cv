@@ -16,7 +16,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
   return (
     <>
       {activity?.qaUrl && (
-        <div
+        <span
           style={{
             display: "inline",
             paddingRight: "0.75rem",
@@ -30,10 +30,10 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           >
             Pull Request
           </a>
-        </div>
+        </span>
       )}
       {activity?.diffUrl && (
-        <div style={{ display: "inline" }}>
+        <span style={{ display: "inline" }}>
           <a
             href={activity.diffUrl}
             target="_blank"
@@ -42,7 +42,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           >
             .diff
           </a>
-        </div>
+        </span>
       )}
     </>
   );
@@ -52,11 +52,11 @@ export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
-    <div style={{ paddingRight: "0.5rem" }}>
+    <span style={{ paddingRight: "0.5rem" }}>
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
-    </div>
+    </span>
   );
 };
 
@@ -65,37 +65,41 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
   org,
 }) => (
   <div className="card cardGrid">
-    <div className="headline">
-      <ActivityTypeText activityTypeName={activity.activityType} />
-      <div style={{ paddingLeft: "0.25rem" }}>
-        <a
-          href={org.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={org.orgType}
-        >
-          {org.name}
-        </a>
-        :
+    <div className="left-side">
+      <div>
+        <ActivityTypeText activityTypeName={activity.activityType} />
+        <span style={{ paddingLeft: "0.25rem" }}>
+          <a
+            href={org.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={org.orgType}
+          >
+            {org.name}
+          </a>
+        </span>
+        <span style={{ paddingLeft: "0.25rem" }}>
+          <span style={{ paddingLeft: "0.25rem" }}>·</span>
+          <em
+            style={{
+              paddingLeft: "0.25rem",
+              color: "gray",
+              fontWeight: "normal",
+            }}
+            title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
+          >
+            {formatDistance(new Date(activity.createdAt), new Date())} ago
+          </em>
+        </span>
       </div>
-      <div style={{ paddingLeft: "0.25rem" }}>
-        <a href={org && org.url ? org.url : "#"} title={activity.title}>
-          {activity.title}
-        </a>
-        <span style={{ paddingLeft: "0.5rem" }}>·</span>
-        <em
-          style={{
-            paddingLeft: "0.25rem",
-            color: "gray",
-            fontWeight: "normal",
-          }}
-          title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
-        >
-          {formatDistance(new Date(activity.createdAt), new Date())} ago
-        </em>
+      <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
+        <span>{activity.title}</span>
+      </div>
+      <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
+        <ActivityInfo activity={activity} org={org} />
       </div>
     </div>
-    <div className="languages">
+    <div className="right-side">
       {org?.languages?.map((languageName) => (
         <LanguageTag
           languageName={languageName}
@@ -103,9 +107,6 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
           style={{ display: "inline-flex" }}
         />
       ))}
-    </div>
-    <div className="content">
-      <ActivityInfo activity={activity} org={org} />
     </div>
   </div>
 );

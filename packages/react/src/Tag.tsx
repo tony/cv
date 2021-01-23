@@ -95,14 +95,14 @@ export const ActivityTypeText: React.FC<
   }
 
   return (
-    <div {...props}>
+    <span {...props}>
       {activityType?.id && (
         <>
           {ActivityTypeEmojiMap[activityType.id]}{" "}
           {ActivityTypeVerbMap[activityType.id]}
         </>
       )}
-    </div>
+    </span>
   );
 };
 

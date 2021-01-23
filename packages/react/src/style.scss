@@ -182,23 +182,22 @@ a {
 .cardGrid {
   display: grid;
   height: 100%;
-  grid-template-areas: "headline languages"
-  "content languages";
+  grid-template-areas: "left-side right-side";
   grid-template-columns: 10fr 2fr;
-  grid-template-rows: 1fr 2fr;
 
   & > div {
     margin-bottom: auto;
   }
 
-  .content {
-    grid-area: content;
+  .left-side {
+    grid-area: left-side;
+
+    margin-bottom: 0;
+    align-items: center;
+
     .tag {
       margin-right: 0.5rem;
     }
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
 
     .orgTag {
       margin-left: 0.5rem;
@@ -207,13 +206,9 @@ a {
       }
     }
   }
-  .headline {
-    display: flex;
-    align-items: center;
-  }
 
-  .languages {
-    grid-area: languages;
+  .right-side {
+    grid-area: right-side;
     text-align: right;
     .tag {
       margin-left: 0.5rem;
