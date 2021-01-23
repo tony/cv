@@ -220,6 +220,17 @@ a {
   }
 }
 
+.activityLinkRow {
+  font-size: 0.8rem;
+  a {
+    font-size: inherit;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .container > div {
   border: 1px dashed #888;
 }

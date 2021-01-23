@@ -24,7 +24,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           rel="noopener noreferrer"
           className="activity-link"
         >
-          Pull Request
+          💬 Pull Request
         </a>
       </span>
     );
@@ -39,21 +39,21 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
           rel="noopener noreferrer"
           className="activity-link"
         >
-          .diff
+          ✒️ .diff
         </a>
       </span>
     );
   }
 
   return (
-    <>
+    <div className="activityLinkRow">
       {items.map((item, idx) => (
         <>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </>
       ))}
-    </>
+    </div>
   );
 };
 
