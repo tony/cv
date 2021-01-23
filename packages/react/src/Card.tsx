@@ -61,11 +61,11 @@ export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
   return (
-    <span style={{ paddingRight: "0.5rem" }}>
+    <>
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
-    </span>
+    </>
   );
 };
 

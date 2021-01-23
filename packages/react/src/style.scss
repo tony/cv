@@ -23,7 +23,7 @@ a {
 
 .card {
   border-bottom: 1px solid rgb(16 22 26 / 25%);
-  padding: 0.7rem;
+  padding: 0.7rem 0.7rem 1.4rem 0.7rem;
   font-size: 0.875rem;
   display: flex;
   align-items: center;
@@ -178,18 +178,17 @@ a {
 }
 
 .cardGrid {
-  display: grid;
   height: 100%;
-  grid-template-areas: "left-side right-side";
-  grid-template-columns: 10fr 2fr;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
 
   & > div {
     margin-bottom: auto;
   }
 
   .left-side {
-    grid-area: left-side;
-
+    flex-grow: 1;
     margin-bottom: 0;
     align-items: center;
 
@@ -224,7 +223,6 @@ a {
   }
 
   .right-side {
-    grid-area: right-side;
     text-align: right;
     .tag {
       margin-left: 0.5rem;
@@ -234,10 +232,6 @@ a {
       }
     }
   }
-}
-
-.container > div {
-  border: 1px dashed #888;
 }
 
 #loading-screen {
