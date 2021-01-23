@@ -13,37 +13,46 @@ interface IActivityCardProps {
 export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
   activity,
 }) => {
+  const items = [];
+
+  if (activity?.qaUrl) {
+    items.push(
+      <span>
+        <a
+          href={activity.qaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Pull Request
+        </a>
+      </span>
+    );
+  }
+
+  if (activity?.diffUrl) {
+    items.push(
+      <span>
+        <a
+          href={activity.diffUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          .diff
+        </a>
+      </span>
+    );
+  }
+
   return (
     <>
-      {activity?.qaUrl && (
-        <span
-          style={{
-            display: "inline",
-            paddingRight: "0.75rem",
-          }}
-        >
-          <a
-            href={activity.qaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="activity-link"
-          >
-            Pull Request
-          </a>
-        </span>
-      )}
-      {activity?.diffUrl && (
-        <span style={{ display: "inline" }}>
-          <a
-            href={activity.diffUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="activity-link"
-          >
-            .diff
-          </a>
-        </span>
-      )}
+      {items.map((item, idx) => (
+        <>
+          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {item}
+        </>
+      ))}
     </>
   );
 };
