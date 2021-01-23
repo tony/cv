@@ -95,7 +95,7 @@ const AppContainer: React.FC = ({ children }) => {
 
 enum Charts {
   ReactVis = "react-vis",
-  Carbon = "@carbon/charts",
+  Carbon = "carbon",
   Plotly = "plotly",
   Billboard = "billboard.js",
   Nivo = "nivo",
