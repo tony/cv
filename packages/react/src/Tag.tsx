@@ -91,8 +91,8 @@ export const ActivityTypeText: React.FC<
   activityTypeName,
   acceptedAt,
   endedAt,
-  startedAt,
-  createdAt,
+  startedAt: _startedAt,
+  createdAt: _createdAt,
   ...props
 }) => {
   if (!activityTypeName) {
