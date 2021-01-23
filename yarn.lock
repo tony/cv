@@ -13704,10 +13704,10 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-select@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.0.1.tgz#ea1551d184d72e68c2375fd2a834ed6cc4ad713d"
-  integrity sha512-XwH1kJRN2D4OlwH2NJb1VCtmERJCfAimA/BIeXSYkVL1vC58FwjHltmVkIk5H0S2Z+qtJEvqO9DKNmzsTHJKZA==
+react-select@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.0.2.tgz#4dcca9f38d6a41e01f2dc7673e244a325e3b4e0e"
+  integrity sha512-BiihrRpRIBBvNqofNZIBpo08Kw8DBHb/kgpIDW4bxgkttk50Sxf0alEIKobns3U7UJXk/CA4rsFUueQEg9Pm5A==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@emotion/cache" "^11.0.0"
