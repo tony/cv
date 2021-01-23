@@ -82,6 +82,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         <a href={org && org.url ? org.url : "#"} title={activity.title}>
           {activity.title}
         </a>
+        <span style={{ paddingLeft: "0.5rem" }}>·</span>
         <em
           style={{
             paddingLeft: "0.25rem",
