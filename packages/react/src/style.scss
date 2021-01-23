@@ -89,7 +89,7 @@ a {
   @media (max-width: 1023px) {
     width: 90%;
     max-width: initial;
-    margin: 3rem auto;
+    margin: .5rem auto;
   }
 }
 
@@ -102,7 +102,7 @@ a {
     width: 90%;
     max-width: initial;
     min-width: initial;
-    margin: 3rem auto;
+    margin: .5rem auto;
   }
 }
 
@@ -161,11 +161,16 @@ a {
   grid-auto-rows: 1fr;
   justify-items: stretch;
   align-items: stretch;
-  height: $chart-height;
+  min-height: $chart-height;
+  grid-gap: 1rem;
 
   @media (max-width: 1023px) {
-    grid-template-columns: minmax(250px, 33%) auto;
-    grid-template-rows: 300px;
+    grid-template-columns: minmax($chart-height, 33%) auto;
+    grid-template-rows: $chart-height;
+    &--donut {
+      justify-self: center;
+      padding-bottom: 0.25rem;
+    }
     &--donut,
     &--line {
       grid-column: span 1;
