@@ -55,6 +55,12 @@ a {
   line-height: 1rem;
   padding: 0.5em 0.75em;
 
+  &.small {
+    background-color: pink;
+    font-size: 0.6rem;
+    padding: 0.25em;
+  }
+
   white-space: nowrap;
   -webkit-box-align: center;
   box-align: center;

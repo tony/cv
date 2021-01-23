@@ -2,7 +2,7 @@ import React from "react";
 import { format, formatDistance } from "date-fns";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
-import { ActivityTypeText, LanguageTag, OrgTypeTag } from "./Tag";
+import { ActivityTypeText, LanguageTag } from "./Tag";
 import "./style.scss";
 
 interface IActivityCardProps {
@@ -56,9 +56,6 @@ export const ActivityInfo: React.FC<
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
-      {org?.orgType && (
-        <OrgTypeTag orgTypeName={org.orgType} className="orgTag" />
-      )}
     </div>
   );
 };
@@ -71,7 +68,12 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     <div className="headline">
       <ActivityTypeText activityTypeName={activity.activityType} />
       <div style={{ paddingLeft: "0.25rem" }}>
-        <a href={org.url} target="_blank" rel="noopener noreferrer">
+        <a
+          href={org.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={org.orgType}
+        >
           {org.name}
         </a>
         :
