@@ -21,6 +21,18 @@ body {
   margin-bottom: 1rem;
 }
 
+.dh-tablet {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.fss-tablet {
+  @media (max-width: 1023px) {
+    font-size: 0.7rem !important;
+  }
+}
+
 a {
   color: rgb(28, 28, 28);
   font-size: 1.2rem;
@@ -90,7 +102,7 @@ a {
   @media (max-width: 1023px) {
     width: 90%;
     max-width: initial;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
   }
 }
 
@@ -100,10 +112,10 @@ a {
   min-width: 900px;
 
   @media (max-width: 1023px) {
-    width: 90%;
+    width: 100%;
     max-width: initial;
     min-width: initial;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
   }
 }
 

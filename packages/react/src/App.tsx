@@ -186,8 +186,8 @@ const App: React.FC = () => {
   const ActivityLineChart = LINE_CHART_MAP[chart];
 
   const ChartLinks = () => (
-    <div id="chart-links">
-      📊 Chart frameworks:{" "}
+    <div id="chart-links" className="fss-tablet">
+      📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
       {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
         <React.Fragment key={c}>
           {idx > 0 && ", "}
