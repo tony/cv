@@ -48,10 +48,10 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <>
+        <React.Fragment key={idx}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
