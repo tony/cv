@@ -7,12 +7,14 @@ import {
 } from "@tony/cv-lib/hub";
 import type {
   ActivityTypeName,
+  IActivity,
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
 import {
   ActivityTypeEmojiMap,
   ActivityTypeVerbMap,
+  ActivityTypeVerbPresentTenseMap,
   Colors,
 } from "@tony/cv-data/constants";
 import { ActivityTypeIcon } from "./Icons";
@@ -80,8 +82,12 @@ export const ActivityTypeTag: React.FC<
 };
 
 export const ActivityTypeText: React.FC<
-  { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ activityTypeName, ...props }) => {
+  { activityTypeName: ActivityTypeName } & Pick<
+    IActivity,
+    "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
+  > &
+    React.HTMLProps<HTMLDivElement>
+> = ({ activityTypeName, acceptedAt, endedAt, ...props }) => {
   if (!activityTypeName) {
     return null;
   }
@@ -94,12 +100,16 @@ export const ActivityTypeText: React.FC<
     console.groupEnd();
   }
 
+  const VerbMap =
+    !endedAt && !acceptedAt
+      ? ActivityTypeVerbPresentTenseMap
+      : ActivityTypeVerbMap;
+
   return (
     <span {...props}>
       {activityType?.id && (
         <>
-          {ActivityTypeEmojiMap[activityType.id]}{" "}
-          {ActivityTypeVerbMap[activityType.id]}
+          {ActivityTypeEmojiMap[activityType.id]} {VerbMap[activityType.id]}
         </>
       )}
     </span>

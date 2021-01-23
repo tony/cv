@@ -13,8 +13,8 @@ interface IActivityTypeNameStringMap {
   Article: string;
 }
 export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
-  SoftwareApp: "Published software",
-  SoftwareLib: "Published software (library, component)",
+  SoftwareApp: "Published software app",
+  SoftwareLib: "Published software component",
   Patch: "Contributed software patch",
   Work: "Employed",
   Volunteer: "Volunteered",
@@ -25,9 +25,19 @@ export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
 export const ActivityTypeVerbMap: IActivityTypeNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
-  Patch: "Patched",
-  Work: "Worked at",
-  Volunteer: "Volunteered at",
+  Patch: "Patch accepted",
+  Work: "Worked there",
+  Volunteer: "Volunteered there",
+  Publication: "Published",
+  Website: "Published",
+  Article: "Published",
+};
+export const ActivityTypeVerbPresentTenseMap: IActivityTypeNameStringMap = {
+  SoftwareApp: "Published",
+  SoftwareLib: "Published",
+  Patch: "Patch submitted",
+  Work: "Working there since",
+  Volunteer: "Volunteering there since",
   Publication: "Published",
   Website: "Published",
   Article: "Published",

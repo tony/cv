@@ -93,7 +93,13 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
             fontWeight: "normal",
           }}
         >
-          <ActivityTypeText activityTypeName={activity.activityType} />
+          <ActivityTypeText
+            activityTypeName={activity.activityType}
+            createdAt={activity.createdAt}
+            acceptedAt={activity.acceptedAt}
+            startedAt={activity.startedAt}
+            endedAt={activity.endedAt}
+          />
           <span
             title={format(new Date(activity.createdAt), "MMMM do, yyyy")}
             style={{ paddingLeft: "0.25rem" }}
