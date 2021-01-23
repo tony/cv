@@ -1,8 +1,10 @@
-.chartRow:not(.noCharts) {
-  height: 400px;
-  max-height: 400px;
+.chartRow.nivo:not(.noCharts) {
+  @media (max-width: 768px) {
+    max-height: 400px;
+  }
 
   .chartRow--donut, .chartRow--line {
+    min-height: 400px;
     height: 400px;
   }
 }

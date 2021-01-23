@@ -1,5 +1,4 @@
-.chartRow:not(.noCharts) {
+.chartRow.victory:not(.noCharts) {
   .chartRow--line {
-    height: 400px;
   }
 }
