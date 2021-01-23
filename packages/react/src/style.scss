@@ -71,7 +71,7 @@ a {
   }
 }
 
-.activityCardList, .dropdownRow {
+.dropdownRow {
   margin: 0 auto;
   max-width: 70%;
 
@@ -80,7 +80,17 @@ a {
     max-width: initial;
     margin: 3rem auto;
   }
+}
 
+.activityCardList {
+  margin: 0 auto;
+  max-width: 40%;
+
+  @media (max-width: 1023px) {
+    width: 90%;
+    max-width: initial;
+    margin: 3rem auto;
+  }
 }
 
 .ml0 {
@@ -166,7 +176,7 @@ a {
   height: 100%;
   grid-template-areas: "headline languages"
   "content content";
-  grid-template-columns: 5fr 2fr;
+  grid-template-columns: 10fr 2fr;
   grid-template-rows: 1fr 1fr;
 
   & > div {
@@ -192,6 +202,10 @@ a {
     text-align: right;
     .tag {
       margin-left: 0.5rem;
+      margin-top: 0.5rem;
+      &:only-child {
+        margin-top: 0;
+      }
     }
   }
 }
