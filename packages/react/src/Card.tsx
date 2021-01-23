@@ -33,7 +33,7 @@ export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
         </div>
       )}
       {activity?.diffUrl && (
-        <div style={{ paddingTop: "0.5rem", display: "inline" }}>
+        <div style={{ display: "inline" }}>
           <a
             href={activity.diffUrl}
             target="_blank"
@@ -56,6 +56,12 @@ export const ActivityInfo: React.FC<
       {["Patch"].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
+      {org?.orgType && (
+        <OrgTypeTag
+          orgTypeName={org.orgType}
+          style={{ marginLeft: "0.5rem" }}
+        />
+      )}
     </div>
   );
 };
@@ -66,27 +72,28 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
 }) => (
   <div className="card cardGrid">
     <div className="headline">
-      <ActivityTypeText
-        activityTypeName={activity.activityType}
-        style={{ marginRight: "0.5rem" }}
-      />
+      <ActivityTypeText activityTypeName={activity.activityType} />
       <div style={{ paddingLeft: "0.25rem" }}>
         <a href={org.url} target="_blank" rel="noopener noreferrer">
           {org.name}
         </a>
         :
       </div>
-      <strong style={{ paddingLeft: "0.5rem" }}>
+      <div style={{ paddingLeft: "0.25rem" }}>
         <a href={org && org.url ? org.url : "#"} title={activity.title}>
           {activity.title}
         </a>
         <em
-          style={{ marginLeft: "0.5rem", color: "gray", fontWeight: "normal" }}
+          style={{
+            paddingLeft: "0.25rem",
+            color: "gray",
+            fontWeight: "normal",
+          }}
           title={format(new Date(activity.createdDate), "MMMM do, yyyy")}
         >
           {formatDistance(new Date(activity.createdDate), new Date())} ago
         </em>
-      </strong>
+      </div>
     </div>
     <div className="languages">
       {org?.languages?.map((languageName) => (
@@ -99,9 +106,6 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
     </div>
     <div className="content">
       <ActivityInfo activity={activity} org={org} />
-    </div>
-    <div className="footer">
-      {org?.orgType && <OrgTypeTag orgTypeName={org.orgType} />}
     </div>
   </div>
 );

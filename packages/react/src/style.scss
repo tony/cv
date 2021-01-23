@@ -22,9 +22,7 @@ a {
 }
 
 .card {
-  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
-    0 0 0 rgba(16, 22, 26, 0);
-  border-radius: 0.5rem;
+  border-bottom: 1px solid rgb(16 22 26 / 25%);
   padding: 0.7rem;
   font-size: 0.875rem;
   display: flex;
@@ -167,24 +165,22 @@ a {
   display: grid;
   height: 100%;
   grid-template-areas: "headline languages"
-  "content content"
-  "footer footer";
+  "content content";
   grid-template-columns: 5fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 
   & > div {
     margin-bottom: auto;
   }
 
-  .footer {
-    grid-area: footer;
+  .content {
+    grid-area: content;
     .tag {
       margin-right: 0.5rem;
     }
     margin-bottom: 0;
-  }
-  .content {
-    grid-area: content;
+    display: flex;
+    align-items: center;
   }
   .headline {
     display: flex;
