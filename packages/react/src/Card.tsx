@@ -1,4 +1,5 @@
 import React from "react";
+import { format, formatDistance, formatRelative } from "date-fns";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag, OrgTypeTag } from "./Tag";
@@ -81,8 +82,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         </a>
         <em
           style={{ marginLeft: "0.5rem", color: "gray", fontWeight: "normal" }}
+          title={format(new Date(activity.createdDate), "MMMM do, yyyy")}
         >
-          {activity.createdDate}
+          {formatDistance(new Date(activity.createdDate), new Date())} ago
         </em>
       </strong>
     </div>
