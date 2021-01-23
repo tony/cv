@@ -57,10 +57,7 @@ export const ActivityInfo: React.FC<
         <PatchInfo activity={activity} org={org} />
       )}
       {org?.orgType && (
-        <OrgTypeTag
-          orgTypeName={org.orgType}
-          style={{ marginLeft: "0.5rem" }}
-        />
+        <OrgTypeTag orgTypeName={org.orgType} className="orgTag" />
       )}
     </div>
   );
