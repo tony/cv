@@ -22,7 +22,7 @@ export class CVNav extends LitElement {
       <nav id="our-nav">
         <div class="logo">
           <b>
-            Tony Narlock's CV
+            Tony<span class="header--lastname"> Narlock</span>'s CV
             <span class="header--version">v2</span>
             <span class="header--super">alpha</span>
           </b>

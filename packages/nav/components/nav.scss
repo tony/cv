@@ -26,6 +26,18 @@ $nav-height: 2rem;
       font-size: 0.6rem;
       vertical-align: super;
     }
+
+    @media (max-width: 374px) {
+      .header--lastname, .header--version, .header--super {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .header--version, .header--super {
+        display: none;
+      }
+    }
   }
 
   > div, > ul {
@@ -41,6 +53,9 @@ $nav-height: 2rem;
 
   li {
     padding: 0 1rem;
+    @media (max-width: 768px) {
+      padding: 0 .5rem;
+    }
     height: $nav-height;
     color: #fff;
     position: relative;
