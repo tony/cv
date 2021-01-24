@@ -177,6 +177,12 @@ a {
   min-height: $chart-height;
   grid-gap: 1rem;
 
+  &--donut,
+  &--line {
+    max-height: 400px;
+    align-self: center;
+  }
+
   @media (max-width: 1023px) {
     grid-template-columns: minmax($chart-height, 33%) auto;
     grid-template-rows: $chart-height;
