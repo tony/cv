@@ -97,7 +97,7 @@ enum Charts {
   ReactVis = "react-vis",
   Carbon = "carbon",
   Plotly = "plotly",
-  Billboard = "billboard.js",
+  Billboard = "billboard",
   Nivo = "nivo",
   Victory = "victory",
 }

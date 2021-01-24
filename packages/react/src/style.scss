@@ -189,6 +189,7 @@ a {
     &--donut {
       justify-self: center;
       padding-bottom: 0.25rem;
+      max-width: $chart-height;
     }
     &--donut,
     &--line {

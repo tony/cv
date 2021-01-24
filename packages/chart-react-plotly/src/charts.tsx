@@ -7,6 +7,8 @@ import { plotlyJSChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 import equal from "fast-deep-equal";
 
+import "./chart-react-plotly.scss";
+
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
   source$: Observable<T>,

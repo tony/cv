@@ -1,0 +1,8 @@
+.chartRow.billboard:not(.noCharts) {
+  @media (max-width: 768px) {
+    .chartRow--donut {
+      margin-left: -40px;
+      width: 360px;
+    }
+  }
+}
