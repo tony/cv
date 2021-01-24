@@ -19,7 +19,8 @@
       "**/@types/jest",
       "**/@types/jasmine",
       "**/@angular*",
-      "**/@angular*/**"
+      "**/@angular*/**",
+      "**/ts-loader"
     ],
     "packages": [
       "packages/*"
