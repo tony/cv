@@ -111,7 +111,7 @@ const PIE_CHART_MAP = {
   [Charts.Billboard]: React.lazy(() =>
     import(
       /* webpackChunkName: "billboard-pie" */
-      "@tony/cv-chart-react-billboard.js/src/charts"
+      "@tony/cv-chart-react-billboard/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
   [Charts.Plotly]: React.lazy(() =>
@@ -150,7 +150,7 @@ const LINE_CHART_MAP = {
   [Charts.Billboard]: React.lazy(() =>
     import(
       /* webpackChunkName: "billboard-line" */
-      "@tony/cv-chart-react-billboard.js/src/charts"
+      "@tony/cv-chart-react-billboard/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
   [Charts.Plotly]: React.lazy(() =>
