@@ -190,6 +190,7 @@ a {
       justify-self: center;
       padding-bottom: 0.25rem;
       max-width: $chart-height;
+      min-height: $chart-height;
     }
     &--donut,
     &--line {
