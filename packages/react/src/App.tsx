@@ -84,16 +84,38 @@ const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "@tony/cv-data/raw");
 };
 
-const AppContainer: React.FC = ({ children }) => {
+const AppContainer: React.FC<{
+  chart: Chart;
+  setChart: React.Dispatch<React.SetStateAction<Chart>>;
+}> = ({ children, chart, setChart }) => {
+  const ChartLinks = () => (
+    <div id="chart-links" className="fss-tablet">
+      📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
+      {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
+        <React.Fragment key={c}>
+          {idx > 0 && ", "}
+          <a
+            href="#"
+            onClick={() => setChart((c as unknown) as Chart)}
+            {...(c === chart && { className: "active" })}
+          >
+            {c}
+          </a>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+
   return (
     <div>
       <cv-nav />
+      <ChartLinks />
       {children}
     </div>
   );
 };
 
-enum Charts {
+enum Chart {
   ReactVis = "react-vis",
   Carbon = "carbon",
   Plotly = "plotly",
@@ -102,37 +124,37 @@ enum Charts {
   Victory = "victory",
 }
 const PIE_CHART_MAP = {
-  [Charts.Carbon]: React.lazy(() =>
+  [Chart.Carbon]: React.lazy(() =>
     import(
       /* webpackChunkName: "carbon-pie" */
       "@tony/cv-chart-react-carbon/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Charts.Billboard]: React.lazy(() =>
+  [Chart.Billboard]: React.lazy(() =>
     import(
       /* webpackChunkName: "billboard-pie" */
       "@tony/cv-chart-react-billboard/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Charts.Plotly]: React.lazy(() =>
+  [Chart.Plotly]: React.lazy(() =>
     import(
       /* webpackChunkName: "plotly-pie" */
       "@tony/cv-chart-react-plotly/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Charts.Victory]: React.lazy(() =>
+  [Chart.Victory]: React.lazy(() =>
     import(
       /* webpackChunkName: "victory-pie" */
       "@tony/cv-chart-react-victory/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Charts.ReactVis]: React.lazy(() =>
+  [Chart.ReactVis]: React.lazy(() =>
     import(
       /* webpackChunkName: "vis-pie" */
       "@tony/cv-chart-react-vis/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Charts.Nivo]: React.lazy(() =>
+  [Chart.Nivo]: React.lazy(() =>
     import(
       /* webpackChunkName: "nivo-pie" */
       "@tony/cv-chart-react-nivo/src/charts"
@@ -141,37 +163,37 @@ const PIE_CHART_MAP = {
 };
 
 const LINE_CHART_MAP = {
-  [Charts.Carbon]: React.lazy(() =>
+  [Chart.Carbon]: React.lazy(() =>
     import(
       /* webpackChunkName: "carbon-line" */
       "@tony/cv-chart-react-carbon/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
-  [Charts.Billboard]: React.lazy(() =>
+  [Chart.Billboard]: React.lazy(() =>
     import(
       /* webpackChunkName: "billboard-line" */
       "@tony/cv-chart-react-billboard/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
-  [Charts.Plotly]: React.lazy(() =>
+  [Chart.Plotly]: React.lazy(() =>
     import(
       /* webpackChunkName: "plotly-line" */
       "@tony/cv-chart-react-plotly/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
-  [Charts.Victory]: React.lazy(() =>
+  [Chart.Victory]: React.lazy(() =>
     import(
       /* webpackChunkName: "victory-line" */
       "@tony/cv-chart-react-victory/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
-  [Charts.ReactVis]: React.lazy(() =>
+  [Chart.ReactVis]: React.lazy(() =>
     import(
       /* webpackChunkName: "vis-line" */
       "@tony/cv-chart-react-vis/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
-  [Charts.Nivo]: React.lazy(() =>
+  [Chart.Nivo]: React.lazy(() =>
     import(
       /* webpackChunkName: "nivo-line" */
       "@tony/cv-chart-react-nivo/src/charts"
@@ -181,27 +203,9 @@ const LINE_CHART_MAP = {
 
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
-  const [chart, setChart] = React.useState<Charts>(Charts.Carbon);
+  const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
-
-  const ChartLinks = () => (
-    <div id="chart-links" className="fss-tablet">
-      📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
-      {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
-        <React.Fragment key={c}>
-          {idx > 0 && ", "}
-          <a
-            href="#"
-            onClick={() => setChart((c as unknown) as Charts)}
-            {...(c === chart && { className: "active" })}
-          >
-            {c}
-          </a>
-        </React.Fragment>
-      ))}
-    </div>
-  );
 
   useAsyncEffect(async () => {
     const data = await fetchData();
@@ -247,12 +251,11 @@ const App: React.FC = () => {
 
   const resultsCount = results?.activities ? results.activities.length : 0;
   return (
-    <AppContainer>
+    <AppContainer chart={chart} setChart={setChart}>
       {results.ui.isLoading ? (
         <div id="loading-screen">Loading CV Data</div>
       ) : (
         <>
-          <ChartLinks />
           <div
             className={`chartRow ${chart}${
               Object.keys(results.activityCount).length ? "" : " noCharts"
