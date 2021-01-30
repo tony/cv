@@ -79,6 +79,7 @@ $nav-height: 2rem;
     background: $bg-color;
   }
 
+  li.active,
   li:hover,
   li:focus-within {
     z-index: 6000;
