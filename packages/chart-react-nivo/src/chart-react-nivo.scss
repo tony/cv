@@ -1,6 +1,8 @@
 .chartRow.nivo:not(.noCharts) {
   @media (max-width: 768px) {
-    max-height: 400px;
+    .chartRow--donut {
+      justify-self: initial;
+    }
   }
 
   .chartRow--donut, .chartRow--line {

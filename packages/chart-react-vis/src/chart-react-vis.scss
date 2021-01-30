@@ -1,5 +1,10 @@
 .chartRow.react-vis:not(.noCharts) {
-  height: 400px;
+  @media (max-width: 768px) {
+    .chartRow--donut {
+      justify-self: initial;
+    }
+  }
+
   .chartRow--line, .chartRow--donut {
     align-self: initial;
   }
