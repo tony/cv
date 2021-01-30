@@ -1,3 +1,4 @@
+import type { CSSObject } from "@emotion/serialize";
 import React from "react";
 import type { Subscription } from "rxjs";
 
@@ -153,7 +154,7 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
 };
 
 export const languagesStyles: StylesConfig<IOptionType, boolean> = {
-  option: (styles: React.CSSProperties, { data, isFocused, isSelected }) => {
+  option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const language = languagesQuery.getEntity(data.value);
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
       return styles;
@@ -214,7 +215,7 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
 };
 
 export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
-  option: (styles: React.CSSProperties, { data, isFocused, isSelected }) => {
+  option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const activityType = activityTypesQuery.getEntity(data.value);
     if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
       return styles;
