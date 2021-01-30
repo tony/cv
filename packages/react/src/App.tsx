@@ -39,7 +39,7 @@ import { onEmit, useAsyncEffect } from "./utils";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 
-import "./style.scss";
+import "@tony/cv-ui/styles/style.scss";
 
 enum ActionType {
   SetResults,

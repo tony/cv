@@ -3,7 +3,7 @@ import { format, formatDistance } from "date-fns";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag } from "./Tag";
-import "./style.scss";
+import "@tony/cv-ui/styles/style.scss";
 
 interface IActivityCardProps {
   activity: IActivity;
