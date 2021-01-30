@@ -36,11 +36,13 @@
 
 | Package     | Source                | Details                             | Status         |
 | ----------- | --------------------- | ----------------------------------- | -------------- |
+| UI          | [packages/ui/][]      | [SASS]                              | 🟡 In-progress |
 | Top bar     | [packages/nav/][]     | [lit-element]-based [web component] | 🟡 In-progress |
 | Common code | [packages/lib/][]     | N/A                                 | 🟡 In-progress |
 | Data        | [packages/data/][]    | N/A                                 | ✔️ Stable      |
 | Scripts     | [packages/scripts/][] | N/A                                 | ✔️ Stable      |
 
+[SASS]: https://sass-lang.com/
 [lit-element]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 
