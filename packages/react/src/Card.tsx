@@ -90,7 +90,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
       <div>
         <span style={{ fontWeight: 600 }}>
           <a
-            href={org.url || org.repoUrl}
+            href={
+              org.orgType == "Open Source" ? org.repoUrl ?? org.url : org.url
+            }
             target="_blank"
             rel="noopener noreferrer"
             title={org.orgType}
