@@ -2,6 +2,7 @@ import React from "react";
 import { format, formatDistance } from "date-fns";
 
 import type { IActivity, IOrg } from "@tony/cv-data/types";
+import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag } from "./Tag";
 import "@tony/cv-ui/styles/style.scss";
 
@@ -62,7 +63,7 @@ export const ActivityInfo: React.FC<
 > = ({ activity, org }) => {
   return (
     <>
-      {["Patch"].includes(activity.activityType) && (
+      {[ActivityTypeName.Patch].includes(activity.activityType) && (
         <PatchInfo activity={activity} org={org} />
       )}
     </>
@@ -91,7 +92,9 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         <span style={{ fontWeight: 600 }}>
           <a
             href={
-              org.orgType == "Open Source" ? org.repoUrl ?? org.url : org.url
+              org.orgType == OrgTypeName.OpenSource
+                ? org.repoUrl ?? org.url
+                : org.url
             }
             target="_blank"
             rel="noopener noreferrer"
