@@ -4,15 +4,26 @@ interface IThemeable {
   ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
-export type ActivityTypeName =
-  | "SoftwareApp"
-  | "SoftwareLib"
-  | "Patch"
-  | "Work"
-  | "Publication"
-  | "Volunteer"
-  | "Website"
-  | "Article";
+// export type ActivityTypeName =
+//   | "SoftwareApp"
+//   | "SoftwareLib"
+//   | "Patch"
+//   | "Work"
+//   | "Publication"
+//   | "Volunteer"
+//   | "Website"
+//   | "Article";
+
+export enum ActivityTypeName {
+  SoftwareApp = "SoftwareApp",
+  SoftwareLib = "SoftwareLib",
+  Patch = "Patch",
+  Work = "Work",
+  Publication = "Publication",
+  Volunteer = "Volunteer",
+  Website = "Website",
+  Article = "Article",
+}
 
 export interface ActivityType extends IThemeable {
   id: ActivityTypeName;
@@ -67,7 +78,13 @@ export interface Language extends IThemeable {
 
 export type OrgName = string;
 
-export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
+// export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
+export enum OrgTypeName {
+  OpenSource = "Open Source",
+  Company = "Company",
+  Publication = "Publication",
+  Website = "Website",
+}
 
 export interface OrgType extends IThemeable {
   id: OrgTypeName;
@@ -84,12 +101,12 @@ export interface Org {
 }
 
 export interface CompanyOrg extends Org {
-  orgType: "Company";
+  orgType: OrgTypeName.Company;
   oldUrl?: string;
 }
 
 export interface PublicationOrg extends Org {
-  orgType: "Publication";
+  orgType: OrgTypeName.Company;
   leanpubUrl?: string;
   amazonUrl?: string;
   goodreadsUrl?: string;
@@ -97,13 +114,13 @@ export interface PublicationOrg extends Org {
 }
 
 export interface WebsiteOrg extends Org {
-  orgType: "Website";
+  orgType: OrgTypeName.Website;
   url?: string;
   logo?: string;
 }
 
 export interface OpenSourceOrg extends Org {
-  orgType: "Open Source";
+  orgType: OrgTypeName.OpenSource;
   oldUrl?: string;
   repoUrl?: string;
   docsUrl?: string;
