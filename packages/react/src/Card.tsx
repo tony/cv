@@ -1,7 +1,12 @@
 import React from "react";
 import { format, formatDistance } from "date-fns";
 
-import type { IActivity, IOrg } from "@tony/cv-data/types";
+import type {
+  IActivity,
+  IActivityOpenSource,
+  IOrg,
+  OpenSourceOrg,
+} from "@tony/cv-data/types";
 import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag } from "./Tag";
 import "@tony/cv-ui/styles/style.scss";
@@ -11,9 +16,15 @@ interface IActivityCardProps {
   org: IOrg;
 }
 
-export const PatchInfo: React.FC<React.ComponentProps<typeof ActivityInfo>> = ({
-  activity,
-}) => {
+interface IActivityCardProps {
+  activity: IActivity;
+  org: IOrg;
+}
+
+export const PatchInfo: React.FC<{
+  activity: IActivityOpenSource;
+  org: OpenSourceOrg;
+}> = ({ activity }) => {
   const items = [];
 
   if (activity?.qaUrl) {
@@ -63,8 +74,11 @@ export const ActivityInfo: React.FC<
 > = ({ activity, org }) => {
   return (
     <>
-      {[ActivityTypeName.Patch].includes(activity.activityType) && (
-        <PatchInfo activity={activity} org={org} />
+      {ActivityTypeName.Patch == activity.activityType && (
+        <PatchInfo
+          activity={activity as IActivityOpenSource}
+          org={org as OpenSourceOrg}
+        />
       )}
     </>
   );

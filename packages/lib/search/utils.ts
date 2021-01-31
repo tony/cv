@@ -1,4 +1,4 @@
-import type { IActivity } from "@tony/cv-data/types";
+import type { IActivity, IActivityOpenSource } from "@tony/cv-data/types";
 import {
   reActivityTypoFix,
   reActivityDocImprovement,
@@ -12,5 +12,5 @@ export const isActivityDocImprovement = (activity: IActivity): boolean =>
   !!activity.title.match(reActivityDocImprovement);
 export const isActivityCodeStyleTweak = (activity: IActivity): boolean =>
   !!activity.title.match(reActivityCodeStyleTweak);
-export const isActivityMerged = (activity: IActivity): boolean =>
+export const isActivityMerged = (activity: IActivityOpenSource): boolean =>
   activity?.acceptedAt ? true : false;

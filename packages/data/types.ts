@@ -30,14 +30,10 @@ export interface ActivityType extends IThemeable {
   name: ActivityTypeName;
 }
 
-export interface IActivity {
+export interface IActivityCommon {
   title: string;
   activityType: ActivityTypeName;
   orgId: string;
-
-  // URLs
-  qaUrl?: string;
-  diffUrl?: string;
 
   // Dates
   createdAt: string;
@@ -45,6 +41,56 @@ export interface IActivity {
   startedAt?: string;
   endedAt?: string;
 }
+
+export interface IActivityOpenSource extends IActivityCommon {
+  activityType: ActivityTypeName.Patch;
+
+  // URLs
+  qaUrl: string;
+  diffUrl: string;
+
+  // Dates
+  createdAt: string;
+  acceptedAt: string;
+  startedAt: string;
+  endedAt: string;
+}
+
+export interface IActivitySoftware extends IActivityCommon {
+  activityType: ActivityTypeName.SoftwareLib | ActivityTypeName.SoftwareApp;
+}
+
+export interface IActivityWebsite extends IActivityCommon {
+  activityType: ActivityTypeName.Website;
+}
+
+export interface IActivityVolunteer extends IActivityCommon {
+  activityType: ActivityTypeName.Volunteer;
+}
+
+export interface IActivityArticle extends IActivityCommon {
+  activityType: ActivityTypeName.Article;
+
+  // Dates
+  featured: {
+    HN?: string;
+    "/r/python"?: string;
+    "/r/flask"?: string;
+    "/r/django"?: string;
+  };
+}
+
+export interface IActivityPublication extends IActivityCommon {
+  activityType: ActivityTypeName.Publication;
+}
+export type IActivity =
+  | IActivityOpenSource
+  | IActivitySoftware
+  | IActivityWebsite
+  | IActivityArticle
+  | IActivityVolunteer
+  | IActivityPublication
+  | IActivityCommon;
 
 export type LanguageName = string;
 // export type LanguageName =

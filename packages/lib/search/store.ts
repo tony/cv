@@ -10,11 +10,13 @@ import {
   StoreConfig,
 } from "@datorama/akita";
 
+import { ActivityTypeName } from "@tony/cv-data/types";
 import type {
   ActivityType,
   Language,
   OrgType,
   IActivity,
+  IActivityOpenSource,
   IOrg,
 } from "@tony/cv-data/types";
 import {
@@ -57,7 +59,10 @@ const setUIDefaults = (activity: IActivity): ActivityUI => {
     isTypo: isActivityTypoFix(activity),
     isDocImprovement: isActivityDocImprovement(activity),
     isCodeStyleTweak: isActivityCodeStyleTweak(activity),
-    isMerged: isActivityMerged(activity),
+    isMerged:
+      activity.activityType == ActivityTypeName.Patch
+        ? isActivityMerged(activity as IActivityOpenSource)
+        : true,
   };
 };
 
