@@ -35,13 +35,6 @@ export interface IActivity {
   endedAt?: string;
 }
 
-export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
-
-export interface OrgType extends IThemeable {
-  id: OrgTypeName;
-  name: OrgTypeName;
-}
-
 export type LanguageName = string;
 // export type LanguageName =
 //   | "Python"
@@ -74,11 +67,43 @@ export interface Language extends IThemeable {
 
 export type OrgName = string;
 
-export interface IOrg {
+export type OrgTypeName = "Open Source" | "Company" | "Publication" | "Website";
+
+export interface OrgType extends IThemeable {
+  id: OrgTypeName;
+  name: OrgTypeName;
+}
+
+export interface Org {
   id: string;
   orgType: OrgTypeName;
   name: OrgName;
   url?: string;
+
+  languages: LanguageName[];
+}
+
+export interface CompanyOrg extends Org {
+  orgType: "Company";
+  oldUrl?: string;
+}
+
+export interface PublicationOrg extends Org {
+  orgType: "Publication";
+  leanpubUrl?: string;
+  amazonUrl?: string;
+  goodreadsUrl?: string;
+  logo?: string;
+}
+
+export interface WebsiteOrg extends Org {
+  orgType: "Website";
+  url?: string;
+  logo?: string;
+}
+
+export interface OpenSourceOrg extends Org {
+  orgType: "Open Source";
   oldUrl?: string;
   repoUrl?: string;
   docsUrl?: string;
@@ -86,15 +111,12 @@ export interface IOrg {
   ciUrl?: string;
   coverageUrl?: string;
   changelogUrl?: string;
-  leanpubUrl?: string;
-  amazonUrl?: string;
-  goodreadsUrl?: string;
   issuesUrl?: string;
   browseCodeTestsUrl?: string;
   browseCodeUrl?: string;
-  logo?: string;
-  languages: LanguageName[];
 }
+
+export type IOrg = CompanyOrg | PublicationOrg | OpenSourceOrg | WebsiteOrg;
 
 export interface IOrgs {
   [key: string]: IOrg;
