@@ -4,8 +4,10 @@ import { format, formatDistance } from "date-fns";
 import type {
   IActivity,
   IActivityOpenSource,
+  IActivityPublication,
   IOrg,
   OpenSourceOrg,
+  PublicationOrg,
 } from "@tony/cv-data/types";
 import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag } from "./Tag";
@@ -69,6 +71,84 @@ export const PatchInfo: React.FC<{
   );
 };
 
+export const PublicationInfo: React.FC<{
+  activity: IActivityPublication;
+  org: PublicationOrg;
+}> = ({ activity, org }) => {
+  const items = [];
+
+  console.log({ activity });
+
+  if (org?.url) {
+    items.push(
+      <span>
+        <a
+          href={org.qaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Official homepage
+        </a>
+      </span>
+    );
+  }
+
+  if (org?.amazonUrl) {
+    items.push(
+      <span>
+        <a
+          href={org.amazonUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Amazon
+        </a>
+      </span>
+    );
+  }
+  if (org?.leanpubUrl) {
+    items.push(
+      <span>
+        <a
+          href={org.leanpubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Leanpub
+        </a>
+      </span>
+    );
+  }
+  if (org?.goodreadsUrl) {
+    items.push(
+      <span>
+        <a
+          href={org.goodreadsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Goodreads
+        </a>
+      </span>
+    );
+  }
+
+  return (
+    <div className="activityLinkRow">
+      {items.map((item, idx) => (
+        <React.Fragment key={idx}>
+          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {item}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
 export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
@@ -78,6 +158,12 @@ export const ActivityInfo: React.FC<
         <PatchInfo
           activity={activity as IActivityOpenSource}
           org={org as OpenSourceOrg}
+        />
+      )}
+      {ActivityTypeName.Publication == activity.activityType && (
+        <PublicationInfo
+          activity={activity as IActivityPublication}
+          org={org as PublicationOrg}
         />
       )}
     </>
