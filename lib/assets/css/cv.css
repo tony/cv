@@ -240,6 +240,23 @@ a {
   -o-transition: opacity .5s ease-in-out;
 }
 
+@media (max-width: 767px) {
+  .github-fork {
+    top: 2.5rem;
+    width: 100%;
+    height: 1rem;
+    padding: initial;
+    text-align: center;
+  }
+  .github-fork .author {
+    display: none;
+  }
+  .github-fork br {
+    display: none;
+  }
+}
+
+
 .github-fork a {
   color: rgba(74, 74, 74, 0.6);
 }
