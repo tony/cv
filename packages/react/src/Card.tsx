@@ -77,8 +77,6 @@ export const PublicationInfo: React.FC<{
 }> = ({ activity, org }) => {
   const items = [];
 
-  console.log({ activity });
-
   if (org?.url) {
     items.push(
       <span>
