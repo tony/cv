@@ -33,7 +33,7 @@
               {"glob": "**/*", "input": "../data/img/", "output": "/assets/img/"}
             ],
             "styles": [
-              "src/styles.scss"
+              "../ui/styles/style.scss"
             ],
             "scripts": []
           },
@@ -99,7 +99,7 @@
               {"glob": "**/*", "input": "../data/img/", "output": "/assets/img/"}
             ],
             "styles": [
-              "src/styles.scss"
+              "../ui/styles/style.scss"
             ],
             "scripts": []
           }
