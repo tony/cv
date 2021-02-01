@@ -11,10 +11,9 @@ import {
 } from "react-vis";
 
 import type { Observable, Subscription } from "rxjs";
-
+import equal from "fast-deep-equal";
 import { visChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
 
 import "react-vis/dist/style.css";
 import "./chart-react-vis.scss";
