@@ -76,7 +76,7 @@ export const PatchInfo: React.FC<{
 export const PublicationInfo: React.FC<{
   activity: IActivityPublication;
   org: PublicationOrg;
-}> = ({ activity, org }) => {
+}> = ({ org }) => {
   const items = [];
 
   if (org?.url) {
