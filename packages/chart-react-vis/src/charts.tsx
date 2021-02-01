@@ -5,20 +5,17 @@ import {
   HorizontalGridLines,
   VerticalGridLines,
   LineSeries,
-  RadialChart,
-  makeVisFlexible,
   FlexibleXYPlot,
 } from "react-vis";
 
 import type { Observable, Subscription } from "rxjs";
 import equal from "fast-deep-equal";
+import { FlexRadialChart } from "./constants";
 import { visChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 
 import "react-vis/dist/style.css";
 import "./chart-react-vis.scss";
-
-export const FlexRadialChart = makeVisFlexible(RadialChart);
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
