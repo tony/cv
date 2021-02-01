@@ -2668,10 +2668,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-select@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-4.0.10.tgz#6c69fcf65e93f9be54eebee66b64c4c96e42c540"
-  integrity sha512-v/BDottAo2FM1eJ0IIDRkL7hP4/YJQkclqLATT3osjZnHZIqwEtFMHG0S4YUPu1Zy9spJcA1byeEfmgTLuplEw==
+"@types/react-select@^4.0.11":
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-4.0.11.tgz#9a9079f52775c7cb63e8db5f095360400ce47933"
+  integrity sha512-3Wi9Tp7j+t/bQL9xzoqDQNRYUlNF8X/TLYvHDxirCDlaK4GIY1shh4CylfqG1jweJOJaX1z7zn50A1uwEtcS9g==
   dependencies:
     "@emotion/serialize" "^1.0.0"
     "@types/react" "*"
@@ -11326,7 +11326,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
