@@ -2,10 +2,12 @@ import React from "react";
 import { format, formatDistance } from "date-fns";
 
 import type {
+  CompanyOrg,
   IActivity,
   IActivityOpenSource,
   IActivityPublication,
   IOrg,
+  IActivityWork,
   OpenSourceOrg,
   PublicationOrg,
 } from "@tony/cv-data/types";
@@ -147,6 +149,39 @@ export const PublicationInfo: React.FC<{
   );
 };
 
+export const CompanyInfo: React.FC<{
+  activity: IActivityWork;
+  org: CompanyOrg;
+}> = ({ activity, org }) => {
+  const items = [];
+  console.log({ activity, org });
+  if (org?.url) {
+    items.push(
+      <span>
+        <a
+          href={org.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="activity-link"
+        >
+          Official homepage
+        </a>
+      </span>
+    );
+  }
+
+  return (
+    <div className="activityLinkRow">
+      {items.map((item, idx) => (
+        <React.Fragment key={idx}>
+          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {item}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
 export const ActivityInfo: React.FC<
   React.ComponentProps<typeof ActivityCard>
 > = ({ activity, org }) => {
@@ -162,6 +197,12 @@ export const ActivityInfo: React.FC<
         <PublicationInfo
           activity={activity as IActivityPublication}
           org={org as PublicationOrg}
+        />
+      )}
+      {ActivityTypeName.Work == activity.activityType && (
+        <CompanyInfo
+          activity={activity as IActivityWork}
+          org={org as CompanyOrg}
         />
       )}
     </>

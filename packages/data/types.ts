@@ -83,6 +83,15 @@ export interface IActivityArticle extends IActivityCommon {
 export interface IActivityPublication extends IActivityCommon {
   activityType: ActivityTypeName.Publication;
 }
+
+export interface IActivityWork extends IActivityCommon {
+  activityType: ActivityTypeName.Work;
+
+  // Dates
+  createdAt: string;
+  endedAt?: string;
+}
+
 export type IActivity =
   | IActivityOpenSource
   | IActivitySoftware
@@ -90,6 +99,7 @@ export type IActivity =
   | IActivityArticle
   | IActivityVolunteer
   | IActivityPublication
+  | IActivityWork
   | IActivityCommon;
 
 export type LanguageName = string;
@@ -149,6 +159,7 @@ export interface Org {
 export interface CompanyOrg extends Org {
   orgType: OrgTypeName.Company;
   oldUrl?: string;
+  logo: string;
 }
 
 export interface PublicationOrg extends Org {
