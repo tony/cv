@@ -81,7 +81,7 @@ export const PublicationInfo: React.FC<{
     items.push(
       <span>
         <a
-          href={org.qaUrl}
+          href={org.url}
           target="_blank"
           rel="noopener noreferrer"
           className="activity-link"
