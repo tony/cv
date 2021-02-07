@@ -7,7 +7,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "lib": ["esnext.array", "es2019"],
+    "lib": ["dom", "esnext.array", "es2019"],
     "experimentalDecorators": true,
     "sourceMap": true
   },

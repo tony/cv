@@ -16,4 +16,11 @@ export class CVService {
     private orgsStore: OrgsStore,
     private orgTypesStore: OrgTypesStore
   ) {}
+
+  setYears({ startYear, endYear }: { startYear?: number; endYear?: number }) {
+    this.cvStore.update({
+      ...(startYear && { startYear }),
+      ...(endYear && { endYear }),
+    });
+  }
 }

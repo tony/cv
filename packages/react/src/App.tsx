@@ -6,12 +6,12 @@ import equal from "fast-deep-equal";
 import type { IActivity, Language } from "@tony/cv-data/types";
 import {
   activitiesStore,
-  activitiesQuery,
   activityTypesQuery,
   loadStores,
   orgsQuery,
   query,
   languagesQuery,
+  cvService,
 } from "@tony/cv-lib/hub";
 import type {
   ActivityCount,
@@ -222,7 +222,7 @@ const App: React.FC = () => {
     if (!results?.activities.length) {
       dispatch({
         type: ActionType.SetResults,
-        activities: activitiesQuery.getAll() as IActivity[],
+        // activities: activitiesQuery.getAll() as IActivity[],
 
         // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
@@ -258,12 +258,14 @@ const App: React.FC = () => {
   const onHistogramChange = (e: RangeSliderEvents["change.one"]) => {
     const yearRange = e?.detail?.values;
     if (yearRange) {
-      console.log("new year range", yearRange);
+      cvService.setYears({
+        startYear: parseInt(yearRange[0]),
+        endYear: parseInt(yearRange[1]),
+      });
     }
   };
 
   React.useLayoutEffect(() => {
-    console.log(histogramRangeSliderRef);
     const histogram = histogramRangeSliderRef?.current;
 
     if (!histogram) {
@@ -357,11 +359,12 @@ const App: React.FC = () => {
             />
           </div>
 
+          <range-slider id="year-range" ref={histogramRangeSliderRef} />
+
           <div className="resultsMessage">
             Found {resultsCount} results{" "}
             <img src={christmasTreeSvg} width="16" />
           </div>
-          <range-slider id="year-range" ref={histogramRangeSliderRef} />
 
           <div className="activityCardList">
             {results.activities &&

@@ -25,3 +25,8 @@ declare namespace JSX {
     "range-slider": any;
   }
 }
+
+declare module "!!raw-loader!*" {
+  const contents: string;
+  export = contents;
+}

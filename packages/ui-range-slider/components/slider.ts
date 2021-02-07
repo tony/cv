@@ -4,9 +4,11 @@ import type { CSSResult, TemplateResult } from "lit-element";
 import noUiSlider from "nouislider";
 import style from "!raw-loader!sass-loader!nouislider/distribute/nouislider.css";
 
-const currentYear = new Date().getFullYear();
-const minYear = 2008;
-const maxYear = currentYear + 1;
+import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+
+// const currentYear = new Date().getFullYear();
+const minYear = DEFAULT_FILTERS.startYear;
+const maxYear = DEFAULT_FILTERS.endYear;
 // const range = (start: number, stop: number, step = 1) =>
 //   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 // const years: number[] = range(minYear, maxYear);
@@ -55,6 +57,13 @@ export class RangeSlider extends LitElement {
     return [
       css`
         ${unsafeCSS(style)}
+
+        .noUi-horizontal .noUi-tooltip {
+          top: 30px;
+          border: none;
+          background: none;
+          font-size: 0.9rem;
+        }
       `,
     ];
   }
@@ -87,8 +96,6 @@ export class RangeSlider extends LitElement {
       this.noUiSlider.on("change.one", (values: string[], handle: number, unencoded: number[]) => {
         const event = new CustomEvent("change.one", { detail: { values, handle, unencoded } });
         this.dispatchEvent(event);
-
-        // console.log(values, handle, unencoded);
       });
     }
   }
