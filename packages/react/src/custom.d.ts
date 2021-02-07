@@ -9,6 +9,11 @@ declare module "*.scss" {
   export default content;
 }
 
+declare module "*.css" {
+  const content: any;
+  export default content;
+}
+
 declare module "*.html" {
   const content: any;
   export default content;
@@ -17,5 +22,6 @@ declare module "*.html" {
 declare namespace JSX {
   interface IntrinsicElements {
     "cv-nav": any;
+    "range-slider": any;
   }
 }

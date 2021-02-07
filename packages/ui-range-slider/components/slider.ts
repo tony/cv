@@ -1,0 +1,112 @@
+import { LitElement, html, customElement, css, query, unsafeCSS } from "lit-element";
+import type { CSSResult, TemplateResult } from "lit-element";
+
+import noUiSlider from "nouislider";
+import style from "!raw-loader!sass-loader!nouislider/distribute/nouislider.css";
+
+const currentYear = new Date().getFullYear();
+const minYear = 2008;
+const maxYear = currentYear + 1;
+// const range = (start: number, stop: number, step = 1) =>
+//   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
+// const years: number[] = range(minYear, maxYear);
+
+type UnpackCustomEvent<T> = T extends CustomEvent<infer U> ? U : never;
+
+// Define custom event types and details here
+// Thanks: https://gist.github.com/difosfor/ceeb01d03a8db7dc68d5cd4167d60637
+// via https://github.com/Polymer/lit-element/issues/808#issuecomment-566684982
+export interface CustomEventMap {
+  /**
+   * Dispatched when initialized.
+   */
+  "change.one": CustomEvent<{ values: string[]; handle: number; unencoded: number[] }>;
+}
+
+export interface CombinedEventMap extends HTMLElementEventMap, CustomEventMap {}
+
+// Add strict event type support to addEventListener etc.
+export interface RangeSlider {
+  addEventListener<K extends keyof CombinedEventMap>(
+    type: K,
+    listener: (this: RangeSlider, ev: CombinedEventMap[K]) => void,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  removeEventListener<K extends keyof CombinedEventMap>(
+    type: K,
+    listener: (this: RangeSlider, ev: CombinedEventMap[K]) => void,
+    options?: boolean | EventListenerOptions
+  ): void;
+}
+
+// Add custom element to TypeScript's map (defined by @customElement below)
+declare global {
+  interface HTMLElementTagNameMap {
+    "range-slider": RangeSlider;
+  }
+}
+
+@customElement("range-slider")
+export class RangeSlider extends LitElement {
+  private dispatch<K extends keyof CustomEventMap>(type: K, detail: UnpackCustomEvent<CustomEventMap[K]>) {
+    return this.dispatchEvent(new CustomEvent(type, { detail }));
+  }
+  static get styles(): CSSResult[] {
+    return [
+      css`
+        ${unsafeCSS(style)}
+      `,
+    ];
+  }
+
+  // @ts-ignore
+  @query("div") slider: HTMLDivElement;
+
+  // @property({ type: noUiSlider }) noUiSlider;
+  private noUiSlider!: noUiSlider.noUiSlider;
+
+  firstUpdated(): void {
+    this.noUiSlider = noUiSlider.create(this.slider, {
+      start: [minYear + 1, maxYear - 1],
+      connect: true,
+      range: {
+        min: minYear,
+        max: maxYear,
+      },
+      step: 1,
+      animate: true,
+      format: {
+        from: Number,
+        to: (value: string) => value,
+      },
+      tooltips: [true, true],
+    });
+
+    if (this.noUiSlider) {
+      console.log("has range.noUISlider");
+      this.noUiSlider.on("change.one", (values: string[], handle: number, unencoded: number[]) => {
+        const event = new CustomEvent("change.one", { detail: { values, handle, unencoded } });
+        this.dispatchEvent(event);
+
+        // console.log(values, handle, unencoded);
+      });
+    }
+  }
+
+  disconnectedCallback(): void {
+    if (this.noUiSlider) {
+      this.noUiSlider.off("change.one");
+    }
+    super.disconnectedCallback();
+  }
+
+  render(): TemplateResult {
+    return html` <div id="range"></div> `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "range-slider": RangeSlider;
+  }
+}
