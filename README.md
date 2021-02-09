@@ -34,17 +34,26 @@
 
 ### ⚙️ Shared code
 
-| Package     | Source                | Details                             | Status         |
-| ----------- | --------------------- | ----------------------------------- | -------------- |
-| UI          | [packages/ui/][]      | [SASS]                              | 🟡 In-progress |
-| Top bar     | [packages/nav/][]     | [lit-element]-based [web component] | 🟡 In-progress |
-| Common code | [packages/lib/][]     | N/A                                 | 🟡 In-progress |
-| Data        | [packages/data/][]    | N/A                                 | ✔️ Stable      |
-| Scripts     | [packages/scripts/][] | N/A                                 | ✔️ Stable      |
+| Package     | Source                | Details | Status         |
+| ----------- | --------------------- | ------- | -------------- |
+| UI          | [packages/ui/][]      | [SASS]  | 🟡 In-progress |
+| Common code | [packages/lib/][]     | N/A     | 🟡 In-progress |
+| Data        | [packages/data/][]    | N/A     | ✔️ Stable      |
+| Scripts     | [packages/scripts/][] | N/A     | ✔️ Stable      |
 
-[SASS]: https://sass-lang.com/
-[lit-element]: https://lit-element.polymer-project.org/
+#### Web components
+
+[LitElement]-based [web component]s:
+
+| Package             | Source                        | Details                 | Status         |
+| ------------------- | ----------------------------- | ----------------------- | -------------- |
+| `<cv-nav>`          | [packages/nav/][]             | Top navigation, vanilla | 🟡 In-progress |
+| `<ui-range-slider>` | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
+
+[sass]: https://sass-lang.com/
+[LitElement]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
+[nouislider]: https://github.com/leongersen/noUiSlider
 
 ### 📈 Charts
 
@@ -212,6 +221,7 @@ yarn workspaces run lint
   [packages/chart-react-billboard.js/]: packages/chart-react-billboard.js/
   [packages/chart-react-plotly/]: packages/chart-react-plotly/
   [packages/nav/]: packages/nav/
+  [packages/ui-range-slider/]: packages/ui-range-slider/
 
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
