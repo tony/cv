@@ -92,7 +92,6 @@ export class RangeSlider extends LitElement {
     });
 
     if (this.noUiSlider) {
-      console.log("has range.noUISlider");
       this.noUiSlider.on("change.one", (values: string[], handle: number, unencoded: number[]) => {
         const event = new CustomEvent("change.one", { detail: { values, handle, unencoded } });
         this.dispatchEvent(event);
