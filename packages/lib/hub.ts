@@ -32,7 +32,7 @@ export const orgsStore = new OrgsStore();
 export const orgTypesStore = new OrgTypesStore();
 export const languagesStore = new LanguagesStore();
 export const cvStore = new CVStore();
-export const search = new CVService(
+export const cvService = new CVService(
   cvStore,
   activitiesStore,
   activityTypesStore,

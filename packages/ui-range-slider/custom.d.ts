@@ -4,12 +4,12 @@ declare module "*.svg" {
   export default content;
 }
 
-declare module "*.scss" {
+declare module "*.css" {
   const content: any;
   export default content;
 }
 
-declare module "*.css" {
+declare module "*.scss" {
   const content: any;
   export default content;
 }
@@ -21,7 +21,6 @@ declare module "*.html" {
 
 declare namespace JSX {
   interface IntrinsicElements {
-    "cv-nav": any;
     "range-slider": any;
   }
 }

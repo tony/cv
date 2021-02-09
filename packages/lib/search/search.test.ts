@@ -1,10 +1,11 @@
 import { ActivitiesStore, CVStore } from "./store";
 import type { IData } from "@tony/cv-data/fetch";
+import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 
 describe("CVStore", () => {
   test("init", () => {
     const s = new CVStore();
-    expect(s.getValue()).toStrictEqual({});
+    expect(s.getValue()).toStrictEqual(DEFAULT_FILTERS);
   });
 });
 

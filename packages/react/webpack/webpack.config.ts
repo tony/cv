@@ -138,7 +138,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     }),
   ],
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".html", ".scss"],
+    extensions: [".ts", ".tsx", ".js", ".html", ".css", ".scss"],
   },
   stats: { children: false },
   watch: env.watch,

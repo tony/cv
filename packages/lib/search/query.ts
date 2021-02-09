@@ -6,6 +6,7 @@ import {
   QueryEntity,
   Order,
 } from "@datorama/akita";
+import getYear from "date-fns/getYear";
 import { map, take } from "rxjs/operators";
 import type { Observable } from "rxjs";
 import moment from "moment";
@@ -51,6 +52,14 @@ export interface Results {
     isLoading: boolean;
   };
 }
+
+export const DEFAULT_FILTERS: CVState = {
+  showTypos: true,
+  showDocImprovements: true,
+  showCodeStyleTweak: true,
+  startYear: 2008,
+  endYear: 2021,
+};
 
 export const DEFAULT_RESULTS: Results = {
   activities: [],
@@ -169,6 +178,26 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   }
 }
 
+const filterActivitiesByYear = (
+  activities: IActivity[],
+  { startYear, endYear }: { startYear: number; endYear: number }
+) => {
+  return activities.filter((activity: IActivity) => {
+    if (activity?.createdAt) {
+      const createdAt = new Date(activity.createdAt);
+      const createdYear = getYear(createdAt);
+      if (startYear > createdYear) {
+        return false;
+      }
+
+      if (endYear < createdYear) {
+        return false;
+      }
+    }
+    return true;
+  });
+};
+
 export class CVQuery extends Query<CVState> {
   constructor(
     protected store: CVStore,
@@ -183,6 +212,7 @@ export class CVQuery extends Query<CVState> {
 
   visibleActivities$(): Observable<IActivity[]> {
     return combineQueries([
+      this.select(),
       this.activitiesQuery.selectAll(),
       this.languagesQuery.selectActive((language) => {
         return language.id;
@@ -194,39 +224,52 @@ export class CVQuery extends Query<CVState> {
         return activityType.id;
       }),
     ]).pipe(
-      map(([activities, activeLanguages, activeOrgs, activeActivityTypes]) => {
-        let a = activities;
-        if (
-          !activeLanguages.length &&
-          !activeOrgs.length &&
-          !activeActivityTypes.length
-        ) {
-          // If no filters selected, return all activities
-          return activities;
-        }
+      map(
+        ([
+          cv,
+          activities,
+          activeLanguages,
+          activeOrgs,
+          activeActivityTypes,
+        ]) => {
+          let a = filterActivitiesByYear(activities, {
+            startYear: cv.startYear,
+            endYear: cv.endYear,
+          });
+          if (
+            !activeLanguages.length &&
+            !activeOrgs.length &&
+            !activeActivityTypes.length
+          ) {
+            // If no filters selected, return all activities
+            return a;
+          }
 
-        if (activeLanguages.length) {
-          a = a.filter((activity) => {
-            const org = this.orgsQuery.getEntity(activity.orgId);
-            if (!org?.languages) {
-              return false;
-            }
+          if (activeLanguages.length) {
+            a = a.filter((activity) => {
+              const org = this.orgsQuery.getEntity(activity.orgId);
+              if (!org?.languages) {
+                return false;
+              }
 
-            return hasAny(new Set(org.languages), activeLanguages).length > 0;
-          });
+              return hasAny(new Set(org.languages), activeLanguages).length > 0;
+            });
+          }
+          if (activeOrgs.length) {
+            a = a.filter((activity) => {
+              return activeOrgs.some((v) => v === activity.orgId);
+            });
+          }
+          if (activeActivityTypes.length) {
+            a = a.filter((activity) => {
+              return activeActivityTypes.some(
+                (v) => v === activity.activityType
+              );
+            });
+          }
+          return a;
         }
-        if (activeOrgs.length) {
-          a = a.filter((activity) => {
-            return activeOrgs.some((v) => v === activity.orgId);
-          });
-        }
-        if (activeActivityTypes.length) {
-          a = a.filter((activity) => {
-            return activeActivityTypes.some((v) => v === activity.activityType);
-          });
-        }
-        return a;
-      })
+      )
     );
   }
 

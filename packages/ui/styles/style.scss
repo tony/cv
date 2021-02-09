@@ -15,6 +15,19 @@ body {
   }
 }
 
+range-slider#year-range {
+  margin: 0 auto;
+  max-width: 70%;
+  height: 50px;
+  display: block;
+
+  @media (max-width: 1023px) {
+    width: 90%;
+    max-width: initial;
+    margin: 0.5rem auto;
+  }
+}
+
 .site-name {
   font-size: 2rem;
   text-align: center;

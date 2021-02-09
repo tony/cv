@@ -6,12 +6,12 @@ import equal from "fast-deep-equal";
 import type { IActivity, Language } from "@tony/cv-data/types";
 import {
   activitiesStore,
-  activitiesQuery,
   activityTypesQuery,
   loadStores,
   orgsQuery,
   query,
   languagesQuery,
+  cvService,
 } from "@tony/cv-lib/hub";
 import type {
   ActivityCount,
@@ -38,6 +38,11 @@ import { onEmit, useAsyncEffect } from "./utils";
 
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
+import "@tony/cv-ui-range-slider/components";
+import type {
+  RangeSlider,
+  CustomEventMap as RangeSliderEvents,
+} from "@tony/cv-ui-range-slider/components";
 
 import "@tony/cv-ui/styles/style.scss";
 
@@ -217,7 +222,7 @@ const App: React.FC = () => {
     if (!results?.activities.length) {
       dispatch({
         type: ActionType.SetResults,
-        activities: activitiesQuery.getAll() as IActivity[],
+        // activities: activitiesQuery.getAll() as IActivity[],
 
         // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
@@ -228,6 +233,7 @@ const App: React.FC = () => {
   });
 
   const languageSelectRef = React.useRef<Select>(null);
+  const histogramRangeSliderRef = React.useRef<RangeSlider>(null);
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
@@ -248,6 +254,31 @@ const App: React.FC = () => {
       subscriptions.map((it) => it.unsubscribe());
     };
   }, []);
+
+  const onHistogramChange = (e: RangeSliderEvents["change.one"]) => {
+    const yearRange = e?.detail?.values;
+    if (yearRange) {
+      cvService.setYears({
+        startYear: parseInt(yearRange[0]),
+        endYear: parseInt(yearRange[1]),
+      });
+    }
+  };
+
+  React.useLayoutEffect(() => {
+    const histogram = histogramRangeSliderRef?.current;
+
+    if (!histogram) {
+      return;
+    }
+
+    if (histogram.addEventListener) {
+      histogram.addEventListener("change.one", onHistogramChange);
+    }
+    return () => {
+      histogram.removeEventListener("change.one", onHistogramChange);
+    };
+  });
 
   const resultsCount = results?.activities ? results.activities.length : 0;
   return (
@@ -327,6 +358,8 @@ const App: React.FC = () => {
               components={{ Option: OrgOption }}
             />
           </div>
+
+          <range-slider id="year-range" ref={histogramRangeSliderRef} />
 
           <div className="resultsMessage">
             Found {resultsCount} results{" "}

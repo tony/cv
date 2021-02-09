@@ -11,6 +11,7 @@ import {
 } from "@datorama/akita";
 
 import { ActivityTypeName } from "@tony/cv-data/types";
+
 import type {
   ActivityType,
   Language,
@@ -26,7 +27,14 @@ import {
   isActivityMerged,
 } from "./utils";
 
-export type CVState = Record<string, never>;
+export type CVState = {
+  showTypos: boolean;
+  showDocImprovements: boolean;
+  showCodeStyleTweak: boolean;
+  startYear: number;
+  endYear: number;
+}; // Record<string, never>;
+import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 
 interface ActivityUI {
   isOptionDisabled: boolean;
@@ -134,6 +142,6 @@ export class LanguagesStore extends EntityStore<LanguagesState, Language> {
 @StoreConfig({ name: "CV" })
 export class CVStore extends Store<CVState> {
   constructor() {
-    super({});
+    super(DEFAULT_FILTERS);
   }
 }
