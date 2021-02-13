@@ -30,8 +30,6 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.5.0",
-    "eslint": "^7.17.0",
-    "eslint-plugin-import": "^2.22.1",
     "lit-element": "^2.4.0",
     "nouislider": "^14.6.3",
     "sass": "^1.32.7",
