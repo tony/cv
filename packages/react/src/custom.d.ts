@@ -23,6 +23,7 @@ declare namespace JSX {
   interface IntrinsicElements {
     "cv-nav": any;
     "range-slider": any;
+    "simple-switcher": any;
   }
 }
 

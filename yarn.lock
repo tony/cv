@@ -3382,6 +3382,11 @@ a-big-triangle@^1.0.3:
     gl-vao "^1.2.0"
     weak-map "^1.0.5"
 
+a-simple-switch@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/a-simple-switch/-/a-simple-switch-0.6.0.tgz#51abcd8eeefc034f0b6d33d0a0db0a4b9c6720ce"
+  integrity sha512-jiIWj76eGo/JYEQMVTfEEF56klEayhfhmrYz8iC7QXOq4FJZKmBjPRmewaxOTe5CBHyKMcicVEcRQDNwRQhnQA==
+
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"

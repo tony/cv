@@ -39,10 +39,15 @@ import { onEmit, useAsyncEffect } from "./utils";
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav/components";
 import "@tony/cv-ui-range-slider/components";
+import "@tony/cv-ui-switch/components";
 import type {
   RangeSlider,
   CustomEventMap as RangeSliderEvents,
 } from "@tony/cv-ui-range-slider/components";
+import type {
+  Switcher,
+  CustomEventMap as SwitcherEvents,
+} from "@tony/cv-ui-switch/components";
 
 import "@tony/cv-ui/styles/style.scss";
 
@@ -234,6 +239,10 @@ const App: React.FC = () => {
 
   const languageSelectRef = React.useRef<Select>(null);
   const histogramRangeSliderRef = React.useRef<RangeSlider>(null);
+  const onShowSpellingContributionsRef = React.useRef<Switcher>(null);
+  const onShowDocumentationContributionsRef = React.useRef<Switcher>(null);
+  const onShowCodeStyleContributionsRef = React.useRef<Switcher>(null);
+  const onShowUnmergedContributionsRef = React.useRef<Switcher>(null);
 
   React.useEffect(() => {
     const subscriptions: Subscription[] = [
@@ -265,18 +274,103 @@ const App: React.FC = () => {
     }
   };
 
+  const onShowSpellingContributionsChange = (
+    e: SwitcherEvents["change.one"]
+  ) => {
+    const checked = e?.detail?.checked;
+    if (checked !== null) {
+      cvService.setActivityFilters({
+        showTypos: checked,
+      });
+    }
+  };
+  const onShowDocumentationContributionsChange = (
+    e: SwitcherEvents["change.one"]
+  ) => {
+    const checked = e?.detail?.checked;
+    if (checked !== null) {
+      cvService.setActivityFilters({
+        showDocImprovements: checked,
+      });
+    }
+  };
+  const onShowCodeStyleContributionsChange = (
+    e: SwitcherEvents["change.one"]
+  ) => {
+    const checked = e?.detail?.checked;
+    if (checked !== null) {
+      cvService.setActivityFilters({
+        showCodeStyleTweaks: checked,
+      });
+    }
+  };
+  const onShowUnmergedContributionsChange = (
+    e: SwitcherEvents["change.one"]
+  ) => {
+    const checked = e?.detail?.checked;
+    if (checked !== null) {
+      cvService.setActivityFilters({
+        showUnmerged: checked,
+      });
+    }
+  };
+
   React.useLayoutEffect(() => {
     const histogram = histogramRangeSliderRef?.current;
-
-    if (!histogram) {
+    const spellingSwitcher = onShowSpellingContributionsRef?.current;
+    const documentationSwitcher = onShowDocumentationContributionsRef?.current;
+    const codeStyleSwitcher = onShowCodeStyleContributionsRef?.current;
+    const unmergedSwitcher = onShowUnmergedContributionsRef?.current;
+    if (
+      !histogram ||
+      !spellingSwitcher ||
+      !documentationSwitcher ||
+      !codeStyleSwitcher ||
+      !unmergedSwitcher
+    ) {
       return;
     }
 
     if (histogram.addEventListener) {
       histogram.addEventListener("change.one", onHistogramChange);
     }
+    if (spellingSwitcher.addEventListener) {
+      console.log("add listener");
+      spellingSwitcher.addEventListener(
+        "change.one",
+        onShowSpellingContributionsChange
+      );
+      documentationSwitcher.addEventListener(
+        "change.one",
+        onShowDocumentationContributionsChange
+      );
+      codeStyleSwitcher.addEventListener(
+        "change.one",
+        onShowCodeStyleContributionsChange
+      );
+      unmergedSwitcher.addEventListener(
+        "change.one",
+        onShowUnmergedContributionsChange
+      );
+    }
     return () => {
       histogram.removeEventListener("change.one", onHistogramChange);
+      spellingSwitcher.removeEventListener(
+        "change.one",
+        onShowSpellingContributionsChange
+      );
+      documentationSwitcher.removeEventListener(
+        "change.one",
+        onShowDocumentationContributionsChange
+      );
+      codeStyleSwitcher.removeEventListener(
+        "change.one",
+        onShowCodeStyleContributionsChange
+      );
+      unmergedSwitcher.removeEventListener(
+        "change.one",
+        onShowUnmergedContributionsChange
+      );
     };
   });
 
@@ -311,7 +405,6 @@ const App: React.FC = () => {
               </React.Suspense>
             </div>
           </div>
-
           <div className="dropdownRow">
             <Select
               options={getSelectOptions(
@@ -358,14 +451,33 @@ const App: React.FC = () => {
               components={{ Option: OrgOption }}
             />
           </div>
-
           <range-slider id="year-range" ref={histogramRangeSliderRef} />
-
+          <div className="toggles">
+            <simple-switcher
+              id="show-spelling"
+              ref={onShowSpellingContributionsRef}
+            />
+            Show Spelling Contributions
+            <simple-switcher
+              id="show-documentation"
+              ref={onShowDocumentationContributionsRef}
+            />
+            Show Documentation Tweaks
+            <simple-switcher
+              id="show-code-style"
+              ref={onShowCodeStyleContributionsRef}
+            />
+            Show Code Style / Bikeshedding
+            <simple-switcher
+              id="show-unmerged"
+              ref={onShowUnmergedContributionsRef}
+            />
+            Show Unmerged
+          </div>
           <div className="resultsMessage">
             Found {resultsCount} results{" "}
             <img src={christmasTreeSvg} width="16" />
           </div>
-
           <div className="activityCardList">
             {results.activities &&
               results.activities.map((activity, idx) => {

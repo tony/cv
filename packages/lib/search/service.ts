@@ -29,4 +29,29 @@ export class CVService {
       ...(endYear && { endYear }),
     });
   }
+
+  setActivityFilters({
+    showTypos,
+    showDocImprovements,
+    showCodeStyleTweaks,
+    showUnmerged,
+  }: {
+    showTypos?: boolean;
+    showDocImprovements?: boolean;
+    showCodeStyleTweaks?: boolean;
+    showUnmerged?: boolean;
+  }): void {
+    console.log({
+      showTypos,
+      showDocImprovements,
+      showCodeStyleTweaks,
+      showUnmerged,
+    });
+    this.cvStore.update({
+      ...(showTypos !== undefined && { showTypos }),
+      ...(showDocImprovements !== undefined && { showDocImprovements }),
+      ...(showCodeStyleTweaks !== undefined && { showCodeStyleTweaks }),
+      ...(showUnmerged !== undefined && { showUnmerged }),
+    });
+  }
 }
