@@ -57,7 +57,7 @@ export const DEFAULT_FILTERS: CVState = {
   showTypos: true,
   showDocImprovements: true,
   showCodeStyleTweak: true,
-  startYear: 2008,
+  startYear: 2007,
   endYear: 2021,
 };
 
