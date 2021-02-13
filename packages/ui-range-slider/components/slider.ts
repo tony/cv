@@ -110,9 +110,3 @@ export class RangeSlider extends LitElement {
     return html` <div id="range"></div> `;
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "range-slider": RangeSlider;
-  }
-}
