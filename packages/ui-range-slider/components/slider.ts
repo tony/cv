@@ -76,11 +76,11 @@ export class RangeSlider extends LitElement {
 
   firstUpdated(): void {
     this.noUiSlider = noUiSlider.create(this.slider, {
-      start: [minYear + 1, maxYear - 1],
+      start: [minYear, maxYear],
       connect: true,
       range: {
-        min: minYear,
-        max: maxYear,
+        min: minYear - 1,
+        max: maxYear + 1,
       },
       step: 1,
       animate: true,
