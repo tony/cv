@@ -274,7 +274,7 @@ export class CVQuery extends Query<CVState> {
             startYear: cv.startYear,
             endYear: cv.endYear,
           });
-          a = filterActivitiesByFilters(activities, activityTraits, {
+          a = filterActivitiesByFilters(a, activityTraits, {
             showTypos: cv.showTypos,
             showDocImprovements: cv.showDocImprovements,
             showCodeStyleTweaks: cv.showCodeStyleTweaks,
