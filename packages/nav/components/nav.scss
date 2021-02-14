@@ -1,3 +1,5 @@
+@use "@tony/cv-ui/styles/_variables.scss";
+
 $bg-color: #0854a0;
 $bg-color-400: lighten($bg-color, 5);
 $bg-color-600: darken($bg-color, 10);
@@ -5,13 +7,11 @@ $bg-color-700: darken($bg-color, 20);
 $bg-color-800: darken($bg-color, 30);
 $bg-color-900: darken($bg-color, 40);
 
-$nav-height: 2rem;
-
 #our-nav {
   background: $bg-color;
   display: flex;
   place-items: center;
-  height: $nav-height;
+  height: var(--nav-height);
 
   .logo {
     padding: 0 1rem;
@@ -56,7 +56,7 @@ $nav-height: 2rem;
     @media (max-width: 768px) {
       padding: 0 .5rem;
     }
-    height: $nav-height;
+    height: var(--nav-height);
     color: #fff;
     position: relative;
     text-decoration: none;
@@ -110,7 +110,7 @@ $nav-height: 2rem;
     min-width: 5rem;
     position: absolute;
     transition: all 0.5s ease;
-    top: $nav-height;
+    top: var(--nav-height);
     left: 0;
     display: none;
   }
