@@ -1,5 +1,7 @@
 $chart-height: 400px;
+$chart-width: 400px;
 
 :root {
   --chart-height: #{$chart-height};
+  --chart-width: #{$chart-width};
 }

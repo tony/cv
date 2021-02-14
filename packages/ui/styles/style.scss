@@ -204,7 +204,7 @@ a {
   }
 
   display: grid;
-  grid-template-columns: var(--chart-height) 1fr;
+  grid-template-columns: var(--chart-width) 1fr;
   grid-auto-rows: 1fr;
   justify-items: stretch;
   align-items: stretch;
@@ -218,12 +218,12 @@ a {
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: minmax(var(--chart-height), 33%) auto;
+    grid-template-columns: minmax(var(--chart-width), 33%) auto;
     grid-template-rows: var(--chart-height);
     &--donut {
       justify-self: center;
       padding-bottom: 0.25rem;
-      max-width: var(--chart-height);
+      max-width: var(--chart-width);
       min-height: var(--chart-height);
     }
     &--donut,
