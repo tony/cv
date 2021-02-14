@@ -50,6 +50,14 @@ export class Switcher extends LitElement {
     return [
       css`
         ${unsafeCSS(style)}
+
+        button._simple-switch-track {
+          margin-right: 0.25rem;
+        }
+
+        ::slotted(*) {
+          margin-left: 0.25rem;
+        }
       `,
     ];
   }
@@ -84,6 +92,6 @@ export class Switcher extends LitElement {
   }
 
   render(): TemplateResult {
-    return html`<input type="checkbox" id="switch" name="switch" />`;
+    return html`<label><input type="checkbox" id="switch" name="switch" /><slot></slot></label>`;
   }
 }

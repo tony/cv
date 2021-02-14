@@ -464,23 +464,27 @@ const App: React.FC = () => {
             <simple-switcher
               id="show-spelling"
               ref={onShowSpellingContributionsRef}
-            />
-            Show Spelling Contributions
+            >
+              Show Spelling Contributions
+            </simple-switcher>
             <simple-switcher
               id="show-documentation"
               ref={onShowDocumentationContributionsRef}
-            />
-            Show Documentation Tweaks
+            >
+              Show Documentation Tweaks
+            </simple-switcher>
             <simple-switcher
               id="show-code-style"
               ref={onShowCodeStyleContributionsRef}
-            />
-            Show Code Style / Bikeshedding
+            >
+              Show Code Style / Bikeshedding
+            </simple-switcher>
             <simple-switcher
               id="show-unmerged"
               ref={onShowUnmergedContributionsRef}
-            />
-            Show Unmerged
+            >
+              Show Unmerged
+            </simple-switcher>
           </div>
           <div className="resultsMessage">
             Found {resultsCount} results{" "}
