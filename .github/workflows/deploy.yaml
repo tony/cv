@@ -26,6 +26,7 @@ jobs:
         filters: |
           root: &root
             - package.json
+            - yarn.lock
           lib: &lib
             - 'packages/lib/**'
           sharedComponents: &sharedComponents
