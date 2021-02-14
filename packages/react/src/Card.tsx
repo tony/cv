@@ -152,9 +152,8 @@ export const PublicationInfo: React.FC<{
 export const CompanyInfo: React.FC<{
   activity: IActivityWork;
   org: CompanyOrg;
-}> = ({ activity, org }) => {
+}> = ({ org }) => {
   const items = [];
-  console.log({ activity, org });
   if (org?.url) {
     items.push(
       <span>
