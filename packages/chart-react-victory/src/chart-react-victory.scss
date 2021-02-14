@@ -1,5 +1,7 @@
+@use "@tony/cv-ui/styles/_variables.scss";
+
 .chartRow.victory:not(.noCharts) {
   .chartRow--line {
-    height: 400px;
+    height: var(--chart-height);
   }
 }

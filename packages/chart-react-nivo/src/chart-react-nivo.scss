@@ -1,3 +1,5 @@
+@use "@tony/cv-ui/styles/_variables.scss";
+
 .chartRow.nivo:not(.noCharts) {
   @media (max-width: 768px) {
     .chartRow--donut {
@@ -6,7 +8,7 @@
   }
 
   .chartRow--donut, .chartRow--line {
-    min-height: 400px;
-    height: 400px;
+    min-height: --chart-height;
+    height: --chart-height;
   }
 }
