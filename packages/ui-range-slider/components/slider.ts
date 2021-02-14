@@ -57,6 +57,9 @@ export class RangeSlider extends LitElement {
     return [
       css`
         ${unsafeCSS(style)}
+        .noUi-horizontal {
+          z-index: inherit;
+        }
 
         .noUi-horizontal .noUi-tooltip {
           top: 30px;
