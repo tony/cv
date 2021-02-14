@@ -1,4 +1,4 @@
-import { LitElement, html, customElement, css, query, unsafeCSS } from "lit-element";
+import { LitElement, html, customElement, css, query, property, unsafeCSS } from "lit-element";
 import type { CSSResult, TemplateResult } from "lit-element";
 
 import noUiSlider from "nouislider";
@@ -57,6 +57,9 @@ export class RangeSlider extends LitElement {
     return [
       css`
         ${unsafeCSS(style)}
+        .noUi-base .noUi-connects .noUi-connect {
+          background-color: var(--line-color, rgb(63, 184, 175));
+        }
         .noUi-horizontal {
           z-index: inherit;
         }
@@ -71,10 +74,17 @@ export class RangeSlider extends LitElement {
     ];
   }
 
+  @property({ type: "String" })
+  get lineColor(): string {
+    return this.style.getPropertyValue("--line-color");
+  }
+  set lineColor(value: string) {
+    this.style.setProperty("--line-color", value);
+  }
+
   // @ts-ignore
   @query("div") slider: HTMLDivElement;
 
-  // @property({ type: noUiSlider }) noUiSlider;
   private noUiSlider!: noUiSlider.noUiSlider;
 
   firstUpdated(): void {
