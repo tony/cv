@@ -1,11 +1,12 @@
 /// <reference path="./custom.d.ts" />
 import React from "react";
 import Plotly from "plotly.js/dist/plotly";
+import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
 
 import { plotlyJSChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
+import { donutChartHeightWithUnit } from "@tony/cv-ui/styles/constants";
 
 import "./chart-react-plotly.scss";
 
@@ -103,7 +104,7 @@ export const LanguagePieChart: React.FC<
         margin: { t: 0, b: 0, l: 0, r: 0 },
         showlegend: false,
       }}
-      style={{ width: "100%", maxHeight: "400px" }}
+      style={{ width: "100%", maxHeight: donutChartHeightWithUnit }}
       {...props}
     />
   );

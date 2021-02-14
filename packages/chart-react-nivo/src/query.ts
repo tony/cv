@@ -13,8 +13,11 @@ import type {
   ActivityTypesQuery,
   ActivitiesQuery,
 } from "@tony/cv-lib/search/query";
-
 import { CVStore } from "@tony/cv-lib/search/store";
+import {
+  donutChartHeight,
+  donutChartWidth,
+} from "@tony/cv-ui/styles/constants";
 
 function isString(x: unknown): x is string {
   return typeof x === "string";
@@ -35,7 +38,7 @@ export interface Results {
 
 export const DEFAULT_RESULTS: Results = {
   // Charts
-  donutChart: { data: [], height: 400, width: 400 },
+  donutChart: { data: [], height: donutChartHeight, width: donutChartWidth },
   lineChart: { data: [] },
 };
 
@@ -85,7 +88,7 @@ export class NivoChartQuery extends CVQuery {
             }
             return "gray";
           },
-          margin: { top: 60, right: 80, bottom: 60, left: 80 },
+          // margin: { top: 60, right: 80, bottom: 60, left: 80 },
           innerRadius: 0.5,
           padAngle: 0.7,
           cornerRadius: 3,
@@ -144,7 +147,6 @@ export class NivoChartQuery extends CVQuery {
             type: "linear",
             stacked: false,
           },
-          margin: { top: 20, bottom: 20, left: 20, right: 20 },
           axisLeft: {
             legend: "linear scale",
             legendOffset: 12,

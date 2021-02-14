@@ -12,8 +12,8 @@ import type {
   ActivityTypesQuery,
   ActivitiesQuery,
 } from "@tony/cv-lib/search/query";
-
 import { CVStore } from "@tony/cv-lib/search/store";
+import { donutChartWidth } from "@tony/cv-ui/styles/constants";
 
 export type DonutChartProps = React.ComponentProps<typeof VictoryPie>;
 export type LineChartProps = React.ComponentProps<typeof VictoryLine>;
@@ -68,7 +68,7 @@ export class VictoryChartQuery extends CVQuery {
         );
 
         return {
-          width: 400,
+          width: donutChartWidth,
           data: Object.entries(languageMap).map(([languageName, count]) => {
             return {
               x: languageName,

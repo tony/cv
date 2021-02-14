@@ -4,7 +4,11 @@ import {
   DonutChartOptions,
   LineChartOptions,
 } from "@carbon/charts/interfaces";
-
+import {
+  donutChartHeightWithUnit,
+  donutChartWidthWithUnit,
+  lineChartHeightWithUnit,
+} from "@tony/cv-ui/styles/constants";
 import { combineQueries } from "@datorama/akita";
 import { map, take } from "rxjs/operators";
 
@@ -38,8 +42,8 @@ const DONUT_CHART_DEFAULT_OPTIONS: DonutChartOptions = {
       label: "Results",
     },
   },
-  height: "400px",
-  width: "400px",
+  height: donutChartHeightWithUnit,
+  width: donutChartWidthWithUnit,
 };
 
 export const LINE_CHART_DEFAULT_OPTIONS: LineChartOptions = {
@@ -49,7 +53,7 @@ export const LINE_CHART_DEFAULT_OPTIONS: LineChartOptions = {
   legend: {
     enabled: false, // Disable for now: https://github.com/carbon-design-system/carbon-charts/issues/916
   },
-  height: "400px",
+  height: lineChartHeightWithUnit,
   axes: {
     left: {
       stacked: true,
