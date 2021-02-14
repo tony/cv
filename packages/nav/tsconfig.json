@@ -3,6 +3,10 @@
     "target": "es2015",
     "lib": ["dom", "es5", "es6"],
     "allowJs": true,
+    "paths": {
+      "@tony/cv-data/*": ["../data/*"],
+      "@tony/cv-lib/*": ["../lib/*"]
+    },
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

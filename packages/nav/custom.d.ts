@@ -19,3 +19,13 @@ declare namespace JSX {
     "cv-nav": any;
   }
 }
+
+declare module "!!raw-loader!*" {
+  const contents: string;
+  export = contents;
+}
+
+declare module "!raw-loader!*" {
+  const contents: string;
+  export = contents;
+}
