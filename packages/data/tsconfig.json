@@ -11,5 +11,6 @@
     "experimentalDecorators": true,
     "sourceMap": true
   },
+  "files": ["custom.d.ts"],
   "exclude": ["node_modules"]
 }
