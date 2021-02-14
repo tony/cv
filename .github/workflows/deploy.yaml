@@ -31,6 +31,7 @@ jobs:
           sharedComponents: &sharedComponents
             - 'packages/ui-range-slider/**'
             - 'packages/ui-switch/**'
+            - 'packages/ui/**'
           nav: &nav
             - 'packages/nav/**'
           data: &data
