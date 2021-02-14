@@ -28,6 +28,9 @@ jobs:
             - package.json
           lib: &lib
             - 'packages/lib/**'
+          sharedComponents: &sharedComponents
+            - 'packages/ui-range-slider/**'
+            - 'packages/ui-switch/**'
           nav: &nav
             - 'packages/nav/**'
           data: &data
@@ -35,6 +38,7 @@ jobs:
           common:
             - *root
             - *lib
+            - *sharedComponents
             - *nav
             - *data
           angular:
