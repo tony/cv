@@ -374,6 +374,10 @@ const App: React.FC = () => {
     };
   });
 
+  const topLanguageColorBg = results.languages.find(
+    (language) => language?.ui?.backgroundColor
+  )?.ui?.backgroundColor;
+
   const resultsCount = results?.activities ? results.activities.length : 0;
   return (
     <AppContainer chart={chart} setChart={setChart}>
@@ -451,7 +455,11 @@ const App: React.FC = () => {
               components={{ Option: OrgOption }}
             />
           </div>
-          <range-slider id="year-range" ref={histogramRangeSliderRef} />
+          <range-slider
+            id="year-range"
+            ref={histogramRangeSliderRef}
+            lineColor={topLanguageColorBg}
+          />
           <div className="toggles">
             <simple-switcher
               id="show-spelling"
