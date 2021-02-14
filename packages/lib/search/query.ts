@@ -19,6 +19,7 @@ import type {
   LanguagesState,
   ActivityTypesState,
   ActivitiesUIState,
+  ActivityUI,
 } from "./store";
 import {
   CVStore,
@@ -54,9 +55,10 @@ export interface Results {
 }
 
 export const DEFAULT_FILTERS: CVState = {
-  showTypos: true,
-  showDocImprovements: true,
-  showCodeStyleTweak: true,
+  showTypos: false,
+  showDocImprovements: false,
+  showCodeStyleTweaks: false,
+  showUnmerged: false,
   startYear: 2007,
   endYear: 2021,
 };
@@ -198,6 +200,40 @@ const filterActivitiesByYear = (
   });
 };
 
+const filterActivitiesByFilters = (
+  activities: IActivity[],
+  activityTraits: Record<number, ActivityUI>,
+  {
+    showTypos,
+    showDocImprovements,
+    showCodeStyleTweaks,
+    showUnmerged,
+  }: {
+    showTypos?: boolean;
+    showDocImprovements?: boolean;
+    showCodeStyleTweaks?: boolean;
+    showUnmerged?: boolean;
+  }
+) => {
+  return activities.filter((activity: IActivity) => {
+    const traits = activityTraits[activity.id];
+    if (!showTypos && traits.isTypo) {
+      return false;
+    }
+    if (!showDocImprovements && traits.isDocImprovement) {
+      return false;
+    }
+    if (!showCodeStyleTweaks && traits.isCodeStyleTweak) {
+      return false;
+    }
+    if (!showUnmerged && !traits.isMerged) {
+      return false;
+    }
+
+    return true;
+  });
+};
+
 export class CVQuery extends Query<CVState> {
   constructor(
     protected store: CVStore,
@@ -214,6 +250,7 @@ export class CVQuery extends Query<CVState> {
     return combineQueries([
       this.select(),
       this.activitiesQuery.selectAll(),
+      this.activitiesQuery.ui.selectAll({ asObject: true }),
       this.languagesQuery.selectActive((language) => {
         return language.id;
       }),
@@ -228,6 +265,7 @@ export class CVQuery extends Query<CVState> {
         ([
           cv,
           activities,
+          activityTraits,
           activeLanguages,
           activeOrgs,
           activeActivityTypes,
@@ -235,6 +273,12 @@ export class CVQuery extends Query<CVState> {
           let a = filterActivitiesByYear(activities, {
             startYear: cv.startYear,
             endYear: cv.endYear,
+          });
+          a = filterActivitiesByFilters(activities, activityTraits, {
+            showTypos: cv.showTypos,
+            showDocImprovements: cv.showDocImprovements,
+            showCodeStyleTweaks: cv.showCodeStyleTweaks,
+            showUnmerged: cv.showUnmerged,
           });
           if (
             !activeLanguages.length &&

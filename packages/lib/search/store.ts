@@ -30,13 +30,14 @@ import {
 export type CVState = {
   showTypos: boolean;
   showDocImprovements: boolean;
-  showCodeStyleTweak: boolean;
+  showCodeStyleTweaks: boolean;
+  showUnmerged: boolean;
   startYear: number;
   endYear: number;
 }; // Record<string, never>;
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 
-interface ActivityUI {
+export interface ActivityUI {
   isOptionDisabled: boolean;
   isTypo: boolean;
   isDocImprovement: boolean;

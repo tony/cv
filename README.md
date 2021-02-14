@@ -45,15 +45,17 @@
 
 [LitElement]-based [web component]s:
 
-| Package             | Source                        | Details                 | Status         |
-| ------------------- | ----------------------------- | ----------------------- | -------------- |
-| `<cv-nav>`          | [packages/nav/][]             | Top navigation, vanilla | 🟡 In-progress |
-| `<ui-range-slider>` | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
+| Package           | Source                        | Details                 | Status         |
+| ----------------- | ----------------------------- | ----------------------- | -------------- |
+| `<cv-nav>`        | [packages/nav/][]             | Top navigation, vanilla | 🟡 In-progress |
+| `<range-slider>`  | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
+| `<simple-switch>` | [packages/ui-switch/][]       | [simple-switch] wrapper | 🟡 In-progress |
 
 [sass]: https://sass-lang.com/
-[LitElement]: https://lit-element.polymer-project.org/
+[litelement]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [nouislider]: https://github.com/leongersen/noUiSlider
+[simple-switch]: https://github.com/aeolingamenfel/simple-switch
 
 ### 📈 Charts
 
@@ -222,6 +224,7 @@ yarn workspaces run lint
   [packages/chart-react-plotly/]: packages/chart-react-plotly/
   [packages/nav/]: packages/nav/
   [packages/ui-range-slider/]: packages/ui-range-slider/
+  [packages/ui-switch/]: packages/ui-switch/
 
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
