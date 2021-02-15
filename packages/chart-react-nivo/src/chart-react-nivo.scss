@@ -8,7 +8,7 @@
   }
 
   .chartRow--donut, .chartRow--line {
-    min-height: --chart-height;
-    height: --chart-height;
+    min-height: var(--chart-height);
+    height: var(--chart-height);
   }
 }
