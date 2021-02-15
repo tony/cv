@@ -34,7 +34,7 @@
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.2",
-    "eslint-plugin-vue": "^7.5.0",
+    "eslint-plugin-vue": "^7.6.0",
     "html-loader": "^2.0.0",
     "html-webpack-plugin": "^5.1.0",
     "prettier": "^2.2.1",
