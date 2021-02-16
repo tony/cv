@@ -465,25 +465,25 @@ const App: React.FC = () => {
               id="show-spelling"
               ref={onShowSpellingContributionsRef}
             >
-              Show Spelling Contributions
+              Spelling Contributions
             </simple-switcher>
             <simple-switcher
               id="show-documentation"
               ref={onShowDocumentationContributionsRef}
             >
-              Show Documentation Tweaks
+              Documentation Tweaks
             </simple-switcher>
             <simple-switcher
               id="show-code-style"
               ref={onShowCodeStyleContributionsRef}
             >
-              Show Code Style / Bikeshedding
+              Code Style / Bikeshedding
             </simple-switcher>
             <simple-switcher
               id="show-unmerged"
               ref={onShowUnmergedContributionsRef}
             >
-              Show Unmerged
+              Unmerged
             </simple-switcher>
           </div>
           <div className="resultsMessage">
