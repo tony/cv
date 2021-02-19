@@ -18,8 +18,5 @@
     "sourceMap": true,
     "experimentalDecorators": true
   },
-  "files": ["custom.d.ts"],
-  "include": [
-    "components/**/*"
-  ]
+  "files": ["custom.d.ts", "index.ts", "switch.ts"]
 }

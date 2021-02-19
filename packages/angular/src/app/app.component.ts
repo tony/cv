@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 import type { IActivity } from '@tony/cv-data/types';
 
-import '@tony/cv-nav/components';
+import '@tony/cv-nav';
 
 declare const __TITLE__: string;
 
