@@ -223,6 +223,7 @@ yarn workspaces run lint
   [packages/chart-react-billboard.js/]: packages/chart-react-billboard.js/
   [packages/chart-react-plotly/]: packages/chart-react-plotly/
   [packages/nav/]: packages/nav/
+  [packages/ui/]: packages/ui/
   [packages/ui-range-slider/]: packages/ui-range-slider/
   [packages/ui-switch/]: packages/ui-switch/
 
