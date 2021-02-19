@@ -15,6 +15,5 @@
     "jsx": "preserve",
     "experimentalDecorators": true,
     "sourceMap": true
-  },
-  "include": ["src/**/*", "webpack/*"]
+  }
 }
