@@ -37,17 +37,17 @@ import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
-import "@tony/cv-nav/components";
-import "@tony/cv-ui-range-slider/components";
-import "@tony/cv-ui-switch/components";
+import "@tony/cv-nav";
+import "@tony/cv-ui-range-slider";
+import "@tony/cv-ui-switch";
 import type {
   RangeSlider,
   CustomEventMap as RangeSliderEvents,
-} from "@tony/cv-ui-range-slider/components";
+} from "@tony/cv-ui-range-slider";
 import type {
   Switcher,
   CustomEventMap as SwitcherEvents,
-} from "@tony/cv-ui-switch/components";
+} from "@tony/cv-ui-switch";
 
 import "@tony/cv-ui/styles/style.scss";
 

@@ -8,7 +8,7 @@ import type { IActivity } from "@tony/cv-data/types";
 
 import ChristmasTreeSVG from "@tony/cv-data/img/icons/christmas-tree.svg";
 
-import "@tony/cv-nav/components";
+import "@tony/cv-nav";
 
 import style from "!raw-loader!sass-loader!@tony/cv-ui/styles/style.scss";
 

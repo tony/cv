@@ -1,15 +1,4 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "es2015",
-    "esModuleInterop": true,
-    "module": "es2020",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "lib": ["dom", "esnext.array", "es2019"],
-    "experimentalDecorators": true,
-    "sourceMap": true
-  },
+  "extends": "../../tsconfig.json",
   "exclude": ["node_modules"]
 }
