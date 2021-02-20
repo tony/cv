@@ -20,7 +20,6 @@ import type {
 } from "@tony/cv-lib/search/query";
 import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-data/fetch";
-import { ActivityCard } from "./Card";
 import {
   ActivityMultiValueLabel,
   activityTypeStyles,
@@ -36,7 +35,6 @@ import {
 import type { ISelectOption } from "./react-select";
 import { onEmit, useAsyncEffect } from "./utils";
 
-import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import "@tony/cv-nav";
 import "@tony/cv-ui-range-slider";
 import "@tony/cv-ui-switch";
@@ -51,6 +49,7 @@ import type {
 
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { Chart } from "./types";
+import { Results, ResultsHeader } from "./Results";
 
 import "@tony/cv-ui/styles/style.scss";
 
@@ -298,7 +297,6 @@ const App: React.FC = () => {
     (language) => language?.ui?.backgroundColor
   )?.ui?.backgroundColor;
 
-  const resultsCount = results?.activities ? results.activities.length : 0;
   return (
     <AppContainer chart={chart} setChart={setChart}>
       {results.ui.isLoading ? (
@@ -406,18 +404,8 @@ const App: React.FC = () => {
               Unmerged
             </simple-switcher>
           </div>
-          <div className="resultsMessage">
-            Found {resultsCount} results{" "}
-            <img src={christmasTreeSvg} width="16" />
-          </div>
-          <div className="activityCardList">
-            {results.activities &&
-              results.activities.map((activity, idx) => {
-                const org = orgsQuery.getEntity(activity.orgId);
-                if (!org) return;
-                return <ActivityCard activity={activity} org={org} key={idx} />;
-              })}
-          </div>
+          <ResultsHeader results={results} />
+          <Results results={results} />
         </>
       )}
     </AppContainer>
