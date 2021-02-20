@@ -97,32 +97,35 @@ const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "@tony/cv-data/raw");
 };
 
+const ChartLinks: React.FC<{
+  chart: Chart;
+  setChart: React.Dispatch<React.SetStateAction<Chart>>;
+}> = ({ chart, setChart }) => (
+  <div id="chart-links" className="fss-tablet">
+    📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
+    {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
+      <React.Fragment key={c}>
+        {idx > 0 && ", "}
+        <a
+          href="#"
+          onClick={() => setChart((c as unknown) as Chart)}
+          {...(c === chart && { className: "active" })}
+        >
+          {c}
+        </a>
+      </React.Fragment>
+    ))}
+  </div>
+);
+
 const AppContainer: React.FC<{
   chart: Chart;
   setChart: React.Dispatch<React.SetStateAction<Chart>>;
 }> = ({ children, chart, setChart }) => {
-  const ChartLinks = () => (
-    <div id="chart-links" className="fss-tablet">
-      📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
-      {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
-        <React.Fragment key={c}>
-          {idx > 0 && ", "}
-          <a
-            href="#"
-            onClick={() => setChart((c as unknown) as Chart)}
-            {...(c === chart && { className: "active" })}
-          >
-            {c}
-          </a>
-        </React.Fragment>
-      ))}
-    </div>
-  );
-
   return (
     <div>
       <cv-nav />
-      <ChartLinks />
+      <ChartLinks chart={chart} setChart={setChart} />
       {children}
     </div>
   );
