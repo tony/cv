@@ -86,14 +86,10 @@ const ChartLinks: React.FC<{
   </div>
 );
 
-const AppContainer: React.FC<{
-  chart: Chart;
-  setChart: React.Dispatch<React.SetStateAction<Chart>>;
-}> = ({ children, chart, setChart }) => {
+const AppContainer: React.FC = ({ children }) => {
   return (
     <div>
       <cv-nav />
-      <ChartLinks chart={chart} setChart={setChart} />
       {children}
     </div>
   );
@@ -152,6 +148,7 @@ const App: React.FC = () => {
         <div id="loading-screen">Loading CV Data</div>
       ) : (
         <>
+          <ChartLinks chart={chart} setChart={setChart} />
           <div
             className={`chartRow ${chart}${
               Object.keys(results.activityCount).length ? "" : " noCharts"
