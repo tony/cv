@@ -49,6 +49,9 @@ import type {
   CustomEventMap as SwitcherEvents,
 } from "@tony/cv-ui-switch";
 
+import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
+import { Chart } from "./types";
+
 import "@tony/cv-ui/styles/style.scss";
 
 enum ActionType {
@@ -123,92 +126,6 @@ const AppContainer: React.FC<{
       {children}
     </div>
   );
-};
-
-enum Chart {
-  ReactVis = "react-vis",
-  Carbon = "carbon",
-  Plotly = "plotly",
-  Billboard = "billboard",
-  Nivo = "nivo",
-  Victory = "victory",
-}
-const PIE_CHART_MAP = {
-  [Chart.Carbon]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "carbon-pie" */
-      "@tony/cv-chart-react-carbon/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-  [Chart.Billboard]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "billboard-pie" */
-      "@tony/cv-chart-react-billboard/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-  [Chart.Plotly]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "plotly-pie" */
-      "@tony/cv-chart-react-plotly/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-  [Chart.Victory]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "victory-pie" */
-      "@tony/cv-chart-react-victory/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-  [Chart.ReactVis]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "vis-pie" */
-      "@tony/cv-chart-react-vis/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-  [Chart.Nivo]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "nivo-pie" */
-      "@tony/cv-chart-react-nivo/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
-};
-
-const LINE_CHART_MAP = {
-  [Chart.Carbon]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "carbon-line" */
-      "@tony/cv-chart-react-carbon/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.Billboard]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "billboard-line" */
-      "@tony/cv-chart-react-billboard/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.Plotly]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "plotly-line" */
-      "@tony/cv-chart-react-plotly/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.Victory]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "victory-line" */
-      "@tony/cv-chart-react-victory/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.ReactVis]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "vis-line" */
-      "@tony/cv-chart-react-vis/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.Nivo]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "nivo-line" */
-      "@tony/cv-chart-react-nivo/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
 };
 
 const App: React.FC = () => {
