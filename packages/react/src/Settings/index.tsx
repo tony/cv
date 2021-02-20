@@ -31,8 +31,8 @@ import {
   onLanguageChange,
   onOrgChange,
   onActivityTypeChange,
-} from "./react-select";
-import type { ISelectOption } from "./react-select";
+} from "../react-select";
+import type { ISelectOption } from "../react-select";
 
 export const Settings: React.FC<{ results: ReducerState }> = ({ results }) => {
   const languageSelectRef = React.useRef<Select>(null);
