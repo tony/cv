@@ -19,6 +19,7 @@ import { Charts } from "./Charts";
 
 import "@tony/cv-nav";
 import "@tony/cv-ui/styles/style.scss";
+import "./style.scss";
 
 enum ActionType {
   SetResults,
