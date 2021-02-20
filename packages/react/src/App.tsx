@@ -13,13 +13,11 @@ import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
 import type { fetchDataFn } from "@tony/cv-data/fetch";
 import { onEmit, useAsyncEffect } from "./utils";
 
-import "@tony/cv-nav";
-
-import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
-import { Chart } from "./types";
 import { Results, ResultsHeader } from "./Results";
 import { Settings } from "./Settings";
+import { Charts } from "./Charts";
 
+import "@tony/cv-nav";
 import "@tony/cv-ui/styles/style.scss";
 
 enum ActionType {
@@ -65,27 +63,6 @@ const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "@tony/cv-data/raw");
 };
 
-const ChartLinks: React.FC<{
-  chart: Chart;
-  setChart: React.Dispatch<React.SetStateAction<Chart>>;
-}> = ({ chart, setChart }) => (
-  <div id="chart-links" className="fss-tablet">
-    📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
-    {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
-      <React.Fragment key={c}>
-        {idx > 0 && ", "}
-        <a
-          href="#"
-          onClick={() => setChart((c as unknown) as Chart)}
-          {...(c === chart && { className: "active" })}
-        >
-          {c}
-        </a>
-      </React.Fragment>
-    ))}
-  </div>
-);
-
 const AppContainer: React.FC = ({ children }) => {
   return (
     <div>
@@ -97,10 +74,6 @@ const AppContainer: React.FC = ({ children }) => {
 
 const App: React.FC = () => {
   const [results, dispatch] = React.useReducer(reducer, DEFAULT_RESULTS);
-  const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
-
-  const LanguagePieChart = PIE_CHART_MAP[chart];
-  const ActivityLineChart = LINE_CHART_MAP[chart];
 
   useAsyncEffect(async () => {
     const data = await fetchData();
@@ -143,37 +116,12 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <AppContainer chart={chart} setChart={setChart}>
+    <AppContainer>
       {results.ui.isLoading ? (
         <div id="loading-screen">Loading CV Data</div>
       ) : (
         <>
-          <ChartLinks chart={chart} setChart={setChart} />
-          <div
-            className={`chartRow ${chart}${
-              Object.keys(results.activityCount).length ? "" : " noCharts"
-            }`}
-          >
-            <div className="chartRow--donut">
-              <React.Suspense
-                fallback={
-                  <div className="loading-chart">Loading Pie Chart</div>
-                }
-              >
-                <LanguagePieChart />
-              </React.Suspense>
-            </div>
-            <div className="chartRow--line">
-              <React.Suspense
-                fallback={
-                  <div className="loading-chart">Loading Line Chart</div>
-                }
-              >
-                <ActivityLineChart />
-              </React.Suspense>
-            </div>
-          </div>
-
+          <Charts results={results} />
           <Settings results={results} />
           <ResultsHeader results={results} />
           <Results results={results} />
