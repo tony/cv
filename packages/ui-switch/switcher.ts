@@ -51,12 +51,12 @@ export class Switcher extends LitElement {
       css`
         ${unsafeCSS(style)}
 
-        button._simple-switch-track {
+        ._simple-switch-track {
           margin-right: 0.25rem;
+        }
 
-          & .handle {
-            z-index: 1; // Prevent handle from overlapping menus/selects
-          }
+        ._simple-switch-track .handle {
+          z-index: 0;
         }
 
         ::slotted(*) {
