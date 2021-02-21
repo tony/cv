@@ -14,7 +14,7 @@ import type { fetchDataFn } from "@tony/cv-data/fetch";
 import { onEmit, useAsyncEffect } from "./utils";
 
 import { Results, ResultsHeader } from "./Results";
-import { Settings } from "./Settings";
+import { Settings, SettingsContextProvider } from "./Settings";
 import { Charts } from "./Charts";
 
 import "@tony/cv-nav";
@@ -118,16 +118,18 @@ const App: React.FC = () => {
 
   return (
     <AppContainer>
-      {results.ui.isLoading ? (
-        <div id="loading-screen">Loading CV Data</div>
-      ) : (
-        <>
-          <Charts results={results} />
-          <Settings results={results} />
-          <ResultsHeader results={results} />
-          <Results results={results} />
-        </>
-      )}
+      <SettingsContextProvider>
+        {results.ui.isLoading ? (
+          <div id="loading-screen">Loading CV Data</div>
+        ) : (
+          <>
+            <Settings results={results} />
+            <Charts results={results} />
+            <ResultsHeader results={results} />
+            <Results results={results} />
+          </>
+        )}
+      </SettingsContextProvider>
     </AppContainer>
   );
 };

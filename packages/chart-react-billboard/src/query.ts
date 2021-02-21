@@ -12,8 +12,11 @@ import type {
   ActivityTypesQuery,
   ActivitiesQuery,
 } from "@tony/cv-lib/search/query";
-
 import { CVStore } from "@tony/cv-lib/search/store";
+import {
+  donutChartHeight,
+  donutChartWidth,
+} from "@tony/cv-ui/styles/constants";
 
 export type DonutChartProps = bb.ChartOptions;
 export type LineChartProps = bb.ChartOptions;
@@ -87,8 +90,8 @@ export class BillboardJSChartQuery extends CVQuery {
             show: false,
           },
           size: {
-            height: 400,
-            width: 400,
+            height: donutChartHeight,
+            width: donutChartWidth,
           },
         } as bb.ChartOptions;
       })

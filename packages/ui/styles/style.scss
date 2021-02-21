@@ -170,6 +170,78 @@ a {
   text-align: center;
 }
 
+#mobile-buttons {
+  background-color: #f1f1f1;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  button.toggle-btn {
+    background-color: #f1f1f1;
+    border: 0;
+    &:focus,
+    &:active,
+    &.active {
+      box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+    }
+  }
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+}
+
+#settings {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+#chart-links {
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  a {
+    font-size: 0.9rem;
+    color: #666;
+    &.active {
+      font-weight: 600;
+    }
+    &:hover {
+      color: #999;
+    }
+  }
+}
+
+#charts,
+#chart-links {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+    }
+  }
+}
+
+div.toggles {
+  @media screen and (max-width: 768px) {
+    height: auto;
+    padding-bottom: 1.5rem;
+    simple-switcher {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
 .dropdownRow {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -314,19 +386,4 @@ a {
   align-items: center;
   text-align: center;
   height: var(--chart-height);
-}
-
-#chart-links {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  a {
-    font-size: 0.9rem;
-    color: #666;
-    &.active {
-      font-weight: 600;
-    }
-    &:hover {
-      color: #999;
-    }
-  }
 }

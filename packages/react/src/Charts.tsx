@@ -4,12 +4,15 @@ import type { Results as ReducerState } from "@tony/cv-lib/search/query";
 
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { Chart } from "./types";
+import { SettingsContext } from "./Settings";
 
-const ChartLinks: React.FC<{
-  chart: Chart;
-  setChart: React.Dispatch<React.SetStateAction<Chart>>;
-}> = ({ chart, setChart }) => (
-  <div id="chart-links" className="fss-tablet">
+const ChartLinks: React.FC<
+  {
+    chart: Chart;
+    setChart: React.Dispatch<React.SetStateAction<Chart>>;
+  } & React.HTMLProps<HTMLDivElement>
+> = ({ chart, setChart, ...props }) => (
+  <div {...props}>
     📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
     {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
       <React.Fragment key={c}>
@@ -32,16 +35,26 @@ export const Charts: React.FC<{
   const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
+  const context = React.useContext(SettingsContext);
+
+  if (!context) {
+    return null;
+  }
+  const { showChartsMobile } = context;
 
   return (
     <>
-      {" "}
-      <ChartLinks chart={chart} setChart={setChart} />
+      <ChartLinks
+        chart={chart}
+        setChart={setChart}
+        id="chart-links"
+        className={`fss-tablet ${showChartsMobile ? "active" : ""}`}
+      />
       <div
         id="charts"
         className={`chartRow ${chart}${
           Object.keys(results.activityCount).length ? "" : " noCharts"
-        }`}
+        } ${showChartsMobile ? "active" : ""}`}
       >
         <div className="chartRow--donut">
           <React.Suspense
