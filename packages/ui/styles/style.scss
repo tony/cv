@@ -220,6 +220,10 @@ a {
   }
 }
 
+#charts {
+  width: 100%;
+}
+
 #charts,
 #chart-links {
   @media screen and (max-width: 768px) {
