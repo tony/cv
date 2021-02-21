@@ -1,5 +1,5 @@
 import React from "react";
-import CSS from "csstype";
+import type CSS from "csstype";
 
 import { cvService } from "@tony/cv-lib/hub";
 

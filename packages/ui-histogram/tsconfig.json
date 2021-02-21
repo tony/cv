@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.json",
+  "files": ["custom.d.ts", "index.ts", "histogram.ts"]
+}
