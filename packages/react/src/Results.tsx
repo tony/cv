@@ -12,7 +12,7 @@ export const ResultsHeader: React.FC<{ results: ReducerState }> = ({
   const resultsCount = results?.activities ? results.activities.length : 0;
 
   return (
-    <div className="resultsMessage">
+    <div id="results-info">
       Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
     </div>
   );
