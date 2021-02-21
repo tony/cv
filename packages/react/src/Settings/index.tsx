@@ -65,7 +65,7 @@ export const Settings: React.FC<{ results: ReducerState }> = ({ results }) => {
             setShowOptionsMobile(!showOptionsMobile);
           }}
         >
-          🎛️ Filters
+          🎛️ Settings
         </button>
         <button
           className={`toggle-btn ${showChartsMobile ? "active" : ""}`}
