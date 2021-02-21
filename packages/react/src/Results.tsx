@@ -20,7 +20,7 @@ export const ResultsHeader: React.FC<{ results: ReducerState }> = ({
 
 export const Results: React.FC<{ results: ReducerState }> = ({ results }) => {
   return (
-    <div className="activityCardList">
+    <div id="results">
       {results.activities &&
         results.activities.map((activity, idx) => {
           const org = orgsQuery.getEntity(activity.orgId);
