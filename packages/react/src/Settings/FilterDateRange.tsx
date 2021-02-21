@@ -1,7 +1,7 @@
 import React from "react";
 import { useRanger } from "react-ranger";
 
-import CSS from "csstype";
+import type CSS from "csstype";
 
 import { useMst } from "../mobx";
 

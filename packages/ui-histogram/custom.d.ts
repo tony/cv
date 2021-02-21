@@ -9,6 +9,11 @@ declare module "*.css" {
   export default content;
 }
 
+declare module "*.scss" {
+  const content: any;
+  export default content;
+}
+
 declare module "*.html" {
   const content: any;
   export default content;
@@ -16,19 +21,11 @@ declare module "*.html" {
 
 declare namespace JSX {
   interface IntrinsicElements {
-    "cv-nav": any;
-    "range-slider": any;
     "simple-switcher": any;
-    "cv-histogram": any;
   }
 }
 
 declare module "!!raw-loader!*" {
-  const contents: string;
-  export = contents;
-}
-
-declare module "!raw-loader!*" {
   const contents: string;
   export = contents;
 }

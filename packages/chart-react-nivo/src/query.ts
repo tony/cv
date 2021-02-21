@@ -1,3 +1,4 @@
+import { defaultMargin } from "@nivo/core";
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
 import type { Instance } from "mobx-state-tree";
@@ -8,7 +9,6 @@ import {
   donutChartWidth,
   lineChartHeight,
 } from "@tony/cv-ui/styles/constants";
-import { defaultMargin } from "@nivo/core";
 
 function isString(x: unknown): x is string {
   return typeof x === "string";
