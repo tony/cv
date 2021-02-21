@@ -67,7 +67,7 @@ export class Switcher extends LitElement {
   }
 
   // @ts-ignore
-  @query("input") switch_el: HTMLDivElement;
+  @query("input") switch_el: HTMLInputElement;
 
   private switcher!: SimpleSwitch;
 
