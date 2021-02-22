@@ -3063,10 +3063,10 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/nouislider@^9.0.9":
-  version "9.0.9"
-  resolved "https://registry.yarnpkg.com/@types/nouislider/-/nouislider-9.0.9.tgz#406f988a291dd06167fac47c14f8b18f807f3800"
-  integrity sha512-rPYYkVSAb+yNZg1B/4+tCHKMl9VWahOxpryGQhbJEHO3cxRm5i7fwnzE2SBCyVMYmKkIG/FvOmRaTo7MZrygmA==
+"@types/nouislider@^9.0.10":
+  version "9.0.10"
+  resolved "https://registry.yarnpkg.com/@types/nouislider/-/nouislider-9.0.10.tgz#4c03990e37aa885826a5be8d5c226508f78aecdd"
+  integrity sha512-aQ7U5oQ/h/joc93kwJvpGpGOkWGRg6doDvFyU9Do+K2JwwQnhAAcfnT9mMN1fgHAlnKLlyWTWRGs90B6FL0l4w==
   dependencies:
     "@types/wnumb" "*"
 
