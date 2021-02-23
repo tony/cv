@@ -1,11 +1,15 @@
 import React from "react";
 import { VictoryChart, VictoryLine, VictoryPie, VictoryTheme } from "victory";
-
+import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
+
+import {
+  donutChartHeight,
+  donutChartWidth,
+} from "@tony/cv-ui/styles/constants";
 
 import { victoryChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
 
 import "./chart-react-victory.scss";
 
@@ -63,7 +67,14 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
   return (
     <>
       {/* @ts-ignore */}
-      <VictoryPie ref={languageChartRef} {...chartData} {...props} />
+      <VictoryPie
+        ref={languageChartRef}
+        {...chartData}
+        {...props}
+        height={donutChartHeight}
+        width={donutChartWidth}
+        padding={0}
+      />
     </>
   );
 };
