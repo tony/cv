@@ -1498,10 +1498,10 @@
     "@babel/helper-plugin-utils" "^7.10.4"
     semver "^5.5.1"
 
-"@babel/plugin-transform-runtime@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.13.2.tgz#c50f0ee426c12fd3c647d0f23cc2e872d011e137"
-  integrity sha512-WGvQwEanjiNgSnStXz5XKCs+S3HSw04eQM+tCIoPVTGbSWkSoxt1HlnmB6YFrEJcWlVh8Jqg43DGvLPlX/rWZw==
+"@babel/plugin-transform-runtime@^7.13.4":
+  version "7.13.4"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.13.4.tgz#99ef53194e3bad62c5c96c19a76c417b9119590a"
+  integrity sha512-0Xip4KjXwapfwjK4yj4MXklT5JIA+ENWdOiQM/lpFF+13Z7BHzosgaDDRwQNvzhXvJuJFAW06F72wqsCL4lmyQ==
   dependencies:
     "@babel/helper-module-imports" "^7.12.13"
     "@babel/helper-plugin-utils" "^7.13.0"
@@ -1856,10 +1856,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.2.tgz#9511c87d2808b2cf5fb9e9c5cf0d1ab789d75499"
-  integrity sha512-U9plpxyudmZNYe12YI6cXyeWTWYCTq2u1h+C0XVtC3+BoiuzTh1BHlMJgxMrbKTombYkf7wQGqoxYkptFehuZw==
+"@babel/runtime@^7.13.4":
+  version "7.13.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.4.tgz#a2f5b5304d6f98a94053e6737321501347325617"
+  integrity sha512-pZLFG10nRL1hPF9J0/WdxjVuLEanSge8W3Ct+Kls9fNhD4vOi9bhuAU8DdNARvBE9GTg6UhQFcEIF1XhIZd9ZA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -7991,10 +7991,10 @@ eslint-plugin-jest@^24.1.5:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
-eslint-plugin-jsdoc@32.1.1:
-  version "32.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-32.1.1.tgz#9eeda91c40ef1e328a4f82be5f5a46307a3426c3"
-  integrity sha512-HiVe7cWfEMkkpj9+SYpRVIEIC80bETpt8dXOmbVtZHkgobOcxxVORiS2iOuH9gj7TO+rwXIni15WuOr2wnrt9w==
+eslint-plugin-jsdoc@32.2.0:
+  version "32.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-32.2.0.tgz#d848ea8475a9be63d8d261bd7fa01cf2a2bb32d5"
+  integrity sha512-ikeVeF3JVmzjcmGd04OZK0rXjgiw46TWtNX+OhyF2jQlw3w1CAU1vyAyLv8PZcIjp7WxP4N20Vg1CI9bp/52dw==
   dependencies:
     comment-parser "1.1.2"
     debug "^4.3.1"
