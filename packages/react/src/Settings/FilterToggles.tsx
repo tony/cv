@@ -123,7 +123,7 @@ export const FilterToggles: React.FC = () => {
         id="show-code-style"
         ref={onShowCodeStyleContributionsRef}
       >
-        Code Style / Bikeshedding
+        Code Style
       </simple-switcher>
       <simple-switcher id="show-unmerged" ref={onShowUnmergedContributionsRef}>
         Unmerged
