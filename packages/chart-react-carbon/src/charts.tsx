@@ -1,11 +1,10 @@
 import { DonutChart, StackedAreaChart } from "@carbon/charts-react";
 import React from "react";
-
+import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
 
 import { carbonChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
 
 import "@carbon/charts/styles.css";
 import "./chart-react-carbon.scss";
