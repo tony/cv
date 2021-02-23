@@ -133,7 +133,7 @@ export class CarbonChartQuery extends CVQuery {
               },
             },
             pie: {
-              labels: { formatter: () => "" },
+              labels: { formatter: () => "", enabled: false },
             },
           } as DonutChartOptions,
         } as DonutChartProps;

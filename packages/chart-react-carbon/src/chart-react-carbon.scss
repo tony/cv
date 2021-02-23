@@ -6,7 +6,7 @@
   .chartRow--donut {
     // After removing callouts, the proportions are off, trim the extra space
     // https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640
-    margin: -25px auto 0 auto;
+    margin: 0 auto;
 
     z-index: -10;
 
@@ -15,7 +15,6 @@
 
     .chart-holder {  // Prevent white space from overlapping with stuff above
       z-index: -10;
-      left: -15px;
     }
   }
 }
