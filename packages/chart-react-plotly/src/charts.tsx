@@ -6,7 +6,10 @@ import type { Observable, Subscription } from "rxjs";
 
 import { plotlyJSChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import { donutChartHeightWithUnit } from "@tony/cv-ui/styles/constants";
+import {
+  lineChartHeightWithUnit,
+  donutChartHeightWithUnit,
+} from "@tony/cv-ui/styles/constants";
 
 import "./chart-react-plotly.scss";
 
@@ -144,9 +147,12 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
   return (
     <Chart
       data={[chartData]}
-      layout={{ title: "A Fancy Plot" }}
       config={{ responsive: true }}
-      style={{ width: "100%" }}
+      layout={{
+        margin: { t: 0, b: 0, l: 0, r: 0 },
+        showlegend: false,
+      }}
+      style={{ width: "100%", maxHeight: lineChartHeightWithUnit }}
       {...props}
     />
   );

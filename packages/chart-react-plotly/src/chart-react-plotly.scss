@@ -1,5 +1,7 @@
+@use "@tony/cv-ui/styles/_variables.scss";
+
 .chartRow.plotly:not(.noCharts) {
   .chartRow--donut {
-    width: 360px;
+    min-width: var(--chart-width);
   }
 }
