@@ -33,7 +33,7 @@ export const useAsyncEffect = (
 
 export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
   const [chartData, setChartData] = React.useState<DonutChartProps>();
-  const languageChartRef = React.useRef<typeof VictoryPie>(null);
+  const languageChartRef = React.useRef<VictoryPie>(null);
 
   useAsyncEffect(async () => {
     if (!chartData) {
