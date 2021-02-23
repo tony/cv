@@ -1,8 +1,14 @@
+@use "@tony/cv-ui/styles/_variables.scss";
+
 .chartRow.billboard:not(.noCharts) {
   @media (max-width: 768px) {
     .chartRow--donut {
-      margin-left: -40px;
-      width: 360px;
+      margin: 0 auto;
+      min-width: var(--chart-width);
+      width: 100%;
+    }
+    .chartRow--line {
+      max-height: var(--chart-height);
     }
   }
 }

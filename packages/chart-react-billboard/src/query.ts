@@ -16,6 +16,7 @@ import { CVStore } from "@tony/cv-lib/search/store";
 import {
   donutChartHeight,
   donutChartWidth,
+  lineChartHeight,
 } from "@tony/cv-ui/styles/constants";
 
 export type DonutChartProps = bb.ChartOptions;
@@ -128,6 +129,9 @@ export class BillboardJSChartQuery extends CVQuery {
           },
           legend: {
             show: false,
+          },
+          size: {
+            height: lineChartHeight,
           },
         } as bb.ChartOptions;
       })
