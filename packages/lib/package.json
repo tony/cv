@@ -15,7 +15,7 @@
   "dependencies": {
     "@datorama/akita": "^6.0.0",
     "chroma-js": "^2.1.0",
-    "csstype": "^3.0.6",
+    "csstype": "^3.0.7",
     "github-colors": "~2.2",
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
