@@ -33,6 +33,6 @@
     "lit-element": "^2.4.0",
     "nouislider": "^14.6.3",
     "sass": "^1.32.8",
-    "sass-loader": "^11.0.0"
+    "sass-loader": "^11.0.1"
   }
 }
