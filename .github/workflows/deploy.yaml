@@ -25,6 +25,7 @@ jobs:
       with:
         filters: |
           root: &root
+            - tsconfig.json
             - package.json
             - yarn.lock
           lib: &lib
