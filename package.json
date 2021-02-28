@@ -20,7 +20,8 @@
       "**/@types/jasmine",
       "**/@angular*",
       "**/@angular*/**",
-      "**/ts-loader"
+      "**/ts-loader",
+      "**/typescript"
     ],
     "packages": [
       "packages/*"
