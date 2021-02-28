@@ -29,6 +29,7 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
+import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
 import type {
   IActivity,
   IOrg,
@@ -138,7 +139,8 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
             .filter((language) => language.id)
             .map((language) => [
               language.id as LanguageName,
-              language.ui.backgroundColor as string,
+              (language.ui?.backgroundColor as string) ??
+                LANGUAGE_FALLBACK_COLOR,
             ])
         );
       })
