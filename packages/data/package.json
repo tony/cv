@@ -12,6 +12,7 @@
     "format": "yarn run prettier",
     "update": "echo 'NOOP'",
     "ncu": "echo 'NOOP'",
-    "clean": "rm -rf scraped/"
+    "clean": "echo 'NOOP'",
+    "full-clean": "rm -rf scraped/"
   }
 }
