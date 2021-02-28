@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "composite": true,
     "paths": {
       "@tony/cv-data/*": ["../data/*"],
       "@tony/cv-lib/*": ["../lib/*"]
