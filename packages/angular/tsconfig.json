@@ -17,12 +17,17 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["esnext", "dom"]
+    "lib": ["es2018", "esnext", "dom"]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }
