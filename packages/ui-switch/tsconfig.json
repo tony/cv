@@ -1,4 +1,7 @@
 {
   "extends": "../../tsconfig.json",
-  "files": ["custom.d.ts", "index.ts", "switch.ts"]
+  "files": ["custom.d.ts", "index.ts", "switch.ts"],
+  "compilerOptions": {
+    "composite": true
+  }
 }

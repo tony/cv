@@ -3,5 +3,8 @@
   "files": ["custom.d.ts", "index.ts", "slider.ts"],
   "include": [
     "components/**/*"
-  ]
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
 }
