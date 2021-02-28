@@ -3,7 +3,7 @@ import type { CSSResult, TemplateResult } from "lit-element";
 
 //@ts-ignore
 import { Switch as SimpleSwitch } from "a-simple-switch";
-import style from "!raw-loader!sass-loader!a-simple-switch/src/sass/SimpleSwitch.scss";
+import style from "!!raw-loader!sass-loader!a-simple-switch/src/sass/SimpleSwitch.scss";
 
 type UnpackCustomEvent<T> = T extends CustomEvent<infer U> ? U : never;
 

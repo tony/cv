@@ -1,7 +1,7 @@
 import { LitElement, html, customElement, css, property, unsafeCSS } from "lit-element";
 import type { CSSResult, TemplateResult } from "lit-element";
 
-import style from "!raw-loader!sass-loader!./nav.scss";
+import style from "!!raw-loader!sass-loader!./nav.scss";
 
 import reactSvg from "@tony/cv-data/img/icons/react.svg";
 import angularSvg from "@tony/cv-data/img/icons/angular.svg";
