@@ -80,7 +80,7 @@
 ```bash
 $ yarn
 
-# Optional: Sync GitHub contributions to data/scraped/
+# Optional: Sync GitHub contributions to packages/data/scraped/
 $ yarn github  # Assure GITHUB_API_TOKEN is set
 
 # React
