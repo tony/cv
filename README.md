@@ -11,7 +11,7 @@
   - Typed reactive state through [akita]
   - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
     [billboard.js]
-  - Common navigation: Typed [web component] built with [lit-element]
+  - Common navigation: Typed [web component] built with [LitElement]
 - Angular
 
 ![image]
