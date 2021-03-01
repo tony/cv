@@ -256,7 +256,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
             endedAt={activity.endedAt}
           />
           <DateText
-            date={activity.createdAt}
+            date={activity.acceptedAt ?? activity.createdAt}
             style={{ paddingLeft: "0.25rem" }}
           />
           {activity.endedAt && (
