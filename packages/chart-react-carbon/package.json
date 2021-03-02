@@ -26,15 +26,15 @@
     "typescript": "^4.2.2"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-promise": "^4.3.1"
   },
   "dependencies": {
-    "@carbon/charts": "^0.41.39",
-    "@carbon/charts-react": "^0.41.39",
+    "@carbon/charts": "^0.41.40",
+    "@carbon/charts-react": "^0.41.40",
     "@datorama/akita": "^6.0.0",
     "@tony/cv-lib": "*",
     "carbon-components": "^10.29.0",
