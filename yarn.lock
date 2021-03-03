@@ -1999,18 +1999,18 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.40":
-  version "0.41.40"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.40.tgz#20958b3079ad75bf3866a4f7db3fefc949943cde"
-  integrity sha512-HK8+PHuOnuQtOwiG8SEDFJBeOKCoV7iScdQPdf1JGC/YduAnFUyOyzBHhanAhjRjuW5sCN2qgL/E5LxJX//JYQ==
+"@carbon/charts-react@^0.41.41":
+  version "0.41.41"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.41.tgz#6f413b843865f496d31b29929b38306adccf2c49"
+  integrity sha512-Y8e8AYOALzGeCxer2Uy/M+zfF2s/q+hzDA5qq7ws2NV7e9J8gsGuglNBT5I6n74J4M2w9oa2LwivfNntmuciyQ==
   dependencies:
-    "@carbon/charts" "^0.41.40"
+    "@carbon/charts" "^0.41.41"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.40":
-  version "0.41.40"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.40.tgz#93697e3261e68bc40c3b086026c5bfe9dba3797d"
-  integrity sha512-zeqa2ru3gPDaOmj96rWRi7cFOewYW2fmQrrQiO3Y1M91TXDAomvpXfG1DD2IoEcZniXORrnlNW0MNvQNFK6Yig==
+"@carbon/charts@^0.41.41":
+  version "0.41.41"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.41.tgz#d458299263f63e44925b5945635ca469a059f11c"
+  integrity sha512-NM21d+NyYnINvkUh4+ndHSCeBqpjBRN4hTEQhv7RGUuRNDZervvjheVq6CzFR9rRL+lAiH4fEJWfmRpBhKRphw==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -8119,15 +8119,15 @@ eslint-plugin-tsc@^2.0.0:
   dependencies:
     typescript-service "^2.0.3"
 
-eslint-plugin-vue@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.6.0.tgz#ea616e6dfd45d545adb16cba628c5a992cc31f0b"
-  integrity sha512-qYpKwAvpcQXyUXVcG8Zd+fxHDx9iSgTQuO7dql7Ug/2BCvNNDr6s3I9p8MoUo23JJdO7ZAjW3vSwY/EBf4uBcw==
+eslint-plugin-vue@^7.7.0:
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.7.0.tgz#a90df4595e670821bf243bd2750ededdb74948b8"
+  integrity sha512-mYz4bpLGv5jx6YG/GvKkqbGSfV7uma2u1P3mLA41Q5vQl8W1MeuTneB8tfsLq6xxxesFubcrOC0BZBJ5R+eaCQ==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
     semver "^7.3.2"
-    vue-eslint-parser "^7.5.0"
+    vue-eslint-parser "^7.6.0"
 
 eslint-scope@^4.0.3:
   version "4.0.3"
@@ -17793,10 +17793,10 @@ vue-class-component@^7.2.6:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
-vue-eslint-parser@^7.5.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.5.0.tgz#b68221c55fee061899afcfb4441ec74c1495285e"
-  integrity sha512-6EHzl00hIpy4yWZo3qSbtvtVw1A1cTKOv1w95QSuAqGgk4113XtRjvNIiEGo49r0YWOPYsrmI4Dl64axL5Agrw==
+vue-eslint-parser@^7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.6.0.tgz#01ea1a2932f581ff244336565d712801f8f72561"
+  integrity sha512-QXxqH8ZevBrtiZMZK0LpwaMfevQi9UL7lY6Kcp+ogWHC88AuwUPwwCIzkOUc1LR4XsYAt/F9yHXAB/QoD17QXA==
   dependencies:
     debug "^4.1.1"
     eslint-scope "^5.0.0"
