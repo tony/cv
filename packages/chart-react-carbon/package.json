@@ -35,7 +35,7 @@
   "dependencies": {
     "@carbon/charts": "^0.41.41",
     "@carbon/charts-react": "^0.41.41",
-    "@datorama/akita": "^6.0.0",
+    "@datorama/akita": "^6.0.1",
     "@tony/cv-lib": "*",
     "carbon-components": "^10.29.0",
     "d3": "6.x",

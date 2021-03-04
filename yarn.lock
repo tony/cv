@@ -2069,10 +2069,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@datorama/akita@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-6.0.0.tgz#53904e92dade99c24fe00654f7c21aa6a29cce24"
-  integrity sha512-/1UdpB8oGEuZ5NTqWjMALvsA6aT8HBnrHMBG4XGsDK0u3OAcO9Cqudx1k2u1DdGOCviXujIJLQAhgwBKTtaD5g==
+"@datorama/akita@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-6.0.1.tgz#828319755a487b148c914a5d1d40fbe72cbf7cba"
+  integrity sha512-Wia4a1q3rqJotgF/lf5vONLHAW3AssylcmiPMHxU941X/6gxYPvv0OKXjKNh8bU37Q0c4HRFOzcbglluByoCjw==
   dependencies:
     schematics-utilities "^1.1.1"
 
@@ -3203,7 +3203,7 @@
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.6.4.tgz#22ade1b692d5656f859ef9bc6c62d88632cc27e0"
   integrity sha512-CTdMERA4iGNcxeqzD7pavb4WLIFq6bGnx6nIJD+1D4Knx24GE6QBPrWVhO8UlIy7gf7rbIt3ZD7iIzryRD2TgA==
 
-"@types/jest@26.x", "@types/jest@^26.0.20":
+"@types/jest@^26.0.20":
   version "26.0.20"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.20.tgz#cd2f2702ecf69e86b586e1f5223a60e454056307"
   integrity sha512-9zi2Y+5USJRxd0FsahERhBwlcvFh6D2GLQnY2FH2BzK8J9s9omvNHIbvABwIluXa0fD8XVKMLTO0aOEuUfACAA==
@@ -4799,10 +4799,10 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-2.2.3.tgz#afb9ad683e82dfc513a533d9ff833d0a2d65638d"
-  integrity sha512-55Gp+MlMVWy13xLEHMy19Y8Yjby/q531B/EAFIlXCjm1itTa6qXfvYuDaVXCXt4KdFtCVXFgZJKdeCnBTW818g==
+billboard.js@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-2.2.4.tgz#adc5bd4258f9ac5a55dff4227ebf65ab030ebbe8"
+  integrity sha512-Riv61K3/enZFrPsTHFPCCTx0NOQ6LvBP8qrbBy/AmPfKb/0nVyW2TTbbf5WlMRlOXIFpLn7D4Ux3rQLcjaO91A==
   dependencies:
     d3-axis "^1.0.12"
     d3-brush "^1.1.6"
@@ -16788,12 +16788,11 @@ triple-beam@^1.2.0, triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-ts-jest@^26.5.2:
-  version "26.5.2"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.2.tgz#5281d6b44c2f94f71205728a389edc3d7995b0c4"
-  integrity sha512-bwyJ2zJieSugf7RB+o8fgkMeoMVMM2KPDE0UklRLuACxjwJsOrZNo6chrcScmK33YavPSwhARffy8dZx5LJdUQ==
+ts-jest@^26.5.3:
+  version "26.5.3"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.3.tgz#a6ee00ba547be3b09877550df40a1465d0295554"
+  integrity sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==
   dependencies:
-    "@types/jest" "26.x"
     bs-logger "0.x"
     buffer-from "1.x"
     fast-json-stable-stringify "2.x"
