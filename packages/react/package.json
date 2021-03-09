@@ -26,7 +26,7 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/react-select": "^4.0.13",
-    "@types/webpack-dev-server": "^3.11.1",
+    "@types/webpack-dev-server": "^3.11.2",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
