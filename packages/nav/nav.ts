@@ -72,8 +72,10 @@ export class CVNav extends LitElement {
           </b>
         </div>
         <ul>
-          <li class="${this.framework == Framework.React ? "active" : ""}">
-            <a href="https://cv-react-v2.git-pull.com/"><img src="${reactSvg}" width="18" /> React</a>
+          <li class="${this.framework == Framework.React ? "active" : ""} framework react">
+            <a href="https://cv-react-v2.git-pull.com/"> <img src="${reactSvg}" width="18" />
+              <span class="label">React
+            </a>
             <ul class="submenu">
               <li class="section-title">
                 <strong>Versions</strong>
@@ -84,18 +86,22 @@ export class CVNav extends LitElement {
               <li class="${this.framework == Framework.React ? "active" : ""}">
                 <a href="https://cv-react-v2.git-pull.com/"
                   >v2
-                  (2021)${this.framework == Framework.React
-                    ? html` -&nbsp;<strong>You are here</strong> `
-                    : ""}
+                  (2021)${
+                    this.framework == Framework.React ? html` -&nbsp;<strong>You are here</strong> ` : ""
+                  }
                 </a>
               </li>
             </ul>
           </li>
-          <li class="${this.framework == Framework.Angular ? "active" : ""}">
-            <a href="https://cv-angular-v2.git-pull.com/"> <img src="${angularSvg}" width="18" /> Angular </a>
+          <li class="${this.framework == Framework.Angular ? "active" : ""} framework angular">
+            <a href="https://cv-angular-v2.git-pull.com/"> <img src="${angularSvg}" width="18" />
+              <span class="label">Angular</span>
+            </a>
           </li>
-          <li class="${this.framework == Framework.Vue ? "active" : ""}">
-            <a href="https://cv-vue-v2.git-pull.com/"><img src="${vueSvg}" width="18" /> Vue</a>
+          <li class="${this.framework == Framework.Vue ? "active" : ""} framework vue">
+            <a href="https://cv-vue-v2.git-pull.com/">
+              <img src="${vueSvg}" width="18" /> <span class="label"> Vue</span>
+            </a>
             <ul class="submenu">
               <li class="section-title">
                 <strong>Versions</strong>
@@ -106,9 +112,9 @@ export class CVNav extends LitElement {
               <li class="${this.framework == Framework.Vue ? "active" : ""}">
                 <a href="https://cv-vue-v2.git-pull.com/"
                   >v2
-                  (2021)${this.framework == Framework.Vue
-                    ? html` -&nbsp;<strong>You are here</strong> `
-                    : ""}</a
+                  (2021)${
+                    this.framework == Framework.Vue ? html` -&nbsp;<strong>You are here</strong> ` : ""
+                  }</a
                 >
               </li>
             </ul>

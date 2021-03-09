@@ -52,6 +52,7 @@ $bg-color-900: darken($bg-color, 40);
   }
 
   li {
+    background: $bg-color;
     padding: 0 1rem;
     @media (max-width: 768px) {
       padding: 0 .5rem;
@@ -67,16 +68,19 @@ $bg-color-900: darken($bg-color, 40);
     img {
       padding: 0 .5rem;
     }
+
+    @media (max-width: 481px) {
+      &.framework .label {
+        display: none;
+      }
+    }
+
   }
 
   li a {
     color: #fff;
     text-decoration: none;
     display: flex;
-  }
-
-  li {
-    background: $bg-color;
   }
 
   li.active,
