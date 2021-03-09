@@ -74,7 +74,8 @@ $bg-color-900: darken($bg-color, 40);
         display: none;
       }
     }
-
+    &.view-source {
+    }
   }
 
   li a {

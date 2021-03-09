@@ -119,6 +119,11 @@ export class CVNav extends LitElement {
               </li>
             </ul>
           </li>
+          <li class="view-source">
+            <a href="https://github.com/tony/cv" rel="noopener noreferrer" target="blank">
+              View Source
+            </a>
+          </li>
         </ul>
       </nav>
     `;
