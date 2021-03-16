@@ -2026,10 +2026,10 @@
     "@carbon/charts" "^0.41.42"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.42":
-  version "0.41.42"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.42.tgz#2dfaade245ba4d528e6c66a5088fef0a66765941"
-  integrity sha512-eerBjoO04QQfoz4fgQoa5gl90HxGXSGYgYLOZc4bcd+tXq1DWpWOBc050UZVp0IiePJTIjKIarLEMwYEnXXW1w==
+"@carbon/charts@^0.41.42", "@carbon/charts@^0.41.43":
+  version "0.41.43"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.43.tgz#6d9f73e77b4ea2df256c12240ba2a764406ce6c8"
+  integrity sha512-ArQlBjNiPJB1TVIzTkYkzDzTfM34BNMU/w7d9mkt4S+CVs1PxmwhX0qLOZI0A1b7NPkxe8VJHghrNDYDJisYfw==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
