@@ -13,7 +13,7 @@
     "prettier": "prettier . --write"
   },
   "dependencies": {
-    "@datorama/akita": "^6.1.1",
+    "@datorama/akita": "^6.1.2",
     "chroma-js": "^2.1.1",
     "csstype": "^3.0.7",
     "github-colors": "~2.2",
