@@ -12708,10 +12708,10 @@ normals@^1.1.0:
   resolved "https://registry.yarnpkg.com/normals/-/normals-1.1.0.tgz#325b595ed34afe467a6c55a14fd9085787ff59c0"
   integrity sha1-MltZXtNK/kZ6bFWhT9kIV4f/WcA=
 
-nouislider@^14.6.3:
-  version "14.6.3"
-  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-14.6.3.tgz#4dad5b6651d6515f6e6829f8b8e3a1736a5c0ffb"
-  integrity sha512-/3tAqsWY2JYW9vd7bC14bFRA1P9A+pRHOtKmoMsyfnB0fQcd1UFx2pdY1Ey5wAUzTnXTesmYaEo/ecLVETijIQ==
+nouislider@^14.6.4:
+  version "14.6.4"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-14.6.4.tgz#81eb9544309a59b013293278951661da69e46713"
+  integrity sha512-PVCGYl+aC7/nVEbW61ypJWfuW3UCpvctz/luxpt4byxxli1FFyjBX9NIiy4Yak9AaO6a5BkPGfFYMCW4eg3eeQ==
 
 npm-bundled@^1.1.1:
   version "1.1.1"
