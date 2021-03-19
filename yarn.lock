@@ -14462,10 +14462,10 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-select@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.2.1.tgz#15c4837dffc1c23e91b7fde606c468cc10000a06"
-  integrity sha512-JwwZjsR10AD5RXmx4iEkN0Ndim/uSaQ8j8cxMwOg8SJFeyXwu/m+sdSQ0ds0AWFm7hhXG9kusC3CQ/s4UNcOIg==
+react-select@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.3.0.tgz#6bde634ae7a378b49f3833c85c126f533483fa2e"
+  integrity sha512-SBPD1a3TJqE9zoI/jfOLCAoLr/neluaeokjOixr3zZ1vHezkom8K0A9J4QG9IWDqIDE9K/Mv+0y1GjidC2PDtQ==
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.0.0"
@@ -17569,10 +17569,10 @@ victory-box-plot@^35.4.11:
     prop-types "^15.5.8"
     victory-core "^35.4.11"
 
-victory-brush-container@^35.4.11:
-  version "35.4.11"
-  resolved "https://registry.yarnpkg.com/victory-brush-container/-/victory-brush-container-35.4.11.tgz#ec37ab020412e6ef94a76c471b25d776e3dcd9c2"
-  integrity sha512-eG1i58ddXRhCv4tibT+1p55aJs7f1RE4QyaAuYRNoIGtOAHc4tC5uImrU667N+q4KSUYreuKwC7r8sHxobGJNg==
+victory-brush-container@^35.4.12:
+  version "35.4.12"
+  resolved "https://registry.yarnpkg.com/victory-brush-container/-/victory-brush-container-35.4.12.tgz#de9b00601311285b7050f91a584b9fc926d2758c"
+  integrity sha512-FwQe0IuJasB6WGtyfc4LmwEHAIcZdMtgqf0DnkUWbwXosgTE/pjwVXUzX/HpOdCa979rrpj548Itesx1cO/Mdg==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
@@ -17625,13 +17625,13 @@ victory-core@^35.4.11:
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
 
-victory-create-container@^35.4.11:
-  version "35.4.11"
-  resolved "https://registry.yarnpkg.com/victory-create-container/-/victory-create-container-35.4.11.tgz#b013e02133f53568d22031e0ad61dd8aada6ad7e"
-  integrity sha512-v0CHqIvxupH76hBAcBe6nSwhqKOdnF7A94sLB0MCByeLI6ayWQ/PWRegjzYwYak2LjHvd9PvyChQkQhVstLGZw==
+victory-create-container@^35.4.12:
+  version "35.4.12"
+  resolved "https://registry.yarnpkg.com/victory-create-container/-/victory-create-container-35.4.12.tgz#4b83d89cb6ce6c27bddba649b1e89ba75e87a4cf"
+  integrity sha512-WRjwuEJpwblHQtR1f0lpfh3tTmF+eDDCFdb02vvnfBoXECr7Wa/Y8pbeZIev//1uWrv7NkEDUUd1jJ2nn51RTA==
   dependencies:
     lodash "^4.17.19"
-    victory-brush-container "^35.4.11"
+    victory-brush-container "^35.4.12"
     victory-core "^35.4.11"
     victory-cursor-container "^35.4.11"
     victory-selection-container "^35.4.11"
@@ -17798,21 +17798,21 @@ victory-zoom-container@^35.4.11:
     prop-types "^15.5.8"
     victory-core "^35.4.11"
 
-victory@^35.4.11:
-  version "35.4.11"
-  resolved "https://registry.yarnpkg.com/victory/-/victory-35.4.11.tgz#ced7fbd48df1cac6bfd46b38f8c602dfd512c311"
-  integrity sha512-sl+dwS6cMEBw0ibsUgzFjmmK7CIiha+0SzPVOC5vHkvAD/La+tiG/rGBFOCIiral1d0q+JxV+SBDJXq9jMgIPw==
+victory@^35.4.12:
+  version "35.4.12"
+  resolved "https://registry.yarnpkg.com/victory/-/victory-35.4.12.tgz#2130d3dc1e8bd083b658e6cefe48c6555601e194"
+  integrity sha512-b3uaishHftXHClb78DNfYdwcFXsD1LlXMkKCxBNYBFjareStsBtDmLBGEhBqn7VbVdq+mTR0jV7UQiUC45GrKg==
   dependencies:
     victory-area "^35.4.11"
     victory-axis "^35.4.11"
     victory-bar "^35.4.11"
     victory-box-plot "^35.4.11"
-    victory-brush-container "^35.4.11"
+    victory-brush-container "^35.4.12"
     victory-brush-line "^35.4.11"
     victory-candlestick "^35.4.11"
     victory-chart "^35.4.11"
     victory-core "^35.4.11"
-    victory-create-container "^35.4.11"
+    victory-create-container "^35.4.12"
     victory-cursor-container "^35.4.11"
     victory-errorbar "^35.4.11"
     victory-group "^35.4.11"
@@ -18203,10 +18203,10 @@ webpack@4.44.2:
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
-webpack@^5.26.3, webpack@~5.26.3:
-  version "5.26.3"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.26.3.tgz#bafd439abac08fbb82657ec855d038743b725ab8"
-  integrity sha512-z/F2lt2N1fZqaud1B4SzjL3OW03eULThbBXQ2OX4LSrZX4N9k1A5d0Rje3zS2g887DTWyAV0KGqEf64ois2dhg==
+webpack@^5.27.0, webpack@~5.27.0:
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.27.0.tgz#387458f83142253f2759e22415dc1359746e6940"
+  integrity sha512-So7grHu//UyJ+80VrNHjWwW6WSZkfWWD6a7NV/88r8G92PO6TYOGzbtTiZBwbPVkx6LVP8OYvHD+IxuJ2KBz4g==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
