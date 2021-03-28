@@ -4,7 +4,9 @@ import type { Results as ReducerState } from "@tony/cv-lib/search/query";
 
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { Chart } from "./types";
-import { SettingsContext } from "./Settings";
+import { getTopLanguageColor, SettingsContext } from "./Settings";
+
+import "@tony/cv-ui-histogram";
 
 const ChartLinks: React.FC<
   {
@@ -41,9 +43,14 @@ export const Charts: React.FC<{
     return null;
   }
   const { showChartsMobile } = context;
-
+  const topLanguageColor = getTopLanguageColor(results);
+  console.log("activityCount", results.activityCount);
   return (
     <>
+      <cv-histogram
+        info={JSON.stringify(results.activityCount)}
+        lineColor={topLanguageColor}
+      />
       <ChartLinks
         chart={chart}
         setChart={setChart}

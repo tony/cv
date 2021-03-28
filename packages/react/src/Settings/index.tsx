@@ -1,4 +1,5 @@
 import React from "react";
+import type CSS from "csstype";
 
 import type { Results as ReducerState } from "@tony/cv-lib/search/query";
 
@@ -39,11 +40,14 @@ export const SettingsContextProvider: React.FC = ({ children }) => {
   );
 };
 
-export const Settings: React.FC<{ results: ReducerState }> = ({ results }) => {
-  const topLanguageColorBg = results.languages.find(
-    (language) => language?.ui?.backgroundColor
-  )?.ui?.backgroundColor;
+export const getTopLanguageColor = (
+  results: ReducerState
+): CSS.Properties["backgroundColor"] =>
+  results.languages.find((language) => language?.ui?.backgroundColor)?.ui
+    ?.backgroundColor;
 
+export const Settings: React.FC<{ results: ReducerState }> = ({ results }) => {
+  const topLanguageColorBg = getTopLanguageColor(results);
   const context = React.useContext(SettingsContext);
   if (!context) {
     return null;
