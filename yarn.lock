@@ -2138,10 +2138,10 @@
     "@carbon/charts" "^0.41.47"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.47":
-  version "0.41.47"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.47.tgz#2d178353064ab0c7135261c8bd5db6df84adabe3"
-  integrity sha512-7fa93fAa2DBJONeCPsT2NWs3uUJhL1+1O6hQZR6SdvyTMlZooUsZ/3J11he6PGF+Vv2g13lq5M2u3L1j4Rh2NA==
+"@carbon/charts@^0.41.47", "@carbon/charts@^0.41.48":
+  version "0.41.48"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.48.tgz#94f1b038b088231d0a86d96805a6bf5c8424f443"
+  integrity sha512-7th+SFrfUTjysUpX55bwdfJbpuKuR6TK2Vm2tbd17qFmi0B9EMQmyOKFb5UcIfQzl0r0mIadCYgq3RjZC0vJLQ==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
