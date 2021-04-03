@@ -26,6 +26,7 @@ const config = {
     "eduflow",
     "tmux-python",
     "vcs-python",
+    "social-embed",
   ],
   gh_user: "tony",
   ignore_private_repos: true,
