@@ -28,6 +28,7 @@ const config = {
     "eduflow",
     "tmux-python",
     "vcs-python",
+    "social-embed",
   ],
   output_dir: "data/scraped",
   ignore_private_repos: true,
