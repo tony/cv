@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "files": ["custom.d.ts"],
+  "files": ["custom.d.ts", "constants.ts", "types.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "composite": true
