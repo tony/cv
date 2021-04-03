@@ -152,6 +152,37 @@
     "logo": "https://libvcs.git-pull.com/en/latest/_static/img/libvcs.svg"
   },
   {
+    "id": 10009,
+    "type": "Open Source",
+    "name": "@social-embed/lib",
+    "url": "https://social-embed.git-pull.com/",
+    "repo_url": "https://github.com/social-embed/social-embed/",
+    "docs_url": "https://social-embed.git-pull.com",
+    "api_url": "https://social-embed.git-pull.com/api",
+    "ci_url": "https://github.com/social-embed/social-embed/actions",
+    "changelog_url": "https://github.com/social-embed/social-embed/blob/master/CHANGES.md",
+    "issues_url": "https://github.com/social-embed/social-embed/labels/component%3Alib",
+    "browse_code_tests_url": "https://github.com/social-embed/social-embed/tree/master/packages/lib/test",
+    "browse_code_url": "https://github.com/social-embed/social-embed/tree/master/packages/lib",
+    "languages": ["TypeScript", "JavaScript"]
+  },
+  {
+    "id": 10010,
+    "org": "Open Source",
+    "name": "@social-embed/wc",
+    "url": "https://social-embed.git-pull.com/",
+    "repo_url": "https://github.com/social-embed/social-embed/",
+    "docs_url": "https://social-embed.git-pull.com",
+    "api_url": "https://social-embed.git-pull.com/api",
+    "ci_url": "https://github.com/social-embed/social-embed/actions",
+    "changelog_url": "https://github.com/social-embed/social-embed/blob/master/CHANGES.md",
+    "issues_url": "https://github.com/social-embed/social-embed/labels/component%3Awc",
+    "browse_code_tests_url": "https://github.com/social-embed/social-embed/tree/master/packages/wc/test",
+    "browse_code_url": "https://github.com/social-embed/social-embed/tree/master/packages/wc",
+    "languages": ["TypeScript", "JavaScript"]
+  },
+
+  {
     "id": 20000,
     "type": "Open Source",
     "name": "Drupal Events",
