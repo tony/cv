@@ -63,6 +63,20 @@
     "orgId": "vcspull"
   },
   {
+    "id": 20009,
+    "activityType": "SoftwareApp",
+    "createdAt": "2021-03-26",
+    "title": "Created web component for social media embeds",
+    "orgId": "@social-embed/wc"
+  },
+  {
+    "id": 20010,
+    "activityType": "SoftwareLib",
+    "createdAt": "2021-04-01",
+    "title": "Decoupled library utilities from social-media web component",
+    "orgId": "@social-embed/lib"
+  },
+  {
     "id": 30000,
     "activityType": "Patch",
     "createdAt": "2007-04-12",

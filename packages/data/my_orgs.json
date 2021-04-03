@@ -151,6 +151,36 @@
     "languages": ["Python"],
     "logo": "https://libvcs.git-pull.com/en/latest/_static/img/libvcs.svg"
   },
+  "@social-embed/lib": {
+    "id": 10009,
+    "orgType": "Open Source",
+    "name": "@social-embed/lib",
+    "url": "https://social-embed.git-pull.com/",
+    "repoUrl": "https://github.com/social-embed/social-embed/",
+    "docsUrl": "https://social-embed.git-pull.com",
+    "apiUrl": "https://social-embed.git-pull.com/api",
+    "ciUrl": "https://github.com/social-embed/social-embed/actions",
+    "changelogUrl": "https://github.com/social-embed/social-embed/blob/master/CHANGES.md",
+    "issuesUrl": "https://github.com/social-embed/social-embed/labels/component%3Alib",
+    "browseCodeTestsUrl": "https://github.com/social-embed/social-embed/tree/master/packages/lib/test",
+    "browseCodeUrl": "https://github.com/social-embed/social-embed/tree/master/packages/lib",
+    "languages": ["TypeScript", "JavaScript"]
+  },
+  "@social-embed/wc": {
+    "id": 10010,
+    "orgType": "Open Source",
+    "name": "@social-embed/wc",
+    "url": "https://social-embed.git-pull.com/",
+    "repoUrl": "https://github.com/social-embed/social-embed/",
+    "docsUrl": "https://social-embed.git-pull.com",
+    "apiUrl": "https://social-embed.git-pull.com/api",
+    "ciUrl": "https://github.com/social-embed/social-embed/actions",
+    "changelogUrl": "https://github.com/social-embed/social-embed/blob/master/CHANGES.md",
+    "issuesUrl": "https://github.com/social-embed/social-embed/labels/component%3Awc",
+    "browseCodeTestsUrl": "https://github.com/social-embed/social-embed/tree/master/packages/wc/test",
+    "browseCodeUrl": "https://github.com/social-embed/social-embed/tree/master/packages/wc",
+    "languages": ["TypeScript", "JavaScript"]
+  },
   "drupal-events": {
     "id": 20000,
     "orgType": "Open Source",
