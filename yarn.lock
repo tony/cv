@@ -2151,18 +2151,18 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.50":
-  version "0.41.50"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.50.tgz#223d5197770006e2e4fcedc4d4cb1355bbfd93f9"
-  integrity sha512-0EPwfok+NwLgmrePJFumKdGZ7RrcmFa8yASubloS0TW9SFUwOkJywB9csa6W8G0KqTkiI8s+MjY8UJdd07YNRg==
+"@carbon/charts-react@^0.41.55":
+  version "0.41.55"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.55.tgz#fb0d506db28204355adcaefddf6739e91425bc37"
+  integrity sha512-AUd2d2v/Xdb0hsDaynLmIXb5iZ0uvXuDu33vF+MjJgt3rUa3K5wRjxesXlY3cJB6RTgJ6hUVYoTqTF922OfgQg==
   dependencies:
-    "@carbon/charts" "^0.41.50"
+    "@carbon/charts" "^0.41.55"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.50":
-  version "0.41.50"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.50.tgz#422e2a66464617aee4c6adb5c57fc875d7bdb6df"
-  integrity sha512-sdaOMHCtdspEG3Hykw+vecvfP6LgMxVpMwDpb9vSQyBtmaRjEhB2OHdvXD/LP/nrUBAYJkGn1Wa9DK7oyXJoLQ==
+"@carbon/charts@^0.41.50", "@carbon/charts@^0.41.55":
+  version "0.41.55"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.55.tgz#e8a9d52d8123dd62d0ab9d2f6e4b05d48fa07e0e"
+  integrity sha512-NiiDOSsHR8b0P6Hyq8wW7jrVHlWPClFzDyhh1LvaoEy2aUYGZ68bkLxIBIWInWW59g7TisATtHh9PcutIkdlKw==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -12492,7 +12492,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
