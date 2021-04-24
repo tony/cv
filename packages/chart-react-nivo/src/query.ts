@@ -72,6 +72,8 @@ export class NivoChartQuery extends CVQuery {
     ]).pipe(
       map(([languageCount, languages]) => {
         return {
+          height: donutChartHeight,
+          width: donutChartWidth,
           data: Object.entries(languageCount).map(([languageName, count]) => {
             return {
               id: languageName,
@@ -100,7 +102,11 @@ export class NivoChartQuery extends CVQuery {
           radialLabelsTextColor: "#333333",
           sortByValue: true,
           sliceLabelsSkipAngle: 10,
-          sliceLabelsTextColor: (item) => {
+          sliceLabelsTextColor: (item: {
+            id: string;
+            label: string;
+            value: number;
+          }) => {
             const color = languages.find((language) => language.id == item.id)
               ?.ui?.color;
 
