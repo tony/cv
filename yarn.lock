@@ -2199,10 +2199,10 @@
     "@carbon/charts" "^0.41.58"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.58":
-  version "0.41.58"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.58.tgz#1eb119de330311d18d9d1a23dcf53615255058ae"
-  integrity sha512-2ZJrgp7NC+RWXYuPfd/W3jH00W5o5D6ls0IyjoRFInnhpKhnmiA3dtdZ0dcLUGHxmQyUaPWFTHbD0sLjzic4uw==
+"@carbon/charts@^0.41.58", "@carbon/charts@^0.41.59":
+  version "0.41.59"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.59.tgz#08ff9f20e0b418ba22f858c91e54460fad50faf9"
+  integrity sha512-sz/crYYd2Kucv9vymvdXPbCJ5KJdAIKZRFqtMQYKt4hX+M2DpN876ftCSAofhE/I2VqB7UyzIEnEl9J4k+0kow==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -12548,7 +12548,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
