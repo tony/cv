@@ -172,7 +172,7 @@ export class NivoChartQuery extends CVQuery {
           },
           useMesh: true,
           enableSlices: false,
-        };
+        } as LineChartProps;
       })
     );
   }
