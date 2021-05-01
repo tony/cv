@@ -26,7 +26,7 @@ import {
   isActivityDocImprovement,
   isActivityCodeStyleTweak,
   isActivityMerged,
-} from "./utils";
+} from "@tony/cv-lib/search/utils";
 
 export type CVState = {
   showReleases: boolean;

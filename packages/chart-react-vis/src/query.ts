@@ -16,7 +16,7 @@ import type {
 
 import { CVStore } from "@tony/cv-lib/search/store";
 
-import type { FlexRadialChart } from "./constants";
+import type { FlexRadialChart } from "@tony/cv-chart-react-vis/src/constants";
 
 export type DonutChartProps = React.ComponentProps<typeof FlexRadialChart>;
 export type LineChartProps = React.ComponentProps<typeof LineSeries>;

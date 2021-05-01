@@ -11,7 +11,7 @@ import {
   ActivityTypeColors,
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
-} from "./constants";
+} from "@tony/cv-data/constants";
 import {
   ActivityType,
   ActivityTypeName,
@@ -21,7 +21,7 @@ import {
   OrgTypeName,
   IActivity,
   IOrg,
-} from "./types";
+} from "@tony/cv-data/types";
 
 export const orgs: IOrg[] = [
   // Make Object Key the ID
