@@ -2,6 +2,7 @@ import bb, { donut, line } from "billboard.js";
 import type { Observable } from "rxjs";
 
 import { combineQueries } from "@datorama/akita";
+import { firstValueFrom } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -104,7 +105,9 @@ export class BillboardJSChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
@@ -143,6 +146,8 @@ export class BillboardJSChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val ?? DEFAULT_RESULTS.lineChart
+    );
   }
 }

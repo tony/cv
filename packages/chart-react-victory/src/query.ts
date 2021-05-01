@@ -2,6 +2,7 @@ import type { Observable } from "rxjs";
 import type { VictoryLine, VictoryPie } from "victory";
 
 import { combineQueries } from "@datorama/akita";
+import { firstValueFrom } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -28,9 +29,16 @@ export const DEFAULT_RESULTS: Results = {
   // Charts
   donutChart: {
     data: [],
+    // The typing inside this break almost every time we customize something
+    labels: () => "",
+    width: donutChartWidth,
   },
   lineChart: {
     data: [],
+    style: {
+      data: { stroke: "#c43a31" },
+      parent: { border: "1px solid #ccc" },
+    },
   },
 };
 
@@ -68,7 +76,6 @@ export class VictoryChartQuery extends CVQuery {
         );
 
         return {
-          width: donutChartWidth,
           data: Object.entries(languageMap).map(([languageName, count]) => {
             return {
               x: languageName,
@@ -76,8 +83,7 @@ export class VictoryChartQuery extends CVQuery {
             };
           }),
           colorScale: colorScale,
-          // The typing inside this break almost every time we customize something
-          labels: () => "",
+          ...DEFAULT_RESULTS.donutChart,
         } as DonutChartProps;
       })
     );
@@ -85,20 +91,19 @@ export class VictoryChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val ?? DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
     return this.visibleActivityYearCount$().pipe(
       map((activityCount) => {
         return {
-          style: {
-            data: { stroke: "#c43a31" },
-            parent: { border: "1px solid #ccc" },
-          },
           data: Object.entries(activityCount).map(([year, count]) => {
             return { x: year, y: count };
           }),
+          ...DEFAULT_RESULTS.lineChart,
         } as LineChartProps;
       })
     );
@@ -106,6 +111,8 @@ export class VictoryChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.lineChart
+    );
   }
 }

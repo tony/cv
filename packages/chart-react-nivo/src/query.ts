@@ -3,6 +3,7 @@ import type { Observable } from "rxjs";
 import { combineQueries } from "@datorama/akita";
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
+import { firstValueFrom } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -39,7 +40,43 @@ export interface Results {
 export const DEFAULT_RESULTS: Results = {
   // Charts
   donutChart: { data: [], height: donutChartHeight, width: donutChartWidth },
-  lineChart: { data: [] },
+  lineChart: {
+    data: [],
+    colors: "rgb(53, 114, 165)",
+    pointColor: "rgb(37, 80, 115)",
+    xScale: {
+      type: "time",
+      format: "%Y-%m-%d",
+      precision: "year",
+    },
+    xFormat: "time:%Y-%m-%d",
+    yScale: {
+      type: "linear",
+      stacked: false,
+    },
+
+    // @ts-ignore
+    axisLeft: {
+      legend: "linear scale",
+      legendOffset: 12,
+    },
+    // @ts-ignore
+    axisBottom: {
+      format: "%Y",
+      tickValues: "every 1 year",
+      legend: "time scale",
+      legendOffset: -12,
+    },
+    enablePointLabel: true,
+    pointSize: 16,
+    pointBorderWidth: 1,
+    pointBorderColor: {
+      from: "color",
+      modifiers: [["darker", 0.3]],
+    },
+    useMesh: true,
+    enableSlices: false,
+  },
 };
 
 export class NivoChartQuery extends CVQuery {
@@ -122,7 +159,9 @@ export class NivoChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
@@ -141,37 +180,7 @@ export class NivoChartQuery extends CVQuery {
               }),
             },
           ],
-          colors: "rgb(53, 114, 165)",
-          pointColor: "rgb(37, 80, 115)",
-          xScale: {
-            type: "time",
-            format: "%Y-%m-%d",
-            precision: "year",
-          },
-          xFormat: "time:%Y-%m-%d",
-          yScale: {
-            type: "linear",
-            stacked: false,
-          },
-          axisLeft: {
-            legend: "linear scale",
-            legendOffset: 12,
-          },
-          axisBottom: {
-            format: "%Y",
-            tickValues: "every 1 year",
-            legend: "time scale",
-            legendOffset: -12,
-          },
-          enablePointLabel: true,
-          pointSize: 16,
-          pointBorderWidth: 1,
-          pointBorderColor: {
-            from: "color",
-            modifiers: [["darker", 0.3]],
-          },
-          useMesh: true,
-          enableSlices: false,
+          ...DEFAULT_RESULTS.lineChart,
         } as LineChartProps;
       })
     );
@@ -179,6 +188,8 @@ export class NivoChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.lineChart
+    );
   }
 }
