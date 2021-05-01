@@ -10,6 +10,7 @@ import {
   lineChartHeightWithUnit,
 } from "@tony/cv-ui/styles/constants";
 import { combineQueries } from "@datorama/akita";
+import { firstValueFrom } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -37,13 +38,16 @@ const DONUT_CHART_DEFAULT_OPTIONS: DonutChartOptions = {
     enabled: false, // Disable for now: https://github.com/carbon-design-system/carbon-charts/issues/916
   },
   resizable: true,
+  height: donutChartHeightWithUnit,
+  width: donutChartWidthWithUnit,
   donut: {
     center: {
       label: "Results",
     },
   },
-  height: donutChartHeightWithUnit,
-  width: donutChartWidthWithUnit,
+  pie: {
+    labels: { formatter: () => "", enabled: false },
+  },
 };
 
 export const LINE_CHART_DEFAULT_OPTIONS: LineChartOptions = {
@@ -132,9 +136,6 @@ export class CarbonChartQuery extends CVQuery {
                 label: "Results",
               },
             },
-            pie: {
-              labels: { formatter: () => "", enabled: false },
-            },
           } as DonutChartOptions,
         } as DonutChartProps;
       })
@@ -143,7 +144,9 @@ export class CarbonChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
@@ -173,6 +176,8 @@ export class CarbonChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.lineChart
+    );
   }
 }

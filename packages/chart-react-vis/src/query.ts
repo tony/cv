@@ -2,6 +2,7 @@ import type { Observable } from "rxjs";
 import type { LineSeries, LineSeriesPoint } from "react-vis";
 
 import { combineQueries } from "@datorama/akita";
+import { firstValueFrom } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -30,6 +31,22 @@ export const DEFAULT_RESULTS: Results = {
   // Charts
   donutChart: {
     data: [],
+    getAngle: (data: { count: number }) => {
+      return data.count;
+    },
+
+    colorType: "literal",
+    colorDomain: [0, 100],
+    colorRange: [0, 10],
+    labelsRadiusMultiplier: 0.85,
+    labelsStyle: {
+      fontSize: 12,
+    },
+    showLabels: true,
+    labelsAboveChildren: true,
+    getLabel: (d: { label: string }) => {
+      return d.label;
+    },
   },
   lineChart: {
     data: [],
@@ -80,27 +97,13 @@ export class VisChartQuery extends CVQuery {
               count,
             };
           }),
-          getAngle: (data: { count: number }) => {
-            return data.count;
-          },
           getColor: (d: { label: string; languageName: string }) => {
             const language = languages.find(
               (language) => language.id == d.languageName
             );
             return language?.ui?.backgroundColor;
           },
-          colorType: "literal",
-          colorDomain: [0, 100],
-          colorRange: [0, 10],
-          labelsRadiusMultiplier: 0.85,
-          labelsStyle: {
-            fontSize: 12,
-          },
-          showLabels: true,
-          labelsAboveChildren: true,
-          getLabel: (d: { label: string }) => {
-            return d.label;
-          },
+          ...DEFAULT_RESULTS.donutChart,
         } as DonutChartProps;
       })
     );
@@ -108,7 +111,9 @@ export class VisChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
@@ -129,6 +134,8 @@ export class VisChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.lineChart
+    );
   }
 }
