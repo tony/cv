@@ -2,6 +2,7 @@ import type { Observable } from "rxjs";
 
 import { combineQueries } from "@datorama/akita";
 import { map, take } from "rxjs/operators";
+import { firstValueFrom } from "rxjs";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
 import type {
@@ -13,7 +14,7 @@ import type {
 } from "@tony/cv-lib/search/query";
 
 import { CVStore } from "@tony/cv-lib/search/store";
-import type { PlotlyData } from "./types";
+import type { PlotlyData } from "@tony/cv-chart-react-plotly/src/types";
 
 export type DonutChartProps = PlotlyData;
 export type LineChartProps = PlotlyData;
@@ -26,8 +27,18 @@ export interface Results {
 
 export const DEFAULT_RESULTS: Results = {
   // Charts
-  donutChart: {},
-  lineChart: {},
+  donutChart: {
+    type: "pie",
+    textinfo: "text",
+    automargin: true,
+    hoverinfo: "text",
+  },
+  lineChart: {
+    type: "scatter",
+    mode: "lines+markers",
+    marker: { color: "#3572a5" },
+    automargin: true,
+  },
 };
 
 export class PlotlyChartQuery extends CVQuery {
@@ -61,10 +72,8 @@ export class PlotlyChartQuery extends CVQuery {
       map(([languageMap, languageBGMap]) => {
         const total = Object.values(languageMap).reduce((a, b) => a + b, 0);
         return {
-          type: "pie",
           values: Object.values(languageMap),
           labels: Object.keys(languageMap),
-          hoverinfo: "text",
           hovertext: Object.entries(languageMap).map(
             ([languageName, value]) => {
               return `${languageName}: ${value} (${(
@@ -79,13 +88,14 @@ export class PlotlyChartQuery extends CVQuery {
             }
             return "";
           }),
-          textinfo: "text",
+
           marker: {
             colors: Object.keys(languageMap).map(
               (languageName) => languageBGMap[languageName]
             ),
           },
-          automargin: true,
+
+          ...DEFAULT_RESULTS.donutChart,
         } as PlotlyData;
       })
     );
@@ -93,18 +103,17 @@ export class PlotlyChartQuery extends CVQuery {
 
   // await $queries.CV.getDonutChart()
   getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subDonutChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.donutChart
+    );
   }
 
   subLineChart$(): Observable<LineChartProps> {
     return this.visibleActivityYearCount$().pipe(
       map((activityMap) => {
         return {
-          type: "scatter",
           x: Object.keys(activityMap),
           y: Object.values(activityMap),
-          mode: "lines+markers",
-          marker: { color: "#3572a5" },
           // hoverinfo: "text",
           // hovertext: Object.entries(languageMap).map(
           //   ([languageName, value]) => {
@@ -121,7 +130,7 @@ export class PlotlyChartQuery extends CVQuery {
           //   return "";
           // }),
           // textinfo: "text",
-          automargin: true,
+          ...DEFAULT_RESULTS.lineChart,
         } as PlotlyData;
       })
     );
@@ -129,6 +138,8 @@ export class PlotlyChartQuery extends CVQuery {
 
   // await $queries.CV.getLineChart()
   getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subLineChart$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS.lineChart
+    );
   }
 }
