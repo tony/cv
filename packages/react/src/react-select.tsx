@@ -24,8 +24,8 @@ import {
 } from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
 import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
-import { LanguageTag, OrgTypeTag } from "./Tag";
-import { onEmit } from "./utils";
+import { LanguageTag, OrgTypeTag } from "@tony/cv-react/src/Tag";
+import { onEmit } from "@tony/cv-react/src/utils";
 
 export interface IOptionType {
   label: string;
