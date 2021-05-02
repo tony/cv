@@ -8,6 +8,7 @@ import {
 } from "@datorama/akita";
 import getYear from "date-fns/getYear";
 import { map, take } from "rxjs/operators";
+import { firstValueFrom } from "rxjs";
 import type { Observable } from "rxjs";
 import moment from "moment";
 
@@ -152,9 +153,9 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   getBackgroundColors(
     ...args: Parameters<typeof LanguagesQuery.prototype.selectBackgroundColors$>
   ): Promise<Record<LanguageName, string>> {
-    return this.selectBackgroundColors$(...args)
-      .pipe(take(1))
-      .toPromise();
+    return firstValueFrom(
+      this.selectBackgroundColors$(...args).pipe(take(1))
+    ).then((val) => val || {});
   }
 
   selectTextColors$(
@@ -176,9 +177,9 @@ export class LanguagesQuery extends QueryEntity<LanguagesState> {
   getTextColors(
     ...args: Parameters<typeof LanguagesQuery.prototype.selectTextColors$>
   ): Promise<Record<LanguageName, string>> {
-    return this.selectTextColors$(...args)
-      .pipe(take(1))
-      .toPromise();
+    return firstValueFrom(this.selectTextColors$(...args).pipe(take(1))).then(
+      (val) => val || {}
+    );
   }
 }
 
@@ -384,7 +385,9 @@ export class CVQuery extends Query<CVState> {
 
   // await $$queries.CV.getVisibleActivityYearCount()
   getVisibleActivityYearCount(): Promise<ActivityCount> {
-    return this.visibleActivityYearCount$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.visibleActivityYearCount$().pipe(take(1))).then(
+      (val) => val || 0
+    );
   }
 
   _activitiesToLanguageCountMap(
@@ -433,7 +436,9 @@ export class CVQuery extends Query<CVState> {
 
   // await $$queries.CV.getVisibleLanguageCount()
   getVisibleLanguageCount(): Promise<Record<LanguageName, number>> {
-    return this.visibleLanguageCount$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.visibleLanguageCount$().pipe(take(1))).then(
+      (val) => val || 0
+    );
   }
 
   subResults$(): Observable<Results> {
@@ -462,6 +467,8 @@ export class CVQuery extends Query<CVState> {
 
   // await $queries.CV.getResults()
   getResults(): Promise<Results> {
-    return this.subResults$().pipe(take(1)).toPromise();
+    return firstValueFrom(this.subResults$().pipe(take(1))).then(
+      (val) => val || DEFAULT_RESULTS
+    );
   }
 }
