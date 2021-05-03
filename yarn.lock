@@ -2653,10 +2653,10 @@
     d3-shape "^1.3.5"
     react-spring "9.1.2"
 
-"@nivo/axes@0.69.0":
-  version "0.69.0"
-  resolved "https://registry.yarnpkg.com/@nivo/axes/-/axes-0.69.0.tgz#6c3893f65df2818c9e85151bcf3ee0b5096792be"
-  integrity sha512-WMQF7Z7CDrp6GLs4q+aZ/Rn6+ZzllTdXbi0lceBaEhxRdkc25XCuJUSo7uP+WT15xjcWXHxWgEimga09pjHcfw==
+"@nivo/axes@0.69.1":
+  version "0.69.1"
+  resolved "https://registry.yarnpkg.com/@nivo/axes/-/axes-0.69.1.tgz#ee338b15d04b38727eb8d7ba361f537c3b561c7a"
+  integrity sha512-jVWlhyC7qdMLvajgafSUxiDzbB3TRSTzzkbtpWf9D5EeZ6kc0FYBzoDJU4njkRpFh/JjSU8BaMh6aqpYIFfQ4g==
   dependencies:
     "@nivo/scales" "0.69.0"
     d3-format "^1.4.4"
@@ -2664,13 +2664,13 @@
     d3-time-format "^2.1.3"
     react-spring "9.1.2"
 
-"@nivo/bar@^0.69.0":
-  version "0.69.0"
-  resolved "https://registry.yarnpkg.com/@nivo/bar/-/bar-0.69.0.tgz#bb864e8c0b3857b120769ce458230a1d62ae8528"
-  integrity sha512-3RKB/nfTZyi7F1uSxRDNbZ+mJMlJNig7p1xTAR9QKwgzDTKuUZV9khDtx0o1GzEeHRsnVnRUB9Ni7dvXxVzJSg==
+"@nivo/bar@^0.69.1":
+  version "0.69.1"
+  resolved "https://registry.yarnpkg.com/@nivo/bar/-/bar-0.69.1.tgz#9b30f844aadf2614b65d2e4c12d6496346a0f433"
+  integrity sha512-St+7m0SjPpJe9zC7mq4f1yTRMhWmXlVDrMeaI8IP5wG3I0z23VDRjr28Jdk6Um6q8eG9vnhV0scm3naprxdnmw==
   dependencies:
     "@nivo/annotations" "0.69.0"
-    "@nivo/axes" "0.69.0"
+    "@nivo/axes" "0.69.1"
     "@nivo/colors" "0.69.0"
     "@nivo/legends" "0.69.0"
     "@nivo/recompose" "0.69.0"
@@ -2717,13 +2717,13 @@
   dependencies:
     lodash "^4.17.11"
 
-"@nivo/line@^0.69.0":
-  version "0.69.0"
-  resolved "https://registry.yarnpkg.com/@nivo/line/-/line-0.69.0.tgz#530ac77f2b42545ba3217ca6f9e6ce474a8607bb"
-  integrity sha512-SRrYSqWZaHWO+7TKiQL+SUXIslO7mFSfD27Mwrnis36CknR7Db2b7RTQq9bfBXevmJlW9/yvxcnm7Bmm75zGBw==
+"@nivo/line@^0.69.1":
+  version "0.69.1"
+  resolved "https://registry.yarnpkg.com/@nivo/line/-/line-0.69.1.tgz#08779be6e7a7a2d357607293ac14e026046bc203"
+  integrity sha512-Q92S7tCJCKc+AJdc2PdYKQmzULNoExIJQ0IV6pgFf2rY2PiUUlI7rFb7Eu8xgpsHe0w4Xa/KxMLCLHWXNBGJQw==
   dependencies:
     "@nivo/annotations" "0.69.0"
-    "@nivo/axes" "0.69.0"
+    "@nivo/axes" "0.69.1"
     "@nivo/colors" "0.69.0"
     "@nivo/legends" "0.69.0"
     "@nivo/scales" "0.69.0"
