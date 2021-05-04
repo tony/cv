@@ -43,7 +43,7 @@
     "@angular/language-service": "^11.2.12",
     "@types/jasmine": "^3.6.10",
     "@types/node": "^15.0.1",
-    "codelyzer": "^6.0.1",
+    "codelyzer": "^6.0.2",
     "eslint-plugin-jsdoc": "33.0.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "html-loader": "^2.1.2",
