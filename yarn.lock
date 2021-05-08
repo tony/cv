@@ -13094,10 +13094,10 @@ normals@^1.1.0:
   resolved "https://registry.yarnpkg.com/normals/-/normals-1.1.0.tgz#325b595ed34afe467a6c55a14fd9085787ff59c0"
   integrity sha1-MltZXtNK/kZ6bFWhT9kIV4f/WcA=
 
-nouislider@^14.7.0:
-  version "14.7.0"
-  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-14.7.0.tgz#a71db0587c92567b6da1df57d251d3696d942362"
-  integrity sha512-4RtQ1+LHJKesDCNJrXkQcwXAWCrC2aggdLYMstS/G5fEWL+fXZbUA9pwVNHFghMGuFGRATlDLNInRaPeRKzpFQ==
+nouislider@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-15.0.0.tgz#2136d811bbc48b2c16959cfc8d9f87144719b885"
+  integrity sha512-mc468FpXujtNydUO5hrI+R1CqUTQuAxeNT8r0L43ABdgvAL34MSq1lvVYFlrqVo1nitET9M8BdzZHTHgeuRr4w==
 
 npm-bundled@^1.1.1:
   version "1.1.1"
