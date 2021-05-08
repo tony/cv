@@ -1,8 +1,8 @@
 import { LitElement, html, customElement, css, query, property, unsafeCSS } from "lit-element";
 import type { CSSResult, TemplateResult } from "lit-element";
 
-import noUiSlider from "nouislider";
-import style from "!!raw-loader!sass-loader!nouislider/distribute/nouislider.css";
+import * as noUiSlider from "nouislider/dist/nouislider";
+import style from "!!raw-loader!sass-loader!nouislider/dist/nouislider.css";
 
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 
@@ -85,7 +85,7 @@ export class RangeSlider extends LitElement {
   // @ts-ignore
   @query("div") slider: HTMLDivElement;
 
-  private noUiSlider!: noUiSlider.noUiSlider;
+  private noUiSlider!: noUiSlider.API;
 
   firstUpdated(): void {
     this.noUiSlider = noUiSlider.create(this.slider, {
@@ -99,13 +99,13 @@ export class RangeSlider extends LitElement {
       animate: true,
       format: {
         from: Number,
-        to: (value: string) => value,
+        to: (value: number) => value.toString(),
       },
       tooltips: [true, true],
     });
 
     if (this.noUiSlider) {
-      this.noUiSlider.on("change.one", (values: string[], handle: number, unencoded: number[]) => {
+      this.noUiSlider.on("change.one", (values: (string | number)[], handle: number, unencoded: number[]) => {
         const event = new CustomEvent("change.one", { detail: { values, handle, unencoded } });
         this.dispatchEvent(event);
       });
