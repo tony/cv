@@ -47,7 +47,7 @@
     "eslint-plugin-jsdoc": "33.1.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "html-loader": "^2.1.2",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "protractor": "~7.0.0",
     "raw-loader": "^4.0.2",
     "ts-node": "~9.1.1",
