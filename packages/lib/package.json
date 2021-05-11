@@ -20,7 +20,7 @@
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
     "moment": "^2.29.1",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "rxjs": "^6.6.7"
   },
   "devDependencies": {
@@ -35,8 +35,8 @@
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.22.1",
-    "@typescript-eslint/parser": "^4.22.1",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-promise": "^5.1.0",
