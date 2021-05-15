@@ -15,7 +15,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^15.0.2",
+    "@types/node": "^15.3.0",
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "ts-node": "^9.1.1",
@@ -25,13 +25,13 @@
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.23.1"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "lit-element": "^2.5.1",
     "nouislider": "^15.1.0",
-    "sass": "^1.32.12",
+    "sass": "^1.32.13",
     "sass-loader": "^11.0.0"
   }
 }
