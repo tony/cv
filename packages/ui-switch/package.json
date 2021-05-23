@@ -19,19 +19,19 @@
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "sass-loader": "^11.0.0",
-    "ts-node": "^9.1.1",
+    "ts-node": "^10.0.0",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "eslint-plugin-import": "^2.23.3"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "a-simple-switch": "^0.6.0",
     "lit-element": "^2.5.1",
-    "sass": "^1.33.0"
+    "sass": "^1.34.0"
   }
 }
