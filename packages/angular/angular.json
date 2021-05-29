@@ -48,7 +48,12 @@
               ],
               "deployUrl": "./",
               "baseHref": "./",
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": false
+                }
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
