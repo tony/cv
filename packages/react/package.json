@@ -38,7 +38,7 @@
     "raw-loader": "^4.0.2",
     "react-hot-loader": "^4.13.0",
     "sass": "^1.34.1",
-    "sass-loader": "^12.0.0",
+    "sass-loader": "^12.1.0",
     "source-map-loader": "^3.0.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^9.2.3",

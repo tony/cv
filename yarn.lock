@@ -6052,10 +6052,10 @@ canvas-fit@^1.5.0:
   dependencies:
     element-size "^1.1.1"
 
-carbon-components@^10.36.0:
-  version "10.36.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.36.0.tgz#ce523b19df3a404e379113dafbbe0219bb22b17f"
-  integrity sha512-k+UR+Whz/qXbev2RT9JjV+QbkSKcHrLNF25bEpr3KZHmpCGhwGz5mVyv0ohZ4B6rKkpuvlgYfLsANL0yQX77zA==
+carbon-components@^10.37.0:
+  version "10.37.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.37.0.tgz#bc53138151ea58e79f5b249b1ec5be8ae2c0a7e4"
+  integrity sha512-LHReeqzzieP/q/xAHfKJNWLdWhOkr7+DIVZkrQGPf6kZYj5H8tb1KYKOIhasvCNRxJ2es8QJXuH7XW0JoLDfdQ==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"
@@ -7432,12 +7432,17 @@ d3-array@1, d3-array@^1.1.1, d3-array@^1.2.0, d3-array@^1.2.1:
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
   integrity sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==
 
-d3-array@2, d3-array@>=2.5, d3-array@^2.3.0, d3-array@^2.4.0:
+d3-array@2, d3-array@>=2.5, d3-array@^2.3.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.11.0.tgz#5ed6a2869bc7d471aec8df9ff6ed9fef798facc4"
   integrity sha512-26clcwmHQEdsLv34oNKq5Ia9tQ26Y/4HqS3dQzF42QBUqymZJ+9PORcN1G52bt37NsL2ABoX4lvyYZc+A9Y0zw==
   dependencies:
     internmap "^1.0.0"
+
+d3-array@~2.3.0:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.3.3.tgz#e90c39fbaedccedf59fc30473092f99a0e14efa2"
+  integrity sha512-syv3wp0U5aB6toP2zb2OdBkhTy1MWDsCAaYk6OXJZv+G4u7bSWEmYgxLoFyc88RQUhZYGCebW9a9UD1gFi5+MQ==
 
 d3-axis@2:
   version "2.0.0"
@@ -9008,10 +9013,10 @@ eslint-plugin-tsc@^2.0.0:
   dependencies:
     typescript-service "^2.0.3"
 
-eslint-plugin-vue@^7.10.0:
-  version "7.10.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.10.0.tgz#251749aa99e089e085275f011042c6e74189f89a"
-  integrity sha512-xdr6e4t/L2moRAeEQ9HKgge/hFq+w9v5Dj+BA54nTAzSFdUyKLiSOdZaRQjCHMY0Pk2WaQBFH9QiWG60xiC+6A==
+eslint-plugin-vue@^7.11.0:
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.11.0.tgz#c19b098899b7e3cd692beffbbe73611064ef1ea6"
+  integrity sha512-Qwo8wilqnOXnG9B5auEiTstyaHefyhHd5lEhhxemwXoWsAxIW2yppzuVudowC5n+qn1nMLNV9TANkTthBK7Waw==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -16633,10 +16638,10 @@ sass-loader@^11.0.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass-loader@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.0.0.tgz#ba91df5725cb9676c8e0937002a647ab011eb94a"
-  integrity sha512-LJQMyDdNdhcvoO2gJFw7KpTaioVFDeRJOuatRDUNgCIqyu4s4kgDsNofdGzAZB1zFOgo/p3fy+aR/uGXamcJBg==
+sass-loader@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.1.0.tgz#b73324622231009da6fba61ab76013256380d201"
+  integrity sha512-FVJZ9kxVRYNZTIe2xhw93n3xJNYZADr+q69/s98l9nTCrWASo+DR2Ot0s5xTKQDDEosUkatsGeHxcH4QBp5bSg==
   dependencies:
     klona "^2.0.4"
     neo-async "^2.6.2"
@@ -19044,12 +19049,12 @@ victory-group@^35.8.1:
     victory-core "^35.8.1"
     victory-shared-events "^35.8.1"
 
-victory-histogram@^35.8.1:
-  version "35.8.1"
-  resolved "https://registry.yarnpkg.com/victory-histogram/-/victory-histogram-35.8.1.tgz#f6e67b54d17ba9f5229deea09595522c7a5c04b9"
-  integrity sha512-fm792r930R0ts2awc5AUcK2vvy/kWTr2o+XgG+S7sGm9DHKx+2YdxAjf7ibN2RBomo0D4oG6dYJxnR/liFB9Rw==
+victory-histogram@^35.8.6:
+  version "35.8.6"
+  resolved "https://registry.yarnpkg.com/victory-histogram/-/victory-histogram-35.8.6.tgz#ce6029fc6e8a24a91b04a2ffe8d4f85b56057bdb"
+  integrity sha512-aWLznHjs4Ydf8UgGmPupXkPQdRAuANtLhKZiJ5rq0oN7GjT7ReVJHSP9KcQALyBDYaMf2TX/l2Eoy4AIG4eluw==
   dependencies:
-    d3-array "^2.4.0"
+    d3-array "~2.3.0"
     d3-scale "^1.0.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
@@ -19175,10 +19180,10 @@ victory-zoom-container@^35.8.1:
     prop-types "^15.5.8"
     victory-core "^35.8.1"
 
-victory@^35.8.5:
-  version "35.8.5"
-  resolved "https://registry.yarnpkg.com/victory/-/victory-35.8.5.tgz#1cd83c2819a319f81d8351c6807d6d176b87c144"
-  integrity sha512-wj87d2Y3F9/OAorzcffKTRrRcYecbsI+qWqvSmKDgVQg/iyH3hf/LJRk006urJISmI2uQdtZyUwCRZbhiaeiWg==
+victory@^35.8.6:
+  version "35.8.6"
+  resolved "https://registry.yarnpkg.com/victory/-/victory-35.8.6.tgz#36145150c1e86ea71fd477093b53b90637a0c9c3"
+  integrity sha512-v40AvZZpXelxV5KyLdrs5/zsk2KtgnFpXsOF/EzwiRcpY3XSjuvVxEB5mHQoQTd9hoCN+MGrqeSxwPYHrMR2wQ==
   dependencies:
     victory-area "^35.8.2"
     victory-axis "^35.8.3"
@@ -19193,7 +19198,7 @@ victory@^35.8.5:
     victory-cursor-container "^35.8.1"
     victory-errorbar "^35.8.1"
     victory-group "^35.8.1"
-    victory-histogram "^35.8.1"
+    victory-histogram "^35.8.6"
     victory-legend "^35.8.1"
     victory-line "^35.8.1"
     victory-pie "^35.8.1"
