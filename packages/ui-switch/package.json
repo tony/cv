@@ -32,6 +32,6 @@
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "a-simple-switch": "^0.6.0",
     "lit-element": "^2.5.1",
-    "sass": "^1.35.0"
+    "sass": "^1.35.1"
   }
 }
