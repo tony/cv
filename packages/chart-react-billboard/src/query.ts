@@ -79,7 +79,10 @@ export class BillboardJSChartQuery extends CVQuery {
               // issue: https://github.com/naver/billboard.js/issues/1845
               colors: languages.reduce((languageColorMap, language) => {
                 if (language) {
-                  if (!(language.id in languageColorMap)) {
+                  if (
+                    !(language.id in languageColorMap) &&
+                    language.ui?.color
+                  ) {
                     languageColorMap[language.id] = language.ui.color as string;
                   }
                 }
