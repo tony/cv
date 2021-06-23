@@ -25,7 +25,7 @@
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
-    "@types/react-select": "^4.0.15",
+    "@types/react-select": "^4.0.16",
     "@types/webpack-dev-server": "^3.11.4",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",

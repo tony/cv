@@ -2600,19 +2600,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.71":
-  version "0.41.71"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.71.tgz#26861b1360b3480698b99001753bdcd8ebd15c4a"
-  integrity sha512-D4cYtCRULfd25xdv9jvxImL4Kn3FbmgeN1d+kdBwWJPwEOoNKhAz3Y35oTncglEKcwnV/dqMPMSq0ZTnoC1Usg==
+"@carbon/charts-react@^0.41.72":
+  version "0.41.72"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.72.tgz#19515e58c0e2e6b251b1a643180f14b334c84b59"
+  integrity sha512-gncA8FbXtDZ3bu2Pp+I3KrxJlApH9Sa1XB1WvqiYqaro4quszGBBxy7Hay5LsID2p9WCC3kESmlrI7/VpeBlPw==
   dependencies:
-    "@carbon/charts" "^0.41.71"
+    "@carbon/charts" "^0.41.72"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.71":
-  version "0.41.71"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.71.tgz#70a0daadd445c3e14531d355c4c378dc2d0ae644"
-  integrity sha512-X41gD8gRQNxEyjLznb2R1HJyRel8BYCc3BDNx6JnrWZF0lpS2gm/IqeLcS06YWiXJQd5jDwPoOgTQsWOje4+VQ==
+"@carbon/charts@^0.41.72":
+  version "0.41.72"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.72.tgz#3f3d8dbebe88efbf59bb18cbf80694f2523cdf88"
+  integrity sha512-juCp3D6fyt3Ti1ZDAfXkiLl3LSoQYxK13G+oGaUnHdd3QpolwvQH8RqdAqLfj966rDd8vIVzP3YuTausWWZVrw==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -4069,10 +4069,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-select@^4.0.15":
-  version "4.0.15"
-  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-4.0.15.tgz#2e6a1cff22c4bbae6c95b8dbee5b5097c12eae54"
-  integrity sha512-GPyBFYGMVFCtF4eg9riodEco+s2mflR10Nd5csx69+bcdvX6Uo9H/jgrIqovBU9yxBppB9DS66OwD6xxgVqOYQ==
+"@types/react-select@^4.0.16":
+  version "4.0.16"
+  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-4.0.16.tgz#4883af396547065563bec3e2aeca252d670a201a"
+  integrity sha512-DMmWIKxIC5RC0qQ2l7wDt5qvvVhbtBPK6IQn6LJXe/1KTsGkZajzoLZG8mQtL2nmKrXURq+wetLeHRvYD8CmDw==
   dependencies:
     "@emotion/serialize" "^1.0.0"
     "@types/react" "*"
