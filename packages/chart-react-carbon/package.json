@@ -22,7 +22,7 @@
     "@types/react-dom": "^17.0.8",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.24.0",
-    "prettier": "^2.3.1",
+    "prettier": "^2.3.2",
     "typescript": "^4.3.4"
   },
   "peerDependencies": {
@@ -33,11 +33,11 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@carbon/charts": "^0.41.76",
-    "@carbon/charts-react": "^0.41.76",
+    "@carbon/charts": "^0.41.77",
+    "@carbon/charts-react": "^0.41.77",
     "@datorama/akita": "^6.2.0",
     "@tony/cv-lib": "*",
-    "carbon-components": "^10.37.0",
+    "carbon-components": "^10.38.0",
     "d3": "6.x",
     "fast-deep-equal": "^3.1.3",
     "react": "^17.0.2",

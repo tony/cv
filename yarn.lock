@@ -2600,19 +2600,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.76":
-  version "0.41.76"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.76.tgz#c43d7cbeb1386c7abf7bc799397c31555d9f8d4e"
-  integrity sha512-69g7XMxlYShVPGbNh5aTcS3K/NrDF27aVUn0K9/9UkJJOqs/fCv7DlKvfVs9Qt8fawqMGL+rs0zjqQleboKimA==
+"@carbon/charts-react@^0.41.77":
+  version "0.41.77"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.77.tgz#37cff66a3bd01a1c9baab5a3a7a865f8b45408d7"
+  integrity sha512-mmGfJXPy2xWSMPZ+PX71QLcC7sRLko/6iQ62TOJxvXlRCf4ME/6Dx9OFghI2PNbvSTxPtz42J1FZAanK6QTzug==
   dependencies:
-    "@carbon/charts" "^0.41.76"
+    "@carbon/charts" "^0.41.77"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.76":
-  version "0.41.76"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.76.tgz#46ed9717ffdf6c999123a3be0875a078678b120f"
-  integrity sha512-QgbuXCTPLO00XIqQRAWUfblZ5yWNdvCaOQ57QQRHSfN7VW9xjeQ2vmbtXtCHWvJl7qlIO0aVKWrNeCWKDjW95Q==
+"@carbon/charts@^0.41.77":
+  version "0.41.77"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.77.tgz#890c703d9ec3adfbf4eaa944bdbb6bc228d4698a"
+  integrity sha512-npcnijyth1yGcV4zsGYBZf4Lyj/ETW9/grf26gRZjfXFGM+lPvACjvXQjNrMU2dPcPTwQGZOVf8Q8Pu+Wb0qKQ==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -6087,10 +6087,10 @@ carbon-components@10.5.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@^10.37.0:
-  version "10.37.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.37.0.tgz#bc53138151ea58e79f5b249b1ec5be8ae2c0a7e4"
-  integrity sha512-LHReeqzzieP/q/xAHfKJNWLdWhOkr7+DIVZkrQGPf6kZYj5H8tb1KYKOIhasvCNRxJ2es8QJXuH7XW0JoLDfdQ==
+carbon-components@^10.38.0:
+  version "10.38.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.38.0.tgz#f275192f70eccf0d0052a192113ee20059594d4f"
+  integrity sha512-o5Ns3M2LQMuQ41UJiT+WFU+t/hAerde+77LKmrBpiPRBHJ+/VEBAfKmjB5TiH5QM/VWVDWo0Dvr8gc6yNKRqug==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"
@@ -6883,10 +6883,10 @@ copy-webpack-plugin@6.3.2:
     serialize-javascript "^5.0.1"
     webpack-sources "^1.4.3"
 
-copy-webpack-plugin@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-9.0.0.tgz#2bf592785d2fcdde9342dfed3676490fe0aa7ce8"
-  integrity sha512-k8UB2jLIb1Jip2nZbCz83T/XfhfjX6mB1yLJNYKrpYi7FQimfOoFv/0//iT6HV1K8FwUB5yUbCcnpLebJXJTug==
+copy-webpack-plugin@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-9.0.1.tgz#b71d21991599f61a4ee00ba79087b8ba279bbb59"
+  integrity sha512-14gHKKdYIxF84jCEgPgYXCPpldbwpxxLbCmA7LReY7gvbaT555DgeBWBgBZM116tv/fO6RRJrsivBqRyRlukhw==
   dependencies:
     fast-glob "^3.2.5"
     glob-parent "^6.0.0"
@@ -6894,7 +6894,7 @@ copy-webpack-plugin@^9.0.0:
     normalize-path "^3.0.0"
     p-limit "^3.1.0"
     schema-utils "^3.0.0"
-    serialize-javascript "^5.0.1"
+    serialize-javascript "^6.0.0"
 
 core-js-bundle@^3.6.0:
   version "3.8.3"
@@ -9071,10 +9071,10 @@ eslint-plugin-tsc@^2.0.0:
   dependencies:
     typescript-service "^2.0.3"
 
-eslint-plugin-vue@^7.11.1:
-  version "7.11.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.11.1.tgz#77eb4b44032d5cca79f9af21d06991d8694a314a"
-  integrity sha512-lbw3vkEAGqYjqd1HpPFWHXtYaS8mILTJ5KOpJfRxO3Fo7o0wCf1zD7vSOasbm6nTA9xIgvZQ4VcyGIzQXxznHw==
+eslint-plugin-vue@^7.12.1:
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.12.1.tgz#ef6499ce4fe0566659c8e12c71713f5308630a76"
+  integrity sha512-xHf/wCt88qmzqQerjaSteUFGASj7fPreglKD4ijnvoKRkoSJ3/H3kuJE8QFFtc+2wjw6hRDs834HH7vpuTJQzg==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -15515,10 +15515,15 @@ prettier@^1.18.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
-prettier@^2.3.0, prettier@^2.3.1:
+prettier@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
   integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
+
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 pretty-bytes@^5.3.0:
   version "5.5.0"
@@ -16888,6 +16893,13 @@ serialize-javascript@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-5.0.1.tgz#7886ec848049a462467a97d3d918ebb2aaf934f4"
   integrity sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==
+  dependencies:
+    randombytes "^2.1.0"
+
+serialize-javascript@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-6.0.0.tgz#efae5d88f45d7924141da8b5c3a7a7e663fefeb8"
+  integrity sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag==
   dependencies:
     randombytes "^2.1.0"
 
