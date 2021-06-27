@@ -11,16 +11,17 @@
     orbit-camera-controller "^4.0.0"
     turntable-camera-controller "^3.0.0"
 
-"@angular-builders/custom-webpack@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-11.0.0.tgz#28ce27d2f06d0f94a208aeaeec836397c1ce521c"
-  integrity sha512-9TDGeQZQuTQzNS4uYEtD+k1fV7xG348P8Isaoz+m6EByv1qgAGBoclVJZj+VAjtp6l8SkVG8WPOUgZeJwPgQ+g==
+"@angular-builders/custom-webpack@11.1.1":
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-11.1.1.tgz#5ef535f5c51cb2f5a27f53fcfab54176cd1d14d4"
+  integrity sha512-9l2yC9+QMwWj9IEsOpQtMIBcH87UMZdoR2+8DbIt53ypst/8aVMhMsKmR5n33wRkLlIJ6/ubyXldQymIHzoF1g==
   dependencies:
     "@angular-devkit/architect" ">=0.1100.0 < 0.1200.0"
     "@angular-devkit/build-angular" ">=0.1100.0 < 0.1200.0"
     "@angular-devkit/core" "^11.0.0"
     lodash "^4.17.15"
     ts-node "^9.0.0"
+    tsconfig-paths "^3.9.0"
     webpack-merge "^5.7.3"
 
 "@angular-devkit/architect@0.1102.14", "@angular-devkit/architect@>=0.1100.0 < 0.1200.0":
@@ -318,10 +319,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/language-service@^11.2.13":
-  version "11.2.14"
-  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-11.2.14.tgz#452369cdffe76ac6d07836596fb47f9e69a6d119"
-  integrity sha512-3+0F0X4r1WeNOV6VmaMzYnJENPVmLX2/MX3/lugwZPNYKVXl/oGyh/4PB8ktntIj0tnxQuErzqRSeucNStNGRw==
+"@angular/language-service@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-12.1.0.tgz#42c2012eb49ee279fa7d8104893aa90b46d240e9"
+  integrity sha512-zOcND0yCSJgnnkUV6SC2OpFzUgWND/dbHr8ouXlpBJhTB1ZMKnR/N5tF0JG1LZvG1WJUDI7ERReTYBDRuh3QFg==
 
 "@angular/platform-browser-dynamic@^11.2.13":
   version "11.2.14"
