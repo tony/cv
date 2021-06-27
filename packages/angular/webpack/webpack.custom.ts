@@ -11,6 +11,10 @@ export default {
           loader: 'html-loader',
         },
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/inline',
+      },
     ],
   },
   plugins: [
