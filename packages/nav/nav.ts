@@ -3,9 +3,9 @@ import type { CSSResult, TemplateResult } from "lit-element";
 
 import style from "!!raw-loader!sass-loader!./nav.scss";
 
-import reactSvg from "@tony/cv-data/img/icons/react.svg";
-import angularSvg from "@tony/cv-data/img/icons/angular.svg";
-import vueSvg from "@tony/cv-data/img/icons/vue.svg";
+import reactSvg from "!!raw-loader?!@tony/cv-data/img/icons/react.svg";
+import angularSvg from "!!raw-loader?!@tony/cv-data/img/icons/angular.svg";
+import vueSvg from "!!raw-loader?!@tony/cv-data/img/icons/vue.svg";
 
 enum Framework {
   Angular = "Angular",
