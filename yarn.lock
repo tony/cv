@@ -1631,14 +1631,14 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@es-joy/jsdoccomment@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.4.4.tgz#8a25154156edbfc29e310943ebb17ee29122c9df"
-  integrity sha512-ua4qDt9dQb4qt5OI38eCZcQZYE5Bq3P0GzgvDARdT8Lt0mAUpxKTPy8JGGqEvF77tG1irKDZ3WreeezEa3P43w==
+"@es-joy/jsdoccomment@^0.8.0-alpha.2":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.8.0.tgz#1add451f50f57597676ab85ee7bd0a273d7b7c43"
+  integrity sha512-Xd3GzYsL2sz2pcdtYt5Q0Wz1ol/o9Nt2UQL4nFPDcaEomvPmwjJsbjkKx1SKhl2h3TgwazNBLdcNr2m0UiGiFA==
   dependencies:
     comment-parser "^1.1.5"
     esquery "^1.4.0"
-    jsdoctypeparser "^9.0.0"
+    jsdoc-type-pratt-parser "1.0.4"
 
 "@eslint/eslintrc@^0.4.2":
   version "0.4.2"
@@ -7459,18 +7459,18 @@ eslint-plugin-jest@^24.3.6:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
-eslint-plugin-jsdoc@34.0.0:
-  version "34.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-34.0.0.tgz#aa62e7550fe6761a373e640974e2d685965168b7"
-  integrity sha512-xosfhLEQgy8fFzwI/qcDn/YdCkOMPcYUrZsAICz3JBoTp+kjmbTmSJjqz7xPvErLcBETEy94Mrjn64iHzdAqkw==
+eslint-plugin-jsdoc@35.4.0:
+  version "35.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-35.4.0.tgz#4f4809ffa9430070aed10087fe691b9ededa2b05"
+  integrity sha512-0cr+NkPTxpTiMCtYOd8W5fd2IyC/CmaTHKb+0bzkpP9p8HfmJ3B2/M6FWj97rQJOLwLMkx+g2MIEZsrttpbFmQ==
   dependencies:
-    "@es-joy/jsdoccomment" "^0.4.4"
+    "@es-joy/jsdoccomment" "^0.8.0-alpha.2"
     comment-parser "1.1.5"
     debug "^4.3.1"
     esquery "^1.4.0"
-    jsdoctypeparser "^9.0.0"
+    jsdoc-type-pratt-parser "^1.0.4"
     lodash "^4.17.21"
-    regextras "^0.7.1"
+    regextras "^0.8.0"
     semver "^7.3.5"
     spdx-expression-parse "^3.0.1"
 
@@ -10703,10 +10703,10 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
-jsdoctypeparser@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/jsdoctypeparser/-/jsdoctypeparser-9.0.0.tgz#8c97e2fb69315eb274b0f01377eaa5c940bd7b26"
-  integrity sha512-jrTA2jJIL6/DAEILBEh2/w9QxCuwmvNXIry39Ay/HVfhE3o2yVV0U44blYkqdHA/OKloJEqvJy0xU+GSdE2SIw==
+jsdoc-type-pratt-parser@1.0.4, jsdoc-type-pratt-parser@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-1.0.4.tgz#5750d2d32ffb001866537d3baaedea7cf84c7036"
+  integrity sha512-jzmW9gokeq9+bHPDR1nCeidMyFUikdZlbOhKzh9+/nJqB75XhpNKec1/UuxW5c4+O+Pi31Gc/dCboyfSm/pSpQ==
 
 jsdom@^16.6.0:
   version "16.6.0"
@@ -14159,10 +14159,10 @@ regexpu-core@^4.7.1:
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.2.0"
 
-regextras@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/regextras/-/regextras-0.7.1.tgz#be95719d5f43f9ef0b9fa07ad89b7c606995a3b2"
-  integrity sha512-9YXf6xtW+qzQ+hcMQXx95MOvfqXFgsKDZodX3qZB0x2n5Z94ioetIITsBtvJbiOyxa/6s9AtyweBLCdPmPko/w==
+regextras@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/regextras/-/regextras-0.8.0.tgz#ec0f99853d4912839321172f608b544814b02217"
+  integrity sha512-k519uI04Z3SaY0fLX843MRXnDeG2+vHOFsyhiPZvNLe7r8rD2YNRjq4BQLZZ0oAr2NrtvZlICsXysGNFPGa3CQ==
 
 regjsgen@^0.5.1:
   version "0.5.2"
