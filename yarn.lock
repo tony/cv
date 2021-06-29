@@ -2213,7 +2213,7 @@
     d3-collection "1"
     d3-shape "^1.2.0"
 
-"@plotly/d3@^3.6.0":
+"@plotly/d3@^3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@plotly/d3/-/d3-3.6.1.tgz#98be5c0174129515c5b7df33d5c9dfec82d34e6d"
   integrity sha512-lM2dmUqRX1qGtrWczC7QNbQ4Bdgp9sII9i7NV6Hokw06kLH1++x0Ehlj193+PkLYvi1us1IcYjC7IIw+h6GywA==
@@ -2401,7 +2401,7 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.1.tgz#a6ca6a9a0ff366af433f42f5f0e124794ff6b8f1"
   integrity sha512-FTgBI767POY/lKNDNbIzgAX6miIDBs6NTCbdlDb8TrWovHsSvaVIZDlTqym29C6UqhzwcJx4CYr+AlrMywA0cA==
 
-"@turf/area@^6.0.1":
+"@turf/area@^6.4.0":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@turf/area/-/area-6.4.0.tgz#de2edbedf9b66f95debc8700b66ae2d094d18083"
   integrity sha512-zJxRZX8UUCHlKuk0oRfYUnEMKw6+TiNDJHJ3R4q7/AC+yz/Wh3m+CkEoTryiXJ8+VoMiPFXrseleUHidfOOZzQ==
@@ -2409,7 +2409,7 @@
     "@turf/helpers" "^6.4.0"
     "@turf/meta" "^6.4.0"
 
-"@turf/bbox@^6.0.1":
+"@turf/bbox@^6.4.0":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-6.4.0.tgz#aeca4ce9e5146cddbc133d8bbb9884b058d8c653"
   integrity sha512-eASq6Op3sGAA293Qo3gTwuQAvdoQCKah4rgA5FZkQ2xvkYquQnkUhV2U18bFgw58aSP1g2Y+rpmSEPHDFX6/6g==
@@ -13073,17 +13073,17 @@ planar-graph-to-polyline@^1.0.0:
     two-product "^1.0.0"
     uniq "^1.0.0"
 
-plotly.js@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.1.0.tgz#defb2b6d9692b8259866e649a299c32259b096dc"
-  integrity sha512-2gV5Y2oVi1I+H6CLkZpPG4uyjpNE0SftskkTNN7m695H0cXEYD0D6sxryenNrTG46ejv/HB5HhujITrc8irLsw==
+plotly.js@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.2.0.tgz#bcfd67f4d5169de4056d84a469c90f395d1b232c"
+  integrity sha512-jqbEXFBW+6SlFpmpdxvn1QFmboNFlbUaybRzjGEEqbHG7/8uwusPqHDPq8EZPehOEch/zSYMWKBExHV+dZLmiw==
   dependencies:
-    "@plotly/d3" "^3.6.0"
+    "@plotly/d3" "^3.6.1"
     "@plotly/d3-sankey" "0.7.2"
     "@plotly/d3-sankey-circular" "0.33.1"
     "@plotly/point-cluster" "^3.1.9"
-    "@turf/area" "^6.0.1"
-    "@turf/bbox" "^6.0.1"
+    "@turf/area" "^6.4.0"
+    "@turf/bbox" "^6.4.0"
     "@turf/centroid" "^6.0.2"
     alpha-shape "^1.0.0"
     canvas-fit "^1.5.0"
