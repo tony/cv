@@ -1479,10 +1479,10 @@
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@^0.41.77":
-  version "0.41.77"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.77.tgz#890c703d9ec3adfbf4eaa944bdbb6bc228d4698a"
-  integrity sha512-npcnijyth1yGcV4zsGYBZf4Lyj/ETW9/grf26gRZjfXFGM+lPvACjvXQjNrMU2dPcPTwQGZOVf8Q8Pu+Wb0qKQ==
+"@carbon/charts@^0.41.77", "@carbon/charts@^0.41.79":
+  version "0.41.79"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.79.tgz#5f426bb595b801e37a7b5b7ee1a3d357fbfb571c"
+  integrity sha512-vVxD58qqSs8gGhBgZvPK37EqGWtxAKsGKRzGUGGYPxaK1AyyD5xOnyJ6jy5FZpmgWQ8/mrlsm9P4gb8XPOUL+g==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"

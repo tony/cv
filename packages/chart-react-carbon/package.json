@@ -33,7 +33,7 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@carbon/charts": "^0.41.77",
+    "@carbon/charts": "^0.41.79",
     "@carbon/charts-react": "^0.41.77",
     "@datorama/akita": "^6.2.0",
     "@tony/cv-lib": "*",
