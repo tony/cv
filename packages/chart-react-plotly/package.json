@@ -27,8 +27,8 @@
     "typescript": "^4.3.4"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.28.0",
-    "@typescript-eslint/parser": "^4.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
     "eslint": "^7.29.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-promise": "^5.1.0"
@@ -37,7 +37,7 @@
     "@datorama/akita": "^6.2.0",
     "@tony/cv-lib": "*",
     "fast-deep-equal": "^3.1.3",
-    "plotly.js": "^2.1.0",
+    "plotly.js": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rxjs": "^6.6.7"
