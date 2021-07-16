@@ -1470,30 +1470,16 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.41.80":
-  version "0.41.80"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.80.tgz#3f564af0e4fded5a74df7f1439153ce3bb3830d9"
-  integrity sha512-q3sqvjwoJJ3wtu+5sAWnR9hl9IDuSAuOT4QGdr4gzuVgL+XxhkBzxWX63YXBqkvrj0XBeOgdOmK3uXREmk4UBg==
+"@carbon/charts-react@0.41.83":
+  version "0.41.83"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.83.tgz#afd81720cc00c7d180f563cdc00e4665244d2be0"
+  integrity sha512-lldq6AegjoRLorBHNFabrdsqERWoXFbFJins9TqKWapNrQuxLP2zx4puHBmDnzDyHtpl8FX7Yo7v0hwNf4cZQg==
   dependencies:
-    "@carbon/charts" "^0.41.80"
+    "@carbon/charts" "^0.41.83"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@0.41.80":
-  version "0.41.80"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.80.tgz#c2cee75ca38f5ff1abccd20531939bc6f63da370"
-  integrity sha512-sqmELVvU8T3Ex1aitqwtxLqV6CjoPMM6yQpHd7XHa9FSiL3+Flw3ddrHBbQjYWIDNiK8fKCrIQoKN5MAAUer4g==
-  dependencies:
-    "@carbon/colors" "10.15.0"
-    "@carbon/telemetry" "0.0.0-alpha.6"
-    "@carbon/utils-position" "1.1.1"
-    carbon-components "10.5.0"
-    d3-cloud "1.2.5"
-    date-fns "2.8.1"
-    lodash-es "4.17.21"
-    resize-observer-polyfill "1.5.0"
-
-"@carbon/charts@^0.41.80":
+"@carbon/charts@0.41.83", "@carbon/charts@^0.41.83":
   version "0.41.83"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.83.tgz#ca7c7e77903c8722acb71455c3e13089dab57149"
   integrity sha512-zGyNvQS9MKZ3TivmYPeBIdwp+4ufv3jKIeFGB9L4DV+2mUYowMKHmkwue7zs8axNeX5Jn2Mj4EyAfyMEMoTljg==
@@ -12040,6 +12026,11 @@ node-fetch-npm@^2.0.2:
     encoding "^0.1.11"
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
+
+node-fetch@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-forge@^0.10.0:
   version "0.10.0"
