@@ -1470,19 +1470,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.41.83":
-  version "0.41.83"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.83.tgz#afd81720cc00c7d180f563cdc00e4665244d2be0"
-  integrity sha512-lldq6AegjoRLorBHNFabrdsqERWoXFbFJins9TqKWapNrQuxLP2zx4puHBmDnzDyHtpl8FX7Yo7v0hwNf4cZQg==
+"@carbon/charts-react@0.41.84":
+  version "0.41.84"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.84.tgz#58bf2e3386bab0de0b501b31cc7c9e388a9aeb2b"
+  integrity sha512-jnqm9gOi/1xuqeTZ7cX6ToV+UN7JB1MCn2kwX15YniJcuBvXLeftim8zBGfIe4e7ZVI6AG8OXD8sUkVHiL3ZzA==
   dependencies:
-    "@carbon/charts" "^0.41.83"
+    "@carbon/charts" "^0.41.84"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@0.41.83", "@carbon/charts@^0.41.83":
-  version "0.41.83"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.83.tgz#ca7c7e77903c8722acb71455c3e13089dab57149"
-  integrity sha512-zGyNvQS9MKZ3TivmYPeBIdwp+4ufv3jKIeFGB9L4DV+2mUYowMKHmkwue7zs8axNeX5Jn2Mj4EyAfyMEMoTljg==
+"@carbon/charts@0.41.84", "@carbon/charts@^0.41.84":
+  version "0.41.84"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.84.tgz#6ef44621aad215f6b0b672e17612a5a61e8495a0"
+  integrity sha512-TCHRF17djSQ37yRZOLxdpPOs/0UZZZPLOwHm89miTY5Bsst/LPQ1PdqS0u4deKUsDEjLqs1QDVZXuK07/xH6RA==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -1490,6 +1490,7 @@
     carbon-components "10.5.0"
     d3-cloud "1.2.5"
     date-fns "2.8.1"
+    dom-to-image "2.6.0"
     lodash-es "4.17.21"
     resize-observer-polyfill "1.5.0"
 
@@ -2830,10 +2831,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^16.3.2":
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.2.tgz#655432817f83b51ac869c2d51dd8305fb8342e16"
-  integrity sha512-jJs9ErFLP403I+hMLGnqDRWT0RYKSvArxuBVh2veudHV7ifEC1WAmjJADacZ7mRbA2nWgHtn8xyECMAot0SkAw==
+"@types/node@*", "@types/node@^16.3.3":
+  version "16.3.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.3.tgz#0c30adff37bbbc7a50eb9b58fae2a504d0d88038"
+  integrity sha512-8h7k1YgQKxKXWckzFCMfsIwn0Y61UK6tlD6y2lOb3hTOIMlK3t9/QwHOhc81TwU+RMf0As5fj7NPjroERCnejQ==
 
 "@types/node@^15.0.2":
   version "15.14.2"
@@ -2850,10 +2851,10 @@
   resolved "https://registry.yarnpkg.com/@types/path-is-inside/-/path-is-inside-1.0.0.tgz#02d6ff38975d684bdec96204494baf9f29f0e17f"
   integrity sha512-hfnXRGugz+McgX2jxyy5qz9sB21LRzlGn24zlwN2KEgoPtEvjzNRrLtUkOOebPDPZl3Rq7ywKxYvylVcEZDnEw==
 
-"@types/plotly.js@^1.54.11":
-  version "1.54.11"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.11.tgz#d92926633cd9c1a1e844cafdd625db15d5d6a9df"
-  integrity sha512-/sTvf3t+K1Z+PyK19CTeG6CIqyno3d8rwQpbxh4RnBWHN1IRL6OI3rTCAcACe8vLMQHy14myyElwd6Lu5aywbQ==
+"@types/plotly.js@^1.54.12":
+  version "1.54.12"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.12.tgz#ea395d5d21ebc005e7839bf9ae96bd7fd8b89335"
+  integrity sha512-Q+V2t9dVxpBaBVYke5oiNMp8Oj0QyX3hdjcYYhF4zkMFbEVbAPMDYZgvmacC1D5HpJksi06h63IWVNJc4ljrCQ==
   dependencies:
     "@types/d3" "^3"
 
@@ -3053,7 +3054,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.28.2":
+"@typescript-eslint/eslint-plugin@^4.28.3":
   version "4.28.3"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.28.3.tgz#36cdcd9ca6f9e5cb49b9f61b970b1976708d084b"
   integrity sha512-jW8sEFu1ZeaV8xzwsfi6Vgtty2jf7/lJmQmDkDruBjYAbx5DA8JtbcMnP0rNPUG+oH5GoQBTSp+9613BzuIpYg==
@@ -3090,7 +3091,7 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@^4.28.2":
+"@typescript-eslint/parser@^4.28.3":
   version "4.28.3"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.28.3.tgz#95f1d475c08268edffdcb2779993c488b6434b44"
   integrity sha512-ZyWEn34bJexn/JNYvLQab0Mo5e+qqQNhknxmc8azgNd4XqspVYR5oHq9O11fLwdZMRcj4by15ghSlIEq+H5ltQ==
@@ -6924,7 +6925,7 @@ dom-serializer@^1.0.1:
     domhandler "^4.2.0"
     entities "^2.0.0"
 
-dom-to-image@^2.6.0:
+dom-to-image@2.6.0, dom-to-image@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/dom-to-image/-/dom-to-image-2.6.0.tgz#8a503608088c87b1c22f9034ae032e1898955867"
   integrity sha1-ilA2CAiMh7HCL5A0rgMuGJiVWGc=
@@ -14773,7 +14774,7 @@ schema-utils@^2.6.5, schema-utils@^2.7.0:
     ajv "^6.12.4"
     ajv-keywords "^3.5.2"
 
-schema-utils@^3.0.0:
+schema-utils@^3.0.0, schema-utils@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-3.1.0.tgz#95986eb604f66daadeed56e379bfe7a7f963cdb9"
   integrity sha512-tTEaeYkyIhEZ9uWgAjDerWov3T9MgX8dhhy2r0IGeeX4W8ngtGl1++dUve/RUqzuaASSh7shwCDJjEzthxki8w==
@@ -17623,10 +17624,10 @@ webpack@4.44.2:
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
-webpack@^5.44.0, webpack@~5.44.0:
-  version "5.44.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.44.0.tgz#97b13a02bd79fb71ac6301ce697920660fa214a1"
-  integrity sha512-I1S1w4QLoKmH19pX6YhYN0NiSXaWY8Ou00oA+aMcr9IUGeF5azns+IKBkfoAAG9Bu5zOIzZt/mN35OffBya8AQ==
+webpack@^5.45.1, webpack@~5.45.1:
+  version "5.45.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.45.1.tgz#d78dcbeda18a872dc62b0455d3ed3dcfd1c886bb"
+  integrity sha512-68VT2ZgG9EHs6h6UxfV2SEYewA9BA3SOLSnC2NEbJJiEwbAiueDL033R1xX0jzjmXvMh0oSeKnKgbO2bDXIEyQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
@@ -17646,7 +17647,7 @@ webpack@^5.44.0, webpack@~5.44.0:
     loader-runner "^4.2.0"
     mime-types "^2.1.27"
     neo-async "^2.6.2"
-    schema-utils "^3.0.0"
+    schema-utils "^3.1.0"
     tapable "^2.1.1"
     terser-webpack-plugin "^5.1.3"
     watchpack "^2.2.0"

@@ -22,7 +22,7 @@
     "@babel/preset-typescript": "^7.14.5",
     "@tony/cv-data": "*",
     "@types/html-webpack-plugin": "^3.2.6",
-    "@types/node": "^16.3.2",
+    "@types/node": "^16.3.3",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/react-select": "^4.0.17",
@@ -44,7 +44,7 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
-    "webpack": "~5.44.0",
+    "webpack": "~5.45.1",
     "webpack-cli": "4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
