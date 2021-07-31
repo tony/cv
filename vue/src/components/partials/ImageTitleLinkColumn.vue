@@ -1,15 +1,17 @@
 <template>
   <div class="right-col-content">
     <template v-if="logo">
-    <a :href="url" target="_blank" class="activity-title">
-      <img :src="logo" class="logo" />
-    </a>
+      <a :href="url" target="_blank" class="activity-title">
+        <img :src="logo" class="logo" />
+      </a>
     </template>
-    <strong><a :href="url" target="_blank" class="activity-title">
-      {{title}}
-    </a></strong>
+    <strong
+      ><a :href="url" target="_blank" class="activity-title">
+        {{ title }}
+      </a></strong
+    >
 
-    {{description}}
+    {{ description }}
     <small class="bottompad10">
       <slot name="links"></slot>
     </small>

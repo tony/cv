@@ -6,12 +6,14 @@ import { Components } from './Activity';
 class ActivityList extends React.Component {
   render() {
     const { activities } = this.props;
-    const items = activities.map(function(item) {
+    const items = activities.map(function (item) {
       const component = Components[item.component_name];
       return React.createElement(component, {
         ...{
           key: item['id'],
-          activityType: activityTypes.find(a => item.component_name === a.component_name).singular_name,
+          activityType: activityTypes.find(
+            (a) => item.component_name === a.component_name
+          ).singular_name,
         },
         ...item,
       });
@@ -26,4 +28,4 @@ class ActivityList extends React.Component {
   static propTypes = activityListProp;
 }
 
-export default ActivityList
+export default ActivityList;

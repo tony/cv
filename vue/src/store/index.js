@@ -16,7 +16,6 @@ import { LOAD_INITIAL_DATA } from './mutation-types';
 
 Vue.use(Vuex);
 
-
 const store = new Vuex.Store({
   state: {
     count: 0,
@@ -30,33 +29,36 @@ const store = new Vuex.Store({
     filters: Object.keys(filterMap),
   },
   getters: {
-
-    availableLanguages: (state, getters) => (
-      selectLanguagesFromActors(
+    availableLanguages: (state, getters) =>
+      selectLanguagesFromActors(state.languages, getters.availableActors),
+    availableActivities: state =>
+      selectActivities(
+        state.activities,
+        state.selectedActivityTypes,
+        state.selectedFilters,
+      ),
+    visibleActivities: (state, getters) =>
+      selectVisibleActivities(
+        state.selectedLanguages,
+        state.selectedActors,
+        denormalizeActivities(
+          getters.availableActivities,
+          state.actors,
+          state.languages,
+        ),
+      ),
+    countLanguagesFromVisibleActivities: (state, getters) =>
+      countLanguagesFromActivities(
+        getters.visibleActivities,
         state.languages,
-        getters.availableActors,
-      )
-    ),
-    availableActivities: state => selectActivities(
-      state.activities, state.selectedActivityTypes,
-      state.selectedFilters,
-    ),
-    visibleActivities: (state, getters) => selectVisibleActivities(
-      state.selectedLanguages, state.selectedActors,
-      denormalizeActivities(getters.availableActivities, state.actors, state.languages),
-    ),
-    countLanguagesFromVisibleActivities: (state, getters) => (
-      countLanguagesFromActivities(getters.visibleActivities, state.languages, state.actors)
-    ),
-    sortedActivities: (state, getters) => (
-      sortActivities(getters.visibleActivities, Vue.moment)
-    ),
-    availableActors: (state, getters) => (
-      selectActorsFromActivities(state.actors, getters.availableActivities)
-    ),
-    availableActivityTypes: state => (
-      availableActivityTypes(state.activities, activityTypes)
-    ),
+        state.actors,
+      ),
+    sortedActivities: (state, getters) =>
+      sortActivities(getters.visibleActivities, Vue.moment),
+    availableActors: (state, getters) =>
+      selectActorsFromActivities(state.actors, getters.availableActivities),
+    availableActivityTypes: state =>
+      availableActivityTypes(state.activities, activityTypes),
   },
   actions: {
     updateSelectedActivityTypeAction({ commit }, value) {

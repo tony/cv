@@ -69,7 +69,7 @@ module.exports = {
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
+    devtoolModuleFilenameTemplate: (info) =>
       path
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
@@ -91,7 +91,6 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -122,7 +121,6 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -152,7 +150,9 @@ module.exports = {
             loader: require.resolve('babel-loader'),
 
             options: {
-              presets: ['babel-preset-react', 'babel-preset-env'].map(require.resolve),
+              presets: ['babel-preset-react', 'babel-preset-env'].map(
+                require.resolve
+              ),
               plugins: [
                 'babel-plugin-transform-react-jsx',
                 'babel-plugin-transform-runtime',
@@ -341,14 +341,14 @@ module.exports = {
       {
         from: paths.libPublic,
         to: paths.appBuildStatic,
-        ignore: ['.*']
+        ignore: ['.*'],
       },
       {
         from: paths.appPublic,
         to: paths.appBuild,
-        ignore: ['.*']
+        ignore: ['.*'],
       },
-    ])
+    ]),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

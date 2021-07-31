@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux'
-import activities from './activities'
-import actors from './actors'
-import selectedLanguages from './selectedLanguages'
-import selectedActivityTypes from './selectedActivityTypes'
-import selectedActors from './selectedActors'
-import selectedFilters from './selectedFilters'
+import { combineReducers } from 'redux';
+import activities from './activities';
+import actors from './actors';
+import selectedLanguages from './selectedLanguages';
+import selectedActivityTypes from './selectedActivityTypes';
+import selectedActors from './selectedActors';
+import selectedFilters from './selectedFilters';
 
 const cvReducers = combineReducers({
   actors,
@@ -16,6 +16,6 @@ const cvReducers = combineReducers({
   selectedActivityTypes,
   filters: (state = [], action) => state,
   selectedFilters,
-})
+});
 
-export default cvReducers
+export default cvReducers;

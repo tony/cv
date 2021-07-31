@@ -1,8 +1,11 @@
 /* eslint no-underscore-dangle: 0 import/no-extraneous-dependencies: 0 */
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
 import { Line, Pie } from 'react-chartjs-2';
-import { mapStateToProps, mapDispatchToProps } from '../containers/ActivityList.js';
+import {
+  mapStateToProps,
+  mapDispatchToProps,
+} from '../containers/ActivityList.js';
 import { pieOptions, timeLineOptions } from 'cv-lib/charts';
 
 class LanguagePie extends React.Component {
@@ -11,7 +14,7 @@ class LanguagePie extends React.Component {
       const language = i[0]._model.label;
       this.props.onSelectedLanguageAdd(language);
     }
-  }
+  };
 
   render() {
     return (
@@ -22,27 +25,23 @@ class LanguagePie extends React.Component {
         height={250}
         onElementsClick={this.handleOnClick}
       />
-    )
+    );
   }
 }
 
-
 class ActivityLine extends React.Component {
-
   render() {
     return (
       <Line
-      data={this.props.activitiesLine}
-      options={timeLineOptions}
-      legend={timeLineOptions.legend}
+        data={this.props.activitiesLine}
+        options={timeLineOptions}
+        legend={timeLineOptions.legend}
       />
-    )
+    );
   }
 }
 
-
 class Charts extends React.Component {
-
   render() {
     return (
       <div className="charts row padBottom">
@@ -54,7 +53,7 @@ class Charts extends React.Component {
             style={{
               width: '100%',
               height: '250px',
-              position: 'relative'
+              position: 'relative',
             }}
           />
         </div>
@@ -64,7 +63,7 @@ class Charts extends React.Component {
             style={{
               width: '100%',
               height: '250px',
-              position: 'relative'
+              position: 'relative',
             }}
           />
         </div>
@@ -73,7 +72,4 @@ class Charts extends React.Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Charts);
+export default connect(mapStateToProps, mapDispatchToProps)(Charts);

@@ -1,7 +1,7 @@
 const selectedLanguages = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_SELECTED_LANGUAGES':
-      return action.value
+      return action.value;
     case 'ADD_SELECTED_LANGUAGE':
       let languages = '';
       const language = action.value;
@@ -12,11 +12,11 @@ const selectedLanguages = (state = [], action) => {
       } else {
         languages = language;
       }
-      return languages
+      return languages;
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default selectedLanguages
+export default selectedLanguages;

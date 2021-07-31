@@ -1,10 +1,10 @@
 const selectedFilters = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_SELECTED_FILTERS':
-      return action.value
+      return action.value;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default selectedFilters
+export default selectedFilters;

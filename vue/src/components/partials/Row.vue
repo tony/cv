@@ -1,38 +1,42 @@
 <template>
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12">
-    <div class="box">
-    <div class="row">
-      <div class="col-md-4 col-xs-12 item"><div class="box">
-      <h2>{{component_type}}</h2>
-      <slot name="left">
-        <slot name="date">
-        <Date
-          :created_date="created_date"
-          :end_date="end_date"
-          :date_format="date_format"
-          :is_current="is_current"
-          :show_from="show_from"
-          />
-        </slot>
+      <div class="box">
+        <div class="row">
+          <div class="col-md-4 col-xs-12 item">
+            <div class="box">
+              <h2>{{ component_type }}</h2>
+              <slot name="left">
+                <slot name="date">
+                  <Date
+                    :created_date="created_date"
+                    :end_date="end_date"
+                    :date_format="date_format"
+                    :is_current="is_current"
+                    :show_from="show_from"
+                  />
+                </slot>
 
-        <slot name="languages">
-          <div class="languages hide-sm">
-            <LanguageTag
-               v-for="language in languages"
-               :key="language.name"
-               :index="language.name"
-               :language="language"
-               />
+                <slot name="languages">
+                  <div class="languages hide-sm">
+                    <LanguageTag
+                      v-for="language in languages"
+                      :key="language.name"
+                      :index="language.name"
+                      :language="language"
+                    />
+                  </div>
+                </slot>
+              </slot>
+            </div>
           </div>
-        </slot>
-      </slot>
-      </div></div>
-      <div class="col-md-8 col-xs-12 item"><div class="box">
-        <slot name="right"></slot>
-      </div></div>
-    </div>
-    </div>
+          <div class="col-md-8 col-xs-12 item">
+            <div class="box">
+              <slot name="right"></slot>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,7 +60,7 @@ export default {
     end_date: String,
     languages: {
       type: Array,
-      default: () => ([]),
+      default: () => [],
     },
     date_format: {
       default: null,

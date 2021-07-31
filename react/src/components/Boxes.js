@@ -1,8 +1,8 @@
-import React from "react";
-import Octicon from "react-octicon";
-import Moment from "react-moment";
+import React from 'react';
+import Octicon from 'react-octicon';
+import Moment from 'react-moment';
 
-export const LeftBox = props => {
+export const LeftBox = (props) => {
   return (
     <div className="box">
       <h2>{props.activityType}</h2>
@@ -10,8 +10,8 @@ export const LeftBox = props => {
         <small>
           <Octicon name="clock" />
           <span>
-            {" "}
-            <Moment fromNow>{props.created_date}</Moment>{" "}
+            {' '}
+            <Moment fromNow>{props.created_date}</Moment>{' '}
           </span>
           ({props.created_date})
         </small>
@@ -25,7 +25,7 @@ export const LeftBox = props => {
                 language.color
                   ? {
                       backgroundColor: language.color,
-                      color: language.textColor
+                      color: language.textColor,
                     }
                   : {}
               }
@@ -38,7 +38,7 @@ export const LeftBox = props => {
   );
 };
 
-export const RightBox = props => (
+export const RightBox = (props) => (
   <div className="box">
     {props.actor.logo && props.actor.logo.length > 0 && (
       <a
@@ -69,7 +69,7 @@ export const RightBox = props => (
   </div>
 );
 
-export const PatchRightBox = props => {
+export const PatchRightBox = (props) => {
   return (
     <div className="box">
       <h3 className="align-octicon-bottom">
@@ -79,13 +79,13 @@ export const PatchRightBox = props => {
           rel="noopener noreferrer"
           className="activity-title"
         >
-          <Octicon name="mark-github" label="View on GitHub"></Octicon>{" "}
+          <Octicon name="mark-github" label="View on GitHub"></Octicon>{' '}
           {props.title}
         </a>
       </h3>
       <p>
         <em>
-          was contributed to the{" "}
+          was contributed to the{' '}
           <a
             href={props.actor.url}
             rel="noopener noreferrer"
@@ -93,7 +93,7 @@ export const PatchRightBox = props => {
             className="muted-link"
           >
             {props.actor.name}
-          </a>{" "}
+          </a>{' '}
           project
         </em>
       </p>
@@ -107,7 +107,7 @@ export const PatchRightBox = props => {
             className="muted-link align-octicon"
           >
             <Octicon name="repo" label="GH"></Octicon>
-            Repository{" "}
+            Repository{' '}
           </a>
 
           {props.in_re_url && props.in_re_url.length > 0 && (
@@ -135,7 +135,7 @@ export const PatchRightBox = props => {
           </span>
 
           <span>
-            {" "}
+            {' '}
             <a
               href={props.diff_url}
               rel="noopener noreferrer"
@@ -165,7 +165,7 @@ export const PatchRightBox = props => {
   );
 };
 
-export const PublicationRightBox = props => {
+export const PublicationRightBox = (props) => {
   return (
     <div className="box">
       <h3 className="align-octicon-bottom">
@@ -181,7 +181,7 @@ export const PublicationRightBox = props => {
 
       <p>
         <small>
-          Seen on{" "}
+          Seen on{' '}
           {props.actor.leanpub_url && props.actor.leanpub_url.length > 0 && (
             <span>
               <a
@@ -192,7 +192,7 @@ export const PublicationRightBox = props => {
                 Leanpub
               </a>
             </span>
-          )}{" "}
+          )}{' '}
           {props.actor.amazon_url && props.actor.amazon_url.length > 0 && (
             <span>
               <a
@@ -203,7 +203,7 @@ export const PublicationRightBox = props => {
                 Amazon
               </a>
             </span>
-          )}{" "}
+          )}{' '}
           {props.actor.goodreads_url && props.actor.goodreads_url.length > 0 && (
             <span>
               <a
@@ -221,7 +221,7 @@ export const PublicationRightBox = props => {
   );
 };
 
-export const ArticleRightBox = props => {
+export const ArticleRightBox = (props) => {
   return (
     <div className="box">
       <h3 className="align-octicon-bottom">
@@ -237,9 +237,9 @@ export const ArticleRightBox = props => {
 
       <p>
         <small>
-          Discussed on{" "}
+          Discussed on{' '}
           {props.featured
-            ? Object.keys(props.featured).map(title => (
+            ? Object.keys(props.featured).map((title) => (
                 <span key={title}>
                   <a
                     href={props.featured[title]}
@@ -247,7 +247,7 @@ export const ArticleRightBox = props => {
                     target="_blank"
                   >
                     {title}
-                  </a>{" "}
+                  </a>{' '}
                 </span>
               ))
             : null}
@@ -257,7 +257,7 @@ export const ArticleRightBox = props => {
   );
 };
 
-export const SoftwareRightBox = props => {
+export const SoftwareRightBox = (props) => {
   return (
     <div className="box">
       {props.actor.logo && props.actor.logo.length > 0 && (
@@ -305,7 +305,7 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
+              {' '}
               <Octicon name="mark-github" label="Repo"></Octicon> GitHub
             </a>
           )}
@@ -316,7 +316,7 @@ export const SoftwareRightBox = props => {
               className="align-octicon"
               rel="noopener noreferrer"
             >
-              {" "}
+              {' '}
               <Octicon name="book" label="Docs"></Octicon> Docs
             </a>
           )}
@@ -327,7 +327,7 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
+              {' '}
               <Octicon name="search" label="API"></Octicon> API
             </a>
           )}
@@ -338,7 +338,7 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
+              {' '}
               <Octicon name="graph" label="Coverage"></Octicon> Coverage
             </a>
           )}
@@ -349,7 +349,7 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
+              {' '}
               <Octicon name="dashboard" label="CI"></Octicon> CI
             </a>
           )}
@@ -361,7 +361,7 @@ export const SoftwareRightBox = props => {
                 rel="noopener noreferrer"
                 className="align-octicon"
               >
-                {" "}
+                {' '}
                 <Octicon name="code" label="CI"></Octicon> Browse Code
               </a>
             )}
@@ -373,7 +373,7 @@ export const SoftwareRightBox = props => {
                 rel="noopener noreferrer"
                 className="align-octicon"
               >
-                {" "}
+                {' '}
                 (tests)
               </a>
             )}
@@ -384,7 +384,7 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
+              {' '}
               <Octicon name="comment-discussion" label="CI"></Octicon> Issues
             </a>
           )}
@@ -395,8 +395,8 @@ export const SoftwareRightBox = props => {
               rel="noopener noreferrer"
               className="align-octicon"
             >
-              {" "}
-              <Octicon name="list-unordered" label="Changelog"></Octicon>{" "}
+              {' '}
+              <Octicon name="list-unordered" label="Changelog"></Octicon>{' '}
               Changelog
             </a>
           )}

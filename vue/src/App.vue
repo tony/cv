@@ -1,23 +1,36 @@
 <template>
   <div id="app">
     <div id="v2-notice">
-      Psst. I'm working on something new! <a href="https://cv-react-v2.git-pull.com">Take a peek?</a>
+      Psst. I'm working on something new!
+      <a href="https://cv-react-v2.git-pull.com">Take a peek?</a>
     </div>
-    <div class='github-fork'>
+    <div class="github-fork">
       <span class="author">
-        Made with <span role="img" aria-label="love">❤️</span> by <a href="https://www.git-pull.com" rel="noopener noreferrer" target="_blank">Tony Narlock</a>.
+        Made with <span role="img" aria-label="love">❤️</span> by
+        <a
+          href="https://www.git-pull.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Tony Narlock</a
+        >.
       </span>
-      <br/>
-      Written in Vue.js (<a href="https://github.com/tony/cv/tree/v1/vue" rel="noopener noreferrer" target="_blank">source</a>).<br />
+      <br />
+      Written in Vue.js (<a
+        href="https://github.com/tony/cv/tree/v1/vue"
+        rel="noopener noreferrer"
+        target="_blank"
+        >source</a
+      >).<br />
       See also: <a href="https://cv-react.git-pull.com">React version</a>.
     </div>
-    <header-view/>
+    <header-view />
     <component
       v-for="item in sortedActivities"
       :is="item.component_name"
       :item="item"
       :key="item.index"
-      :opts="item.options">
+      :opts="item.options"
+    >
     </component>
   </div>
 </template>
@@ -26,8 +39,14 @@
 import Header from '@/components/Header';
 import { mapGetters } from 'vuex';
 import {
-  Website, Volunteer, Publication, Patch, Work,
-  SoftwareApp, SoftwareLib, Article,
+  Website,
+  Volunteer,
+  Publication,
+  Patch,
+  Work,
+  SoftwareApp,
+  SoftwareLib,
+  Article,
 } from './components/activities';
 
 export default {
@@ -43,9 +62,7 @@ export default {
     SoftwareLib,
     'header-view': Header,
   },
-  computed: mapGetters([
-    'sortedActivities',
-  ]),
+  computed: mapGetters(['sortedActivities']),
 };
 </script>
 

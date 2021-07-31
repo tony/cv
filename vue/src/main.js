@@ -10,7 +10,8 @@ Vue.config.productionTip = false;
 
 Vue.use(require('vue-moment'));
 
-store.commit( // Load initial data
+store.commit(
+  // Load initial data
   LOAD_INITIAL_DATA,
   {
     ...INITIAL_DATA.entities,

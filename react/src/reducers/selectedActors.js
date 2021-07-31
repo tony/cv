@@ -1,10 +1,10 @@
 const selectedActors = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_SELECTED_ACTORS':
-      return action.value
+      return action.value;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default selectedActors
+export default selectedActors;

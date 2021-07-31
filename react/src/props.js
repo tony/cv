@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 const languageProp = {
   color: PropTypes.string,
   name: PropTypes.string.isRequired,
@@ -12,9 +11,7 @@ const actorProp = {
   repo_url: PropTypes.string,
   type: PropTypes.string.isRequired,
   url: PropTypes.string,
-  languages: PropTypes.arrayOf(
-    PropTypes.shape(languageProp).isRequired
-  ),
+  languages: PropTypes.arrayOf(PropTypes.shape(languageProp).isRequired),
 };
 
 export const activityProp = {
@@ -26,13 +23,12 @@ export const activityProp = {
   featured: PropTypes.object,
   created_date: PropTypes.string.isRequired,
   accepted_date: PropTypes.string,
-  end_date: PropTypes.string
+  end_date: PropTypes.string,
 };
 
 export const activityListProp = {
-  activities: PropTypes.arrayOf(
-    PropTypes.shape(activityProp).isRequired
-  ).isRequired,
-}
+  activities: PropTypes.arrayOf(PropTypes.shape(activityProp).isRequired)
+    .isRequired,
+};
 
 export default activityProp;

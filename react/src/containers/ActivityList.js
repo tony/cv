@@ -1,13 +1,20 @@
-import { connect } from 'react-redux'
-import moment from 'moment'
-import { sortActivities, selectLanguagesFromActors, denormalizeActivities, countLanguagesFromActivities } from 'cv-lib/storage'
-import { activityTypes } from 'cv-lib/constants'
+import { connect } from 'react-redux';
+import moment from 'moment';
+import {
+  sortActivities,
+  selectLanguagesFromActors,
+  denormalizeActivities,
+  countLanguagesFromActivities,
+} from 'cv-lib/storage';
+import { activityTypes } from 'cv-lib/constants';
 import { filterMap } from 'cv-lib/selectors';
-import { toggleActivity } from '../actions'
-import ActivityList from '../components/ActivityList'
-import { getActivityLanguagePieData, getActivityTimeChartData } from 'cv-lib/charts'
-import { createSelector } from 'reselect'
-
+import { toggleActivity } from '../actions';
+import ActivityList from '../components/ActivityList';
+import {
+  getActivityLanguagePieData,
+  getActivityTimeChartData,
+} from 'cv-lib/charts';
+import { createSelector } from 'reselect';
 
 const getActivities = (state) => state.activities;
 const getSelectedLanguages = (state) => state.selectedLanguages;
@@ -18,15 +25,37 @@ const getLanguages = (state) => state.languages;
 const getSelectedActors = (state) => state.selectedActors;
 
 const getAvailableActivities = createSelector(
-  [getActivities, getSelectedLanguages, getSelectedActivityTypes, getSelectedFilters, getActors, getLanguages],
-  (activities, selectedLanguages, selectedActivityTypes, selectedFilters, actors, languages) => {
-    let visibleActivities = denormalizeActivities(Object.values(activities), actors, languages);
-    const selectedLanguageList = selectedLanguages.length ? selectedLanguages.split(',') : [];
-    let selectedActivityTypeList = selectedActivityTypes.length ? selectedActivityTypes.split(',') : [];
+  [
+    getActivities,
+    getSelectedLanguages,
+    getSelectedActivityTypes,
+    getSelectedFilters,
+    getActors,
+    getLanguages,
+  ],
+  (
+    activities,
+    selectedLanguages,
+    selectedActivityTypes,
+    selectedFilters,
+    actors,
+    languages
+  ) => {
+    let visibleActivities = denormalizeActivities(
+      Object.values(activities),
+      actors,
+      languages
+    );
+    const selectedLanguageList = selectedLanguages.length
+      ? selectedLanguages.split(',')
+      : [];
+    let selectedActivityTypeList = selectedActivityTypes.length
+      ? selectedActivityTypes.split(',')
+      : [];
     // we need to filter against the component_name of the activity, so get that data
-    selectedActivityTypeList = selectedActivityTypeList.map(at => (
-      activityTypes.find(vt => vt.name === at).component_name
-    ));
+    selectedActivityTypeList = selectedActivityTypeList.map(
+      (at) => activityTypes.find((vt) => vt.name === at).component_name
+    );
 
     // only show selected activity types
     if (selectedActivityTypeList.length) {
@@ -40,7 +69,9 @@ const getAvailableActivities = createSelector(
         if (!item.actor.languages) {
           return false;
         }
-        return item.actor.languages.some(s => selectedLanguageList.find(z => z === s.name));
+        return item.actor.languages.some((s) =>
+          selectedLanguageList.find((z) => z === s.name)
+        );
       });
     }
 
@@ -48,66 +79,76 @@ const getAvailableActivities = createSelector(
       visibleActivities = visibleActivities.filter(filterMap[filterName]);
     });
 
-
     return sortActivities(visibleActivities, moment);
   }
-)
+);
 
 const getVisibleActivities = createSelector(
   [getAvailableActivities, getSelectedActors, getActors, getLanguages],
   (activities, selectedActors, actors, languages) => {
-    const selectedActorList = selectedActors.length ? selectedActors.split(',') : [];
+    const selectedActorList = selectedActors.length
+      ? selectedActors.split(',')
+      : [];
     let visibleActivities = activities;
 
     // for direct lookups
     if (selectedActorList && selectedActorList.length) {
-      return visibleActivities.filter(
-        item => selectedActorList.find(s => s === item.actor.name),
+      return visibleActivities.filter((item) =>
+        selectedActorList.find((s) => s === item.actor.name)
       );
     }
     return sortActivities(visibleActivities, moment);
   }
-)
+);
 
 const getReactSelectValues = (actors) => {
   /** (react-select only) Return available actors in format acceptable to react-select **/
-  return Object.values(actors).map((actor => ({ value: actor.name, label: actor.name })));
-}
+  return Object.values(actors).map((actor) => ({
+    value: actor.name,
+    label: actor.name,
+  }));
+};
 
 const getAvailableLanguages = createSelector(
-  [ getLanguages, getActors ],
-  (languages, actors) => selectLanguagesFromActors(languages, Object.values(actors))
+  [getLanguages, getActors],
+  (languages, actors) =>
+    selectLanguagesFromActors(languages, Object.values(actors))
 );
 
 const getAvailableLanguagesReactSelectValues = createSelector(
-  [ getAvailableLanguages ],
+  [getAvailableLanguages],
   (languages) => getReactSelectValues(languages)
 );
 
 const getAvailableActors = createSelector(
-  [ getActors, getAvailableActivities ],
+  [getActors, getAvailableActivities],
   (actors, activities) => {
-    return Object.values(actors).filter(actor => (
-      activities.find(activity => activity.actor.id === actor.id)
-    ));
+    return Object.values(actors).filter((actor) =>
+      activities.find((activity) => activity.actor.id === actor.id)
+    );
   }
 );
 
 const getAvailableActorsReactSelectValues = createSelector(
-  [ getAvailableActors ],
+  [getAvailableActors],
   (actors) => getReactSelectValues(actors)
 );
 
 const getCountLanguagesFromActivities = createSelector(
-  [ getVisibleActivities ],
+  [getVisibleActivities],
   (activities) => countLanguagesFromActivities(activities)
 );
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     activities: getVisibleActivities(state),
-    activitiesPie: getActivityLanguagePieData(getCountLanguagesFromActivities(state)),
-    activitiesLine: getActivityTimeChartData((getVisibleActivities(state)), moment),
+    activitiesPie: getActivityLanguagePieData(
+      getCountLanguagesFromActivities(state)
+    ),
+    activitiesLine: getActivityTimeChartData(
+      getVisibleActivities(state),
+      moment
+    ),
     actors: state.actors,
     actors_select: getReactSelectValues(state.actors),
     availableActors: getAvailableActors(state),
@@ -123,50 +164,50 @@ export const mapStateToProps = state => {
     selectedActivityTypes: state.selectedActivityTypes,
     filters: state.filters,
     selectedFilters: state.selectedFilters,
-  }
-}
+  };
+};
 
-export const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = (dispatch) => {
   return {
-    onActivityClick: id => {
-      dispatch(toggleActivity(id))
+    onActivityClick: (id) => {
+      dispatch(toggleActivity(id));
     },
-    onSelectedActorChange: value => {
+    onSelectedActorChange: (value) => {
       dispatch({
         type: 'CHANGE_SELECTED_ACTORS',
-        value: value
+        value: value,
       });
     },
-    onSelectedLanguageChange: value => {
+    onSelectedLanguageChange: (value) => {
       dispatch({
         type: 'CHANGE_SELECTED_LANGUAGES',
-        value: value
+        value: value,
       });
     },
-    onSelectedLanguageAdd: value => {
+    onSelectedLanguageAdd: (value) => {
       dispatch({
         type: 'ADD_SELECTED_LANGUAGE',
-        value: value
+        value: value,
       });
     },
-    onSelectedActivityTypesChange: value => {
+    onSelectedActivityTypesChange: (value) => {
       dispatch({
         type: 'CHANGE_SELECTED_ACTIVITY_TYPES',
-        value: value
+        value: value,
       });
     },
-    onSelectedFiltersChange: value => {
+    onSelectedFiltersChange: (value) => {
       dispatch({
         type: 'CHANGE_SELECTED_FILTERS',
-        value: value
+        value: value,
       });
-    }
-  }
-}
+    },
+  };
+};
 
 export const VisibleActivityList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ActivityList)
+)(ActivityList);
 
-export default VisibleActivityList
+export default VisibleActivityList;

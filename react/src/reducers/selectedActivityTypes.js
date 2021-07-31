@@ -1,10 +1,10 @@
 const selectedActivityTypes = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_SELECTED_ACTIVITY_TYPES':
-      return action.value
+      return action.value;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default selectedActivityTypes
+export default selectedActivityTypes;

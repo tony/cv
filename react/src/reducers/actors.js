@@ -1,8 +1,8 @@
 const actors = (state = [], action) => {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default actors
+export default actors;
