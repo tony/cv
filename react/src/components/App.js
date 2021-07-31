@@ -19,15 +19,8 @@ const App = () => (
     </div>
     <div className="header">
       <h1>Tony Narlock's CV</h1>
-
-      <p className="hidden"><em>
-        Seeking remote, senior programming roles.
-        I'm also available for <a href="https://www.git-pull.com/consulting/" rel="noopener noreferrer" target="_blank">consulting</a> and <a href="https://www.git-pull.com/mentoring/" rel="noopener noreferrer" target="_blank">mentoring</a>.
-      </em></p>
       <p><em>
-        Friendly note:
-        I don't do technical screens. If this can't convince you, I'm probably not good enough for you
-        <a href="https://www.git-pull.com/blog/2018/01/technical-screening.html" target="_blank" rel="noopener noreferrer" className="hidden footnote">[1]</a>.
+        I appreciate when hiring managers look at my contributions and projects in lieu of technical screens, that let's us both know my strengths match the role!
       </em></p>
 
       <Charts />
