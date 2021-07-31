@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "prettier": "prettier src config --write"
   },
   "dependencies": {
     "chart.js": "^2.9.4",
@@ -59,6 +60,7 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.6",
     "postcss-url": "^7.3.2",
+    "prettier": "^2.3.2",
     "rimraf": "^2.7.1",
     "selenium-server": "^3.141.59",
     "semver": "^5.7.1",
