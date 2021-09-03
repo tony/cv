@@ -22,16 +22,16 @@
     "rxjs": "^6.6.7"
   },
   "devDependencies": {
-    "@types/node": "^16.6.1",
+    "@types/node": "^16.7.10",
     "ts-loader": "^9.2.5",
-    "ts-node": "^10.2.0",
-    "typescript": "^4.3.5"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-tsc": "^2.0.0"
