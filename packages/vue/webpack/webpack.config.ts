@@ -35,12 +35,15 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   ...(env.WEBPACK_SERVE
     ? {
         devServer: {
-          contentBase: "./dist",
           host: env.devServerHost,
           hot: true,
           open: env.open,
           port: parseInt(env.devServerPort, 10),
-          publicPath: "/",
+
+          static: {
+            directory: "./dist",
+            publicPath: "/",
+          },
         },
       }
     : {}),
