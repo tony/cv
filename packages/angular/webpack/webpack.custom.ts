@@ -15,6 +15,10 @@ export default {
         test: /\.svg$/,
         type: 'asset/inline',
       },
+      {
+        test: /nav\/nav\.scss$/,
+        use: ['raw-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
