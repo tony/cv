@@ -19,7 +19,9 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "plugins": ["tsc"],
+      "plugins": [
+        "tsc"
+      ],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
