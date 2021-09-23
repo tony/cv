@@ -15,7 +15,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^16.9.4",
+    "@types/node": "^16.9.6",
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "sass-loader": "^10.1.1",
