@@ -20,7 +20,8 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "target": "es2015",
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": ["node_modules/@types", "../../node_modules/@types"],
+    "types": ["node"],
     "lib": ["es2018", "esnext", "dom"]
   },
   "angularCompilerOptions": {

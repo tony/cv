@@ -5,7 +5,8 @@
     "paths": {
       "@tony/cv-data/*": ["../data/*"],
       "@tony/cv-lib/*": ["../lib/*"]
-    }
+    },
+    "types": ["node"]
   },
   "files": ["custom.d.ts", "nav.ts"],
   "include": ["./*.ts"]
