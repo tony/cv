@@ -1,5 +1,6 @@
-import { LitElement, html, customElement, css, query, property, unsafeCSS } from "lit-element";
-import type { CSSResult, TemplateResult } from "lit-element";
+import { LitElement, css, html, unsafeCSS } from "lit";
+import type { CSSResult, TemplateResult } from "lit";
+import { customElement, property, query } from "lit/decorators.js";
 
 import * as noUiSlider from "nouislider/dist/nouislider";
 import style from "!!raw-loader!sass-loader!nouislider/dist/nouislider.css";

@@ -1,5 +1,6 @@
-import { LitElement, html, customElement, css, query, unsafeCSS } from "lit-element";
-import type { CSSResult, TemplateResult } from "lit-element";
+import { LitElement, css, html, unsafeCSS } from "lit";
+import type { CSSResult, TemplateResult } from "lit";
+import { customElement, query } from "lit/decorators.js";
 
 //@ts-ignore
 import { Switch as SimpleSwitch } from "a-simple-switch";

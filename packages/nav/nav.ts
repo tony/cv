@@ -1,5 +1,6 @@
-import { LitElement, html, customElement, css, property, unsafeCSS } from "lit-element";
-import type { CSSResult, TemplateResult } from "lit-element";
+import { LitElement, html, css, unsafeCSS } from "lit";
+import type { CSSResult, TemplateResult } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
 import style from "!!raw-loader!sass-loader!./nav.scss";
 
