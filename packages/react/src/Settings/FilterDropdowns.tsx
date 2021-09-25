@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import type { GroupBase, Props } from "react-select";
 
 import {
   activityTypesQuery,
@@ -19,19 +20,27 @@ import {
   onOrgChange,
   onActivityTypeChange,
 } from "../react-select";
-import type { ISelectOption } from "../react-select";
+import type { IOptionType, ISelectOption } from "../react-select";
+
+function CustomSelect<
+  Option extends IOptionType,
+  IsMulti extends boolean = true,
+  Group extends GroupBase<Option> = GroupBase<Option>
+>(props: Props<Option, IsMulti, Group>) {
+  return (
+    <Select {...props} theme={(theme) => ({ ...theme, borderRadius: 0 })} />
+  );
+}
 
 export const FilterDropdowns: React.FC = () => {
-  const languageSelectRef = React.useRef<Select>(null);
   return (
     <div className="dropdownRow">
-      <Select
+      <CustomSelect
         options={getSelectOptions(
           Object.values(languagesQuery?.getValue()?.entities ?? {}).map(
             (lang) => lang.id as string
           )
         )}
-        ref={languageSelectRef}
         isMulti
         onChange={onLanguageChange}
         className="react-select"
@@ -39,7 +48,7 @@ export const FilterDropdowns: React.FC = () => {
         styles={languagesStyles}
         components={{ Option: LanguageOption }}
       />
-      <Select
+      <CustomSelect
         options={
           activityTypesQuery.getAll().map((a) => ({
             label: a.name,
@@ -56,7 +65,7 @@ export const FilterDropdowns: React.FC = () => {
           MultiValueLabel: ActivityMultiValueLabel,
         }}
       />
-      <Select
+      <CustomSelect
         options={
           orgsQuery.getAll().map((org) => ({
             label: org.name,

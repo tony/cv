@@ -13,17 +13,14 @@ export interface SettingsContextInterface {
   setShowOptionsMobile: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const SettingsContext = React.createContext<SettingsContextInterface | null>(
-  null
-);
+export const SettingsContext =
+  React.createContext<SettingsContextInterface | null>(null);
 
 export const SettingsContextProvider: React.FC = ({ children }) => {
-  const [showChartsMobile, setShowChartsMobile] = React.useState<boolean>(
-    false
-  );
-  const [showOptionsMobile, setShowOptionsMobile] = React.useState<boolean>(
-    false
-  );
+  const [showChartsMobile, setShowChartsMobile] =
+    React.useState<boolean>(false);
+  const [showOptionsMobile, setShowOptionsMobile] =
+    React.useState<boolean>(false);
 
   return (
     <SettingsContext.Provider

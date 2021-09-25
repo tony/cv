@@ -2,12 +2,13 @@ import type { CSSObject } from "@emotion/serialize";
 import React from "react";
 import type { Subscription } from "rxjs";
 
-import { components as ReactSelectComponents } from "react-select";
-import type {
-  StylesConfig,
+import {
+  components as ReactSelectComponents,
+  Options,
   OptionProps,
-  OptionsType,
-  ValueType,
+  PropsValue,
+  StylesConfig,
+  MultiValueGenericProps,
 } from "react-select";
 
 import chroma from "chroma-js";
@@ -30,18 +31,21 @@ export interface IOptionType {
   label: string;
   value: string;
 }
-export type ISelectOption = OptionsType<IOptionType>;
+export interface StyleOption extends IOptionType {
+  color: string;
+  isFixed?: boolean;
+  isDisabled?: boolean;
+}
+export type ISelectOption = Options<IOptionType>;
 
-export const onLanguageChange = (
-  value: ValueType<IOptionType, boolean>
-): void => {
+export const onLanguageChange = (value: PropsValue<IOptionType>): void => {
   if (value) {
     languagesStore.setActive((value as IOptionType[]).map(({ value: v }) => v));
   } else {
     languagesStore.setActive([]);
   }
 };
-export const onOrgChange = (value: ValueType<IOptionType, boolean>): void => {
+export const onOrgChange = (value: PropsValue<IOptionType>): void => {
   console.log("onOrgChange", value);
   if (value) {
     orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
@@ -49,9 +53,7 @@ export const onOrgChange = (value: ValueType<IOptionType, boolean>): void => {
     orgsStore.setActive([]);
   }
 };
-export const onActivityTypeChange = (
-  value: ValueType<IOptionType, boolean>
-): void => {
+export const onActivityTypeChange = (value: PropsValue<IOptionType>): void => {
   if (value) {
     activityTypesStore.setActive(
       (value as IOptionType[]).map(({ value: v }) => v)
@@ -108,14 +110,10 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
 }) => {
   const languageName = data?.value;
 
-  const [
-    availableActivitiesCount,
-    setAvailableActivitiesCount,
-  ] = React.useState<number>(0);
-  const [
-    totalActivitiesCount,
-    setTotalActivitiesCount,
-  ] = React.useState<number>(0);
+  const [availableActivitiesCount, setAvailableActivitiesCount] =
+    React.useState<number>(0);
+  const [totalActivitiesCount, setTotalActivitiesCount] =
+    React.useState<number>(0);
   if (!languageName) {
     console.warn(`${languageName} missing from option`);
     return null;
@@ -276,28 +274,28 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
-export const ActivityTypeOption: React.FC<
-  OptionProps<IOptionType, boolean>
-> = ({ children, ...props }) => {
-  const activityType = activityTypesQuery.getEntity(props.data?.value);
-  if (!activityType) {
-    console.warn(`activityType ${props?.data?.value} could not be found`);
-    return null;
-  }
-  return (
-    <ReactSelectComponents.Option
-      {...props}
-      className="dropdownActivityTypeOption"
-    >
-      {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
-      {children}
-    </ReactSelectComponents.Option>
-  );
-};
+export const ActivityTypeOption: React.FC<OptionProps<IOptionType, boolean>> =
+  ({ children, ...props }) => {
+    const activityType = activityTypesQuery.getEntity(props.data?.value);
+    if (!activityType) {
+      console.warn(`activityType ${props?.data?.value} could not be found`);
+      return null;
+    }
+    return (
+      <ReactSelectComponents.Option
+        {...props}
+        className="dropdownActivityTypeOption"
+      >
+        {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
+        {children}
+      </ReactSelectComponents.Option>
+    );
+  };
 
-export const ActivityMultiValueLabel: React.FC<
-  OptionProps<IOptionType, boolean>
-> = ({ children, ...props }) => {
+export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
+  children,
+  ...props
+}) => {
   const activityType = activityTypesQuery.getEntity(props.data?.value);
   if (!activityType) {
     console.warn(`activityType ${props?.data?.value} could not be found`);
