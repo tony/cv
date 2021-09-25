@@ -7,7 +7,7 @@ $bg-color-700: darken($bg-color, 20);
 $bg-color-800: darken($bg-color, 30);
 $bg-color-900: darken($bg-color, 40);
 
-#our-nav {
+#our-nav, nav {
   background: $bg-color;
   display: flex;
   place-items: center;

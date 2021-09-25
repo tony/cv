@@ -2,7 +2,7 @@ import { LitElement, html, css, unsafeCSS } from "lit";
 import type { CSSResult, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import style from "!!raw-loader!sass-loader!./nav.scss";
+// import style from "!!raw-loader!sass-loader!./nav.scss";
 
 import reactSvg from "@tony/cv-data/img/icons/react.svg";
 import angularSvg from "@tony/cv-data/img/icons/angular.svg";
@@ -55,9 +55,16 @@ export class CVNav extends LitElement {
   @property() framework = getActiveFramework();
 
   static get styles(): CSSResult[] {
+    const styleModule = require("./nav.scss");
+    const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default;
+    const style = styleOther  ?? styleModule ?? "";
+
     return [
       css`
         ${unsafeCSS(style)}
+        nav {
+          background-color: red;
+        }
       `,
     ];
   }
