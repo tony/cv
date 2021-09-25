@@ -15,28 +15,6 @@ export default {
         test: /\.svg$/,
         type: 'asset/inline',
       },
-      // {
-      //   test: /nav\/nav\.scss$/,
-      //   use: [
-      //     // {
-      //     //   loader: 'lit-scss-loader',
-      //     //   options: {
-      //     //     minify: true, // defaults to false
-      //     //   },
-      //     // },
-      //
-      //     'css-loader',
-      //     'sass-loader',
-      //
-      //     //'extract-loader',
-      //     // 'to-string-loader',
-      //     // 'raw-loader',
-      //     // 'css-loader',
-      //     // 'sass-loader',
-      //   ],
-      //   // use: ['raw-loader', 'sass-loader'],
-      //   // use: ['raw-loader', 'sass-loader'],
-      // },
     ],
   },
   plugins: [
