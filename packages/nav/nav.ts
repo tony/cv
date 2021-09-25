@@ -55,18 +55,13 @@ export class CVNav extends LitElement {
   @property() framework = getActiveFramework();
 
   static get styles(): CSSResult[] {
-    // const style !!raw-loader!sass-loader!./nav.scss";
-    // const style = require("./nav.scss");
     const styleModule = require("./nav.scss");
     const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default;
-
-    const style = styleModule ?? styleModule.default ?? styleOther ?? "";
-    console.log({ style, styleOther });
+    const style = styleOther  ?? styleModule ?? "";
 
     return [
       css`
         ${unsafeCSS(style)}
-        ${unsafeCSS(styleOther)}
         nav {
           background-color: red;
         }
