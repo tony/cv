@@ -20,6 +20,8 @@
       "**/@types/jasmine",
       "**/@angular*",
       "**/@angular*/**",
+      "**/@vue*/**",
+      "**/vue*/**",
       "**/ts-loader"
     ],
     "packages": [

@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex, { Commit, StoreOptions } from "vuex";
+import { createApp } from "vue";
+import createStore, { mapState, Commit, StoreOptions } from "vuex";
 
 import HelloComponent from "./components/Hello.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
@@ -43,10 +43,9 @@ const store: StoreOptions<IRootState> = {
   },
 };
 
-Vue.use(Vuex);
-const s = new Vuex.Store<IRootState>(store);
+const s = createStore<IRootState>(store);
 
-new Vue({
+const app = createApp({
   created() {
     s.dispatch("loadActivities");
     document.title = __TITLE__;
@@ -60,7 +59,7 @@ new Vue({
     HelloDecoratorComponent,
     ChristmasTreeSVG,
   },
-  computed: { ...Vuex.mapState(["activities"]) },
+  computed: { ...mapState(["activities"]) },
   data: { name: "World" },
   el: "#root",
   store: s,
@@ -80,5 +79,8 @@ new Vue({
     </div>
     `,
 });
+
+app.use(store);
+app.mount("#app");
 
 export default s;

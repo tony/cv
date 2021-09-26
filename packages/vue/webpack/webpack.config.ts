@@ -73,6 +73,11 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
             scss: "vue-style-loader!css-loader!sass-loader",
             ts: "babel-loader!ts-loader",
           },
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2,
+            },
+          },
         },
         test: /\.vue$/,
       },
@@ -154,7 +159,8 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
   ],
   resolve: {
     alias: {
-      vue$: "vue/dist/vue.esm.js",
+      vue$: "@vue/compat/vue.esm-browser.js",
+      vue: "@vue/compat",
     },
     extensions: [".ts", ".js", ".vue", ".json", ".html", ".scss"],
   },
