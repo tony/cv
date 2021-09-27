@@ -8966,9 +8966,9 @@ getpass@^0.1.1:
     assert-plus "^1.0.0"
 
 github-colors@~2.2:
-  version "2.2.19"
-  resolved "https://registry.yarnpkg.com/github-colors/-/github-colors-2.2.19.tgz#e78a0f49c82781cb872caaa80eebb76d11a217cd"
-  integrity sha512-xk3EuvPBHuP7rLWmjTMP54O8uaE8wWajDgbfXN5Ne9xZm6oOremigcVo/v13imlHzy6ku4UvhevDJakNNLllUA==
+  version "2.2.20"
+  resolved "https://registry.yarnpkg.com/github-colors/-/github-colors-2.2.20.tgz#72e8168d59518b5cea775cd953f1cb2a5f1eda89"
+  integrity sha512-Y+wVItJzqi2mtD0Z2KpwLKr2uxlz7yG9+mRlizYGiVXqZcg5W2xhJRViKjXa1su4pTRqJ2KK5CjG5xR4eWQjDQ==
   dependencies:
     bug-killer "^4.0.0"
     js-yaml "^3.6.1"
