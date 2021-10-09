@@ -15,14 +15,12 @@
     "github": "yarn workspace @tony/cv-scripts run github",
     "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "engines": {
     "node": ">=19"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
