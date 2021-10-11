@@ -32,6 +32,6 @@
     "lit": "^2.0.2",
     "nouislider": "^15.5.0",
     "sass": "^1.42.1",
-    "sass-loader": "^11.0.0"
+    "sass-loader": "^12.1.0"
   }
 }
