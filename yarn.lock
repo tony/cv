@@ -2147,19 +2147,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.50.6":
-  version "0.50.6"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.50.6.tgz#f7889ee1135bdab9bd4e31551332a36c5e8ed447"
-  integrity sha512-b3fwH4pNKOaSIl251HnaA2I8KbjAa1U6v+X9vntymOd+jy+6LXdZRfm1PtyXJgQCsdpp75W3CaI7RiDQ+rL/NA==
+"@carbon/charts-react@0.50.7":
+  version "0.50.7"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.50.7.tgz#f696a8f644474e32fd788fdeb9117982fa09d363"
+  integrity sha512-Tl2qdfw7tzGsE3334/vmKAYq31afQh+tBIidfSefrdbRfzybOO4FBmF2lr+Oe3ERhvU6ZAgyK7+GJNrptx+yUw==
   dependencies:
-    "@carbon/charts" "^0.50.6"
+    "@carbon/charts" "^0.50.7"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@0.50.6", "@carbon/charts@^0.50.6":
-  version "0.50.6"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.50.6.tgz#7aebc75935fb027c5930aaeb268024cac771e658"
-  integrity sha512-FH8gbvotVvzB2lyDT9/UzgwA4A7x+SR1txD3MORa26Gyb8Zj3jhmM9D87wYUmix1s4sSuOIYY+axDidqDKRbew==
+"@carbon/charts@0.50.7", "@carbon/charts@^0.50.7":
+  version "0.50.7"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.50.7.tgz#82dd614f990984e75b49d5f84a59702efa4dd7e3"
+  integrity sha512-hkc+CwbPtxxUJul/AohQ2ur1a+Bb67raxsWTW168kbmPzjidyQ0bev2jHvMNtXRNfgucH4PP8us2hTP0ZLv8SA==
   dependencies:
     "@carbon/colors" "10.29.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -5450,10 +5450,10 @@ carbon-components@10.40.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@^10.45.0:
-  version "10.45.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.45.0.tgz#db5f0a53cda4e53dbd7aeaed9a99d86184484b66"
-  integrity sha512-+bpckp18pIp5kutda8gpGbkQ88O1FzhSSFSA1IQ4pPJnOjyBnNu+ebiBJOZt0ccOXZPDkyuSKxhQeCboyVCUwA==
+carbon-components@^10.46.0:
+  version "10.46.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.46.0.tgz#f167baa23bbc08a0e53a312eca835a2414b67d21"
+  integrity sha512-BWO1d/CBGZgyMjGN+nOkjqlfRek56/uFpyKMs443IeaJGvhZ0r7SFC5aeipxlg/BCwhxl5dcruzQ9d0MykNxSw==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"
