@@ -17,10 +17,10 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^16.11.4",
-    "@types/react": "^17.0.31",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
-    "@types/react-vis": "^1.11.8",
+    "@types/react-vis": "^1.11.9",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.26.1",
     "prettier": "^2.4.1",
@@ -41,6 +41,6 @@
     "react-dom": "^17.0.2",
     "react-vis": "^1.11.7",
     "rxjs": "^6.6.7",
-    "victory": "^36.0.1"
+    "victory": "^36.1.0"
   }
 }
