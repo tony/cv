@@ -17,8 +17,8 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
+    "@types/node": "^16.11.8",
+    "@types/react": "^17.0.35",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.27.0",
@@ -33,8 +33,8 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@carbon/charts": "0.51.3",
-    "@carbon/charts-react": "0.51.3",
+    "@carbon/charts": "0.52.0",
+    "@carbon/charts-react": "0.52.0",
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
     "carbon-components": "^10.48.0",
