@@ -55,9 +55,9 @@ export class CVNav extends LitElement {
   @property() framework = getActiveFramework();
 
   static get styles(): CSSResult[] {
-    const styleModule = require("./nav.scss");
-    const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default;
-    const style = styleOther  ?? styleModule ?? "";
+    const styleModule = require("./nav.scss"); // eslint-disable-line @typescript-eslint/no-var-requires
+    const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default; // eslint-disable-line @typescript-eslint/no-var-requires
+    const style = styleOther ?? styleModule ?? "";
 
     return [
       css`
