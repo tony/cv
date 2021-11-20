@@ -22,7 +22,7 @@
     "invert-color": "^2.0.0",
     "moment": "^2.29.4",
     "prettier": "^2.7.1",
-    "rxjs": "^6.6.7"
+    "rxjs": "^7.5.2"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
