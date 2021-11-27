@@ -1,1 +1,2 @@
-export { CustomEventMap, Switcher } from "./switcher";
+export { Switcher } from "./switcher";
+export type { CustomEventMap } from "./switcher";
