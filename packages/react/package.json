@@ -33,7 +33,7 @@
     "eslint-plugin-react": "^7.27.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "raw-loader": "^4.0.2",
     "react-hot-loader": "^4.13.0",
     "sass": "^1.43.4",
