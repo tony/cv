@@ -1,2 +1,1 @@
-export { RangeSlider } from "./slider";
-export type { CustomEventMap } from "./slider";
+export { CustomEventMap, RangeSlider } from "./slider";
