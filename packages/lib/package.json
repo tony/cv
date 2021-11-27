@@ -6,12 +6,12 @@
   "scripts": {
     "lint": "eslint . -c .eslintrc.js --ext .ts",
     "test": "jest",
-    "format": "yarn run prettier",
+    "prettier": "prettier",
+    "format": "yarn run prettier * --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "echo 'noop'",
-    "build": "echo 'noop'",
-    "prettier": "prettier . --write"
+    "build": "echo 'noop'"
   },
   "dependencies": {
     "@datorama/akita": "^6.2.4",

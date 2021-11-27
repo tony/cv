@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
-    "prettier": "prettier --write '{src,webpack}/*.{ts,scss,html}'",
-    "format": "yarn run prettier",
+    "prettier": "prettier",
+    "format": "yarn run prettier --write *",
     "update": "ng upgrade",
     "ncu": "ncu",
     "clean": "rm -rf dist/"
