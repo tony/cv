@@ -1,9 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "files": ["custom.d.ts", "index.ts", "slider.ts"],
-  "include": [
-    "components/**/*"
-  ],
+  "include": ["*"],
   "compilerOptions": {
     "composite": true
   }
