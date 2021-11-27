@@ -1,6 +1,6 @@
 export enum Chart {
-  ReactVis = "react-vis",
   Carbon = "carbon",
+  ReactVis = "react-vis",
   Plotly = "plotly",
   Billboard = "billboard",
   Nivo = "nivo",
