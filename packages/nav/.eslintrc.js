@@ -17,6 +17,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "tsc"],
   rules: {
     "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-var-requires": 0,
     "tsc/config": [
       1,
       {
