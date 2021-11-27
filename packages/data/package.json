@@ -13,6 +13,7 @@
     "update": "echo 'NOOP'",
     "ncu": "echo 'NOOP'",
     "clean": "echo 'NOOP'",
+    "build": "echo 'NOOP'",
     "full-clean": "rm -rf scraped/"
   }
 }

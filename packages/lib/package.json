@@ -10,6 +10,7 @@
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "echo 'noop'",
+    "build": "echo 'noop'",
     "prettier": "prettier . --write"
   },
   "dependencies": {

@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "echo 'NOOP'",
     "test": "echo 'NOOP'",
+    "build": "echo 'NOOP'",
     "prettier": "prettier . --write",
     "format": "yarn run prettier",
     "update": "yarn run ncu",
