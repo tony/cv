@@ -8,7 +8,7 @@
     "build": "echo 'noop'",
     "test": "echo 'noop'",
     "lint": "eslint . -c .eslintrc.js --ext .ts,.tsx",
-    "prettier": "prettier src --write",
+    "prettier": "prettier . --write",
     "format": "yarn run prettier",
     "update": "yarn run ncu",
     "ncu": "ncu",
