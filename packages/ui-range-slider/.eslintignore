@@ -1,2 +1,3 @@
 ../lib/search/search.test.ts
 ../lib/search/index.ts
+*.d.ts
