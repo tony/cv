@@ -1,5 +1,4 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import type { CSSResult, TemplateResult } from "lit";
+import { CSSResult, LitElement, html, css, TemplateResult, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 // import style from "!!raw-loader!sass-loader!./nav.scss";
@@ -57,7 +56,7 @@ export class CVNav extends LitElement {
   static get styles(): CSSResult[] {
     const styleModule = require("./nav.scss");
     const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default;
-    const style = styleOther  ?? styleModule ?? "";
+    const style = styleOther ?? styleModule ?? "";
 
     return [
       css`
