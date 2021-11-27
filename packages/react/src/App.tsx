@@ -90,7 +90,8 @@ const App: React.FC = () => {
 
         // Counts
         languageCount: (await query.getVisibleLanguageCount()) as LanguageCount,
-        activityCount: (await query.getVisibleActivityYearCount()) as ActivityCount,
+        activityCount:
+          (await query.getVisibleActivityYearCount()) as ActivityCount,
       });
     }
     return void 0;

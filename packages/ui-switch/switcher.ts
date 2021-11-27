@@ -96,6 +96,8 @@ export class Switcher extends LitElement {
   }
 
   render(): TemplateResult {
-    return html`<label><input type="checkbox" id="switch" name="switch" /><slot></slot></label>`;
+    return html`
+      <label><input type="checkbox" id="switch" name="switch"/><slot></slot></label>
+    `;
   }
 }

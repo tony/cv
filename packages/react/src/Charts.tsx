@@ -19,7 +19,7 @@ const ChartLinks: React.FC<
         {idx > 0 && ", "}
         <a
           href="#"
-          onClick={() => setChart((c as unknown) as Chart)}
+          onClick={() => setChart(c as unknown as Chart)}
           {...(c === chart && { className: "active" })}
         >
           {c}

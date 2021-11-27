@@ -7,7 +7,8 @@ $bg-color-700: darken($bg-color, 20);
 $bg-color-800: darken($bg-color, 30);
 $bg-color-900: darken($bg-color, 40);
 
-#our-nav, nav {
+#our-nav,
+nav {
   background: $bg-color;
   display: flex;
   place-items: center;
@@ -28,19 +29,23 @@ $bg-color-900: darken($bg-color, 40);
     }
 
     @media (max-width: 375px) {
-      .header--lastname, .header--version, .header--super {
+      .header--lastname,
+      .header--version,
+      .header--super {
         display: none;
       }
     }
 
     @media (max-width: 1023px) {
-      .header--version, .header--super {
+      .header--version,
+      .header--super {
         display: none;
       }
     }
   }
 
-  > div, > ul {
+  > div,
+  > ul {
     font-size: 0.8rem;
     display: inline-flex;
   }
@@ -55,7 +60,7 @@ $bg-color-900: darken($bg-color, 40);
     background: $bg-color;
     padding: 0 1rem;
     @media (max-width: 768px) {
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
     }
     height: var(--nav-height);
     color: #fff;
@@ -66,7 +71,7 @@ $bg-color-900: darken($bg-color, 40);
     place-items: center;
 
     img {
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
     }
 
     @media (max-width: 481px) {
@@ -98,7 +103,8 @@ $bg-color-900: darken($bg-color, 40);
   ul li ul.submenu {
     li {
       background: $bg-color-400;
-      &:hover, &.active {
+      &:hover,
+      &.active {
         background: $bg-color;
         &.section-title {
           background: $bg-color-400;

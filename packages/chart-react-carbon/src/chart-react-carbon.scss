@@ -1,4 +1,5 @@
-.callouts { // https://github.com/carbon-design-system/carbon-charts/issues/917
+.callouts {
+  // https://github.com/carbon-design-system/carbon-charts/issues/917
   display: none;
 }
 
@@ -13,7 +14,8 @@
     // center
     justify-self: center;
 
-    .chart-holder {  // Prevent white space from overlapping with stuff above
+    .chart-holder {
+      // Prevent white space from overlapping with stuff above
       z-index: -10;
     }
   }

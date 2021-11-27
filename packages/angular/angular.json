@@ -99,7 +99,7 @@
               { "glob": "favicon.ico", "input": "../data/img/", "output": "/" },
               { "glob": "**/*", "input": "../data/img/", "output": "/assets/img/" }
             ],
-            "styles": ["../ui/styles/style.scss" ],
+            "styles": ["../ui/styles/style.scss"],
             "scripts": []
           }
         },

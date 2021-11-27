@@ -120,6 +120,8 @@ export class RangeSlider extends LitElement {
   }
 
   render(): TemplateResult {
-    return html` <div id="range"></div> `;
+    return html`
+      <div id="range"></div>
+    `;
   }
 }

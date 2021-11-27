@@ -274,23 +274,24 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
-export const ActivityTypeOption: React.FC<OptionProps<IOptionType, boolean>> =
-  ({ children, ...props }) => {
-    const activityType = activityTypesQuery.getEntity(props.data?.value);
-    if (!activityType) {
-      console.warn(`activityType ${props?.data?.value} could not be found`);
-      return null;
-    }
-    return (
-      <ReactSelectComponents.Option
-        {...props}
-        className="dropdownActivityTypeOption"
-      >
-        {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
-        {children}
-      </ReactSelectComponents.Option>
-    );
-  };
+export const ActivityTypeOption: React.FC<
+  OptionProps<IOptionType, boolean>
+> = ({ children, ...props }) => {
+  const activityType = activityTypesQuery.getEntity(props.data?.value);
+  if (!activityType) {
+    console.warn(`activityType ${props?.data?.value} could not be found`);
+    return null;
+  }
+  return (
+    <ReactSelectComponents.Option
+      {...props}
+      className="dropdownActivityTypeOption"
+    >
+      {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
+      {children}
+    </ReactSelectComponents.Option>
+  );
+};
 
 export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
   children,
