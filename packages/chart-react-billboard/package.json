@@ -17,8 +17,8 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
+    "@types/node": "^16.11.10",
+    "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.27.0",
@@ -35,7 +35,7 @@
   "dependencies": {
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
-    "billboard.js": "^3.2.1",
+    "billboard.js": "^3.2.2",
     "fast-deep-equal": "^3.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
