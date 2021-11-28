@@ -1,6 +1,8 @@
 Tony Narlock's CV
 =================
 
+This is the first version of the CV, to see v2 view [`master`](https://github.com/tony/cv/tree/master).
+
 Quickstart
 ----------
 
