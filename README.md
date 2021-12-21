@@ -108,6 +108,9 @@ Create a [GitHub Personal Access Token] and set it in env, ideally _.bashrc_ / _
 / etc. via `export GITHUB_API_TOKEN=INSERT_TOKEN_HERE`. Check `env | grep GITHUB_API` to verify
 terminal has the variable set.
 
+For CI systems like GitHub actions, use `CI_GITHUB_API_TOKEN` since variables
+with `GITHUB_*` are prohibited.
+
 Edit your username in `packages/scripts/github.ts` and run `yarn github` in the
 project root.
 
@@ -226,7 +229,6 @@ yarn workspaces run lint
   [packages/ui/]: packages/ui/
   [packages/ui-range-slider/]: packages/ui-range-slider/
   [packages/ui-switch/]: packages/ui-switch/
-
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
 

@@ -96,7 +96,7 @@ jobs:
     - name: pull gh repos
       if: env.PUBLISH == 'true'
       run: |
-        env GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
+        env GITHUB_API_TOKEN=${{ secrets.CI_GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
     - name: react
       if: env.PUBLISH == 'true' && (steps.changes.outputs.react == 'true' || steps.changes.outputs.common == 'true')
       run: |
