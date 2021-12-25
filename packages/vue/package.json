@@ -39,7 +39,7 @@
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.5.1",
     "raw-loader": "^4.0.2",
-    "sass-loader": "^12.3.0",
+    "sass-loader": "^12.4.0",
     "source-map-loader": "^3.0.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
