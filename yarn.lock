@@ -4343,13 +4343,6 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/bonjour@*":
-  version "3.5.9"
-  resolved "https://registry.yarnpkg.com/@types/bonjour/-/bonjour-3.5.9.tgz#3cc4e5135dbb5940fc6051604809234612f89cb4"
-  integrity sha512-VkZUiYevvtPyFu5XtpYw9a8moCSzxgjs5PAFF4yXjA7eYHvzBlXe+eJdqBBNWWVzI1r7Ki0KxMYvaQuhm+6f5A==
-  dependencies:
-    "@types/node" "*"
-
 "@types/bonjour@^3.5.9":
   version "3.5.10"
   resolved "https://registry.yarnpkg.com/@types/bonjour/-/bonjour-3.5.10.tgz#0f6aadfe00ea414edc86f5d106357cda9701e275"
@@ -4407,7 +4400,7 @@
   resolved "https://registry.yarnpkg.com/@types/command-line-usage/-/command-line-usage-5.0.2.tgz#ba5e3f6ae5a2009d466679cc431b50635bf1a064"
   integrity sha512-n7RlEEJ+4x4TS7ZQddTmNSxP+zziEG0TNsMfiRIxcIVXt71ENJ9ojeXmGO3wPoTdn7pJcU2xc3CJYMktNT6DPg==
 
-"@types/connect-history-api-fallback@*", "@types/connect-history-api-fallback@^1.3.5":
+"@types/connect-history-api-fallback@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz#d1f7a8a09d0ed5a57aee5ae9c18ab9b803205dae"
   integrity sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==
@@ -4570,10 +4563,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jasmine@^3.10.2":
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.10.2.tgz#1b9f9ba9ad7bfd7d322f7ed9d8753220b1c84b52"
-  integrity sha512-qs4xjVm4V/XjM6owGm/x6TNmhGl5iKX8dkTdsgdgl9oFnqgzxLepnS7rN9Tdo7kDmnFD/VEqKrW57cGD2odbEg==
+"@types/jasmine@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.10.3.tgz#a89798b3d5a8bd23ca56e855a9aee3e5a93bdaaa"
+  integrity sha512-SWyMrjgdAUHNQmutvDcKablrJhkDLy4wunTme8oYLjKp41GnHGxMRXr2MQMvy/qy8H3LdzwQk9gH4hZ6T++H8g==
 
 "@types/jest@^27.4.0":
   version "27.4.0"
@@ -4694,10 +4687,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.3.tgz#0c30adff37bbbc7a50eb9b58fae2a504d0d88038"
   integrity sha512-8h7k1YgQKxKXWckzFCMfsIwn0Y61UK6tlD6y2lOb3hTOIMlK3t9/QwHOhc81TwU+RMf0As5fj7NPjroERCnejQ==
 
-"@types/node@^17.0.6":
-  version "17.0.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.6.tgz#cc1589c9ee853b389e67e8fb4384e0f250a139b9"
-  integrity sha512-+XBAjfZmmivILUzO0HwBJoYkAyyySSLg5KCGBDFLomJo0sV6szvVLAf4ANZZ0pfWzgEds5KmGLG9D5hfEqOhaA==
+"@types/node@^17.0.8":
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.8.tgz#50d680c8a8a78fe30abe6906453b21ad8ab0ad7b"
+  integrity sha512-YofkM6fGv4gDJq78g4j0mMuGMkZVxZDgtU0JRdx6FgiJDG+0fY0GKVolOV8WqVmEhLCXkQRjwDdKyPxJp/uucg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -4709,10 +4702,10 @@
   resolved "https://registry.yarnpkg.com/@types/path-is-inside/-/path-is-inside-1.0.0.tgz#02d6ff38975d684bdec96204494baf9f29f0e17f"
   integrity sha512-hfnXRGugz+McgX2jxyy5qz9sB21LRzlGn24zlwN2KEgoPtEvjzNRrLtUkOOebPDPZl3Rq7ywKxYvylVcEZDnEw==
 
-"@types/plotly.js@^1.54.18":
-  version "1.54.18"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.18.tgz#533ea4502620fe9a80e3dece8b2ece14d215497a"
-  integrity sha512-mtDRoEAD23rFJnTt/eKAIGAJ2QS5lVOycmXkWyol0rAalejrXnlEouHfqoA5imGusyovBjort4pEfT+TjFAJvA==
+"@types/plotly.js@^1.54.19":
+  version "1.54.19"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-1.54.19.tgz#422a399d54237d67f84e47a980c13981c1fa6b22"
+  integrity sha512-kz/YJg6SJ+tQfyEmclsWvlQnDpM5lr4aZsDdmAtMNcQSYh5LkYIRHS3/ouY487WjYAL9j5KO6xylR42DGi1ERw==
   dependencies:
     "@types/d3" "^3"
 
@@ -4819,7 +4812,7 @@
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.19.tgz#28ecede76f15b13553b4e86074d4cf9a0bbe49c4"
   integrity sha512-OFUilxQg+rWL2FMxtmIgCkUDlJB6pskkpvmew7yeXfzzsOBb5rc+y2+DjHm+r3r1ZPPcJefK3DveNSYWGiy68g==
 
-"@types/serve-index@*", "@types/serve-index@^1.9.1":
+"@types/serve-index@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@types/serve-index/-/serve-index-1.9.1.tgz#1b5e85370a192c01ec6cec4735cf2917337a6278"
   integrity sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg==
@@ -4868,27 +4861,12 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/webpack-dev-middleware@^5.0.2":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-middleware/-/webpack-dev-middleware-5.3.0.tgz#4d65e1b6058e460bd6cfa3b45320e86654890c1c"
-  integrity sha512-SklLlklFBfTyIXo1iWXxzeytjlysWfj5QfIcRJrCc7MgzuCjnZOHXviQwe81iFGq9ZkCUXAg2fpbZdHhj5lSWA==
+"@types/webpack-dev-server@^4.7.1":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.7.2.tgz#a12d9881aa23cdd4cecbb2d31fa784a45c4967e0"
+  integrity sha512-Y3p0Fmfvp0MHBDoCzo+xFJaWTw0/z37mWIo6P15j+OtmUDLvznJWdZNeD7Q004R+MpQlys12oXbXsrXRmxwg4Q==
   dependencies:
-    webpack-dev-middleware "*"
-
-"@types/webpack-dev-server@^4.5.1":
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.5.1.tgz#6f4adae500ed331292629443178d4f6b1c8d8bd8"
-  integrity sha512-NT5nGLIQsmGe6xucpqEEqrwM7E4UJo4Jxz+27DLjtJJg4QRKICmXs6DGKDC2I9HFleJV97mTglUMx4PjSBWBAw==
-  dependencies:
-    "@types/bonjour" "*"
-    "@types/connect-history-api-fallback" "*"
-    "@types/express" "*"
-    "@types/serve-index" "*"
-    "@types/serve-static" "*"
-    "@types/webpack-dev-middleware" "^5.0.2"
-    chokidar "^3.5.1"
-    http-proxy-middleware "^2.0.0"
-    webpack "*"
+    webpack-dev-server "*"
 
 "@types/webpack-sources@*":
   version "2.1.1"
@@ -6533,7 +6511,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-"chokidar@>=3.0.0 <4.0.0", chokidar@^3.0.0, chokidar@^3.4.0, chokidar@^3.4.3, chokidar@^3.5.1, chokidar@^3.5.2:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.0.0, chokidar@^3.4.0, chokidar@^3.4.3, chokidar@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
   integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
@@ -17553,17 +17531,6 @@ webpack-cli@4.9.1, webpack-cli@^4.9.1:
     rechoir "^0.7.0"
     webpack-merge "^5.7.3"
 
-webpack-dev-middleware@*, webpack-dev-middleware@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.3.0.tgz#8fc02dba6e72e1d373eca361623d84610f27be7c"
-  integrity sha512-MouJz+rXAm9B1OTOYaJnn6rtD/lWZPy2ufQCH3BPs8Rloh/Du6Jze4p7AeLYHkVi0giJnYLaSGDC7S+GM9arhg==
-  dependencies:
-    colorette "^2.0.10"
-    memfs "^3.2.2"
-    mime-types "^2.1.31"
-    range-parser "^1.2.1"
-    schema-utils "^4.0.0"
-
 webpack-dev-middleware@5.2.1, webpack-dev-middleware@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.2.1.tgz#97c948144349177856a3d2d9c612cc3fee180cf1"
@@ -17585,6 +17552,52 @@ webpack-dev-middleware@5.2.2:
     mime-types "^2.1.31"
     range-parser "^1.2.1"
     schema-utils "^4.0.0"
+
+webpack-dev-middleware@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.3.0.tgz#8fc02dba6e72e1d373eca361623d84610f27be7c"
+  integrity sha512-MouJz+rXAm9B1OTOYaJnn6rtD/lWZPy2ufQCH3BPs8Rloh/Du6Jze4p7AeLYHkVi0giJnYLaSGDC7S+GM9arhg==
+  dependencies:
+    colorette "^2.0.10"
+    memfs "^3.2.2"
+    mime-types "^2.1.31"
+    range-parser "^1.2.1"
+    schema-utils "^4.0.0"
+
+webpack-dev-server@*, webpack-dev-server@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.7.2.tgz#324b79046491f2cf0b9d9e275381198c8246b380"
+  integrity sha512-s6yEOSfPpB6g1T2+C5ZOUt5cQOMhjI98IVmmvMNb5cdiqHoxSUfACISHqU/wZy+q4ar/A9jW0pbNj7sa50XRVA==
+  dependencies:
+    "@types/bonjour" "^3.5.9"
+    "@types/connect-history-api-fallback" "^1.3.5"
+    "@types/serve-index" "^1.9.1"
+    "@types/sockjs" "^0.3.33"
+    "@types/ws" "^8.2.2"
+    ansi-html-community "^0.0.8"
+    bonjour "^3.5.0"
+    chokidar "^3.5.2"
+    colorette "^2.0.10"
+    compression "^1.7.4"
+    connect-history-api-fallback "^1.6.0"
+    default-gateway "^6.0.3"
+    del "^6.0.0"
+    express "^4.17.1"
+    graceful-fs "^4.2.6"
+    html-entities "^2.3.2"
+    http-proxy-middleware "^2.0.0"
+    ipaddr.js "^2.0.1"
+    open "^8.0.9"
+    p-retry "^4.5.0"
+    portfinder "^1.0.28"
+    schema-utils "^4.0.0"
+    selfsigned "^1.10.11"
+    serve-index "^1.9.1"
+    sockjs "^0.3.21"
+    spdy "^4.0.2"
+    strip-ansi "^7.0.0"
+    webpack-dev-middleware "^5.3.0"
+    ws "^8.1.0"
 
 webpack-dev-server@4.4.0:
   version "4.4.0"
@@ -17648,41 +17661,6 @@ webpack-dev-server@4.6.0:
     webpack-dev-middleware "^5.2.1"
     ws "^8.1.0"
 
-webpack-dev-server@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.7.2.tgz#324b79046491f2cf0b9d9e275381198c8246b380"
-  integrity sha512-s6yEOSfPpB6g1T2+C5ZOUt5cQOMhjI98IVmmvMNb5cdiqHoxSUfACISHqU/wZy+q4ar/A9jW0pbNj7sa50XRVA==
-  dependencies:
-    "@types/bonjour" "^3.5.9"
-    "@types/connect-history-api-fallback" "^1.3.5"
-    "@types/serve-index" "^1.9.1"
-    "@types/sockjs" "^0.3.33"
-    "@types/ws" "^8.2.2"
-    ansi-html-community "^0.0.8"
-    bonjour "^3.5.0"
-    chokidar "^3.5.2"
-    colorette "^2.0.10"
-    compression "^1.7.4"
-    connect-history-api-fallback "^1.6.0"
-    default-gateway "^6.0.3"
-    del "^6.0.0"
-    express "^4.17.1"
-    graceful-fs "^4.2.6"
-    html-entities "^2.3.2"
-    http-proxy-middleware "^2.0.0"
-    ipaddr.js "^2.0.1"
-    open "^8.0.9"
-    p-retry "^4.5.0"
-    portfinder "^1.0.28"
-    schema-utils "^4.0.0"
-    selfsigned "^1.10.11"
-    serve-index "^1.9.1"
-    sockjs "^0.3.21"
-    spdy "^4.0.2"
-    strip-ansi "^7.0.0"
-    webpack-dev-middleware "^5.3.0"
-    ws "^8.1.0"
-
 webpack-merge@5.8.0, webpack-merge@^5.7.3:
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-5.8.0.tgz#2b39dbf22af87776ad744c390223731d30a68f61"
@@ -17707,36 +17685,6 @@ webpack-subresource-integrity@5.0.0:
   integrity sha512-x9514FpLRydO+UAQ8DY4aLtCjxmdLkuQVcDFN1kGzuusREYJ1B0rzk/iIlWiL6dnvrhEGFj2+UsdxDkP8Z4UKg==
   dependencies:
     typed-assert "^1.0.8"
-
-webpack@*:
-  version "5.58.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.58.1.tgz#df8aad72b617a9d0db8c89d4f410784ee93320d7"
-  integrity sha512-4Z/dmbTU+VmkCb2XNgW7wkE5TfEcSooclprn/UEuVeAkwHhn07OcgUsyaKHGtCY/VobjnsYBlyhKeMLiSoOqPg==
-  dependencies:
-    "@types/eslint-scope" "^3.7.0"
-    "@types/estree" "^0.0.50"
-    "@webassemblyjs/ast" "1.11.1"
-    "@webassemblyjs/wasm-edit" "1.11.1"
-    "@webassemblyjs/wasm-parser" "1.11.1"
-    acorn "^8.4.1"
-    acorn-import-assertions "^1.7.6"
-    browserslist "^4.14.5"
-    chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.8.3"
-    es-module-lexer "^0.9.0"
-    eslint-scope "5.1.1"
-    events "^3.2.0"
-    glob-to-regexp "^0.4.1"
-    graceful-fs "^4.2.4"
-    json-parse-better-errors "^1.0.2"
-    loader-runner "^4.2.0"
-    mime-types "^2.1.27"
-    neo-async "^2.6.2"
-    schema-utils "^3.1.0"
-    tapable "^2.1.1"
-    terser-webpack-plugin "^5.1.3"
-    watchpack "^2.2.0"
-    webpack-sources "^3.2.0"
 
 webpack@5.60.0:
   version "5.60.0"
