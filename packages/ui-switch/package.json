@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.6.0",
-    "a-simple-switch": "^0.6.0",
+    "a-simple-switch": "^0.7.0",
     "lit": "^2.1.1",
-    "sass": "^1.47.0"
+    "sass": "^1.48.0"
   }
 }
