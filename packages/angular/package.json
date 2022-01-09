@@ -46,7 +46,7 @@
     "codelyzer": "^6.0.2",
     "eslint-plugin-jsdoc": "37.4.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
-    "html-loader": "^3.0.1",
+    "html-loader": "^3.1.0",
     "prettier": "^2.5.1",
     "protractor": "~7.0.0",
     "raw-loader": "^4.0.2",
