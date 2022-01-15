@@ -56,6 +56,7 @@ export interface Results {
 }
 
 export const DEFAULT_FILTERS: CVState = {
+  showReleases: false,
   showTypos: false,
   showDocImprovements: false,
   showCodeStyleTweaks: false,
@@ -206,11 +207,13 @@ const filterActivitiesByFilters = (
   activities: IActivity[],
   activityTraits: Record<number, ActivityUI>,
   {
+    showReleases,
     showTypos,
     showDocImprovements,
     showCodeStyleTweaks,
     showUnmerged,
   }: {
+    showReleases?: boolean;
     showTypos?: boolean;
     showDocImprovements?: boolean;
     showCodeStyleTweaks?: boolean;
@@ -219,6 +222,9 @@ const filterActivitiesByFilters = (
 ) => {
   return activities.filter((activity: IActivity) => {
     const traits = activityTraits[activity.id];
+    if (!showReleases && traits.isRelease) {
+      return false;
+    }
     if (!showTypos && traits.isTypo) {
       return false;
     }
@@ -278,6 +284,7 @@ export class CVQuery extends Query<CVState> {
           });
           a = filterActivitiesByFilters(a, activityTraits, {
             showTypos: cv.showTypos,
+            showReleases: cv.showReleases,
             showDocImprovements: cv.showDocImprovements,
             showCodeStyleTweaks: cv.showCodeStyleTweaks,
             showUnmerged: cv.showUnmerged,

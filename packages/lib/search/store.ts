@@ -21,6 +21,7 @@ import type {
   IOrg,
 } from "@tony/cv-data/types";
 import {
+  isActivityRelease,
   isActivityTypoFix,
   isActivityDocImprovement,
   isActivityCodeStyleTweak,
@@ -28,6 +29,7 @@ import {
 } from "./utils";
 
 export type CVState = {
+  showReleases: boolean;
   showTypos: boolean;
   showDocImprovements: boolean;
   showCodeStyleTweaks: boolean;
@@ -39,6 +41,7 @@ import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 
 export interface ActivityUI {
   isOptionDisabled: boolean;
+  isRelease: boolean;
   isTypo: boolean;
   isDocImprovement: boolean;
   isCodeStyleTweak: boolean;
@@ -47,6 +50,7 @@ export interface ActivityUI {
 
 const ACTIVITY_UI_DEFAULTS: ActivityUI = {
   isOptionDisabled: false,
+  isRelease: false,
   isTypo: false,
   isDocImprovement: false,
   isCodeStyleTweak: false,
@@ -65,6 +69,7 @@ export type ActivitiesUIState = EntityState<ActivityUI>;
 const setUIDefaults = (activity: IActivity): ActivityUI => {
   return {
     ...ACTIVITY_UI_DEFAULTS,
+    isRelease: isActivityRelease(activity),
     isTypo: isActivityTypoFix(activity),
     isDocImprovement: isActivityDocImprovement(activity),
     isCodeStyleTweak: isActivityCodeStyleTweak(activity),
