@@ -27,6 +27,7 @@ const config = {
     "tmux-python",
     "vcs-python",
     "social-embed",
+    "develtech",
   ],
   gh_user: "tony",
   ignore_private_repos: true,
