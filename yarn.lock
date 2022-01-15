@@ -1607,10 +1607,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@datorama/akita@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-7.1.1.tgz#912cf78c190a765ac815adee16116b688dd1edc0"
-  integrity sha512-x/RgwleA1u/Z3ICL7OBSsiUByzIwSjAnx4IcdgIYS090wc2C94u4UG5mWP8Yx98NUS6mnFeHLUVllXP+BQsl1A==
+"@datorama/akita@^6.2.4":
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-6.2.4.tgz#13e883879dc29ac4e3a775dc39f361df53051ea7"
+  integrity sha512-bSaYvLn+OEfLIaqDd4Ur5fWy2L0TJyWPZU3SIbhDaCPN52M0upnk2GNPqIUyGLQem9LCzpwkIGW9mvafgEv93w==
   dependencies:
     schematics-utilities "^2.0.3"
 
