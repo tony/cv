@@ -12,7 +12,8 @@
     "ncu-local": "ncu",
     "prettier": "yarn workspaces run prettier",
     "update": "yarn workspaces run update",
-    "github": "yarn workspace @tony/cv-scripts run github"
+    "github": "yarn workspace @tony/cv-scripts run github",
+    "deduplicate": "npx yarn-deduplicate yarn.lock"
   },
   "workspaces": {
     "nohoist": [
