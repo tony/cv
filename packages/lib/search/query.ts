@@ -61,7 +61,7 @@ export const DEFAULT_FILTERS: CVState = {
   showCodeStyleTweaks: false,
   showUnmerged: false,
   startYear: 2007,
-  endYear: 2021,
+  endYear: 2022,
 };
 
 export const DEFAULT_RESULTS: Results = {
