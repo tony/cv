@@ -29,6 +29,7 @@ const config = {
     "tmux-python",
     "vcs-python",
     "social-embed",
+    "develtech",
   ],
   output_dir: "data/scraped",
   ignore_private_repos: true,
