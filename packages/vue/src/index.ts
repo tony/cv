@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex, { Commit, StoreOptions } from "vuex";
 
-import HelloComponent from "./components/Hello.vue";
+import HelloComponent from "./components/HelloWorld.vue";
 import HelloDecoratorComponent from "./components/HelloDecorator.vue";
 
 import type { IActivity } from "@tony/cv-data/types";

@@ -1,4 +1,4 @@
-<!-- src/components/Hello.vue -->
+<!-- src/components/HelloWorld.vue -->
 <template>
   <div>
     <div class="greeting">Hello {{ name }}{{ exclamationMarks }}</div>
