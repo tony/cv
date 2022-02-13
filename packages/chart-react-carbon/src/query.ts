@@ -1,9 +1,5 @@
 import type { Observable } from "rxjs";
-import {
-  ChartConfig,
-  DonutChartOptions,
-  LineChartOptions,
-} from "@carbon/charts/interfaces";
+import { ChartConfig, DonutChartOptions, LineChartOptions } from "@carbon/charts/interfaces";
 import {
   donutChartHeightWithUnit,
   donutChartWidthWithUnit,
@@ -37,6 +33,9 @@ const DONUT_CHART_DEFAULT_OPTIONS: DonutChartOptions = {
     enabled: false, // Disable for now: https://github.com/carbon-design-system/carbon-charts/issues/916
   },
   resizable: true,
+  toolbar: {
+    enabled: false,
+  },
   donut: {
     center: {
       label: "Results",
@@ -54,6 +53,9 @@ export const LINE_CHART_DEFAULT_OPTIONS: LineChartOptions = {
     enabled: false, // Disable for now: https://github.com/carbon-design-system/carbon-charts/issues/916
   },
   height: lineChartHeightWithUnit,
+  toolbar: {
+    enabled: false,
+  },
   axes: {
     left: {
       stacked: true,
@@ -97,14 +99,7 @@ export class CarbonChartQuery extends CVQuery {
     protected orgsQuery: OrgsQuery,
     protected orgTypesQuery: OrgTypesQuery
   ) {
-    super(
-      store,
-      activitiesQuery,
-      activityTypesQuery,
-      languagesQuery,
-      orgsQuery,
-      orgTypesQuery
-    );
+    super(store, activitiesQuery, activityTypesQuery, languagesQuery, orgsQuery, orgTypesQuery);
   }
 
   //
