@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.6.0",
-    "lit": "^2.1.4",
+    "lit": "^2.2.0",
     "nouislider": "^15.5.1",
-    "sass": "^1.49.7",
+    "sass": "^1.49.8",
     "sass-loader": "^12.4.0"
   }
 }
