@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "github-colors": "^2.2.19",
+    "github-colors": "^2.2.20",
     "github-graphql-client": "^1.0.0",
     "invert-color": "^2.0.0",
     "moment": "^2.29.1",
