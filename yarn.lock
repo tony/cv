@@ -42,9 +42,6 @@
   version "0.1301.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1301.3.tgz#197f92c984adf22776798ce568e64396e464a03d"
   integrity sha512-fFSevgYGZHCybYoyTkZ9b1YCSthBmoi77alwWjqMhYXUNXx7yx50zJZ6Ur2v3YpctVjU6eoGc5FDFyVHwXT0Iw==
-  dependencies:
-    "@angular-devkit/core" "13.1.3"
-    rxjs "6.6.7"
 
 "@angular-devkit/architect@0.1302.5":
   version "0.1302.5"
@@ -4626,10 +4623,10 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.3.2.tgz#c5ba3b946aa4e98ad22e2aabafa4cec5042b2630"
-  integrity sha512-uqNQy8rb/wrt6Yscign8ILh/VsBr55P4WXJugQMNHF1ksSE3kRBMj1Bz3ac7o6hB3O94ztQhbmHcS5evMTpvtA==
+billboard.js@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.3.3.tgz#18c9b3bde2af25ff3147c953845f40d3c5f2f1bd"
+  integrity sha512-ciwsCXtdZt0dtScP4/lCeLnugiWNNrY++gv64m35jXIf2hH92PQEm/56SXcBuvsCmrH2FYpl0uDOxcWN/QALfw==
   dependencies:
     d3-axis "^3.0.0"
     d3-brush "^3.0.0"
@@ -4977,10 +4974,10 @@ carbon-components@10.40.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@^10.53.0:
-  version "10.53.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.53.0.tgz#260d77550a6f33b6cf69e3e61ce0be8089308f48"
-  integrity sha512-w1my4Jm//CYeraDM002TT/rMULxDSJ8wG0MCWPHGXFF/9OPHVGWo9idbLppM3lCS/PMfl/gpLvfpUVedFr7Yfw==
+carbon-components@^10.54.0:
+  version "10.54.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.54.0.tgz#f70d0a9fcc7e84f8fb00a45b6b9894d77155acce"
+  integrity sha512-gl0b4wRG1E/ns02nG/M0FaNm4FCT91iTr1XFzqY+h1wFsjG1/2OOu7A6lth8Qtk0jsr//YZcB0MNjq8WFaFciw==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"
@@ -7613,22 +7610,22 @@ eslint-plugin-promise@^6.0.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-6.0.0.tgz#017652c07c9816413a41e11c30adc42c3d55ff18"
   integrity sha512-7GPezalm5Bfi/E22PnQxDWH2iW9GTvAlUNTztemeHb6c1BniSyoeTrM87JkC0wYdi6aQrZX9p2qEiAno8aTcbw==
 
-eslint-plugin-react@^7.28.0:
-  version "7.28.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.28.0.tgz#8f3ff450677571a659ce76efc6d80b6a525adbdf"
-  integrity sha512-IOlFIRHzWfEQQKcAD4iyYDndHwTQiCMcJVJjxempf203jnNLUnW34AXLrV33+nEXoifJE2ZEGmcjKPL8957eSw==
+eslint-plugin-react@^7.29.2:
+  version "7.29.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.2.tgz#2d4da69d30d0a736efd30890dc6826f3e91f3f7c"
+  integrity sha512-ypEBTKOy5liFQXZWMchJ3LN0JX1uPI6n7MN7OPHKacqXAxq5gYC30TdO7wqGYQyxD1OrzpobdHC3hDmlRWDg9w==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flatmap "^1.2.5"
     doctrine "^2.1.0"
     estraverse "^5.3.0"
     jsx-ast-utils "^2.4.1 || ^3.0.0"
-    minimatch "^3.0.4"
+    minimatch "^3.1.2"
     object.entries "^1.1.5"
     object.fromentries "^2.0.5"
     object.hasown "^1.1.0"
     object.values "^1.1.5"
-    prop-types "^15.7.2"
+    prop-types "^15.8.1"
     resolve "^2.0.0-next.3"
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
@@ -10923,6 +10920,13 @@ minimatch@3.0.4, minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
+minimatch@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
+  integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
+  dependencies:
+    brace-expansion "^1.1.7"
+
 minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
@@ -12838,7 +12842,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -13699,10 +13703,10 @@ sass@1.49.0:
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
-sass@^1.49.8:
-  version "1.49.8"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.8.tgz#9bbbc5d43d14862db07f1c04b786c9da9b641828"
-  integrity sha512-NoGOjvDDOU9og9oAxhRnap71QaTjjlzrvLnKecUJ3GxhaQBrV6e7gPuSPF28u1OcVAArVojPAe4ZhOXwwC4tGw==
+sass@^1.49.9:
+  version "1.49.9"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.9.tgz#b15a189ecb0ca9e24634bae5d1ebc191809712f9"
+  integrity sha512-YlYWkkHP9fbwaFRZQRXgDi3mXZShslVmmo+FVK3kHLUELHHEYrCmL1x6IUjC7wLS6VuJSAFXRQS/DxdsC4xL1A==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
