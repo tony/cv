@@ -19,8 +19,8 @@
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "sass-loader": "^12.4.0",
-    "ts-node": "^10.5.0",
-    "typescript": "^4.5.5"
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
