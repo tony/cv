@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
+    "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.29.3",
@@ -33,11 +33,11 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@carbon/charts": "0.54.12",
-    "@carbon/charts-react": "0.54.12",
+    "@carbon/charts": "0.54.13",
+    "@carbon/charts-react": "0.54.13",
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
-    "carbon-components": "^10.54.0",
+    "carbon-components": "^10.55.1",
     "d3": "^7.3.0",
     "d3-selection": "^3.0.0",
     "dom-to-image": "^2.6.0",
