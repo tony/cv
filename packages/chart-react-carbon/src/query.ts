@@ -1,5 +1,9 @@
 import type { Observable } from "rxjs";
-import { ChartConfig, DonutChartOptions, LineChartOptions } from "@carbon/charts/interfaces";
+import {
+  ChartConfig,
+  DonutChartOptions,
+  LineChartOptions,
+} from "@carbon/charts/interfaces";
 import {
   donutChartHeightWithUnit,
   donutChartWidthWithUnit,
@@ -99,7 +103,14 @@ export class CarbonChartQuery extends CVQuery {
     protected orgsQuery: OrgsQuery,
     protected orgTypesQuery: OrgTypesQuery
   ) {
-    super(store, activitiesQuery, activityTypesQuery, languagesQuery, orgsQuery, orgTypesQuery);
+    super(
+      store,
+      activitiesQuery,
+      activityTypesQuery,
+      languagesQuery,
+      orgsQuery,
+      orgTypesQuery
+    );
   }
 
   //

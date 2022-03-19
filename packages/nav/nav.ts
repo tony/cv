@@ -94,11 +94,7 @@ export class CVNav extends LitElement {
                 <a href="https://cv-react-v2.git-pull.com/"
                   >v2
                   (2021)${
-                    this.framework == Framework.React
-                      ? html`
-                          -&nbsp;<strong>You are here</strong>
-                        `
-                      : ""
+                    this.framework == Framework.React ? html` -&nbsp;<strong>You are here</strong> ` : ""
                   }
                 </a>
               </li>
@@ -124,11 +120,7 @@ export class CVNav extends LitElement {
                 <a href="https://cv-vue-v2.git-pull.com/"
                   >v2
                   (2021)${
-                    this.framework == Framework.Vue
-                      ? html`
-                          -&nbsp;<strong>You are here</strong>
-                        `
-                      : ""
+                    this.framework == Framework.Vue ? html` -&nbsp;<strong>You are here</strong> ` : ""
                   }</a
                 >
               </li>
