@@ -37,7 +37,7 @@
     "@carbon/charts-react": "0.55.1",
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
-    "carbon-components": "^10.55.2",
+    "carbon-components": "^10.56.0",
     "d3": "^7.3.0",
     "d3-selection": "^3.0.0",
     "dom-to-image": "^2.6.0",
