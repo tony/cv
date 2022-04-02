@@ -44,7 +44,7 @@
     "@types/jasmine": "^4.0.2",
     "@types/node": "^17.0.23",
     "codelyzer": "^6.0.2",
-    "eslint-plugin-jsdoc": "38.1.4",
+    "eslint-plugin-jsdoc": "38.1.6",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "html-loader": "^3.1.0",
     "prettier": "^2.6.1",
