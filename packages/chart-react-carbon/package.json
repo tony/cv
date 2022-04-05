@@ -38,7 +38,7 @@
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
     "carbon-components": "^11.0.0",
-    "d3": "^7.4.1",
+    "d3": "^7.4.2",
     "d3-selection": "^3.0.0",
     "dom-to-image": "^2.6.0",
     "fast-deep-equal": "^3.1.3",
