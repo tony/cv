@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.6.0",
-    "lit": "^2.2.1",
+    "lit": "^2.2.2",
     "sass": "^1.50.0"
   }
 }
