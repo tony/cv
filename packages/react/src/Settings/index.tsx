@@ -16,7 +16,9 @@ export interface SettingsContextInterface {
 export const SettingsContext =
   React.createContext<SettingsContextInterface | null>(null);
 
-export const SettingsContextProvider: React.FC = ({ children }) => {
+export const SettingsContextProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
   const [showChartsMobile, setShowChartsMobile] =
     React.useState<boolean>(false);
   const [showOptionsMobile, setShowOptionsMobile] =

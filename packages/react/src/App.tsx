@@ -64,7 +64,9 @@ const fetchData: fetchDataFn = async () => {
   return import(/* webpackChunkName: "cvData" */ "@tony/cv-data/raw");
 };
 
-const AppContainer: React.FC = ({ children }) => {
+const AppContainer: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   return (
     <div>
       <cv-nav />
