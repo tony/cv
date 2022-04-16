@@ -17,7 +17,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^17.0.24",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/react-vis": "^1.11.10",
