@@ -1577,19 +1577,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.56.0":
-  version "0.56.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.56.0.tgz#15455d19f33a5d83837fb1a283633b13d8111c19"
-  integrity sha512-jYEzByeSM0ecA6DidW+3gXHdwTtOM0Nt2N1if5bwLNy5ysgIVpbR1Wyml8h/GyMEM+U/QLkAojBi5CV+NDN+HQ==
+"@carbon/charts-react@0.57.0":
+  version "0.57.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.57.0.tgz#c4d3e6455d453be7751f6304fad707491d789007"
+  integrity sha512-uUGN0YlgPlxAjfNIg6tjM/MmMu/TLU8aJdxRUpHWGWD+Em9xnnOlu/A69TWO7tIaAkrXqrNl0tqN1Aaa9ep2eg==
   dependencies:
-    "@carbon/charts" "^0.56.0"
+    "@carbon/charts" "^0.57.0"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@0.56.0", "@carbon/charts@^0.56.0":
-  version "0.56.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.56.0.tgz#722d58f0e2040bbaf6c05756967a947c9a87b335"
-  integrity sha512-FWnq8YGya2ZnzfkbPERav600S+567fz0dWbsIyyNbtt77YMJTo3E0UbyJIQVq7XcAIQsjP0Ga9o9rNLWyKq/3A==
+"@carbon/charts@0.57.0", "@carbon/charts@^0.57.0":
+  version "0.57.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.57.0.tgz#800fbe6d2d09f87da38ad407f4343fa36e1b4b2c"
+  integrity sha512-kduwghCKx89ZZxKQ95Y0ohfDGPyJhCW3m7AWY7C9hoSPRAdSqAwjjkbgmH0+3uns95hpRbb+PT5KROHuq7dAQQ==
   dependencies:
     "@carbon/colors" "10.29.0"
     "@carbon/telemetry" "0.1.0"
@@ -6048,7 +6048,7 @@ d3-zoom@3, d3-zoom@^3.0.0:
     d3-selection "2 - 3"
     d3-transition "2 - 3"
 
-d3@^7.4.2:
+d3@^7.4.4:
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/d3/-/d3-7.4.4.tgz#bfbf87487c37d3196efebd5a63e3a0ed8299d8ff"
   integrity sha512-97FE+MYdAlV3R9P74+R3Uar7wUKkIFu89UWMjEaDhiJ9VxKvqaMxauImy8PC2DdBkdM2BxJOIoLxPrcZUyrKoQ==
