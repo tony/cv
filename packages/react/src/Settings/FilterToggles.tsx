@@ -28,6 +28,16 @@ export const FilterToggles: React.FC = () => {
       });
     }
   };
+  const onShowCIContributionsChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const checked = e?.target?.checked;
+    if (checked !== null) {
+      cvState.setSearchOptions({
+        showCI: checked,
+      });
+    }
+  };
   const onShowDocumentationContributionsChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -61,6 +71,9 @@ export const FilterToggles: React.FC = () => {
 
   return (
     <div className="toggles">
+      <Toggle id="show-ci" onChange={onShowCIContributionsChange} />
+      <label htmlFor="show-ci">CI</label>
+
       <Toggle
         id="show-documentation"
         onChange={onShowDocumentationContributionsChange}

@@ -1,9 +1,6 @@
 import getYear from "date-fns/getYear";
 import { configure } from "mobx";
-import {
-  types,
-  SnapshotIn,
-} from "mobx-state-tree";
+import { types, SnapshotIn } from "mobx-state-tree";
 import { Instance, applySnapshot } from "mobx-state-tree";
 import moment from "moment";
 
@@ -30,6 +27,7 @@ export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
   showTypos: false,
   showDocImprovements: false,
   showCodeStyleTweaks: false,
+  showCI: false,
   showUnmerged: false,
   startYear: 2007,
   endYear: 2022,
@@ -45,6 +43,7 @@ export const ActivityMeta = types.model("ActivityMeta", {
   isTypo: types.boolean,
   isDocImprovement: types.boolean,
   isCodeStyleTweak: types.boolean,
+  isCI: types.boolean,
   isMerged: types.boolean,
 });
 
@@ -54,6 +53,7 @@ export const activityUI = ActivityMeta.create({
   isTypo: false,
   isDocImprovement: false,
   isCodeStyleTweak: false,
+  isCI: false,
   isMerged: false,
 });
 
@@ -120,6 +120,7 @@ export const Activity = types
         isTypo: matchers.isActivityTypoFix(activity),
         isDocImprovement: matchers.isActivityDocImprovement(activity),
         isCodeStyleTweak: matchers.isActivityCodeStyleTweak(activity),
+        isCI: matchers.isActivityCI(activity),
         isMerged:
           activity.activityType == "Patch"
             ? matchers.isActivityMerged(activity)
@@ -133,6 +134,7 @@ export const SearchOptions = types.model("SearchOptions", {
   showTypos: types.boolean,
   showDocImprovements: types.boolean,
   showCodeStyleTweaks: types.boolean,
+  showCI: types.boolean,
   showUnmerged: types.boolean,
   startYear: types.number,
   endYear: types.number,
@@ -183,6 +185,7 @@ export const filterActivitiesByFilters = (
     showTypos,
     showDocImprovements,
     showCodeStyleTweaks,
+    showCI,
     showUnmerged,
     languages,
     orgs,
@@ -239,6 +242,9 @@ export const filterActivitiesByFilters = (
         return false;
       }
       if (!showCodeStyleTweaks && activity.meta.isCodeStyleTweak) {
+        return false;
+      }
+      if (!showCI && activity.meta.isCI) {
         return false;
       }
       if (!showUnmerged && !activity.meta.isMerged) {

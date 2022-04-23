@@ -23,5 +23,5 @@ module.exports = {
         configFile: "tsconfig.json",
       },
     ],
-  }
+  },
 };
