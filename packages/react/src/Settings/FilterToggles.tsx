@@ -131,11 +131,14 @@ export const FilterToggles: React.FC = () => {
 
   return (
     <div className="toggles">
-      <simple-switcher id="show-release" ref={onShowReleaseContributionsRef}>
-        Release / Packaging
-      </simple-switcher>
       <simple-switcher id="show-spelling" ref={onShowSpellingContributionsRef}>
         Typos
+      </simple-switcher>
+      <simple-switcher
+        id="show-code-style"
+        ref={onShowCodeStyleContributionsRef}
+      >
+        Code Style
       </simple-switcher>
       <simple-switcher
         id="show-documentation"
@@ -143,11 +146,10 @@ export const FilterToggles: React.FC = () => {
       >
         Docs
       </simple-switcher>
-      <simple-switcher
-        id="show-code-style"
-        ref={onShowCodeStyleContributionsRef}
-      >
-        Code Style
+      <simple-switcher id="show-release" ref={onShowReleaseContributionsRef}>
+        <span title="Continuous integration, build and releases">
+          Build / Release / CI
+        </span>
       </simple-switcher>
       <simple-switcher id="show-unmerged" ref={onShowUnmergedContributionsRef}>
         Unmerged
