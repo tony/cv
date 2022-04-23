@@ -18,7 +18,10 @@ import "react-vis/dist/style.css";
 import "./chart-react-vis.scss";
 
 // Todo consolidate this into common code somewhere
-export function onEmit<T>(source$: Observable<T>, nextFn: (value: T) => void): Subscription {
+export function onEmit<T>(
+  source$: Observable<T>,
+  nextFn: (value: T) => void
+): Subscription {
   return source$.subscribe(nextFn, console.error);
 }
 

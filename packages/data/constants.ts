@@ -166,38 +166,18 @@ export const ColorsComputed: {
   [key: string]: string;
 } = {
   // ........ Fades ........
-  "black.fade.15": chroma(ColorsBase["black"])
-    .alpha(0.15)
-    .hex(),
-  "black.fade.30": chroma(ColorsBase["black"])
-    .alpha(0.3)
-    .hex(),
-  "black.fade.50": chroma(ColorsBase["black"])
-    .alpha(0.5)
-    .hex(),
-  "black.fade.70": chroma(ColorsBase["black"])
-    .alpha(0.7)
-    .hex(),
-  "black.fade.85": chroma(ColorsBase["black"])
-    .alpha(0.85)
-    .hex(),
+  "black.fade.15": chroma(ColorsBase["black"]).alpha(0.15).hex(),
+  "black.fade.30": chroma(ColorsBase["black"]).alpha(0.3).hex(),
+  "black.fade.50": chroma(ColorsBase["black"]).alpha(0.5).hex(),
+  "black.fade.70": chroma(ColorsBase["black"]).alpha(0.7).hex(),
+  "black.fade.85": chroma(ColorsBase["black"]).alpha(0.85).hex(),
 
   // White
-  "white.fade.15": chroma(ColorsBase["white"])
-    .alpha(0.15)
-    .hex(),
-  "white.fade.30": chroma(ColorsBase["white"])
-    .alpha(0.3)
-    .hex(),
-  "white.fade.50": chroma(ColorsBase["white"])
-    .alpha(0.5)
-    .hex(),
-  "white.fade.70": chroma(ColorsBase["white"])
-    .alpha(0.7)
-    .hex(),
-  "white.fade.85": chroma(ColorsBase["white"])
-    .alpha(0.85)
-    .hex(),
+  "white.fade.15": chroma(ColorsBase["white"]).alpha(0.15).hex(),
+  "white.fade.30": chroma(ColorsBase["white"]).alpha(0.3).hex(),
+  "white.fade.50": chroma(ColorsBase["white"]).alpha(0.5).hex(),
+  "white.fade.70": chroma(ColorsBase["white"]).alpha(0.7).hex(),
+  "white.fade.85": chroma(ColorsBase["white"]).alpha(0.85).hex(),
 };
 
 // ........ Color defaults ........
@@ -321,6 +301,9 @@ export const ActivityTypeColors: {
 export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";
 
 // via v1: https://github.com/tony/cv/blob/v1/lib/selectors.js
-export const reActivityTypoFix = /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate)/;
-export const reActivityDocImprovement = /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/;
-export const reActivityCodeStyleTweak = /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|travis|Travis|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/;
+export const reActivityTypoFix =
+  /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate)/;
+export const reActivityDocImprovement =
+  /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/;
+export const reActivityCodeStyleTweak =
+  /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|travis|Travis|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/;
