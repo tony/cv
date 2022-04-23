@@ -10,10 +10,21 @@ import type {
 
 export const FilterToggles: React.FC = () => {
   const onShowSpellingContributionsRef = React.useRef<Switcher>(null);
+  const onShowReleaseContributionsRef = React.useRef<Switcher>(null);
   const onShowDocumentationContributionsRef = React.useRef<Switcher>(null);
   const onShowCodeStyleContributionsRef = React.useRef<Switcher>(null);
   const onShowUnmergedContributionsRef = React.useRef<Switcher>(null);
 
+  const onShowReleaseContributionsChange = (
+    e: SwitcherEvents["change.one"]
+  ) => {
+    const checked = e?.detail?.checked;
+    if (checked !== null) {
+      cvService.setActivityFilters({
+        showReleases: checked,
+      });
+    }
+  };
   const onShowSpellingContributionsChange = (
     e: SwitcherEvents["change.one"]
   ) => {
@@ -56,11 +67,13 @@ export const FilterToggles: React.FC = () => {
   };
 
   React.useLayoutEffect(() => {
+    const releaseSwitcher = onShowReleaseContributionsRef?.current;
     const spellingSwitcher = onShowSpellingContributionsRef?.current;
     const documentationSwitcher = onShowDocumentationContributionsRef?.current;
     const codeStyleSwitcher = onShowCodeStyleContributionsRef?.current;
     const unmergedSwitcher = onShowUnmergedContributionsRef?.current;
     if (
+      !releaseSwitcher ||
       !spellingSwitcher ||
       !documentationSwitcher ||
       !codeStyleSwitcher ||
@@ -71,6 +84,10 @@ export const FilterToggles: React.FC = () => {
 
     if (spellingSwitcher.addEventListener) {
       console.log("add listener");
+      releaseSwitcher.addEventListener(
+        "change.one",
+        onShowReleaseContributionsChange
+      );
       spellingSwitcher.addEventListener(
         "change.one",
         onShowSpellingContributionsChange
@@ -89,6 +106,10 @@ export const FilterToggles: React.FC = () => {
       );
     }
     return () => {
+      releaseSwitcher.removeEventListener(
+        "change.one",
+        onShowReleaseContributionsChange
+      );
       spellingSwitcher.removeEventListener(
         "change.one",
         onShowSpellingContributionsChange
@@ -110,6 +131,9 @@ export const FilterToggles: React.FC = () => {
 
   return (
     <div className="toggles">
+      <simple-switcher id="show-release" ref={onShowReleaseContributionsRef}>
+        Releases
+      </simple-switcher>
       <simple-switcher id="show-spelling" ref={onShowSpellingContributionsRef}>
         Spelling Contributions
       </simple-switcher>

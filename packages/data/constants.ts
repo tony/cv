@@ -307,3 +307,5 @@ export const reActivityDocImprovement =
   /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/;
 export const reActivityCodeStyleTweak =
   /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|travis|Travis|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/;
+export const reActivityRelease =
+  /(^([Tt]ag )?(v[0-9\.]+)|pyproject|release|publish|pypi|PyPI|ci:|CI:|setup.py|Version)/;

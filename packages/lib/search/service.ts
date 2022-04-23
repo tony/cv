@@ -31,23 +31,27 @@ export class CVService {
   }
 
   setActivityFilters({
+    showReleases,
     showTypos,
     showDocImprovements,
     showCodeStyleTweaks,
     showUnmerged,
   }: {
+    showReleases?: boolean;
     showTypos?: boolean;
     showDocImprovements?: boolean;
     showCodeStyleTweaks?: boolean;
     showUnmerged?: boolean;
   }): void {
     console.log({
+      showReleases,
       showTypos,
       showDocImprovements,
       showCodeStyleTweaks,
       showUnmerged,
     });
     this.cvStore.update({
+      ...(showReleases !== undefined && { showReleases }),
       ...(showTypos !== undefined && { showTypos }),
       ...(showDocImprovements !== undefined && { showDocImprovements }),
       ...(showCodeStyleTweaks !== undefined && { showCodeStyleTweaks }),
