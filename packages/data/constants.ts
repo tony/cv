@@ -308,4 +308,4 @@ export const reActivityDocImprovement =
 export const reActivityCodeStyleTweak =
   /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/;
 export const reActivityRelease =
-  /(^([Tt]ag )?(v[0-9\.]+)|pyproject|release|publish|pypi|PyPI|ci.?|CI.?|(Tt)ravis|setup.py|Version)/;
+  /((^[Tt]ag )?(v[0-9\.]+)|pyproject|release|publish|pypi|PyPI|ci.?|CI.?|(Tt)ravis|setup.py|Version|(Dd)eprecate|pre-commit)/;
