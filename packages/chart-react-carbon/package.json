@@ -11,7 +11,7 @@
     "test": "echo 'noop'",
     "lint": "eslint . -c .eslintrc.js --ext .ts,.tsx",
     "prettier": "prettier",
-    "format": "yarn run prettier * --write",
+    "format": "yarn run prettier . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "rm -rf dist/"
