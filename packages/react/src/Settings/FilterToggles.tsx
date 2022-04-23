@@ -132,16 +132,16 @@ export const FilterToggles: React.FC = () => {
   return (
     <div className="toggles">
       <simple-switcher id="show-release" ref={onShowReleaseContributionsRef}>
-        Releases
+        Release / Packaging
       </simple-switcher>
       <simple-switcher id="show-spelling" ref={onShowSpellingContributionsRef}>
-        Spelling Contributions
+        Typos
       </simple-switcher>
       <simple-switcher
         id="show-documentation"
         ref={onShowDocumentationContributionsRef}
       >
-        Documentation Tweaks
+        Docs
       </simple-switcher>
       <simple-switcher
         id="show-code-style"
