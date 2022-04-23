@@ -47,7 +47,7 @@ export const Chart: React.FC<bb.ChartOptions> = ({ data, ...props }) => {
       // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
       chart.load(data);
     }
-  }, [data]);
+  }, [data, chart]);
   return <div ref={ref} />;
 };
 
