@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.31",
-    "@types/react": "^18.0.8",
+    "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
     "@types/react-vis": "^1.11.11",
     "cross-env": "^7.0.3",

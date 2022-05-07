@@ -1581,19 +1581,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.57.0":
-  version "0.57.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.57.0.tgz#c4d3e6455d453be7751f6304fad707491d789007"
-  integrity sha512-uUGN0YlgPlxAjfNIg6tjM/MmMu/TLU8aJdxRUpHWGWD+Em9xnnOlu/A69TWO7tIaAkrXqrNl0tqN1Aaa9ep2eg==
+"@carbon/charts-react@0.57.1":
+  version "0.57.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.57.1.tgz#5e5dd01a40a93f86986302ae993f459ef75a852b"
+  integrity sha512-jYzx572klIiPMMd4p5moEnZUAbTCnyOksgenhaDvVtVQoJpdWsMCe2vZCkFNqX7Q5CNNKHOlDU89wMRrKxSAvw==
   dependencies:
-    "@carbon/charts" "^0.57.0"
+    "@carbon/charts" "^0.57.1"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
-"@carbon/charts@0.57.0", "@carbon/charts@^0.57.0":
-  version "0.57.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.57.0.tgz#800fbe6d2d09f87da38ad407f4343fa36e1b4b2c"
-  integrity sha512-kduwghCKx89ZZxKQ95Y0ohfDGPyJhCW3m7AWY7C9hoSPRAdSqAwjjkbgmH0+3uns95hpRbb+PT5KROHuq7dAQQ==
+"@carbon/charts@0.57.1", "@carbon/charts@^0.57.1":
+  version "0.57.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.57.1.tgz#6aca8b9127f5895c31ce1e9fe606eaa75f684fd8"
+  integrity sha512-Ddrj/c129tbOnBXOEPCJC9sQOUri1mZcXJSOil/aBlSBzDSh2lRWDLzySpblWuLoFXdVvzVlWcrzNcBHxsJvvA==
   dependencies:
     "@carbon/colors" "10.29.0"
     "@carbon/telemetry" "0.1.0"
@@ -3345,10 +3345,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.0.8":
+"@types/react@*":
   version "18.0.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.8.tgz#a051eb380a9fbcaa404550543c58e1cf5ce4ab87"
   integrity sha512-+j2hk9BzCOrrOSJASi5XiOyBbERk9jG5O73Ya4M0env5Ixi6vUNli4qy994AINcEF+1IEHISYFfIT4zwr++LKw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^18.0.9":
+  version "18.0.9"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.9.tgz#d6712a38bd6cd83469603e7359511126f122e878"
+  integrity sha512-9bjbg1hJHUm4De19L1cHiW0Jvx3geel6Qczhjd0qY5VKVE2X5+x77YxAepuCwVh4vrgZJdgEJw48zrhRIeF4Nw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
