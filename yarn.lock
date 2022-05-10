@@ -11932,10 +11932,10 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-plotly.js@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.12.0.tgz#e8884500beabc855b998da8158ddeef039a40744"
-  integrity sha512-MM81V7jfpIduH3ZZnlsSJ/60pXXdkY9qWnGD0PyiGv0sEgaPlvjceCwfFE54r9ChpP3vzNVX3WNmrSlnfsbJcw==
+plotly.js@^2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.12.1.tgz#08d00ea7bb0cbcfa2c6ba4a13841c22738c25c14"
+  integrity sha512-XbZ3w3jSl+ihZPMXWwblmjinqbzdd+vT+3XKZpyffxmlMmTp/3vY1ewpQDuNyufUoiT0o0ekCqa80Qlzi7jwlA==
   dependencies:
     "@plotly/d3" "3.8.0"
     "@plotly/d3-sankey" "0.7.2"
@@ -12636,10 +12636,10 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-select@^5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.3.1.tgz#2cb651b71493e494c56f6b4ce40011669b34bd95"
-  integrity sha512-Y195MmhDoDAj/8gTDyYZU1Raf7tmZd81wxM6RkFko4pqJ4Xv0/ilqUMtSn+GYkwmSlTWeMlzh+e+t7PJgtuXPw==
+react-select@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.3.2.tgz#ecee0d5c59ed4acb7f567f7de3c75a488d93dacb"
+  integrity sha512-W6Irh7U6Ha7p5uQQ2ZnemoCQ8mcfgOtHfw3wuMzG6FAu0P+CYicgofSLOq97BhjMx8jS+h+wwWdCBeVVZ9VqlQ==
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
@@ -14395,10 +14395,10 @@ triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-ts-jest@^28.0.1:
-  version "28.0.1"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-28.0.1.tgz#626b4d7d5c386f88f4813d959ffc4ca0a8ffef96"
-  integrity sha512-PbkbitaT/9ZYAqqzk3UYTvCq080Seo46T3m/AdwcZ0D8WH2uBhG6PvA8oOAWsZIknzPQU66fYobvFCL8IqIhmg==
+ts-jest@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-28.0.2.tgz#e4026357006731f96a033b94db89d01e0d3c0591"
+  integrity sha512-IOZMb3D0gx6IHO9ywPgiQxJ3Zl4ECylEFwoVpENB55aTn5sdO0Ptyx/7noNBxAaUff708RqQL4XBNxxOVjY0vQ==
   dependencies:
     bs-logger "0.x"
     fast-json-stable-stringify "2.x"
