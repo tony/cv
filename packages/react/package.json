@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@tony/cv-data": "*",
@@ -42,7 +42,7 @@
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
     "ts-node": "^10.8.0",
-    "typescript": "^4.6.4",
+    "typescript": "^4.7.2",
     "webpack": "~5.72.1",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "^4.9.0"
