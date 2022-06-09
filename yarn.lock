@@ -1791,19 +1791,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.0.4.tgz#5e3f096616fc4b9f710c45bd033ab5d301b2cf07"
-  integrity sha512-+HZ1wz6CWx2NyIcaNpgc2YlrjGARECN0pcGrMbt+d1tEcIumLq4KNL3l4bVauynqAqV+gsoJKSD3Xad42NzOYQ==
+"@carbon/charts-react@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.1.0.tgz#188aee5d8747c39550611147cccc429850c56c43"
+  integrity sha512-nVAFKeO7mstohnF7jfe3Kljm8RbQsEyc8uAiFiy0KvirV6z7TLZ9DwEPDmqox2YdEXDeDrd2dCuPa+trd2Alig==
   dependencies:
-    "@carbon/charts" "^1.0.4"
+    "@carbon/charts" "^1.1.0"
     "@carbon/icons-react" "^10.49.0"
     "@carbon/telemetry" "0.1.0"
 
-"@carbon/charts@1.0.4", "@carbon/charts@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.0.4.tgz#b30ff35681940617ccecb7309813bc42f3296545"
-  integrity sha512-O7nd+kUcSFB9AWnTxHhWBF2B+FL1N5JSu5weFvFhQLicN/K2L6f1eSZVAvzoQFAo/gWs0SBZDVMjJukc1UtdzA==
+"@carbon/charts@1.1.0", "@carbon/charts@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.1.0.tgz#aa50c083fa87ac1ae5f4f112178c7b8866b6d6e9"
+  integrity sha512-TGktQsRa4jcRhmjfs5WOZhVBtt+aVeiDIc7GQ64xZwcf9AmDZTgB+hoAG8Y6FRYZsT6Y5cdJj0JS5xfwhf+oGw==
   dependencies:
     "@carbon/styles" "^1.4.0"
     "@carbon/telemetry" "0.1.0"
@@ -13211,10 +13211,10 @@ sass@1.49.9:
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
-sass@^1.52.2:
-  version "1.52.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.2.tgz#cd1f03e0e7be5bb2cebcf1c34d735f087d790936"
-  integrity sha512-mfHB2VSeFS7sZlPv9YohB9GB7yWIgQNTGniQwfQ04EoQN0wsQEv7SwpCwy/x48Af+Z3vDeFXz+iuXM3HK/phZQ==
+sass@^1.52.3:
+  version "1.52.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.3.tgz#b7cc7ffea2341ccc9a0c4fd372bf1b3f9be1b6cb"
+  integrity sha512-LNNPJ9lafx+j1ArtA7GyEJm9eawXN8KlA1+5dF6IZyoONg1Tyo/g+muOsENWJH/2Q1FHbbV4UwliU0cXMa/VIA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
