@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "prettier": "prettier src config --write"
+    "prettier": "prettier src config --write",
+    "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
   },
   "dependencies": {
     "chart.js": "^2.9.4",

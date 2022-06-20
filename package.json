@@ -12,6 +12,7 @@
     "data"
   ],
   "scripts": {
-    "github": "node scripts/github.js"
+    "github": "node scripts/github.js",
+    "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
   }
 }

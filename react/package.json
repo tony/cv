@@ -63,7 +63,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "prettier": "prettier src config --write"
+    "prettier": "prettier src config --write",
+    "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
   },
   "workspaces": [
     "../lib",
