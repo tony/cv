@@ -22,7 +22,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-vis": "^1.11.11",
     "cross-env": "^7.0.3",
-    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react": "^7.30.1",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
@@ -41,6 +41,6 @@
     "react-dom": "^18.2.0",
     "react-vis": "^1.11.7",
     "rxjs": "^6.6.7",
-    "victory": "^36.5.0"
+    "victory": "^36.5.2"
   }
 }

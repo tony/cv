@@ -18,7 +18,7 @@
     "@types/node": "^18.0.0",
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
-    "sass-loader": "^13.0.0",
+    "sass-loader": "^13.0.1",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   },
@@ -32,6 +32,6 @@
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "a-simple-switch": "^0.8.0",
     "lit": "^2.2.6",
-    "sass": "^1.52.3"
+    "sass": "^1.53.0"
   }
 }
