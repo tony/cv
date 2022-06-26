@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -32,10 +32,20 @@
             "aot": true,
             "assets": [
               "src/assets",
-              { "glob": "favicon.ico", "input": "../data/img/", "output": "/" },
-              { "glob": "**/*", "input": "../data/img/", "output": "/assets/img/" }
+              {
+                "glob": "favicon.ico",
+                "input": "../data/img/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "../data/img/",
+                "output": "/assets/img/"
+              }
             ],
-            "styles": ["../ui/styles/style.css"],
+            "styles": [
+              "../ui/styles/style.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -96,17 +106,30 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/assets",
-              { "glob": "favicon.ico", "input": "../data/img/", "output": "/" },
-              { "glob": "**/*", "input": "../data/img/", "output": "/assets/img/" }
+              {
+                "glob": "favicon.ico",
+                "input": "../data/img/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "../data/img/",
+                "output": "/assets/img/"
+              }
             ],
-            "styles": ["../ui/styles/style.css"],
+            "styles": [
+              "../ui/styles/style.css"
+            ],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         },
         "e2e": {
@@ -124,9 +147,11 @@
       }
     }
   },
-  "defaultProject": "angular",
   "cli": {
     "packageManager": "yarn",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ],
+    "analytics": false
   }
 }
