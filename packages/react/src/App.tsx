@@ -18,7 +18,7 @@ import { Settings, SettingsContextProvider } from "./Settings";
 import { Charts } from "./Charts";
 
 import "@tony/cv-nav";
-import "@tony/cv-ui/styles/style.scss";
+import "@tony/cv-ui/styles/style.css";
 
 enum ActionType {
   SetResults,

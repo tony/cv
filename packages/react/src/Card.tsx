@@ -13,7 +13,7 @@ import type {
 } from "@tony/cv-data/types";
 import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
 import { ActivityTypeText, LanguageTag } from "./Tag";
-import "@tony/cv-ui/styles/style.scss";
+import "@tony/cv-ui/styles/style.css";
 
 interface IActivityCardProps {
   activity: IActivity;

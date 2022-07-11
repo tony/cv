@@ -10,7 +10,7 @@ import ChristmasTreeSVG from "@tony/cv-data/img/icons/christmas-tree.svg";
 
 import "@tony/cv-nav";
 
-import style from "!!raw-loader!sass-loader!@tony/cv-ui/styles/style.scss";
+import style from "!!raw-loader!@tony/cv-ui/styles/style.css";
 
 interface IRootState {
   activities: IActivity[];
