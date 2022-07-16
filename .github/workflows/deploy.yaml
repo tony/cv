@@ -1,12 +1,12 @@
 name: Deploy
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+  - '0 0 * * 0'
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
