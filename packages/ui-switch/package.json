@@ -15,11 +15,11 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^18.0.3",
+    "@types/node": "^18.0.6",
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "sass-loader": "^13.0.2",
-    "ts-node": "^10.8.2",
+    "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
