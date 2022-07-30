@@ -22,7 +22,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@tony/cv-data": "*",
     "@types/html-webpack-plugin": "^3.2.6",
-    "@types/node": "^18.6.1",
+    "@types/node": "^18.6.2",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/webpack-dev-server": "^4.7.1",
