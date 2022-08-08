@@ -17,8 +17,8 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^18.6.3",
-    "@types/react": "^18.0.15",
+    "@types/node": "^18.6.4",
+    "@types/react": "^18.0.16",
     "@types/react-dom": "^18.0.6",
     "@types/react-vis": "^1.11.11",
     "cross-env": "^7.0.3",
@@ -41,6 +41,6 @@
     "react-dom": "^18.2.0",
     "react-vis": "^1.11.7",
     "rxjs": "^6.6.7",
-    "victory": "^36.5.3"
+    "victory": "^36.6.0"
   }
 }
