@@ -3,29 +3,17 @@ import {
   components as ReactSelectComponents,
   Options,
   OptionProps,
-  PropsValue,
   StylesConfig,
   MultiValueGenericProps,
 } from "react-select";
 
 import type { CSSObject } from "@emotion/serialize";
 import chroma from "chroma-js";
-import type { Subscription } from "rxjs";
 
 import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
-import {
-  activityTypesQuery,
-  languagesQuery,
-  orgsQuery,
-  query,
-  languagesStore,
-  orgsStore,
-  activityTypesStore,
-} from "@tony/cv-lib/hub";
-import type { LanguageCount } from "@tony/cv-lib/search/query";
 
 import { LanguageTag, OrgTypeTag } from "./Tag";
-import { onEmit } from "./utils";
+import { useMst } from "./mobx";
 
 export interface IOptionType {
   label: string;
@@ -38,30 +26,6 @@ export interface StyleOption extends IOptionType {
 }
 export type ISelectOption = Options<IOptionType>;
 
-export const onLanguageChange = (value: PropsValue<IOptionType>): void => {
-  if (value) {
-    languagesStore.setActive((value as IOptionType[]).map(({ value: v }) => v));
-  } else {
-    languagesStore.setActive([]);
-  }
-};
-export const onOrgChange = (value: PropsValue<IOptionType>): void => {
-  if (value) {
-    orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
-  } else {
-    orgsStore.setActive([]);
-  }
-};
-export const onActivityTypeChange = (value: PropsValue<IOptionType>): void => {
-  if (value) {
-    activityTypesStore.setActive(
-      (value as IOptionType[]).map(({ value: v }) => v)
-    );
-  } else {
-    activityTypesStore.setActive([]);
-  }
-};
-
 export const getSelectOptions = (items: string[]): ISelectOption =>
   items.map((actorName) => ({
     label: actorName,
@@ -72,7 +36,8 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   children,
   ...props
 }) => {
-  const org = orgsQuery.getEntity(props.data?.value);
+  const cvState = useMst();
+  const org = cvState.orgs.find(({ id }) => id === props.data?.value);
   return (
     <ReactSelectComponents.Option {...props} className="df">
       {children}{" "}
@@ -87,7 +52,7 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
             {org.orgType}
           </OrgTypeTag>
 
-          {org.languages.map((languageId) => (
+          {/*org.languages.map((languageId) => (
             <LanguageTag
               languageName={languageId}
               key={languageId}
@@ -96,7 +61,7 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
                 marginLeft: ".5rem",
               }}
             />
-          ))}
+          ))*/}
         </div>
       )}
     </ReactSelectComponents.Option>
@@ -107,37 +72,13 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   data,
   ...props
 }) => {
+  const cvState = useMst();
   const languageName = data?.value;
 
-  const [availableActivitiesCount, setAvailableActivitiesCount] =
-    React.useState<number>(0);
-  const [totalActivitiesCount, setTotalActivitiesCount] =
-    React.useState<number>(0);
   if (!languageName) {
     console.warn(`${languageName} missing from option`);
     return null;
   }
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<LanguageCount>(query.visibleLanguageCount$(), (languageCounts) => {
-        const count = languageCounts[languageName];
-        if (count != availableActivitiesCount) {
-          setAvailableActivitiesCount(count);
-        }
-      }),
-      onEmit<LanguageCount>(query.languageCount$(), (languageCounts) => {
-        const count = languageCounts[languageName];
-        if (count != totalActivitiesCount) {
-          setTotalActivitiesCount(count);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
   return (
     <ReactSelectComponents.Option {...props} data={data} className="df">
       <LanguageTag
@@ -145,14 +86,17 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
         key={languageName}
         className="tag ml0"
       />
-      <div className="activityCount">{totalActivitiesCount} results</div>
+      <div className="activityCount">
+        {cvState.languageYearMap[languageName]} results
+      </div>
     </ReactSelectComponents.Option>
   );
 };
 
 export const languagesStyles: StylesConfig<IOptionType, boolean> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
-    const language = languagesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
       return styles;
     }
@@ -172,7 +116,8 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
   },
 
   multiValueLabel: (styles, { data }) => {
-    const language = languagesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const language = cvState.languages.find(({ id }) => id === data.value);
 
     if (!language?.ui) {
       return styles;
@@ -187,7 +132,8 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
     };
   },
   multiValueRemove: (styles, { data = {} }) => {
-    const language = languagesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor) {
       return styles;
     }
@@ -213,7 +159,10 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
 
 export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
-    const activityType = activityTypesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const activityType = cvState.activityTypes.find(
+      ({ id }) => id === data.value
+    );
     if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
       return styles;
     }
@@ -233,7 +182,10 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   },
 
   multiValueLabel: (styles, { data }) => {
-    const activityType = activityTypesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const activityType = cvState.activityTypes.find(
+      ({ id }) => id === data.value
+    );
     if (!activityType?.ui) {
       return styles;
     }
@@ -249,7 +201,10 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
     };
   },
   multiValueRemove: (styles, { data = {} }) => {
-    const activityType = activityTypesQuery.getEntity(data.value);
+    const cvState = useMst();
+    const activityType = cvState.activityTypes.find(
+      ({ id }) => id === data.value
+    );
     if (!activityType?.ui?.backgroundColor) {
       return styles;
     }
@@ -276,7 +231,10 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
 export const ActivityTypeOption: React.FC<
   OptionProps<IOptionType, boolean>
 > = ({ children, ...props }) => {
-  const activityType = activityTypesQuery.getEntity(props.data?.value);
+  const cvState = useMst();
+  const activityType = cvState.activityTypes.find(
+    ({ id }) => id === props.data?.value
+  );
   if (!activityType) {
     console.warn(`activityType ${props?.data?.value} could not be found`);
     return null;
@@ -296,7 +254,10 @@ export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
   children,
   ...props
 }) => {
-  const activityType = activityTypesQuery.getEntity(props.data?.value);
+  const cvState = useMst();
+  const activityType = cvState.activityTypes.find(
+    ({ id }) => id === props.data?.value
+  );
   if (!activityType) {
     console.warn(`activityType ${props?.data?.value} could not be found`);
     return null;

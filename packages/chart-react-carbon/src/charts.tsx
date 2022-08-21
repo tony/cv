@@ -2,104 +2,97 @@ import React from "react";
 
 import { DonutChart, StackedAreaChart } from "@carbon/charts-react";
 import equal from "fast-deep-equal";
-import type { Observable, Subscription } from "rxjs";
+import { reaction } from "mobx";
+import { observer } from "mobx-react-lite";
 
-import { carbonChartQuery as query } from "./hub";
-import { DonutChartProps, LineChartProps } from "./query";
+import { useMst } from "@tony/cv-react/src/mobx";
+
+import type { DonutChartProps, LineChartProps } from "./query";
+import { stateToLine, stateToDonut } from "./query";
 
 import "@carbon/charts/styles.css";
 import "./chart-react-carbon.css";
 
-// Todo consolidate this into common code somewhere
-export function onEmit<T>(
-  source$: Observable<T>,
-  nextFn: (value: T) => void
-): Subscription {
-  return source$.subscribe(nextFn, console.error);
-}
+export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
+  (props) => {
+    const cvState = useMst();
+    const [chartData, setChartData] = React.useState<DonutChartProps>();
+    const languageChartRef = React.useRef<DonutChart>(null);
 
-// Same as onEmit
-export const useAsyncEffect = (
-  effect: React.EffectCallback | (() => Promise<void>),
-  dependencies?: unknown[]
-): void =>
-  React.useEffect(() => {
-    effect();
-    return () => void 0;
-  }, dependencies);
+    React.useEffect(
+      () =>
+        reaction(
+          () => stateToDonut(cvState),
+          (v: DonutChartProps, prevData: DonutChartProps) => {
+            const isChanged = !equal(v, prevData);
 
-export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
-  const [chartData, setChartData] = React.useState<DonutChartProps>();
-  const languageChartRef = React.useRef<DonutChart>(null);
+            if (isChanged) {
+              setChartData(v);
+            }
+          }
+        ),
+      [cvState]
+    );
 
-  useAsyncEffect(async () => {
+    React.useEffect(() => {
+      if (!chartData) {
+        setChartData(stateToDonut(cvState) as DonutChartProps);
+      }
+      return void 0;
+    }, [cvState]);
+
+    React.useEffect(() => void 0, [chartData]);
+
     if (!chartData) {
-      setChartData((await query.getDonutChart()) as DonutChartProps);
+      return null;
     }
-    return void 0;
-  });
 
-  React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<DonutChartProps>(query.subDonutChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
-  if (!chartData) {
-    return null;
+    return (
+      <DonutChart ref={languageChartRef} {...chartData} {...props}></DonutChart>
+    );
   }
+);
 
-  return <DonutChart ref={languageChartRef} {...chartData} {...props} />;
-};
+export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
+  (props) => {
+    const cvState = useMst();
+    const [chartData, setChartData] = React.useState<LineChartProps>();
+    const lineChartRef = React.useRef<StackedAreaChart>(null);
 
-export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
-  const [chartData, setChartData] = React.useState<LineChartProps>();
-  const lineChartRef = React.useRef<StackedAreaChart>(null);
+    React.useEffect(
+      () =>
+        reaction(
+          () => stateToLine(cvState),
+          (v: LineChartProps, prevData: LineChartProps) => {
+            const isChanged = !equal(v, prevData);
 
-  useAsyncEffect(async () => {
+            if (isChanged) {
+              setChartData(v);
+            }
+          }
+        ),
+      [cvState]
+    );
+
+    React.useEffect(() => {
+      if (!chartData) {
+        setChartData(stateToLine(cvState) as LineChartProps);
+      }
+      return void 0;
+    }, [cvState]);
+
+    React.useEffect(() => void 0, [chartData]);
+
     if (!chartData) {
-      setChartData((await query.getLineChart()) as LineChartProps);
+      return null;
     }
-    return void 0;
-  });
 
-  React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<LineChartProps>(query.subLineChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
-  if (!chartData) {
-    return null;
+    return (
+      <StackedAreaChart
+        ref={lineChartRef}
+        {...chartData}
+        {...props}
+      ></StackedAreaChart>
+    );
   }
-
-  return (
-    <StackedAreaChart
-      ref={lineChartRef}
-      {...chartData}
-      {...props}
-    ></StackedAreaChart>
-  );
-};
+);

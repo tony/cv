@@ -3,98 +3,86 @@ import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { ResponsivePie } from "@nivo/pie";
 import equal from "fast-deep-equal";
-import type { Observable, Subscription } from "rxjs";
+import { reaction } from "mobx";
+import { observer } from "mobx-react-lite";
 
-import { nivoChartQuery as query } from "./hub";
-import { DonutChartProps, LineChartProps } from "./query";
+import { useMst } from "@tony/cv-react/src/mobx";
+
+import type { DonutChartProps, LineChartProps } from "./query";
+import { stateToLine, stateToDonut } from "./query";
 
 import "./chart-react-nivo.css";
 
-// Todo consolidate this into common code somewhere
-export function onEmit<T>(
-  source$: Observable<T>,
-  nextFn: (value: T) => void
-): Subscription {
-  return source$.subscribe(nextFn, console.error);
-}
+export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
+  (props) => {
+    const cvState = useMst();
 
-// Same as onEmit
-export const useAsyncEffect = (
-  effect: React.EffectCallback | (() => Promise<void>),
-  dependencies?: unknown[]
-): void =>
-  React.useEffect(() => {
-    effect();
-    return () => void 0;
-  }, dependencies);
+    const [chartData, setChartData] = React.useState<DonutChartProps>();
+    React.useEffect(
+      () =>
+        reaction(
+          () => stateToDonut(cvState),
+          (v: DonutChartProps, prevData: DonutChartProps) => {
+            const isChanged = !equal(v, prevData);
 
-export const LanguagePieChart: React.FC<
-  // Partial<React.ComponentProps<typeof ResponsivePie>>
-  Partial<DonutChartProps>
-> = (props) => {
-  const [chartData, setChartData] = React.useState<DonutChartProps>();
-  useAsyncEffect(async () => {
+            if (isChanged) {
+              setChartData(v);
+            }
+          }
+        ),
+      [cvState]
+    );
+
+    React.useEffect(() => {
+      if (!chartData) {
+        setChartData(stateToDonut(cvState) as DonutChartProps);
+      }
+      return void 0;
+    }, [cvState]);
+
+    React.useEffect(() => void 0, [chartData]);
+
     if (!chartData) {
-      setChartData((await query.getDonutChart()) as DonutChartProps);
+      return null;
     }
-    return void 0;
-  });
 
-  React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<DonutChartProps>(query.subDonutChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
-  if (!chartData) {
-    return null;
+    return <ResponsivePie {...chartData} {...props} />;
   }
-
-  return <ResponsivePie {...chartData} {...props} />;
-};
+);
 
 export const ActivityLineChart: React.FC<
   Partial<React.ComponentProps<typeof ResponsiveLine>>
-> = (props) => {
+> = observer((props) => {
+  const cvState = useMst();
   const [chartData, setChartData] = React.useState<LineChartProps>();
-  useAsyncEffect(async () => {
+
+  React.useEffect(
+    () =>
+      reaction(
+        () => stateToLine(cvState),
+        (v: LineChartProps, prevData: LineChartProps) => {
+          const isChanged = !equal(v, prevData);
+
+          if (isChanged) {
+            setChartData(v);
+          }
+        }
+      ),
+    [cvState]
+  );
+
+  React.useEffect(() => {
     if (!chartData) {
-      setChartData((await query.getLineChart()) as LineChartProps);
+      setChartData(stateToLine(cvState) as LineChartProps);
     }
     return void 0;
-  });
+  }, [cvState]);
 
   React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<LineChartProps>(query.subLineChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
 
   if (!chartData) {
     return null;
   }
 
   return <ResponsiveLine {...chartData} {...props} />;
-};
+});

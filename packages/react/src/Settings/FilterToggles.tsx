@@ -2,17 +2,18 @@ import React from "react";
 
 import Toggle from "@atlaskit/toggle";
 
-import { cvService } from "@tony/cv-lib/hub";
-
 import "./FilterToggles.css";
 
+import { useMst } from "../mobx";
+
 export const FilterToggles: React.FC = () => {
+  const cvState = useMst();
   const onShowReleaseContributionsChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
-      cvService.setActivityFilters({
+      cvState.setSearchOptions({
         showReleases: checked,
       });
     }
@@ -22,7 +23,7 @@ export const FilterToggles: React.FC = () => {
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
-      cvService.setActivityFilters({
+      cvState.setSearchOptions({
         showTypos: checked,
       });
     }
@@ -32,7 +33,7 @@ export const FilterToggles: React.FC = () => {
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
-      cvService.setActivityFilters({
+      cvState.setSearchOptions({
         showDocImprovements: checked,
       });
     }
@@ -42,7 +43,7 @@ export const FilterToggles: React.FC = () => {
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
-      cvService.setActivityFilters({
+      cvState.setSearchOptions({
         showCodeStyleTweaks: checked,
       });
     }
@@ -52,7 +53,7 @@ export const FilterToggles: React.FC = () => {
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
-      cvService.setActivityFilters({
+      cvState.setSearchOptions({
         showUnmerged: checked,
       });
     }

@@ -1,145 +1,131 @@
 import React from "react";
 
 import equal from "fast-deep-equal";
-import type { Observable, Subscription } from "rxjs";
+import { reaction } from "mobx";
+import { observer } from "mobx-react-lite";
 import { VictoryChart, VictoryLine, VictoryPie, VictoryTheme } from "victory";
 
+import { useMst } from "@tony/cv-react/src/mobx";
 import {
   donutChartHeight,
   donutChartWidth,
 } from "@tony/cv-ui/styles/constants";
 
-import { victoryChartQuery as query } from "./hub";
-import { DonutChartProps, LineChartProps } from "./query";
+import type { DonutChartProps, LineChartProps } from "./query";
+import { stateToLine, stateToDonut } from "./query";
 
 import "./chart-react-victory.css";
 
-// Todo consolidate this into common code somewhere
-export function onEmit<T>(
-  source$: Observable<T>,
-  nextFn: (value: T) => void
-): Subscription {
-  return source$.subscribe(nextFn, console.error);
-}
+export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
+  (props) => {
+    const cvState = useMst();
+    const [chartData, setChartData] = React.useState<DonutChartProps>();
+    const languageChartRef = React.useRef<VictoryPie>(null);
 
-// Same as onEmit
-export const useAsyncEffect = (
-  effect: React.EffectCallback | (() => Promise<void>),
-  dependencies?: unknown[]
-): void =>
-  React.useEffect(() => {
-    effect();
-    return () => void 0;
-  }, dependencies);
+    React.useEffect(
+      () =>
+        reaction(
+          () => stateToDonut(cvState),
+          (v: DonutChartProps, prevData: DonutChartProps) => {
+            const isChanged = !equal(v, prevData);
 
-export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
-  const [chartData, setChartData] = React.useState<DonutChartProps>();
-  const languageChartRef = React.useRef<VictoryPie>(null);
+            if (isChanged) {
+              setChartData(v);
+            }
+          }
+        ),
+      [cvState]
+    );
 
-  useAsyncEffect(async () => {
+    React.useEffect(() => {
+      if (!chartData) {
+        setChartData(stateToDonut(cvState) as DonutChartProps);
+      }
+      return void 0;
+    }, [cvState]);
+
     if (!chartData) {
-      setChartData((await query.getDonutChart()) as DonutChartProps);
+      return null;
     }
-    return void 0;
-  });
 
-  React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<DonutChartProps>(query.subDonutChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
-  if (!chartData) {
-    return null;
+    return (
+      <>
+        {/* @ts-ignore */}
+        <VictoryPie
+          ref={languageChartRef}
+          {...chartData}
+          {...props}
+          height={donutChartHeight}
+          width={donutChartWidth}
+          padding={0}
+        />
+      </>
+    );
   }
+);
 
-  return (
-    <>
-      {/* @ts-ignore */}
-      <VictoryPie
-        ref={languageChartRef}
-        {...chartData}
-        {...props}
-        height={donutChartHeight}
-        width={donutChartWidth}
-        padding={0}
-      />
-    </>
-  );
-};
+export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
+  (props) => {
+    const cvState = useMst();
+    const [chartData, setChartData] = React.useState<LineChartProps>();
+    const chartRef = React.useRef<typeof VictoryLine>(null);
 
-export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
-  const [chartData, setChartData] = React.useState<LineChartProps>();
-  const chartRef = React.useRef<typeof VictoryLine>(null);
+    React.useEffect(
+      () =>
+        reaction(
+          () => stateToLine(cvState),
+          (v: LineChartProps, prevData: LineChartProps) => {
+            const isChanged = !equal(v, prevData);
 
-  useAsyncEffect(async () => {
+            if (isChanged) {
+              setChartData(v);
+            }
+          }
+        ),
+      [cvState]
+    );
+
+    React.useEffect(() => {
+      if (!chartData) {
+        setChartData(stateToLine(cvState) as LineChartProps);
+      }
+      return void 0;
+    }, [cvState]);
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const updateWidth = (ev: Event) => {
+      const event = ev as WindowEventMap["resize"];
+      const target = event.target as Window;
+      if (!target?.innerWidth) {
+        return;
+      }
+      setWidth(target.innerWidth);
+    };
+
+    // thanks @jasonhealy https://github.com/FormidableLabs/victory/issues/396#issuecomment-348182325
+    React.useEffect(() => {
+      window.addEventListener("resize", updateWidth);
+
+      // Removes listener on unmount
+      return () => {
+        window.removeEventListener("resize", updateWidth);
+      };
+    }, []);
+
     if (!chartData) {
-      setChartData((await query.getLineChart()) as LineChartProps);
+      return null;
     }
-    return void 0;
-  });
 
-  React.useEffect(() => void 0, [chartData]);
-  React.useEffect(() => {
-    const subscriptions: Subscription[] = [
-      onEmit<LineChartProps>(query.subLineChart$(), (newChart) => {
-        const isChanged = !equal(newChart, chartData);
-
-        if (isChanged) {
-          setChartData(newChart);
-        }
-      }),
-    ];
-
-    return () => {
-      subscriptions.map((it) => it.unsubscribe());
-    };
-  }, []);
-
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const updateWidth = (ev: Event) => {
-    const event = ev as WindowEventMap["resize"];
-    const target = event.target as Window;
-    if (!target?.innerWidth) {
-      return;
-    }
-    setWidth(target.innerWidth);
-  };
-
-  // thanks @jasonhealy https://github.com/FormidableLabs/victory/issues/396#issuecomment-348182325
-  React.useEffect(() => {
-    window.addEventListener("resize", updateWidth);
-
-    // Removes listener on unmount
-    return () => {
-      window.removeEventListener("resize", updateWidth);
-    };
-  }, []);
-
-  if (!chartData) {
-    return null;
+    return (
+      <VictoryChart
+        theme={VictoryTheme.material}
+        domainPadding={{ x: 5 }}
+        padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+        width={width}
+      >
+        {/* @ts-ignore */}
+        <VictoryLine ref={chartRef} {...chartData} {...props} />
+      </VictoryChart>
+    );
   }
-
-  return (
-    <VictoryChart
-      theme={VictoryTheme.material}
-      domainPadding={{ x: 5 }}
-      padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
-      width={width}
-    >
-      {/* @ts-ignore */}
-      <VictoryLine ref={chartRef} {...chartData} {...props} />
-    </VictoryChart>
-  );
-};
+);

@@ -1,17 +1,7 @@
-import { combineQueries } from "@datorama/akita";
 import bb, { donut, line } from "billboard.js";
-import type { Observable } from "rxjs";
-import { map, take } from "rxjs/operators";
+import type { Instance } from "mobx-state-tree";
 
-import { CVQuery } from "@tony/cv-lib/search/query";
-import type {
-  OrgsQuery,
-  OrgTypesQuery,
-  LanguagesQuery,
-  ActivityTypesQuery,
-  ActivitiesQuery,
-} from "@tony/cv-lib/search/query";
-import { CVStore } from "@tony/cv-lib/search/store";
+import type { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeight,
   donutChartWidth,
@@ -33,115 +23,65 @@ export const DEFAULT_RESULTS: Results = {
   lineChart: { data: {} },
 };
 
-export class BillboardJSChartQuery extends CVQuery {
-  constructor(
-    protected store: CVStore,
-    protected cvQuery: CVQuery,
-    protected activitiesQuery: ActivitiesQuery,
-    protected activityTypesQuery: ActivityTypesQuery,
-    protected languagesQuery: LanguagesQuery,
-    protected orgsQuery: OrgsQuery,
-    protected orgTypesQuery: OrgTypesQuery
-  ) {
-    super(
-      store,
-      activitiesQuery,
-      activityTypesQuery,
-      languagesQuery,
-      orgsQuery,
-      orgTypesQuery
-    );
-  }
+export const stateToDonut = (state: Instance<typeof CVState>) => {
+  return {
+    data: {
+      columns: Object.entries(state.languageYearMap).map(
+        ([languageName, count]) => {
+          return [languageName, count];
+        }
+      ),
+      type: donut(),
+      color: (color, data) =>
+        state.languages.find((language) => language.id === data.id)?.ui
+          ?.backgroundColor ?? color,
+      labels: {
+        // billboard.js doesn't accept callbacks here
+        // issue: https://github.com/naver/billboard.js/issues/1845
+        colors: state.languages.reduce((languageColorMap, language) => {
+          if (language) {
+            if (!(language.id in languageColorMap) && language.ui?.color) {
+              languageColorMap[language.id] = language.ui.color as string;
+            }
+          }
+          return languageColorMap;
+        }, {} as { [key: string]: string }),
+      },
+    },
+    legend: {
+      show: false,
+    },
+    size: {
+      height: donutChartHeight,
+      width: donutChartWidth,
+    },
+  } as bb.ChartOptions;
+};
 
-  //
-  // Chart
-  //
-  subDonutChart$(): Observable<DonutChartProps> {
-    return combineQueries([
-      this.visibleLanguageCount$(),
-      this.visibleLanguages$(),
-    ]).pipe(
-      map(([languageCount, languages]) => {
-        return {
-          data: {
-            columns: Object.entries(languageCount).map(
-              ([languageName, count]) => {
-                return [languageName, count];
-              }
-            ),
-            type: donut(),
-            color: (color, data) =>
-              languages.find((language) => language.id === data.id)?.ui
-                ?.backgroundColor ?? color,
-            labels: {
-              // billboard.js doesn't accept callbacks here
-              // issue: https://github.com/naver/billboard.js/issues/1845
-              colors: languages.reduce((languageColorMap, language) => {
-                if (language) {
-                  if (
-                    !(language.id in languageColorMap) &&
-                    language.ui?.color
-                  ) {
-                    languageColorMap[language.id] = language.ui.color as string;
-                  }
-                }
-                return languageColorMap;
-              }, {} as { [key: string]: string }),
-            },
-          },
-          legend: {
-            show: false,
-          },
-          size: {
-            height: donutChartHeight,
-            width: donutChartWidth,
-          },
-        } as bb.ChartOptions;
-      })
-    );
-  }
-
-  // await $queries.CV.getDonutChart()
-  getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
-  }
-
-  subLineChart$(): Observable<LineChartProps> {
-    return this.visibleActivityYearCount$().pipe(
-      map((activityCount) => {
-        return {
-          data: {
-            x: "x",
-            columns: [
-              [
-                "x",
-                ...Object.keys(activityCount).map((year) => `${year}-01-01`),
-              ],
-              ["activityCount", ...Object.values(activityCount)],
-            ],
-            type: line(),
-          },
-          axis: {
-            x: {
-              type: "timeseries",
-              tick: {
-                format: "%Y-%m-%d",
-              },
-            },
-          },
-          legend: {
-            show: false,
-          },
-          size: {
-            height: lineChartHeight,
-          },
-        } as bb.ChartOptions;
-      })
-    );
-  }
-
-  // await $queries.CV.getLineChart()
-  getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
-  }
-}
+export const stateToLine = (state: Instance<typeof CVState>) => {
+  const activityYearMap = state.activityYearMap;
+  return {
+    data: {
+      x: "x",
+      columns: [
+        ["x", ...Object.keys(activityYearMap).map((year) => `${year}-01-01`)],
+        ["activityYearMap", ...Object.values(activityYearMap)],
+      ],
+      type: line(),
+    },
+    axis: {
+      x: {
+        type: "timeseries",
+        tick: {
+          format: "%Y-%m-%d",
+        },
+      },
+    },
+    legend: {
+      show: false,
+    },
+    size: {
+      height: lineChartHeight,
+    },
+  } as bb.ChartOptions;
+};

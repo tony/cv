@@ -9,7 +9,7 @@
 - Only React (for now, see #1633)
 - Vite
 - Shared code: Framework agnostic
-  - Typed reactive state through [akita]
+  - Typed reactive state through [MobX] + [mobx-state-tree]
   - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
     [billboard.js]
 
@@ -18,7 +18,8 @@
 [v1 branch]: https://github.com/tony/cv/tree/v1
 [react cv]: https://cv.git-pull.com
 [vue.js cv]: https://cv-vue.git-pull.com
-[akita]: https://github.com/datorama/akita
+[mobx]: https://github.com/mobxjs/mobx
+[mobx-state-tree]: https://mobx-state-tree.js.org/
 [image]: packages/lib/assets/architecture.png
 
 ## Status

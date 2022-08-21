@@ -1,7 +1,6 @@
 import React from "react";
 
-import type { Results as ReducerState } from "@tony/cv-lib/search/query";
-
+import { useMst } from "../mobx";
 import { FilterDateRange } from "./FilterDateRange";
 import { FilterDropdowns } from "./FilterDropdowns";
 import { FilterToggles } from "./FilterToggles";
@@ -38,10 +37,10 @@ export const SettingsContextProvider: React.FC<{
   );
 };
 
-export const Settings: React.FC<{ results: ReducerState }> = ({ results }) => {
-  const topLanguageColorBg = results.languages.find(
-    (language) => language?.ui?.backgroundColor
-  )?.ui?.backgroundColor;
+export const Settings: React.FC = () => {
+  const cvState = useMst();
+  const topLanguageColorBg = cvState.languages.find(({ id }) => id)?.ui
+    ?.backgroundColor;
 
   const context = React.useContext(SettingsContext);
   if (!context) {

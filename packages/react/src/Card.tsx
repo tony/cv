@@ -1,36 +1,31 @@
 import React from "react";
 
 import { format, formatDistance } from "date-fns";
+import { Instance } from "mobx-state-tree";
 
 import type {
   CompanyOrg,
-  IActivity,
   IActivityOpenSource,
   IActivityPublication,
-  IOrg,
   IActivityWork,
   OpenSourceOrg,
   PublicationOrg,
 } from "@tony/cv-data/types";
 import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
+import { Activity, Org } from "@tony/cv-lib/search/mobx";
 
 import { ActivityTypeText, LanguageTag } from "./Tag";
 
 import "@tony/cv-ui/styles/style.css";
 
 interface IActivityCardProps {
-  activity: IActivity;
-  org: IOrg;
-}
-
-interface IActivityCardProps {
-  activity: IActivity;
-  org: IOrg;
+  activity: Instance<typeof Activity>;
+  org: Instance<typeof Org>;
 }
 
 export const PatchInfo: React.FC<{
   activity: IActivityOpenSource;
-  org: OpenSourceOrg;
+  org: Instance<typeof Org>;
 }> = ({ activity }) => {
   const items = [];
 
@@ -278,10 +273,10 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
       </div>
     </div>
     <div className="right-side">
-      {org?.languages?.map((languageName) => (
+      {org?.languages?.map((language) => (
         <LanguageTag
-          languageName={languageName}
-          key={languageName}
+          languageName={language.id}
+          key={language.id}
           style={{ display: "inline-flex" }}
         />
       ))}

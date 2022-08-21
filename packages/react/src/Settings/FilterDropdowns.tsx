@@ -1,13 +1,8 @@
 import React from "react";
 import Select from "react-select";
-import type { GroupBase, Props } from "react-select";
+import type { GroupBase, Props, PropsValue } from "react-select";
 
-import {
-  activityTypesQuery,
-  languagesQuery,
-  orgsQuery,
-} from "@tony/cv-lib/hub";
-
+import { useMst } from "../mobx";
 import {
   ActivityMultiValueLabel,
   activityTypeStyles,
@@ -16,9 +11,6 @@ import {
   LanguageOption,
   ActivityTypeOption,
   OrgOption,
-  onLanguageChange,
-  onOrgChange,
-  onActivityTypeChange,
 } from "../react-select";
 import type { IOptionType, ISelectOption } from "../react-select";
 
@@ -33,16 +25,19 @@ function CustomSelect<
 }
 
 export const FilterDropdowns: React.FC = () => {
+  const cvState = useMst();
   return (
     <div className="dropdownRow">
       <CustomSelect
         options={getSelectOptions(
-          Object.values(languagesQuery?.getValue()?.entities ?? {}).map(
-            (lang) => lang.id as string
-          )
+          Object.values(cvState.languages ?? {}).map(({ id }) => id as string)
         )}
         isMulti
-        onChange={onLanguageChange}
+        onChange={(value: PropsValue<IOptionType>): void => {
+          cvState.setLanguages(
+            (value as IOptionType[]).map(({ value: v }) => v)
+          );
+        }}
         className="react-select"
         placeholder="Language"
         styles={languagesStyles}
@@ -50,13 +45,17 @@ export const FilterDropdowns: React.FC = () => {
       />
       <CustomSelect
         options={
-          activityTypesQuery.getAll().map((a) => ({
+          cvState.activityTypes.map((a) => ({
             label: a.name,
             value: a.id,
           })) as ISelectOption
         }
         isMulti={true}
-        onChange={onActivityTypeChange}
+        onChange={(value: PropsValue<IOptionType>): void => {
+          cvState.setActivityTypes(
+            (value as IOptionType[]).map(({ value: v }) => v)
+          );
+        }}
         className="react-select"
         placeholder="Event type"
         styles={activityTypeStyles}
@@ -67,13 +66,15 @@ export const FilterDropdowns: React.FC = () => {
       />
       <CustomSelect
         options={
-          orgsQuery.getAll().map((org) => ({
+          cvState.orgs.map((org) => ({
             label: org.name,
             value: org.id?.toString() ?? org.id,
           })) as ISelectOption
         }
         isMulti={true}
-        onChange={onOrgChange}
+        onChange={(value: PropsValue<IOptionType>): void => {
+          cvState.setOrgs((value as IOptionType[]).map(({ value: v }) => v));
+        }}
         className="react-select"
         placeholder="Topic"
         components={{ Option: OrgOption }}
