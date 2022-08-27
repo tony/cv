@@ -105,11 +105,16 @@ export const languages: Language[] = Array.from(
       ...(ghColor?.color
         ? {
             ui: {
-              backgroundColor: ghColor.color ?? LANGUAGE_FALLBACK_COLOR,
-              color: invert(ghColor.color ?? LANGUAGE_FALLBACK_COLOR, true),
+              backgroundColor: ghColor.color,
+              color: invert(ghColor.color, true),
             },
           }
-        : {}),
+        : {
+            ui: {
+              backgroundColor: LANGUAGE_FALLBACK_COLOR,
+              color: invert(LANGUAGE_FALLBACK_COLOR, true),
+            },
+          }),
     } as Language;
   });
 
