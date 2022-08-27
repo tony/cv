@@ -102,7 +102,7 @@ export const languages: Language[] = Array.from(
     }
     return {
       id: languageName, // identify under original name
-      ...(ghColor.color
+      ...(ghColor?.color
         ? {
             ui: {
               backgroundColor: ghColor.color ?? LANGUAGE_FALLBACK_COLOR,
