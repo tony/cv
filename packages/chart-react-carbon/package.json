@@ -17,13 +17,13 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^18.7.9",
-    "@types/react": "^18.0.17",
+    "@types/node": "^18.7.14",
+    "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "cross-env": "^7.0.3",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.2",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -37,7 +37,7 @@
     "@carbon/charts-react": "1.5.2",
     "@datorama/akita": "^6.2.4",
     "@tony/cv-lib": "*",
-    "carbon-components": "^11.0.0",
+    "carbon-components": "^11.12.0",
     "d3": "^7.6.1",
     "d3-selection": "^3.0.0",
     "dom-to-image": "^2.6.0",
