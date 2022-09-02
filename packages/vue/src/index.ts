@@ -50,7 +50,7 @@ new Vue({
   created() {
     s.dispatch("loadActivities");
     document.title = __TITLE__;
-    let st = document.createElement("style");
+    const st = document.createElement("style");
     st.type = "text/css";
     st.innerHTML = style;
     document.head.appendChild(st);

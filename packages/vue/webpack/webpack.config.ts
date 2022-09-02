@@ -144,7 +144,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     new webpack.DefinePlugin({
       __TITLE__: JSON.stringify(__TITLE__),
     }),
-    // @ts-ignore
+    // @ts-expect-error: Is not assignable to type
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: "../lib/assets/index.html",

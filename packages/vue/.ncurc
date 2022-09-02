@@ -1,3 +1,3 @@
 {
-  "reject": ["vue-loader", "eslint-plugin-vue", "vue", "vuex", "vue-template-compiler"]
+  "reject": ["vue-loader", "vue", "vuex", "vue-template-compiler"]
 }
