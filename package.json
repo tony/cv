@@ -18,8 +18,7 @@
   "workspaces": {
     "nohoist": [
       "**/@types/jest",
-      "**/@types/jasmine",
-      "**/ts-loader"
+      "**/@types/jasmine"
     ],
     "packages": [
       "packages/*"
