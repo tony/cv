@@ -6,7 +6,8 @@
 
 - 100% TypeScript
 - yarn monorepo
-- Webpack from the ground up (no CRA / create-react-app or @vue/cli)
+- Only React (for now)
+- Webpack from the ground up (no CRA / create-react-app)
 - Shared code: Framework agnostic
   - Typed reactive state through [akita]
   - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
@@ -17,7 +18,6 @@
 
 [v1 branch]: https://github.com/tony/cv/tree/v1
 [react cv]: https://cv.git-pull.com
-[vue.js cv]: https://cv-vue.git-pull.com
 [akita]: https://github.com/datorama/akita
 [image]: packages/lib/assets/architecture.png
 
@@ -28,7 +28,6 @@
 | Package | Source              | Website                          | Status         |
 | ------- | ------------------- | -------------------------------- | -------------- |
 | React   | [packages/react/][] | https://cv-react-v2.git-pull.com | 🟡 In-progress |
-| Vue     | [packages/vue/][]   | https://cv-vue-v2.git-pull.com   | ❌ Unstarted   |
 
 ### ⚙️ Shared code
 
@@ -57,14 +56,14 @@
 
 ### 📈 Charts
 
-| Package                   | React                                                  | Vue          |
-| ------------------------- | ------------------------------------------------------ | ------------ |
-| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       | ❌ Unstarted |
-| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       | ❌ Unstarted |
-| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] | ❌ Unstarted |
-| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         | N/A          |
-| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      | N/A          |
-| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          | N/A          |
+| Package                   | React                                                  |
+| ------------------------- | ------------------------------------------------------ |
+| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       |
+| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       |
+| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] |
+| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         |
+| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      |
+| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          |
 
 [@carbon/charts]: https://github.com/carbon-design-system/carbon-charts
 [plotly]: https://github.com/plotly/plotly.js
@@ -83,10 +82,6 @@ $ yarn github  # Assure GITHUB_API_TOKEN is set
 
 # React
 $ cd packages/react/
-$ yarn start
-
-# Vue
-$ cd packages/vue/
 $ yarn start
 
 # inside any of the 3, to build:
@@ -111,7 +106,7 @@ project root.
 
 ## Project specific tasks
 
-#### react, vue
+#### react
 
 Start dev server / live reload:
 
@@ -174,8 +169,6 @@ yarn workspaces run lint
 
 ## Structure
 
-- [packages/vue/][]: [Vue.js] version
-
 - [packages/react/][]: [React] version
 
 - [packages/lib/][]: Common code (reducers/filters code, initial data collections)
@@ -202,8 +195,6 @@ yarn workspaces run lint
     - _gh_actors.json_: GitHub Repos. Same schema as _my_actors.json_), combined.
 
   [packages/lib/]: packages/lib/
-  [packages/vue/]: packages/vue/
-  [vue.js]: https://vuejs.org/
   [packages/react/]: packages/react/
   [react]: https://reactjs.org/
   [es2015 class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
@@ -226,14 +217,13 @@ yarn workspaces run lint
 
 - Written from scratch
 
-  No vue-cli or create-react-app
+  No create-react-app
 
   Better understanding, control of what's being used
 
   **Spin-off** core webpack starter projects. MIT licensed. Fork to add your own loaders / wire-in
   to your project:
 
-  - <https://github.com/tony/vue-typescript-vanilla-starter>
   - <https://github.com/tony/react-typescript-vanilla-starter>
 
 - Typescript
