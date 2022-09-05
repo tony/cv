@@ -12,7 +12,6 @@
   - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
     [billboard.js]
   - Common navigation: Typed [web component] built with [LitElement]
-- Angular
 
 ![image]
 
@@ -26,11 +25,10 @@
 
 ### 🏗️ Frameworks
 
-| Package | Source                | Website                            | Status         |
-| ------- | --------------------- | ---------------------------------- | -------------- |
-| React   | [packages/react/][]   | https://cv-react-v2.git-pull.com   | 🟡 In-progress |
-| Vue     | [packages/vue/][]     | https://cv-vue-v2.git-pull.com     | ❌ Unstarted   |
-| Angular | [packages/angular/][] | https://cv-angular-v2.git-pull.com | ❌ Unstarted   |
+| Package | Source              | Website                          | Status         |
+| ------- | ------------------- | -------------------------------- | -------------- |
+| React   | [packages/react/][] | https://cv-react-v2.git-pull.com | 🟡 In-progress |
+| Vue     | [packages/vue/][]   | https://cv-vue-v2.git-pull.com   | ❌ Unstarted   |
 
 ### ⚙️ Shared code
 
@@ -59,14 +57,14 @@
 
 ### 📈 Charts
 
-| Package                   | React                                                  | Angular      | Vue          |
-| ------------------------- | ------------------------------------------------------ | ------------ | ------------ |
-| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       | ❌ Unstarted | ❌ Unstarted |
-| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       | ❌ Unstarted | ❌ Unstarted |
-| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] | ❌ Unstarted | ❌ Unstarted |
-| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         | N/A          | N/A          |
-| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      | N/A          | N/A          |
-| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          | N/A          | N/A          |
+| Package                   | React                                                  | Vue          |
+| ------------------------- | ------------------------------------------------------ | ------------ |
+| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       | ❌ Unstarted |
+| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       | ❌ Unstarted |
+| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] | ❌ Unstarted |
+| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         | N/A          |
+| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      | N/A          |
+| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          | N/A          |
 
 [@carbon/charts]: https://github.com/carbon-design-system/carbon-charts
 [plotly]: https://github.com/plotly/plotly.js
@@ -91,11 +89,6 @@ $ yarn start
 $ cd packages/vue/
 $ yarn start
 
-# Angular
-$ cd packages/angular/
-$ yarn global add @angular/cli
-$ yarn start
-
 # inside any of the 3, to build:
 $ yarn build  # Build to dist/
 ```
@@ -118,7 +111,7 @@ project root.
 
 ## Project specific tasks
 
-#### react, vue, angular
+#### react, vue
 
 Start dev server / live reload:
 
@@ -181,8 +174,6 @@ yarn workspaces run lint
 
 ## Structure
 
-- [packages/angular/][]: Angular
-
 - [packages/vue/][]: [Vue.js] version
 
 - [packages/react/][]: [React] version
@@ -212,7 +203,6 @@ yarn workspaces run lint
 
   [packages/lib/]: packages/lib/
   [packages/vue/]: packages/vue/
-  [packages/angular/]: packages/angular/
   [vue.js]: https://vuejs.org/
   [packages/react/]: packages/react/
   [react]: https://reactjs.org/
