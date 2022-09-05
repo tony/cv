@@ -106,14 +106,6 @@ export class CVNav extends LitElement {
               <li>
                 <a href="https://cv-vue-v1.git-pull.com/">v1 (2018)</a>
               </li>
-              <li class="${this.framework == Framework.Vue ? "active" : ""}">
-                <a href="https://cv-vue-v2.git-pull.com/"
-                  >v2
-                  (2021)${
-                    this.framework == Framework.Vue ? html` -&nbsp;<strong>You are here</strong> ` : ""
-                  }</a
-                >
-              </li>
             </ul>
           </li>
           <li class="view-source">
