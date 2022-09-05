@@ -40,8 +40,5 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-tsc": "^2.0.0"
-  },
-  "resolutions": {
-    "node-fetch": "^3.2.6"
   }
 }
