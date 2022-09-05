@@ -16,10 +16,6 @@
     "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
   },
   "workspaces": {
-    "nohoist": [
-      "**/@types/jest",
-      "**/@types/jasmine"
-    ],
     "packages": [
       "packages/*"
     ]
