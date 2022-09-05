@@ -20,6 +20,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# yarn berry
+.yarn/*
+.pnp.*
+
 # generated files from scripts/github.js
 packages/data/scraped/
 
