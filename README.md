@@ -6,7 +6,7 @@
 
 - 100% TypeScript
 - yarn monorepo
-- Only React (for now)
+- Only React (for now, see #1633)
 - Webpack from the ground up (no CRA / create-react-app)
 - Shared code: Framework agnostic
   - Typed reactive state through [akita]
