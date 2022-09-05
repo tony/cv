@@ -30,6 +30,3 @@ jobs:
     - name: react - lint, and test
       run: |
         yarn workspace @tony/cv-react run lint
-    - name: vue - lint, and test
-      run: |
-        yarn workspace @tony/cv-vue run lint
