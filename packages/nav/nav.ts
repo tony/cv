@@ -4,11 +4,9 @@ import { customElement, property } from "lit/decorators.js";
 // import style from "!!raw-loader!sass-loader!./nav.scss";
 
 import reactSvg from "@tony/cv-data/img/icons/react.svg";
-import angularSvg from "@tony/cv-data/img/icons/angular.svg";
 import vueSvg from "@tony/cv-data/img/icons/vue.svg";
 
 enum Framework {
-  Angular = "Angular",
   React = "React",
   Vue = "Vue",
 }
@@ -21,9 +19,6 @@ enum CVVersion {
 const getActiveFramework = (): Framework | null => {
   const url = window.location.toString();
   switch (url) {
-    case url.match(/angular|:4200/)?.input: {
-      return Framework.Angular;
-    }
     case url.match(/react|:3099/)?.input: {
       return Framework.React;
     }
@@ -99,11 +94,6 @@ export class CVNav extends LitElement {
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="${this.framework == Framework.Angular ? "active" : ""} framework angular">
-            <a href="https://cv-angular-v2.git-pull.com/"> <img src="${angularSvg}" width="18" />
-              <span class="label">Angular</span>
-            </a>
           </li>
           <li class="${this.framework == Framework.Vue ? "active" : ""} framework vue">
             <a href="https://cv-vue-v2.git-pull.com/">
