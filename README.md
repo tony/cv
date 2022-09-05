@@ -18,6 +18,7 @@
 
 [v1 branch]: https://github.com/tony/cv/tree/v1
 [react cv]: https://cv.git-pull.com
+[vue.js cv]: https://cv-vue.git-pull.com
 [akita]: https://github.com/datorama/akita
 [image]: packages/lib/assets/architecture.png
 
