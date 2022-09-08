@@ -15,7 +15,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^18.7.15",
+    "@types/node": "^18.7.16",
     "es-dev-server": "^2.1.0",
     "raw-loader": "^4.0.2",
     "ts-node": "^10.9.1",
@@ -31,7 +31,7 @@
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "lit": "^2.3.1",
     "nouislider": "^15.6.1",
-    "sass": "^1.54.8",
+    "sass": "^1.54.9",
     "sass-loader": "^12.4.0"
   }
 }

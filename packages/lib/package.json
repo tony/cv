@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
     "@types/jest": "^29.0.0",
-    "@types/node": "^18.7.15",
+    "@types/node": "^18.7.16",
     "eslint-plugin-jest": "^27.0.1",
     "jest": "^27.5.1",
     "ts-jest": "^28.0.8",
