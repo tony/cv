@@ -22,8 +22,8 @@
     "@babel/preset-typescript": "^7.18.6",
     "@tony/cv-data": "*",
     "@types/html-webpack-plugin": "^3.2.6",
-    "@types/node": "^18.7.16",
-    "@types/react": "^18.0.19",
+    "@types/node": "^18.7.17",
+    "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/webpack-dev-server": "^4.7.1",
     "babel-loader": "^8.2.5",
@@ -55,7 +55,7 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.29.3",
     "fast-deep-equal": "^3.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
