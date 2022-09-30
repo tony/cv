@@ -60,7 +60,7 @@
     "whatwg-fetch": "2.0.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "NODE_OPTIONS='--openssl-legacy-provider' node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "prettier": "prettier src config --write",
