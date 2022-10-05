@@ -2418,10 +2418,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
-"@types/node@*", "@types/node@^18.7.23":
-  version "18.7.23"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.23.tgz#75c580983846181ebe5f4abc40fe9dfb2d65665f"
-  integrity sha512-DWNcCHolDq0ZKGizjx2DZjR/PqsYwAcYUJmfMWqtVU2MBMG5Mo+xFZrhGId5r/O5HOuMPyQEcM6KUBp5lBZZBg==
+"@types/node@*", "@types/node@^18.8.2":
+  version "18.8.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.2.tgz#17d42c6322d917764dd3d2d3a10d7884925de067"
+  integrity sha512-cRMwIgdDN43GO4xMWAfJAecYn8wV4JbsOGHNfNUIDiuYkUYAR5ec4Rj7IO2SAhFPEfpPtLtUTbbny/TCT7aDwA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -2433,10 +2433,10 @@
   resolved "https://registry.yarnpkg.com/@types/path-is-inside/-/path-is-inside-1.0.0.tgz#02d6ff38975d684bdec96204494baf9f29f0e17f"
   integrity sha512-hfnXRGugz+McgX2jxyy5qz9sB21LRzlGn24zlwN2KEgoPtEvjzNRrLtUkOOebPDPZl3Rq7ywKxYvylVcEZDnEw==
 
-"@types/plotly.js@^2.12.4":
-  version "2.12.4"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.4.tgz#ea972c5779060bad1c5c2644e0ae9db287c1f16f"
-  integrity sha512-AFxOtfzyLhtgTRl3FElewTvu1fzVcxWaGUHxsWDvdyh10KDpApt1dapH3mSCXKCgYTBrzoLBIcM1qHOpi5qHFQ==
+"@types/plotly.js@^2.12.5":
+  version "2.12.5"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.5.tgz#b3515fc5e0d939324be90742fde28c842ad27bc6"
+  integrity sha512-DZydmPSYTrJw5gVQViJCsYNS0pBfkqQ+nXTxmaMD5q6GhvM0ckKo3rRhskwAcJfO9booBGiX/z0njUNXfrLPxA==
 
 "@types/prettier@^2.1.5":
   version "2.6.0"
@@ -5465,10 +5465,10 @@ eslint-plugin-import@^2.26.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
-eslint-plugin-jest@^27.0.4:
-  version "27.0.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-27.0.4.tgz#ab9c7b3f48bfade4762c24c415a5d9bbc0174a61"
-  integrity sha512-BuvY78pHMpMJ6Cio7sKg6jrqEcnRYPUc4Nlihku4vKx3FjlmMINSX4vcYokZIe+8TKcyr1aI5Kq7vYwgJNdQSA==
+eslint-plugin-jest@^27.1.0:
+  version "27.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-27.1.0.tgz#f6ade75b721aa2b89e3726cb35f42f6623284ff2"
+  integrity sha512-sqojX5GKzQ8+PScF9rJ7dRMtu0NEIWsaDMLwRRvVE28mnWctZe5VAti394Nmut11vPwgxck9XnDmmjx/U9NowQ==
   dependencies:
     "@typescript-eslint/utils" "^5.10.0"
 
