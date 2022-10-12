@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-import { GitHub } from "github-graphql-api";
+import { graphql } from "@octokit/graphql";
+import type { GraphQlQueryResponseData } from "@octokit/graphql";
 import moment from "moment";
 
 const ghToken =
@@ -54,10 +55,12 @@ const prQuery = fs.readFileSync(
   "utf8"
 );
 
-const c = new GitHub({ token: ghToken });
+const c = graphql.defaults({
+  headers: { authorization: `token ${ghToken}` },
+});
 
-async function ghQuery(query) {
-  return c.query(query);
+async function ghQuery(query: string): Promise<GraphQlQueryResponseData> {
+  return c(query);
 }
 
 // ghQuery(testQuery).then(data => {
