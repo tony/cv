@@ -1,6 +1,6 @@
-{
+query fetchIssues($cursor: String){
   user({{user_params}}) {
-    pullRequests({{pull_requests_params}}) {
+    pullRequests(first: 100, after: $cursor) {
       totalCount
       pageInfo {
         endCursor
