@@ -1,9 +1,8 @@
 import fs from "fs";
-import path from "path";
-
-import { graphql } from "@octokit/graphql";
-import type { GraphQlQueryResponseData } from "@octokit/graphql";
 import moment from "moment";
+
+import { Octokit } from "@octokit/core";
+import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
 
 const ghToken =
   process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;
@@ -39,75 +38,67 @@ if (!fs.existsSync(config.output_dir)) {
   fs.mkdirSync(config.output_dir);
 }
 
-// const testQuery = `
-//   query {
-//     viewer {
-//       login
-//     }
-//   }
-// `;
-
-// note, this requires .replace of:
-// 1. {{user_params}} -> 'login: "yourusername"'
-// 2. {{pull_requests_params}} -> 'first 100'
-const prQuery = fs.readFileSync(
-  path.join(__dirname, "./gh_pullrequests.graphql"),
-  "utf8"
-);
-
-const c = graphql.defaults({
-  headers: { authorization: `token ${ghToken}` },
-});
-
-async function ghQuery(query: string): Promise<GraphQlQueryResponseData> {
-  return c(query);
-}
-
-// ghQuery(testQuery).then(data => {
-//   console.log(data);
-// });
-
-const userPrQuery = prQuery.replace(
-  "{{user_params}}",
-  `login: "${config.gh_user}"`
-);
-const initialPrQuery = userPrQuery.replace(
-  "{{pull_requests_params}}",
-  "first: 100"
-);
-
-const makePRQuery = async (query) => {
-  // wraps ghQuery
-  const res = await ghQuery(query);
-  const data = {
-    // create a compact response (non-standard)
-    ...{ pullRequests: res.user.pullRequests.edges },
-    ...res.user.pullRequests.pageInfo,
-  };
-  if (data.hasNextPage) {
-    data.nextQuery = userPrQuery.replace(
-      "{{pull_requests_params}}",
-      `first: 100, after: "${data.endCursor}"`
-    );
-  }
-  return data;
-};
+const MyOctokit = Octokit.plugin(paginateGraphql);
+const octokit = new MyOctokit({ auth: ghToken });
 
 let issues = [];
 
-const recursePRQuery = async (query) => {
+const fetchGitHubIssues = async () => {
   // on first invocation, add initial query
-  const res = await makePRQuery(query);
-
-  issues = issues.concat(res.pullRequests);
-  if (res.nextQuery) {
-    return recursePRQuery(res.nextQuery);
-  } else {
-    return issues;
+  const ghIterator = octokit.graphql.paginate.iterator(
+    `
+query fetchIssues($login: String!, $cursor: String) {
+  user(login: $login) {
+    pullRequests(first: 100, after: $cursor) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        cursor
+        node {
+          mergedAt
+          createdAt
+          closedAt
+          title
+          url
+          repository {
+            url
+            name
+            nameWithOwner
+            homepageUrl
+            isPrivate
+            languages(last: 1, orderBy: {direction: ASC, field: SIZE}) {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+}`,
+    { login: config.gh_user }
+  );
+
+  for await (const res of ghIterator) {
+    const data = {
+      ...{ pullRequests: res.user.pullRequests.edges },
+    };
+    issues = issues.concat(data.pullRequests);
+    console.log(
+      `Fetching ${issues.length} / ${res.user.pullRequests.totalCount}`
+    );
+  }
+
+  return issues;
 };
 
-recursePRQuery(initialPrQuery)
+fetchGitHubIssues()
   .then((prs) => {
     if (config.exclude_own_repo) {
       prs = prs.filter(
@@ -137,17 +128,12 @@ recursePRQuery(initialPrQuery)
         : undefined;
       return p;
     });
-    // console.log(projects);
-    // console.log(projects.length);
 
-    // only have unique stuff
-    // projects = [ ... new Set(projects) ];
+    // Filter uniques
     projects = projects.filter(
       (project, index, self) =>
         self.findIndex((p) => p.name === project.name) === index
     );
-    // console.log(projects);
-    // console.log(projects.length);
     /**
      * Manually add languages GitHub projects missing them
      */
@@ -182,9 +168,8 @@ recursePRQuery(initialPrQuery)
     let data = JSON.stringify(projectsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_orgs.json`, data);
 
-    // we do this at the bottom because we want to associate the
+    // We do this at the bottom because we want to associate the
     // project_final 'id' attribute with project in pr's
-
     id = 0;
     const pullRequestsFinal = prs.map((pr) => {
       return {
