@@ -2433,10 +2433,10 @@
   resolved "https://registry.yarnpkg.com/@types/path-is-inside/-/path-is-inside-1.0.0.tgz#02d6ff38975d684bdec96204494baf9f29f0e17f"
   integrity sha512-hfnXRGugz+McgX2jxyy5qz9sB21LRzlGn24zlwN2KEgoPtEvjzNRrLtUkOOebPDPZl3Rq7ywKxYvylVcEZDnEw==
 
-"@types/plotly.js@^2.12.5":
-  version "2.12.5"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.5.tgz#b3515fc5e0d939324be90742fde28c842ad27bc6"
-  integrity sha512-DZydmPSYTrJw5gVQViJCsYNS0pBfkqQ+nXTxmaMD5q6GhvM0ckKo3rRhskwAcJfO9booBGiX/z0njUNXfrLPxA==
+"@types/plotly.js@^2.12.6":
+  version "2.12.6"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.6.tgz#33ac37dfe09f7451162ea563f92e2f08d3175f16"
+  integrity sha512-hI/kRYLhzfnFKIUif8mKt3IWT2W/9GzgYOyivVxN+r4RrTy1ByX2FP856c/ifrf5FZgA254lcBaTVBnLaaismw==
 
 "@types/prettier@^2.1.5":
   version "2.6.0"
@@ -9001,10 +9001,10 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-plotly.js@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.14.0.tgz#082fbaad893f20bf083fac982755b36699ff052c"
-  integrity sha512-bv3Re8FmgVJOyIFidAc24mbKLZQ/y/xEFWoFhJMAIpl9pPrB9I6OjAv/gYCKEraWj4VTK5nAPAOGnjcDjodf2g==
+plotly.js@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.15.1.tgz#5e92608a3bddf3dbd937b00674bf16adf44a1ef3"
+  integrity sha512-mqOCtVjuCwiLPAgHxzRrvzHYzi3TN5PKWgYox1hSHrXt7D8J3Jmh4ONpyQI/tLk1GsR50LTTb//5LnnaRA0HvQ==
   dependencies:
     "@plotly/d3" "3.8.0"
     "@plotly/d3-sankey" "0.7.2"
