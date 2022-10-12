@@ -1,0 +1,73 @@
+{
+  "name": "@cv/gh-scraper",
+  "version": "0.0.0",
+  "description": "Scraper for GitHub contributions, for use in tony/cv",
+  "author": "Tony Narlock @tony",
+  "bin": {
+    "gh-scraper": "./bin/run"
+  },
+  "homepage": "https://github.com/tony/cv",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "tony/cv",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^1.16.5",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^2.1.2"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.2.3",
+    "@types/chai": "^4",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.8.4",
+    "chai": "^4",
+    "eslint": "^8.25.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "eslint-plugin-unicorn": "^44.0.2",
+    "mocha": "^10",
+    "oclif": "^3",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  },
+  "oclif": {
+    "bin": "gh-scraper",
+    "dirname": "gh-scraper",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "hello": {
+        "description": "Say hello to the world and others"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/tony/cv/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}
