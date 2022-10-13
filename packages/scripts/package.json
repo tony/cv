@@ -16,13 +16,15 @@
   },
   "dependencies": {
     "github-colors": "~2.2",
-    "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
     "moment": "^2.29.4",
     "prettier": "^2.7.1",
     "rxjs": "^6.6.7"
   },
   "devDependencies": {
+    "@octokit/core": "^4.0.5",
+    "@octokit/graphql": "^5.0.1",
+    "@octokit/plugin-paginate-graphql": "^2.0.1",
     "@types/node": "^18.8.5",
     "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1",
