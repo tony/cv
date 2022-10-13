@@ -302,10 +302,10 @@ export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";
 
 // via v1: https://github.com/tony/cv/blob/v1/lib/selectors.js
 export const reActivityTypoFix =
-  /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate)/;
+  /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate)/i;
 export const reActivityDocImprovement =
-  /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/;
+  /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/i;
 export const reActivityCodeStyleTweak =
-  /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/;
+  /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/i;
 export const reActivityRelease =
-  /((^[Tt]ag )?(v[0-9\.]+)|(Bb)ump|pyproject|release|publish|pypi|PyPI|ci.?|CI.?|(Tt)ravis|setup.py|Version|(Dd)eprecate|pre-commit)/;
+  /((^[Tt]ag )?(v[0-9\.]+)|Bump|pyproject|release|publish|pypi|PyPI|ci.?|CI.?|travis|setup.py|Version|(Dd)eprecate|pre-commit)/i;
