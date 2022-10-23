@@ -306,6 +306,6 @@ export const reActivityTypoFix =
 export const reActivityDocImprovement =
   /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/i;
 export const reActivityCodeStyleTweak =
-  /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types)/i;
+  /(indent|Indent|whitespace|spacing|lint|Lint|sort|Sort|jshint|PEP|pep8|tabs|Tabs|Ignore|ignore|__about__|import|tweak|Tweak|hash|modernize|Add.*module|trivial|babelrc|dependency|MANIFEST.in|Pythonic|pythonic|exportable|empty line|Typing|typing|Typings|typings|@types|chore:)/i;
 export const reActivityRelease =
   /((^[Tt]ag )?(v[0-9\.]+)|Bump|pyproject|release|publish|pypi|PyPI|ci.?|CI.?|travis|setup.py|Version|(Dd)eprecate|pre-commit|onramp|build:)/i;
