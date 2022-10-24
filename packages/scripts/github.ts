@@ -154,7 +154,7 @@ fetchGitHubIssues()
         ...acc,
         [p.name]: {
           orgType: "Open Source",
-          id: id++,
+          id: `${id++}`,
           // missing language in kohana-modules
           languages: p.languages || fillMissingLanguages(p.name),
           name: p.name,
@@ -182,7 +182,7 @@ fetchGitHubIssues()
         activityType: "Patch",
         createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
-        id: id++,
+        id: `${id++}`,
         qaUrl: pr.url,
         title: pr.title,
       };

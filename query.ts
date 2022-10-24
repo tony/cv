@@ -39,7 +39,7 @@ import type {
 import { hasAny } from "../utils";
 
 export type LanguageCount = Record<LanguageName, number>;
-export type ActivityCount = Record<string, number>;
+export type ActivityCount = Record<string, string>;
 
 export interface Results {
   activities: IActivity[];
@@ -205,7 +205,7 @@ const filterActivitiesByYear = (
 
 const filterActivitiesByFilters = (
   activities: IActivity[],
-  activityTraits: Record<string, ActivityUI>,
+  activityTraits: Record<number, ActivityUI>,
   {
     showReleases,
     showTypos,

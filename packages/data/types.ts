@@ -31,7 +31,7 @@ export interface ActivityType extends IThemeable {
 }
 
 export interface IActivityCommon {
-  id: number;
+  id: string;
   title: string;
   activityType: ActivityTypeName;
   orgId: string;
