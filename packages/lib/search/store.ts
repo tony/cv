@@ -10,7 +10,7 @@ import {
   StoreConfig,
 } from "@datorama/akita";
 
-import { ActivityTypeName } from "@tony/cv-data/types";
+import {ActivityTypeName} from "@tony/cv-data/types";
 
 import type {
   ActivityType,
@@ -37,10 +37,9 @@ export type CVState = {
   startYear: number;
   endYear: number;
 }; // Record<string, never>;
-import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+import {DEFAULT_FILTERS} from "@tony/cv-lib/search/query";
 
 export interface ActivityUI {
-  isOptionDisabled: boolean;
   isRelease: boolean;
   isTypo: boolean;
   isDocImprovement: boolean;
@@ -49,7 +48,6 @@ export interface ActivityUI {
 }
 
 const ACTIVITY_UI_DEFAULTS: ActivityUI = {
-  isOptionDisabled: false,
   isRelease: false,
   isTypo: false,
   isDocImprovement: false,
@@ -59,8 +57,8 @@ const ACTIVITY_UI_DEFAULTS: ActivityUI = {
 
 export interface ActivitiesState
   extends EntityState<IActivity>,
-    MultiActiveState {
-  ui: { isLoading: boolean };
+  MultiActiveState {
+  ui: {isLoading: boolean};
 }
 
 export type ActivitiesUIState = EntityState<ActivityUI>;
@@ -80,14 +78,14 @@ const setUIDefaults = (activity: IActivity): ActivityUI => {
   };
 };
 
-@StoreConfig({ name: "activities" })
+@StoreConfig({name: "activities"})
 export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
   ui!: EntityUIStore<ActivitiesUIState>;
 
   constructor() {
     super({
       active: [],
-      ui: { isLoading: false },
+      ui: {isLoading: false},
     });
 
     // Set state of item being selected, disabled, etc.
@@ -98,54 +96,54 @@ export class ActivitiesStore extends EntityStore<ActivitiesState, IActivity> {
   }
 
   setLoading(isLoading: boolean): void {
-    this.update({ ui: { isLoading } });
+    this.update({ui: {isLoading}});
   }
 }
 
 export interface ActivityTypesState
   extends EntityState<ActivityType>,
-    MultiActiveState {}
+  MultiActiveState {}
 
-@StoreConfig({ name: "activityTypes" })
+@StoreConfig({name: "activityTypes"})
 export class ActivityTypesStore extends EntityStore<
   ActivityTypesState,
   ActivityType
 > {
   constructor() {
-    super({ active: [] });
+    super({active: []});
   }
 }
 
 export interface OrgTypesState extends EntityState<OrgType>, MultiActiveState {}
 
-@StoreConfig({ name: "orgTypes" })
+@StoreConfig({name: "orgTypes"})
 export class OrgTypesStore extends EntityStore<OrgTypesState, OrgType> {
   constructor() {
-    super({ active: [] });
+    super({active: []});
   }
 }
 
 export interface OrgsState extends EntityState<IOrg>, MultiActiveState {}
 
-@StoreConfig({ name: "orgs" })
+@StoreConfig({name: "orgs"})
 export class OrgsStore extends EntityStore<OrgsState, IOrg> {
   constructor() {
-    super({ active: [] });
+    super({active: []});
   }
 }
 
 export interface LanguagesState
   extends EntityState<Language>,
-    MultiActiveState {}
+  MultiActiveState {}
 
-@StoreConfig({ name: "languages" })
+@StoreConfig({name: "languages"})
 export class LanguagesStore extends EntityStore<LanguagesState, Language> {
   constructor() {
-    super({ active: [] });
+    super({active: []});
   }
 }
 
-@StoreConfig({ name: "CV" })
+@StoreConfig({name: "CV"})
 export class CVStore extends Store<CVState> {
   constructor() {
     super(DEFAULT_FILTERS);
