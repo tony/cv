@@ -23,7 +23,7 @@ export const Results: React.FC<{ results: ReducerState }> = ({ results }) => {
     <div id="results">
       {results.activities &&
         results.activities.map((activity, idx) => {
-          const org = orgsQuery.getEntity(activity.orgId);
+          const org = orgsQuery.getEntity(activity.org);
           if (!org) return;
           return <ActivityCard activity={activity} org={org} key={idx} />;
         })}

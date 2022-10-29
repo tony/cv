@@ -34,7 +34,7 @@ export interface IActivityCommon {
   id: string;
   title: string;
   activityType: ActivityTypeName;
-  orgId: string;
+  org: string;
 
   // Dates
   createdAt: string;

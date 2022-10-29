@@ -300,7 +300,7 @@ export class CVQuery extends Query<CVState> {
 
           if (activeLanguages.length) {
             a = a.filter((activity) => {
-              const org = this.orgsQuery.getEntity(activity.orgId);
+              const org = this.orgsQuery.getEntity(activity.org);
               if (!org?.languages) {
                 return false;
               }
@@ -310,7 +310,7 @@ export class CVQuery extends Query<CVState> {
           }
           if (activeOrgs.length) {
             a = a.filter((activity) => {
-              return activeOrgs.some((v) => v === activity.orgId);
+              return activeOrgs.some((v) => v === activity.org);
             });
           }
           if (activeActivityTypes.length) {
@@ -340,7 +340,7 @@ export class CVQuery extends Query<CVState> {
           new Set(
             a
               .map((activity) => {
-                const org = this.orgsQuery.getEntity(activity.orgId);
+                const org = this.orgsQuery.getEntity(activity.org);
                 if (!org?.languages) {
                   return [];
                 }
@@ -401,7 +401,7 @@ export class CVQuery extends Query<CVState> {
       map((activities) => {
         return activities.reduce(
           (languages, activity) => {
-            const org = this.orgsQuery.getEntity(activity.orgId);
+            const org = this.orgsQuery.getEntity(activity.org);
             if (!org?.languages || !org?.languages?.length) {
               return languages;
             }

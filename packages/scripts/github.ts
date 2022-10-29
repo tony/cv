@@ -176,7 +176,7 @@ fetchGitHubIssues()
         acceptedAt: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
-        orgId: Object.keys(projectsFinal).find(
+        org: Object.keys(projectsFinal).find(
           (projectName) => pr.repository.name === projectName
         ),
         activityType: "Patch",
