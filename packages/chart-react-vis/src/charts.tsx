@@ -51,7 +51,6 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = (props) => {
     const subscriptions: Subscription[] = [
       onEmit<DonutChartProps>(query.subDonutChart$(), (newChart) => {
         const isChanged = !equal(newChart, chartData);
-        console.log("pie published", newChart, chartData, { isChanged });
 
         if (isChanged) {
           setChartData(newChart);
@@ -87,7 +86,6 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = (props) => {
     const subscriptions: Subscription[] = [
       onEmit<LineChartProps>(query.subLineChart$(), (newChart) => {
         const isChanged = !equal(newChart, chartData);
-        console.log("pie published", newChart, chartData, { isChanged });
 
         if (isChanged) {
           setChartData(newChart);

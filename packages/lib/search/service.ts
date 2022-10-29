@@ -43,13 +43,6 @@ export class CVService {
     showCodeStyleTweaks?: boolean;
     showUnmerged?: boolean;
   }): void {
-    console.log({
-      showReleases,
-      showTypos,
-      showDocImprovements,
-      showCodeStyleTweaks,
-      showUnmerged,
-    });
     this.cvStore.update({
       ...(showReleases !== undefined && { showReleases }),
       ...(showTypos !== undefined && { showTypos }),

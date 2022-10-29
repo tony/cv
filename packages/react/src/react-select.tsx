@@ -46,7 +46,6 @@ export const onLanguageChange = (value: PropsValue<IOptionType>): void => {
   }
 };
 export const onOrgChange = (value: PropsValue<IOptionType>): void => {
-  console.log("onOrgChange", value);
   if (value) {
     orgsStore.setActive((value as IOptionType[]).map(({ value }) => value));
   } else {

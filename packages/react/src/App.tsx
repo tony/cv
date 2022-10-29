@@ -102,7 +102,6 @@ const App: React.FC = () => {
     const subscriptions: Subscription[] = [
       onEmit<ReducerState>(query.subResults$(), (newResults) => {
         const isChanged = !equal(newResults, results);
-        console.log("results published", newResults, results, { isChanged });
 
         if (isChanged) {
           dispatch({

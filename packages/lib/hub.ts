@@ -72,7 +72,6 @@ export const loadStores = ({
 }): void => {
   applyTransaction(() => {
     activitiesStore.setLoading(true);
-    console.log("setting storage");
     orgsStore.set(orgs);
     orgTypesStore.set(orgTypes);
     languagesStore.set(languages);

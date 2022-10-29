@@ -83,7 +83,6 @@ export const FilterToggles: React.FC = () => {
     }
 
     if (spellingSwitcher.addEventListener) {
-      console.log("add listener");
       releaseSwitcher.addEventListener(
         "change.one",
         onShowReleaseContributionsChange
