@@ -31,7 +31,7 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.7.0",
     "a-simple-switch": "^0.8.0",
-    "lit": "^2.4.0",
+    "lit": "^2.4.1",
     "sass": "^1.55.0"
   }
 }
