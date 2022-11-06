@@ -12,7 +12,7 @@
     "format": "yarn run prettier . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist/ node_modules/.cache/"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
