@@ -23,26 +23,6 @@ windows:
   - pane
   - pane
   - pane
-- window_name: vue.js
-  layout: main-horizontal
-  options:
-    main-pane-height: 35
-  start_directory: ./packages/vue
-  panes:
-  - focus: true
-  - pane
-  - pane
-  - pane
-- window_name: angular
-  layout: main-horizontal
-  options:
-    main-pane-height: 35
-  start_directory: ./packages/angular
-  panes:
-  - focus: true
-  - pane
-  - pane
-  - pane
 - window_name: lib
   layout: main-horizontal
   options:
