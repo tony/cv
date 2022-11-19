@@ -1,5 +1,3 @@
-@use "@tony/cv-ui/styles/_variables.scss";
-
 .chartRow.nivo:not(.noCharts) {
   @media (max-width: 768px) {
     .chartRow--donut {
