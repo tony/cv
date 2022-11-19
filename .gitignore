@@ -29,3 +29,6 @@ packages/data/scraped/
 
 # WSL
 *:Zone.Identifier
+
+# turbo
+.turbo
