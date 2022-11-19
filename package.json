@@ -3,17 +3,19 @@
   "private": true,
   "scripts": {
     "preinstall": "yarn workspace @tony/cv-data preinstall",
-    "build": "yarn workspaces run build",
     "clean": "yarn workspaces run clean",
     "distclean": "yarn workspaces run distclean",
     "format": "yarn workspaces run format",
-    "lint": "yarn workspaces run lint",
     "ncu": "yarn ncu-local -u; yarn workspaces run ncu",
     "ncu-local": "ncu",
     "prettier": "yarn workspaces run prettier",
     "update": "yarn workspaces run update",
     "github": "yarn workspace @tony/cv-scripts run github",
-    "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
+    "deduplicate": "npx --yes yarn-deduplicate yarn.lock",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
   },
   "workspaces": {
     "packages": [
