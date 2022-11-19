@@ -44,5 +44,27 @@ module.exports = {
         ],
       },
     },
+    {
+      env: {
+        es2021: true,
+        node: true,
+      },
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      parserOptions: {
+        ecmaVersion: 2020,
+        project: "./tsconfig.node.json",
+      },
+      files: "vite.config.ts",
+      plugins: ["@typescript-eslint", "tsc"],
+      rules: {
+        "@typescript-eslint/ban-ts-comment": 0,
+        "tsc/config": [
+          1,
+          {
+            configFile: "tsconfig.node.json",
+          },
+        ],
+      },
+    },
   ],
 };
