@@ -31,6 +31,9 @@
       // being completed. It also has no filesystem outputs.
       "dependsOn": ["build", "test", "lint"],
       "outputs": []
+    },
+    "dev": {
+      "cache": false
     }
   }
 }
