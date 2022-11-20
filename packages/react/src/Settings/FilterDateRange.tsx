@@ -1,8 +1,7 @@
 import React from "react";
 import CSS from "csstype";
 
-import RangeSlider from "nouislider-react";
-import "nouislider/dist/nouislider.css";
+import { useRanger } from "react-ranger";
 
 import { cvService } from "@tony/cv-lib/hub";
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
@@ -11,45 +10,67 @@ import "./FilterDateRange.css";
 
 const minYear = DEFAULT_FILTERS.startYear;
 const maxYear = DEFAULT_FILTERS.endYear;
+const initialRange = [minYear, maxYear];
 
 export const FilterDateRange: React.FC<{
   lineColor: CSS.Properties["backgroundColor"];
 }> = ({ lineColor }) => {
-  const histogramRangeSliderRef = React.useRef<RangeSlider>(null);
-  const onHistogramChange = (
-    values: any[],
-    handle: number,
-    unencodedValues: number[],
-    tap: boolean,
-    positions: number[]
-  ): void => {
-    const yearRange = values;
-    if (yearRange) {
-      cvService.setYears({
-        startYear: parseInt(yearRange[0]),
-        endYear: parseInt(yearRange[1]),
-      });
-    }
+  const [values, setValues] = React.useState(initialRange);
+
+  const onChange = (values: number[]) => {
+    console.log("onChange", values);
+
+    cvService.setYears({
+      startYear: values[0],
+      endYear: values[1],
+    });
+
+    setValues(values);
   };
 
+  const { ticks, segments, getTrackProps, handles } = useRanger({
+    min: minYear - 1,
+    max: maxYear + 1,
+    stepSize: 1,
+    values,
+    onChange,
+    tickSize: 1,
+  });
   return (
-    <RangeSlider
+    <div
+      {...getTrackProps({
+        style: {
+          height: "4px",
+          background: lineColor,
+          boxShadow: "inset 0 1px 2px rgba(0,0,0,.6)",
+          borderRadius: "2px",
+        },
+      })}
       id="year-range"
-      // lineColor={lineColor}
-      onSlide={onHistogramChange}
-      start={[minYear, maxYear]}
-      connect
-      animate
-      range={{
-        min: minYear - 1,
-        max: maxYear + 1,
-      }}
-      step={1}
-      format={{
-        from: Number,
-        to: (value: number) => value.toString(),
-      }}
-      tooltips={[true, true]}
-    />
+    >
+      {ticks.map(({ value, getTickProps }) => (
+        <div className="tick" {...getTickProps()} key={value}>
+          <div className="tick-label">{value}</div>
+        </div>
+      ))}
+      {segments.map(({ getSegmentProps }, i) => (
+        <div {...getSegmentProps()} key={i} />
+      ))}
+      {handles.map(({ getHandleProps }, j) => (
+        <button
+          {...getHandleProps({
+            style: {
+              width: "14px",
+              height: "14px",
+              outline: "none",
+              borderRadius: "100%",
+              background: "linear-gradient(to bottom, #eee 45%, #ddd 55%)",
+              border: "solid 1px #888",
+            },
+          })}
+          key={j}
+        />
+      ))}
+    </div>
   );
 };
