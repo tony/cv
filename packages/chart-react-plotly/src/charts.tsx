@@ -11,7 +11,7 @@ import {
   donutChartHeightWithUnit,
 } from "@tony/cv-ui/styles/constants";
 
-import "./chart-react-plotly.scss";
+import "./chart-react-plotly.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
