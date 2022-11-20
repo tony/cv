@@ -43,16 +43,14 @@
 
 [LitElement]-based [web component]s:
 
-| Package           | Source                        | Details                 | Status         |
-| ----------------- | ----------------------------- | ----------------------- | -------------- |
-| `<CVNav>`         | [packages/nav/][]             | Top navigation, react   | 🟡 In-progress |
-| `<range-slider>`  | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
-| `<simple-switch>` | [packages/ui-switch/][]       | [simple-switch] wrapper | 🟡 In-progress |
+| Package          | Source                        | Details               | Status         |
+| ---------------- | ----------------------------- | --------------------- | -------------- |
+| `<CVNav>`        | [packages/nav/][]             | Top navigation, react | 🟡 In-progress |
+| `<range-slider>` | [packages/ui-range-slider/][] | [noUiSlider] wrapper  | 🟡 In-progress |
 
 [litelement]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [nouislider]: https://github.com/leongersen/noUiSlider
-[simple-switch]: https://github.com/aeolingamenfel/simple-switch
 
 ### 📈 Charts
 
@@ -209,7 +207,6 @@ yarn workspaces run lint
   [packages/nav/]: packages/nav/
   [packages/ui/]: packages/ui/
   [packages/ui-range-slider/]: packages/ui-range-slider/
-  [packages/ui-switch/]: packages/ui-switch/
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities
 

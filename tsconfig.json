@@ -17,7 +17,6 @@
     "sourceMap": true,
     "paths": {
       "@tony/cv-ui": ["./packages/ui"],
-      "@tony/cv-ui-switch": ["./packages/ui-switch"],
       "@tony/cv-ui-range-slider": ["./packages/ui-range-slider"],
       "@tony/cv-react": ["./packages/react"],
       "@tony/cv-lib": ["./packages/lib"],
@@ -34,7 +33,6 @@
   },
   "references": [
     { "path": "packages/ui" },
-    { "path": "packages/ui-switch" },
     { "path": "packages/ui-range-slider" },
     { "path": "packages/react" },
     { "path": "packages/lib" },

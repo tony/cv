@@ -17,7 +17,6 @@ declare module "*.html" {
 declare namespace JSX {
   interface IntrinsicElements {
     "range-slider": any;
-    "simple-switcher": any;
   }
 }
 
