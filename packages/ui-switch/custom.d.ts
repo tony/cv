@@ -19,12 +19,6 @@ declare module "*.html" {
   export default content;
 }
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    "simple-switcher": any;
-  }
-}
-
 declare module "!!raw-loader!*" {
   const contents: string;
   export = contents;
@@ -39,6 +33,7 @@ declare module "a-simple-switch" {
   }
   declare class Switch {
     constructor(config: Config);
+    element: HTMLElement;
     setup(): void;
     updateSize(): void;
     bind(): void;

@@ -126,3 +126,14 @@
   width: var(--simple-switch_size);
   height: var(--simple-switch_size);
 }
+
+/**
+ * Custom
+ */
+._simple-switch-track {
+  margin-right: 0.25rem;
+}
+
+._simple-switch-track .handle {
+  z-index: 0;
+}

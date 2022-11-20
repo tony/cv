@@ -1,7 +1,8 @@
 {
   "extends": "../../tsconfig.json",
-  "files": ["custom.d.ts", "index.ts", "switcher.ts"],
+  "files": ["custom.d.ts", "index.ts", "switcher.tsx"],
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "jsx": "preserve"
   }
 }

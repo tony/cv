@@ -2,11 +2,8 @@ import React from "react";
 
 import { cvService } from "@tony/cv-lib/hub";
 
-import "@tony/cv-ui-switch";
-import type {
-  Switcher,
-  CustomEventMap as SwitcherEvents,
-} from "@tony/cv-ui-switch";
+import { Switcher } from "@tony/cv-ui-switch";
+import type { CustomEventMap as SwitcherEvents } from "@tony/cv-ui-switch";
 
 export const FilterToggles: React.FC = () => {
   const onShowSpellingContributionsRef = React.useRef<Switcher>(null);
@@ -130,29 +127,26 @@ export const FilterToggles: React.FC = () => {
 
   return (
     <div className="toggles">
-      <simple-switcher
+      <Switcher
         id="show-documentation"
         ref={onShowDocumentationContributionsRef}
       >
         Docs
-      </simple-switcher>
-      <simple-switcher id="show-release" ref={onShowReleaseContributionsRef}>
+      </Switcher>
+      <Switcher id="show-release" ref={onShowReleaseContributionsRef}>
         <span title="Continuous integration, build and releases">
           Build / Release / CI
         </span>
-      </simple-switcher>
-      <simple-switcher
-        id="show-code-style"
-        ref={onShowCodeStyleContributionsRef}
-      >
+      </Switcher>
+      <Switcher id="show-code-style" ref={onShowCodeStyleContributionsRef}>
         Code Style
-      </simple-switcher>
-      <simple-switcher id="show-spelling" ref={onShowSpellingContributionsRef}>
+      </Switcher>
+      <Switcher id="show-spelling" ref={onShowSpellingContributionsRef}>
         Typos
-      </simple-switcher>
-      <simple-switcher id="show-unmerged" ref={onShowUnmergedContributionsRef}>
+      </Switcher>
+      <Switcher id="show-unmerged" ref={onShowUnmergedContributionsRef}>
         Unmerged
-      </simple-switcher>
+      </Switcher>
     </div>
   );
 };
