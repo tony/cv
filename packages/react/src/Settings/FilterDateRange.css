@@ -1,0 +1,29 @@
+.noUi-base .noUi-connects .noUi-connect {
+  background-color: var(--line-color, rgb(53, 114, 165));
+}
+.noUi-horizontal {
+  z-index: inherit;
+}
+
+.noUi-horizontal .noUi-tooltip {
+  top: 30px;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+}
+
+
+div#year-range {
+  margin: 0 auto;
+  max-width: 70%;
+  display: block;
+  z-index: 0;
+}
+@media (max-width: 1023px) {
+  div#year-range {
+    width: 90%;
+    max-width: initial;
+    margin: 0.5rem auto;
+  }
+}
+

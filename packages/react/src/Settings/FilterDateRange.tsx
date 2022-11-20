@@ -1,20 +1,29 @@
 import React from "react";
 import CSS from "csstype";
 
-import { cvService } from "@tony/cv-lib/hub";
+import RangeSlider from "nouislider-react";
+import "nouislider/dist/nouislider.css";
 
-import "@tony/cv-ui-range-slider";
-import type {
-  RangeSlider,
-  CustomEventMap as RangeSliderEvents,
-} from "@tony/cv-ui-range-slider";
+import { cvService } from "@tony/cv-lib/hub";
+import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+
+import "./FilterDateRange.css";
+
+const minYear = DEFAULT_FILTERS.startYear;
+const maxYear = DEFAULT_FILTERS.endYear;
 
 export const FilterDateRange: React.FC<{
   lineColor: CSS.Properties["backgroundColor"];
 }> = ({ lineColor }) => {
   const histogramRangeSliderRef = React.useRef<RangeSlider>(null);
-  const onHistogramChange = (e: RangeSliderEvents["change.one"]) => {
-    const yearRange = e?.detail?.values;
+  const onHistogramChange = (
+    values: any[],
+    handle: number,
+    unencodedValues: number[],
+    tap: boolean,
+    positions: number[]
+  ): void => {
+    const yearRange = values;
     if (yearRange) {
       cvService.setYears({
         startYear: parseInt(yearRange[0]),
@@ -23,25 +32,24 @@ export const FilterDateRange: React.FC<{
     }
   };
 
-  React.useLayoutEffect(() => {
-    const histogram = histogramRangeSliderRef?.current;
-    if (!histogram) {
-      return;
-    }
-
-    if (histogram.addEventListener) {
-      histogram.addEventListener("change.one", onHistogramChange);
-    }
-    return () => {
-      histogram.removeEventListener("change.one", onHistogramChange);
-    };
-  });
-
   return (
-    <range-slider
+    <RangeSlider
       id="year-range"
-      ref={histogramRangeSliderRef}
-      lineColor={lineColor}
+      // lineColor={lineColor}
+      onSlide={onHistogramChange}
+      start={[minYear, maxYear]}
+      connect
+      animate
+      range={{
+        min: minYear - 1,
+        max: maxYear + 1,
+      }}
+      step={1}
+      format={{
+        from: Number,
+        to: (value: number) => value.toString(),
+      }}
+      tooltips={[true, true]}
     />
   );
 };
