@@ -7,7 +7,7 @@
 - 100% TypeScript
 - yarn monorepo
 - Only React (for now, see #1633)
-- Webpack from the ground up (no CRA / create-react-app)
+- Vite
 - Shared code: Framework agnostic
   - Typed reactive state through [akita]
   - Multiple, lazily-loaded charts options: [@carbon/charts], [plotly],
@@ -203,31 +203,7 @@ yarn workspaces run lint
 
   Better understanding, control of what's being used
 
-  **Spin-off** core webpack starter projects. MIT licensed. Fork to add your own loaders / wire-in
-  to your project:
-
-  - <https://github.com/tony/react-typescript-vanilla-starter>
-
-- Typescript
-
-  - Typed webpack configuration (webpack.config.ts)
-
-    Maintainability
-
-  - React: Typed components
-
-  - Libraries / Common code: Typed Github commit fetcher
-
-  - Libraries / Common code: Typed data structures
-
 - Lazy loaded, split chunks, smart initialization
-
-  Utilize new splitting, dynamic import, `React.lazy` support in Webpack 4.x
-  (<https://webpack.js.org/guides/code-splitting/>)
-
-  Care taken to load essential stuff first and packages like moment (in itself split) last. Some
-  experimentation is done here to find a balance of how to present the interface initially and can
-  be tweaked overtime.
 
 - Smaller stuff
 
