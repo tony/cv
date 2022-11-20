@@ -1,13 +1,14 @@
-$bg-color: #0854a0;
-$bg-color-400: lighten($bg-color, 5);
-$bg-color-600: darken($bg-color, 10);
-$bg-color-700: darken($bg-color, 20);
-$bg-color-800: darken($bg-color, 30);
-$bg-color-900: darken($bg-color, 40);
+:root {
+  --bg-color: #0854a0;
+  --bg-color-400: #0961b8;
+  --bg-color-600: #063b6f;
+  --bg-color-800: #01080e;
+  --bg-color-900: black;
+}
 
 #our-nav,
 nav {
-  background: $bg-color;
+  background: var(--bg-color);
   display: flex;
   place-items: center;
   height: var(--nav-height);
@@ -55,7 +56,7 @@ nav {
   }
 
   li {
-    background: $bg-color;
+    background: var(--bg-color);
     padding: 0 1rem;
     @media (max-width: 768px) {
       padding: 0 0.5rem;
@@ -91,7 +92,7 @@ nav {
   li:hover,
   li:focus-within {
     z-index: 6000;
-    background: $bg-color-600;
+    background: var(--bg-color-600);
   }
 
   li:focus-within a {
@@ -100,12 +101,12 @@ nav {
 
   ul li ul.submenu {
     li {
-      background: $bg-color-400;
+      background: var(--bg-color-400);
       &:hover,
       &.active {
-        background: $bg-color;
+        background: var(--bg-color);
         &.section-title {
-          background: $bg-color-400;
+          background: var(--bg-color-400);
         }
       }
       &.active a {
@@ -113,7 +114,7 @@ nav {
       }
     }
     width: 15rem;
-    background: $bg-color-400;
+    background: var(--bg-color-400);
     visibility: hidden;
     opacity: 0;
     min-width: 5rem;
@@ -138,3 +139,5 @@ nav {
     width: 100%;
   }
 }
+
+
