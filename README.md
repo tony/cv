@@ -34,7 +34,7 @@
 
 | Package     | Source                | Details | Status         |
 | ----------- | --------------------- | ------- | -------------- |
-| UI          | [packages/ui/][]      | [SASS]  | 🟡 In-progress |
+| UI          | [packages/ui/][]      | N/A     | 🟡 In-progress |
 | Common code | [packages/lib/][]     | N/A     | 🟡 In-progress |
 | Data        | [packages/data/][]    | N/A     | ✔️ Stable      |
 | Scripts     | [packages/scripts/][] | N/A     | ✔️ Stable      |
@@ -49,7 +49,6 @@
 | `<range-slider>`  | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
 | `<simple-switch>` | [packages/ui-switch/][]       | [simple-switch] wrapper | 🟡 In-progress |
 
-[sass]: https://sass-lang.com/
 [litelement]: https://lit-element.polymer-project.org/
 [web component]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [nouislider]: https://github.com/leongersen/noUiSlider
