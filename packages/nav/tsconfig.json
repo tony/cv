@@ -6,7 +6,8 @@
       "@tony/cv-data/*": ["../data/*"],
       "@tony/cv-lib/*": ["../lib/*"]
     },
-    "types": ["node"]
+    "types": ["node"],
+    "jsx": "preserve"
   },
   "files": ["custom.d.ts", "nav.ts"],
   "include": ["./*.ts"]

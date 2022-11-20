@@ -17,7 +17,7 @@ import { Results, ResultsHeader } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
 import { Charts } from "./Charts";
 
-import "@tony/cv-nav";
+import { CVNav } from "@tony/cv-nav";
 import "@tony/cv-ui/styles/style.css";
 
 enum ActionType {
@@ -68,7 +68,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   return (
     <div>
-      <cv-nav />
+      <CVNav />
       {children}
     </div>
   );

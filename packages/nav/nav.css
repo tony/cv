@@ -92,6 +92,7 @@ nav li img {
 nav li a {
   color: #fff;
   text-decoration: none;
+  font-size: 0.95rem;
   display: flex;
 }
 #our-nav li.active,

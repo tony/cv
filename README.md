@@ -45,7 +45,7 @@
 
 | Package           | Source                        | Details                 | Status         |
 | ----------------- | ----------------------------- | ----------------------- | -------------- |
-| `<cv-nav>`        | [packages/nav/][]             | Top navigation, vanilla | 🟡 In-progress |
+| `<CVNav>`         | [packages/nav/][]             | Top navigation, react   | 🟡 In-progress |
 | `<range-slider>`  | [packages/ui-range-slider/][] | [noUiSlider] wrapper    | 🟡 In-progress |
 | `<simple-switch>` | [packages/ui-switch/][]       | [simple-switch] wrapper | 🟡 In-progress |
 
