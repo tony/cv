@@ -248,10 +248,6 @@ a {
     height: auto;
     padding-bottom: 1.5rem;
   }
-  div.toggles simple-switcher {
-    display: block;
-    margin-top: 0.5rem;
-  }
 }
 .dropdownRow {
   padding-top: 1rem;
