@@ -17,7 +17,6 @@
     "sourceMap": true,
     "paths": {
       "@tony/cv-ui": ["./packages/ui"],
-      "@tony/cv-ui-range-slider": ["./packages/ui-range-slider"],
       "@tony/cv-react": ["./packages/react"],
       "@tony/cv-lib": ["./packages/lib"],
       "@tony/cv-data": ["./packages/data"],
@@ -33,7 +32,6 @@
   },
   "references": [
     { "path": "packages/ui" },
-    { "path": "packages/ui-range-slider" },
     { "path": "packages/react" },
     { "path": "packages/lib" },
     { "path": "packages/data" },

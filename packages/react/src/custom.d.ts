@@ -14,12 +14,6 @@ declare module "*.html" {
   export default content;
 }
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    "range-slider": any;
-  }
-}
-
 declare module "!!raw-loader!*" {
   const contents: string;
   export = contents;
