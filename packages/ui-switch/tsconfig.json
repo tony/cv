@@ -1,7 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "files": ["custom.d.ts", "index.ts", "switcher.ts"],
-  "compilerOptions": {
-    "composite": true
-  }
-}

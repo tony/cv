@@ -8,19 +8,3 @@ declare module "*.html" {
   const content: any;
   export default content;
 }
-
-declare namespace JSX {
-  interface IntrinsicElements {
-    "cv-nav": any;
-  }
-}
-
-declare module "!!raw-loader!*" {
-  const contents: string;
-  export = contents;
-}
-
-declare module "!raw-loader!*" {
-  const contents: string;
-  export = contents;
-}

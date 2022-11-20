@@ -1,0 +1,41 @@
+div#year-range {
+  margin: 0 auto;
+  max-width: 70%;
+  display: block;
+  z-index: 0;
+  margin-bottom: 25px;
+}
+@media (max-width: 1023px) {
+  div#year-range {
+    width: 90%;
+    max-width: initial;
+    margin: 0.5rem auto;
+    margin-bottom: 25px;
+  }
+}
+
+.track {
+  display: inline-block;
+  height: 8px;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.tick:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	background: rgba(0, 0, 0, 0.2);
+	height: 5px;
+	width: 2px;
+	transform: translate(-50%, 0.7rem);
+}
+
+.tick-label {
+  position: absolute;
+  font-size: 0.6rem;
+  color: rgba(0, 0, 0, 0.5);
+  top: 100%;
+  transform: translate(-50%, 1.2rem);
+  white-space: nowrap;
+}

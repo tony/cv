@@ -14,14 +14,6 @@ declare module "*.html" {
   export default content;
 }
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    "cv-nav": any;
-    "range-slider": any;
-    "simple-switcher": any;
-  }
-}
-
 declare module "!!raw-loader!*" {
   const contents: string;
   export = contents;
