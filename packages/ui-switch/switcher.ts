@@ -3,7 +3,7 @@ import { customElement, query } from "lit/decorators.js";
 
 //@ts-ignore
 import { Switch as SimpleSwitch } from "a-simple-switch";
-import style from "!!raw-loader!sass-loader!a-simple-switch/src/sass/SimpleSwitch.scss";
+import style from "!!raw-loader!./switcher.css";
 
 type UnpackCustomEvent<T> = T extends CustomEvent<infer U> ? U : never;
 

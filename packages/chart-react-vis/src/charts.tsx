@@ -15,7 +15,7 @@ import { visChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 
 import "react-vis/dist/style.css";
-import "./chart-react-vis.scss";
+import "./chart-react-vis.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(

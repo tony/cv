@@ -11,7 +11,7 @@ import {
 import { victoryChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 
-import "./chart-react-victory.scss";
+import "./chart-react-victory.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(

@@ -1,0 +1,22 @@
+.callouts {
+  /* https://github.com/carbon-design-system/carbon-charts/issues/917 */
+  display: none;
+}
+
+.chartRow.carbon {
+  .chartRow--donut {
+    /* After removing callouts, the proportions are off, trim the extra space
+       https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
+    margin: 0 auto;
+
+    z-index: -10;
+
+    /* center */
+    justify-self: center;
+
+    .chart-holder {
+      /* Prevent white space from overlapping with stuff above */
+      z-index: -10;
+    }
+  }
+}

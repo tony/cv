@@ -8,7 +8,7 @@ import { DonutChartProps, LineChartProps } from "./query";
 import equal from "fast-deep-equal";
 
 import "billboard.js/dist/billboard.css";
-import "./chart-react-billboard.scss";
+import "./chart-react-billboard.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(

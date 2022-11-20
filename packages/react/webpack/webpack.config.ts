@@ -79,10 +79,6 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
         },
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
@@ -130,7 +126,7 @@ const getConfig = (env: IWebpackEnv): webpack.Configuration => ({
     }),
   ],
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".html", ".css", ".scss"],
+    extensions: [".ts", ".tsx", ".js", ".html", ".css"],
   },
   stats: { children: false },
   watch: env.watch,

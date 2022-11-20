@@ -30,8 +30,6 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.7.0",
     "lit": "^2.4.1",
-    "nouislider": "^15.6.1",
-    "sass": "^1.56.1",
-    "sass-loader": "^12.4.0"
+    "nouislider": "^15.6.1"
   }
 }

@@ -2,7 +2,7 @@ import { CSSResult, LitElement, TemplateResult, css, html, unsafeCSS } from "lit
 import { customElement, property, query } from "lit/decorators.js";
 
 import * as noUiSlider from "nouislider/dist/nouislider";
-import style from "!!raw-loader!sass-loader!nouislider/dist/nouislider.css";
+import style from "!!raw-loader!nouislider/dist/nouislider.css";
 
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
 

@@ -1,8 +1,6 @@
 import { CSSResult, LitElement, html, css, TemplateResult, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-// import style from "!!raw-loader!sass-loader!./nav.scss";
-
 import reactSvg from "@tony/cv-data/img/icons/react.svg";
 import vueSvg from "@tony/cv-data/img/icons/vue.svg";
 
@@ -49,8 +47,8 @@ export class CVNav extends LitElement {
   @property() framework = getActiveFramework();
 
   static get styles(): CSSResult[] {
-    const styleModule = require("./nav.scss");
-    const styleOther = require("!!raw-loader!sass-loader!./nav.scss").default;
+    const styleModule = require("./nav.css");
+    const styleOther = require("!!raw-loader!./nav.css").default;
     const style = styleOther ?? styleModule ?? "";
 
     return [

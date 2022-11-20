@@ -7,7 +7,7 @@ import { carbonChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
 
 import "@carbon/charts/styles.css";
-import "./chart-react-carbon.scss";
+import "./chart-react-carbon.css";
 
 // Todo consolidate this into common code somewhere
 export function onEmit<T>(
