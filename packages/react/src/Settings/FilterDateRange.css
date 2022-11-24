@@ -22,13 +22,13 @@ div#year-range {
 }
 
 .tick:before {
-	content: '';
-	position: absolute;
-	left: 0;
-	background: rgba(0, 0, 0, 0.2);
-	height: 5px;
-	width: 2px;
-	transform: translate(-50%, 0.7rem);
+  content: "";
+  position: absolute;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  height: 5px;
+  width: 2px;
+  transform: translate(-50%, 0.7rem);
 }
 
 .tick-label {

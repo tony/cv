@@ -1,7 +1,7 @@
 .toggles label {
   font-size: 0.85rem;
   font-style: inherit;
-  color: #6B778C;
+  color: #6b778c;
   font-weight: 600;
   display: inline-block;
 }
@@ -22,4 +22,3 @@ div.toggles {
     margin: 0.5rem auto;
   }
 }
-
