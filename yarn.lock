@@ -447,19 +447,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.1.tgz#7ca5b74b1ae4732f75527b9a013048547daf296c"
-  integrity sha512-OhLgPB71wqauazzcm0tMHk6ADhJFfGdXyt5qLmWquS1e90fd1bpVZgFXdmH63reC8n4GFFOybacGZhvyBvn9nA==
+"@carbon/charts-react@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.2.tgz#1d189a2524653a22ec503a2d9f8f683e8acd2c2d"
+  integrity sha512-eoYl3bMB0+2JSv/FlTJD2DLY17Vvb02BV2pBmxUIbfgIQcjMNFmbIVzJ0b/VhUD3N/15tZVDYSNwBxEt+DPRmQ==
   dependencies:
-    "@carbon/charts" "^1.6.1"
+    "@carbon/charts" "^1.6.2"
     "@carbon/icons-react" "^10.49.0"
     "@carbon/telemetry" "0.1.0"
 
-"@carbon/charts@1.6.1", "@carbon/charts@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.1.tgz#8efd8e298eabb52be73e6cd6b3252629d2643bd8"
-  integrity sha512-6Oii4QGRaIFOAztJDY3MJ7cViiu2EUOmJHYDc/KUTs9NQRSfbBkKD5xo+pHHWyO0ZXy6pn/60RVBbdjFcA2t7Q==
+"@carbon/charts@1.6.2", "@carbon/charts@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.2.tgz#5565c03e42f93b75e032728ada994d2b2374a1fa"
+  integrity sha512-JsmryCGQiaY5eq4r1NU+WQKDOAmZm6oTCtKKkeQPgnDxDfJVVn7lheSsovcDongDTx6nQ1rgYQaak927RK7chw==
   dependencies:
     "@carbon/styles" "^1.4.0"
     "@carbon/telemetry" "0.1.0"
@@ -1567,10 +1567,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^29.2.3":
-  version "29.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.2.3.tgz#f5fd88e43e5a9e4221ca361e23790d48fcf0a211"
-  integrity sha512-6XwoEbmatfyoCjWRX7z0fKMmgYKe9+/HrviJ5k0X/tjJWHGAezZOfYaxqQKuzG/TvQyr+ktjm4jgbk0s4/oF2w==
+"@types/jest@^29.2.4":
+  version "29.2.4"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.2.4.tgz#9c155c4b81c9570dbd183eb8604aa0ae80ba5a5b"
+  integrity sha512-PipFB04k2qTRPePduVLTRiPzQfvMeLwUN3Z21hsAKaB/W9IIzgB2pizCL466ftJlcyZqnHoC9ZHpxLGl3fS86A==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -1585,10 +1585,15 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/node@*", "@types/node@^18.11.10":
+"@types/node@*":
   version "18.11.10"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.10.tgz#4c64759f3c2343b7e6c4b9caf761c7a3a05cee34"
   integrity sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==
+
+"@types/node@^18.11.11":
+  version "18.11.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.11.tgz#1d455ac0211549a8409d3cdb371cd55cc971e8dc"
+  integrity sha512-KJ021B1nlQUBLopzZmPBVuGU9un7WJd/W4ya7Ih02B4Uwky5Nja0yGYav2EfYIk0RR2Q9oVhf60S2XR1BCWJ2g==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6673,10 +6678,10 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-plotly.js@^2.16.3:
-  version "2.16.3"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.16.3.tgz#5e62032d7997d42b18fe8e9d9d808479aef75756"
-  integrity sha512-l/2vpjJxiaNOdsnRx/sK8W2b+25JP4XFrkT5Lo4i5b5WNxrsqK7QdProvfflufZkHmByuFe6YnrOv9JNSiE6ZA==
+plotly.js@^2.16.4:
+  version "2.16.4"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.16.4.tgz#b7bea31ec697167b1391a7b7e038b7b707d0d421"
+  integrity sha512-g5ZV2XOeZjvpDJknCOxY5WFcLeTBYxL1rpNnllU58815KBwfTgvD3yPFtGGywAZSdtEoJAj09BNThJmADhbGfQ==
   dependencies:
     "@plotly/d3" "3.8.0"
     "@plotly/d3-sankey" "0.7.2"
@@ -6762,10 +6767,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
-prettier@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.0.tgz#c7df58393c9ba77d6fba3921ae01faf994fb9dc9"
-  integrity sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==
+prettier@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.1.tgz#4e1fd11c34e2421bc1da9aea9bd8127cd0a35efc"
+  integrity sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==
 
 pretty-format@^27.5.1:
   version "27.5.1"
@@ -8117,10 +8122,10 @@ typescript@^3.6.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
-typescript@^4.9.3:
-  version "4.9.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.3.tgz#3aea307c1746b8c384435d8ac36b8a2e580d85db"
-  integrity sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==
+typescript@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
+  integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==
 
 typpy@^2.0.0, typpy@^2.3.1, typpy@^2.3.4, typpy@^2.3.6:
   version "2.3.13"
@@ -8684,10 +8689,10 @@ victory@^36.6.8:
     victory-voronoi-container "^36.6.8"
     victory-zoom-container "^36.6.8"
 
-vite@^3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.2.4.tgz#d8c7892dd4268064e04fffbe7d866207dd24166e"
-  integrity sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==
+vite@^3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-3.2.5.tgz#dee5678172a8a0ab3e547ad4148c3d547f90e86a"
+  integrity sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==
   dependencies:
     esbuild "^0.15.9"
     postcss "^8.4.18"
