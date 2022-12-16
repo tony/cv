@@ -28,7 +28,7 @@
     "@types/chroma-js": "^2.1.4",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.15",
-    "eslint-plugin-jest": "^27.1.6",
+    "eslint-plugin-jest": "^27.1.7",
     "jest": "^27.5.1",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.4.2",
