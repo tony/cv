@@ -1,13 +1,11 @@
-.chartRow.nivo:not(.noCharts) {
-  @media (max-width: 768px) {
-    .chartRow--donut {
-      justify-self: initial;
-    }
+@media (max-width: 768px) {
+  .chartRow.nivo:not(.noCharts) .chartRow--donut {
+    justify-self: initial;
   }
+}
 
-  .chartRow--donut,
-  .chartRow--line {
-    min-height: var(--chart-height);
-    height: var(--chart-height);
-  }
+.chartRow.nivo:not(.noCharts) .chartRow--donut,
+.chartRow.nivo:not(.noCharts) .chartRow--line {
+  min-height: var(--chart-height);
+  height: var(--chart-height);
 }
