@@ -1,5 +1,6 @@
 import {
   reActivityRelease,
+  reActivityCI,
   reActivityTypoFix,
   reActivityDocImprovement,
   reActivityCodeStyleTweak,
@@ -9,6 +10,8 @@ import type { IActivity, IActivityOpenSource } from "@tony/cv-data/types";
 // via v1: https://github.com/tony/cv/blob/v1/lib/selectors.js
 export const isActivityRelease = (activity: IActivity): boolean =>
   !!activity.title.match(reActivityRelease);
+export const isActivityCI = (activity: IActivity): boolean =>
+  !!activity.title.match(reActivityCI);
 export const isActivityTypoFix = (activity: IActivity): boolean =>
   !!activity.title.match(reActivityTypoFix);
 export const isActivityDocImprovement = (activity: IActivity): boolean =>
