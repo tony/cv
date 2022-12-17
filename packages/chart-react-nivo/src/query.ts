@@ -6,7 +6,9 @@ import { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeight,
   donutChartWidth,
+  lineChartHeight,
 } from "@tony/cv-ui/styles/constants";
+import { defaultMargin } from "@nivo/core";
 
 function isString(x: unknown): x is string {
   return typeof x === "string";
@@ -81,7 +83,9 @@ export const stateToDonut = (
   } as PieSvgProps<{ id: string; label: string; value: number }>;
 };
 
-export const stateToLine = (state: Instance<typeof CVState>): LineSvgProps => {
+export const stateToLine = (
+  state: Instance<typeof CVState>
+): LineChartProps => {
   const activityYearMap = state.activityYearMap;
   return {
     // @ts-ignore
@@ -127,5 +131,12 @@ export const stateToLine = (state: Instance<typeof CVState>): LineSvgProps => {
     },
     useMesh: true,
     enableSlices: false,
+    height: lineChartHeight,
+    margin: {
+      left: 25,
+      right: 20,
+      top: 20,
+      bottom: 20,
+    },
   } as LineChartProps;
 };
