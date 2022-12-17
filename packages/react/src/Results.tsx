@@ -1,10 +1,10 @@
 import React from "react";
 
+import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
 import { orgsQuery } from "@tony/cv-lib/hub";
 import type { Results as ReducerState } from "@tony/cv-lib/search/query";
-import { ActivityCard } from "./Card";
 
-import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
+import { ActivityCard } from "./Card";
 
 export const ResultsHeader: React.FC<{ results: ReducerState }> = ({
   results,

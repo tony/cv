@@ -1,11 +1,11 @@
-import bb from "billboard.js";
 import React from "react";
 
+import bb from "billboard.js";
+import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
 
 import { billboardJSChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
 
 import "billboard.js/dist/billboard.css";
 import "./chart-react-billboard.css";

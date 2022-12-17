@@ -1,8 +1,7 @@
-import type { Observable } from "rxjs";
-import type { VictoryLine, VictoryPie } from "victory";
-
 import { combineQueries } from "@datorama/akita";
+import type { Observable } from "rxjs";
 import { map, take } from "rxjs/operators";
+import type { VictoryLine, VictoryPie } from "victory";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
 import type {

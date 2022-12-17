@@ -1,10 +1,10 @@
 import React from "react";
 
 import {
-  activityTypesQuery,
-  languagesQuery,
-  orgTypesQuery,
-} from "@tony/cv-lib/hub";
+  ActivityTypeEmojiMap,
+  ActivityTypeVerbMap,
+  ActivityTypeVerbPresentTenseMap,
+} from "@tony/cv-data/constants";
 import type {
   ActivityTypeName,
   IActivity,
@@ -12,10 +12,10 @@ import type {
   OrgTypeName,
 } from "@tony/cv-data/types";
 import {
-  ActivityTypeEmojiMap,
-  ActivityTypeVerbMap,
-  ActivityTypeVerbPresentTenseMap,
-} from "@tony/cv-data/constants";
+  activityTypesQuery,
+  languagesQuery,
+  orgTypesQuery,
+} from "@tony/cv-lib/hub";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>

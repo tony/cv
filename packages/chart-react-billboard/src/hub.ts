@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { BillboardJSChartQuery } from "./query";
 
 export const billboardJSChartQuery = new BillboardJSChartQuery(

@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { NivoChartQuery } from "./query";
 
 export const nivoChartQuery = new NivoChartQuery(

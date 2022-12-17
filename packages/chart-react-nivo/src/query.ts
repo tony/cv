@@ -1,8 +1,7 @@
-import type { Observable } from "rxjs";
-
 import { combineQueries } from "@datorama/akita";
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
+import type { Observable } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";

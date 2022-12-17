@@ -1,7 +1,6 @@
+import { combineQueries } from "@datorama/akita";
 import bb, { donut, line } from "billboard.js";
 import type { Observable } from "rxjs";
-
-import { combineQueries } from "@datorama/akita";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";

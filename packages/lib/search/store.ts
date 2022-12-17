@@ -11,7 +11,6 @@ import {
 } from "@datorama/akita";
 
 import { ActivityTypeName } from "@tony/cv-data/types";
-
 import type {
   ActivityType,
   Language,
@@ -20,6 +19,9 @@ import type {
   IActivityOpenSource,
   IOrg,
 } from "@tony/cv-data/types";
+// Record<string, never>;
+import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+
 import {
   isActivityRelease,
   isActivityTypoFix,
@@ -36,8 +38,7 @@ export type CVState = {
   showUnmerged: boolean;
   startYear: number;
   endYear: number;
-}; // Record<string, never>;
-import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+};
 
 export interface ActivityUI {
   isRelease: boolean;

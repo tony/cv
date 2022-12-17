@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { VisChartQuery } from "./query";
 
 export const visChartQuery = new VisChartQuery(

@@ -1,7 +1,9 @@
 import React from "react";
-import type { Subscription } from "rxjs";
-import equal from "fast-deep-equal";
 
+import equal from "fast-deep-equal";
+import type { Subscription } from "rxjs";
+
+import type { fetchDataFn } from "@tony/cv-data/fetch";
 import type { IActivity, Language } from "@tony/cv-data/types";
 import { activitiesStore, loadStores, query } from "@tony/cv-lib/hub";
 import type {
@@ -10,14 +12,13 @@ import type {
   Results as ReducerState,
 } from "@tony/cv-lib/search/query";
 import { DEFAULT_RESULTS } from "@tony/cv-lib/search/query";
-import type { fetchDataFn } from "@tony/cv-data/fetch";
-import { onEmit, useAsyncEffect } from "./utils";
+import { CVNav } from "@tony/cv-nav";
 
+import { Charts } from "./Charts";
 import { Results, ResultsHeader } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
-import { Charts } from "./Charts";
+import { onEmit, useAsyncEffect } from "./utils";
 
-import { CVNav } from "@tony/cv-nav";
 import "@tony/cv-ui/styles/style.css";
 
 enum ActionType {

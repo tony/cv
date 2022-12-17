@@ -2,9 +2,9 @@ import React from "react";
 
 import type { Results as ReducerState } from "@tony/cv-lib/search/query";
 
+import { SettingsContext } from "./Settings";
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { Chart } from "./types";
-import { SettingsContext } from "./Settings";
 
 const ChartLinks: React.FC<
   {

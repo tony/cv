@@ -1,15 +1,17 @@
 /// <reference path="./custom.d.ts" />
 import React from "react";
-import Plotly from "plotly.js/dist/plotly";
+
 import equal from "fast-deep-equal";
+import Plotly from "plotly.js/dist/plotly";
 import type { Observable, Subscription } from "rxjs";
 
-import { plotlyJSChartQuery as query } from "./hub";
-import { DonutChartProps, LineChartProps } from "./query";
 import {
   lineChartHeightWithUnit,
   donutChartHeightWithUnit,
 } from "@tony/cv-ui/styles/constants";
+
+import { plotlyJSChartQuery as query } from "./hub";
+import { DonutChartProps, LineChartProps } from "./query";
 
 import "./chart-react-plotly.css";
 

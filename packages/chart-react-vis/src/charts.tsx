@@ -8,8 +8,9 @@ import {
   FlexibleXYPlot,
 } from "react-vis";
 
-import type { Observable, Subscription } from "rxjs";
 import equal from "fast-deep-equal";
+import type { Observable, Subscription } from "rxjs";
+
 import { FlexRadialChart } from "./constants";
 import { visChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";

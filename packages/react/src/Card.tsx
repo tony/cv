@@ -1,4 +1,5 @@
 import React from "react";
+
 import { format, formatDistance } from "date-fns";
 
 import type {
@@ -12,7 +13,9 @@ import type {
   PublicationOrg,
 } from "@tony/cv-data/types";
 import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
+
 import { ActivityTypeText, LanguageTag } from "./Tag";
+
 import "@tony/cv-ui/styles/style.css";
 
 interface IActivityCardProps {

@@ -1,15 +1,10 @@
-import type { Observable } from "rxjs";
 import {
   ChartConfig,
   DonutChartOptions,
   LineChartOptions,
 } from "@carbon/charts/interfaces";
-import {
-  donutChartHeightWithUnit,
-  donutChartWidthWithUnit,
-  lineChartHeightWithUnit,
-} from "@tony/cv-ui/styles/constants";
 import { combineQueries } from "@datorama/akita";
+import type { Observable } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -20,8 +15,12 @@ import type {
   ActivityTypesQuery,
   ActivitiesQuery,
 } from "@tony/cv-lib/search/query";
-
 import { CVStore } from "@tony/cv-lib/search/store";
+import {
+  donutChartHeightWithUnit,
+  donutChartWidthWithUnit,
+  lineChartHeightWithUnit,
+} from "@tony/cv-ui/styles/constants";
 
 export type DonutChartProps = ChartConfig<DonutChartOptions>;
 export type LineChartProps = ChartConfig<LineChartOptions>;

@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { CarbonChartQuery } from "./query";
 
 export const carbonChartQuery = new CarbonChartQuery(

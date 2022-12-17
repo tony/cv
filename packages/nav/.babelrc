@@ -1,7 +1,10 @@
 {
   "presets": [
     ["@babel/typescript", { "jsxPragma": "h" }], // Add jsxPragma here
-    ["@babel/preset-env", { "modules": false, "targets": { "node": "current" } }]
+    [
+      "@babel/preset-env",
+      { "modules": false, "targets": { "node": "current" } }
+    ]
   ],
   "plugins": [["transform-react-jsx", { "pragma": "h" }]]
 }

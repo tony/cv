@@ -1,12 +1,12 @@
 import React from "react";
 
-import { ResponsivePie } from "@nivo/pie";
 import { ResponsiveLine } from "@nivo/line";
+import { ResponsivePie } from "@nivo/pie";
+import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
 
 import { nivoChartQuery as query } from "./hub";
 import { DonutChartProps, LineChartProps } from "./query";
-import equal from "fast-deep-equal";
 
 import "./chart-react-nivo.css";
 

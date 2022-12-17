@@ -1,8 +1,7 @@
-import fs from "fs";
-import moment from "moment";
-
 import { Octokit } from "@octokit/core";
 import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
+import fs from "fs";
+import moment from "moment";
 
 const ghToken =
   process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;

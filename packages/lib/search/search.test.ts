@@ -1,6 +1,7 @@
-import { ActivitiesStore, CVStore } from "./store";
 import type { IData } from "@tony/cv-data/fetch";
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+
+import { ActivitiesStore, CVStore } from "./store";
 
 describe("CVStore", () => {
   test("init", () => {

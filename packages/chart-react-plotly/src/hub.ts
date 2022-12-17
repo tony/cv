@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { PlotlyChartQuery } from "./query";
 
 export const plotlyJSChartQuery = new PlotlyChartQuery(

@@ -1,7 +1,7 @@
 import React from "react";
-import CSS from "csstype";
-
 import { useRanger } from "react-ranger";
+
+import CSS from "csstype";
 
 import { cvService } from "@tony/cv-lib/hub";
 import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";

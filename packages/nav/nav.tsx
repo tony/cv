@@ -56,7 +56,11 @@ export const CVNav: React.FC = () => {
         </b>
       </div>
       <ul>
-        <li className={`${framework == Framework.React ? "active" : ""} framework react`}>
+        <li
+          className={`${
+            framework == Framework.React ? "active" : ""
+          } framework react`}
+        >
           <a href="https://cv-react-v2.git-pull.com/">
             {" "}
             <img src={reactSvg} width="18" />
@@ -81,7 +85,11 @@ export const CVNav: React.FC = () => {
             </li>
           </ul>
         </li>
-        <li className={`${framework == Framework.Vue ? "active" : ""} framework vue`}>
+        <li
+          className={`${
+            framework == Framework.Vue ? "active" : ""
+          } framework vue`}
+        >
           <a href="https://cv-vue-v2.git-pull.com/">
             <img src={vueSvg} width="18" /> <span className="label"> Vue</span>
           </a>
@@ -95,7 +103,11 @@ export const CVNav: React.FC = () => {
           </ul>
         </li>
         <li className="view-source">
-          <a href="https://github.com/tony/cv" rel="noopener noreferrer" target="blank">
+          <a
+            href="https://github.com/tony/cv"
+            rel="noopener noreferrer"
+            target="blank"
+          >
             View Source
           </a>
         </li>

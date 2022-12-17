@@ -1,7 +1,7 @@
-import type { Observable } from "rxjs";
 import type { LineSeries, LineSeriesPoint } from "react-vis";
 
 import { combineQueries } from "@datorama/akita";
+import type { Observable } from "rxjs";
 import { map, take } from "rxjs/operators";
 
 import { CVQuery } from "@tony/cv-lib/search/query";
@@ -12,7 +12,6 @@ import type {
   ActivityTypesQuery,
   ActivitiesQuery,
 } from "@tony/cv-lib/search/query";
-
 import { CVStore } from "@tony/cv-lib/search/store";
 
 import type { FlexRadialChart } from "./constants";

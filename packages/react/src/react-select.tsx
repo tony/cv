@@ -1,7 +1,4 @@
-import type { CSSObject } from "@emotion/serialize";
 import React from "react";
-import type { Subscription } from "rxjs";
-
 import {
   components as ReactSelectComponents,
   Options,
@@ -11,8 +8,11 @@ import {
   MultiValueGenericProps,
 } from "react-select";
 
+import type { CSSObject } from "@emotion/serialize";
 import chroma from "chroma-js";
+import type { Subscription } from "rxjs";
 
+import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
 import {
   activityTypesQuery,
   languagesQuery,
@@ -23,7 +23,7 @@ import {
   activityTypesStore,
 } from "@tony/cv-lib/hub";
 import type { LanguageCount } from "@tony/cv-lib/search/query";
-import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
+
 import { LanguageTag, OrgTypeTag } from "./Tag";
 import { onEmit } from "./utils";
 

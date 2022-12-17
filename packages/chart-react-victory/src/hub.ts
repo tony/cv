@@ -7,6 +7,7 @@ import {
   orgTypesQuery,
   languagesQuery,
 } from "@tony/cv-lib/hub";
+
 import { VictoryChartQuery } from "./query";
 
 export const victoryChartQuery = new VictoryChartQuery(

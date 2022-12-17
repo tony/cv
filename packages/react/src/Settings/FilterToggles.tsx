@@ -1,8 +1,8 @@
 import React from "react";
 
-import { cvService } from "@tony/cv-lib/hub";
-
 import Toggle from "@atlaskit/toggle";
+
+import { cvService } from "@tony/cv-lib/hub";
 
 import "./FilterToggles.css";
 

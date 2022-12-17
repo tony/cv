@@ -1,5 +1,6 @@
-import { DonutChart, StackedAreaChart } from "@carbon/charts-react";
 import React from "react";
+
+import { DonutChart, StackedAreaChart } from "@carbon/charts-react";
 import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
 

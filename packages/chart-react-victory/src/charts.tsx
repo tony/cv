@@ -1,7 +1,8 @@
 import React from "react";
-import { VictoryChart, VictoryLine, VictoryPie, VictoryTheme } from "victory";
+
 import equal from "fast-deep-equal";
 import type { Observable, Subscription } from "rxjs";
+import { VictoryChart, VictoryLine, VictoryPie, VictoryTheme } from "victory";
 
 import {
   donutChartHeight,

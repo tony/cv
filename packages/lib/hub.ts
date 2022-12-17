@@ -1,6 +1,21 @@
 import { applyTransaction } from "@datorama/akita";
 
+import type {
+  ActivityType,
+  Language,
+  OrgType,
+  IActivity,
+  IOrg,
+} from "@tony/cv-data/types";
+
 import { CVQuery } from "./search/query";
+import {
+  ActivitiesQuery,
+  ActivityTypesQuery,
+  LanguagesQuery,
+  OrgsQuery,
+  OrgTypesQuery,
+} from "./search/query";
 import { CVService } from "./search/service";
 import {
   ActivitiesStore,
@@ -10,21 +25,6 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./search/store";
-import {
-  ActivitiesQuery,
-  ActivityTypesQuery,
-  LanguagesQuery,
-  OrgsQuery,
-  OrgTypesQuery,
-} from "./search/query";
-
-import type {
-  ActivityType,
-  Language,
-  OrgType,
-  IActivity,
-  IOrg,
-} from "@tony/cv-data/types";
 
 export const activityTypesStore = new ActivityTypesStore();
 export const activitiesStore = new ActivitiesStore();

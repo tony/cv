@@ -7,10 +7,19 @@ import {
   Order,
 } from "@datorama/akita";
 import getYear from "date-fns/getYear";
-import { map, take } from "rxjs/operators";
-import type { Observable } from "rxjs";
 import moment from "moment";
+import type { Observable } from "rxjs";
+import { map, take } from "rxjs/operators";
 
+import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
+import type {
+  IActivity,
+  IOrg,
+  Language,
+  LanguageName,
+} from "@tony/cv-data/types";
+
+import { hasAny } from "../utils";
 import type {
   ActivitiesState,
   CVState,
@@ -29,14 +38,6 @@ import {
   OrgsStore,
   OrgTypesStore,
 } from "./store";
-import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
-import type {
-  IActivity,
-  IOrg,
-  Language,
-  LanguageName,
-} from "@tony/cv-data/types";
-import { hasAny } from "../utils";
 
 export type LanguageCount = Record<LanguageName, number>;
 export type ActivityCount = Record<string, number>;
