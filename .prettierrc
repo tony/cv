@@ -1,3 +1,16 @@
 {
-  "printWidth": 80
+  "printWidth": 80,
+  "importOrder": [
+    "^react", // React will be placed at the top of third-party modules
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@tony/.*",
+    "",
+    "^[./]",
+    "",
+    "\\.css$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"]
 }
