@@ -1,7 +1,0 @@
-{
-  "extends": "../react/tsconfig.json",
-  "include": ["src/*"],
-  "compilerOptions": {
-    "composite": true
-  }
-}

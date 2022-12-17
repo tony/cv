@@ -27,12 +27,6 @@ export const PIE_CHART_MAP = {
       "@tony/cv-chart-react-victory/src/charts"
     ).then((module) => ({ default: module.LanguagePieChart }))
   ),
-  [Chart.ReactVis]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "vis-pie" */
-      "@tony/cv-chart-react-vis/src/charts"
-    ).then((module) => ({ default: module.LanguagePieChart }))
-  ),
   [Chart.Nivo]: React.lazy(() =>
     import(
       /* webpackChunkName: "nivo-pie" */
@@ -64,12 +58,6 @@ export const LINE_CHART_MAP = {
     import(
       /* webpackChunkName: "victory-line" */
       "@tony/cv-chart-react-victory/src/charts"
-    ).then((module) => ({ default: module.ActivityLineChart }))
-  ),
-  [Chart.ReactVis]: React.lazy(() =>
-    import(
-      /* webpackChunkName: "vis-line" */
-      "@tony/cv-chart-react-vis/src/charts"
     ).then((module) => ({ default: module.ActivityLineChart }))
   ),
   [Chart.Nivo]: React.lazy(() =>

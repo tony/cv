@@ -47,14 +47,12 @@
 | [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] |
 | [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         |
 | [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      |
-| [react-vis] \(react-only) | 🟡 In-progress, [packages/chart-react-vis/][]          |
 
 [@carbon/charts]: https://github.com/carbon-design-system/carbon-charts
 [plotly]: https://github.com/plotly/plotly.js
 [billboard.js]: https://github.com/naver/billboard.js
 [victory]: https://github.com/FormidableLabs/victory
 [nivo]: https://github.com/plouc/nivo
-[react-vis]: https://github.com/uber/react-vis
 
 ## Quickstart
 
@@ -184,7 +182,6 @@ yarn workspaces run lint
   [es2015 class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
   [packages/scripts/]: packages/scripts/
   [packages/data/]: packages/data/
-  [packages/chart-react-vis/]: packages/chart-react-vis/
   [packages/chart-react-nivo/]: packages/chart-react-nivo/
   [packages/chart-react-victory/]: packages/chart-react-victory/
   [packages/chart-react-carbon/]: packages/chart-react-carbon/

@@ -26,8 +26,7 @@
       "@tony/cv-chart-react-carbon": ["./packages/chart-react-carbon"],
       "@tony/cv-chart-react-nivo": ["./packages/chart-react-nivo"],
       "@tony/cv-chart-react-plotly": ["./packages/chart-react-plotly"],
-      "@tony/cv-chart-react-victory": ["./packages/chart-react-victory"],
-      "@tony/cv-chart-react-vis": ["./packages/chart-react-vis"]
+      "@tony/cv-chart-react-victory": ["./packages/chart-react-victory"]
     }
   },
   "references": [
@@ -41,7 +40,6 @@
     { "path": "packages/chart-react-carbon" },
     { "path": "packages/chart-react-nivo" },
     { "path": "packages/chart-react-plotly" },
-    { "path": "packages/chart-react-victory" },
-    { "path": "packages/chart-react-vis" }
+    { "path": "packages/chart-react-victory" }
   ]
 }
