@@ -2,10 +2,12 @@ import React from "react";
 
 import { observer } from "mobx-react-lite";
 
-import { SettingsContext } from "./Settings";
+import { getTopLanguageColor, SettingsContext } from "./Settings";
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { useMst } from "./mobx";
 import { Chart } from "./types";
+
+import "@tony/cv-ui-histogram";
 
 const ChartLinks: React.FC<
   {
@@ -41,9 +43,14 @@ export const Charts = observer(() => {
     return null;
   }
   const { showChartsMobile } = context;
-
+  const topLanguageColor = getTopLanguageColor(results);
+  console.log("activityCount", results.activityCount);
   return (
     <>
+      <cv-histogram
+        info={JSON.stringify(results.activityCount)}
+        lineColor={topLanguageColor}
+      />
       <ChartLinks
         chart={chart}
         setChart={setChart}

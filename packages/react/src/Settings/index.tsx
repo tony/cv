@@ -1,6 +1,9 @@
 import React from "react";
 
+import type CSS from "csstype";
+
 import { useMst } from "../mobx";
+import type { MobxInstance } from "../mobx";
 import { FilterDateRange } from "./FilterDateRange";
 import { FilterDropdowns } from "./FilterDropdowns";
 import { FilterToggles } from "./FilterToggles";
@@ -37,11 +40,16 @@ export const SettingsContextProvider: React.FC<{
   );
 };
 
+export const getTopLanguageColor = (
+  cvState: MobxInstance
+): CSS.Properties["backgroundColor"] => {
+  return cvState.languages.find((language) => language?.ui?.backgroundColor)?.ui
+    ?.backgroundColor;
+};
+
 export const Settings: React.FC = () => {
   const cvState = useMst();
-  const topLanguageColorBg = cvState.languages.find(({ id }) => id)?.ui
-    ?.backgroundColor;
-
+  const topLanguageColorBg = getTopLanguageColor(cvState);
   const context = React.useContext(SettingsContext);
   if (!context) {
     return null;
