@@ -128,14 +128,6 @@ Download latest github color mapping:
 $ yarn workspace @tony/cv-data run github-colors
 ```
 
-#### lib
-
-Run jest tests
-
-```bash
-yarn workspace @tony/cv-lib run jest
-```
-
 ## Global tasks
 
 Install all packages:

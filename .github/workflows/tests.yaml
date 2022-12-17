@@ -26,7 +26,6 @@ jobs:
     - name: lib - lint, test
       run: |
         yarn workspace @tony/cv-lib run lint
-        yarn workspace @tony/cv-lib run test
     - name: react - lint, and test
       run: |
         yarn workspace @tony/cv-react run lint
