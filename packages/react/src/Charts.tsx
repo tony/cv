@@ -1,9 +1,10 @@
 import React from "react";
 
-import type { Results as ReducerState } from "@tony/cv-lib/search/query";
+import { observer } from "mobx-react-lite";
 
 import { SettingsContext } from "./Settings";
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
+import { useMst } from "./mobx";
 import { Chart } from "./types";
 
 const ChartLinks: React.FC<
@@ -29,9 +30,8 @@ const ChartLinks: React.FC<
   </div>
 );
 
-export const Charts: React.FC<{
-  results: ReducerState;
-}> = ({ results }) => {
+export const Charts = observer(() => {
+  const cvState = useMst();
   const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
@@ -53,7 +53,7 @@ export const Charts: React.FC<{
       <div
         id="charts"
         className={`chartRow ${chart}${
-          Object.keys(results.activityCount).length ? "" : " noCharts"
+          Object.keys(cvState.filteredActivities).length ? "" : " noCharts"
         } ${showChartsMobile ? "active" : ""}`}
       >
         <div className="chartRow--donut">
@@ -73,4 +73,4 @@ export const Charts: React.FC<{
       </div>
     </>
   );
-};
+});

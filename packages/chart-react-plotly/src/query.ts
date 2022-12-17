@@ -1,16 +1,11 @@
-import { combineQueries } from "@datorama/akita";
-import type { Observable } from "rxjs";
-import { map, take } from "rxjs/operators";
+import type { Instance } from "mobx-state-tree";
 
-import { CVQuery } from "@tony/cv-lib/search/query";
-import type {
-  OrgsQuery,
-  OrgTypesQuery,
-  LanguagesQuery,
-  ActivityTypesQuery,
-  ActivitiesQuery,
-} from "@tony/cv-lib/search/query";
-import { CVStore } from "@tony/cv-lib/search/store";
+import { CVState } from "@tony/cv-lib/search/mobx";
+import {
+  donutChartHeight,
+  donutChartWidth,
+  lineChartHeight,
+} from "@tony/cv-ui/styles/constants";
 
 import type { PlotlyData } from "./types";
 
@@ -29,105 +24,67 @@ export const DEFAULT_RESULTS: Results = {
   lineChart: {},
 };
 
-export class PlotlyChartQuery extends CVQuery {
-  constructor(
-    protected store: CVStore,
-    protected cvQuery: CVQuery,
-    protected activitiesQuery: ActivitiesQuery,
-    protected activityTypesQuery: ActivityTypesQuery,
-    protected languagesQuery: LanguagesQuery,
-    protected orgsQuery: OrgsQuery,
-    protected orgTypesQuery: OrgTypesQuery
-  ) {
-    super(
-      store,
-      activitiesQuery,
-      activityTypesQuery,
-      languagesQuery,
-      orgsQuery,
-      orgTypesQuery
-    );
-  }
+export const stateToDonut = (state: Instance<typeof CVState>) => {
+  const languageYearMap = state.languageYearMap;
+  const total = Object.values(languageYearMap).reduce((a, b) => a + b, 0);
+  const languageBGMap = state.languages.reduce((languageColorMap, language) => {
+    if (language) {
+      if (!(language.id in languageColorMap) && language.ui?.backgroundColor) {
+        languageColorMap[language.id] = language.ui.backgroundColor as string;
+      }
+    }
+    return languageColorMap;
+  }, {} as { [key: string]: string });
+  return {
+    type: "pie",
+    values: Object.values(languageYearMap),
+    labels: Object.keys(languageYearMap),
+    hoverinfo: "text",
+    hovertext: Object.entries(languageYearMap).map(([languageName, value]) => {
+      return `${languageName}: ${value} (${((value / total) * 100).toFixed(
+        2
+      )}%)`;
+    }),
+    text: Object.entries(languageYearMap).map(([languageName, value]) => {
+      if ((value / total) * 100 > 4) {
+        return `${languageName}: ${value}`;
+      }
+      return "";
+    }),
+    textinfo: "text",
+    marker: {
+      colors: Object.keys(languageYearMap).map(
+        (languageName) => languageBGMap[languageName]
+      ),
+    },
+    automargin: true,
+  } as PlotlyData;
+};
 
-  //
-  // Chart
-  //
-  subDonutChart$(): Observable<DonutChartProps> {
-    return combineQueries([
-      this.visibleLanguageCount$(),
-      this.languagesQuery.selectBackgroundColors$(),
-    ]).pipe(
-      map(([languageMap, languageBGMap]) => {
-        const total = Object.values(languageMap).reduce((a, b) => a + b, 0);
-        return {
-          type: "pie",
-          values: Object.values(languageMap),
-          labels: Object.keys(languageMap),
-          hoverinfo: "text",
-          hovertext: Object.entries(languageMap).map(
-            ([languageName, value]) => {
-              return `${languageName}: ${value} (${(
-                (value / total) *
-                100
-              ).toFixed(2)}%)`;
-            }
-          ),
-          text: Object.entries(languageMap).map(([languageName, value]) => {
-            if ((value / total) * 100 > 4) {
-              return `${languageName}: ${value}`;
-            }
-            return "";
-          }),
-          textinfo: "text",
-          marker: {
-            colors: Object.keys(languageMap).map(
-              (languageName) => languageBGMap[languageName]
-            ),
-          },
-          automargin: true,
-        } as PlotlyData;
-      })
-    );
-  }
-
-  // await $queries.CV.getDonutChart()
-  getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
-  }
-
-  subLineChart$(): Observable<LineChartProps> {
-    return this.visibleActivityYearCount$().pipe(
-      map((activityMap) => {
-        return {
-          type: "scatter",
-          x: Object.keys(activityMap),
-          y: Object.values(activityMap),
-          mode: "lines+markers",
-          marker: { color: "#3572a5" },
-          // hoverinfo: "text",
-          // hovertext: Object.entries(languageMap).map(
-          //   ([languageName, value]) => {
-          //     return `${languageName}: ${value} (${(
-          //       (value / total) *
-          //       100
-          //     ).toFixed(2)}%)`;
-          //   }
-          // ),
-          // text: Object.entries(languageMap).map(([languageName, value]) => {
-          //   if ((value / total) * 100 > 4) {
-          //     return `${languageName}: ${value}`;
-          //   }
-          //   return "";
-          // }),
-          // textinfo: "text",
-          automargin: true,
-        } as PlotlyData;
-      })
-    );
-  }
-
-  // await $queries.CV.getLineChart()
-  getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
-  }
-}
+export const stateToLine = (state: Instance<typeof CVState>) => {
+  const activityYearMap = state.activityYearMap;
+  return {
+    type: "scatter",
+    x: Object.keys(activityYearMap),
+    y: Object.values(activityYearMap),
+    mode: "lines+markers",
+    marker: { color: "#3572a5" },
+    // hoverinfo: "text",
+    // hovertext: Object.entries(languageMap).map(
+    //   ([languageName, value]) => {
+    //     return `${languageName}: ${value} (${(
+    //       (value / total) *
+    //       100
+    //     ).toFixed(2)}%)`;
+    //   }
+    // ),
+    // text: Object.entries(languageMap).map(([languageName, value]) => {
+    //   if ((value / total) * 100 > 4) {
+    //     return `${languageName}: ${value}`;
+    //   }
+    //   return "";
+    // }),
+    // textinfo: "text",
+    automargin: true,
+  } as PlotlyData;
+};

@@ -18,8 +18,7 @@
     "github-colors": "~2.2",
     "invert-color": "^2.0.0",
     "moment": "^2.29.4",
-    "prettier": "^2.8.1",
-    "rxjs": "^6.6.7"
+    "prettier": "^2.8.1"
   },
   "devDependencies": {
     "@octokit/core": "^4.1.0",

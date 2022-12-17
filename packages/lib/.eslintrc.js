@@ -23,27 +23,5 @@ module.exports = {
         configFile: "tsconfig.json",
       },
     ],
-  },
-  overrides: [
-    {
-      env: {
-        browser: true,
-        es2021: true,
-        node: true,
-
-        "jest/globals": true,
-      },
-      extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:jest/recommended",
-      ],
-      files: ["**/*.spec.ts", "**/*.test.ts"],
-      plugins: ["@typescript-eslint", "jest", "tsc"],
-      rules: {
-        "react/prop-types": "off",
-        "tsc/config": 0,
-      },
-    },
-  ],
+  }
 };

@@ -3,10 +3,19 @@ import { useRanger } from "react-ranger";
 
 import CSS from "csstype";
 
-import { cvService } from "@tony/cv-lib/hub";
-import { DEFAULT_FILTERS } from "@tony/cv-lib/search/query";
+import { useMst } from "../mobx";
 
 import "./FilterDateRange.css";
+
+const DEFAULT_FILTERS = {
+  showReleases: false,
+  showTypos: false,
+  showDocImprovements: false,
+  showCodeStyleTweaks: false,
+  showUnmerged: false,
+  startYear: 2007,
+  endYear: 2022,
+};
 
 const minYear = DEFAULT_FILTERS.startYear;
 const maxYear = DEFAULT_FILTERS.endYear;
@@ -15,16 +24,12 @@ const initialRange = [minYear, maxYear];
 export const FilterDateRange: React.FC<{
   lineColor: CSS.Properties["backgroundColor"];
 }> = ({ lineColor }) => {
+  const cvState = useMst();
+
   const [values, setValues] = React.useState(initialRange);
 
   const onChange = (values: number[]) => {
-    console.log("onChange", values);
-
-    cvService.setYears({
-      startYear: values[0],
-      endYear: values[1],
-    });
-
+    cvState.setYears({ startYear: values[0], endYear: values[1] });
     setValues(values);
   };
 

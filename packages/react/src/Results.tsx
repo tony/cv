@@ -1,32 +1,35 @@
 import React from "react";
 
+import { observer } from "mobx-react-lite";
+
 import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
-import { orgsQuery } from "@tony/cv-lib/hub";
-import type { Results as ReducerState } from "@tony/cv-lib/search/query";
 
 import { ActivityCard } from "./Card";
+import { useMst } from "./mobx";
 
-export const ResultsHeader: React.FC<{ results: ReducerState }> = ({
-  results,
-}) => {
-  const resultsCount = results?.activities ? results.activities.length : 0;
+export const ResultsHeader: React.FC = observer(() => {
+  const { filteredActivities } = useMst();
+
+  const resultsCount = filteredActivities ? filteredActivities.length : 0;
 
   return (
     <div id="results-info">
       Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
     </div>
   );
-};
+});
 
-export const Results: React.FC<{ results: ReducerState }> = ({ results }) => {
+export const Results = observer(() => {
+  const { filteredActivities } = useMst();
+
   return (
     <div id="results">
-      {results.activities &&
-        results.activities.map((activity, idx) => {
-          const org = orgsQuery.getEntity(activity.org);
-          if (!org) return;
-          return <ActivityCard activity={activity} org={org} key={idx} />;
+      {filteredActivities &&
+        filteredActivities.map((activity, idx) => {
+          return (
+            <ActivityCard activity={activity} org={activity.org} key={idx} />
+          );
         })}
     </div>
   );
-};
+});

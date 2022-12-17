@@ -3,19 +3,9 @@ import {
   DonutChartOptions,
   LineChartOptions,
 } from "@carbon/charts/interfaces";
-import { combineQueries } from "@datorama/akita";
-import type { Observable } from "rxjs";
-import { map, take } from "rxjs/operators";
+import type { Instance } from "mobx-state-tree";
 
-import { CVQuery } from "@tony/cv-lib/search/query";
-import type {
-  OrgsQuery,
-  OrgTypesQuery,
-  LanguagesQuery,
-  ActivityTypesQuery,
-  ActivitiesQuery,
-} from "@tony/cv-lib/search/query";
-import { CVStore } from "@tony/cv-lib/search/store";
+import { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeightWithUnit,
   donutChartWidthWithUnit,
@@ -92,92 +82,48 @@ export const DEFAULT_RESULTS: Results = {
   },
 };
 
-export class CarbonChartQuery extends CVQuery {
-  constructor(
-    protected store: CVStore,
-    protected cvQuery: CVQuery,
-    protected activitiesQuery: ActivitiesQuery,
-    protected activityTypesQuery: ActivityTypesQuery,
-    protected languagesQuery: LanguagesQuery,
-    protected orgsQuery: OrgsQuery,
-    protected orgTypesQuery: OrgTypesQuery
-  ) {
-    super(
-      store,
-      activitiesQuery,
-      activityTypesQuery,
-      languagesQuery,
-      orgsQuery,
-      orgTypesQuery
-    );
-  }
+export const stateToDonut = (state: Instance<typeof CVState>) => {
+  const bgColorMap = state.backgroundColors;
+  return {
+    data: Object.entries(state.languageYearMap).map(([languageName, count]) => {
+      return { group: languageName, value: count };
+    }),
+    options: {
+      ...DONUT_CHART_DEFAULT_OPTIONS,
+      getFillColor: (datasetLabel, label, data, defaultFillColor) => {
+        return bgColorMap[datasetLabel] ?? defaultFillColor ?? "";
+      },
+      donut: {
+        center: {
+          number: state.filteredActivities.length, // Prevent multi language activities from summing, show activity count
+          label: "Results",
+        },
+      },
+      pie: {
+        labels: { formatter: () => "", enabled: false },
+      },
+    } as DonutChartOptions,
+  } as DonutChartProps;
+};
 
-  //
-  // Chart
-  //
-  subDonutChart$(): Observable<DonutChartProps> {
-    return combineQueries([
-      this.languagesQuery.selectBackgroundColors$(),
-      this.visibleLanguageCount$(),
-      this.visibleActivities$(),
-    ]).pipe(
-      map(([bgColorMap, languageMap, visibleActivities]) => {
-        return {
-          data: Object.entries(languageMap).map(([languageName, count]) => {
-            return { group: languageName, value: count };
-          }),
-          options: {
-            ...DONUT_CHART_DEFAULT_OPTIONS,
-            getFillColor: (datasetLabel, label, data, defaultFillColor) => {
-              return bgColorMap[datasetLabel] ?? defaultFillColor ?? "";
-            },
-            donut: {
-              center: {
-                number: visibleActivities.length, // Prevent multi language activities from summing, show activity count
-                label: "Results",
-              },
-            },
-            pie: {
-              labels: { formatter: () => "", enabled: false },
-            },
-          } as DonutChartOptions,
-        } as DonutChartProps;
-      })
-    );
-  }
-
-  // await $queries.CV.getDonutChart()
-  getDonutChart(): Promise<DonutChartProps> {
-    return this.subDonutChart$().pipe(take(1)).toPromise();
-  }
-
-  subLineChart$(): Observable<LineChartProps> {
-    return this.visibleActivityYearCount$().pipe(
-      map((activityYearMap) => {
-        return {
-          data: Object.values(activityYearMap).length
-            ? Object.entries(activityYearMap).map(([year, count]) => {
-                return {
-                  group: "Results",
-                  date: `${year}-01-01T00:00:00.000Z`,
-                  value: count,
-                };
-              })
-            : [
-                {
-                  group: "Results",
-                  date: "2019-01-01T06:00:00.000Z",
-                  value: 0,
-                },
-              ],
-          options: LINE_CHART_DEFAULT_OPTIONS,
-        } as LineChartProps;
-      })
-    );
-  }
-
-  // await $queries.CV.getLineChart()
-  getLineChart(): Promise<LineChartProps> {
-    return this.subLineChart$().pipe(take(1)).toPromise();
-  }
-}
+export const stateToLine = (state: Instance<typeof CVState>) => {
+  const activityYearMap = state.activityYearMap;
+  return {
+    data: Object.values(activityYearMap).length
+      ? Object.entries(activityYearMap).map(([year, count]) => {
+          return {
+            group: "Results",
+            date: `${year}-01-01T00:00:00.000Z`,
+            value: count,
+          };
+        })
+      : [
+          {
+            group: "Results",
+            date: "2019-01-01T06:00:00.000Z",
+            value: 0,
+          },
+        ],
+    options: LINE_CHART_DEFAULT_OPTIONS,
+  } as LineChartProps;
+};

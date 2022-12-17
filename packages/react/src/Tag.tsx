@@ -1,5 +1,7 @@
 import React from "react";
 
+import { observer } from "mobx-react-lite";
+
 import {
   ActivityTypeEmojiMap,
   ActivityTypeVerbMap,
@@ -11,11 +13,8 @@ import type {
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
-import {
-  activityTypesQuery,
-  languagesQuery,
-  orgTypesQuery,
-} from "@tony/cv-lib/hub";
+
+import { useMst } from "./mobx";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
@@ -23,7 +22,8 @@ export const LanguageTag: React.FC<
   if (!languageName) {
     return null;
   }
-  const language = languagesQuery.getEntity(languageName);
+  const cvState = useMst();
+  const language = cvState.languages.find(({ id }) => id === languageName);
   if (!language || !language.ui) {
     console.groupCollapsed(`missing language for ${languageName}`);
     console.table(language);
@@ -43,30 +43,35 @@ export const LanguageTag: React.FC<
 
 export const ActivityTypeTag: React.FC<
   { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ activityTypeName, children, className = "", style = {}, ...props }) => {
-  if (!activityTypeName) {
-    return null;
-  }
-  const activityType = activityTypesQuery.getEntity(activityTypeName);
-  if (!activityType || !activityType.ui) {
-    console.groupCollapsed(
-      `${activityType?.name} missing activity type for ${activityTypeName}`
+> = observer(
+  ({ activityTypeName, children, className = "", style = {}, ...props }) => {
+    if (!activityTypeName) {
+      return null;
+    }
+    const cvState = useMst();
+    const activityType = cvState.activityTypes.find(
+      ({ id }) => id === activityTypeName
     );
-    console.table(activityType);
-    console.groupEnd();
-  }
+    if (!activityType || !activityType.ui) {
+      console.groupCollapsed(
+        `${activityType?.name} missing activity type for ${activityTypeName}`
+      );
+      console.table(activityType);
+      console.groupEnd();
+    }
 
-  return (
-    <div
-      className={`tag` + (className ? ` ${className}` : "")}
-      style={{ ...(activityType?.ui ?? {}), ...style }}
-      {...props}
-    >
-      {activityType?.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}
-      {children || activityType?.name || activityTypeName}
-    </div>
-  );
-};
+    return (
+      <div
+        className={`tag` + (className ? ` ${className}` : "")}
+        style={{ ...(activityType?.ui ?? {}), ...style }}
+        {...props}
+      >
+        {activityType?.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}
+        {children || activityType?.name || activityTypeName}
+      </div>
+    );
+  }
+);
 
 export const ActivityTypeText: React.FC<
   { activityTypeName: ActivityTypeName } & Pick<
@@ -85,7 +90,10 @@ export const ActivityTypeText: React.FC<
   if (!activityTypeName) {
     return null;
   }
-  const activityType = activityTypesQuery.getEntity(activityTypeName);
+  const cvState = useMst();
+  const activityType = cvState.activityTypes.find(
+    ({ id }) => id === activityTypeName
+  );
   if (!activityType || !activityType.ui) {
     console.groupCollapsed(
       `${activityType?.name} missing activity type for ${activityTypeName}`
@@ -116,7 +124,8 @@ export const OrgTypeTag: React.FC<
   if (!orgTypeName) {
     return null;
   }
-  const orgType = orgTypesQuery.getEntity(orgTypeName);
+  const cvState = useMst();
+  const orgType = cvState.orgTypes.find(({ id }) => id === orgTypeName);
   if (!orgType || !orgType.ui) {
     console.groupCollapsed(
       `${orgType?.name} missing org type for ${orgTypeName}`
