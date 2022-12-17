@@ -39,6 +39,7 @@ export const stateToDonut = (
   return {
     height: donutChartHeight,
     width: donutChartWidth,
+    fit: true,
     data: Object.entries(state.languageYearMap).map(([languageName, count]) => {
       return {
         id: languageName,
@@ -55,19 +56,13 @@ export const stateToDonut = (
       }
       return "gray";
     },
-    // margin: { top: 60, right: 80, bottom: 60, left: 80 },
+    margin: { top: 30, right: 40, bottom: 30, left: 40 },
     innerRadius: 0.5,
     padAngle: 0.7,
     cornerRadius: 3,
     borderWidth: 1,
-    radialLabelsSkipAngle: 15,
-    radialLabelsLinkOffset: 0.1,
-    radialLabelsLinkDiagonalLength: 0.1,
-    radialLabelsLinkColor: { from: "color" },
-    radialLabelsTextColor: "#333333",
     sortByValue: true,
-    sliceLabelsSkipAngle: 10,
-    sliceLabelsTextColor: (item: {
+    arcLabelsTextColor: (item: {
       id: string;
       label: string;
       value: number;
@@ -80,6 +75,10 @@ export const stateToDonut = (
       }
       return "gray";
     },
+    arcLinkLabelsSkipAngle: 100,
+    arcLabelsSkipAngle: 25,
+    arcLinkLabelsOffset: 10,
+    arcLabelsLinkColor: { from: "color" },
   } as PieSvgProps<{ id: string; label: string; value: number }>;
 };
 
