@@ -1,12 +1,11 @@
-.chartRow.billboard:not(.noCharts) {
-  @media (max-width: 768px) {
-    .chartRow--donut {
-      margin: 0 auto;
-      min-width: var(--chart-width);
-      width: 100%;
-    }
-    .chartRow--line {
-      max-height: var(--chart-height);
-    }
+@media (max-width: 768px) {
+  .chartRow.billboard:not(.noCharts) .chartRow--donut {
+    margin: 0 auto;
+    min-width: var(--chart-width);
+    width: 100%;
+  }
+
+  .chartRow.billboard:not(.noCharts) .chartRow--line {
+    max-height: var(--chart-height);
   }
 }
