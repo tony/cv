@@ -62,16 +62,16 @@
     "@atlaskit/tokens" "^0.11.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^12.5.5":
-  version "12.5.5"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.5.tgz#b1d9602d14d75cada2877dfa9bc7ebc7cb3a40f2"
-  integrity sha512-A4QW5iFDw//YeaQx0cSdaHxxOMQCgSLsUj3m92ZuNgTUYSyL9cg6wKQFSq685RIaB+Fh129BCHTIq9Wi9LKAGA==
+"@atlaskit/toggle@^12.5.6":
+  version "12.5.6"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.6.tgz#7302aaeebfea490a7f4d2655735fbf5488a9a840"
+  integrity sha512-IQnEtbfG0jjnFpAmbmM63vvBJ+68dV+BNn8kXFhQa3B6umBOQqya4sBwYoriXaOpB82/jE6VhqX7j4dhhWOlag==
   dependencies:
     "@atlaskit/analytics-next" "^8.0.0"
     "@atlaskit/ds-lib" "^2.1.0"
     "@atlaskit/icon" "^21.11.0"
     "@atlaskit/theme" "^12.2.0"
-    "@atlaskit/tokens" "^0.12.0"
+    "@atlaskit/tokens" "^0.13.0"
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
@@ -85,10 +85,10 @@
     "@babel/traverse" "^7.15.0"
     "@babel/types" "^7.15.0"
 
-"@atlaskit/tokens@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.12.0.tgz#60180de11e8efd83d1fc40416e5c50769be31f3c"
-  integrity sha512-V0cCg+SRsnB3903EiE19kruFH0k7Dbi6A2FNMBxhtcGFSiHYjsr4zTx4Dlea8enhljrW31nvgCOk0/SIEkaGKg==
+"@atlaskit/tokens@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.13.0.tgz#1a7fd09d7e3b5b4491722395ac0d8b63e622f878"
+  integrity sha512-uLQhQnPA1dFFE+Se9GBgO3TCvMA25KdJoNs/DVfFiHjd9rV4XS8Xsh9v54uPqgJ5RcYuAGL+ih8ixaWvcZPK4A==
   dependencies:
     "@atlaskit/ds-lib" "^2.1.0"
     "@babel/runtime" "^7.0.0"
