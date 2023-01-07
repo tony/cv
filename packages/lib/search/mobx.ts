@@ -1,9 +1,6 @@
 import getYear from "date-fns/getYear";
 import { configure } from "mobx";
-import {
-  types,
-  SnapshotIn,
-} from "mobx-state-tree";
+import { types, SnapshotIn } from "mobx-state-tree";
 import { Instance, applySnapshot } from "mobx-state-tree";
 import moment from "moment";
 
