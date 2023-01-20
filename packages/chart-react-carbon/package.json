@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
+    "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "cross-env": "^7.0.3",
-    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react": "^7.32.1",
     "prettier": "^2.8.3",
     "typescript": "^4.9.4"
   },
@@ -37,7 +37,7 @@
     "@carbon/charts-react": "1.6.3",
     "@tony/cv-lib": "*",
     "carbon-components": "^11.12.0",
-    "d3": "^7.8.1",
+    "d3": "^7.8.2",
     "d3-selection": "^3.0.0",
     "dom-to-image": "^2.6.0",
     "fast-deep-equal": "^3.1.3",
