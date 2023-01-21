@@ -21,8 +21,8 @@
     "prettier": "^2.8.3"
   },
   "devDependencies": {
-    "@octokit/core": "^4.1.0",
-    "@octokit/graphql": "^5.0.4",
+    "@octokit/core": "^4.2.0",
+    "@octokit/graphql": "^5.0.5",
     "@octokit/plugin-paginate-graphql": "^2.0.1",
     "@types/node": "^18.11.18",
     "ts-loader": "^9.4.2",
