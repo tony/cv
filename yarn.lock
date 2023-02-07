@@ -62,16 +62,16 @@
     "@atlaskit/tokens" "^0.11.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^12.5.6":
-  version "12.5.6"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.6.tgz#7302aaeebfea490a7f4d2655735fbf5488a9a840"
-  integrity sha512-IQnEtbfG0jjnFpAmbmM63vvBJ+68dV+BNn8kXFhQa3B6umBOQqya4sBwYoriXaOpB82/jE6VhqX7j4dhhWOlag==
+"@atlaskit/toggle@^12.5.7":
+  version "12.5.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.7.tgz#491447bd2da672bc76bc692e6b6e013b3e30caa5"
+  integrity sha512-tLvoXnHFn14zsSkgorwWN8lwI36LKFOHr7IDagMps3Oyod+aD44rL6DKKOcspW1ztFOE63O3ehf2bePn6F3sxQ==
   dependencies:
     "@atlaskit/analytics-next" "^8.0.0"
     "@atlaskit/ds-lib" "^2.1.0"
     "@atlaskit/icon" "^21.11.0"
     "@atlaskit/theme" "^12.2.0"
-    "@atlaskit/tokens" "^0.13.0"
+    "@atlaskit/tokens" "^1.0.0"
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
@@ -85,15 +85,16 @@
     "@babel/traverse" "^7.15.0"
     "@babel/types" "^7.15.0"
 
-"@atlaskit/tokens@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.13.0.tgz#1a7fd09d7e3b5b4491722395ac0d8b63e622f878"
-  integrity sha512-uLQhQnPA1dFFE+Se9GBgO3TCvMA25KdJoNs/DVfFiHjd9rV4XS8Xsh9v54uPqgJ5RcYuAGL+ih8ixaWvcZPK4A==
+"@atlaskit/tokens@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.0.0.tgz#b17515b3aa6ae1205bfb814fca9f1e4ab2b95c25"
+  integrity sha512-z2FDQNkHrOhWoHB9S1GZIYPQC6ZaKysaaUDaHLLEsaHwSPS2UpTaorGLp/CcPkMzyxmUsj178wdt6xsH8YUAlw==
   dependencies:
     "@atlaskit/ds-lib" "^2.1.0"
     "@babel/runtime" "^7.0.0"
     "@babel/traverse" "^7.15.0"
     "@babel/types" "^7.15.0"
+    bind-event-listener "^2.1.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   version "7.18.6"
@@ -1369,10 +1370,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/node@^18.11.19":
-  version "18.11.19"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.19.tgz#35e26df9ec441ab99d73e99e9aca82935eea216d"
-  integrity sha512-YUgMWAQBWLObABqrvx8qKO1enAvBUdjZOAWQ5grBAkp5LQv45jBvYKZ3oFS9iKRCQyFjqw6iuEa1vmFqtxYLZw==
+"@types/node@^18.13.0":
+  version "18.13.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.13.0.tgz#0400d1e6ce87e9d3032c19eb6c58205b0d3f7850"
+  integrity sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
