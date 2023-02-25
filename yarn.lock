@@ -17,10 +17,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@atlaskit/analytics-next@^8.0.0":
-  version "8.3.5"
-  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-8.3.5.tgz#d35cabd6e580d0f672ddaa7f72bfc2f5ee914229"
-  integrity sha512-UsQwASkjTrqJj9tnj4XU9Pr8dzqFaSlTxkyi19nhkl/rF+p50mZZzARMK9bQaqXj58BWjupOHJBhLmuQRoT/lg==
+"@atlaskit/analytics-next@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-9.0.0.tgz#31bcf8e079e890cb41b8f7f76a5b60b2986469a1"
+  integrity sha512-9I28hJjQCwH8cEKAVjikN2F0rnZGWq7/77Od3yJ/goiEoaAKGFZjoFMFvPPpMPfxiURnisxx7/U1thgpWM6vcA==
   dependencies:
     "@atlaskit/analytics-next-stable-react-context" "1.0.1"
     "@babel/runtime" "^7.0.0"
@@ -62,16 +62,16 @@
     "@atlaskit/tokens" "^0.11.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^12.5.7":
-  version "12.5.7"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.7.tgz#491447bd2da672bc76bc692e6b6e013b3e30caa5"
-  integrity sha512-tLvoXnHFn14zsSkgorwWN8lwI36LKFOHr7IDagMps3Oyod+aD44rL6DKKOcspW1ztFOE63O3ehf2bePn6F3sxQ==
+"@atlaskit/toggle@^12.5.8":
+  version "12.5.8"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.5.8.tgz#49adb59e4009c42a0c40fbf1b7bc9b185dcbe5c7"
+  integrity sha512-ZkuSGA7U5IaXmtpAPZ5upS95Gl5nhgQE96JqyBXj/g3Is3r7NhaVzMJU0bDt4DCbjzEsachb6UFd2gdQvuRHnQ==
   dependencies:
-    "@atlaskit/analytics-next" "^8.0.0"
+    "@atlaskit/analytics-next" "^9.0.0"
     "@atlaskit/ds-lib" "^2.1.0"
     "@atlaskit/icon" "^21.11.0"
     "@atlaskit/theme" "^12.2.0"
-    "@atlaskit/tokens" "^1.0.0"
+    "@atlaskit/tokens" "^1.2.0"
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
@@ -85,10 +85,10 @@
     "@babel/traverse" "^7.15.0"
     "@babel/types" "^7.15.0"
 
-"@atlaskit/tokens@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.0.0.tgz#b17515b3aa6ae1205bfb814fca9f1e4ab2b95c25"
-  integrity sha512-z2FDQNkHrOhWoHB9S1GZIYPQC6ZaKysaaUDaHLLEsaHwSPS2UpTaorGLp/CcPkMzyxmUsj178wdt6xsH8YUAlw==
+"@atlaskit/tokens@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.2.1.tgz#2f3900b781c3715b2bd240ed5edc9c72a26110b7"
+  integrity sha512-E9bF8OLXVIr69QxELGgbS2rSM3uCAbjU6SlimE2Spu+CVWA3GU+lUeLBggBhz1eP1LzpuOzLCdm1ECMJBNBreg==
   dependencies:
     "@atlaskit/ds-lib" "^2.1.0"
     "@babel/runtime" "^7.0.0"
@@ -1370,20 +1370,20 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/node@^18.14.0":
-  version "18.14.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.0.tgz#94c47b9217bbac49d4a67a967fdcdeed89ebb7d0"
-  integrity sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A==
+"@types/node@^18.14.1":
+  version "18.14.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.1.tgz#90dad8476f1e42797c49d6f8b69aaf9f876fc69f"
+  integrity sha512-QH+37Qds3E0eDlReeboBxfHbX9omAcBCXEzswCu6jySP642jiM3cYSIkU/REqwhCUqXdonHFuBfJDiAJxMNhaQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@^2.12.16":
-  version "2.12.16"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.16.tgz#99a7ef35052ba5ef985a036ba0ec2d549a604a3c"
-  integrity sha512-EKt30RIIOcVTxFFmrhe+hQauz/DaxoEWsiZFeAWQyeok0lPjqng1f/h6H7C5/s5EpE/vg5SxtCbG856to4LJNw==
+"@types/plotly.js@^2.12.18":
+  version "2.12.18"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.18.tgz#7a231ce72a73fafe4842096b8c99d10a41b60962"
+  integrity sha512-ff+CIEWnqZNjZqHtQZvkEAVuLs9fkm1f54QnPVmgoET7wMHdSqUka2hasVN4e5yfHD05YwGjsAtCseewJh/BMw==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -6239,10 +6239,10 @@ victory@^36.6.8:
     victory-voronoi-container "^36.6.8"
     victory-zoom-container "^36.6.8"
 
-vite@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.1.2.tgz#6908882984e490c44c28e784a2c52de556f04b41"
-  integrity sha512-MWDb9Rfy3DI8omDQySbMK93nQqStwbsQWejXRY2EBzEWKmLAXWb1mkI9Yw2IJrc+oCvPCI1Os5xSSIBYY6DEAw==
+vite@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.1.4.tgz#170d93bcff97e0ebc09764c053eebe130bfe6ca0"
+  integrity sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==
   dependencies:
     esbuild "^0.16.14"
     postcss "^8.4.21"
