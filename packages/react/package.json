@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@tony/cv-data": "*",
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.14.2",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "cross-env": "^7.0.3",
