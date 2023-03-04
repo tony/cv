@@ -309,19 +309,19 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.6.8":
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.8.tgz#a1afe8bc3f26de0a7002e9bda920b5a256a7bdb2"
-  integrity sha512-mWoSSDUBQum5Qq0fdzzns1CKq6NXjq0ICDvGX079HfLF2inU4B7Ai68t3KgebqstIDlmLpsaj7ImoW1AXM1h3A==
+"@carbon/charts-react@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.9.tgz#76e23d6494c8a1011efe2e45f0db735e23ebbf3a"
+  integrity sha512-hc4yXsuz1Rci8B1G07+wwNjPZPO9RenbGi0vC4D00k+sgD7Vr2WWa+xKXz97DSBu5rCLpQFruhPGZ3wgifxXlg==
   dependencies:
-    "@carbon/charts" "^1.6.8"
+    "@carbon/charts" "^1.6.9"
     "@carbon/icons-react" "^10.49.0"
     "@carbon/telemetry" "0.1.0"
 
-"@carbon/charts@1.6.8", "@carbon/charts@^1.6.8":
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.8.tgz#832da16e3f9ee1c7b45b80e5863e734ea5ac9e93"
-  integrity sha512-4Zpe1vTZk8Vhak6Qg58Ca3xamz2tPz8/Gl5hbET9MK1ggwnT2POuvDqO+o7xIYvHyki9AG2E4Smom4zHXVQapw==
+"@carbon/charts@1.6.9", "@carbon/charts@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.9.tgz#dff96ecf4a77b774c2d637f5caddd8c93fe645e2"
+  integrity sha512-98RJKDoVnS9mjbd0/AyNFL+n9a/pNNSwQ54/iqghp9/9ZwR77QB4PFq+9yEV+AuB9KgMWKVdVLuYVZShl0jlPQ==
   dependencies:
     "@carbon/styles" "^1.4.0"
     "@carbon/telemetry" "0.1.0"
@@ -1254,10 +1254,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/node@^18.14.4":
-  version "18.14.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.4.tgz#0e64ec0b35a772e1e3d849f9a0ff61782d0cb647"
-  integrity sha512-VhCw7I7qO2X49+jaKcAUwi3rR+hbxT5VcYF493+Z5kMLI0DL568b7JI4IDJaxWFH0D/xwmGJNoXisyX+w7GH/g==
+"@types/node@^18.14.6":
+  version "18.14.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.6.tgz#ae1973dd2b1eeb1825695bb11ebfb746d27e3e93"
+  integrity sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -4233,10 +4233,10 @@ mkdirp@^0.5.0:
   dependencies:
     minimist "^1.2.6"
 
-mobx-react-lite@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-3.4.0.tgz#d59156a96889cdadad751e5e4dab95f28926dfff"
-  integrity sha512-bRuZp3C0itgLKHu/VNxi66DN/XVkQG7xtoBVWxpvC5FhAqbOCP21+nPhULjnzEqd7xBMybp6KwytdUpZKEgpIQ==
+mobx-react-lite@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-3.4.1.tgz#df5e8825a3360fb01b75554e9b402a85d7b991bc"
+  integrity sha512-K3eypcF+Lngv7nPqCz5IZb+6DQ4EiFBbE3fisgUSekRtiYmyNBa0E9P1dfnXDXqVC5Td7BUc/eq8R2Z1JEiJVQ==
 
 mobx-state-tree@^5.1.7:
   version "5.1.7"
