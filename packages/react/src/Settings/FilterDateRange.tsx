@@ -14,7 +14,7 @@ const DEFAULT_FILTERS = {
   showCodeStyleTweaks: false,
   showUnmerged: false,
   startYear: 2007,
-  endYear: 2022,
+  endYear: 2023,
 };
 
 const minYear = DEFAULT_FILTERS.startYear;
