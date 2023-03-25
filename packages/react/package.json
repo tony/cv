@@ -17,12 +17,12 @@
   },
   "devDependencies": {
     "@tony/cv-data": "*",
-    "@types/node": "^18.15.5",
-    "@types/react": "^18.0.28",
+    "@types/node": "^18.15.8",
+    "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.5",
+    "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
   },
@@ -43,7 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ranger": "^2.1.0",
-    "react-select": "^5.7.1",
+    "react-select": "^5.7.2",
     "vite": "^4.2.1"
   }
 }
