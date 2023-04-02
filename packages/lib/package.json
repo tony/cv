@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "chroma-js": "^2.4.2",
-    "csstype": "^3.1.1",
+    "csstype": "^3.1.2",
     "github-colors": "~2.2",
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
