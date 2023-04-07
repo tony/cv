@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/node": "^18.15.11",
     "@types/plotly.js": "^2.12.18",
-    "@types/react": "^18.0.32",
+    "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.32.2",
