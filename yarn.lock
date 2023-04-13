@@ -1215,10 +1215,15 @@
   dependencies:
     "@types/d3-time" "*"
 
-"@types/d3-selection@*", "@types/d3-selection@^3.0.4":
+"@types/d3-selection@*":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@types/d3-selection/-/d3-selection-3.0.4.tgz#923d7f8985718116de56f55307d26e5f00728dc5"
   integrity sha512-ZeykX7286BCyMg9sH5fIAORyCB6hcATPSRQpN47jwBA2bMbAT0s+EvtDP5r1FZYJ95R8QoEE1CKJX+n0/M5Vhg==
+
+"@types/d3-selection@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/d3-selection/-/d3-selection-3.0.5.tgz#27cd53b7672d405025e2414d98532d7934c16ebd"
+  integrity sha512-xCB0z3Hi8eFIqyja3vW8iV01+OHGYR2di/+e+AiOcXIOrY82lcvWW8Ke1DYE/EUVMsBl4Db9RppSBS3X1U6J0w==
 
 "@types/d3-shape@^3.1.0":
   version "3.1.0"
@@ -1295,10 +1300,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.0.33":
+"@types/react@*":
   version "18.0.33"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.33.tgz#a1575160cb4376787c2f5fe0312302f824baa61e"
   integrity sha512-sHxzVxeanvQyQ1lr8NSHaj0kDzcNiGpILEVt69g9S31/7PfMvNCKLKcsHw4lYKjs3cGNJjXSP4mYzX43QlnjNA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^18.0.35":
+  version "18.0.35"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.35.tgz#192061cb1044fe01f2d3a94272cd35dd50502741"
+  integrity sha512-6Laome31HpetaIUGFWl1VQ3mdSImwxtFZ39rh059a1MNnKGqBpC88J6NJ8n/Is3Qx7CefDGLgf/KhN/sYCf7ag==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1625,12 +1639,12 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^3.7.5:
-  version "3.7.5"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.7.5.tgz#fd4926b9c6a40566810036081ffeb7ea46080282"
-  integrity sha512-GjA+dO0uLLCNSqmXrx9SUxYlULuydFZmGn2/hwQULBU/dQwARXSycjJ3VzmVyTvbdrHx0iqjffDhlqgI90a0Cg==
+billboard.js@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.8.0.tgz#9a4cab328396aed17572ed8f85c0440ba654bfb1"
+  integrity sha512-81jRPSBabKizOuugdkwzUgxclHpZzOIilzlK/IXxpgHC0iJTAETCyEVJfwaBEtjFl4lE2DFCvPZFwfNFIFv/eQ==
   dependencies:
-    "@types/d3-selection" "^3.0.4"
+    "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
     d3-axis "^3.0.0"
     d3-brush "^3.0.0"
