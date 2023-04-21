@@ -15,7 +15,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.15.13",
     "@types/react": "^18.0.37",
     "raw-loader": "^4.0.2",
     "ts-node": "^10.9.1",
