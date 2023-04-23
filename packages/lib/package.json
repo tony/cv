@@ -22,11 +22,11 @@
     "mobx": "^6.9.0",
     "mobx-state-tree": "^5.1.8",
     "moment": "^2.29.4",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.4.0",
-    "@types/node": "^18.15.13",
+    "@types/node": "^18.16.0",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
