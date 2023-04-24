@@ -437,16 +437,31 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.7.1.tgz#e724952b99ceb4d6d05505ee139928b2c0345375"
-  integrity sha512-GgbcWbjWOZE/3M0uo3pR5qzDoXnzSkT2lyoDwmham/QN4MBEPsv9t5bSUeCibyJTFteoXe2w3v/rZEJwK4Y/pQ==
+"@carbon/charts-react@1.6.14":
+  version "1.6.14"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.14.tgz#1caf0af5e7b770cf36ef651faee21e6fb444fb5e"
+  integrity sha512-bCs8MJcF35sMkuv/X0sqFSHehLnVwmRyr2zJrIRMzrL3KI93JaQ/SyBSkAzWkjcCJqukIejL6H46BWSxhI/24w==
   dependencies:
-    "@carbon/charts" "^1.7.1"
+    "@carbon/charts" "^1.6.14"
     "@carbon/icons-react" "^10.49.0"
     "@carbon/telemetry" "0.1.0"
 
-"@carbon/charts@1.7.1", "@carbon/charts@^1.7.1":
+"@carbon/charts@1.6.14":
+  version "1.6.14"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.14.tgz#6d0d8e27e2aff0f7a2b245c80294e876a6bab8ea"
+  integrity sha512-XOmGGOyALRYZZg4F88qa63U6zsto+jSF017agZcKuY5VxQZ5Tv2+s2A2yMgUE2phKpwkCNLqVIJrHUTmAQu+YA==
+  dependencies:
+    "@carbon/styles" "^1.4.0"
+    "@carbon/telemetry" "0.1.0"
+    "@carbon/utils-position" "1.1.1"
+    carbon-components "^10.56.0"
+    d3-cloud "1.2.5"
+    d3-sankey "0.12.3"
+    date-fns "2.8.1"
+    lodash-es "4.17.21"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/charts@^1.6.14":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.7.1.tgz#31878562710687c5a9cbc19b46b8aaaec7d3785e"
   integrity sha512-DXVgIa+dfFRS+ZaLJMoPEAshGj254RehVd3xRHPBHehMkz1XEb+IcTcDrYu8JX6kzTdUS7/ZJQnIG9316MERlQ==
@@ -543,7 +558,7 @@
     "@carbon/type" "^11.13.0"
     "@ibm/plex" "6.0.0-next.6"
 
-"@carbon/styles@^1.26.0":
+"@carbon/styles@^1.26.0", "@carbon/styles@^1.4.0":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@carbon/styles/-/styles-1.27.0.tgz#f5438c476c3db82ce99eb2b509dd504f98ab4f24"
   integrity sha512-a+4lclMjL5Ipo7yCmkymdh3opqRmbeYeiUNfeFZOjPjvjEn3PgMsKWn1FNZszaiT/6eySJThvUtJcSXwFac1jg==
@@ -597,6 +612,11 @@
   dependencies:
     "@carbon/grid" "^11.13.0"
     "@carbon/layout" "^11.13.0"
+
+"@carbon/utils-position@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@carbon/utils-position/-/utils-position-1.1.1.tgz#bea463b833608902ea37ac30bec36e3c0a3b547f"
+  integrity sha512-W8ykraEzr9WsH8+6+FgI6lmK4elFxH8Uy9+XDbDTvyVbF6fq5jgi4dPCDd1AoCtUBCcLAehInhReDaFM3DrM6w==
 
 "@carbon/utils-position@^1.1.4":
   version "1.1.4"
@@ -1957,7 +1977,7 @@ canvas-fit@^1.5.0:
   dependencies:
     element-size "^1.1.1"
 
-carbon-components@^10.58.3:
+carbon-components@^10.56.0, carbon-components@^10.58.3:
   version "10.58.3"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.3.tgz#425bb5ceb8755fda9c50769572a5845d3f852e00"
   integrity sha512-RjTnrWCGStsIZ7nErw97AZI9sQWxQ8oIgo3QMdV0FWFcpTOECA4I9Dy4WPpRRdSMBcQpLetTxqjDGourM4u8Tw==
