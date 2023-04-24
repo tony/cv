@@ -204,17 +204,18 @@ export const PublicationRightBox = (props) => {
               </a>
             </span>
           )}{' '}
-          {props.actor.goodreads_url && props.actor.goodreads_url.length > 0 && (
-            <span>
-              <a
-                href={props.actor.goodreads_url}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Goodreads
-              </a>
-            </span>
-          )}
+          {props.actor.goodreads_url &&
+            props.actor.goodreads_url.length > 0 && (
+              <span>
+                <a
+                  href={props.actor.goodreads_url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Goodreads
+                </a>
+              </span>
+            )}
         </small>
       </p>
     </div>
@@ -388,18 +389,19 @@ export const SoftwareRightBox = (props) => {
               <Octicon name="comment-discussion" label="CI"></Octicon> Issues
             </a>
           )}
-          {props.actor.changelog_url && props.actor.changelog_url.length > 0 && (
-            <a
-              href={props.actor.changelog_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="align-octicon"
-            >
-              {' '}
-              <Octicon name="list-unordered" label="Changelog"></Octicon>{' '}
-              Changelog
-            </a>
-          )}
+          {props.actor.changelog_url &&
+            props.actor.changelog_url.length > 0 && (
+              <a
+                href={props.actor.changelog_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="align-octicon"
+              >
+                {' '}
+                <Octicon name="list-unordered" label="Changelog"></Octicon>{' '}
+                Changelog
+              </a>
+            )}
         </div>
       </small>
     </div>
