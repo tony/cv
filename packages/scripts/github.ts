@@ -27,6 +27,7 @@ const config = {
     "vcs-python",
     "social-embed",
     "develtech",
+    "isaul32",
   ],
   gh_user: "tony",
   ignore_private_repos: true,
