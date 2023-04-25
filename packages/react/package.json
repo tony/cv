@@ -18,8 +18,8 @@
   "devDependencies": {
     "@tony/cv-data": "*",
     "@types/node": "^18.16.0",
-    "@types/react": "^18.0.38",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.8",
@@ -44,6 +44,6 @@
     "react-dom": "^18.2.0",
     "react-ranger": "^2.1.0",
     "react-select": "^5.7.2",
-    "vite": "^4.3.1"
+    "vite": "^4.3.2"
   }
 }

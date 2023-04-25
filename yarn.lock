@@ -437,34 +437,19 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.6.14":
-  version "1.6.14"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.6.14.tgz#1caf0af5e7b770cf36ef651faee21e6fb444fb5e"
-  integrity sha512-bCs8MJcF35sMkuv/X0sqFSHehLnVwmRyr2zJrIRMzrL3KI93JaQ/SyBSkAzWkjcCJqukIejL6H46BWSxhI/24w==
+"@carbon/charts-react@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.7.2.tgz#70e9cf4938e9a3314a7aec511b4dbc8402199996"
+  integrity sha512-nVmzgrkfH8e14NyuOcfN8/TaLIl3+SM3s/XUUJfiitw5+FF9kUu6lDfsmrBN3TKhhhH3FOyJXbeEtmdn4Afchg==
   dependencies:
-    "@carbon/charts" "^1.6.14"
+    "@carbon/charts" "^1.7.2"
     "@carbon/icons-react" "^10.49.0"
     "@carbon/telemetry" "0.1.0"
 
-"@carbon/charts@1.6.14":
-  version "1.6.14"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.6.14.tgz#6d0d8e27e2aff0f7a2b245c80294e876a6bab8ea"
-  integrity sha512-XOmGGOyALRYZZg4F88qa63U6zsto+jSF017agZcKuY5VxQZ5Tv2+s2A2yMgUE2phKpwkCNLqVIJrHUTmAQu+YA==
-  dependencies:
-    "@carbon/styles" "^1.4.0"
-    "@carbon/telemetry" "0.1.0"
-    "@carbon/utils-position" "1.1.1"
-    carbon-components "^10.56.0"
-    d3-cloud "1.2.5"
-    d3-sankey "0.12.3"
-    date-fns "2.8.1"
-    lodash-es "4.17.21"
-    resize-observer-polyfill "1.5.0"
-
-"@carbon/charts@^1.6.14":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.7.1.tgz#31878562710687c5a9cbc19b46b8aaaec7d3785e"
-  integrity sha512-DXVgIa+dfFRS+ZaLJMoPEAshGj254RehVd3xRHPBHehMkz1XEb+IcTcDrYu8JX6kzTdUS7/ZJQnIG9316MERlQ==
+"@carbon/charts@1.7.2", "@carbon/charts@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.7.2.tgz#41deb47c66f300fc0a644ac0a803eaccf4aa1adb"
+  integrity sha512-dM1edx9CPKttmvatEwbdnHr8GTJuZgLuVEGPhywM+dNkDY7J/yu1eXWUvvi6hIfqFmoqHRw5MlEzWvCOsyivUg==
   dependencies:
     "@carbon/styles" "^1.26.0"
     "@carbon/telemetry" "^0.1.0"
@@ -473,6 +458,7 @@
     d3-cloud "1.2.5"
     d3-sankey "0.12.3"
     date-fns "2.8.1"
+    dom-to-image-more "^3.1.4"
     lodash-es "4.17.21"
     resize-observer-polyfill "1.5.0"
 
@@ -558,7 +544,7 @@
     "@carbon/type" "^11.13.0"
     "@ibm/plex" "6.0.0-next.6"
 
-"@carbon/styles@^1.26.0", "@carbon/styles@^1.4.0":
+"@carbon/styles@^1.26.0":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@carbon/styles/-/styles-1.27.0.tgz#f5438c476c3db82ce99eb2b509dd504f98ab4f24"
   integrity sha512-a+4lclMjL5Ipo7yCmkymdh3opqRmbeYeiUNfeFZOjPjvjEn3PgMsKWn1FNZszaiT/6eySJThvUtJcSXwFac1jg==
@@ -612,11 +598,6 @@
   dependencies:
     "@carbon/grid" "^11.13.0"
     "@carbon/layout" "^11.13.0"
-
-"@carbon/utils-position@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@carbon/utils-position/-/utils-position-1.1.1.tgz#bea463b833608902ea37ac30bec36e3c0a3b547f"
-  integrity sha512-W8ykraEzr9WsH8+6+FgI6lmK4elFxH8Uy9+XDbDTvyVbF6fq5jgi4dPCDd1AoCtUBCcLAehInhReDaFM3DrM6w==
 
 "@carbon/utils-position@^1.1.4":
   version "1.1.4"
@@ -1503,10 +1484,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-dom@^18.0.11":
-  version "18.0.11"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.11.tgz#321351c1459bc9ca3d216aefc8a167beec334e33"
-  integrity sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==
+"@types/react-dom@^18.2.0":
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.0.tgz#374f28074bb117f56f58c4f3f71753bebb545156"
+  integrity sha512-8yQrvS6sMpSwIovhPOwfyNf2Wz6v/B62LFSVYQ85+Rq3tLsBIG7rP5geMxaijTUxSkrO6RzN/IRuIAADYQsleA==
   dependencies:
     "@types/react" "*"
 
@@ -1533,10 +1514,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^18.0.38":
-  version "18.0.38"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.38.tgz#02a23bef8848b360a0d1dceef4432c15c21c600c"
-  integrity sha512-ExsidLLSzYj4cvaQjGnQCk4HFfVT9+EZ9XZsQ8Hsrcn8QNgXtpZ3m9vSIC2MWtx7jHictK6wYhQgGh6ic58oOw==
+"@types/react@^18.2.0":
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.0.tgz#15cda145354accfc09a18d2f2305f9fc099ada21"
+  integrity sha512-0FLj93y5USLHdnhIhABk83rm8XEGA7kH3cr+YUlvxoUGp1xNt/DINUMvqPxLyOQMzLmZe8i4RTHbvb8MC7NmrA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1977,7 +1958,7 @@ canvas-fit@^1.5.0:
   dependencies:
     element-size "^1.1.1"
 
-carbon-components@^10.56.0, carbon-components@^10.58.3:
+carbon-components@^10.58.3:
   version "10.58.3"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.3.tgz#425bb5ceb8755fda9c50769572a5845d3f852e00"
   integrity sha512-RjTnrWCGStsIZ7nErw97AZI9sQWxQ8oIgo3QMdV0FWFcpTOECA4I9Dy4WPpRRdSMBcQpLetTxqjDGourM4u8Tw==
@@ -2893,6 +2874,11 @@ dom-helpers@^5.0.1:
   dependencies:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
+
+dom-to-image-more@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/dom-to-image-more/-/dom-to-image-more-3.1.4.tgz#6531f597d2f2af5f0b750d12464a8d0ba2074944"
+  integrity sha512-7C6olKIhSOxZOGAvhl4FABpxuaFp7nfyGE1i+LgVr4Dvlhrdaslo5N9Am5Scwf/HYrY1fCxYXYyXydirl5yZ7w==
 
 dom-to-image@^2.6.0:
   version "2.6.0"
@@ -5263,10 +5249,10 @@ robust-predicates@^3.0.0:
   resolved "https://registry.yarnpkg.com/robust-predicates/-/robust-predicates-3.0.1.tgz#ecde075044f7f30118682bd9fb3f123109577f9a"
   integrity sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==
 
-rollup@^3.20.2:
-  version "3.20.7"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.20.7.tgz#4f045dfb388abe08dd159f8cd286dcaca1e80b28"
-  integrity sha512-P7E2zezKSLhWnTz46XxjSmInrbOCiul1yf+kJccMxT56vxjHwCbDfoLbiqFgu+WQoo9ij2PkraYaBstgB2prBA==
+rollup@^3.21.0:
+  version "3.21.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.21.0.tgz#0a71517db56e150222670f88e5e7acfa4fede7c8"
+  integrity sha512-ANPhVcyeHvYdQMUyCbczy33nbLzI7RzrBje4uvNiTDJGIMtlKoOStmympwr9OtS1LZxiDmE2wvxHyVhoLtf1KQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -6334,14 +6320,14 @@ victory@^36.6.8:
     victory-voronoi-container "^36.6.8"
     victory-zoom-container "^36.6.8"
 
-vite@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.1.tgz#9badb1377f995632cdcf05f32103414db6fbb95a"
-  integrity sha512-EPmfPLAI79Z/RofuMvkIS0Yr091T2ReUoXQqc5ppBX/sjFRhHKiPPF/R46cTdoci/XgeQpB23diiJxq5w30vdg==
+vite@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.2.tgz#95a5e0ebee80ae218849312019318aa9e3a05c26"
+  integrity sha512-9R53Mf+TBoXCYejcL+qFbZde+eZveQLDYd9XgULILLC1a5ZwPaqgmdVpL8/uvw2BM/1TzetWjglwm+3RO+xTyw==
   dependencies:
     esbuild "^0.17.5"
     postcss "^8.4.21"
-    rollup "^3.20.2"
+    rollup "^3.21.0"
   optionalDependencies:
     fsevents "~2.3.2"
 
