@@ -30,6 +30,7 @@ const config = {
     "vcs-python",
     "social-embed",
     "develtech",
+    "isaul32",
   ],
   output_dir: "data/scraped",
   ignore_private_repos: true,
