@@ -24,7 +24,7 @@
     "@octokit/core": "^4.2.0",
     "@octokit/graphql": "^5.0.5",
     "@octokit/plugin-paginate-graphql": "^2.0.1",
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.16.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
