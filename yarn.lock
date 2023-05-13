@@ -4707,10 +4707,10 @@ picomatch@^2.3.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-plotly.js@^2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.22.0.tgz#54b1e8d4629eafced7cbec1f15bbdacdb1f335f5"
-  integrity sha512-g+YTMnChFDx/fNUV2rqkrf87wKwKuOhqv9LIxhmPyF94RGM4v4blP0mmgwQ278qv3kXmfTMJecIUusr1gzscng==
+plotly.js@^2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.23.0.tgz#b296ba5e735293ecc6dcfce2c87f19eb5d9f0ee6"
+  integrity sha512-zEm0WACqFVjXXIFpiwo8O6qCKXp+O6s+np1ny8jLS3gsHSyt4Nm1FnCc8gPLDeWFceFPWb7eCT+ZAGOABNhtcA==
   dependencies:
     "@plotly/d3" "3.8.1"
     "@plotly/d3-sankey" "0.7.2"
