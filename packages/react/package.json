@@ -34,7 +34,7 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@atlaskit/toggle": "^12.6.0",
+    "@atlaskit/toggle": "^12.6.1",
     "@types/react-ranger": "^2.0.1",
     "@vitejs/plugin-react": "^4.0.0",
     "date-fns": "^2.30.0",
