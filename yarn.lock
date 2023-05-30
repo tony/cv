@@ -69,10 +69,10 @@
     "@atlaskit/tokens" "^1.3.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^12.6.3":
-  version "12.6.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.6.3.tgz#486a2c04c5277608b594b5e2a42584d88c65962d"
-  integrity sha512-Gm/aJVoS7iDyZQ5Rn8QKGhnKqfj7180nwgd+syxNGLA0v0eZee4RbnJL4XNxhBFCPvNir7KPpqe7clUEUXyI6w==
+"@atlaskit/toggle@^12.6.4":
+  version "12.6.4"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.6.4.tgz#f69fda26690afded3ab5fc280523a554a54342f4"
+  integrity sha512-O0PK9QPuBzbF6lkulpcGKX5fdbynmnGcHrT8J0SMAhAouaAt10RBUK1uJfk6K4DOPv4b4gNZR2fE7ppp9IQbzQ==
   dependencies:
     "@atlaskit/analytics-next" "^9.1.0"
     "@atlaskit/ds-lib" "^2.2.0"
