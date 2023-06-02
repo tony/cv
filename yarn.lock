@@ -1028,10 +1028,10 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-16.0.0.tgz#d92838a6cd9fb4639ca875ddb3437f1045cc625e"
   integrity sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==
 
-"@octokit/plugin-paginate-graphql@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-graphql/-/plugin-paginate-graphql-2.0.1.tgz#3bd28fd7f4f7695b98fd4a32938d3f0503657a66"
-  integrity sha512-ZlhrWMlkGeK7qkWMKPKb6b7SP6lowN0lsOm+eyDssTBMoEZKSfwK+mrG4YtUhM66YNrJI22L32Vt+CcjteU0Vw==
+"@octokit/plugin-paginate-graphql@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-graphql/-/plugin-paginate-graphql-2.0.2.tgz#8e61a776be1bed7fa61f2ea401a87735f5d3d4de"
+  integrity sha512-7cQrOlL5T3ztTbX8RKNwKHeu0pHHJvlISrexImp1x8v8vmBghNDsRQP4rlhV/XgJ1Zbc7JB7Bo/iBXygrpITeA==
 
 "@octokit/request-error@^3.0.0":
   version "3.0.2"
