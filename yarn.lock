@@ -1029,10 +1029,10 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-16.0.0.tgz#d92838a6cd9fb4639ca875ddb3437f1045cc625e"
   integrity sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==
 
-"@octokit/plugin-paginate-graphql@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-graphql/-/plugin-paginate-graphql-2.0.2.tgz#8e61a776be1bed7fa61f2ea401a87735f5d3d4de"
-  integrity sha512-7cQrOlL5T3ztTbX8RKNwKHeu0pHHJvlISrexImp1x8v8vmBghNDsRQP4rlhV/XgJ1Zbc7JB7Bo/iBXygrpITeA==
+"@octokit/plugin-paginate-graphql@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-graphql/-/plugin-paginate-graphql-2.0.3.tgz#41133c66916a406de24bbbb512b18458bd18a448"
+  integrity sha512-gMZN0bEksY1d67rN4oBdU9Jor682tGt7sbEiidDLHJtsKmhWYEPJgWmPG1e6omrxE5S52VZxSRm5UY/utYje5w==
 
 "@octokit/request-error@^3.0.0":
   version "3.0.2"
@@ -1396,10 +1396,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.8":
+"@types/react@*":
   version "18.2.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.8.tgz#a77dcffe4e9af148ca4aa8000c51a1e8ed99e2c8"
   integrity sha512-lTyWUNrd8ntVkqycEEplasWy2OxNlShj3zqS0LuB1ENUGis5HodmhM7DtCoUGbxj3VW/WsGA0DUhpG6XrM7gPA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^18.2.9":
+  version "18.2.9"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.9.tgz#9207f8571afdc59a9c9c30df50e8ad2591ecefaf"
+  integrity sha512-pL3JAesUkF7PEQGxh5XOwdXGV907te6m1/Qe1ERJLgomojS6Ne790QiA7GUl434JEkFA2aAaB6qJ5z4e1zJn/w==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -4643,10 +4652,10 @@ picomatch@^2.3.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-plotly.js@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.24.0.tgz#e0dc3b2add4d6c8b31bb8b75a84dfd0e2c0e0438"
-  integrity sha512-4I+NzGnIWGN8vck5q2kg36Tozxw3dwQmXJZ1/3PYo6IjsTCGDs9J7RHmxVIzSC4Be0MSv7yKzJwOorr7Bdj05Q==
+plotly.js@^2.24.1:
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.24.1.tgz#9912295e4b6c93abdd8e00ac6e096cd667ed2b47"
+  integrity sha512-qcOnO7WWXWiu9/QiFPHAJgX7GkLQ9vn+Yq5bJv7rK8ZYrhiwgopqiRNVH2oY1qDYDXJKYz/2puLMVjKMPpLtGw==
   dependencies:
     "@plotly/d3" "3.8.1"
     "@plotly/d3-sankey" "0.7.2"
