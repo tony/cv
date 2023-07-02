@@ -1409,10 +1409,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@^2.12.19":
-  version "2.12.19"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.19.tgz#112d83f09873cf1506f8ddf7e49916c06515731e"
-  integrity sha512-WLbXSWgHB2v5j6UWTTyHBJaFjeYbxRCB/zwlgdR4KtTqzX8IAvgpfZ8C1WsNFaR5VLaiEmPr3/dC4U0xD/ZzKw==
+"@types/plotly.js@^2.12.20":
+  version "2.12.20"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.20.tgz#d39eff8a60298a61620b406cc1708132e37618f4"
+  integrity sha512-ZDNAde0VqBCrcgmQQyOmWM71k1+5oWaNkfliZ4ix5IdBkjbLye1S6JIdw+XFWGAIeimpjnkLsLzMOwQ105eIOg==
 
 "@types/prop-types@*", "@types/prop-types@^15.7.2":
   version "15.7.5"
