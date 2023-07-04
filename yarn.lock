@@ -69,20 +69,32 @@
     "@atlaskit/tokens" "^1.3.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^12.6.5":
-  version "12.6.5"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.6.5.tgz#0330fdd9856517eb3ccaee99ae1ad072ade9671e"
-  integrity sha512-De1vSyaLA65qDJseiAxdpWopJMg8rvZs/zdat1uEu4TfXABuwsS8bmhRkhmgxXBLn9rronyJxVAgPFFaeTwVlw==
+"@atlaskit/toggle@^12.6.6":
+  version "12.6.6"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-12.6.6.tgz#d6f6c1f5539dddd8f42f1565ec57ba82eacac365"
+  integrity sha512-xevZVQyeNNe0oVBLMvhMhJYxFNSVL4czj5Pzwt0G26mmE4ZiXwpj9D99w/ELjEOVSCUcgSngpyCovySHsa8Hlg==
   dependencies:
     "@atlaskit/analytics-next" "^9.1.0"
     "@atlaskit/ds-lib" "^2.2.0"
     "@atlaskit/icon" "^21.12.0"
     "@atlaskit/theme" "^12.5.0"
-    "@atlaskit/tokens" "^1.5.0"
+    "@atlaskit/tokens" "^1.11.0"
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
-"@atlaskit/tokens@^1.3.0", "@atlaskit/tokens@^1.5.0":
+"@atlaskit/tokens@^1.11.0":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.11.1.tgz#c55501ab740f9475c9f6786b6a59a029c72cde10"
+  integrity sha512-xJ2n6k2iV+9vGR3wapF3JLFhqeAtiqFaW7rpLT28Q+TPSNsbuM3FsHQgWqetAHZTutZf/yot/nBv6STrpMn6Ew==
+  dependencies:
+    "@atlaskit/ds-lib" "^2.2.0"
+    "@atlaskit/platform-feature-flags" "^0.2.0"
+    "@babel/runtime" "^7.0.0"
+    "@babel/traverse" "^7.20.0"
+    "@babel/types" "^7.20.0"
+    bind-event-listener "^2.1.1"
+
+"@atlaskit/tokens@^1.3.0":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.5.2.tgz#a95e1e0892cf3dd0968ee4663e48aedb4063dfbe"
   integrity sha512-KD57ivGunM/OJVN8pws+qbaq28eju39X7IsJPUgc+TN0TM8eLloC4qH56Hny1MYTDIU/rS4ZGa0EaHbA4wwi7A==
@@ -308,19 +320,19 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.2.tgz#640ae572366df2fd3aa5d503a166c5519f99e57c"
-  integrity sha512-hCc2i5Oq3NjPY52toL/iDzqDYh7CYye8sZuFnbTDOyljpKLFHvMPyqNWOOU91TNLMLKTRBW8+mFgJucXLIjuEw==
+"@carbon/charts-react@1.11.3":
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.3.tgz#4432c648ccc17a68f7bbc2989295fa3dc4fbc259"
+  integrity sha512-9b/D/HHIkLz7W7F8PPIRjRx5tyHlJquqZu0K5X/h884tz9j55syjtXWmtmALWCXcealZ0aWWRUFhehK4L7YUvQ==
   dependencies:
-    "@carbon/charts" "1.11.2"
+    "@carbon/charts" "1.11.3"
     "@carbon/icons-react" "^11.21.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.2.tgz#452c235b378bd5e4036c9eca94cda4d60ea54d95"
-  integrity sha512-DBiOjug7qfeKwiyIEHP4jBu+ievQerqoKqsySy3O6vllgMd5B/9Mg2ZJ94kY4UeMzMonKgq+Rcy9L27h0JT7Kg==
+"@carbon/charts@1.11.3":
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.3.tgz#2980afb833cbac94f8ee60f1d6c3dcd0b98510e6"
+  integrity sha512-Oiiwz+La7MFj0glFGu88lz5FCoaKaYqNVY3yotwQ9bmxqXXOGhr+wjKWqEAduwvwLWvAzun1zxdwswMN3MHv5w==
   dependencies:
     "@carbon/colors" "^11.16.0"
     "@carbon/telemetry" "~0.1.0"
@@ -1766,10 +1778,10 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.8.2.tgz#e46c5a4509272fcc5d38a03f37fc754d08a1daa2"
-  integrity sha512-WoPh1z9W/Aj4Wa6r6c4d9co63W8lCvWWT1GJ0S/HtZK0hK0alZQyBTuuQyPGK0YbvGxK07ZyEHBSs8NI85nu8Q==
+billboard.js@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.0.tgz#423c7afea49a305e1a2526be4488399466f34a50"
+  integrity sha512-ZTjMn5i0oCslwmJ6oU0WOMZwu4/o8qwSl1YKK3Vfnl1UOiUs1SRRvXRz9jzcTPlcTh0QjK7CM2Qpaj/QkXho9g==
   dependencies:
     "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
