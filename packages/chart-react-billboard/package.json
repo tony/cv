@@ -17,12 +17,12 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@types/node": "^20.3.3",
+    "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
