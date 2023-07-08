@@ -82,22 +82,10 @@
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
-"@atlaskit/tokens@^1.11.0":
+"@atlaskit/tokens@^1.11.0", "@atlaskit/tokens@^1.3.0":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.11.1.tgz#c55501ab740f9475c9f6786b6a59a029c72cde10"
   integrity sha512-xJ2n6k2iV+9vGR3wapF3JLFhqeAtiqFaW7rpLT28Q+TPSNsbuM3FsHQgWqetAHZTutZf/yot/nBv6STrpMn6Ew==
-  dependencies:
-    "@atlaskit/ds-lib" "^2.2.0"
-    "@atlaskit/platform-feature-flags" "^0.2.0"
-    "@babel/runtime" "^7.0.0"
-    "@babel/traverse" "^7.20.0"
-    "@babel/types" "^7.20.0"
-    bind-event-listener "^2.1.1"
-
-"@atlaskit/tokens@^1.3.0":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.5.2.tgz#a95e1e0892cf3dd0968ee4663e48aedb4063dfbe"
-  integrity sha512-KD57ivGunM/OJVN8pws+qbaq28eju39X7IsJPUgc+TN0TM8eLloC4qH56Hny1MYTDIU/rS4ZGa0EaHbA4wwi7A==
   dependencies:
     "@atlaskit/ds-lib" "^2.2.0"
     "@atlaskit/platform-feature-flags" "^0.2.0"
@@ -347,12 +335,7 @@
     topojson-client "^3.1.0"
     tslib "^2.6.0"
 
-"@carbon/colors@^11.16.0":
-  version "11.16.0"
-  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-11.16.0.tgz#43ce6c6360e33ff5f8628b53fbea8e1e870d7e30"
-  integrity sha512-1bQ97KSOgQsSV9lFimBJa/r/6SF0PWoP5QRAq/61dRpH8vFrDQaNrWVmeiKjwSVjzJrdFHafBmiYIvJzYmMftQ==
-
-"@carbon/colors@^11.17.0":
+"@carbon/colors@^11.16.0", "@carbon/colors@^11.17.0":
   version "11.17.1"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-11.17.1.tgz#3aba3b495b3d4a635fa2bd1e6f16996163a92d62"
   integrity sha512-Q2VlMaZcl3U9Qc1RQbhuf4M4SVuJIeE+NIIDExPCRFaWeuN/5EIUYxEkPgDqvkLU91QTu6lH8TqxFPZORlRvDA==
