@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.1",
-    "@types/plotly.js": "^2.12.20",
+    "@types/plotly.js": "^2.12.21",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "cross-env": "^7.0.3",
