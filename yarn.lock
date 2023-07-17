@@ -1749,10 +1749,10 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.0.tgz#423c7afea49a305e1a2526be4488399466f34a50"
-  integrity sha512-ZTjMn5i0oCslwmJ6oU0WOMZwu4/o8qwSl1YKK3Vfnl1UOiUs1SRRvXRz9jzcTPlcTh0QjK7CM2Qpaj/QkXho9g==
+billboard.js@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.1.tgz#83bb5118328e96a899f1cd59fd8209059afa0284"
+  integrity sha512-EVeB3uZjoijQRkc9r185bx7/FW4v7MiqS2lOlIWlssJjfiYE4bEJLSGXHaeoEU684r7j4KqeP0Jci71bgna+Jg==
   dependencies:
     "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
