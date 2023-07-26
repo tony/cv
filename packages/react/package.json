@@ -18,7 +18,7 @@
   "devDependencies": {
     "@tony/cv-data": "*",
     "@types/node": "^20.4.5",
-    "@types/react": "^18.2.16",
+    "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.33.0",
