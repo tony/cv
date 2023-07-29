@@ -2,6 +2,7 @@
   --chart-height: 250px;
   --chart-width: 250px;
   --nav-height: 2rem;
+  --background-color: #f3f3f4;
 }
 body {
   font-family:
@@ -20,7 +21,9 @@ body {
     "Segoe UI Symbol",
     "Noto Color Emoji";
   margin: 0 0 1rem 0;
+  background-color: var(--background-color);
 }
+
 @media (max-width: 1023px) {
   body {
     position: absolute;
@@ -336,4 +339,8 @@ a {
   align-items: center;
   text-align: center;
   height: var(--chart-height);
+}
+
+.wmde-markdown[data-color-mode*="light"] {
+  background-color: unset !important;
 }
