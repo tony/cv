@@ -13,7 +13,6 @@ import { Settings, SettingsContextProvider } from "./Settings";
 import "@tony/cv-ui/styles/style.css";
 
 const { state: cvState } = mobxLib;
-window.cvState = cvState;
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
