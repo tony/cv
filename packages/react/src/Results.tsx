@@ -2,8 +2,6 @@ import React from "react";
 
 import { observer } from "mobx-react-lite";
 
-import christmasTreeSvg from "@tony/cv-data/img/icons/christmas-tree.svg";
-
 import { ActivityCard } from "./Card";
 import { useMst } from "./mobx";
 
@@ -12,11 +10,7 @@ export const ResultsHeader: React.FC = observer(() => {
 
   const resultsCount = filteredActivities ? filteredActivities.length : 0;
 
-  return (
-    <div id="results-info">
-      Found {resultsCount} results <img src={christmasTreeSvg} width="16" />
-    </div>
-  );
+  return <div id="results-info">{resultsCount} results</div>;
 });
 
 export const Results = observer(() => {
