@@ -127,7 +127,7 @@ a {
 #results-info img {
   margin-left: 0.25rem;
 }
-#results-container {
+#results-container, #charts {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
@@ -136,7 +136,7 @@ a {
   padding: 0.1rem 0;
 }
 @media (max-width: 1023px) {
-  #results-container {
+  #results-container, #charts {
     width: 100%;
     max-width: initial;
     min-width: initial;
@@ -199,6 +199,7 @@ a {
 }
 #charts {
   width: calc(100% - 1rem);
+  background-color: unset;
 }
 .chartRow {
   display: grid;
