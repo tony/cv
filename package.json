@@ -8,7 +8,7 @@
     "distclean": "yarn workspaces run distclean",
     "format": "yarn workspaces run format",
     "lint": "yarn workspaces run lint",
-    "ncu": "yarn workspaces run ncu",
+    "ncu": "yarn ncu-local -u; yarn workspaces run ncu",
     "ncu-local": "ncu",
     "prettier": "yarn workspaces run prettier",
     "update": "yarn workspaces run update",
