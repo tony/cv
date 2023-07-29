@@ -20,10 +20,12 @@ export const ResultsHeader: React.FC = observer(() => {
 });
 
 export const Results = observer(() => {
-  const { filteredActivities } = useMst();
+  const { filteredActivities, cvState } = useMst();
 
   return (
     <div id="results">
+      <ResultsHeader results={cvState} />
+
       {filteredActivities &&
         filteredActivities.map((activity, idx) => {
           return (

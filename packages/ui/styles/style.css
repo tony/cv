@@ -40,12 +40,11 @@ a {
 }
 .card {
   border-bottom: 1px solid rgba(16, 22, 26, 0.25);
-  padding: 0.7rem 0.7rem 1.4rem 0.7rem;
+  padding: 0.7rem;
   font-size: 0.875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
 }
 .card a {
   font-size: 0.875rem;
@@ -117,9 +116,12 @@ a {
   margin-top: 1rem;
 }
 #results {
-  margin: 0 auto;
+  margin: 1.5rem auto 0 auto;
   max-width: 40%;
   min-width: 900px;
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 0.1rem 0;
 }
 @media (max-width: 1023px) {
   #results {
