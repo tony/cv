@@ -14,7 +14,11 @@ const ChartLinks: React.FC<
   } & React.HTMLProps<HTMLDivElement>
 > = ({ chart, setChart, ...props }) => (
   <div {...props}>
-    📊<span className="dh-tablet"> Chart frameworks:</span>{" "}
+    📊
+    <span className="dh-tablet" title="Lazily loaded, honors filters and scope">
+      {" "}
+      Chart system (take your pick):
+    </span>{" "}
     {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
       <React.Fragment key={c}>
         {idx > 0 && ", "}
