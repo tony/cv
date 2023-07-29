@@ -55,11 +55,11 @@ export const stateToDonut = (
       }
       return "gray";
     },
-    margin: { top: 30, right: 40, bottom: 30, left: 40 },
+    margin: { top: 0, right: 0, bottom: 0, left: 0 },
     innerRadius: 0.5,
     padAngle: 0.7,
     cornerRadius: 3,
-    borderWidth: 1,
+    borderWidth: 0,
     sortByValue: true,
     arcLabelsTextColor: (item: {
       id: string;
@@ -78,6 +78,8 @@ export const stateToDonut = (
     arcLabelsSkipAngle: 25,
     arcLinkLabelsOffset: 10,
     arcLabelsLinkColor: { from: "color" },
+    enableArcLinkLabels: false,
+    enableArcLabels: true,
   } as PieSvgProps<{ id: string; label: string; value: number }>;
 };
 

@@ -4,8 +4,17 @@
   }
 }
 
+.chartRow.nivo:not(.noCharts) {
+  display: flex;
+}
+
 .chartRow.nivo:not(.noCharts) .chartRow--donut {
-  width: var(--chart-width);
+  min-width: calc(var(--chart-width) - 35px);
+}
+
+.chartRow.nivo:not(.noCharts) .chartRow--line {
+  display: block;
+  max-width: calc(900px - var(--chart-width));
 }
 
 .chartRow.nivo:not(.noCharts) .chartRow--donut,
