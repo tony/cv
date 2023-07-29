@@ -28,9 +28,9 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
             if (isChanged) {
               setChartData(v);
             }
-          }
+          },
         ),
-      [cvState]
+      [cvState],
     );
 
     React.useEffect(() => {
@@ -47,7 +47,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     }
 
     return <ResponsivePie {...chartData} {...props} />;
-  }
+  },
 );
 
 export const ActivityLineChart: React.FC<
@@ -66,9 +66,9 @@ export const ActivityLineChart: React.FC<
           if (isChanged) {
             setChartData(v);
           }
-        }
+        },
       ),
-    [cvState]
+    [cvState],
   );
 
   React.useEffect(() => {

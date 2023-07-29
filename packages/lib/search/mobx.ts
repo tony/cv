@@ -80,7 +80,7 @@ export const Org = types.model("Org", {
   id: types.identifier,
   orgType: types.enumeration<OrgTypeName>(
     "OrgTypeName",
-    Object.values(OrgTypeName)
+    Object.values(OrgTypeName),
   ),
   name: types.string,
   url: types.optional(types.maybeNull(types.string), null),
@@ -93,7 +93,7 @@ export const Activity = types
     title: types.string,
     activityType: types.enumeration<ActivityTypeName>(
       "ActivityTypeName",
-      Object.values(ActivityTypeName)
+      Object.values(ActivityTypeName),
     ),
     org: types.reference(Org),
     meta: ActivityMeta,
@@ -144,18 +144,18 @@ export const UI = types.model("UI", {
 });
 
 export const sortActivities = (
-  activities: Instance<typeof CVState>["activities"]
+  activities: Instance<typeof CVState>["activities"],
 ) => {
   return activities
     .sort((a: Instance<typeof Activity>, b: Instance<typeof Activity>) =>
-      a?.createdAt > b?.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1
+      a?.createdAt > b?.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1,
     )
     .reverse();
 };
 
 export const filterActivitiesByYear = (
   activities: Instance<typeof CVState>["activities"],
-  { startYear, endYear }: { startYear: number; endYear: number }
+  { startYear, endYear }: { startYear: number; endYear: number },
 ) => {
   return activities.filter((activity: Instance<typeof Activity>) => {
     if (activity?.createdAt) {
@@ -184,7 +184,7 @@ export const filterActivitiesByFilters = (
     languages,
     orgs,
     activityTypes,
-  }: Instance<typeof SearchOptions>
+  }: Instance<typeof SearchOptions>,
 ) => {
   const activeLanguageIds = languages.map(({ id }) => id);
   const activeOrgIds = orgs.map(({ id }) => id);
@@ -196,10 +196,10 @@ export const filterActivitiesByFilters = (
             hasAny(
               new Set(
                 activity.org.languages.map(
-                  ({ id }: Instance<typeof Language>) => id
-                )
+                  ({ id }: Instance<typeof Language>) => id,
+                ),
               ),
-              activeLanguageIds
+              activeLanguageIds,
             ).length > 0
           );
         })
@@ -209,7 +209,7 @@ export const filterActivitiesByFilters = (
       ? activitiesFilteredByLanguage.filter(
           (activity: Instance<typeof Activity>) => {
             return activeOrgIds.includes(activity.org.id);
-          }
+          },
         )
       : activitiesFilteredByLanguage;
   const activitiesFilteredByActivityType =
@@ -217,7 +217,7 @@ export const filterActivitiesByFilters = (
       ? activitiesFilteredByOrg.filter(
           (activity: Instance<typeof Activity>) => {
             return activeActivityTypeIds.includes(activity.activityType);
-          }
+          },
         )
       : activitiesFilteredByOrg;
   return activitiesFilteredByActivityType.filter(
@@ -243,7 +243,7 @@ export const filterActivitiesByFilters = (
       }
 
       return true;
-    }
+    },
   );
 };
 
@@ -289,7 +289,7 @@ export const CVState = types
         self.searchOptions.languages.splice(
           0,
           self.searchOptions.languages.length,
-          ...languageIds
+          ...languageIds,
         );
       },
       setYears({ startYear, endYear }: { startYear: number; endYear: number }) {
@@ -300,14 +300,14 @@ export const CVState = types
         self.searchOptions.activityTypes.splice(
           0,
           self.searchOptions.activityTypes.length,
-          ...activityTypeIds
+          ...activityTypeIds,
         );
       },
       setOrgs(orgIds: string[]) {
         self.searchOptions.orgs.splice(
           0,
           self.searchOptions.orgs.length,
-          ...orgIds
+          ...orgIds,
         );
       },
       setSearchOptions(searchOptions: Partial<Instance<typeof SearchOptions>>) {
@@ -336,8 +336,8 @@ export const CVState = types
             startYear,
             endYear,
           }),
-          activityTraits
-        )
+          activityTraits,
+        ),
       );
     },
 
@@ -358,7 +358,7 @@ export const CVState = types
           }
           return jsonData;
         },
-        {} as ActivityCount
+        {} as ActivityCount,
       );
     },
     get languageYearMap() {
@@ -373,15 +373,15 @@ export const CVState = types
                   languages[languageName] = 1;
                 }
               }
-            }
+            },
           );
           return languages;
         },
         Object.fromEntries<number>(
           self.languages
             .filter(({ id }: Instance<typeof Language>) => id)
-            .map(({ id }) => [id as string, 0])
-        )
+            .map(({ id }) => [id as string, 0]),
+        ),
       ) as LanguageCount;
     },
     get backgroundColors() {
@@ -391,7 +391,7 @@ export const CVState = types
           .map((language: Instance<typeof Language>) => [
             language.id, // as LanguageName,
             (language.ui?.backgroundColor as string) ?? LANGUAGE_FALLBACK_COLOR,
-          ])
+          ]),
       );
     },
     get textColors() {
@@ -401,7 +401,7 @@ export const CVState = types
           .map((language: Instance<typeof Language>) => [
             language.id, // as LanguageName,
             language.ui?.backgroundColor as string,
-          ])
+          ]),
       );
     },
   }));

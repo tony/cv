@@ -161,7 +161,7 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value
+      ({ id }) => id === data.value,
     );
     if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
       return styles;
@@ -184,7 +184,7 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   multiValueLabel: (styles, { data }) => {
     const cvState = useMst();
     const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value
+      ({ id }) => id === data.value,
     );
     if (!activityType?.ui) {
       return styles;
@@ -203,7 +203,7 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   multiValueRemove: (styles, { data = {} }) => {
     const cvState = useMst();
     const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value
+      ({ id }) => id === data.value,
     );
     if (!activityType?.ui?.backgroundColor) {
       return styles;
@@ -233,7 +233,7 @@ export const ActivityTypeOption: React.FC<
 > = ({ children, ...props }) => {
   const cvState = useMst();
   const activityType = cvState.activityTypes.find(
-    ({ id }) => id === props.data?.value
+    ({ id }) => id === props.data?.value,
   );
   if (!activityType) {
     console.warn(`activityType ${props?.data?.value} could not be found`);
@@ -256,7 +256,7 @@ export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
 }) => {
   const cvState = useMst();
   const activityType = cvState.activityTypes.find(
-    ({ id }) => id === props.data?.value
+    ({ id }) => id === props.data?.value,
   );
   if (!activityType) {
     console.warn(`activityType ${props?.data?.value} could not be found`);

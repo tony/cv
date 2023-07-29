@@ -40,7 +40,7 @@ export const PatchInfo: React.FC<{
         >
           💬 Pull Request
         </a>
-      </span>
+      </span>,
     );
   }
 
@@ -55,7 +55,7 @@ export const PatchInfo: React.FC<{
         >
           ✒️ .diff
         </a>
-      </span>
+      </span>,
     );
   }
 
@@ -88,7 +88,7 @@ export const PublicationInfo: React.FC<{
         >
           Official homepage
         </a>
-      </span>
+      </span>,
     );
   }
 
@@ -103,7 +103,7 @@ export const PublicationInfo: React.FC<{
         >
           Amazon
         </a>
-      </span>
+      </span>,
     );
   }
   if (org?.leanpubUrl) {
@@ -117,7 +117,7 @@ export const PublicationInfo: React.FC<{
         >
           Leanpub
         </a>
-      </span>
+      </span>,
     );
   }
   if (org?.goodreadsUrl) {
@@ -131,7 +131,7 @@ export const PublicationInfo: React.FC<{
         >
           Goodreads
         </a>
-      </span>
+      </span>,
     );
   }
 
@@ -163,7 +163,7 @@ export const CompanyInfo: React.FC<{
         >
           Official homepage
         </a>
-      </span>
+      </span>,
     );
   }
 

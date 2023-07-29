@@ -9,7 +9,7 @@ import { useMst } from "../mobx";
 export const FilterToggles: React.FC = () => {
   const cvState = useMst();
   const onShowReleaseContributionsChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
@@ -19,7 +19,7 @@ export const FilterToggles: React.FC = () => {
     }
   };
   const onShowSpellingContributionsChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
@@ -29,7 +29,7 @@ export const FilterToggles: React.FC = () => {
     }
   };
   const onShowDocumentationContributionsChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
@@ -39,7 +39,7 @@ export const FilterToggles: React.FC = () => {
     }
   };
   const onShowCodeStyleContributionsChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {
@@ -49,7 +49,7 @@ export const FilterToggles: React.FC = () => {
     }
   };
   const onShowUnmergedContributionsChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const checked = e?.target?.checked;
     if (checked !== null) {

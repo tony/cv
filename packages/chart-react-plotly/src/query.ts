@@ -27,14 +27,20 @@ export const DEFAULT_RESULTS: Results = {
 export const stateToDonut = (state: Instance<typeof CVState>) => {
   const languageYearMap = state.languageYearMap;
   const total = Object.values(languageYearMap).reduce((a, b) => a + b, 0);
-  const languageBGMap = state.languages.reduce((languageColorMap, language) => {
-    if (language) {
-      if (!(language.id in languageColorMap) && language.ui?.backgroundColor) {
-        languageColorMap[language.id] = language.ui.backgroundColor as string;
+  const languageBGMap = state.languages.reduce(
+    (languageColorMap, language) => {
+      if (language) {
+        if (
+          !(language.id in languageColorMap) &&
+          language.ui?.backgroundColor
+        ) {
+          languageColorMap[language.id] = language.ui.backgroundColor as string;
+        }
       }
-    }
-    return languageColorMap;
-  }, {} as { [key: string]: string });
+      return languageColorMap;
+    },
+    {} as { [key: string]: string },
+  );
   return {
     type: "pie",
     values: Object.values(languageYearMap),
@@ -42,7 +48,7 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
     hoverinfo: "text",
     hovertext: Object.entries(languageYearMap).map(([languageName, value]) => {
       return `${languageName}: ${value} (${((value / total) * 100).toFixed(
-        2
+        2,
       )}%)`;
     }),
     text: Object.entries(languageYearMap).map(([languageName, value]) => {
@@ -54,7 +60,7 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
     textinfo: "text",
     marker: {
       colors: Object.keys(languageYearMap).map(
-        (languageName) => languageBGMap[languageName]
+        (languageName) => languageBGMap[languageName],
       ),
     },
     automargin: true,

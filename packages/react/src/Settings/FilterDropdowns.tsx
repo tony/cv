@@ -17,7 +17,7 @@ import type { IOptionType, ISelectOption } from "../react-select";
 function CustomSelect<
   Option extends IOptionType,
   IsMulti extends boolean = true,
-  Group extends GroupBase<Option> = GroupBase<Option>
+  Group extends GroupBase<Option> = GroupBase<Option>,
 >(props: Props<Option, IsMulti, Group>) {
   return (
     <Select {...props} theme={(theme) => ({ ...theme, borderRadius: 0 })} />
@@ -30,12 +30,12 @@ export const FilterDropdowns: React.FC = () => {
     <div className="dropdownRow">
       <CustomSelect
         options={getSelectOptions(
-          Object.values(cvState.languages ?? {}).map(({ id }) => id as string)
+          Object.values(cvState.languages ?? {}).map(({ id }) => id as string),
         )}
         isMulti
         onChange={(value: PropsValue<IOptionType>): void => {
           cvState.setLanguages(
-            (value as IOptionType[]).map(({ value: v }) => v)
+            (value as IOptionType[]).map(({ value: v }) => v),
           );
         }}
         className="react-select"
@@ -53,7 +53,7 @@ export const FilterDropdowns: React.FC = () => {
         isMulti={true}
         onChange={(value: PropsValue<IOptionType>): void => {
           cvState.setActivityTypes(
-            (value as IOptionType[]).map(({ value: v }) => v)
+            (value as IOptionType[]).map(({ value: v }) => v),
           );
         }}
         className="react-select"

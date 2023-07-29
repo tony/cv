@@ -8,7 +8,7 @@ const ghToken =
 
 if (!ghToken) {
   console.error(
-    "GITHUB_API_TOKEN or HOMEBREW_GITHUB_API_TOKEN must be set in ENV"
+    "GITHUB_API_TOKEN or HOMEBREW_GITHUB_API_TOKEN must be set in ENV",
   );
   process.exit(0);
 }
@@ -82,7 +82,7 @@ query fetchIssues($login: String!, $cursor: String) {
     }
   }
 }`,
-    { login: config.gh_user }
+    { login: config.gh_user },
   );
 
   for await (const res of ghIterator) {
@@ -91,7 +91,7 @@ query fetchIssues($login: String!, $cursor: String) {
     };
     issues = issues.concat(data.pullRequests);
     console.log(
-      `Fetching ${issues.length} / ${res.user.pullRequests.totalCount}`
+      `Fetching ${issues.length} / ${res.user.pullRequests.totalCount}`,
     );
   }
 
@@ -102,13 +102,13 @@ fetchGitHubIssues()
   .then((prs) => {
     if (config.exclude_own_repo) {
       prs = prs.filter(
-        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`)
+        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`),
       );
     }
     if (config.exclude_users) {
       for (const user of config.exclude_users) {
         prs = prs.filter(
-          (pr) => !pr.node.url.includes(`https://github.com/${user}/`)
+          (pr) => !pr.node.url.includes(`https://github.com/${user}/`),
         );
       }
     }
@@ -132,7 +132,7 @@ fetchGitHubIssues()
     // Filter uniques
     projects = projects.filter(
       (project, index, self) =>
-        self.findIndex((p) => p.name === project.name) === index
+        self.findIndex((p) => p.name === project.name) === index,
     );
     /**
      * Manually add languages GitHub projects missing them
@@ -162,7 +162,7 @@ fetchGitHubIssues()
           ...(p.homepageUrl ? { url: p.homepageUrl } : {}),
         },
       }),
-      {}
+      {},
     );
 
     let data = JSON.stringify(projectsFinal, null, "  ");
@@ -177,7 +177,7 @@ fetchGitHubIssues()
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
         org: Object.keys(projectsFinal).find(
-          (projectName) => pr.repository.name === projectName
+          (projectName) => pr.repository.name === projectName,
         ),
         activityType: "Patch",
         createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),

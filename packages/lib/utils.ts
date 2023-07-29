@@ -1,6 +1,6 @@
 export const difference = (
   left: Set<unknown> | unknown[],
-  right: Set<unknown> | unknown[]
+  right: Set<unknown> | unknown[],
 ): unknown[] => {
   const a = new Set(left);
   const b = new Set(right);
@@ -9,7 +9,7 @@ export const difference = (
 
 export const hasAny = (
   left: Set<unknown> | unknown[],
-  right: Set<unknown> | unknown[]
+  right: Set<unknown> | unknown[],
 ): unknown[] => {
   const a = new Set(left);
   const b = new Set(right);

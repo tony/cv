@@ -34,7 +34,7 @@ export const DEFAULT_RESULTS: Results = {
 };
 
 export const stateToDonut = (
-  state: Instance<typeof CVState>
+  state: Instance<typeof CVState>,
 ): DonutChartProps => {
   return {
     height: donutChartHeight,
@@ -83,7 +83,7 @@ export const stateToDonut = (
 };
 
 export const stateToLine = (
-  state: Instance<typeof CVState>
+  state: Instance<typeof CVState>,
 ): LineChartProps => {
   const activityYearMap = state.activityYearMap;
   return {

@@ -50,11 +50,11 @@ export const ActivityTypeTag: React.FC<
     }
     const cvState = useMst();
     const activityType = cvState.activityTypes.find(
-      ({ id }) => id === activityTypeName
+      ({ id }) => id === activityTypeName,
     );
     if (!activityType || !activityType.ui) {
       console.groupCollapsed(
-        `${activityType?.name} missing activity type for ${activityTypeName}`
+        `${activityType?.name} missing activity type for ${activityTypeName}`,
       );
       console.table(activityType);
       console.groupEnd();
@@ -70,7 +70,7 @@ export const ActivityTypeTag: React.FC<
         {children || activityType?.name || activityTypeName}
       </div>
     );
-  }
+  },
 );
 
 export const ActivityTypeText: React.FC<
@@ -92,11 +92,11 @@ export const ActivityTypeText: React.FC<
   }
   const cvState = useMst();
   const activityType = cvState.activityTypes.find(
-    ({ id }) => id === activityTypeName
+    ({ id }) => id === activityTypeName,
   );
   if (!activityType || !activityType.ui) {
     console.groupCollapsed(
-      `${activityType?.name} missing activity type for ${activityTypeName}`
+      `${activityType?.name} missing activity type for ${activityTypeName}`,
     );
     console.table(activityType);
     console.groupEnd();
@@ -128,7 +128,7 @@ export const OrgTypeTag: React.FC<
   const orgType = cvState.orgTypes.find(({ id }) => id === orgTypeName);
   if (!orgType || !orgType.ui) {
     console.groupCollapsed(
-      `${orgType?.name} missing org type for ${orgTypeName}`
+      `${orgType?.name} missing org type for ${orgTypeName}`,
     );
     console.table(orgType);
     console.groupEnd();

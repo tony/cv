@@ -26,10 +26,10 @@ import {
 export const orgs: IOrg[] = [
   // Make Object Key the ID
   ...Object.entries(handPickedOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
+    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
   ),
   ...Object.entries(ghOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown } as IOrg)
+    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
   ),
 ].map((org) => {
   if (!org.languages.length) {
@@ -73,7 +73,7 @@ export const languages: Language[] = Array.from(
       .filter((a) => a.languages)
       .map((a) => a.languages)
       .flat(),
-  ])
+  ]),
 )
   .filter(Boolean)
   .map((languageName: LanguageName) => {
@@ -119,23 +119,23 @@ export const languages: Language[] = Array.from(
   });
 
 export const orgTypes: OrgType[] = Array.from(
-  new Set(orgs.map((a) => a.orgType as OrgTypeName).filter(Boolean))
+  new Set(orgs.map((a) => a.orgType as OrgTypeName).filter(Boolean)),
 ).map(
   (orgTypeName: OrgTypeName) =>
     ({
       id: orgTypeName,
       name: orgTypeName,
       ui: OrgTypeColors[orgTypeName],
-    } as OrgType)
+    }) as OrgType,
 );
 
 export const activityTypes: ActivityType[] = Array.from(
-  new Set(activities.map((a) => a.activityType).filter(Boolean))
+  new Set(activities.map((a) => a.activityType).filter(Boolean)),
 ).map(
   (activityTypeName: ActivityTypeName) =>
     ({
       id: activityTypeName,
       name: ActivityTypeNameMap[activityTypeName] ?? activityTypeName,
       ui: ActivityTypeColors[activityTypeName],
-    } as ActivityType)
+    }) as ActivityType,
 );
