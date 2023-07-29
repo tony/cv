@@ -1,6 +1,8 @@
 # Tony Narlock's CV
 
-**Live Version** [v1 branch] ([react cv], [vue.js cv])
+**Live Version** Launch: [react v2]
+
+Old: [v1 branch], launch: [react v1], [vue.js v1]
 
 ## What's new?
 
@@ -16,8 +18,9 @@
 ![image]
 
 [v1 branch]: https://github.com/tony/cv/tree/v1
-[react cv]: https://cv.git-pull.com
-[vue.js cv]: https://cv-vue.git-pull.com
+[react v2]: https://cv-react-v2.git-pull.com
+[react v1]: https://cv-react-v1.git-pull.com
+[vue.js v1]: https://cv-vue-v1.git-pull.com
 [mobx]: https://github.com/mobxjs/mobx
 [mobx-state-tree]: https://mobx-state-tree.js.org/
 [image]: packages/lib/assets/architecture.png
@@ -41,13 +44,13 @@
 
 ### 📈 Charts
 
-| Package                   | React                                                  |
-| ------------------------- | ------------------------------------------------------ |
-| [@carbon/charts]          | 🟡 In-progress, [packages/chart-react-carbon/][]       |
-| [plotly]                  | 🟡 In-progress, [packages/chart-react-plotly/][]       |
-| [billboard.js]            | 🟡 In-progress, [packages/chart-react-billboard.js/][] |
-| [nivo] \(react-only)      | 🟡 In-progress, [packages/chart-react-nivo/][]         |
-| [victory] \(react-only)   | 🟡 In-progress, [packages/chart-react-victory/][]      |
+| Package                 | React                                                  |
+| ----------------------- | ------------------------------------------------------ |
+| [@carbon/charts]        | 🟡 In-progress, [packages/chart-react-carbon/][]       |
+| [plotly]                | 🟡 In-progress, [packages/chart-react-plotly/][]       |
+| [billboard.js]          | 🟡 In-progress, [packages/chart-react-billboard.js/][] |
+| [nivo] \(react-only)    | 🟡 In-progress, [packages/chart-react-nivo/][]         |
+| [victory] \(react-only) | 🟡 In-progress, [packages/chart-react-victory/][]      |
 
 [@carbon/charts]: https://github.com/carbon-design-system/carbon-charts
 [plotly]: https://github.com/plotly/plotly.js
