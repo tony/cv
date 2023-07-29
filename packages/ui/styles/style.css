@@ -388,7 +388,3 @@ a {
   text-align: center;
   height: var(--chart-height);
 }
-
-.wmde-markdown[data-color-mode*="light"] {
-  background-color: unset !important;
-}
