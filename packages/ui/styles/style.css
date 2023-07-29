@@ -143,6 +143,10 @@ a {
     margin: 0.5rem auto;
   }
 }
+#results-bottom {
+  display: block;
+  height: 1.25rem;
+}
 #mobile-buttons {
   background-color: #f1f1f1;
   height: 30px;
