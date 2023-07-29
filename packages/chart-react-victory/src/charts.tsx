@@ -9,6 +9,7 @@ import { useMst } from "@tony/cv-react/src/mobx";
 import {
   donutChartHeight,
   donutChartWidth,
+  lineChartWidth,
 } from "@tony/cv-ui/styles/constants";
 
 import {
@@ -96,14 +97,16 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
       return void 0;
     }, [cvState]);
 
-    const [width, setWidth] = React.useState(window.innerWidth);
-    const updateWidth = (ev: Event) => {
-      const event = ev as WindowEventMap["resize"];
-      const target = event.target as Window;
-      if (!target?.innerWidth) {
+    const [width, setWidth] = React.useState(
+      document.querySelector("#charts .chartRow--line")?.clientWidth ??
+        lineChartWidth,
+    );
+    const updateWidth = () => {
+      const chartElement = document.querySelector("#charts .chartRow--line");
+      if (!chartElement?.clientWidth) {
         return;
       }
-      setWidth(target.innerWidth);
+      setWidth(chartElement.clientWidth);
     };
 
     // thanks @jasonhealy https://github.com/FormidableLabs/victory/issues/396#issuecomment-348182325
@@ -125,10 +128,15 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         theme={VictoryTheme.material}
         domainPadding={{ x: 5 }}
         padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
-        width={width}
+        width={width + 170}
       >
         {/* @ts-ignore */}
-        <VictoryLine ref={chartRef} {...chartData} {...props} />
+        <VictoryLine
+          ref={chartRef}
+          padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+          {...chartData}
+          {...props}
+        />
       </VictoryChart>
     );
   },

@@ -54,5 +54,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     data: Object.entries(activityYearMap).map(([year, count]) => {
       return { x: year, y: count };
     }),
+    height: 250,
+    width: 250,
   } as LineChartProps;
 };
