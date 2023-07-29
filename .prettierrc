@@ -12,6 +12,6 @@
     "\\.s?css$"
   ],
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-  "importOrderSeparation": true,
-  "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"]
+  "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.0.0"
 }
