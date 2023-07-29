@@ -7,13 +7,12 @@ import { CVNav } from "@tony/cv-nav";
 
 import { Charts } from "./Charts";
 import { MobxProvider } from "./mobx";
-import { Results, ResultsHeader } from "./Results";
+import { Results } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
 
 import "@tony/cv-ui/styles/style.css";
 
 const { state: cvState } = mobxLib;
-window.cvState = cvState;
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -39,7 +38,6 @@ const App: React.FC = observer(() => {
         <>
           <Settings results={cvState} />
           <Charts results={cvState} />
-          <ResultsHeader results={cvState} />
           <Results results={cvState} />
         </>
       )}

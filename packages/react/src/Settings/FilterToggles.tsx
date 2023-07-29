@@ -72,7 +72,7 @@ export const FilterToggles: React.FC = () => {
         htmlFor="show-release"
         title="Continuous integration, build and releases"
       >
-        Build / Release /CI
+        Build / Release / CI
       </label>
 
       <Toggle

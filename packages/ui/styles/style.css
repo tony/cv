@@ -2,25 +2,19 @@
   --chart-height: 250px;
   --chart-width: 250px;
   --nav-height: 2rem;
+  --background-color: #f3f3f4;
+  --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --card-border-color: rgba(16, 22, 26, 0.25);
+  --card-hover-color: #fafafa;
 }
 body {
-  font-family:
-    "IBM Plex Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Noto Sans",
-    Ubuntu,
-    Cantarell,
-    "Helvetica Neue",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: var(--sans-font);
   margin: 0 0 1rem 0;
+  background-color: var(--background-color);
 }
+
 @media (max-width: 1023px) {
   body {
     position: absolute;
@@ -47,13 +41,22 @@ a {
   text-decoration: none;
 }
 .card {
-  border-bottom: 1px solid rgba(16, 22, 26, 0.25);
-  padding: 0.7rem 0.7rem 1.4rem 0.7rem;
+  border-bottom: 1px solid var(--card-border-color);
+  padding: 0.7rem;
   font-size: 0.875rem;
   display: flex;
-  align-items: center;
+  align-items: cekjjjjnter;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin: 0 1.5rem;
+}
+.card:hover {
+  background-color: var(--card-hover-color);
+}
+@media (max-width: 1023px) {
+  .card {
+    margin: 0 .25rem;
+    padding: .2rem;
+  }
 }
 .card a {
   font-size: 0.875rem;
@@ -123,19 +126,32 @@ a {
   padding-bottom: 1rem;
   text-align: center;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
-#results {
-  margin: 0 auto;
+#results-info img {
+  margin-left: 0.25rem;
+}
+#results-container, #charts {
+  margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 0.1rem 0;
 }
 @media (max-width: 1023px) {
-  #results {
+  #results-container, #charts {
     width: 100%;
     max-width: initial;
     min-width: initial;
     margin: 0.5rem auto;
   }
+}
+#results-bottom {
+  display: block;
+  height: 1.25rem;
 }
 #mobile-buttons {
   background-color: #f1f1f1;
@@ -185,9 +201,27 @@ a {
 #chart-links a:hover {
   color: #999;
 }
+#charts-container {
+}
 #charts {
   width: calc(100% - 1rem);
-  margin: 0 auto;
+  background-color: unset;
+}
+@media (max-width: 1023px) {}
+@media (max-width: 768px) {
+  #charts {
+    padding: 0;
+    margin: 0;
+  }
+  .chartRow--donut,
+  .chartRow--line {
+    border-radius: 0;
+    max-width: var(--chart-width);
+    width: var(--chart-width);
+    place-content: center;
+    display: flex;
+    margin: 0 auto;
+  }
 }
 .chartRow {
   display: grid;
@@ -197,15 +231,29 @@ a {
   align-items: stretch;
   min-height: var(--chart-height);
   grid-gap: 1rem;
+  z-index: -100;
+  padding: 0.75rem;
 }
 .chartRow.noCharts {
   grid-template-rows: initial;
   height: auto;
 }
+.chartRow--donut {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  width: 100%;
+}
+.chartRow--line {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
 .chartRow--donut,
 .chartRow--line {
   max-height: var(--chart-height);
   align-self: center;
+  border-radius: 0.75rem;
+  background-color: white;
+  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 }
 @media (max-width: 1023px) {
   .chartRow {
@@ -336,4 +384,8 @@ a {
   align-items: center;
   text-align: center;
   height: var(--chart-height);
+}
+
+.wmde-markdown[data-color-mode*="light"] {
+  background-color: unset !important;
 }
