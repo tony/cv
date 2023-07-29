@@ -31,7 +31,7 @@ const getActiveFramework = (): Framework | null => {
 // @ts-ignore
 window.getActiveFramework = getActiveFramework;
 
-const getCVVersion = (): CVVersion | null => {
+export const getCVVersion = (): CVVersion | null => {
   const url = window.location.toString();
   switch (url) {
     case url.match(/v2/)?.input: {
@@ -43,7 +43,6 @@ const getCVVersion = (): CVVersion | null => {
 };
 
 export const CVNav: React.FC = () => {
-  const cv_version = getCVVersion();
   const framework = getActiveFramework();
 
   return (
