@@ -43,7 +43,7 @@ export const Charts = observer(() => {
   const { showChartsMobile } = context;
 
   return (
-    <div id="charts-container">
+    <>
       <ChartLinks
         chart={chart}
         setChart={setChart}
@@ -71,6 +71,6 @@ export const Charts = observer(() => {
           </React.Suspense>
         </div>
       </div>
-    </div>
+    </>
   );
 });

@@ -19,6 +19,6 @@ div.toggles {
   div.toggles {
     width: 90%;
     max-width: initial;
-    margin: 0.5rem auto;
+    margin: 0 auto;
   }
 }

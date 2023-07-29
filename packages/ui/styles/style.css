@@ -19,6 +19,9 @@ body {
     position: absolute;
   }
 }
+#root {
+  width: 100vw;
+}
 .site-name {
   font-size: 2rem;
   text-align: center;
@@ -135,8 +138,7 @@ p {
 #results-info img {
   margin-left: 0.25rem;
 }
-#results-container,
-#charts {
+#results-container {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
@@ -145,8 +147,7 @@ p {
   padding: 0.1rem 0;
 }
 @media (max-width: 1023px) {
-  #results-container,
-  #charts {
+  #results-container {
     width: 100%;
     max-width: initial;
     min-width: initial;
@@ -194,6 +195,7 @@ p {
   font-size: 0.9rem;
   text-align: center;
   width: 100%;
+  margin-bottom: 0.25rem;
 }
 #chart-links a {
   font-size: 0.9rem;
@@ -206,17 +208,33 @@ p {
   color: #999;
 }
 #charts-container {
+  width: 100vw;
+  margin: 0 auto;
 }
 #charts {
+  margin: 0.5rem auto;
+  max-width: 40%;
+  min-width: 900px;
   width: calc(100% - 1rem);
-  background-color: unset;
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 0.1rem 0;
+  display: flex;
 }
 @media (max-width: 1023px) {
+  #charts {
+    width: 100%;
+    max-width: initial;
+    min-width: initial;
+    margin: 0.5rem auto;
+  }
 }
 @media (max-width: 768px) {
   #charts {
-    padding: 0;
-    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   .chartRow--donut,
   .chartRow--line {
@@ -236,7 +254,6 @@ p {
   align-items: stretch;
   min-height: var(--chart-height);
   grid-gap: 1rem;
-  z-index: -100;
   padding: 0.75rem;
 }
 .chartRow.noCharts {
@@ -246,11 +263,12 @@ p {
 .chartRow--donut {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  width: 100%;
+  width: auto;
 }
 .chartRow--line {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  width: 100%;
 }
 .chartRow--donut,
 .chartRow--line {
