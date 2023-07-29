@@ -54,8 +54,8 @@ a {
 }
 @media (max-width: 1023px) {
   .card {
-    margin: 0 .25rem;
-    padding: .2rem;
+    margin: 0 0.25rem;
+    padding: 0.2rem;
   }
 }
 .card a {
@@ -133,7 +133,8 @@ a {
 #results-info img {
   margin-left: 0.25rem;
 }
-#results-container, #charts {
+#results-container,
+#charts {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
@@ -142,7 +143,8 @@ a {
   padding: 0.1rem 0;
 }
 @media (max-width: 1023px) {
-  #results-container, #charts {
+  #results-container,
+  #charts {
     width: 100%;
     max-width: initial;
     min-width: initial;
@@ -207,7 +209,8 @@ a {
   width: calc(100% - 1rem);
   background-color: unset;
 }
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 @media (max-width: 768px) {
   #charts {
     padding: 0;
