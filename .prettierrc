@@ -1,7 +1,7 @@
 {
   "printWidth": 80,
   "importOrder": [
-    "^react", // React will be placed at the top of third-party modules
+    "^react",
     "",
     "<THIRD_PARTY_MODULES>",
     "",
@@ -11,6 +11,7 @@
     "",
     "\\.css$"
   ],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "importOrderSeparation": true,
   "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"]
 }
