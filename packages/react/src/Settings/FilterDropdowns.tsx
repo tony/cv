@@ -1,6 +1,8 @@
 import React from "react";
 import Select, {
+  components as ReactSelectComponents,
   type GroupBase,
+  type MultiValueProps,
   type Props,
   type PropsValue,
 } from "react-select";
@@ -28,6 +30,45 @@ function CustomSelect<
   );
 }
 
+const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
+  const style = {
+    marginLeft: "auto",
+    borderRadius: ".1rem",
+    fontSize: ".7rem",
+    padding: ".1rem",
+    order: 5,
+  };
+
+  const title = items.join(", ");
+  const itemsSelectedCount = items.length;
+  const label = `+ ${itemsSelectedCount} selected item${
+    itemsSelectedCount !== 1 ? "s" : ""
+  }`;
+
+  return (
+    <div style={style} title={title}>
+      {label}
+    </div>
+  );
+};
+
+const MultiValue: React.FC<MultiValueProps> = ({
+  index,
+  getValue,
+  ...props
+}) => {
+  const itemsSelectCountMax = 3;
+  const overflow = getValue()
+    .slice(itemsSelectCountMax)
+    .map((x) => x.label);
+
+  return index < itemsSelectCountMax ? (
+    <ReactSelectComponents.MultiValue {...props} />
+  ) : index === itemsSelectCountMax ? (
+    <EllipsisLabel items={overflow} />
+  ) : null;
+};
+
 export const FilterDropdowns: React.FC = () => {
   const cvState = useMst();
   return (
@@ -45,7 +86,7 @@ export const FilterDropdowns: React.FC = () => {
         className="react-select"
         placeholder="Language"
         styles={languagesStyles}
-        components={{ Option: LanguageOption }}
+        components={{ Option: LanguageOption, MultiValue }}
       />
       <CustomSelect
         options={
@@ -66,6 +107,7 @@ export const FilterDropdowns: React.FC = () => {
         components={{
           Option: ActivityTypeOption,
           MultiValueLabel: ActivityMultiValueLabel,
+          MultiValue,
         }}
       />
       <CustomSelect
@@ -81,7 +123,7 @@ export const FilterDropdowns: React.FC = () => {
         }}
         className="react-select"
         placeholder="Topic"
-        components={{ Option: OrgOption }}
+        components={{ Option: OrgOption, MultiValue }}
       />
     </div>
   );
