@@ -1,10 +1,8 @@
-.chartRow.carbon {
-  .chartRow--donut {
-    /* After removing callouts, the proportions are off, trim the extra space
-       https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
-    margin: 0 auto;
+.chartRow.carbon .chartRow--donut {
+  /* After removing callouts, the proportions are off, trim the extra space
+     https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
+  margin: 0 auto;
 
-    /* center */
-    justify-self: center;
-  }
+  /* center */
+  justify-self: center;
 }
