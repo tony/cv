@@ -1,11 +1,6 @@
 import type { Instance } from "mobx-state-tree";
 
 import { CVState } from "@tony/cv-lib/search/mobx";
-import {
-  donutChartHeight,
-  donutChartWidth,
-  lineChartHeight,
-} from "@tony/cv-ui/styles/constants";
 
 import type { PlotlyData } from "./types";
 
