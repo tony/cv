@@ -1,4 +1,3 @@
-import { defaultMargin } from "@nivo/core";
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
 import type { Instance } from "mobx-state-tree";
