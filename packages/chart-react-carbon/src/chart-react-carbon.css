@@ -10,8 +10,3 @@
     justify-self: center;
   }
 }
-
-.chartRow.carbon .chartRow--donut .chart-holder {
-  /* Prevent white space from overlapping with stuff above */
-  z-index: -10;
-}
