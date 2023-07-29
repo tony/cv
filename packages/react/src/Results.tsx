@@ -23,15 +23,17 @@ export const Results = observer(() => {
   const { filteredActivities, cvState } = useMst();
 
   return (
-    <div id="results">
+    <div id="results-container">
       <ResultsHeader results={cvState} />
 
-      {filteredActivities &&
-        filteredActivities.map((activity, idx) => {
-          return (
-            <ActivityCard activity={activity} org={activity.org} key={idx} />
-          );
-        })}
+      <div id="results">
+        {filteredActivities &&
+          filteredActivities.map((activity, idx) => {
+            return (
+              <ActivityCard activity={activity} org={activity.org} key={idx} />
+            );
+          })}
+      </div>
     </div>
   );
 });
