@@ -4,8 +4,6 @@
        https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
     margin: 0 auto;
 
-    z-index: -10;
-
     /* center */
     justify-self: center;
   }
