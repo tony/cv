@@ -51,7 +51,6 @@ export const CVNav: React.FC = () => {
         <b>
           Tony<span className="header--lastname"> Narlock</span>'s CV
           <span className="header--version">v2</span>
-          <span className="header--super">alpha</span>
         </b>
       </div>
       <ul>
