@@ -278,9 +278,9 @@ export const CVState = types
     }
 
     return {
-      loadActivities: (items: any) => {
+      loadActivities: (items: unknown[]) => {
         for (const i of items) {
-          self.activities.push(i as unknown as any);
+          self.activities.push(i as unknown);
         }
       },
       afterCreate,
