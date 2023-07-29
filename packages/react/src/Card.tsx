@@ -1,6 +1,6 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 
-import MarkdownPreview from "@uiw/react-markdown-preview";
 import { format, formatDistance } from "date-fns";
 import { Instance } from "mobx-state-tree";
 
@@ -268,12 +268,7 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         </span>
       </div>
       <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
-        <MarkdownPreview
-          source={activity.title}
-          wrapperElement={{
-            "data-color-mode": "light",
-          }}
-        />
+        <ReactMarkdown>{activity.title}</ReactMarkdown>
       </div>
       <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
         <ActivityInfo activity={activity} org={org} />
