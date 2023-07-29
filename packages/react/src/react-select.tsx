@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  components as ReactSelectComponents,
-  Options,
-  OptionProps,
-  StylesConfig,
   MultiValueGenericProps,
+  OptionProps,
+  Options,
+  components as ReactSelectComponents,
+  StylesConfig,
 } from "react-select";
 
 import type { CSSObject } from "@emotion/serialize";
@@ -12,8 +12,8 @@ import chroma from "chroma-js";
 
 import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
 
-import { LanguageTag, OrgTypeTag } from "./Tag";
 import { useMst } from "./mobx";
+import { LanguageTag, OrgTypeTag } from "./Tag";
 
 export interface IOptionType {
   label: string;

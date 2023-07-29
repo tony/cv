@@ -8,12 +8,16 @@ import Plotly from "plotly.js/dist/plotly";
 
 import { useMst } from "@tony/cv-react/src/mobx";
 import {
-  lineChartHeightWithUnit,
   donutChartHeightWithUnit,
+  lineChartHeightWithUnit,
 } from "@tony/cv-ui/styles/constants";
 
-import { DonutChartProps, LineChartProps } from "./query";
-import { stateToLine, stateToDonut } from "./query";
+import {
+  DonutChartProps,
+  LineChartProps,
+  stateToDonut,
+  stateToLine,
+} from "./query";
 
 import "./chart-react-plotly.css";
 

@@ -2,9 +2,9 @@ import React from "react";
 
 import { observer } from "mobx-react-lite";
 
-import { SettingsContext } from "./Settings";
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { useMst } from "./mobx";
+import { SettingsContext } from "./Settings";
 import { Chart } from "./types";
 
 const ChartLinks: React.FC<

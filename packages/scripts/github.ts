@@ -1,6 +1,7 @@
+import fs from "fs";
+
 import { Octokit } from "@octokit/core";
 import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
-import fs from "fs";
 import moment from "moment";
 
 const ghToken =

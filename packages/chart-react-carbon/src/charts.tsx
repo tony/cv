@@ -8,7 +8,7 @@ import { observer } from "mobx-react-lite";
 import { useMst } from "@tony/cv-react/src/mobx";
 
 import type { DonutChartProps, LineChartProps } from "./query";
-import { stateToLine, stateToDonut } from "./query";
+import { stateToDonut, stateToLine } from "./query";
 
 import "@carbon/charts/styles.css";
 import "./chart-react-carbon.css";

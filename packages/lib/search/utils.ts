@@ -1,8 +1,8 @@
 import {
+  reActivityCodeStyleTweak,
+  reActivityDocImprovement,
   reActivityRelease,
   reActivityTypoFix,
-  reActivityDocImprovement,
-  reActivityCodeStyleTweak,
 } from "@tony/cv-data/constants";
 import type { IActivity, IActivityOpenSource } from "@tony/cv-data/types";
 

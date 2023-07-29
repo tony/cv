@@ -7,20 +7,20 @@ import ghActivitiesJson from "@tony/cv-data/scraped/gh_activities.json";
 import ghOrgsJson from "@tony/cv-data/scraped/gh_orgs.json";
 
 import {
-  ActivityTypeNameMap,
   ActivityTypeColors,
+  ActivityTypeNameMap,
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
 } from "./constants";
 import {
   ActivityType,
   ActivityTypeName,
+  IActivity,
+  IOrg,
   Language,
   LanguageName,
   OrgType,
   OrgTypeName,
-  IActivity,
-  IOrg,
 } from "./types";
 
 export const orgs: IOrg[] = [

@@ -6,9 +6,9 @@ import * as mobxLib from "@tony/cv-lib/search/mobx";
 import { CVNav } from "@tony/cv-nav";
 
 import { Charts } from "./Charts";
+import { MobxProvider } from "./mobx";
 import { Results, ResultsHeader } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
-import { MobxProvider } from "./mobx";
 
 import "@tony/cv-ui/styles/style.css";
 

@@ -12,7 +12,7 @@ import {
 } from "@tony/cv-ui/styles/constants";
 
 import type { DonutChartProps, LineChartProps } from "./query";
-import { stateToLine, stateToDonut } from "./query";
+import { stateToDonut, stateToLine } from "./query";
 
 import "./chart-react-victory.css";
 

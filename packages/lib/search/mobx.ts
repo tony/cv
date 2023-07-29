@@ -1,7 +1,6 @@
 import getYear from "date-fns/getYear";
 import { configure } from "mobx";
-import { types, SnapshotIn } from "mobx-state-tree";
-import { Instance, applySnapshot } from "mobx-state-tree";
+import { applySnapshot, Instance, SnapshotIn, types } from "mobx-state-tree";
 import moment from "moment";
 
 import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
