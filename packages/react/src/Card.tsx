@@ -3,15 +3,16 @@ import React from "react";
 import { format, formatDistance } from "date-fns";
 import { Instance } from "mobx-state-tree";
 
-import type {
-  CompanyOrg,
-  IActivityOpenSource,
-  IActivityPublication,
-  IActivityWork,
-  OpenSourceOrg,
-  PublicationOrg,
+import {
+  ActivityTypeName,
+  OrgTypeName,
+  type CompanyOrg,
+  type IActivityOpenSource,
+  type IActivityPublication,
+  type IActivityWork,
+  type OpenSourceOrg,
+  type PublicationOrg,
 } from "@tony/cv-data/types";
-import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
 import { Activity, Org } from "@tony/cv-lib/search/mobx";
 
 import { ActivityTypeText, LanguageTag } from "./Tag";

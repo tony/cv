@@ -8,8 +8,12 @@ import { observer } from "mobx-react-lite";
 
 import { useMst } from "@tony/cv-react/src/mobx";
 
-import type { DonutChartProps, LineChartProps } from "./query";
-import { stateToDonut, stateToLine } from "./query";
+import {
+  stateToDonut,
+  stateToLine,
+  type DonutChartProps,
+  type LineChartProps,
+} from "./query";
 
 import "./chart-react-nivo.css";
 

@@ -1,6 +1,9 @@
 import React from "react";
-import Select from "react-select";
-import type { GroupBase, Props, PropsValue } from "react-select";
+import Select, {
+  type GroupBase,
+  type Props,
+  type PropsValue,
+} from "react-select";
 
 import { useMst } from "../mobx";
 import {
@@ -11,8 +14,9 @@ import {
   LanguageOption,
   languagesStyles,
   OrgOption,
+  type IOptionType,
+  type ISelectOption,
 } from "../react-select";
-import type { IOptionType, ISelectOption } from "../react-select";
 
 function CustomSelect<
   Option extends IOptionType,

@@ -11,8 +11,12 @@ import {
   donutChartWidth,
 } from "@tony/cv-ui/styles/constants";
 
-import type { DonutChartProps, LineChartProps } from "./query";
-import { stateToDonut, stateToLine } from "./query";
+import {
+  stateToDonut,
+  stateToLine,
+  type DonutChartProps,
+  type LineChartProps,
+} from "./query";
 
 import "./chart-react-victory.css";
 
