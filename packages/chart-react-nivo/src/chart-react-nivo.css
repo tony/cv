@@ -4,6 +4,10 @@
   }
 }
 
+.chartRow.nivo:not(.noCharts) .chartRow--donut {
+  width: var(--chart-width);
+}
+
 .chartRow.nivo:not(.noCharts) .chartRow--donut,
 .chartRow.nivo:not(.noCharts) .chartRow--line {
   min-height: var(--chart-height);

@@ -263,7 +263,7 @@ p {
 .chartRow--donut {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  width: auto;
+  width: var(--chart-width);
 }
 .chartRow--line {
   border-top-left-radius: 0 !important;
