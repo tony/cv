@@ -52,6 +52,12 @@ a {
 .card:hover {
   background-color: var(--card-hover-color);
 }
+@media (max-width: 1023px) {
+  .card {
+    margin: 0 .25rem;
+    padding: .2rem;
+  }
+}
 .card a {
   font-size: 0.875rem;
 }
