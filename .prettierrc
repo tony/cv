@@ -9,7 +9,7 @@
     "",
     "^[./]",
     "",
-    "\\.css$"
+    "\\.s?css$"
   ],
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "importOrderSeparation": true,
