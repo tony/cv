@@ -1,7 +1,7 @@
 @media (max-width: 768px) {
   .chartRow.billboard:not(.noCharts) .chartRow--donut {
     margin: 0 auto;
-    min-width: var(--chart-width);
+    min-width: calc(var(--chart-width) + 50px);
     width: 100%;
   }
 

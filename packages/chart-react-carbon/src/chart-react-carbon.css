@@ -5,4 +5,13 @@
 
   /* center */
   justify-self: center;
+
+  /* adjust white spacing to match other charts */
+  margin: 0.75rem 0rem 0.75rem 1.75rem;
+}
+
+@media (max-width: 767px) {
+  .chartRow.carbon .chartRow--donut {
+    margin: 0 auto;
+  }
 }

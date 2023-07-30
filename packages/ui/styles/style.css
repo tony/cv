@@ -245,6 +245,17 @@ p {
     display: flex;
     margin: 0 auto;
   }
+  .chartRow--donut {
+    max-width: var(--chart-width);
+    width: var(--chart-width);
+    margin: 0 auto;
+    padding: 0;
+  }
+  .chartRow--line {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 .chartRow {
   display: grid;

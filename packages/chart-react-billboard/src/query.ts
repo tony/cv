@@ -56,7 +56,7 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
     },
     size: {
       height: donutChartHeight,
-      width: donutChartWidth,
+      width: donutChartWidth + 50,
     },
   } as bb.ChartOptions;
 };

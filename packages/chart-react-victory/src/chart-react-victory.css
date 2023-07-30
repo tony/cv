@@ -1,9 +1,15 @@
 .chartRow.victory:not(.noCharts) .chartRow--donut {
-  margin: 0 auto;
+  margin: 0 auto auto 2.25rem;
   height: var(--chart-height);
   width: 350px;
 }
 .chartRow.victory:not(.noCharts) .chartRow--line {
   width: 100%;
   height: var(--chart-height);
+}
+
+@media (max-width: 768px) {
+  .chartRow.victory:not(.noCharts) .chartRow--donut {
+    margin: 0 auto;
+  }
 }
