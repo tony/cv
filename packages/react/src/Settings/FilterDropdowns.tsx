@@ -38,10 +38,9 @@ declare module "react-select/dist/declarations/src/Select" {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Group extends GroupBase<Option>,
   > {
-    itemsSelectCountMax?: number;
+    maxItemsSelectCount?: number;
     objectLabelSingular?: string;
     objectLabelPlural?: string;
-    onlyShowCountOnMax?: boolean;
   }
 }
 
@@ -71,30 +70,46 @@ const EllipsisLabel: React.FC<{
   );
 };
 
-const DEFAULT_ITEMS_SELECT_COUNT_MAX = 3;
+const MAX_ITEMS_CUTOFF_COUNT = 3;
 
 const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
   index,
   getValue,
   ...props
 }) => {
+  /**
+   * Shows count only.
+   *
+   * Assume:
+   * - [ item 1, item 2, item 3, item 4, item 5 ]
+   * - Defaults for objectLabelSingular ("item") and objectLabelPlural ("items") and
+   *   maxItemsSelectCount (MAX_ITEMS_CUTOFF_COUNT).
+   *
+   * If selected: [ item 1 ], then:
+   * Renders: [ item 1 ]
+   *
+   * If selected: [ item 1, item 2, item 3, item 4 ], then:
+   * Renders: [ item 1, item 2, item 3, item 4 ] + 1 selected item
+   *
+   * If selected: [ item 1, item 2, item 3, item 4, item 5 ], then:
+   * Renders: [ item 1, item 2, item 3, item 4 ] + 2 selected items
+   */
   const {
-    itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX,
+    maxItemsSelectCount = MAX_ITEMS_CUTOFF_COUNT,
     objectLabelSingular,
     objectLabelPlural,
-    onlyShowCountOnMax,
   } = props.selectProps;
   const overflow = getValue()
-    .slice(itemsSelectCountMax)
+    .slice(maxItemsSelectCount)
     .map((x) => x.label);
 
-  return index < itemsSelectCountMax ? (
+  return index < maxItemsSelectCount ? (
     <ReactSelectComponents.MultiValue
       index={index}
       getValue={getValue}
       {...props}
     />
-  ) : index === itemsSelectCountMax ? (
+  ) : index === maxItemsSelectCount ? (
     <EllipsisLabel
       items={overflow}
       objectLabelSingular={objectLabelSingular}
@@ -102,18 +117,32 @@ const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
     />
   ) : null;
 };
+
 const MultiValueCount: React.FC<MultiValueProps<IOptionType>> = ({
   index,
   getValue,
   selectProps,
 }) => {
+  /**
+   * Shows count only.
+   *
+   * Assume:
+   * - [ item 1, item 2, item 3, item 4 ]
+   * - Defaults for objectLabelSingular ("item") and objectLabelPlural ("items")
+   *
+   * If selected: [ item 1 ], then:
+   * Renders: 2 selected item
+   *
+   * If selected: [ item 1, item 2, item 3], then:
+   * Renders: 2 selected items
+   */
   const {
-    itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX,
+    maxItemsSelectCount = MAX_ITEMS_CUTOFF_COUNT,
     objectLabelSingular,
     objectLabelPlural,
   } = selectProps;
   const overflow = getValue()
-    .slice(itemsSelectCountMax)
+    .slice(maxItemsSelectCount)
     .map((x) => x.label);
   const style = {
     marginRight: "auto",
@@ -178,10 +207,9 @@ export const FilterDropdowns: React.FC = () => {
           MultiValueLabel: ActivityMultiValueLabel,
           MultiValue: MultiValueCount,
         }}
-        itemsSelectCountMax={1}
+        maxItemsSelectCount={1}
         objectLabelSingular="event type"
         objectLabelPlural="event types"
-        onlyShowCountOnMax={true}
       />
       <CustomSelect
         options={
