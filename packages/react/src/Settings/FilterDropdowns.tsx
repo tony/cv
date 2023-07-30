@@ -41,6 +41,7 @@ declare module "react-select/dist/declarations/src/Select" {
     itemsSelectCountMax?: number;
     objectLabelSingular?: string;
     objectLabelPlural?: string;
+    onlyShowCountOnMax?: boolean;
   }
 }
 
@@ -81,6 +82,7 @@ const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
     itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX,
     objectLabelSingular,
     objectLabelPlural,
+    onlyShowCountOnMax,
   } = props.selectProps;
   const overflow = getValue()
     .slice(itemsSelectCountMax)
@@ -98,6 +100,39 @@ const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
       objectLabelSingular={objectLabelSingular}
       objectLabelPlural={objectLabelPlural}
     />
+  ) : null;
+};
+const MultiValueCount: React.FC<MultiValueProps<IOptionType>> = ({
+  index,
+  getValue,
+  selectProps,
+}) => {
+  const {
+    itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX,
+    objectLabelSingular,
+    objectLabelPlural,
+  } = selectProps;
+  const overflow = getValue()
+    .slice(itemsSelectCountMax)
+    .map((x) => x.label);
+  const style = {
+    marginRight: "auto",
+    borderRadius: ".1rem",
+    fontSize: ".7rem",
+    padding: ".1rem",
+    order: 5,
+  };
+
+  const title = overflow.join(", ");
+  const itemsSelectedCount = overflow.length + 1;
+  const label = `${itemsSelectedCount} selected ${
+    itemsSelectedCount !== 1 ? objectLabelPlural : objectLabelSingular
+  }`;
+
+  return index === 0 ? (
+    <div style={style} title={title}>
+      {label}
+    </div>
   ) : null;
 };
 
@@ -141,11 +176,12 @@ export const FilterDropdowns: React.FC = () => {
         components={{
           Option: ActivityTypeOption,
           MultiValueLabel: ActivityMultiValueLabel,
-          MultiValue,
+          MultiValue: MultiValueCount,
         }}
         itemsSelectCountMax={1}
         objectLabelSingular="event type"
         objectLabelPlural="event types"
+        onlyShowCountOnMax={true}
       />
       <CustomSelect
         options={
