@@ -30,6 +30,18 @@ function CustomSelect<
   );
 }
 
+declare module "react-select/dist/declarations/src/Select" {
+  export interface Props<
+    Option,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    IsMulti extends boolean,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    Group extends GroupBase<Option>,
+  > {
+    itemsSelectCountMax?: number;
+  }
+}
+
 const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
   const style = {
     marginLeft: "auto",
@@ -52,15 +64,25 @@ const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
   );
 };
 
-const MultiValue: React.FC<
-  MultiValueProps & { itemsSelectCountMax: number }
-> = ({ index, getValue, itemsSelectCountMax = 3, ...props }) => {
+const DEFAULT_ITEMS_SELECT_COUNT_MAX = 3;
+
+const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
+  index,
+  getValue,
+  ...props
+}) => {
+  const { itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX } =
+    props.selectProps;
   const overflow = getValue()
     .slice(itemsSelectCountMax)
     .map((x) => x.label);
 
   return index < itemsSelectCountMax ? (
-    <ReactSelectComponents.MultiValue {...props} />
+    <ReactSelectComponents.MultiValue
+      index={index}
+      getValue={getValue}
+      {...props}
+    />
   ) : index === itemsSelectCountMax ? (
     <EllipsisLabel items={overflow} />
   ) : null;
@@ -106,6 +128,7 @@ export const FilterDropdowns: React.FC = () => {
           MultiValueLabel: ActivityMultiValueLabel,
           MultiValue,
         }}
+        itemsSelectCountMax={1}
       />
       <CustomSelect
         options={
