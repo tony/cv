@@ -52,12 +52,9 @@ const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
   );
 };
 
-const MultiValue: React.FC<MultiValueProps> = ({
-  index,
-  getValue,
-  ...props
-}) => {
-  const itemsSelectCountMax = 3;
+const MultiValue: React.FC<
+  MultiValueProps & { itemsSelectCountMax: number }
+> = ({ index, getValue, itemsSelectCountMax = 3, ...props }) => {
   const overflow = getValue()
     .slice(itemsSelectCountMax)
     .map((x) => x.label);
