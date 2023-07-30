@@ -19,9 +19,6 @@ body {
     position: absolute;
   }
 }
-#root {
-  width: 100vw;
-}
 .site-name {
   font-size: 2rem;
   text-align: center;
@@ -252,7 +249,7 @@ p {
     padding: 0;
   }
   .chartRow--line {
-    max-width: 100%;
+    max-width: 90vw;
     margin: 0 auto;
     padding: 0;
   }
