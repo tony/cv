@@ -215,9 +215,18 @@
     "id": "40005",
     "activityType": "Work",
     "createdAt": "2018-03-01",
-    "title": "Senior Developer at Peergrade",
+    "endedAt": "2023-06-15",
+    "title": "Senior Developer at Peergrade / Eduflow",
     "description": "Peer Grading Platform",
     "org": "peergrade"
+  },
+  {
+    "id": "40006",
+    "activityType": "Work",
+    "createdAt": "2023-06-16",
+    "title": "Senior Software Engineer as Multiverse",
+    "description": "Professional apprenticeship platform",
+    "org": "multiverse"
   },
   {
     "id": "50000",

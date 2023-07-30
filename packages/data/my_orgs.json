@@ -304,6 +304,15 @@
     "name": "Peergrade",
     "url": "https://www.peergrade.io",
     "logo": "/static/img/peergrade-blue.png",
-    "languages": ["JavaScript", "Python"]
+    "languages": ["JavaScript", "TypeScript", "Python"]
+  },
+  "multiverse": {
+    "id": "50005",
+    "orgType": "Company",
+    "name": "Multiverse",
+    "url": "https://www.multiverse.io",
+    "logo": "/static/img/peergrade-blue.png",
+    "languages": ["JavaScript", "TypeScript", "Python"]
   }
+
 }
