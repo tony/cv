@@ -39,10 +39,16 @@ declare module "react-select/dist/declarations/src/Select" {
     Group extends GroupBase<Option>,
   > {
     itemsSelectCountMax?: number;
+    objectLabelSingular?: string;
+    objectLabelPlural?: string;
   }
 }
 
-const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
+const EllipsisLabel: React.FC<{
+  items: string[];
+  objectLabelSingular?: string;
+  objectLabelPlural?: string;
+}> = ({ items, objectLabelSingular = "item", objectLabelPlural = "items" }) => {
   const style = {
     marginLeft: "auto",
     borderRadius: ".1rem",
@@ -53,8 +59,8 @@ const EllipsisLabel: React.FC<{ items: string[] }> = ({ items }) => {
 
   const title = items.join(", ");
   const itemsSelectedCount = items.length;
-  const label = `+ ${itemsSelectedCount} selected item${
-    itemsSelectedCount !== 1 ? "s" : ""
+  const label = `+ ${itemsSelectedCount} selected ${
+    itemsSelectedCount !== 1 ? objectLabelPlural : objectLabelSingular
   }`;
 
   return (
@@ -71,8 +77,11 @@ const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
   getValue,
   ...props
 }) => {
-  const { itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX } =
-    props.selectProps;
+  const {
+    itemsSelectCountMax = DEFAULT_ITEMS_SELECT_COUNT_MAX,
+    objectLabelSingular,
+    objectLabelPlural,
+  } = props.selectProps;
   const overflow = getValue()
     .slice(itemsSelectCountMax)
     .map((x) => x.label);
@@ -84,7 +93,11 @@ const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
       {...props}
     />
   ) : index === itemsSelectCountMax ? (
-    <EllipsisLabel items={overflow} />
+    <EllipsisLabel
+      items={overflow}
+      objectLabelSingular={objectLabelSingular}
+      objectLabelPlural={objectLabelPlural}
+    />
   ) : null;
 };
 
@@ -106,6 +119,8 @@ export const FilterDropdowns: React.FC = () => {
         placeholder="Language"
         styles={languagesStyles}
         components={{ Option: LanguageOption, MultiValue }}
+        objectLabelSingular="programming language"
+        objectLabelPlural="programming languages"
       />
       <CustomSelect
         options={
@@ -129,6 +144,8 @@ export const FilterDropdowns: React.FC = () => {
           MultiValue,
         }}
         itemsSelectCountMax={1}
+        objectLabelSingular="event type"
+        objectLabelPlural="event types"
       />
       <CustomSelect
         options={
@@ -144,6 +161,8 @@ export const FilterDropdowns: React.FC = () => {
         className="react-select"
         placeholder="Topic"
         components={{ Option: OrgOption, MultiValue }}
+        objectLabelSingular="topic"
+        objectLabelPlural="topics"
       />
     </div>
   );
