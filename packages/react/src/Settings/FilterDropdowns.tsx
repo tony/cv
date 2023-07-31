@@ -183,8 +183,9 @@ export const FilterDropdowns: React.FC = () => {
         placeholder="Language"
         styles={languagesStyles}
         components={{ Option: LanguageOption, MultiValue }}
-        objectLabelSingular="programming language"
-        objectLabelPlural="programming languages"
+        maxItemsSelectCount={2}
+        objectLabelSingular="language"
+        objectLabelPlural="languages"
       />
       <CustomSelect
         options={
