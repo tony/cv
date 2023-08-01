@@ -23,9 +23,9 @@ jobs:
     - name: lib - pull gh repos
       run: |
         env GITHUB_API_TOKEN=${{ secrets.CI_GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
-    - name: lib - lint, test
+    - name: lib - lint
       run: |
         yarn workspace @tony/cv-lib run lint
-    - name: react - lint, and test
+    - name: react - lint
       run: |
         yarn workspace @tony/cv-react run lint
