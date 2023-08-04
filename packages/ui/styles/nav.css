@@ -4,7 +4,34 @@
   --bg-color-600: #063b6f;
   --bg-color-800: #01080e;
   --bg-color-900: black;
+  --icon-size: 2rem;
 }
+
+html.light, html:not(.dark) {
+  --bg-image-url: url('/logo.svg');
+}
+
+/* @media (prefers-color-scheme: dark) { */
+html.dark {
+  --bg-image-url: url('/logo-dark.svg');
+}
+
+.site-info {
+  display: flex;
+  width: 100%;
+}
+
+.site-info--filler {
+  flex-grow: 1;
+}
+
+.site-info--color-scheme-toggle--container {
+  display: flex;
+  place-items: center;
+  width: var(--icon-size);
+  cursor: pointer;
+}
+
 nav#top-nav {
   background: var(--bg-color);
   display: flex;
@@ -24,14 +51,8 @@ nav#top-nav .site-info--logo {
 
 nav#top-nav .site-info--logo--img {
   height: var(--nav-height);
-  width: 2rem;
-  background: url(/logo.svg) no-repeat;
-}
-
-@media (prefers-color-scheme: dark) {
-  nav#top-nav .site-info--logo--img {
-    background: url(/logo-dark.svg) no-repeat;
-  }
+  width: var(--icon-size);
+  background: var(--bg-image-url) no-repeat;
 }
 
 nav#top-nav .site-info--logo .header--version {

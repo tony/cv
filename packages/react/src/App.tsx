@@ -14,6 +14,81 @@ import "@tony/cv-ui/styles/style.css";
 
 const { state: cvState } = mobxLib;
 
+const toggleHtmlClassNames = ({
+  add,
+  remove,
+}: {
+  add: "dark" | "light";
+  remove: "dark" | "light";
+}) => {
+  const htmlTag = document.querySelector("html");
+  htmlTag?.classList.remove(remove);
+  htmlTag?.classList.add(add);
+};
+enum ColorScheme {
+  DARK = "DARK",
+  LIGHT = "LIGHT",
+}
+
+const ColorSchemeToggle: React.FC = () => {
+  const darkModeIcon = "🌙";
+  const lightModeIcon = "☀️";
+  const getColorScheme = () => {
+    return window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+      ? ColorScheme.DARK
+      : ColorScheme.LIGHT;
+  };
+  const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
+    getColorScheme(),
+  );
+  const setDarkTheme = () => {
+    toggleHtmlClassNames({ add: "dark", remove: "light" });
+    setColorScheme(ColorScheme.DARK);
+  };
+  const setLightTheme = () => {
+    toggleHtmlClassNames({ add: "light", remove: "dark" });
+    setColorScheme(ColorScheme.LIGHT);
+  };
+  React.useLayoutEffect(() => {
+    const htmlTag = document.querySelector("html");
+    if (
+      htmlTag &&
+      !htmlTag.classList.contains("dark") &&
+      !htmlTag.classList.contains("light")
+    ) {
+      if (colorScheme == ColorScheme.DARK) {
+        setDarkTheme();
+      } else if (colorScheme == ColorScheme.LIGHT) {
+        setLightTheme();
+      }
+    }
+  }, []);
+
+  return (
+    <div className="color-scheme-toggle">
+      <div className="color-scheme-toggle--icon">
+        {colorScheme == ColorScheme.LIGHT ? (
+          <div
+            className="color-scheme-toggle--icon--dark-mode"
+            title="Switch to dark mode"
+            onClick={setDarkTheme}
+          >
+            {darkModeIcon}
+          </div>
+        ) : (
+          <div
+            className="color-scheme-toggle--icon--light-mode"
+            title="Switch to light mode"
+            onClick={setLightTheme}
+          >
+            {lightModeIcon}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -27,6 +102,10 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
                 <div className="site-info--logo--img">&nbsp;</div>
               </div>
               <div className="site-info--site-name">Tony Narlock&apos;s CV</div>
+              <div className="site-info--filler">&nbsp;</div>
+              <div className="site-info--color-scheme-toggle--container">
+                <ColorSchemeToggle />
+              </div>
             </div>
           </nav>
           {children}
