@@ -46,6 +46,8 @@ nav#top-nav .site-info--site-name {
   text-shadow: 1px 1px 0px #333;
   place-items: center;
   display: flex;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 nav#top-nav .site-info--logo {
   height: var(--nav-height);
