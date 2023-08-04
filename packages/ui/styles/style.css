@@ -27,6 +27,7 @@
   --toggle-label-color: #6b778c;
   --results-container-bg-color: white;
   --charts-bg-color: white;
+  --charts-text-color: black;
   --chart-row-line-bg-color: white;
   --dropdown-row-tag-color: black;
   --dropdown-row-tag-hover-bg-color: white;
@@ -52,8 +53,13 @@ html.dark {
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
+  --results-container-bg-color: #4e4e4e;
+  --charts-bg-color: #4e4e4e;
+  --chart-row-line-bg-color: #4e4e4e;
+  --charts-text-color: white;
   --dropdown-row-tag-color: black;
   --dropdown-row-tag-hover-bg-color: white;
+
 }
 
 body {
@@ -267,7 +273,40 @@ p {
   border-radius: 0.75rem;
   padding: 0.1rem 0;
   display: flex;
+  color: var(--charts-text-color);
 }
+
+/** Carbon start **/
+#charts.carbon g text {
+  fill: var(--charts-text-color) !important;
+}
+/** Carbon end **/
+
+/** Plotly start **/
+#charts.plotly div.svg-container g text {
+  fill: var(--charts-text-color) !important;
+}
+#charts.plotly div.svg-container > svg.main-svg {
+  background: initial !important;
+}
+/** Plotly end **/
+
+/** Nivo start **/
+#charts.nivo svg g text {
+  fill: var(--charts-text-color) !important;
+}
+/** Nivo end **/
+
+/** Billboard start **/
+#charts.billboard svg g text {
+  fill: var(--charts-text-color);
+}
+#charts.billboard svg path,
+#charts.billboard svg line {
+  stroke: var(--charts-text-color);
+}
+/** Billboard end **/
+
 @media (max-width: 1023px) {
   #charts {
     width: 100%;
