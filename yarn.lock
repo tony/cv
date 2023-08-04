@@ -348,19 +348,19 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.11.15":
-  version "1.11.15"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.15.tgz#55b8e774d5d2b3b344cd96b9300b1e1e5eb0d119"
-  integrity sha512-k1tQF9E1asHXAsZCrKEsJQmweWV3RyBrrNiWeB9E1BwFeMm8b6TZrfq7yu2fD7nhACDJayOU9M1XJRJ+q1t5Zw==
+"@carbon/charts-react@1.11.16":
+  version "1.11.16"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.16.tgz#69569ee72b6b91df9831d5672d2e0239faa71635"
+  integrity sha512-TjxhLOOO8TQowfudUPBFzC7XCdhbxyqlkGhLSvwNzs+AvCsr9aGsFwX+0znF8zBsMKD79cMwNKK7jUXRgsGPTw==
   dependencies:
-    "@carbon/charts" "1.11.15"
+    "@carbon/charts" "1.11.16"
     "@carbon/icons-react" "^11.23.1"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.11.15":
-  version "1.11.15"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.15.tgz#0cc939e8ee2fab228f575287b896b88cbfc917d7"
-  integrity sha512-ahvDY+HNlDBjY6HB7+2z/riXCCkOLvOdrFLT+UCTyqxxCpWR9r/tEuv2l9WzMBhniqCcD25PS4WwiHbJcZH7DQ==
+"@carbon/charts@1.11.16":
+  version "1.11.16"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.16.tgz#e05dbcef0cbfc12ac6791cc35cdc2d70b82486e8"
+  integrity sha512-ZURSg8sWrN/46x0lC0/oy3gqmtCtq9ciQIz2Ia36ik1Vn+exjzhNNAtMdO2y4eQoaVWw+6NNMhGMG2dDMM0Oxw==
   dependencies:
     "@carbon/colors" "^11.18.1"
     "@carbon/telemetry" "~0.1.0"
@@ -1425,10 +1425,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@^20.4.5":
-  version "20.4.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.5.tgz#9dc0a5cb1ccce4f7a731660935ab70b9c00a5d69"
-  integrity sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==
+"@types/node@^20.4.7":
+  version "20.4.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.7.tgz#74d323a93f1391a63477b27b9aec56669c98b2ab"
+  integrity sha512-bUBrPjEry2QUTsnuEjzjbS7voGWCc30W0qzgMf90GPeDGFRakvrz47ju+oqDAKCXLUCe39u57/ORMl/O/04/9g==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1869,10 +1869,10 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-billboard.js@^3.9.1:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.1.tgz#83bb5118328e96a899f1cd59fd8209059afa0284"
-  integrity sha512-EVeB3uZjoijQRkc9r185bx7/FW4v7MiqS2lOlIWlssJjfiYE4bEJLSGXHaeoEU684r7j4KqeP0Jci71bgna+Jg==
+billboard.js@^3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.2.tgz#d81e081b2aa241d7e0d2eb93bf58d0762d6f298f"
+  integrity sha512-B1Ii5d2lzS9mrYY1rTenS/eSmwDcAswghF4QTIM7edcm+QbtSrommKmWnrObA7f7aEo7yl30r4ZHRATxu8CSKQ==
   dependencies:
     "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
@@ -5207,10 +5207,10 @@ picomatch@^2.3.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-plotly.js@^2.25.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.25.0.tgz#90275b029cb099707b453195126e1610512bcde1"
-  integrity sha512-zwcXyPuofbpaWKasLdezicJQ3lbgkqQZk5D8jqDPt9ZCRDw9pgPCIDB05Dn4akSHPBGTwIpMK/2MqsDDLQOi+w==
+plotly.js@^2.25.1:
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.25.1.tgz#060f2a74501c229052b235862703c6e06017641e"
+  integrity sha512-dcB+Ppln/AE68o8WfxqZccrKYKqj4TN5hwf7y4lr4YH1S2smM5EEcwxr5KPakbPp/0Fy4X459YJ3dQtjQOispA==
   dependencies:
     "@plotly/d3" "3.8.1"
     "@plotly/d3-sankey" "0.7.2"
@@ -5296,10 +5296,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
-prettier@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
-  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
+prettier@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.1.tgz#65271fc9320ce4913c57747a70ce635b30beaa40"
+  integrity sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==
 
 probe-image-size@^7.2.3:
   version "7.2.3"
@@ -6800,10 +6800,10 @@ vite-plugin-webfont-dl@^3.7.6:
     flat-cache "^3.0"
     picocolors "^1.0"
 
-vite@^4.4.7:
-  version "4.4.7"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.7.tgz#71b8a37abaf8d50561aca084dbb77fa342824154"
-  integrity sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==
+vite@^4.4.8:
+  version "4.4.8"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.8.tgz#31e4a438f8748695c68bd57ffd262ba93540fdf7"
+  integrity sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==
   dependencies:
     esbuild "^0.18.10"
     postcss "^8.4.26"
