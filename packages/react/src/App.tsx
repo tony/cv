@@ -33,10 +33,18 @@ enum ColorScheme {
 const ColorSchemeToggle: React.FC = () => {
   const darkModeIcon = "🌙";
   const lightModeIcon = "☀️";
+  const getCustomColorScheme = () => {
+    return window.localStorage.getItem("color-scheme") as
+      | ColorScheme
+      | undefined;
+  };
   const getColorScheme = () => {
-    return window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-      ? ColorScheme.DARK
-      : ColorScheme.LIGHT;
+    return (
+      getCustomColorScheme() ||
+      (window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+        ? ColorScheme.DARK
+        : ColorScheme.LIGHT)
+    );
   };
   const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
     getColorScheme(),
@@ -44,10 +52,12 @@ const ColorSchemeToggle: React.FC = () => {
   const setDarkTheme = () => {
     toggleHtmlClassNames({ add: "dark", remove: "light" });
     setColorScheme(ColorScheme.DARK);
+    window.localStorage.setItem("color-scheme", ColorScheme.DARK);
   };
   const setLightTheme = () => {
     toggleHtmlClassNames({ add: "light", remove: "dark" });
     setColorScheme(ColorScheme.LIGHT);
+    window.localStorage.setItem("color-scheme", ColorScheme.LIGHT);
   };
   React.useLayoutEffect(() => {
     const htmlTag = document.querySelector("html");
@@ -56,9 +66,9 @@ const ColorSchemeToggle: React.FC = () => {
       !htmlTag.classList.contains("dark") &&
       !htmlTag.classList.contains("light")
     ) {
-      if (colorScheme == ColorScheme.DARK) {
+      if (colorScheme === ColorScheme.DARK) {
         setDarkTheme();
-      } else if (colorScheme == ColorScheme.LIGHT) {
+      } else if (colorScheme === ColorScheme.LIGHT) {
         setLightTheme();
       }
     }

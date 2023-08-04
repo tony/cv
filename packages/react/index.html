@@ -11,6 +11,38 @@
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=IBM Plex Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript">
+      const getCustomColorScheme = () => {
+        return window.localStorage.getItem("color-scheme");
+      }
+      const getColorScheme = () => {
+        return getCustomColorScheme() || (
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "DARK"
+          : "LIGHT"
+        );
+      };
+      const toggleHtmlClassNames = ({
+        add,
+        remove,
+      }) => {
+        const htmlTag = document.querySelector("html");
+        htmlTag?.classList.remove(remove);
+        htmlTag?.classList.add(add);
+      };
+      const htmlTag = document.querySelector("html");
+      if (
+        htmlTag &&
+        !htmlTag.classList.contains("dark") &&
+        !htmlTag.classList.contains("light")
+      ) {
+        if (getColorScheme() === "DARK") {
+          toggleHtmlClassNames({ add: "dark", remove: "light" });
+        } else {
+          toggleHtmlClassNames({ add: "light", remove: "dark" });
+        }
+      }
+    </script>
     <title>Tony Narlock's CV - v2 beta (react)</title>
   </head>
   <body>
