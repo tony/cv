@@ -296,17 +296,24 @@ p {
 /** Plotly end **/
 
 /** Nivo start **/
+#charts.nivo div {
+  /* Tooltips */
+  color: black;
+}
 #charts.nivo svg g text {
   fill: var(--charts-text-color) !important;
 }
 /** Nivo end **/
 
 /** Billboard start **/
-#charts.billboard svg g text {
+#charts.billboard .bb-tooltip-container {
+  color: black;
+}
+#charts.billboard .chartRow--line svg g text {
   fill: var(--charts-text-color);
 }
-#charts.billboard svg path,
-#charts.billboard svg line {
+#charts.billboard .chartRow--line svg path,
+#charts.billboard .chartRow--line svg line {
   stroke: var(--charts-text-color);
 }
 /** Billboard end **/
