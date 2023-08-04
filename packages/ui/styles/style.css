@@ -7,12 +7,14 @@
   --nav-height: 2rem;
   --background-color: #f3f3f4;
   --font-color: #000;
+  --font-color-inverted: #fff;
   --card-border-color: rgba(16, 22, 26, 0.25);
   --card-hover-color: #fafafa;
   --activity-link-color: #5b616b;
   --link-color: #1c1c1c;
   --tag-bg-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
+  --tag-small-bg-color: pink;
   --results-info-text-color: #70757a;
   --mobile-buttons-bg-color: #f1f1f1;
   --mobile-buttons-toggle-btn-bg-color: #f1f1f1;
@@ -23,12 +25,18 @@
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
   --toggle-label-color: #6b778c;
+  --results-container-bg-color: white;
+  --charts-bg-color: white;
+  --chart-row-line-bg-color: white;
+  --dropdown-row-tag-color: black;
+  --dropdown-row-tag-hover-bg-color: white;
 }
 
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
   --background-color: #343434;
   --font-color: #fff;
+  --font-color-inverted: #000;
   --card-hover-color: #fafafa;
   --activity-link-color: #5b616b;
   --link-color: #cdcdcd;
@@ -44,6 +52,8 @@ html.dark {
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
+  --dropdown-row-tag-color: black;
+  --dropdown-row-tag-hover-bg-color: white;
 }
 
 body {
@@ -132,8 +142,9 @@ p {
   align-items: center;
   justify-content: center;
 }
+
 .tag.small {
-  background-color: pink;
+  background-color: var(--tag-small-bg-color);
   font-size: 0.6rem;
   padding: 0.25em;
 }
@@ -177,7 +188,7 @@ p {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
-  background-color: white;
+  background-color: var(--results-container-bg-color);
   border-radius: 0.75rem;
   padding: 0.1rem 0;
 }
@@ -252,7 +263,7 @@ p {
   max-width: 40%;
   min-width: 900px;
   width: calc(100% - 1rem);
-  background-color: white;
+  background-color: var(--charts-bg-color);
   border-radius: 0.75rem;
   padding: 0.1rem 0;
   display: flex;
@@ -322,7 +333,7 @@ p {
   max-height: var(--chart-height);
   align-self: center;
   border-radius: 0.75rem;
-  background-color: white;
+  background-color: var(--chart-row-line-bg-color);
   padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 }
 @media (max-width: 1023px) {
@@ -374,16 +385,18 @@ p {
   grid-template-rows: 1fr;
   gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  color: var(--dropdown-row-tag-color);
 }
 .dropdownRow .activityCount,
 .dropdownRow .topicTags {
   text-align: right;
   flex-grow: 1;
+  color: var(--dropdown-row-tag-color);
   place-self: center;
 }
 .dropdownRow .activityCount:hover,
 .dropdownRow .topicTags:hover {
-  color: white;
+  color: var(--dropdown-row-tag-hover-bg-color);
 }
 .dropdownActivityTypeOption {
   display: flex !important;
