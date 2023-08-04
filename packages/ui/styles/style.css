@@ -1,13 +1,25 @@
 :root {
+  --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --chart-height: 250px;
   --chart-width: 250px;
   --nav-height: 2rem;
   --background-color: #f3f3f4;
-  --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --card-border-color: rgba(16, 22, 26, 0.25);
   --card-hover-color: #fafafa;
+  --activity-link-color: #5b616b;
+  --link-color: #1c1c1c;
+  --tag-bg-color: #f5f5f5;
+  --tag-text-color: #4a4a4a;
+  --results-info-text-color: #70757a;
+  --mobile-buttons-bg-color: #f1f1f1;
+  --mobile-buttons-toggle-btn-bg-color: #f1f1f1;
+  --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
+  --chart-link-color: #666;
+  --chart-link-color-hover: #999;
+  --card-grid-left-side-link-color: #5f6368;
+  --card-grid-left-side-link-hover-color: #000;
 }
 body {
   font-family: var(--sans-font);
@@ -35,7 +47,7 @@ body {
   }
 }
 a {
-  color: #1c1c1c;
+  color: var(--link-color);
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -47,7 +59,7 @@ p {
   padding: 0.7rem;
   font-size: 0.875rem;
   display: flex;
-  align-items: cekjjjjnter;
+  align-items: center;
   justify-content: space-between;
   margin: 0 1.5rem;
 }
@@ -71,13 +83,13 @@ p {
   border-bottom: 1px solid rgba(16, 22, 26, 0.25);
 }
 .activity-link {
-  color: #5b616b;
+  color: var(--activity-link-color);
 }
 .tag {
   user-select: none;
-  background-color: #f5f5f5;
+  background-color: var(--tag-bg-color);
   border-radius: 4px;
-  color: #4a4a4a;
+  color: var(--tag-text-color);
   display: inline-flex;
   font-size: 0.6875rem;
   font-weight: bold;
@@ -124,7 +136,7 @@ p {
   display: flex !important;
 }
 #results-info {
-  color: #70757a;
+  color: var(--results-info-text-color);
   padding-bottom: 1rem;
   text-align: center;
   margin-top: 1rem;
@@ -156,22 +168,23 @@ p {
   height: 1.25rem;
 }
 #mobile-buttons {
-  background-color: #f1f1f1;
+  background-color: var(--mobile-buttons-bg-color);
   height: 30px;
   text-align: center;
   display: flex;
   justify-content: center;
 }
 #mobile-buttons button.toggle-btn {
-  background-color: #f1f1f1;
+  background-color: var(--mobile-buttons-toggle-btn-bg-color);
   border: 0;
 }
+
 #mobile-buttons button.toggle-btn:focus,
 #mobile-buttons button.toggle-btn:active,
 #mobile-buttons button.toggle-btn.active {
   box-shadow:
-    0 0 3px #3e94cf,
-    0 0 7px #3e94cf;
+    0 0 3px var(--mobile-buttons-toggle-btn-box-shadow-color),
+    0 0 7px var(--mobile-buttons-toggle-btn-box-shadow-color);
 }
 @media (min-width: 767px) {
   #mobile-buttons {
@@ -196,13 +209,13 @@ p {
 }
 #chart-links a {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--chart-link-color);
 }
 #chart-links a.active {
   font-weight: 600;
 }
 #chart-links a:hover {
-  color: #999;
+  color: var(--chart-link-color-hover);
 }
 #charts-container {
   width: 100vw;
@@ -375,10 +388,10 @@ p {
   margin-left: 0;
 }
 .cardGrid .left-side a {
-  color: #5f6368;
+  color: var(--card-grid-left-side-link-color);
 }
 .cardGrid .left-side a:hover {
-  color: #000;
+  color: var(--card-grid-left-side-link-hover-color);
 }
 .cardGrid .left-side .activityLinkRow {
   font-size: 0.8rem;
