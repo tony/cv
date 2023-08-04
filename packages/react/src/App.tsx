@@ -3,7 +3,6 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 
 import * as mobxLib from "@tony/cv-lib/search/mobx";
-import { CVNav } from "@tony/cv-nav";
 
 import { Charts } from "./Charts";
 import { MobxProvider } from "./mobx";

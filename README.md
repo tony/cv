@@ -183,7 +183,6 @@ yarn workspaces run lint
   [packages/chart-react-carbon/]: packages/chart-react-carbon/
   [packages/chart-react-billboard.js/]: packages/chart-react-billboard.js/
   [packages/chart-react-plotly/]: packages/chart-react-plotly/
-  [packages/nav/]: packages/nav/
   [packages/ui/]: packages/ui/
   [actors]: https://www.w3.org/TR/activitystreams-core/#actors
   [activities]: https://www.w3.org/TR/activitystreams-core/#activities

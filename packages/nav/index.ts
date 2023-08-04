@@ -1,1 +1,0 @@
-export { CVNav } from "./nav";
