@@ -6,6 +6,7 @@
   --chart-width: 250px;
   --nav-height: 2rem;
   --background-color: #f3f3f4;
+  --font-color: #000;
   --card-border-color: rgba(16, 22, 26, 0.25);
   --card-hover-color: #fafafa;
   --activity-link-color: #5b616b;
@@ -20,11 +21,36 @@
   --chart-link-color-hover: #999;
   --card-grid-left-side-link-color: #5f6368;
   --card-grid-left-side-link-hover-color: #000;
+  --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
+  --toggle-label-color: #6b778c;
 }
+
+/* @media (prefers-color-scheme: dark) { */
+html.dark {
+  --background-color: #343434;
+  --font-color: #fff;
+  --card-hover-color: #fafafa;
+  --activity-link-color: #5b616b;
+  --link-color: #cdcdcd;
+  --tag-bg-color: #f5f5f5;
+  --tag-text-color: #4a4a4a;
+  --results-info-text-color: #70757a;
+  --mobile-buttons-bg-color: #f1f1f1;
+  --mobile-buttons-toggle-btn-bg-color: #f1f1f1;
+  --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
+  --chart-link-color: #cdcdcd;
+  --chart-link-color-hover: #999;
+  --card-grid-left-side-link-color: #5f6368;
+  --card-grid-left-side-link-hover-color: #000;
+  --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
+  --toggle-label-color: #cdcdcd;
+}
+
 body {
   font-family: var(--sans-font);
   margin: 0 0 1rem 0;
   background-color: var(--background-color);
+  color: var(--font-color);
 }
 @media (max-width: 1023px) {
   body {

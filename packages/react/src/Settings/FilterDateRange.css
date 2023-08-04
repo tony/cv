@@ -34,7 +34,7 @@ div#year-range {
 .tick-label {
   position: absolute;
   font-size: 0.6rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--date-range-tick-label-color);
   top: 100%;
   transform: translate(-50%, 1.2rem);
   white-space: nowrap;

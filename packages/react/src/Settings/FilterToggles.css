@@ -1,7 +1,7 @@
 .toggles label {
   font-size: 0.85rem;
   font-style: inherit;
-  color: #6b778c;
+  color: var(--toggle-label-color);
   font-weight: 600;
   display: inline-block;
 }
