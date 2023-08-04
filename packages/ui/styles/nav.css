@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #0854a0;
-  --bg-color-400: #0961b8;
-  --bg-color-600: #063b6f;
-  --bg-color-800: #01080e;
-  --bg-color-900: black;
-  --icon-size: 2rem;
+  --nav-bg-color: #0854a0;
+  --nav-bg-color-400: #0961b8;
+  --nav-bg-color-600: #063b6f;
+  --nav-bg-color-800: #01080e;
+  --nav-bg-color-900: black;
+  --nav-icon-size: 2rem;
 }
 
 html.light, html:not(.dark) {
@@ -28,12 +28,12 @@ html.dark {
 .site-info--color-scheme-toggle--container {
   display: flex;
   place-items: center;
-  width: var(--icon-size);
+  width: var(--nav-icon-size);
   cursor: pointer;
 }
 
 nav#top-nav {
-  background: var(--bg-color);
+  background: var(--nav-bg-color);
   display: flex;
   place-items: center;
   height: var(--nav-height);
@@ -51,7 +51,7 @@ nav#top-nav .site-info--logo {
 
 nav#top-nav .site-info--logo--img {
   height: var(--nav-height);
-  width: var(--icon-size);
+  width: var(--nav-icon-size);
   background: var(--bg-image-url) no-repeat;
 }
 
@@ -89,7 +89,7 @@ nav#top-nav ul {
   padding-left: 0;
 }
 nav#top-nav li {
-  background: var(--bg-color);
+  background: var(--nav-bg-color);
   padding: 0 1rem;
   height: var(--nav-height);
   color: #fff;
@@ -122,14 +122,14 @@ nav#top-nav li.active,
 nav#top-nav li:hover,
 nav#top-nav li:focus-within {
   z-index: 6000;
-  background: var(--bg-color-600);
+  background: var(--nav-bg-color-600);
 }
 nav#top-nav li:focus-within a {
   outline: none;
 }
 nav#top-nav ul li ul.submenu {
   width: 15rem;
-  background: var(--bg-color-400);
+  background: var(--nav-bg-color-400);
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -140,15 +140,15 @@ nav#top-nav ul li ul.submenu {
   display: none;
 }
 nav#top-nav ul li ul.submenu li {
-  background: var(--bg-color-400);
+  background: var(--nav-bg-color-400);
 }
 nav#top-nav ul li ul.submenu li:hover,
 nav#top-nav ul li ul.submenu li.active {
-  background: var(--bg-color);
+  background: var(--nav-bg-color);
 }
 nav#top-nav ul li ul.submenu li:hover.section-title,
 nav#top-nav ul li ul.submenu li.active.section-title {
-  background: var(--bg-color-400);
+  background: var(--nav-bg-color-400);
 }
 nav#top-nav ul li ul.submenu li.active a {
   cursor: default;
