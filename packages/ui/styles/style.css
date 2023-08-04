@@ -340,6 +340,7 @@ p {
 .dropdownRow .topicTags {
   text-align: right;
   flex-grow: 1;
+  place-self: center;
 }
 .dropdownRow .activityCount:hover,
 .dropdownRow .topicTags:hover {
