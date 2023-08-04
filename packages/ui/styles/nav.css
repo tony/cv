@@ -6,7 +6,7 @@
   --nav-bg-color-900: black;
   --nav-logo-size: 2rem;
   --nav-icon-size: 0.5rem;
-  --nav-icon-separation: 0.1rem;
+  --nav-icon-separation: 0.25rem;
 }
 
 html.light,
@@ -39,7 +39,7 @@ html.dark {
   margin-right: var(--nav-icon-size);
 }
 .color-scheme-toggle--icon {
-  padding-right: var(--nav-icon-separation);
+  margin-left: var(--nav-icon-separation);
   user-select: none;
 }
 .color-scheme-toggle--icon--mode {
