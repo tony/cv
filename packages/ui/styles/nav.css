@@ -5,17 +5,18 @@
   --nav-bg-color-800: #01080e;
   --nav-bg-color-900: black;
   --nav-logo-size: 2rem;
-  --nav-icon-size: .5rem;
-  --nav-icon-separation: .1rem;
+  --nav-icon-size: 0.5rem;
+  --nav-icon-separation: 0.1rem;
 }
 
-html.light, html:not(.dark) {
-  --bg-image-url: url('/logo.svg');
+html.light,
+html:not(.dark) {
+  --bg-image-url: url("/logo.svg");
 }
 
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
-  --bg-image-url: url('/logo-dark.svg');
+  --bg-image-url: url("/logo-dark.svg");
   --nav-bg-color: #1b1b1b;
 }
 
@@ -46,7 +47,7 @@ html.dark {
   filter: grayscale(1);
 }
 .color-scheme-toggle--icon--clear {
-  filter: grayscale(.5);
+  filter: grayscale(0.5);
   cursor: pointer;
 }
 .color-scheme-toggle--icon--clear.disabled {

@@ -12,25 +12,20 @@
       rel="stylesheet"
     />
     <script type="text/javascript">
-      (() => {
+      () => {
         const getCustomColorScheme = () => {
           return window.localStorage.getItem("color-scheme");
-        }
+        };
         const getSystemColorScheme = () => {
-          return (
-            window.matchMedia("(prefers-color-scheme: dark)").matches
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "DARK"
-            : "LIGHT"
-          );
+            : "LIGHT";
         };
         const getColorScheme = () => {
           return getCustomColorScheme() || getSystemColorScheme();
         };
 
-        const toggleHtmlClassNames = ({
-          add,
-          remove,
-        }) => {
+        const toggleHtmlClassNames = ({ add, remove }) => {
           const htmlTag = document.querySelector("html");
           if (htmlTag?.classList.contains(remove)) {
             htmlTag?.classList.remove(remove);
@@ -51,7 +46,7 @@
             toggleHtmlClassNames({ add: "light", remove: "dark" });
           }
         }
-      });
+      };
     </script>
     <title>Tony Narlock's CV - v2 beta (react)</title>
   </head>
