@@ -9,6 +9,7 @@ import { MobxProvider } from "./mobx";
 import { Results } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
 
+import "@tony/cv-ui/styles/nav.css";
 import "@tony/cv-ui/styles/style.css";
 
 const { state: cvState } = mobxLib;
@@ -20,7 +21,14 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
     <div>
       <MobxProvider value={cvState}>
         <SettingsContextProvider>
-          <CVNav />
+          <nav id="top-nav">
+            <div className="site-info" title="Tony Narlock's CV">
+              <div className="site-info--logo">
+                <div className="site-info--logo--img">&nbsp;</div>
+              </div>
+              <div className="site-info--site-name">Tony Narlock&apos;s CV</div>
+            </div>
+          </nav>
           {children}
         </SettingsContextProvider>
       </MobxProvider>
