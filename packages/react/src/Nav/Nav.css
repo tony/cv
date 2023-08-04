@@ -5,7 +5,6 @@
   --nav-bg-color-800: #01080e;
   --nav-bg-color-900: black;
   --nav-logo-size: 2rem;
-  --nav-icon-size: 0.5rem;
   --nav-icon-separation: 0.25rem;
 }
 
@@ -32,6 +31,7 @@ html.dark {
 .site-info--color-scheme-toggle--container {
   display: flex;
   place-items: center;
+  margin-right: 1rem;
 }
 
 nav#top-nav {
@@ -54,7 +54,7 @@ nav#top-nav .site-info--logo {
 nav#top-nav .site-info--logo--img {
   height: var(--nav-height);
   width: var(--nav-logo-size);
-  background: var(--bg-image-url) no-repeat;
+  background: var(--bg-image-url) var(--nav-icon-separation) center no-repeat;
 }
 
 nav#top-nav .site-info--logo .header--version {

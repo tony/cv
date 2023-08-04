@@ -98,7 +98,11 @@ export const ColorSchemeToggle: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="color-scheme-toggle--icon">
+      <div
+        className={`color-scheme-toggle--icon ${
+          _hasCustomColorScheme ? "" : "disabled"
+        }`}
+      >
         <div
           className={`color-scheme-toggle--icon--clear ${
             _hasCustomColorScheme ? "" : "disabled"
