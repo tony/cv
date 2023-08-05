@@ -107,7 +107,7 @@ export const ColorSchemeToggle: React.FC = () => {
           className={`color-scheme-toggle--icon--clear ${
             _hasCustomColorScheme ? "" : "disabled"
           }`}
-          title="Back to default theme"
+          title="Back to OS default"
           onClick={setSystemTheme}
         >
           ❌
