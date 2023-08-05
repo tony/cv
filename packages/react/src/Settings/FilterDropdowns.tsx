@@ -148,7 +148,7 @@ const MultiValueCount: React.FC<MultiValueProps<IOptionType>> = ({
   const style = {
     marginRight: "auto",
     borderRadius: ".1rem",
-    fontSize: ".7rem",
+    fontSize: ".9rem",
     padding: ".1rem",
     order: 5,
   };
