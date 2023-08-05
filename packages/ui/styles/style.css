@@ -158,13 +158,16 @@ p {
   margin-right: 0;
   margin-left: 0;
 }
+#settings {
+  width: 54rem;
+  margin: 0 auto;
+}
 .dropdownRow {
   margin: 0 auto;
-  max-width: 70%;
 }
 @media (max-width: 1023px) {
   .dropdownRow {
-    width: 90%;
+    width: 98%;
     max-width: initial;
     margin: 0.5rem auto;
   }
@@ -243,6 +246,11 @@ p {
     display: block !important;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+@media (max-width: 1023px) {
+  #settings {
+    width: 100%;
   }
 }
 #chart-links {
@@ -430,8 +438,13 @@ p {
   display: grid;
   grid-template-rows: 1fr;
   gap: 10px 10px;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   color: var(--dropdown-row-tag-color);
+}
+@media (max-width: 1023px) {
+  .dropdownRow {
+    padding-top: 0;
+  }
 }
 .dropdownRow .activityCount,
 .dropdownRow .topicTags {

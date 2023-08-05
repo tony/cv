@@ -36,6 +36,9 @@ export const orgStyles: StylesConfig<IOptionType, boolean> = {
   option: (styles: CSSObject, _props) => {
     return {
       ...styles,
+      fontSize: "0.8rem",
+      wordWrap: "break-word",
+      wordBreak: "break-all",
       alignItems: "center",
       "&.selected": {
         fontWeight: "bold",
@@ -136,6 +139,9 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
 
     return {
       ...styles,
+      fontSize: "0.8rem",
+      wordWrap: "break-word",
+      wordBreak: "break-all",
       ...(isFocused || isSelected ? hoverStyle : {}),
       "&:hover": hoverStyle,
       "&.selected": {
@@ -224,6 +230,9 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
     return {
       ...styles,
       ...(isFocused || isSelected ? hoverStyle : {}),
+      fontSize: "0.8rem",
+      wordWrap: "break-word",
+      wordBreak: "break-all",
       "&:hover": hoverStyle,
       "&.selected": {
         ...hoverStyle,
@@ -251,7 +260,6 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
       paddingRight: "4px",
       display: "flex",
       placeItems: "center",
-      fontSize: "85%",
       ...activityType.ui,
     };
   },
