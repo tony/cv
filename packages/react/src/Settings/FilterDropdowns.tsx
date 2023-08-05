@@ -232,13 +232,14 @@ export const FilterDropdowns: React.FC = () => {
         }}
         className="react-select"
         placeholder="Topic"
-        components={{ Option: OrgOption, MultiValue }}
+        styles={orgStyles}
+        components={{ Option: OrgOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
+        maxItemsSelectCount={1}
         objectLabelSingular="topic"
         objectLabelPlural="topics"
-        styles={orgStyles}
       />
     </div>
   );
