@@ -64,9 +64,6 @@ html.dark {
   --activity-text-color: #ffffff90;
 }
 
-.card-category-and-date {
-  color: var(--activity-text-color);
-}
 body {
   font-family: var(--sans-font);
   margin: 0 0 1rem 0;
@@ -123,6 +120,57 @@ p {
 .card:last-child {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(16, 22, 26, 0.25);
+}
+.card-category-and-date {
+  color: var(--activity-text-color);
+}
+.cardGrid {
+  height: 100%;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+}
+.cardGrid > div {
+  margin-bottom: auto;
+}
+.cardGrid .left-side {
+  flex-grow: 1;
+  margin-bottom: 0;
+  align-items: center;
+}
+.cardGrid .left-side .tag {
+  margin-right: 0.5rem;
+}
+.cardGrid .left-side .tag.orgTag {
+  margin-left: 0.5rem;
+}
+.cardGrid .left-side .tag.orgTag:only-child {
+  margin-left: 0;
+}
+.cardGrid .left-side a {
+  color: var(--card-grid-left-side-link-color);
+}
+.cardGrid .left-side a:hover {
+  color: var(--card-grid-left-side-link-hover-color);
+}
+.cardGrid .left-side .activityLinkRow {
+  font-size: 0.8rem;
+}
+.cardGrid .left-side .activityLinkRow a {
+  font-size: inherit;
+  opacity: 0.6;
+}
+.cardGrid .left-side .activityLinkRow a:hover {
+  opacity: 1;
+}
+.cardGrid .right-side {
+  text-align: right;
+}
+.cardGrid .right-side .tag {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+.cardGrid .right-side .tag:only-child {
+  margin-top: 0;
 }
 .activity-link {
   color: var(--activity-link-color);
@@ -462,55 +510,7 @@ p {
   place-items: center;
   line-height: 24px;
 }
-.cardGrid {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  -webkit-box-pack: justify;
-}
-.cardGrid > div {
-  margin-bottom: auto;
-}
-.cardGrid .left-side {
-  flex-grow: 1;
-  margin-bottom: 0;
-  align-items: center;
-}
-.cardGrid .left-side .tag {
-  margin-right: 0.5rem;
-}
-.cardGrid .left-side .tag.orgTag {
-  margin-left: 0.5rem;
-}
-.cardGrid .left-side .tag.orgTag:only-child {
-  margin-left: 0;
-}
-.cardGrid .left-side a {
-  color: var(--card-grid-left-side-link-color);
-}
-.cardGrid .left-side a:hover {
-  color: var(--card-grid-left-side-link-hover-color);
-}
-.cardGrid .left-side .activityLinkRow {
-  font-size: 0.8rem;
-}
-.cardGrid .left-side .activityLinkRow a {
-  font-size: inherit;
-  opacity: 0.6;
-}
-.cardGrid .left-side .activityLinkRow a:hover {
-  opacity: 1;
-}
-.cardGrid .right-side {
-  text-align: right;
-}
-.cardGrid .right-side .tag {
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-}
-.cardGrid .right-side .tag:only-child {
-  margin-top: 0;
-}
+
 #loading-screen {
   display: flex;
   flex-direction: column;
