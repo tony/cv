@@ -216,7 +216,7 @@ export const FilterDropdowns: React.FC = () => {
           );
         }}
         className="react-select"
-        placeholder="Event type"
+        placeholder="Category"
         styles={{ ...colourStyles, ...activityTypeStyles }}
         components={{
           Option: ActivityTypeOption,
@@ -227,8 +227,8 @@ export const FilterDropdowns: React.FC = () => {
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
         maxItemsSelectCount={0}
-        objectLabelSingular="event type"
-        objectLabelPlural="event types"
+        objectLabelSingular="category"
+        objectLabelPlural="categories"
       />
       <CustomSelect
         options={
