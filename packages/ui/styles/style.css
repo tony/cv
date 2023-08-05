@@ -39,6 +39,7 @@ html.dark {
   --background-color: #0b1723;
   --text-color: #fff;
   --text-color-inverted: #000;
+  --card-border-color: #ffffff1a;
   --card-hover-background-color: #0085f230;
   --activity-link-color: #5b616b;
   --link-color: #343434;
@@ -115,11 +116,11 @@ p {
   font-size: 0.875rem;
 }
 .card:first-child {
-  border-top: 1px solid rgba(16, 22, 26, 0.25);
+  border-top: 1px solid var(--card-border-color);
 }
 .card:last-child {
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(16, 22, 26, 0.25);
+  border-bottom: 1px solid var(--card-border-color);
 }
 .card-category-and-date {
   color: var(--activity-text-color);
