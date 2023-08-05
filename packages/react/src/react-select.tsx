@@ -32,14 +32,31 @@ export const getSelectOptions = (items: string[]): ISelectOption =>
     value: actorName,
   })) as ISelectOption;
 
+export const orgStyles: StylesConfig<IOptionType, boolean> = {
+  option: (styles: CSSObject, _props) => {
+    return {
+      ...styles,
+      alignItems: "center",
+      "&.selected": {
+        fontWeight: "bold",
+      },
+    };
+  },
+};
+
 export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   children,
+  isSelected,
   ...props
 }) => {
   const cvState = useMst();
   const org = cvState.orgs.find(({ id }) => id === props.data?.value);
   return (
-    <ReactSelectComponents.Option {...props} className="df">
+    <ReactSelectComponents.Option
+      {...props}
+      className={`df dropdownLanguageOption ${isSelected ? "selected" : ""}`}
+      isSelected={isSelected}
+    >
       {children}{" "}
       {org?.orgType && (
         <div className="topicTags">
@@ -70,6 +87,7 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
 
 export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   data,
+  isSelected,
   ...props
 }) => {
   const cvState = useMst();
@@ -80,7 +98,12 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
     return null;
   }
   return (
-    <ReactSelectComponents.Option {...props} data={data} className="df">
+    <ReactSelectComponents.Option
+      {...props}
+      data={data}
+      isSelected={isSelected}
+      className={`df dropdownLanguageOption ${isSelected ? "selected" : ""}`}
+    >
       <LanguageTag
         languageName={languageName}
         key={languageName}
@@ -100,18 +123,29 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
       return styles;
     }
-    const backgroundColor = chroma(language.ui.backgroundColor)
+    const hoverBackgroundColor = chroma(language.ui.backgroundColor)
       .alpha(0.8)
       .css();
-    const highlightStyle = {
-      backgroundColor,
-      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    const selectedBackgroundColor = chroma(hoverBackgroundColor)
+      .alpha(0.6)
+      .css();
+    const hoverStyle = {
+      backgroundColor: hoverBackgroundColor,
+      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
 
     return {
       ...styles,
-      ...(isFocused || isSelected ? highlightStyle : {}),
-      "&:hover": highlightStyle,
+      ...(isFocused || isSelected ? hoverStyle : {}),
+      "&:hover": hoverStyle,
+      "&.selected": {
+        ...hoverStyle,
+        backgroundColor: selectedBackgroundColor,
+        fontWeight: "bold",
+      },
+      "&.selected:hover": {
+        backgroundColor: hoverBackgroundColor,
+      },
     };
   },
 
@@ -138,13 +172,16 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
       return styles;
     }
 
-    const backgroundColor =
+    const hoverBackgroundColor =
       chroma(language.ui.backgroundColor).get("lab.l") > 80
         ? chroma(language.ui.backgroundColor).brighten(0.2)
         : chroma(language.ui.backgroundColor).brighten(0.4);
-    const highlightStyle = {
-      backgroundColor: backgroundColor.css(),
-      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    const selectedBackgroundColor = chroma(hoverBackgroundColor)
+      .alpha(0.6)
+      .css();
+    const hoverStyle = {
+      backgroundColor: hoverBackgroundColor,
+      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
 
     return {
@@ -152,7 +189,15 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
       ...language.ui,
-      ":hover": highlightStyle,
+      ":hover": hoverStyle,
+      "&.selected": {
+        ...hoverStyle,
+        backgroundColor: selectedBackgroundColor,
+        fontWeight: "bold",
+      },
+      "&.selected:hover": {
+        backgroundColor: hoverBackgroundColor,
+      },
     };
   },
 };
@@ -166,18 +211,28 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
     if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
       return styles;
     }
-    const backgroundColor = chroma(activityType.ui.backgroundColor)
+    const hoverBackgroundColor = chroma(activityType.ui.backgroundColor)
       .alpha(0.8)
       .css();
-    const highlightStyle = {
-      backgroundColor,
-      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    const selectedBackgroundColor = chroma(hoverBackgroundColor)
+      .alpha(0.6)
+      .css();
+    const hoverStyle = {
+      backgroundColor: hoverBackgroundColor,
+      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
-
     return {
       ...styles,
-      ...(isFocused || isSelected ? highlightStyle : {}),
-      "&:hover": highlightStyle,
+      ...(isFocused || isSelected ? hoverStyle : {}),
+      "&:hover": hoverStyle,
+      "&.selected": {
+        ...hoverStyle,
+        backgroundColor: selectedBackgroundColor,
+        fontWeight: "bold",
+      },
+      "&.selected:hover": {
+        backgroundColor: hoverBackgroundColor,
+      },
     };
   },
 
@@ -209,13 +264,13 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
       return styles;
     }
 
-    const backgroundColor =
+    const hoverBackgroundColor =
       chroma(activityType.ui.backgroundColor).get("lab.l") > 80
         ? chroma(activityType.ui.backgroundColor).brighten(0.2)
         : chroma(activityType.ui.backgroundColor).brighten(0.4);
-    const highlightStyle = {
-      backgroundColor: backgroundColor.css(),
-      color: chroma(backgroundColor).get("lab.l") > 80 ? "black" : "white",
+    const hoverStyle = {
+      backgroundColor: hoverBackgroundColor.css(),
+      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
 
     return {
@@ -223,14 +278,14 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
       ...activityType.ui,
-      ":hover": highlightStyle,
+      ":hover": hoverStyle,
     };
   },
 };
 
 export const ActivityTypeOption: React.FC<
   OptionProps<IOptionType, boolean>
-> = ({ children, ...props }) => {
+> = ({ children, isSelected, ...props }) => {
   const cvState = useMst();
   const activityType = cvState.activityTypes.find(
     ({ id }) => id === props.data?.value,
@@ -242,7 +297,8 @@ export const ActivityTypeOption: React.FC<
   return (
     <ReactSelectComponents.Option
       {...props}
-      className="dropdownActivityTypeOption"
+      isSelected={isSelected}
+      className={`dropdownActivityTypeOption ${isSelected ? "selected" : ""}`}
     >
       {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
       {children}

@@ -16,6 +16,7 @@ import {
   LanguageOption,
   languagesStyles,
   OrgOption,
+  orgStyles,
   type IOptionType,
   type ISelectOption,
 } from "../react-select";
@@ -72,7 +73,7 @@ const EllipsisLabel: React.FC<{
 
 const MAX_ITEMS_CUTOFF_COUNT = 3;
 
-const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
+export const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
   index,
   getValue,
   ...props
@@ -183,6 +184,9 @@ export const FilterDropdowns: React.FC = () => {
         placeholder="Language"
         styles={languagesStyles}
         components={{ Option: LanguageOption, MultiValue }}
+        hideSelectedOptions={false}
+        closeMenuOnSelect={false}
+        blurInputOnSelect={false}
         maxItemsSelectCount={2}
         objectLabelSingular="language"
         objectLabelPlural="languages"
@@ -208,6 +212,9 @@ export const FilterDropdowns: React.FC = () => {
           MultiValueLabel: ActivityMultiValueLabel,
           MultiValue: MultiValueCount,
         }}
+        hideSelectedOptions={false}
+        closeMenuOnSelect={false}
+        blurInputOnSelect={false}
         maxItemsSelectCount={1}
         objectLabelSingular="event type"
         objectLabelPlural="event types"
@@ -226,8 +233,12 @@ export const FilterDropdowns: React.FC = () => {
         className="react-select"
         placeholder="Topic"
         components={{ Option: OrgOption, MultiValue }}
+        hideSelectedOptions={false}
+        closeMenuOnSelect={false}
+        blurInputOnSelect={false}
         objectLabelSingular="topic"
         objectLabelPlural="topics"
+        styles={orgStyles}
       />
     </div>
   );
