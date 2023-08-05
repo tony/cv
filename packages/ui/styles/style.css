@@ -32,6 +32,7 @@
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
   --activity-text-color: gray;
+  --container-width: 900px;
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -208,7 +209,7 @@ p {
   margin-left: 0;
 }
 #settings {
-  width: 54rem;
+  width: var(--container-width);
   margin: 0 auto;
 }
 .dropdownRow {
@@ -245,7 +246,7 @@ p {
 #results-container {
   margin: 0.5rem auto;
   max-width: 40%;
-  min-width: 900px;
+  min-width: var(--container-width);
   background-color: var(--results-container-background-color);
   border-radius: 0.75rem;
   padding: 0.1rem 0;

@@ -4,7 +4,7 @@
   --nav-bg-color-600: #063b6f;
   --nav-bg-color-800: #01080e;
   --nav-bg-color-900: black;
-  --nav-logo-size: 2rem;
+  --nav-logo-size: 3rem;
   --nav-icon-separation: 0.25rem;
   --nav-site-name-text-color: white;
   --nav-site-name-text-shadow-color: #ffffff40;
@@ -35,7 +35,12 @@ html.dark {
 .site-info--color-scheme-toggle--container {
   display: flex;
   place-items: center;
-  margin-right: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .site-info--color-scheme-toggle--container {
+    margin-right: 0.5rem;
+  }
 }
 
 nav#top-nav {
@@ -43,6 +48,11 @@ nav#top-nav {
   display: flex;
   place-items: center;
   height: var(--nav-height);
+  width: 100%;
+}
+.top-nav--container {
+  width: var(--container-width);
+  margin: 0 auto;
 }
 nav#top-nav .site-info--site-name {
   padding: 0 1rem 0 0.5rem;
