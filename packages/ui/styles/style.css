@@ -6,17 +6,17 @@
   --chart-width: 250px;
   --nav-height: 3rem;
   --background-color: #f3f3f4;
-  --font-color: #000;
-  --font-color-inverted: #fff;
+  --text-color: #000;
+  --text-color-inverted: #fff;
   --card-border-color: rgba(16, 22, 26, 0.25);
-  --card-hover-bg-color: #fafafa;
+  --card-hover-background-color: #fafafa;
   --activity-link-color: #5b616b;
   --link-color: #1c1c1c;
-  --tag-bg-color: #f5f5f5;
+  --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
-  --tag-small-bg-color: pink;
+  --tag-small-background-color: pink;
   --results-info-text-color: #70757a;
-  --mobile-buttons-bg-color: #f1f1f1;
+  --mobile-buttons-background-color: #f1f1f1;
   --mobile-buttons-toggle-text-color: #000;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
   --chart-link-color: #666;
@@ -25,27 +25,27 @@
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
   --toggle-label-color: #6b778c;
-  --results-container-bg-color: white;
-  --charts-bg-color: white;
+  --results-container-background-color: white;
+  --charts-background-color: white;
   --charts-text-color: black;
-  --chart-row-line-bg-color: white;
-  --dropdown-row-tag-color: black;
-  --dropdown-row-tag-hover-bg-color: white;
-  --color-activity-type-and-date-text-color: gray;
+  --chart-row-line-background-color: white;
+  --dropdown-text-color: black;
+  --dropdown-hover-background: white;
+  --activity-text-color: gray;
 }
 
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
   --background-color: #0b1723;
-  --font-color: #fff;
-  --font-color-inverted: #000;
-  --card-hover-bg-color: #0085f230;
+  --text-color: #fff;
+  --text-color-inverted: #000;
+  --card-hover-background-color: #0085f230;
   --activity-link-color: #5b616b;
   --link-color: #343434;
-  --tag-bg-color: #f5f5f5;
+  --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
   --results-info-text-color: #fff;
-  --mobile-buttons-bg-color: var(--results-container-bg-color);
+  --mobile-buttons-background-color: var(--results-container-background-color);
   --mobile-buttons-toggle-text-color: #fff;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
   --chart-link-color: #cdcdcd;
@@ -54,24 +54,24 @@ html.dark {
   --card-grid-left-side-link-hover-color: white;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
-  --results-container-bg-color: #ffffff0f;
-  /* --charts-bg-color: rgba(104,107,130,.12); */
-  --charts-bg-color: #ffffff0f;
-  --chart-row-line-bg-color: #4e4e4e;
+  --results-container-background-color: #ffffff0f;
+  /* --charts-background-color: rgba(104,107,130,.12); */
+  --charts-background-color: #ffffff0f;
+  --chart-row-line-background-color: #4e4e4e;
   --charts-text-color: white;
-  --dropdown-row-tag-color: black;
-  --dropdown-row-tag-hover-bg-color: white;
-  --color-activity-type-and-date-text-color: #ffffff90;
+  --dropdown-text-color: black;
+  --dropdown-hover-background: white;
+  --activity-text-color: #ffffff90;
 }
 
-.card-activity-type-and-date {
-  color: var(--color-activity-type-and-date-text-color);
+.card-category-and-date {
+  color: var(--activity-text-color);
 }
 body {
   font-family: var(--sans-font);
   margin: 0 0 1rem 0;
   background-color: var(--background-color);
-  color: var(--font-color);
+  color: var(--text-color);
 }
 .site-name {
   font-size: 2rem;
@@ -106,7 +106,7 @@ p {
   margin: 0 1.5rem;
 }
 .card:hover {
-  background-color: var(--card-hover-bg-color);
+  background-color: var(--card-hover-background-color);
 }
 @media (max-width: 1023px) {
   .card {
@@ -129,7 +129,7 @@ p {
 }
 .tag {
   user-select: none;
-  background-color: var(--tag-bg-color);
+  background-color: var(--tag-background-color);
   border-radius: 4px;
   color: var(--tag-text-color);
   display: inline-flex;
@@ -150,7 +150,7 @@ p {
 }
 
 .tag.small {
-  background-color: var(--tag-small-bg-color);
+  background-color: var(--tag-small-background-color);
   font-size: 0.6rem;
   padding: 0.25em;
 }
@@ -197,7 +197,7 @@ p {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
-  background-color: var(--results-container-bg-color);
+  background-color: var(--results-container-background-color);
   border-radius: 0.75rem;
   padding: 0.1rem 0;
 }
@@ -214,7 +214,7 @@ p {
   height: 1.25rem;
 }
 #mobile-buttons {
-  background-color: var(--mobile-buttons-bg-color);
+  background-color: var(--mobile-buttons-background-color);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -278,7 +278,7 @@ p {
   max-width: 40%;
   min-width: 900px;
   width: calc(100% - 1rem);
-  background-color: var(--charts-bg-color);
+  background-color: var(--charts-background-color);
   border-radius: 0.75rem;
   padding: 0.1rem 0;
   display: flex;
@@ -439,7 +439,7 @@ p {
   grid-template-rows: 1fr;
   gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  color: var(--dropdown-row-tag-color);
+  color: var(--dropdown-text-color);
 }
 @media (max-width: 1023px) {
   .dropdownRow {
@@ -450,12 +450,12 @@ p {
 .dropdownRow .topicTags {
   text-align: right;
   flex-grow: 1;
-  color: var(--dropdown-row-tag-color);
+  color: var(--dropdown-text-color);
   place-self: center;
 }
 .dropdownRow .activityCount:hover,
 .dropdownRow .topicTags:hover {
-  color: var(--dropdown-row-tag-hover-bg-color);
+  color: var(--dropdown-hover-background);
 }
 .dropdownCategoryOption {
   display: flex !important;

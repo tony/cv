@@ -242,7 +242,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           </a>
         </span>
         <span style={{ padding: "0 0.5rem" }}>·</span>
-        <span className="card-activity-type-and-date">
+        <span className="card-category-and-date">
           <CategoryText
             categoryName={activity.category}
             createdAt={activity.createdAt}
