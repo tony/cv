@@ -39,12 +39,12 @@ const getAvailableActivities = createSelector(
     selectedActivityTypes,
     selectedFilters,
     actors,
-    languages
+    languages,
   ) => {
     let visibleActivities = denormalizeActivities(
       Object.values(activities),
       actors,
-      languages
+      languages,
     );
     const selectedLanguageList = selectedLanguages.length
       ? selectedLanguages.split(',')
@@ -54,7 +54,7 @@ const getAvailableActivities = createSelector(
       : [];
     // we need to filter against the component_name of the activity, so get that data
     selectedActivityTypeList = selectedActivityTypeList.map(
-      (at) => activityTypes.find((vt) => vt.name === at).component_name
+      (at) => activityTypes.find((vt) => vt.name === at).component_name,
     );
 
     // only show selected activity types
@@ -70,7 +70,7 @@ const getAvailableActivities = createSelector(
           return false;
         }
         return item.actor.languages.some((s) =>
-          selectedLanguageList.find((z) => z === s.name)
+          selectedLanguageList.find((z) => z === s.name),
         );
       });
     }
@@ -80,7 +80,7 @@ const getAvailableActivities = createSelector(
     });
 
     return sortActivities(visibleActivities, moment);
-  }
+  },
 );
 
 const getVisibleActivities = createSelector(
@@ -94,11 +94,11 @@ const getVisibleActivities = createSelector(
     // for direct lookups
     if (selectedActorList && selectedActorList.length) {
       return visibleActivities.filter((item) =>
-        selectedActorList.find((s) => s === item.actor.name)
+        selectedActorList.find((s) => s === item.actor.name),
       );
     }
     return sortActivities(visibleActivities, moment);
-  }
+  },
 );
 
 const getReactSelectValues = (actors) => {
@@ -112,42 +112,42 @@ const getReactSelectValues = (actors) => {
 const getAvailableLanguages = createSelector(
   [getLanguages, getActors],
   (languages, actors) =>
-    selectLanguagesFromActors(languages, Object.values(actors))
+    selectLanguagesFromActors(languages, Object.values(actors)),
 );
 
 const getAvailableLanguagesReactSelectValues = createSelector(
   [getAvailableLanguages],
-  (languages) => getReactSelectValues(languages)
+  (languages) => getReactSelectValues(languages),
 );
 
 const getAvailableActors = createSelector(
   [getActors, getAvailableActivities],
   (actors, activities) => {
     return Object.values(actors).filter((actor) =>
-      activities.find((activity) => activity.actor.id === actor.id)
+      activities.find((activity) => activity.actor.id === actor.id),
     );
-  }
+  },
 );
 
 const getAvailableActorsReactSelectValues = createSelector(
   [getAvailableActors],
-  (actors) => getReactSelectValues(actors)
+  (actors) => getReactSelectValues(actors),
 );
 
 const getCountLanguagesFromActivities = createSelector(
   [getVisibleActivities],
-  (activities) => countLanguagesFromActivities(activities)
+  (activities) => countLanguagesFromActivities(activities),
 );
 
 export const mapStateToProps = (state) => {
   return {
     activities: getVisibleActivities(state),
     activitiesPie: getActivityLanguagePieData(
-      getCountLanguagesFromActivities(state)
+      getCountLanguagesFromActivities(state),
     ),
     activitiesLine: getActivityTimeChartData(
       getVisibleActivities(state),
-      moment
+      moment,
     ),
     actors: state.actors,
     actors_select: getReactSelectValues(state.actors),
@@ -207,7 +207,7 @@ export const mapDispatchToProps = (dispatch) => {
 
 export const VisibleActivityList = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ActivityList);
 
 export default VisibleActivityList;

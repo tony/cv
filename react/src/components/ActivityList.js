@@ -12,7 +12,7 @@ class ActivityList extends React.Component {
         ...{
           key: item['id'],
           activityType: activityTypes.find(
-            (a) => item.component_name === a.component_name
+            (a) => item.component_name === a.component_name,
           ).singular_name,
         },
         ...item,

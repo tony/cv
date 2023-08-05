@@ -10,7 +10,7 @@ const gh_token =
 
 if (!gh_token) {
   console.error(
-    "GITHUB_API_TOKEN or HOMEBREW_GITHUB_API_TOKEN must be set in ENV"
+    "GITHUB_API_TOKEN or HOMEBREW_GITHUB_API_TOKEN must be set in ENV",
   );
   process.exit(0);
 }
@@ -53,7 +53,7 @@ const testQuery = `
 // 2. {{pull_requests_params}} -> 'first 100'
 const prQuery = fs.readFileSync(
   path.join(__dirname, "./gh_pullrequests.graphql"),
-  "utf8"
+  "utf8",
 );
 
 async function ghQuery(query) {
@@ -70,11 +70,11 @@ async function ghQuery(query) {
 
 const userPrQuery = prQuery.replace(
   "{{user_params}}",
-  `login: "${config.gh_user}"`
+  `login: "${config.gh_user}"`,
 );
 const initialPrQuery = userPrQuery.replace(
   "{{pull_requests_params}}",
-  "first: 100"
+  "first: 100",
 );
 
 const makePRQuery = async (query) => {
@@ -88,7 +88,7 @@ const makePRQuery = async (query) => {
   if (data.hasNextPage) {
     data.nextQuery = userPrQuery.replace(
       "{{pull_requests_params}}",
-      `first: 100, after: "${data.endCursor}"`
+      `first: 100, after: "${data.endCursor}"`,
     );
   }
   return data;
@@ -112,13 +112,13 @@ recursePRQuery(initialPrQuery)
   .then((prs) => {
     if (config.exclude_own_repo) {
       prs = prs.filter(
-        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`)
+        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`),
       );
     }
     if (config.exclude_users) {
       for (let user of config.exclude_users) {
         prs = prs.filter(
-          (pr) => !pr.node.url.includes(`https://github.com/${user}/`)
+          (pr) => !pr.node.url.includes(`https://github.com/${user}/`),
         );
       }
     }
@@ -147,7 +147,7 @@ recursePRQuery(initialPrQuery)
     // projects = [ ... new Set(projects) ];
     projects = projects.filter(
       (project, index, self) =>
-        self.findIndex((p) => p.name === project.name) === index
+        self.findIndex((p) => p.name === project.name) === index,
     );
     // console.log(projects);
     // console.log(projects.length);
