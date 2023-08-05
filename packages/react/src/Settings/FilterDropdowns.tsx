@@ -183,11 +183,11 @@ export const FilterDropdowns: React.FC = () => {
         className="react-select"
         placeholder="Language"
         styles={languagesStyles}
-        components={{ Option: LanguageOption, MultiValue }}
+        components={{ Option: LanguageOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
-        maxItemsSelectCount={2}
+        maxItemsSelectCount={1}
         objectLabelSingular="language"
         objectLabelPlural="languages"
       />
