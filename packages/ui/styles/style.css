@@ -17,7 +17,7 @@
   --tag-small-bg-color: pink;
   --results-info-text-color: #70757a;
   --mobile-buttons-bg-color: #f1f1f1;
-  --mobile-buttons-toggle-btn-bg-color: #f1f1f1;
+  --mobile-buttons-toggle-text-color: #000;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
   --chart-link-color: #666;
   --chart-link-color-hover: #999;
@@ -45,8 +45,8 @@ html.dark {
   --tag-bg-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
   --results-info-text-color: #fff;
-  --mobile-buttons-bg-color: #f1f1f1;
-  --mobile-buttons-toggle-btn-bg-color: #f1f1f1;
+  --mobile-buttons-bg-color: var(--results-container-bg-color);
+  --mobile-buttons-toggle-text-color: #fff;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
   --chart-link-color: #cdcdcd;
   --chart-link-color-hover: white;
@@ -211,16 +211,17 @@ p {
 }
 #mobile-buttons {
   background-color: var(--mobile-buttons-bg-color);
-  height: 30px;
   text-align: center;
   display: flex;
   justify-content: center;
+  height: 30px;
 }
 #mobile-buttons button.toggle-btn {
-  background-color: var(--mobile-buttons-toggle-btn-bg-color);
+  background-color: initial;
+  color: var(--mobile-buttons-toggle-text-color);
   border: 0;
+  font-family: var(--sans-font);
 }
-
 #mobile-buttons button.toggle-btn:focus,
 #mobile-buttons button.toggle-btn:active,
 #mobile-buttons button.toggle-btn.active {
