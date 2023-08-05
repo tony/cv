@@ -15,16 +15,16 @@ import {
   activityTypeStyles,
   getSelectOptions,
   LanguageOption,
-  languagesStyles,
+  languageStyles,
   OrgOption,
   orgStyles,
-  type IOptionType,
-  type ISelectOption,
+  type OptionType,
+  type SelectOption,
   type StyleOption,
 } from "../react-select";
 
 function CustomSelect<
-  Option extends IOptionType,
+  Option extends OptionType,
   IsMulti extends boolean = true,
   Group extends GroupBase<Option> = GroupBase<Option>,
 >(props: Props<Option, IsMulti, Group>) {
@@ -83,7 +83,7 @@ const EllipsisLabel: React.FC<{
 
 const MAX_ITEMS_CUTOFF_COUNT = 3;
 
-export const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
+export const MultiValue: React.FC<MultiValueProps<OptionType>> = ({
   index,
   getValue,
   ...props
@@ -186,14 +186,14 @@ export const FilterDropdowns: React.FC = () => {
           Object.values(cvState.languages ?? {}).map(({ id }) => id as string),
         )}
         isMulti
-        onChange={(value: PropsValue<IOptionType>): void => {
+        onChange={(value: PropsValue<OptionType>): void => {
           cvState.setLanguages(
-            (value as IOptionType[]).map(({ value: v }) => v),
+            (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
         className="react-select"
         placeholder="Language"
-        styles={{ ...colourStyles, ...languagesStyles }}
+        styles={{ ...colourStyles, ...languageStyles }}
         components={{ Option: LanguageOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
@@ -207,12 +207,12 @@ export const FilterDropdowns: React.FC = () => {
           cvState.activityTypes.map((a) => ({
             label: a.name,
             value: a.id,
-          })) as ISelectOption
+          })) as SelectOption
         }
         isMulti={true}
-        onChange={(value: PropsValue<IOptionType>): void => {
+        onChange={(value: PropsValue<OptionType>): void => {
           cvState.setActivityTypes(
-            (value as IOptionType[]).map(({ value: v }) => v),
+            (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
         className="react-select"
@@ -235,11 +235,11 @@ export const FilterDropdowns: React.FC = () => {
           cvState.orgs.map((org) => ({
             label: org.name,
             value: org.id?.toString() ?? org.id,
-          })) as ISelectOption
+          })) as SelectOption
         }
         isMulti={true}
-        onChange={(value: PropsValue<IOptionType>): void => {
-          cvState.setOrgs((value as IOptionType[]).map(({ value: v }) => v));
+        onChange={(value: PropsValue<OptionType>): void => {
+          cvState.setOrgs((value as OptionType[]).map(({ value: v }) => v));
         }}
         className="react-select"
         placeholder="Organization and projects"

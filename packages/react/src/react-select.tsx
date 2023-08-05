@@ -15,22 +15,22 @@ import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
 import { useMst } from "./mobx";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 
-export interface IOptionType {
+export interface OptionType {
   readonly label: string;
   readonly value: string;
 }
-export interface StyleOption extends IOptionType {
+export interface StyleOption extends OptionType {
   readonly color: string;
   readonly isFixed?: boolean;
   readonly isDisabled?: boolean;
 }
-export type ISelectOption = Options<IOptionType>;
+export type SelectOption = Options<OptionType>;
 
-export const getSelectOptions = (items: string[]): ISelectOption =>
+export const getSelectOptions = (items: string[]): SelectOption =>
   items.map((actorName) => ({
     label: actorName,
     value: actorName,
-  })) as ISelectOption;
+  })) as SelectOption;
 
 export const orgStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, _props) => {
@@ -119,7 +119,7 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
   );
 };
 
-export const languagesStyles: StylesConfig<StyleOption, true> = {
+export const languageStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
