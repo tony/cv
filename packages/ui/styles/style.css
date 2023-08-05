@@ -72,11 +72,6 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
 }
-@media (max-width: 1023px) {
-  body {
-    position: absolute;
-  }
-}
 .site-name {
   font-size: 2rem;
   text-align: center;
