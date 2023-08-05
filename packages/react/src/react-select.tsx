@@ -16,13 +16,13 @@ import { useMst } from "./mobx";
 import { LanguageTag, OrgTypeTag } from "./Tag";
 
 export interface IOptionType {
-  label: string;
-  value: string;
+  readonly label: string;
+  readonly value: string;
 }
 export interface StyleOption extends IOptionType {
-  color: string;
-  isFixed?: boolean;
-  isDisabled?: boolean;
+  readonly color: string;
+  readonly isFixed?: boolean;
+  readonly isDisabled?: boolean;
 }
 export type ISelectOption = Options<IOptionType>;
 
@@ -32,7 +32,7 @@ export const getSelectOptions = (items: string[]): ISelectOption =>
     value: actorName,
   })) as ISelectOption;
 
-export const orgStyles: StylesConfig<IOptionType, boolean> = {
+export const orgStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, _props) => {
     return {
       ...styles,
@@ -47,7 +47,7 @@ export const orgStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
-export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
+export const OrgOption: React.FC<OptionProps<StyleOption, true>> = ({
   children,
   isSelected,
   ...props
@@ -88,7 +88,7 @@ export const OrgOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   );
 };
 
-export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
+export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
   data,
   isSelected,
   ...props
@@ -119,7 +119,7 @@ export const LanguageOption: React.FC<OptionProps<IOptionType, boolean>> = ({
   );
 };
 
-export const languagesStyles: StylesConfig<IOptionType, boolean> = {
+export const languagesStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
@@ -208,7 +208,7 @@ export const languagesStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
-export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
+export const activityTypeStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const activityType = cvState.activityTypes.find(
@@ -291,9 +291,11 @@ export const activityTypeStyles: StylesConfig<IOptionType, boolean> = {
   },
 };
 
-export const ActivityTypeOption: React.FC<
-  OptionProps<IOptionType, boolean>
-> = ({ children, isSelected, ...props }) => {
+export const ActivityTypeOption: React.FC<OptionProps<StyleOption, true>> = ({
+  children,
+  isSelected,
+  ...props
+}) => {
   const cvState = useMst();
   const activityType = cvState.activityTypes.find(
     ({ id }) => id === props.data?.value,

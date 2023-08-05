@@ -5,6 +5,7 @@ import Select, {
   type MultiValueProps,
   type Props,
   type PropsValue,
+  type StylesConfig,
 } from "react-select";
 
 import { useMst } from "../mobx";
@@ -19,6 +20,7 @@ import {
   orgStyles,
   type IOptionType,
   type ISelectOption,
+  type StyleOption,
 } from "../react-select";
 
 function CustomSelect<
@@ -44,6 +46,14 @@ declare module "react-select/dist/declarations/src/Select" {
     objectLabelPlural?: string;
   }
 }
+
+const colourStyles: StylesConfig<StyleOption, true> = {
+  control: (styles) => ({
+    ...styles,
+    backgroundColor: "white",
+    fontSize: "0.9rem",
+  }),
+};
 
 const EllipsisLabel: React.FC<{
   items: string[];
@@ -119,7 +129,7 @@ export const MultiValue: React.FC<MultiValueProps<IOptionType>> = ({
   ) : null;
 };
 
-const MultiValueCount: React.FC<MultiValueProps<IOptionType>> = ({
+const MultiValueCount: React.FC<MultiValueProps<StyleOption, true>> = ({
   index,
   getValue,
   selectProps,
@@ -151,10 +161,11 @@ const MultiValueCount: React.FC<MultiValueProps<IOptionType>> = ({
     fontSize: ".9rem",
     padding: ".1rem",
     order: 5,
+    flexGrow: 10,
   };
 
   const title = overflow.join(", ");
-  const itemsSelectedCount = overflow.length + 1;
+  const itemsSelectedCount = overflow.length;
   const label = `${itemsSelectedCount} selected ${
     itemsSelectedCount !== 1 ? objectLabelPlural : objectLabelSingular
   }`;
@@ -182,12 +193,12 @@ export const FilterDropdowns: React.FC = () => {
         }}
         className="react-select"
         placeholder="Language"
-        styles={languagesStyles}
+        styles={{ ...colourStyles, ...languagesStyles }}
         components={{ Option: LanguageOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
-        maxItemsSelectCount={1}
+        maxItemsSelectCount={0}
         objectLabelSingular="language"
         objectLabelPlural="languages"
       />
@@ -206,7 +217,7 @@ export const FilterDropdowns: React.FC = () => {
         }}
         className="react-select"
         placeholder="Event type"
-        styles={activityTypeStyles}
+        styles={{ ...colourStyles, ...activityTypeStyles }}
         components={{
           Option: ActivityTypeOption,
           MultiValueLabel: ActivityMultiValueLabel,
@@ -215,7 +226,7 @@ export const FilterDropdowns: React.FC = () => {
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
-        maxItemsSelectCount={1}
+        maxItemsSelectCount={0}
         objectLabelSingular="event type"
         objectLabelPlural="event types"
       />
@@ -232,12 +243,12 @@ export const FilterDropdowns: React.FC = () => {
         }}
         className="react-select"
         placeholder="Organization and projects"
-        styles={orgStyles}
+        styles={{ ...colourStyles, ...orgStyles }}
         components={{ Option: OrgOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
-        maxItemsSelectCount={1}
+        maxItemsSelectCount={0}
         objectLabelSingular="org / project"
         objectLabelPlural="orgs / projects"
       />
