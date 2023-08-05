@@ -302,7 +302,7 @@ export const LANGUAGE_FALLBACK_COLOR = "#f6f8fa";
 
 // via v1: https://github.com/tony/cv/blob/v1/lib/selectors.js
 export const reActivityTypoFix =
-  /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate)/i;
+  /(typo|Typo|spelling|Spelling|note|Note|correct|Correct|Fix type|Fix URL|print statement|Remove duplicate|f\-string)/i;
 export const reActivityDocImprovement =
   /(doc|Doc|license|LICENSE|README|readme|link|Link|\.md|instructions|Instructions|guidelines|pypi badge|AUTHORS|License|changelog|label|copyright|add cookiecutter|issue template|awesome-|front-end frameworks|Examples for issue)|to other tools|sphinx|RelayHooks-Introduction|Changelog|changelog|CHANGES|highlight/i;
 export const reActivityCodeStyleTweak =
