@@ -7,14 +7,14 @@ import ghActivitiesJson from "@tony/cv-data/scraped/gh_activities.json";
 import ghOrgsJson from "@tony/cv-data/scraped/gh_orgs.json";
 
 import {
-  ActivityTypeColors,
-  ActivityTypeNameMap,
+  CategoryColors,
+  CategoryNameMap,
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
 } from "./constants";
 import {
-  ActivityType,
-  ActivityTypeName,
+  Category,
+  CategoryName,
   IActivity,
   IOrg,
   Language,
@@ -129,13 +129,13 @@ export const orgTypes: OrgType[] = Array.from(
     }) as OrgType,
 );
 
-export const activityTypes: ActivityType[] = Array.from(
-  new Set(activities.map((a) => a.activityType).filter(Boolean)),
+export const categories: Category[] = Array.from(
+  new Set(activities.map((a) => a.category).filter(Boolean)),
 ).map(
-  (activityTypeName: ActivityTypeName) =>
+  (categoryName: CategoryName) =>
     ({
-      id: activityTypeName,
-      name: ActivityTypeNameMap[activityTypeName] ?? activityTypeName,
-      ui: ActivityTypeColors[activityTypeName],
-    }) as ActivityType,
+      id: categoryName,
+      name: CategoryNameMap[categoryName] ?? categoryName,
+      ui: CategoryColors[categoryName],
+    }) as Category,
 );

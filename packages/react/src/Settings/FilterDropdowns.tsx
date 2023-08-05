@@ -11,8 +11,8 @@ import Select, {
 import { useMst } from "../mobx";
 import {
   ActivityMultiValueLabel,
-  ActivityTypeOption,
-  activityTypeStyles,
+  categoriestyles,
+  CategoryOption,
   getSelectOptions,
   LanguageOption,
   languageStyles,
@@ -204,22 +204,22 @@ export const FilterDropdowns: React.FC = () => {
       />
       <CustomSelect
         options={
-          cvState.activityTypes.map((a) => ({
+          cvState.categories.map((a) => ({
             label: a.name,
             value: a.id,
           })) as SelectOption
         }
         isMulti={true}
         onChange={(value: PropsValue<OptionType>): void => {
-          cvState.setActivityTypes(
+          cvState.setCategories(
             (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
         className="react-select"
         placeholder="Category"
-        styles={{ ...colourStyles, ...activityTypeStyles }}
+        styles={{ ...colourStyles, ...categoriestyles }}
         components={{
-          Option: ActivityTypeOption,
+          Option: CategoryOption,
           MultiValueLabel: ActivityMultiValueLabel,
           MultiValue: MultiValueCount,
         }}

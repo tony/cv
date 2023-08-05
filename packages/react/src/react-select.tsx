@@ -10,7 +10,7 @@ import {
 import type { CSSObject } from "@emotion/serialize";
 import chroma from "chroma-js";
 
-import { ActivityTypeEmojiMap } from "@tony/cv-data/constants";
+import { CategoryEmojiMap } from "@tony/cv-data/constants";
 
 import { useMst } from "./mobx";
 import { LanguageTag, OrgTypeTag } from "./Tag";
@@ -208,16 +208,14 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
   },
 };
 
-export const activityTypeStyles: StylesConfig<StyleOption, true> = {
+export const categoriestyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
-    const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value,
-    );
-    if (!activityType?.ui?.backgroundColor || !activityType?.ui?.color) {
+    const category = cvState.categories.find(({ id }) => id === data.value);
+    if (!category?.ui?.backgroundColor || !category?.ui?.color) {
       return styles;
     }
-    const hoverBackgroundColor = chroma(activityType.ui.backgroundColor)
+    const hoverBackgroundColor = chroma(category.ui.backgroundColor)
       .alpha(0.8)
       .css();
     const selectedBackgroundColor = chroma(hoverBackgroundColor)
@@ -247,10 +245,8 @@ export const activityTypeStyles: StylesConfig<StyleOption, true> = {
 
   multiValueLabel: (styles, { data }) => {
     const cvState = useMst();
-    const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value,
-    );
-    if (!activityType?.ui) {
+    const category = cvState.categories.find(({ id }) => id === data.value);
+    if (!category?.ui) {
       return styles;
     }
     return {
@@ -260,22 +256,20 @@ export const activityTypeStyles: StylesConfig<StyleOption, true> = {
       paddingRight: "4px",
       display: "flex",
       placeItems: "center",
-      ...activityType.ui,
+      ...category.ui,
     };
   },
   multiValueRemove: (styles, { data = {} }) => {
     const cvState = useMst();
-    const activityType = cvState.activityTypes.find(
-      ({ id }) => id === data.value,
-    );
-    if (!activityType?.ui?.backgroundColor) {
+    const category = cvState.categories.find(({ id }) => id === data.value);
+    if (!category?.ui?.backgroundColor) {
       return styles;
     }
 
     const hoverBackgroundColor =
-      chroma(activityType.ui.backgroundColor).get("lab.l") > 80
-        ? chroma(activityType.ui.backgroundColor).brighten(0.2)
-        : chroma(activityType.ui.backgroundColor).brighten(0.4);
+      chroma(category.ui.backgroundColor).get("lab.l") > 80
+        ? chroma(category.ui.backgroundColor).brighten(0.2)
+        : chroma(category.ui.backgroundColor).brighten(0.4);
     const hoverStyle = {
       backgroundColor: hoverBackgroundColor.css(),
       color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
@@ -285,33 +279,32 @@ export const activityTypeStyles: StylesConfig<StyleOption, true> = {
       ...styles,
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
-      ...activityType.ui,
+      ...category.ui,
       ":hover": hoverStyle,
     };
   },
 };
 
-export const ActivityTypeOption: React.FC<OptionProps<StyleOption, true>> = ({
+export const CategoryOption: React.FC<OptionProps<StyleOption, true>> = ({
   children,
   isSelected,
   ...props
 }) => {
   const cvState = useMst();
-  const activityType = cvState.activityTypes.find(
+  const category = cvState.categories.find(
     ({ id }) => id === props.data?.value,
   );
-  if (!activityType) {
-    console.warn(`activityType ${props?.data?.value} could not be found`);
+  if (!category) {
+    console.warn(`category ${props?.data?.value} could not be found`);
     return null;
   }
   return (
     <ReactSelectComponents.Option
       {...props}
       isSelected={isSelected}
-      className={`dropdownActivityTypeOption ${isSelected ? "selected" : ""}`}
+      className={`dropdownCategoryOption ${isSelected ? "selected" : ""}`}
     >
-      {activityType.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}{" "}
-      {children}
+      {category.id && <>{CategoryEmojiMap[category.id]}</>} {children}
     </ReactSelectComponents.Option>
   );
 };
@@ -321,16 +314,16 @@ export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
   ...props
 }) => {
   const cvState = useMst();
-  const activityType = cvState.activityTypes.find(
+  const category = cvState.categories.find(
     ({ id }) => id === props.data?.value,
   );
-  if (!activityType) {
-    console.warn(`activityType ${props?.data?.value} could not be found`);
+  if (!category) {
+    console.warn(`category ${props?.data?.value} could not be found`);
     return null;
   }
   return (
     <ReactSelectComponents.MultiValueLabel {...props}>
-      {ActivityTypeEmojiMap[activityType.id]} {children}
+      {CategoryEmojiMap[category.id]} {children}
     </ReactSelectComponents.MultiValueLabel>
   );
 };

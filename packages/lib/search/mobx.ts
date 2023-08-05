@@ -5,7 +5,7 @@ import moment from "moment";
 
 import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
 import type { fetchDataFn } from "@tony/cv-data/fetch";
-import { ActivityTypeName, OrgTypeName } from "@tony/cv-data/types";
+import { CategoryName, OrgTypeName } from "@tony/cv-data/types";
 import * as matchers from "@tony/cv-lib/search/utils";
 
 import { hasAny } from "../utils";
@@ -63,7 +63,7 @@ export const Language = types.model("Language", {
   ui: UiCssProperties,
 });
 
-export const ActivityType = types.model("ActivityType", {
+export const Category = types.model("Category", {
   id: types.identifier,
   name: types.string,
   ui: UiCssProperties,
@@ -90,9 +90,9 @@ export const Activity = types
   .model("Activity", {
     id: types.identifier,
     title: types.string,
-    activityType: types.enumeration<ActivityTypeName>(
-      "ActivityTypeName",
-      Object.values(ActivityTypeName),
+    category: types.enumeration<CategoryName>(
+      "CategoryName",
+      Object.values(CategoryName),
     ),
     org: types.reference(Org),
     meta: ActivityMeta,
@@ -117,7 +117,7 @@ export const Activity = types
         isDocImprovement: matchers.isActivityDocImprovement(activity),
         isCodeStyleTweak: matchers.isActivityCodeStyleTweak(activity),
         isMerged:
-          activity.activityType == "Patch"
+          activity.category == "Patch"
             ? matchers.isActivityMerged(activity)
             : true,
       },
@@ -134,7 +134,7 @@ export const SearchOptions = types.model("SearchOptions", {
   endYear: types.number,
 
   languages: types.array(types.reference(Language)),
-  activityTypes: types.array(types.reference(ActivityType)),
+  categories: types.array(types.reference(Category)),
   orgs: types.array(types.reference(Org)),
 });
 
@@ -182,12 +182,12 @@ export const filterActivitiesByFilters = (
     showUnmerged,
     languages,
     orgs,
-    activityTypes,
+    categories,
   }: Instance<typeof SearchOptions>,
 ) => {
   const activeLanguageIds = languages.map(({ id }) => id);
   const activeOrgIds = orgs.map(({ id }) => id);
-  const activeActivityTypeIds = activityTypes.map(({ id }) => id);
+  const activeCategoryIds = categories.map(({ id }) => id);
   const activitiesFilteredByLanguage =
     languages?.length > 0
       ? activities.filter((activity: Instance<typeof Activity>) => {
@@ -211,17 +211,17 @@ export const filterActivitiesByFilters = (
           },
         )
       : activitiesFilteredByLanguage;
-  const activitiesFilteredByActivityType =
-    activityTypes?.length > 0
+  const activitiesFilteredByCategory =
+    categories?.length > 0
       ? activitiesFilteredByOrg.filter(
           (activity: Instance<typeof Activity>) => {
-            return activeActivityTypeIds.includes(activity.activityType);
+            return activeCategoryIds.includes(activity.category);
           },
         )
       : activitiesFilteredByOrg;
-  return activitiesFilteredByActivityType.filter(
+  return activitiesFilteredByCategory.filter(
     (activity: Instance<typeof Activity>) => {
-      if (activity.activityType !== "Patch") {
+      if (activity.category !== "Patch") {
         return true;
       }
 
@@ -256,7 +256,7 @@ export const CVState = types
     languages: types.array(Language),
     orgs: types.array(Org),
     orgTypes: types.array(OrgType),
-    activityTypes: types.array(ActivityType),
+    categories: types.array(Category),
   })
   .actions((self) => {
     const fetchData: fetchDataFn = async () => {
@@ -273,7 +273,7 @@ export const CVState = types
         languages: data.languages,
         orgs: data.orgs,
         orgTypes: data.orgTypes,
-        activityTypes: data.activityTypes,
+        categories: data.categories,
       });
     }
 
@@ -295,11 +295,11 @@ export const CVState = types
         self.searchOptions.endYear = endYear;
         self.searchOptions.startYear = startYear;
       },
-      setActivityTypes(activityTypeIds: string[]) {
-        self.searchOptions.activityTypes.splice(
+      setCategories(categoryIds: string[]) {
+        self.searchOptions.categories.splice(
           0,
-          self.searchOptions.activityTypes.length,
-          ...activityTypeIds,
+          self.searchOptions.categories.length,
+          ...categoryIds,
         );
       },
       setOrgs(orgIds: string[]) {
@@ -412,5 +412,5 @@ export const state = CVState.create({
   languages: [],
   orgs: [],
   orgTypes: [],
-  activityTypes: [],
+  categories: [],
 });

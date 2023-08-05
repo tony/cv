@@ -4,7 +4,7 @@ interface IThemeable {
   ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
-// export type ActivityTypeName =
+// export type CategoryName =
 //   | "SoftwareApp"
 //   | "SoftwareLib"
 //   | "Patch"
@@ -14,7 +14,7 @@ interface IThemeable {
 //   | "Website"
 //   | "Article";
 
-export enum ActivityTypeName {
+export enum CategoryName {
   SoftwareApp = "SoftwareApp",
   SoftwareLib = "SoftwareLib",
   Patch = "Patch",
@@ -25,15 +25,15 @@ export enum ActivityTypeName {
   Article = "Article",
 }
 
-export interface ActivityType extends IThemeable {
-  id: ActivityTypeName;
-  name: ActivityTypeName;
+export interface Category extends IThemeable {
+  id: CategoryName;
+  name: CategoryName;
 }
 
 export interface IActivityCommon {
   id: string;
   title: string;
-  activityType: ActivityTypeName;
+  category: CategoryName;
   org: string;
 
   // Dates
@@ -44,7 +44,7 @@ export interface IActivityCommon {
 }
 
 export interface IActivityOpenSource extends IActivityCommon {
-  activityType: ActivityTypeName.Patch;
+  category: CategoryName.Patch;
 
   // URLs
   qaUrl: string;
@@ -58,19 +58,19 @@ export interface IActivityOpenSource extends IActivityCommon {
 }
 
 export interface IActivitySoftware extends IActivityCommon {
-  activityType: ActivityTypeName.SoftwareLib | ActivityTypeName.SoftwareApp;
+  category: CategoryName.SoftwareLib | CategoryName.SoftwareApp;
 }
 
 export interface IActivityWebsite extends IActivityCommon {
-  activityType: ActivityTypeName.Website;
+  category: CategoryName.Website;
 }
 
 export interface IActivityVolunteer extends IActivityCommon {
-  activityType: ActivityTypeName.Volunteer;
+  category: CategoryName.Volunteer;
 }
 
 export interface IActivityArticle extends IActivityCommon {
-  activityType: ActivityTypeName.Article;
+  category: CategoryName.Article;
 
   // Dates
   featured: {
@@ -82,11 +82,11 @@ export interface IActivityArticle extends IActivityCommon {
 }
 
 export interface IActivityPublication extends IActivityCommon {
-  activityType: ActivityTypeName.Publication;
+  category: CategoryName.Publication;
 }
 
 export interface IActivityWork extends IActivityCommon {
-  activityType: ActivityTypeName.Work;
+  category: CategoryName.Work;
 
   // Dates
   createdAt: string;

@@ -180,7 +180,7 @@ fetchGitHubIssues()
         org: Object.keys(projectsFinal).find(
           (projectName) => pr.repository.name === projectName,
         ),
-        activityType: "Patch",
+        category: "Patch",
         createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),
         diffUrl: pr.url + ".diff",
         id: `${id++}`,

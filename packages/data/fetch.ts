@@ -1,11 +1,11 @@
-import type { ActivityType, IActivity, IOrg, Language, OrgType } from "./types";
+import type { Category, IActivity, IOrg, Language, OrgType } from "./types";
 
 export interface IData {
   activities: IActivity[];
   orgs: IOrg[];
   languages: Language[];
   orgTypes: OrgType[];
-  activityTypes: ActivityType[];
+  categories: Category[];
 }
 
 export type fetchDataFn = () => Promise<IData>;

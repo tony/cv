@@ -457,7 +457,7 @@ p {
 .dropdownRow .topicTags:hover {
   color: var(--dropdown-row-tag-hover-bg-color);
 }
-.dropdownActivityTypeOption {
+.dropdownCategoryOption {
   display: flex !important;
   place-items: center;
   line-height: 24px;

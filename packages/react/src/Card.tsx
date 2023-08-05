@@ -5,7 +5,7 @@ import { format, formatDistance } from "date-fns";
 import { Instance } from "mobx-state-tree";
 
 import {
-  ActivityTypeName,
+  CategoryName,
   OrgTypeName,
   type CompanyOrg,
   type IActivityOpenSource,
@@ -16,7 +16,7 @@ import {
 } from "@tony/cv-data/types";
 import { Activity, Org } from "@tony/cv-lib/search/mobx";
 
-import { ActivityTypeText, LanguageTag } from "./Tag";
+import { CategoryText, LanguageTag } from "./Tag";
 
 import "@tony/cv-ui/styles/style.css";
 
@@ -186,19 +186,19 @@ export const ActivityInfo: React.FC<
 > = ({ activity, org }) => {
   return (
     <>
-      {ActivityTypeName.Patch == activity.activityType && (
+      {CategoryName.Patch == activity.category && (
         <PatchInfo
           activity={activity as IActivityOpenSource}
           org={org as OpenSourceOrg}
         />
       )}
-      {ActivityTypeName.Publication == activity.activityType && (
+      {CategoryName.Publication == activity.category && (
         <PublicationInfo
           activity={activity as IActivityPublication}
           org={org as PublicationOrg}
         />
       )}
-      {ActivityTypeName.Work == activity.activityType && (
+      {CategoryName.Work == activity.category && (
         <CompanyInfo
           activity={activity as IActivityWork}
           org={org as CompanyOrg}
@@ -243,8 +243,8 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         </span>
         <span style={{ padding: "0 0.5rem" }}>·</span>
         <span className="card-activity-type-and-date">
-          <ActivityTypeText
-            activityTypeName={activity.activityType}
+          <CategoryText
+            categoryName={activity.category}
             createdAt={activity.createdAt}
             acceptedAt={activity.acceptedAt}
             startedAt={activity.startedAt}
