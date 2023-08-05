@@ -1,7 +1,7 @@
 import chroma from "chroma-js";
 import CSS from "csstype";
 
-interface ICategoryNameStringMap {
+interface CategoryNameStringMap {
   // [key: CategoryName]: string;
   SoftwareApp: string;
   SoftwareLib: string;
@@ -12,7 +12,7 @@ interface ICategoryNameStringMap {
   Website: string;
   Article: string;
 }
-export const CategoryNameMap: ICategoryNameStringMap = {
+export const CategoryNameMap: CategoryNameStringMap = {
   SoftwareApp: "Published software app",
   SoftwareLib: "Published software component",
   Patch: "Contributed software patch",
@@ -22,7 +22,7 @@ export const CategoryNameMap: ICategoryNameStringMap = {
   Website: "Published website",
   Article: "Published article",
 };
-export const CategoryVerbMap: ICategoryNameStringMap = {
+export const CategoryVerbMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
   Patch: "Patch accepted",
@@ -32,7 +32,7 @@ export const CategoryVerbMap: ICategoryNameStringMap = {
   Website: "Published",
   Article: "Published",
 };
-export const CategoryVerbPresentTenseMap: ICategoryNameStringMap = {
+export const CategoryVerbPresentTenseMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
   Patch: "Patch submitted",
@@ -42,7 +42,7 @@ export const CategoryVerbPresentTenseMap: ICategoryNameStringMap = {
   Website: "Published",
   Article: "Published",
 };
-export const CategoryEmojiMap: ICategoryNameStringMap = {
+export const CategoryEmojiMap: CategoryNameStringMap = {
   SoftwareApp: "📦",
   SoftwareLib: "⚙️",
   Patch: "🔨",
@@ -53,7 +53,7 @@ export const CategoryEmojiMap: ICategoryNameStringMap = {
   Article: "📃",
 };
 
-export const CategorySVGIconMap: ICategoryNameStringMap = {
+export const CategorySVGIconMap: CategoryNameStringMap = {
   SoftwareApp: "package",
   SoftwareLib: "settings",
   Patch: "file-diff",
