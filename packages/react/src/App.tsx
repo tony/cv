@@ -6,9 +6,9 @@ import * as mobxLib from "@tony/cv-lib/search/mobx";
 
 import { Charts } from "./Charts";
 import { MobxProvider } from "./mobx";
-import { Nav } from "./Nav/Nav";
 import { Results } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
+import { TopNav } from "./TopNav/TopNav";
 
 import "@tony/cv-ui/styles/style.css";
 
@@ -21,7 +21,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
     <div>
       <MobxProvider value={cvState}>
         <SettingsContextProvider>
-          <Nav />
+          <TopNav />
           {children}
         </SettingsContextProvider>
       </MobxProvider>

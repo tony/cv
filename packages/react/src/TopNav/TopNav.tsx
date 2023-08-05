@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./Nav.css";
+import "./TopNav.css";
 
 import { ColorSchemeToggle } from "./ColorScheme";
 
-export const Nav: React.FC = () => (
+export const TopNav: React.FC = () => (
   <nav id="top-nav">
     <div className="top-nav--container">
       <div className="site-info" title="Tony Narlock's CV">

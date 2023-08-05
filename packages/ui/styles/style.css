@@ -4,7 +4,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --chart-height: 250px;
   --chart-width: 250px;
-  --nav-height: 3rem;
+  --top-nav-height: 3rem;
   --background-color: #f3f3f4;
   --text-color: #000;
   --text-color-inverted: #fff;
@@ -519,7 +519,7 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--top-nav-height));
 }
 .loading-chart {
   display: flex;

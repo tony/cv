@@ -6,10 +6,10 @@
 
 .color-scheme-toggle {
   display: flex;
-  margin-right: var(--nav-icon-size);
+  margin-right: var(--top-nav-icon-size);
 }
 .color-scheme-toggle--icon {
-  margin-left: var(--nav-icon-separation);
+  margin-left: var(--top-nav-icon-separation);
   user-select: none;
   width: var(--color-scheme-icon-width);
   height: var(--color-scheme-icon-height);
