@@ -16,20 +16,20 @@ import {
   Activity,
   Category,
   CategoryName,
-  IOrg,
   Language,
   LanguageName,
+  Org,
   OrgType,
   OrgTypeName,
 } from "./types";
 
-export const orgs: IOrg[] = [
+export const orgs: Org[] = [
   // Make Object Key the ID
   ...Object.entries(handPickedOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
+    ([key, org]) => ({ ...org, id: key as unknown }) as Org,
   ),
   ...Object.entries(ghOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
+    ([key, org]) => ({ ...org, id: key as unknown }) as Org,
   ),
 ].map((org) => {
   if (!org.languages.length) {

@@ -1,8 +1,8 @@
-import type { Activity, Category, IOrg, Language, OrgType } from "./types";
+import type { Activity, Category, Language, Org, OrgType } from "./types";
 
 export interface IData {
   activities: Activity[];
-  orgs: IOrg[];
+  orgs: Org[];
   languages: Language[];
   orgTypes: OrgType[];
   categories: Category[];

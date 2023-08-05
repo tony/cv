@@ -191,8 +191,8 @@ export interface OpenSourceOrg extends Org {
   browseCodeUrl?: string;
 }
 
-export type IOrg = CompanyOrg | PublicationOrg | OpenSourceOrg | WebsiteOrg;
+export type Org = CompanyOrg | PublicationOrg | OpenSourceOrg | WebsiteOrg;
 
-export interface IOrgs {
-  [key: string]: IOrg;
+export interface Orgs {
+  [key: string]: Org;
 }
