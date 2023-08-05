@@ -1,7 +1,7 @@
 :root {
   --color-scheme-icon-height: 2rem;
   --color-scheme-icon-width: 2rem;
-	--color-scheme-toggle-icon-btn-color: #ffffff10;
+  --color-scheme-toggle-icon-btn-color: #ffffff10;
 }
 
 .color-scheme-toggle {
@@ -30,8 +30,8 @@
   cursor: default;
 }
 .color-scheme-toggle--icon-:hover {
-	background-color: var(--color-scheme-toggle-icon-btn-color);
+  background-color: var(--color-scheme-toggle-icon-btn-color);
 }
 .color-scheme-toggle--icon:hover:not(.disabled) {
-	background-color: var(--color-scheme-toggle-icon-btn-color);
+  background-color: var(--color-scheme-toggle-icon-btn-color);
 }
