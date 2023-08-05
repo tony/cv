@@ -36,7 +36,7 @@
 
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
-  --background-color: #343434;
+  --background-color: #0b1723;
   --font-color: #fff;
   --font-color-inverted: #000;
   --card-hover-bg-color: #0085f230;
@@ -54,8 +54,9 @@ html.dark {
   --card-grid-left-side-link-hover-color: white;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
-  --results-container-bg-color: #4e4e4e;
-  --charts-bg-color: #4e4e4e;
+  --results-container-bg-color: #ffffff0f;
+  /* --charts-bg-color: rgba(104,107,130,.12); */
+  --charts-bg-color: #ffffff0f;
   --chart-row-line-bg-color: #4e4e4e;
   --charts-text-color: white;
   --dropdown-row-tag-color: black;
@@ -379,7 +380,6 @@ p {
   max-height: var(--chart-height);
   align-self: center;
   border-radius: 0.75rem;
-  background-color: var(--chart-row-line-bg-color);
   padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 }
 @media (max-width: 1023px) {

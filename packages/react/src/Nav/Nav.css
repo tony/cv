@@ -16,7 +16,7 @@ html:not(.dark) {
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
   --bg-image-url: url("/logo-dark.svg");
-  --nav-bg-color: #1b1b1b;
+  --nav-bg-color: #0b1723;
 }
 
 .site-info {
