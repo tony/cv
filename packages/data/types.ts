@@ -30,7 +30,7 @@ export interface Category extends IThemeable {
   name: CategoryName;
 }
 
-export interface IActivityCommon {
+export interface ActivityCommon {
   id: string;
   title: string;
   category: CategoryName;
@@ -43,7 +43,7 @@ export interface IActivityCommon {
   endedAt?: string;
 }
 
-export interface IActivityOpenSource extends IActivityCommon {
+export interface ActivityOpenSource extends ActivityCommon {
   category: CategoryName.Patch;
 
   // URLs
@@ -57,19 +57,19 @@ export interface IActivityOpenSource extends IActivityCommon {
   endedAt: string;
 }
 
-export interface IActivitySoftware extends IActivityCommon {
+export interface ActivitySoftware extends ActivityCommon {
   category: CategoryName.SoftwareLib | CategoryName.SoftwareApp;
 }
 
-export interface IActivityWebsite extends IActivityCommon {
+export interface ActivityWebsite extends ActivityCommon {
   category: CategoryName.Website;
 }
 
-export interface IActivityVolunteer extends IActivityCommon {
+export interface ActivityVolunteer extends ActivityCommon {
   category: CategoryName.Volunteer;
 }
 
-export interface IActivityArticle extends IActivityCommon {
+export interface ActivityArticle extends ActivityCommon {
   category: CategoryName.Article;
 
   // Dates
@@ -81,11 +81,11 @@ export interface IActivityArticle extends IActivityCommon {
   };
 }
 
-export interface IActivityPublication extends IActivityCommon {
+export interface ActivityPublication extends ActivityCommon {
   category: CategoryName.Publication;
 }
 
-export interface IActivityWork extends IActivityCommon {
+export interface ActivityWork extends ActivityCommon {
   category: CategoryName.Work;
 
   // Dates
@@ -93,15 +93,15 @@ export interface IActivityWork extends IActivityCommon {
   endedAt?: string;
 }
 
-export type IActivity =
-  | IActivityOpenSource
-  | IActivitySoftware
-  | IActivityWebsite
-  | IActivityArticle
-  | IActivityVolunteer
-  | IActivityPublication
-  | IActivityWork
-  | IActivityCommon;
+export type Activity =
+  | ActivityOpenSource
+  | ActivitySoftware
+  | ActivityWebsite
+  | ActivityArticle
+  | ActivityVolunteer
+  | ActivityPublication
+  | ActivityWork
+  | ActivityCommon;
 
 export type LanguageName = string;
 // export type LanguageName =

@@ -8,8 +8,8 @@ import {
   CategoryVerbPresentTenseMap,
 } from "@tony/cv-data/constants";
 import type {
+  Activity,
   CategoryName,
-  IActivity,
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
@@ -73,7 +73,7 @@ export const CategoryTag: React.FC<
 
 export const CategoryText: React.FC<
   { categoryName: CategoryName } & Pick<
-    IActivity,
+    Activity,
     "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
   > &
     React.HTMLProps<HTMLDivElement>

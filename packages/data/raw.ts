@@ -13,9 +13,9 @@ import {
   OrgTypeColors,
 } from "./constants";
 import {
+  Activity,
   Category,
   CategoryName,
-  IActivity,
   IOrg,
   Language,
   LanguageName,
@@ -38,9 +38,9 @@ export const orgs: IOrg[] = [
   return org;
 });
 
-export const activities: IActivity[] = [
-  ...(handPickedActivitiesJson as IActivity[]),
-  ...(ghActivitiesJson as IActivity[]),
+export const activities: Activity[] = [
+  ...(handPickedActivitiesJson as Activity[]),
+  ...(ghActivitiesJson as Activity[]),
 ];
 
 const ghColorsJsonMissing: {
