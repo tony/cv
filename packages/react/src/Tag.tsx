@@ -3,13 +3,13 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 
 import {
-  ActivityTypeEmojiMap,
-  ActivityTypeVerbMap,
-  ActivityTypeVerbPresentTenseMap,
+  CategoryEmojiMap,
+  CategoryVerbMap,
+  CategoryVerbPresentTenseMap,
 } from "@tony/cv-data/constants";
 import type {
-  ActivityTypeName,
-  IActivity,
+  Activity,
+  CategoryName,
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
@@ -41,77 +41,71 @@ export const LanguageTag: React.FC<
   );
 };
 
-export const ActivityTypeTag: React.FC<
-  { activityTypeName: ActivityTypeName } & React.HTMLProps<HTMLDivElement>
+export const CategoryTag: React.FC<
+  { categoryName: CategoryName } & React.HTMLProps<HTMLDivElement>
 > = observer(
-  ({ activityTypeName, children, className = "", style = {}, ...props }) => {
-    if (!activityTypeName) {
+  ({ categoryName, children, className = "", style = {}, ...props }) => {
+    if (!categoryName) {
       return null;
     }
     const cvState = useMst();
-    const activityType = cvState.activityTypes.find(
-      ({ id }) => id === activityTypeName,
-    );
-    if (!activityType || !activityType.ui) {
+    const category = cvState.categories.find(({ id }) => id === categoryName);
+    if (!category || !category.ui) {
       console.groupCollapsed(
-        `${activityType?.name} missing activity type for ${activityTypeName}`,
+        `${category?.name} missing activity type for ${categoryName}`,
       );
-      console.table(activityType);
+      console.table(category);
       console.groupEnd();
     }
 
     return (
       <div
         className={`tag` + (className ? ` ${className}` : "")}
-        style={{ ...(activityType?.ui ?? {}), ...style }}
+        style={{ ...(category?.ui ?? {}), ...style }}
         {...props}
       >
-        {activityType?.id && <>{ActivityTypeEmojiMap[activityType.id]}</>}
-        {children || activityType?.name || activityTypeName}
+        {category?.id && <>{CategoryEmojiMap[category.id]}</>}
+        {children || category?.name || categoryName}
       </div>
     );
   },
 );
 
-export const ActivityTypeText: React.FC<
-  { activityTypeName: ActivityTypeName } & Pick<
-    IActivity,
+export const CategoryText: React.FC<
+  { categoryName: CategoryName } & Pick<
+    Activity,
     "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
   > &
     React.HTMLProps<HTMLDivElement>
 > = ({
-  activityTypeName,
+  categoryName,
   acceptedAt,
   endedAt,
   startedAt: _startedAt,
   createdAt: _createdAt,
   ...props
 }) => {
-  if (!activityTypeName) {
+  if (!categoryName) {
     return null;
   }
   const cvState = useMst();
-  const activityType = cvState.activityTypes.find(
-    ({ id }) => id === activityTypeName,
-  );
-  if (!activityType || !activityType.ui) {
+  const category = cvState.categories.find(({ id }) => id === categoryName);
+  if (!category || !category.ui) {
     console.groupCollapsed(
-      `${activityType?.name} missing activity type for ${activityTypeName}`,
+      `${category?.name} missing activity type for ${categoryName}`,
     );
-    console.table(activityType);
+    console.table(category);
     console.groupEnd();
   }
 
   const VerbMap =
-    !endedAt && !acceptedAt
-      ? ActivityTypeVerbPresentTenseMap
-      : ActivityTypeVerbMap;
+    !endedAt && !acceptedAt ? CategoryVerbPresentTenseMap : CategoryVerbMap;
 
   return (
     <span {...props}>
-      {activityType?.id && (
+      {category?.id && (
         <>
-          {ActivityTypeEmojiMap[activityType.id]} {VerbMap[activityType.id]}
+          {CategoryEmojiMap[category.id]} {VerbMap[category.id]}
         </>
       )}
     </span>

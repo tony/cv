@@ -4,7 +4,7 @@ interface IThemeable {
   ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
-// export type ActivityTypeName =
+// export type CategoryName =
 //   | "SoftwareApp"
 //   | "SoftwareLib"
 //   | "Patch"
@@ -14,7 +14,7 @@ interface IThemeable {
 //   | "Website"
 //   | "Article";
 
-export enum ActivityTypeName {
+export enum CategoryName {
   SoftwareApp = "SoftwareApp",
   SoftwareLib = "SoftwareLib",
   Patch = "Patch",
@@ -25,15 +25,15 @@ export enum ActivityTypeName {
   Article = "Article",
 }
 
-export interface ActivityType extends IThemeable {
-  id: ActivityTypeName;
-  name: ActivityTypeName;
+export interface Category extends IThemeable {
+  id: CategoryName;
+  name: CategoryName;
 }
 
-export interface IActivityCommon {
+export interface ActivityCommon {
   id: string;
   title: string;
-  activityType: ActivityTypeName;
+  category: CategoryName;
   org: string;
 
   // Dates
@@ -43,8 +43,8 @@ export interface IActivityCommon {
   endedAt?: string;
 }
 
-export interface IActivityOpenSource extends IActivityCommon {
-  activityType: ActivityTypeName.Patch;
+export interface ActivityOpenSource extends ActivityCommon {
+  category: CategoryName.Patch;
 
   // URLs
   qaUrl: string;
@@ -57,20 +57,20 @@ export interface IActivityOpenSource extends IActivityCommon {
   endedAt: string;
 }
 
-export interface IActivitySoftware extends IActivityCommon {
-  activityType: ActivityTypeName.SoftwareLib | ActivityTypeName.SoftwareApp;
+export interface ActivitySoftware extends ActivityCommon {
+  category: CategoryName.SoftwareLib | CategoryName.SoftwareApp;
 }
 
-export interface IActivityWebsite extends IActivityCommon {
-  activityType: ActivityTypeName.Website;
+export interface ActivityWebsite extends ActivityCommon {
+  category: CategoryName.Website;
 }
 
-export interface IActivityVolunteer extends IActivityCommon {
-  activityType: ActivityTypeName.Volunteer;
+export interface ActivityVolunteer extends ActivityCommon {
+  category: CategoryName.Volunteer;
 }
 
-export interface IActivityArticle extends IActivityCommon {
-  activityType: ActivityTypeName.Article;
+export interface ActivityArticle extends ActivityCommon {
+  category: CategoryName.Article;
 
   // Dates
   featured: {
@@ -81,27 +81,27 @@ export interface IActivityArticle extends IActivityCommon {
   };
 }
 
-export interface IActivityPublication extends IActivityCommon {
-  activityType: ActivityTypeName.Publication;
+export interface ActivityPublication extends ActivityCommon {
+  category: CategoryName.Publication;
 }
 
-export interface IActivityWork extends IActivityCommon {
-  activityType: ActivityTypeName.Work;
+export interface ActivityWork extends ActivityCommon {
+  category: CategoryName.Work;
 
   // Dates
   createdAt: string;
   endedAt?: string;
 }
 
-export type IActivity =
-  | IActivityOpenSource
-  | IActivitySoftware
-  | IActivityWebsite
-  | IActivityArticle
-  | IActivityVolunteer
-  | IActivityPublication
-  | IActivityWork
-  | IActivityCommon;
+export type Activity =
+  | ActivityOpenSource
+  | ActivitySoftware
+  | ActivityWebsite
+  | ActivityArticle
+  | ActivityVolunteer
+  | ActivityPublication
+  | ActivityWork
+  | ActivityCommon;
 
 export type LanguageName = string;
 // export type LanguageName =
@@ -191,8 +191,8 @@ export interface OpenSourceOrg extends Org {
   browseCodeUrl?: string;
 }
 
-export type IOrg = CompanyOrg | PublicationOrg | OpenSourceOrg | WebsiteOrg;
+export type Org = CompanyOrg | PublicationOrg | OpenSourceOrg | WebsiteOrg;
 
-export interface IOrgs {
-  [key: string]: IOrg;
+export interface Orgs {
+  [key: string]: Org;
 }

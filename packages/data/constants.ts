@@ -1,8 +1,8 @@
 import chroma from "chroma-js";
 import CSS from "csstype";
 
-interface IActivityTypeNameStringMap {
-  // [key: ActivityTypeName]: string;
+interface CategoryNameStringMap {
+  // [key: CategoryName]: string;
   SoftwareApp: string;
   SoftwareLib: string;
   Patch: string;
@@ -12,7 +12,7 @@ interface IActivityTypeNameStringMap {
   Website: string;
   Article: string;
 }
-export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
+export const CategoryNameMap: CategoryNameStringMap = {
   SoftwareApp: "Published software app",
   SoftwareLib: "Published software component",
   Patch: "Contributed software patch",
@@ -22,7 +22,7 @@ export const ActivityTypeNameMap: IActivityTypeNameStringMap = {
   Website: "Published website",
   Article: "Published article",
 };
-export const ActivityTypeVerbMap: IActivityTypeNameStringMap = {
+export const CategoryVerbMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
   Patch: "Patch accepted",
@@ -32,7 +32,7 @@ export const ActivityTypeVerbMap: IActivityTypeNameStringMap = {
   Website: "Published",
   Article: "Published",
 };
-export const ActivityTypeVerbPresentTenseMap: IActivityTypeNameStringMap = {
+export const CategoryVerbPresentTenseMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
   Patch: "Patch submitted",
@@ -42,7 +42,7 @@ export const ActivityTypeVerbPresentTenseMap: IActivityTypeNameStringMap = {
   Website: "Published",
   Article: "Published",
 };
-export const ActivityTypeEmojiMap: IActivityTypeNameStringMap = {
+export const CategoryEmojiMap: CategoryNameStringMap = {
   SoftwareApp: "📦",
   SoftwareLib: "⚙️",
   Patch: "🔨",
@@ -53,7 +53,7 @@ export const ActivityTypeEmojiMap: IActivityTypeNameStringMap = {
   Article: "📃",
 };
 
-export const ActivityTypeSVGIconMap: IActivityTypeNameStringMap = {
+export const CategorySVGIconMap: CategoryNameStringMap = {
   SoftwareApp: "package",
   SoftwareLib: "settings",
   Patch: "file-diff",
@@ -236,8 +236,8 @@ export const OrgTypeColors: {
   },
 };
 
-export const ActivityTypeColors: {
-  // [key: ActivityTypeName]: string;
+export const CategoryColors: {
+  // [key: CategoryName]: string;
   SoftwareApp: CSS.Properties;
   SoftwareLib: CSS.Properties;
   Patch: CSS.Properties;

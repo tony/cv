@@ -7,29 +7,29 @@ import ghActivitiesJson from "@tony/cv-data/scraped/gh_activities.json";
 import ghOrgsJson from "@tony/cv-data/scraped/gh_orgs.json";
 
 import {
-  ActivityTypeColors,
-  ActivityTypeNameMap,
+  CategoryColors,
+  CategoryNameMap,
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
 } from "./constants";
 import {
-  ActivityType,
-  ActivityTypeName,
-  IActivity,
-  IOrg,
+  Activity,
+  Category,
+  CategoryName,
   Language,
   LanguageName,
+  Org,
   OrgType,
   OrgTypeName,
 } from "./types";
 
-export const orgs: IOrg[] = [
+export const orgs: Org[] = [
   // Make Object Key the ID
   ...Object.entries(handPickedOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
+    ([key, org]) => ({ ...org, id: key as unknown }) as Org,
   ),
   ...Object.entries(ghOrgsJson).map(
-    ([key, org]) => ({ ...org, id: key as unknown }) as IOrg,
+    ([key, org]) => ({ ...org, id: key as unknown }) as Org,
   ),
 ].map((org) => {
   if (!org.languages.length) {
@@ -38,9 +38,9 @@ export const orgs: IOrg[] = [
   return org;
 });
 
-export const activities: IActivity[] = [
-  ...(handPickedActivitiesJson as IActivity[]),
-  ...(ghActivitiesJson as IActivity[]),
+export const activities: Activity[] = [
+  ...(handPickedActivitiesJson as Activity[]),
+  ...(ghActivitiesJson as Activity[]),
 ];
 
 const ghColorsJsonMissing: {
@@ -129,13 +129,13 @@ export const orgTypes: OrgType[] = Array.from(
     }) as OrgType,
 );
 
-export const activityTypes: ActivityType[] = Array.from(
-  new Set(activities.map((a) => a.activityType).filter(Boolean)),
+export const categories: Category[] = Array.from(
+  new Set(activities.map((a) => a.category).filter(Boolean)),
 ).map(
-  (activityTypeName: ActivityTypeName) =>
+  (categoryName: CategoryName) =>
     ({
-      id: activityTypeName,
-      name: ActivityTypeNameMap[activityTypeName] ?? activityTypeName,
-      ui: ActivityTypeColors[activityTypeName],
-    }) as ActivityType,
+      id: categoryName,
+      name: CategoryNameMap[categoryName] ?? categoryName,
+      ui: CategoryColors[categoryName],
+    }) as Category,
 );

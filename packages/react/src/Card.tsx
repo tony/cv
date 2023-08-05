@@ -5,28 +5,28 @@ import { format, formatDistance } from "date-fns";
 import { Instance } from "mobx-state-tree";
 
 import {
-  ActivityTypeName,
+  CategoryName,
   OrgTypeName,
+  type ActivityOpenSource,
+  type ActivityPublication,
+  type ActivityWork,
   type CompanyOrg,
-  type IActivityOpenSource,
-  type IActivityPublication,
-  type IActivityWork,
   type OpenSourceOrg,
   type PublicationOrg,
 } from "@tony/cv-data/types";
 import { Activity, Org } from "@tony/cv-lib/search/mobx";
 
-import { ActivityTypeText, LanguageTag } from "./Tag";
+import { CategoryText, LanguageTag } from "./Tag";
 
 import "@tony/cv-ui/styles/style.css";
 
-interface IActivityCardProps {
+interface ActivityCardProps {
   activity: Instance<typeof Activity>;
   org: Instance<typeof Org>;
 }
 
 export const PatchInfo: React.FC<{
-  activity: IActivityOpenSource;
+  activity: ActivityOpenSource;
   org: Instance<typeof Org>;
 }> = ({ activity }) => {
   const items = [];
@@ -74,7 +74,7 @@ export const PatchInfo: React.FC<{
 };
 
 export const PublicationInfo: React.FC<{
-  activity: IActivityPublication;
+  activity: ActivityPublication;
   org: PublicationOrg;
 }> = ({ org }) => {
   const items = [];
@@ -150,7 +150,7 @@ export const PublicationInfo: React.FC<{
 };
 
 export const CompanyInfo: React.FC<{
-  activity: IActivityWork;
+  activity: ActivityWork;
   org: CompanyOrg;
 }> = ({ org }) => {
   const items = [];
@@ -186,21 +186,21 @@ export const ActivityInfo: React.FC<
 > = ({ activity, org }) => {
   return (
     <>
-      {ActivityTypeName.Patch == activity.activityType && (
+      {CategoryName.Patch == activity.category && (
         <PatchInfo
-          activity={activity as IActivityOpenSource}
+          activity={activity as ActivityOpenSource}
           org={org as OpenSourceOrg}
         />
       )}
-      {ActivityTypeName.Publication == activity.activityType && (
+      {CategoryName.Publication == activity.category && (
         <PublicationInfo
-          activity={activity as IActivityPublication}
+          activity={activity as ActivityPublication}
           org={org as PublicationOrg}
         />
       )}
-      {ActivityTypeName.Work == activity.activityType && (
+      {CategoryName.Work == activity.category && (
         <CompanyInfo
-          activity={activity as IActivityWork}
+          activity={activity as ActivityWork}
           org={org as CompanyOrg}
         />
       )}
@@ -220,7 +220,7 @@ const DateText: React.FC<
   </>
 );
 
-export const ActivityCard: React.FC<IActivityCardProps> = ({
+export const ActivityCard: React.FC<ActivityCardProps> = ({
   activity,
   org,
 }) => (
@@ -243,8 +243,8 @@ export const ActivityCard: React.FC<IActivityCardProps> = ({
         </span>
         <span style={{ padding: "0 0.5rem" }}>·</span>
         <span className="card-activity-type-and-date">
-          <ActivityTypeText
-            activityTypeName={activity.activityType}
+          <CategoryText
+            categoryName={activity.category}
             createdAt={activity.createdAt}
             acceptedAt={activity.acceptedAt}
             startedAt={activity.startedAt}
