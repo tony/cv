@@ -231,15 +231,15 @@ export const FilterDropdowns: React.FC = () => {
           cvState.setOrgs((value as IOptionType[]).map(({ value: v }) => v));
         }}
         className="react-select"
-        placeholder="Topic"
+        placeholder="Organization and projects"
         styles={orgStyles}
         components={{ Option: OrgOption, MultiValue: MultiValueCount }}
         hideSelectedOptions={false}
         closeMenuOnSelect={false}
         blurInputOnSelect={false}
         maxItemsSelectCount={1}
-        objectLabelSingular="topic"
-        objectLabelPlural="topics"
+        objectLabelSingular="org / project"
+        objectLabelPlural="orgs / projects"
       />
     </div>
   );
