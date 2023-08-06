@@ -339,26 +339,15 @@ p {
 #charts.carbon g text {
   fill: var(--charts-text-color) !important;
 }
+.dark #charts.carbon .cds--chart-holder {
+  --cds-grid-bg: var(--background-color);
+}
+
+.dark #charts.carbon .cds--chart-holder .y.grid .tick,
+.dark #charts.carbon .cds--chart-holder .x.grid .tick {
+  opacity: 0.4;
+}
 /** Carbon end **/
-
-/** Plotly start **/
-#charts.plotly div.svg-container g text {
-  fill: var(--charts-text-color) !important;
-}
-#charts.plotly div.svg-container > svg.main-svg {
-  background: initial !important;
-}
-/** Plotly end **/
-
-/** Nivo start **/
-#charts.nivo div {
-  /* Tooltips */
-  color: black;
-}
-#charts.nivo svg g text {
-  fill: var(--charts-text-color) !important;
-}
-/** Nivo end **/
 
 /** Billboard start **/
 #charts.billboard .bb-tooltip-container {
@@ -372,6 +361,31 @@ p {
   stroke: var(--charts-text-color);
 }
 /** Billboard end **/
+
+/** Plotly start **/
+#charts.plotly div.svg-container g text {
+  fill: var(--charts-text-color) !important;
+}
+#charts.plotly div.svg-container > svg.main-svg {
+  background: initial !important;
+}
+/** Plotly end **/
+
+/** Victory start **/
+.dark #charts.victory g line {
+  opacity: 0.4;
+}
+/** Victory end **/
+
+/** Nivo start **/
+#charts.nivo div {
+  /* Tooltips */
+  color: black;
+}
+#charts.nivo svg g text {
+  fill: var(--charts-text-color) !important;
+}
+/** Nivo end **/
 
 @media (max-width: 1023px) {
   #charts {
