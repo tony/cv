@@ -2,43 +2,17 @@ import React from "react";
 
 import "./ColorScheme.css";
 
-const toggleHtmlClassNames = ({
-  add,
-  remove,
-}: {
-  add: "dark" | "light";
-  remove: "dark" | "light";
-}) => {
-  const htmlTag = document.querySelector("html");
-  if (htmlTag?.classList.contains(remove)) {
-    htmlTag?.classList.remove(remove);
-  }
-  if (!htmlTag?.classList.contains(add)) {
-    htmlTag?.classList.add(add);
-  }
-};
-enum ColorScheme {
-  DARK = "DARK",
-  LIGHT = "LIGHT",
-}
+import {
+  ColorScheme,
+  getColorScheme,
+  getSystemColorScheme,
+  hasCustomColorScheme,
+  toggleHtmlClassNames,
+} from "../colorScheme";
 
 export const ColorSchemeToggle: React.FC = () => {
   const darkModeIcon = "🌙";
   const lightModeIcon = "☀️";
-  const getCustomColorScheme = () => {
-    return window.localStorage.getItem("color-scheme") as
-      | ColorScheme
-      | undefined;
-  };
-  const hasCustomColorScheme = (): boolean => Boolean(getCustomColorScheme());
-  const getSystemColorScheme = () => {
-    return window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-      ? ColorScheme.DARK
-      : ColorScheme.LIGHT;
-  };
-  const getColorScheme = () => {
-    return getCustomColorScheme() || getSystemColorScheme();
-  };
   const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
     getColorScheme(),
   );
