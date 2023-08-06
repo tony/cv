@@ -343,10 +343,9 @@ p {
 #charts.carbon g text {
   fill: var(--charts-text-color) !important;
 }
-.dark #charts.carbon .cds--chart-holder {
+#charts.carbon .cds--chart-holder {
   --cds-grid-bg: var(--background-color);
 }
-
 .dark #charts.carbon .cds--chart-holder .y.grid .tick,
 .dark #charts.carbon .cds--chart-holder .x.grid .tick {
   opacity: 0.4;
@@ -358,11 +357,13 @@ p {
   color: black;
 }
 .dark #charts.billboard .chartRow--line .bb-event-rects .bb-event-rect {
-  fill: var(--charts-background-color);
-  fill-opacity: 1;
+  fill: var(--background-color);
 }
 #charts.billboard .chartRow--line svg g text {
   fill: var(--charts-text-color);
+}
+#charts.billboard .chartRow--line svg g line.bb-ygrid {
+  stroke: var(--chart-row-line-line-color);
 }
 #charts.billboard .chartRow--line svg path,
 #charts.billboard .chartRow--line svg line {
@@ -378,7 +379,7 @@ p {
   background: initial !important;
 }
 #charts.plotly .chartRow--line .bglayer rect.bg {
-  fill: var(--charts-background-color) !important;
+  fill: var(--background-color) !important;
 }
 #charts.plotly .chartRow--line g.plot g.points path.point,
 #charts.plotly .chartRow--line g.plot g.lines path.js-line {

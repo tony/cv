@@ -80,11 +80,19 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
         },
       },
     },
+    grid: {
+      y: {
+        show: true,
+      },
+    },
     legend: {
       show: false,
     },
     size: {
       height: lineChartHeight,
+    },
+    background: {
+      color: "var(--background-color)",
     },
   } as bb.ChartOptions;
 };
