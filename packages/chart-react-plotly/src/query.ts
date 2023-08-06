@@ -64,28 +64,24 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
 
 export const stateToLine = (state: Instance<typeof CVState>) => {
   const activityYearMap = state.activityYearMap;
+  const totalActivities = state.filteredActivities.length;
   return {
     type: "scatter",
     x: Object.keys(activityYearMap),
     y: Object.values(activityYearMap),
-    mode: "lines+markers",
+    hovertext: Object.entries(activityYearMap).map(
+      ([year, count]) => `${year} (${count})`,
+    ),
+    hoverinfo: "text",
+    mode: "lines+markers+text",
     marker: { color: "#3572a5" },
-    // hoverinfo: "text",
-    // hovertext: Object.entries(languageMap).map(
-    //   ([languageName, value]) => {
-    //     return `${languageName}: ${value} (${(
-    //       (value / total) *
-    //       100
-    //     ).toFixed(2)}%)`;
-    //   }
-    // ),
-    // text: Object.entries(languageMap).map(([languageName, value]) => {
-    //   if ((value / total) * 100 > 4) {
-    //     return `${languageName}: ${value}`;
-    //   }
-    //   return "";
-    // }),
-    // textinfo: "text",
+    text: Object.entries(activityYearMap).map(([languageName, value]) => {
+      if ((value / totalActivities) * 100 > 4) {
+        return `${languageName}: ${value}`;
+      }
+      return "";
+    }),
+    textposition: "middle center",
     automargin: true,
   } as PlotlyData;
 };

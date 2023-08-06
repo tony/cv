@@ -92,6 +92,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     return (
       <Chart
         data={[chartData]}
+        config={{ displayModeBar: false }}
         layout={{
           margin: { t: 0, b: 0, l: 0, r: 0 },
           showlegend: false,
@@ -139,9 +140,15 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     return (
       <Chart
         data={[chartData]}
-        config={{ responsive: true }}
+        config={{ responsive: true, displayModeBar: false }}
         layout={{
-          margin: { t: 0, b: 0, l: 0, r: 0 },
+          margin: { t: 0, b: 15, l: 20, r: 0 },
+          xaxis: {
+            fixedrange: true,
+          },
+          yaxis: {
+            fixedrange: true,
+          },
           showlegend: false,
         }}
         style={{ width: "100%", maxHeight: lineChartHeightWithUnit }}
