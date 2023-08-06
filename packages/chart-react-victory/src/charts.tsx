@@ -60,7 +60,13 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
         {...props}
         height={donutChartHeight}
         width={donutChartWidth}
-        padding={0}
+        padding={{ top: 18, bottom: 18, left: 18, right: 18 }}
+        labelPlacement="perpendicular"
+        labelRadius={110}
+        animate={{
+          duration: 450,
+          onLoad: { duration: 0 },
+        }}
       />
     );
   },

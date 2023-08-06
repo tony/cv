@@ -38,8 +38,8 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
       };
     }),
     colorScale: colorScale,
-    // The typing inside this break almost every time we customize something
-    labels: () => "",
+    labels: ({ datum }) =>
+      datum.endAngle - datum.startAngle > 25 ? datum.xName : "",
   } as DonutChartProps;
 };
 
