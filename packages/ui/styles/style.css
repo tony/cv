@@ -357,6 +357,10 @@ p {
 #charts.billboard .bb-tooltip-container {
   color: black;
 }
+.dark #charts.billboard .chartRow--line .bb-event-rects .bb-event-rect {
+  fill: var(--charts-background-color);
+  fill-opacity: 1;
+}
 #charts.billboard .chartRow--line svg g text {
   fill: var(--charts-text-color);
 }
