@@ -54,6 +54,19 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
   },
 );
 
+const AreaLayer: React.FC<{ innerWidth: number; innerHeight: number }> = ({
+  innerWidth,
+  innerHeight,
+}) => {
+  return (
+    <path
+      d={`M${innerWidth} 0 L${innerWidth} ${innerHeight} L0 ${innerHeight} L0 0 Z`}
+      fill="var(--charts-background-color)"
+      fillOpacity={1}
+    />
+  );
+};
+
 export const ActivityLineChart: React.FC<
   Partial<React.ComponentProps<typeof ResponsiveLine>>
 > = observer((props) => {
@@ -88,5 +101,21 @@ export const ActivityLineChart: React.FC<
     return null;
   }
 
-  return <ResponsiveLine {...chartData} {...props} />;
+  return (
+    <ResponsiveLine
+      {...chartData}
+      {...props}
+      layers={[
+        AreaLayer,
+        "grid",
+        "markers",
+        "areas",
+        "lines",
+        "slices",
+        "axes",
+        "points",
+        "legends",
+      ]}
+    />
+  );
 });

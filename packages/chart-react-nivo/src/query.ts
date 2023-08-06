@@ -138,5 +138,13 @@ export const stateToLine = (
       top: 20,
       bottom: 20,
     },
+    theme: {
+      grid: {
+        line: {
+          stroke: "var(--chart-row-line-line-color)",
+          strokeWidth: 1,
+        },
+      },
+    },
   } as LineChartProps;
 };
