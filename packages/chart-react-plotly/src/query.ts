@@ -75,12 +75,6 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     hoverinfo: "text",
     mode: "lines+markers+text",
     marker: { color: "#3572a5" },
-    text: Object.entries(activityYearMap).map(([languageName, value]) => {
-      if ((value / totalActivities) * 100 > 4) {
-        return `${languageName}: ${value}`;
-      }
-      return "";
-    }),
     textposition: "middle center",
     automargin: true,
   } as PlotlyData;
