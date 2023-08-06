@@ -149,6 +149,9 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
           yaxis: {
             fixedrange: true,
           },
+          // Overridden via !important selector for css variable
+          // Plotly does not support css variables yet plotly.js#4915
+          paper_bgcolor: "rgba(255, 255, 255, .2)",
           showlegend: false,
         }}
         style={{ width: "100%", maxHeight: lineChartHeightWithUnit }}

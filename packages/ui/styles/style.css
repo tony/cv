@@ -373,6 +373,18 @@ p {
 #charts.plotly div.svg-container > svg.main-svg {
   background: initial !important;
 }
+#charts.plotly .chartRow--line .bglayer rect.bg {
+  fill: var(--charts-background-color) !important;
+}
+#charts.plotly .chartRow--line g.plot g.points path.point,
+#charts.plotly .chartRow--line g.plot g.lines path.js-line {
+  stroke: var(--chart-row-line-line-color) !important;
+}
+#charts.plotly .chartRow--line g.gridlayer g.x path.xgrid,
+#charts.plotly .chartRow--line g.gridlayer g.y path.ygrid {
+  stroke: var(--chart-row-line-legend-tick-color) !important;
+}
+
 /** Plotly end **/
 
 /** Victory start **/

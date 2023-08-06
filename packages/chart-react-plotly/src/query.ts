@@ -74,7 +74,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     ),
     hoverinfo: "text",
     mode: "lines+markers+text",
-    marker: { color: "#3572a5" },
+    marker: { color: "#666" },
     textposition: "middle center",
     automargin: true,
   } as PlotlyData;
