@@ -375,6 +375,7 @@ p {
 .dark #charts.victory g line {
   opacity: 0.4;
 }
+.dark #charts.victory .chartRow--donut text tspan,
 .dark #charts.victory .chartRow--line text tspan {
   fill: var(--charts-text-color) !important;
 }
