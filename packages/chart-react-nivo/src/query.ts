@@ -145,6 +145,26 @@ export const stateToLine = (
           strokeWidth: 1,
         },
       },
+      axis: {
+        ticks: {
+          line: {
+            stroke: "var(--chart-row-line-legend-tick-color)",
+            strokeWidth: 1,
+          },
+        },
+        domain: {
+          line: {
+            stroke: "var(--chart-row-line-legend-tick-color)",
+            strokeWidth: 1,
+          },
+        },
+        legend: {
+          line: {
+            stroke: "var(--chart-row-line-legend-tick-color)",
+            strokeWidth: 1,
+          },
+        },
+      },
     },
   } as LineChartProps;
 };

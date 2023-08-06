@@ -30,6 +30,7 @@
   --charts-text-color: black;
   --chart-row-line-background-color: white;
   --chart-row-line-line-color: #dddddd;
+  --chart-row-line-legend-tick-color: #999;
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
   --activity-text-color: gray;
@@ -62,6 +63,7 @@ html.dark {
   --charts-background-color: #ffffff0f;
   --chart-row-line-background-color: #4e4e4e;
   --chart-row-line-line-color: #ffffff1a;
+  --chart-row-line-legend-tick-color: #ffffff69;
   --charts-text-color: white;
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
