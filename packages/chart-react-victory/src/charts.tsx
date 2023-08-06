@@ -54,17 +54,14 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     }
 
     return (
-      <>
-        {/* @ts-ignore */}
-        <VictoryPie
-          ref={languageChartRef}
-          {...chartData}
-          {...props}
-          height={donutChartHeight}
-          width={donutChartWidth}
-          padding={0}
-        />
-      </>
+      <VictoryPie
+        ref={languageChartRef}
+        {...chartData}
+        {...props}
+        height={donutChartHeight}
+        width={donutChartWidth}
+        padding={0}
+      />
     );
   },
 );
@@ -126,14 +123,17 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     return (
       <VictoryChart
         theme={VictoryTheme.material}
-        domainPadding={{ x: 5 }}
-        padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+        domainPadding={{ x: 20 }}
+        padding={{ top: 15, bottom: 30, right: 0, left: 20 }}
         width={width + 170}
       >
-        {/* @ts-ignore */}
         <VictoryLine
           ref={chartRef}
           padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+          animate={{
+            duration: 450,
+            onLoad: { duration: 0 },
+          }}
           {...chartData}
           {...props}
         />

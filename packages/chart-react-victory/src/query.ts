@@ -48,7 +48,15 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
 
   return {
     style: {
-      data: { stroke: "#c43a31" },
+      data: {
+        stroke: () => {
+          return (
+            // todo: Add dominantColor to mobx and use it
+            Object.values(state.backgroundColors)[0] ??
+            "var(--chart-row-line-background-color)"
+          );
+        },
+      },
       parent: { border: "1px solid #ccc" },
     },
     data: Object.entries(activityYearMap).map(([year, count]) => {
