@@ -70,7 +70,8 @@ nav#top-nav .site-info--logo {
 nav#top-nav .site-info--logo--img {
   height: var(--top-nav-height);
   width: var(--top-nav-logo-size);
-  background: var(--bg-image-url) var(--top-nav-icon-separation) center no-repeat;
+  background: var(--bg-image-url) var(--top-nav-icon-separation) center
+    no-repeat;
 }
 
 nav#top-nav .site-info--logo .header--version {
