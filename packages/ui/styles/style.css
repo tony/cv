@@ -38,6 +38,8 @@
   --line-chart-grid-tick: #999;
   --react-select-tag-color: black;
   --react-select-tag-hover-color: white;
+  --react-select-item-hover-background: #a9c2d6;
+  --react-select-item-selected-background: #0854a0;
 }
 
 /* @media (prefers-color-scheme: dark) { */

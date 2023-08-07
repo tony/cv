@@ -40,7 +40,11 @@ export const orgStyles: StylesConfig<StyleOption, true> = {
       wordWrap: "break-word",
       wordBreak: "break-all",
       alignItems: "center",
+      "&:hover": {
+        backgroundColor: "var(--react-select-item-hover-background)",
+      },
       "&.selected": {
+        backgroundColor: "var(--react-select-item-selected-background)",
         fontWeight: "bold",
       },
     };
