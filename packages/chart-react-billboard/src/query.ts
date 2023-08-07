@@ -1,4 +1,4 @@
-import bb, { donut, line } from "billboard.js";
+import bb, { areaSpline, donut } from "billboard.js";
 import type { Instance } from "mobx-state-tree";
 
 import type { CVState } from "@tony/cv-lib/search/mobx";
@@ -70,7 +70,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
         ["x", ...Object.keys(activityYearMap).map((year) => `${year}-01-01`)],
         ["activityYearMap", ...Object.values(activityYearMap)],
       ],
-      type: line(),
+      type: areaSpline(),
     },
     axis: {
       x: {
@@ -92,7 +92,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
       height: lineChartHeight,
     },
     background: {
-      color: "var(--background-color)",
+      color: "var(--chart-background-color)",
     },
   } as bb.ChartOptions;
 };

@@ -375,9 +375,11 @@ p {
 #charts.billboard .chartRow--line svg g line.bb-ygrid {
   stroke: var(--chart-row-line-line-color);
 }
-#charts.billboard .chartRow--line svg path,
-#charts.billboard .chartRow--line svg line {
-  stroke: var(--charts-text-color);
+#charts.billboard .chartRow--line svg .bb-areas-activityYearMap path {
+  fill: var(--line-chart-fill-color) !important;
+}
+#charts.billboard .chartRow--line svg .bb-shapes-activityYearMap path.bb-line {
+  stroke: var(--line-chart-fill-color) !important;
 }
 /** Billboard end **/
 
