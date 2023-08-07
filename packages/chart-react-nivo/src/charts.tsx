@@ -61,7 +61,7 @@ const AreaLayer: React.FC<{ innerWidth: number; innerHeight: number }> = ({
   return (
     <path
       d={`M${innerWidth} 0 L${innerWidth} ${innerHeight} L0 ${innerHeight} L0 0 Z`}
-      fill="var(--charts-background-color)"
+      fill="var(--chart-background-color)"
       fillOpacity={1}
     />
   );

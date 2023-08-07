@@ -56,7 +56,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
             "var(--chart-row-line-background-color)"
           );
         },
-        fill: "var(--charts-background-color)",
+        fill: "var(--line-chart-fill-color)",
       },
     },
     data: Object.entries(activityYearMap).map(([year, count]) => {

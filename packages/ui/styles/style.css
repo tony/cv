@@ -26,8 +26,10 @@
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
   --toggle-label-color: #6b778c;
   --results-container-background-color: white;
-  --charts-background-color: white;
+  --chart-container-background: white;
   --charts-text-color: black;
+  --chart-background-color: var(--background-color, #ffffff0f);
+  --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --chart-row-line-background-color: white;
   --chart-row-line-line-color: #dddddd;
   --chart-row-line-legend-tick-color: #999;
@@ -59,8 +61,8 @@ html.dark {
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
   --results-container-background-color: #ffffff0f;
-  /* --charts-background-color: rgba(104,107,130,.12); */
-  --charts-background-color: #ffffff0f;
+  /* --chart-container-background: rgba(104,107,130,.12); */
+  --chart-container-background: #ffffff0f;
   --chart-row-line-background-color: #4e4e4e;
   --chart-row-line-line-color: #ffffff1a;
   --chart-row-line-legend-tick-color: #ffffff69;
@@ -323,16 +325,12 @@ p {
 #chart-links a:hover {
   color: var(--chart-link-color-hover);
 }
-#charts-container {
-  width: 100vw;
-  margin: 0 auto;
-}
 #charts {
   margin: 0.5rem auto;
   max-width: 40%;
   min-width: 900px;
   width: calc(100% - 1rem);
-  background-color: var(--charts-background-color);
+  background-color: var(--chart-container-background);
   border-radius: 0.75rem;
   padding: 0.1rem 0;
   display: flex;
@@ -345,6 +343,18 @@ p {
 }
 #charts.carbon .cds--chart-holder {
   --cds-grid-bg: var(--background-color);
+}
+#charts.carbon .cds--chart-holder .cds--cc--area-stacked path.area {
+  fill: var(
+    --cv-dominant-language-background,
+    var(--cds-kAcharts-1-1-1, #6929c4)
+  );
+}
+#charts.carbon .cds--chart-holder .cds--cc--line path.line {
+  stroke: var(
+    --cv-dominant-language-background,
+    var(--cds-charts-1-1-1, #6929c4)
+  );
 }
 .dark #charts.carbon .cds--chart-holder .y.grid .tick,
 .dark #charts.carbon .cds--chart-holder .x.grid .tick {
