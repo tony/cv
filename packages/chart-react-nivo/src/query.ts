@@ -138,26 +138,26 @@ export const stateToLine = (
     theme: {
       grid: {
         line: {
-          stroke: "var(--chart-row-line-line-color)",
+          stroke: "var(--line-chart-grid-stroke)",
           strokeWidth: 1,
         },
       },
       axis: {
         ticks: {
           line: {
-            stroke: "var(--chart-row-line-legend-tick-color)",
+            stroke: "var(--line-chart-grid-tick)",
             strokeWidth: 1,
           },
         },
         domain: {
           line: {
-            stroke: "var(--chart-row-line-legend-tick-color)",
+            stroke: "var(--line-chart-grid-tick)",
             strokeWidth: 1,
           },
         },
         legend: {
           line: {
-            stroke: "var(--chart-row-line-legend-tick-color)",
+            stroke: "var(--line-chart-grid-tick)",
             strokeWidth: 1,
           },
         },

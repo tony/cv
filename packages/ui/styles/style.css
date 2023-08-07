@@ -15,6 +15,7 @@
   --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
   --tag-small-background-color: pink;
+  --results-container-background-color: white;
   --results-info-text-color: #70757a;
   --mobile-buttons-background-color: #f1f1f1;
   --mobile-buttons-toggle-text-color: #000;
@@ -25,14 +26,12 @@
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
   --toggle-label-color: #6b778c;
-  --results-container-background-color: white;
   --chart-container-background: white;
-  --charts-text-color: black;
+  --chart-label-color: black;
   --chart-background-color: var(--background-color, #ffffff0f);
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
-  --chart-row-line-background-color: white;
-  --chart-row-line-line-color: #dddddd;
-  --chart-row-line-legend-tick-color: #999;
+  --line-chart-grid-stroke: #dddddd;
+  --line-chart-grid-tick: #999;
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
   --activity-text-color: gray;
@@ -50,6 +49,7 @@ html.dark {
   --link-color: #343434;
   --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
+  --results-container-background-color: #ffffff0f;
   --results-info-text-color: #fff;
   --mobile-buttons-background-color: var(--results-container-background-color);
   --mobile-buttons-toggle-text-color: #fff;
@@ -60,13 +60,10 @@ html.dark {
   --card-grid-left-side-link-hover-color: white;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
-  --results-container-background-color: #ffffff0f;
-  /* --chart-container-background: rgba(104,107,130,.12); */
   --chart-container-background: #ffffff0f;
-  --chart-row-line-background-color: #4e4e4e;
-  --chart-row-line-line-color: #ffffff1a;
-  --chart-row-line-legend-tick-color: #ffffff69;
-  --charts-text-color: white;
+  --chart-label-color: white;
+  --line-chart-grid-stroke: #ffffff1a;
+  --line-chart-grid-tick: #ffffff69;
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
   --activity-text-color: #ffffff90;
@@ -334,12 +331,12 @@ p {
   border-radius: 0.75rem;
   padding: 0.1rem 0;
   display: flex;
-  color: var(--charts-text-color);
+  color: var(--chart-label-color);
 }
 
 /** Carbon start **/
 #charts.carbon g text {
-  fill: var(--charts-text-color) !important;
+  fill: var(--chart-label-color) !important;
 }
 #charts.carbon .cds--chart-holder {
   --cds-grid-bg: var(--background-color);
@@ -370,10 +367,10 @@ p {
   fill: var(--background-color);
 }
 #charts.billboard .chartRow--line svg g text {
-  fill: var(--charts-text-color);
+  fill: var(--chart-label-color);
 }
 #charts.billboard .chartRow--line svg g line.bb-ygrid {
-  stroke: var(--chart-row-line-line-color);
+  stroke: var(--line-chart-grid-stroke);
 }
 #charts.billboard .chartRow--line svg .bb-areas-activityYearMap path {
   fill: var(--line-chart-fill-color) !important;
@@ -385,7 +382,7 @@ p {
 
 /** Plotly start **/
 #charts.plotly div.svg-container g text {
-  fill: var(--charts-text-color) !important;
+  fill: var(--chart-label-color) !important;
 }
 #charts.plotly div.svg-container > svg.main-svg {
   background: initial !important;
@@ -396,7 +393,7 @@ p {
 #charts.plotly .chartRow--line g.plot g.points path.point,
 #charts.plotly .chartRow--line g.plot g.lines path.js-line {
   stroke: var(--line-chart-fill-color) !important;
-  /* stroke: var(--chart-row-line-line-color) !important; */
+  /* stroke: var(--line-chart-grid-stroke) !important; */
 }
 #charts.plotly .chartRow--line g.plot g.fills path.js-fill,
 #charts.plotly .chartRow--line g.plot g.points path.point {
@@ -404,7 +401,7 @@ p {
 }
 #charts.plotly .chartRow--line g.gridlayer g.x path.xgrid,
 #charts.plotly .chartRow--line g.gridlayer g.y path.ygrid {
-  stroke: var(--chart-row-line-legend-tick-color) !important;
+  stroke: var(--line-chart-grid-tick) !important;
 }
 
 /** Plotly end **/
@@ -415,7 +412,7 @@ p {
 }
 .dark #charts.victory .chartRow--donut text tspan,
 .dark #charts.victory .chartRow--line text tspan {
-  fill: var(--charts-text-color) !important;
+  fill: var(--chart-label-color) !important;
 }
 /** Victory end **/
 
@@ -425,7 +422,7 @@ p {
   color: black;
 }
 #charts.nivo svg g text {
-  fill: var(--charts-text-color) !important;
+  fill: var(--chart-label-color) !important;
 }
 /** Nivo end **/
 
