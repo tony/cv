@@ -100,8 +100,9 @@ export const stateToLine = (
         }),
       },
     ],
-    colors: "rgb(53, 114, 165)",
-    pointColor: "rgb(37, 80, 115)",
+    colors: "var(--line-chart-fill-color, rgb(53, 114, 165))",
+    pointColor: "var(--line-chart-fill-color, rgb(37, 80, 115))",
+    pointBorderColor: "var(--line-chart-fill-color, rgb(37, 80, 115))",
     xScale: {
       type: "time",
       format: "%Y-%m-%d",
@@ -125,10 +126,6 @@ export const stateToLine = (
     enablePointLabel: true,
     pointSize: 16,
     pointBorderWidth: 1,
-    pointBorderColor: {
-      from: "color",
-      modifiers: [["darker", 0.3]],
-    },
     useMesh: true,
     enableSlices: false,
     height: lineChartHeight,
