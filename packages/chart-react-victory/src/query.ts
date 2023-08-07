@@ -52,8 +52,9 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
         stroke: () => {
           return (
             // todo: Add dominantColor to mobx and use it
-            Object.values(state.backgroundColors)[0] ??
-            "var(--chart-row-line-background-color)"
+            `var(--chart-background-color, ${
+              Object.values(state.backgroundColors)[0] ?? "black"
+            })`
           );
         },
         fill: "var(--line-chart-fill-color)",

@@ -132,6 +132,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         domainPadding={{ x: 20 }}
         padding={{ top: 15, bottom: 30, right: 0, left: 20 }}
         width={width + 170}
+        style={{ background: { fill: "var(--chart-background-color)" } }}
       >
         <VictoryLine
           ref={chartRef}
