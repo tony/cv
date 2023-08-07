@@ -33,7 +33,10 @@
   --chart-link-color-hover: #999;
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-tooltip-text: var(--cv-dominant-language-color, #ffffff0f);
-  --line-chart-tooltip-background: var(--cv-dominant-language-background, #ffffff0f);
+  --line-chart-tooltip-background: var(
+    --cv-dominant-language-background,
+    #ffffff0f
+  );
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
   --react-select-tag-color: black;
