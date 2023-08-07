@@ -8,20 +8,22 @@
   --background-color: #f3f3f4;
   --text-color: #000;
   --text-color-inverted: #fff;
-  --card-border-color: rgba(16, 22, 26, 0.25);
-  --card-hover-background-color: #fafafa;
-  --activity-link-color: #5b616b;
+  --container-width: 900px;
   --link-color: #1c1c1c;
   --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
   --tag-small-background-color: pink;
   --results-container-background-color: white;
   --results-info-text-color: #70757a;
+  --activity-text-color: gray;
+  --activity-link-color: #5b616b;
+  --card-border-color: rgba(16, 22, 26, 0.25);
+  --card-hover-background-color: #fafafa;
+  --card-grid-left-side-link-color: #5f6368;
+  --card-grid-left-side-link-hover-color: #000;
   --mobile-buttons-background-color: #f1f1f1;
   --mobile-buttons-toggle-text-color: #000;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
-  --card-grid-left-side-link-color: #5f6368;
-  --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
   --toggle-label-color: #6b778c;
   --chart-container-background: white;
@@ -32,10 +34,8 @@
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
-  --dropdown-text-color: black;
-  --dropdown-hover-background: white;
-  --activity-text-color: gray;
-  --container-width: 900px;
+  --react-select-tag-color: black;
+  --react-select-tag-hover-color: white;
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -43,19 +43,20 @@ html.dark {
   --background-color: #0b1723;
   --text-color: #fff;
   --text-color-inverted: #000;
-  --card-border-color: #ffffff1a;
-  --card-hover-background-color: #0085f230;
-  --activity-link-color: #5b616b;
   --link-color: #343434;
   --tag-background-color: #f5f5f5;
   --tag-text-color: #4a4a4a;
   --results-container-background-color: #ffffff0f;
   --results-info-text-color: #fff;
+  --activity-text-color: #ffffff90;
+  --activity-link-color: #5b616b;
+  --card-border-color: #ffffff1a;
+  --card-hover-background-color: #0085f230;
+  --card-grid-left-side-link-color: #cdcdcd;
+  --card-grid-left-side-link-hover-color: white;
   --mobile-buttons-background-color: var(--results-container-background-color);
   --mobile-buttons-toggle-text-color: #fff;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
-  --card-grid-left-side-link-color: #cdcdcd;
-  --card-grid-left-side-link-hover-color: white;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
   --chart-container-background: #ffffff0f;
@@ -65,9 +66,8 @@ html.dark {
   --chart-label-color: white;
   --line-chart-grid-stroke: #ffffff5a;
   --line-chart-grid-tick: #ffffff69;
-  --dropdown-text-color: black;
-  --dropdown-hover-background: white;
-  --activity-text-color: #ffffff90;
+  --react-select-tag-color: black;
+  --react-select-tag-hover-color: white;
 }
 
 body {
@@ -542,7 +542,7 @@ p {
   grid-template-rows: 1fr;
   gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  color: var(--dropdown-text-color);
+  color: var(--react-select-tag-color);
 }
 @media (max-width: 1023px) {
   .dropdownRow {
@@ -553,12 +553,12 @@ p {
 .dropdownRow .topicTags {
   text-align: right;
   flex-grow: 1;
-  color: var(--dropdown-text-color);
+  color: var(--react-select-tag-color);
   place-self: center;
 }
 .dropdownRow .activityCount:hover,
 .dropdownRow .topicTags:hover {
-  color: var(--dropdown-hover-background);
+  color: var(--react-select-tag-hover-color);
 }
 .dropdownCategoryOption {
   display: flex !important;
