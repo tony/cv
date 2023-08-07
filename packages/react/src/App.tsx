@@ -37,7 +37,6 @@ export interface CVDominantLanguageCSS extends React.CSSProperties {
 const DominantLanguageCSSVariable: React.FC = observer(() => {
   const cvState = useMst();
   const dominantLanguage = cvState.dominantLanguage;
-  console.log("dominant language", dominantLanguage);
 
   return dominantLanguage ? (
     <style
