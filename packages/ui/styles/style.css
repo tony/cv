@@ -20,8 +20,6 @@
   --mobile-buttons-background-color: #f1f1f1;
   --mobile-buttons-toggle-text-color: #000;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
-  --chart-link-color: #666;
-  --chart-link-color-hover: #999;
   --card-grid-left-side-link-color: #5f6368;
   --card-grid-left-side-link-hover-color: #000;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
@@ -29,7 +27,8 @@
   --chart-container-background: white;
   --chart-label-color: black;
   --chart-background-color: #f7f7f7;
-  /* --chart-background-color: var(--background-color, #ffffff0f); */
+  --chart-link-color: #666;
+  --chart-link-color-hover: #999;
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
@@ -55,15 +54,16 @@ html.dark {
   --mobile-buttons-background-color: var(--results-container-background-color);
   --mobile-buttons-toggle-text-color: #fff;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
-  --chart-link-color: #cdcdcd;
-  --chart-link-color-hover: white;
   --card-grid-left-side-link-color: #cdcdcd;
   --card-grid-left-side-link-hover-color: white;
   --date-range-tick-label-color: rgba(255, 255, 255, 0.5);
   --toggle-label-color: #cdcdcd;
   --chart-container-background: #ffffff0f;
+  --chart-background-color: var(--background-color, #ffffff0f);
+  --chart-link-color: #cdcdcd;
+  --chart-link-color-hover: white;
   --chart-label-color: white;
-  --line-chart-grid-stroke: #ffffff1a;
+  --line-chart-grid-stroke: #ffffff5a;
   --line-chart-grid-tick: #ffffff69;
   --dropdown-text-color: black;
   --dropdown-hover-background: white;
@@ -394,7 +394,6 @@ p {
 #charts.plotly .chartRow--line g.plot g.points path.point,
 #charts.plotly .chartRow--line g.plot g.lines path.js-line {
   stroke: var(--line-chart-fill-color) !important;
-  /* stroke: var(--line-chart-grid-stroke) !important; */
 }
 #charts.plotly .chartRow--line g.plot g.fills path.js-fill,
 #charts.plotly .chartRow--line g.plot g.points path.point {
@@ -402,7 +401,7 @@ p {
 }
 #charts.plotly .chartRow--line g.gridlayer g.x path.xgrid,
 #charts.plotly .chartRow--line g.gridlayer g.y path.ygrid {
-  stroke: var(--line-chart-grid-tick) !important;
+  stroke: var(--line-chart-grid-stroke) !important;
 }
 
 /** Plotly end **/

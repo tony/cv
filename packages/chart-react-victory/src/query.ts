@@ -50,9 +50,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     style: {
       data: {
         stroke: () => {
-          return `var(--line-chart-fill-color, ${
-            Object.values(state.backgroundColors)[0] ?? "black"
-          })`;
+          return "var(--line-chart-fill-color)";
         },
         fill: "var(--line-chart-fill-color)",
       },

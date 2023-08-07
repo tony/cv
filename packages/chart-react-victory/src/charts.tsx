@@ -3,7 +3,13 @@ import React from "react";
 import equal from "fast-deep-equal";
 import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
-import { VictoryChart, VictoryLine, VictoryPie, VictoryTheme } from "victory";
+import {
+  VictoryAxis,
+  VictoryChart,
+  VictoryLine,
+  VictoryPie,
+  VictoryTheme,
+} from "victory";
 
 import { useMst } from "@tony/cv-react/src/mobx";
 import {
@@ -132,8 +138,37 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         domainPadding={{ x: 20 }}
         padding={{ top: 15, bottom: 30, right: 0, left: 20 }}
         width={width + 170}
-        style={{ background: { fill: "var(--chart-background-color)" } }}
+        style={{
+          background: { fill: "var(--chart-background-color)" },
+        }}
       >
+        <VictoryAxis
+          crossAxis={false}
+          style={{
+            axis: { stroke: "var(--line-chart-grid-tick)" },
+            ticks: { stroke: "var(--line-chart-grid-tick)" },
+            tickLabels: { fill: "var(--line-chart-grid-tick)" },
+            grid: {
+              stroke: () => "var(--line-chart-grid-stroke)",
+              strokeWidth: 1,
+            },
+          }}
+          standalone={false}
+        />
+        <VictoryAxis
+          dependentAxis
+          crossAxis={false}
+          style={{
+            axis: { stroke: "var(--line-chart-grid-tick)" },
+            ticks: { stroke: "var(--line-chart-grid-tick)" },
+            tickLabels: { fill: "var(--line-chart-grid-tick)" },
+            grid: {
+              stroke: () => "var(--line-chart-grid-stroke)",
+              strokeWidth: 1,
+            },
+          }}
+          standalone={false}
+        />
         <VictoryLine
           ref={chartRef}
           padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
