@@ -356,7 +356,7 @@ export const CVState = types
         {} as ActivityCountRecord,
       );
     },
-    get languageYearMap() {
+    get languageUsageStats() {
       return Array.from(this.filteredActivities.values()).reduce(
         (languages, activity) => {
           activity.org.languages.forEach(
@@ -381,7 +381,7 @@ export const CVState = types
     },
     get sortedLanguages(): [string, number][] {
       /** Languages sorted ascending by usage **/
-      return Object.entries(this.languageYearMap)
+      return Object.entries(this.languageUsageStats)
         .sort((a, b) => (a[1] > b[1] ? 1 : a[1] === b[1] ? 0 : -1))
         .reverse();
     },

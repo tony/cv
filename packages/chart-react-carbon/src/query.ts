@@ -85,9 +85,11 @@ export const DEFAULT_RESULTS: Results = {
 export const stateToDonut = (state: Instance<typeof CVState>) => {
   const bgColorMap = state.backgroundColors;
   return {
-    data: Object.entries(state.languageYearMap).map(([languageName, count]) => {
-      return { group: languageName, value: count };
-    }),
+    data: Object.entries(state.languageUsageStats).map(
+      ([languageName, count]) => {
+        return { group: languageName, value: count };
+      },
+    ),
     options: {
       ...DONUT_CHART_DEFAULT_OPTIONS,
       getFillColor: (datasetLabel, label, data, defaultFillColor) => {

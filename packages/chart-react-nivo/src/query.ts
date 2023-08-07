@@ -39,13 +39,15 @@ export const stateToDonut = (
     height: donutChartHeight,
     width: donutChartWidth,
     fit: true,
-    data: Object.entries(state.languageYearMap).map(([languageName, count]) => {
-      return {
-        id: languageName,
-        label: languageName,
-        value: count,
-      };
-    }),
+    data: Object.entries(state.languageUsageStats).map(
+      ([languageName, count]) => {
+        return {
+          id: languageName,
+          label: languageName,
+          value: count,
+        };
+      },
+    ),
     colors: (item) => {
       const color = state.languages.find((language) => language.id == item.id)
         ?.ui?.backgroundColor;

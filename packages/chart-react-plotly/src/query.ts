@@ -20,8 +20,8 @@ export const DEFAULT_RESULTS: Results = {
 };
 
 export const stateToDonut = (state: Instance<typeof CVState>) => {
-  const languageYearMap = state.languageYearMap;
-  const total = Object.values(languageYearMap).reduce((a, b) => a + b, 0);
+  const languageUsageStats = state.languageUsageStats;
+  const total = Object.values(languageUsageStats).reduce((a, b) => a + b, 0);
   const languageBGMap = state.languages.reduce(
     (languageColorMap, language) => {
       if (language) {
@@ -38,15 +38,17 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
   );
   return {
     type: "pie",
-    values: Object.values(languageYearMap),
-    labels: Object.keys(languageYearMap),
+    values: Object.values(languageUsageStats),
+    labels: Object.keys(languageUsageStats),
     hoverinfo: "text",
-    hovertext: Object.entries(languageYearMap).map(([languageName, value]) => {
-      return `${languageName}: ${value} (${((value / total) * 100).toFixed(
-        2,
-      )}%)`;
-    }),
-    text: Object.entries(languageYearMap).map(([languageName, value]) => {
+    hovertext: Object.entries(languageUsageStats).map(
+      ([languageName, value]) => {
+        return `${languageName}: ${value} (${((value / total) * 100).toFixed(
+          2,
+        )}%)`;
+      },
+    ),
+    text: Object.entries(languageUsageStats).map(([languageName, value]) => {
       if ((value / total) * 100 > 4) {
         return `${languageName}: ${value}`;
       }
@@ -54,7 +56,7 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
     }),
     textinfo: "text",
     marker: {
-      colors: Object.keys(languageYearMap).map(
+      colors: Object.keys(languageUsageStats).map(
         (languageName) => languageBGMap[languageName],
       ),
     },

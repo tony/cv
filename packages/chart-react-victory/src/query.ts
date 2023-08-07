@@ -24,14 +24,14 @@ export const DEFAULT_RESULTS: Results = {
 };
 
 export const stateToDonut = (state: Instance<typeof CVState>) => {
-  const { languageYearMap } = state;
+  const { languageUsageStats } = state;
   const colorScale = Object.values(state.languages).map(
     (language) => language?.ui?.backgroundColor,
   );
 
   return {
     width: donutChartWidth,
-    data: Object.entries(languageYearMap).map(([languageName, count]) => {
+    data: Object.entries(languageUsageStats).map(([languageName, count]) => {
       return {
         x: languageName,
         y: count,

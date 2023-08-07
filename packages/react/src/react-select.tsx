@@ -113,7 +113,7 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
         className="tag ml0"
       />
       <div className="activityCount">
-        {cvState.languageYearMap[languageName]} results
+        {cvState.languageUsageStats[languageName]} results
       </div>
     </ReactSelectComponents.Option>
   );

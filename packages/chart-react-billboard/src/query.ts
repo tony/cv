@@ -26,7 +26,7 @@ export const DEFAULT_RESULTS: Results = {
 export const stateToDonut = (state: Instance<typeof CVState>) => {
   return {
     data: {
-      columns: Object.entries(state.languageYearMap).map(
+      columns: Object.entries(state.languageUsageStats).map(
         ([languageName, count]) => {
           return [languageName, count];
         },
