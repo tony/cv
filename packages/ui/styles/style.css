@@ -28,7 +28,8 @@
   --toggle-label-color: #6b778c;
   --chart-container-background: white;
   --chart-label-color: black;
-  --chart-background-color: var(--background-color, #ffffff0f);
+  --chart-background-color: #f7f7f7;
+  /* --chart-background-color: var(--background-color, #ffffff0f); */
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
@@ -339,7 +340,7 @@ p {
   fill: var(--chart-label-color) !important;
 }
 #charts.carbon .cds--chart-holder {
-  --cds-grid-bg: var(--background-color);
+  --cds-grid-bg: var(--chart-background-color);
 }
 #charts.carbon .cds--chart-holder .cds--cc--area-stacked path.area {
   fill: var(
@@ -364,7 +365,7 @@ p {
   color: black;
 }
 .dark #charts.billboard .chartRow--line .bb-event-rects .bb-event-rect {
-  fill: var(--background-color);
+  fill: var(--chart-background-color);
 }
 #charts.billboard .chartRow--line svg g text {
   fill: var(--chart-label-color);
@@ -388,7 +389,7 @@ p {
   background: initial !important;
 }
 #charts.plotly .chartRow--line .bglayer rect.bg {
-  fill: var(--background-color) !important;
+  fill: var(--chart-background-color) !important;
 }
 #charts.plotly .chartRow--line g.plot g.points path.point,
 #charts.plotly .chartRow--line g.plot g.lines path.js-line {
