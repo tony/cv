@@ -18,8 +18,8 @@ configure({
   disableErrorBoundaries: true,
 });
 
-export type LanguageCount = Record<string, number>;
-export type ActivityCount = Record<string, string>;
+export type LanguageCountRecord = Record<string, number>;
+export type ActivityCountRecord = Record<string, string>;
 
 export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
   showReleases: false,
@@ -318,9 +318,6 @@ export const CVState = types
     };
   })
   .views((self) => ({
-    get languageCount(): number {
-      return self.languages.length;
-    },
     get sortedActivities(): Instance<typeof Activity>[] {
       return sortActivities(Array.from(self.activities.values()));
     },
@@ -343,7 +340,6 @@ export const CVState = types
     get filteredActivities(): Instance<typeof Activity>[] {
       return this.search({ ...self.searchOptions });
     },
-
     get activityYearMap() {
       return Array.from(this.filteredActivities.values()).reduce(
         (jsonData, activity) => {
@@ -357,7 +353,7 @@ export const CVState = types
           }
           return jsonData;
         },
-        {} as ActivityCount,
+        {} as ActivityCountRecord,
       );
     },
     get languageYearMap() {
@@ -381,7 +377,22 @@ export const CVState = types
             .filter(({ id }: Instance<typeof Language>) => id)
             .map(({ id }) => [id as string, 0]),
         ),
-      ) as LanguageCount;
+      ) as LanguageCountRecord;
+    },
+    get sortedLanguages(): [string, number][] {
+      /** Languages sorted ascending by usage **/
+      return Object.entries(this.languageYearMap)
+        .sort((a, b) => (a[1] > b[1] ? 1 : a[1] === b[1] ? 0 : -1))
+        .reverse();
+    },
+    get dominantLanguage() {
+      const dominantLanguageCount = this.sortedLanguages[0];
+      const dominantLanguageId = dominantLanguageCount[0];
+
+      const dominantLanguage = self.languages.find(
+        (language) => language.id == dominantLanguageId,
+      );
+      return dominantLanguage;
     },
     get backgroundColors() {
       return Object.fromEntries<string>(
