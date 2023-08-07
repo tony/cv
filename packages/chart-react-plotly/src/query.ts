@@ -55,6 +55,7 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
       return "";
     }),
     textinfo: "text",
+    textposition: "inside",
     marker: {
       colors: Object.keys(languageUsageStats).map(
         (languageName) => languageBGMap[languageName],
@@ -76,7 +77,12 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     ),
     hoverinfo: "text",
     mode: "lines+markers+text",
-    marker: { color: "#666" },
+    hoverlabel: {
+      bgcolor: "var(--line-chart-tooltip-background)",
+      font: {
+        color: "var(--line-chart-tooltip-text)",
+      },
+    },
     textposition: "middle center",
     automargin: true,
     fill: "tonexty",

@@ -32,6 +32,8 @@
   --chart-link-color: #666;
   --chart-link-color-hover: #999;
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
+  --line-chart-tooltip-text: var(--cv-dominant-language-color, #ffffff0f);
+  --line-chart-tooltip-background: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
   --react-select-tag-color: black;
@@ -382,7 +384,8 @@ p {
 /** Billboard end **/
 
 /** Plotly start **/
-#charts.plotly div.svg-container g text {
+#charts.plotly div.svg-container g.subplot.xy g.xtick text,
+#charts.plotly div.svg-container g.subplot.xy g.ytick text {
   fill: var(--chart-label-color) !important;
 }
 #charts.plotly div.svg-container > svg.main-svg {
