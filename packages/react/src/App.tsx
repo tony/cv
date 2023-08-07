@@ -30,15 +30,17 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 };
 
 const App: React.FC = observer(() => {
+  // window.cvState = cvState;
+
   return (
     <AppContainer>
       {cvState.ui.isLoading ? (
         <div id="loading-screen">Loading CV Data</div>
       ) : (
         <>
-          <Settings results={cvState} />
-          <Charts results={cvState} />
-          <Results results={cvState} />
+          <Settings />
+          <Charts />
+          <Results />
         </>
       )}
     </AppContainer>
