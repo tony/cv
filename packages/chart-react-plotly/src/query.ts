@@ -77,5 +77,6 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     marker: { color: "#666" },
     textposition: "middle center",
     automargin: true,
+    fill: "tonexty",
   } as PlotlyData;
 };

@@ -393,7 +393,12 @@ p {
 }
 #charts.plotly .chartRow--line g.plot g.points path.point,
 #charts.plotly .chartRow--line g.plot g.lines path.js-line {
-  stroke: var(--chart-row-line-line-color) !important;
+  stroke: var(--line-chart-fill-color) !important;
+  /* stroke: var(--chart-row-line-line-color) !important; */
+}
+#charts.plotly .chartRow--line g.plot g.fills path.js-fill,
+#charts.plotly .chartRow--line g.plot g.points path.point {
+  fill: var(--line-chart-fill-color) !important;
 }
 #charts.plotly .chartRow--line g.gridlayer g.x path.xgrid,
 #charts.plotly .chartRow--line g.gridlayer g.y path.ygrid {
