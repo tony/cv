@@ -310,26 +310,26 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.11.17":
-  version "1.11.17"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.17.tgz#3a047b2d073e977387315ccafa35001f76a3ffd4"
-  integrity sha512-GXfDrk7SOaqSEr8Y9+xtMs7JpSkD7ApEvYNpImatEAxW0OsG0Y4YToQZMsL3T4AQmMZvSXx0SNTyUkk5AvUsaQ==
+"@carbon/charts-react@1.11.19":
+  version "1.11.19"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.19.tgz#3db69a92a720e5419401190591a5f61836a92475"
+  integrity sha512-/LBrADGJ/jPCkA7y9gpinAbdULpXX4olN2GGs91VPR3FHG2Y01slZwTbRGz7+13B2cfqLKY+tBieJyJ8TjwFHg==
   dependencies:
-    "@carbon/charts" "1.11.17"
+    "@carbon/charts" "1.11.19"
     "@carbon/icons-react" "^11.24.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.11.17":
-  version "1.11.17"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.17.tgz#3becf0d7019fa1008f30e484cb09edc702b50506"
-  integrity sha512-S1rQ36OrlDcuFFGVHEOitRES2oMsz27tNO4f9OefWaV432JAEJ6JAM8wV29ILVOWeuf+9xO3nly8nM/CmyAv5g==
+"@carbon/charts@1.11.19":
+  version "1.11.19"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.19.tgz#f6c2f15dba2d1e19c6fc54bb4b402ae583012282"
+  integrity sha512-V3q1VH6+2q6yWXYKELUyrYtsvIfRqTKK228MANVhlZptnCDbrbDbdCkBIErp04vwnW1jFOGVjJ94BqvNe3igVA==
   dependencies:
     "@carbon/colors" "^11.19.0"
     "@carbon/telemetry" "~0.1.0"
     "@carbon/utils-position" "^1.1.4"
     carbon-components "^10.58.8"
     d3 "^7.8.5"
-    d3-cloud "^1.2.5"
+    d3-cloud "^1.2.7"
     d3-sankey "^0.12.3"
     date-fns "^2.30.0"
     html-to-image "^1.11.11"
@@ -1387,10 +1387,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@^2.12.25":
-  version "2.12.25"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.25.tgz#2088a864d4d8e5cfabaa16f4ef642a589aca9728"
-  integrity sha512-qNACFpr4Olm3+C/fjtC9KMx3UEis1xFAAAxukM/DY9zh2c+mxSyfyn9+wMRvndJBRfjHlK2m7jauzKgHN2uRXQ==
+"@types/plotly.js@^2.12.26":
+  version "2.12.26"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.26.tgz#42c7b98a462645af56bdcb00349cf0beaae96fe1"
+  integrity sha512-vP1iaVL4HHYSbugv49pwtLL6D9CSqOnQLjiRRdRYjVMEDbjIWhMgxc49BJAxSUShupiJHDp35e0WJS9SwIB2WA==
 
 "@types/prop-types@*", "@types/prop-types@^15.0.0", "@types/prop-types@^15.7.2":
   version "15.7.5"
@@ -1434,10 +1434,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^18.2.19":
-  version "18.2.19"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.19.tgz#f77cb2c8307368e624d464a25b9675fa35f95a8b"
-  integrity sha512-e2S8wmY1ePfM517PqCG80CcE48Xs5k0pwJzuDZsfE8IZRRBfOMCF+XqnFxu6mWtyivum1MQm4aco+WIt6Coimw==
+"@types/react@^18.2.20":
+  version "18.2.20"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.20.tgz#1605557a83df5c8a2cc4eeb743b3dfc0eb6aaeb2"
+  integrity sha512-WKNtmsLWJM/3D5mG4U84cysVY31ivmyw85dE84fOCk5Hx78wezB/XEjVPWl2JTZ5FkEeaTJf+VgUAUn3PE7Isw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1806,10 +1806,10 @@ before-after-hook@^2.2.0:
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.3.tgz#c51e809c81a4e354084422b9b26bad88249c517c"
   integrity sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==
 
-billboard.js@^3.9.2:
-  version "3.9.2"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.2.tgz#d81e081b2aa241d7e0d2eb93bf58d0762d6f298f"
-  integrity sha512-B1Ii5d2lzS9mrYY1rTenS/eSmwDcAswghF4QTIM7edcm+QbtSrommKmWnrObA7f7aEo7yl30r4ZHRATxu8CSKQ==
+billboard.js@^3.9.3:
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.3.tgz#888f9500edcf931b5ff16209b63f94fe1f06b82b"
+  integrity sha512-w1YrBpYiVR2YmSa55OGciV0PfsUdLkTE7OMTPmrtBoc1sbz6po27nRyRpI/hL5finba5XZks2bADBQP4cvUKAg==
   dependencies:
     "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
@@ -2309,10 +2309,10 @@ d3-chord@3:
   dependencies:
     d3-path "1 - 3"
 
-d3-cloud@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/d3-cloud/-/d3-cloud-1.2.5.tgz#3e91564f2d27fba47fcc7d812eb5081ea24c603d"
-  integrity sha512-4s2hXZgvs0CoUIw31oBAGrHt9Kt/7P9Ik5HIVzISFiWkD0Ga2VLAuO/emO/z1tYIpE7KG2smB4PhMPfFMJpahw==
+d3-cloud@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/d3-cloud/-/d3-cloud-1.2.7.tgz#5a733c4bae43238cbb4760bb8f2d15912a8ad7a5"
+  integrity sha512-8TrgcgwRIpoZYQp7s3fGB7tATWfhckRb8KcVd1bOgqkNdkJRDGWfdSf4HkHHzZxSczwQJdSxvfPudwir5IAJ3w==
   dependencies:
     d3-dispatch "^1.0.3"
 
