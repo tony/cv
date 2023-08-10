@@ -310,19 +310,19 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.11.19":
-  version "1.11.19"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.19.tgz#3db69a92a720e5419401190591a5f61836a92475"
-  integrity sha512-/LBrADGJ/jPCkA7y9gpinAbdULpXX4olN2GGs91VPR3FHG2Y01slZwTbRGz7+13B2cfqLKY+tBieJyJ8TjwFHg==
+"@carbon/charts-react@1.11.20":
+  version "1.11.20"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.20.tgz#1270d93f9ee58f40734fcc2b52c9450670e9ac2b"
+  integrity sha512-dwIaxEU/iOdvGDBOy9MSd2JgCvDegO4Y227Pmd6iL4iXi9m66Kjy4mwJBWrnH6hiDlj8srQz/bnk6556JEYRcw==
   dependencies:
-    "@carbon/charts" "1.11.19"
+    "@carbon/charts" "1.11.20"
     "@carbon/icons-react" "^11.24.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.11.19":
-  version "1.11.19"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.19.tgz#f6c2f15dba2d1e19c6fc54bb4b402ae583012282"
-  integrity sha512-V3q1VH6+2q6yWXYKELUyrYtsvIfRqTKK228MANVhlZptnCDbrbDbdCkBIErp04vwnW1jFOGVjJ94BqvNe3igVA==
+"@carbon/charts@1.11.20":
+  version "1.11.20"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.20.tgz#d58ff47c84a9b48772217dfc46d8eecc1a793bc9"
+  integrity sha512-AOGx2XTxeH9lu8Kvl2wKYx3Wc/S0IeWvlGBm92I2TeGyh2nkcheBjo2Q8BG2GcqzDZ8YPxKtNgBL82u9Daa7jw==
   dependencies:
     "@carbon/colors" "^11.19.0"
     "@carbon/telemetry" "~0.1.0"
