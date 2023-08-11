@@ -126,6 +126,10 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
             value: 0,
           },
         ],
-    options: LINE_CHART_DEFAULT_OPTIONS,
+    options: {
+      ...LINE_CHART_DEFAULT_OPTIONS,
+      getStrokeColor: () => "var(--line-chart-fill-color)",
+      getFillColor: () => "var(--line-chart-fill-color)",
+    },
   } as LineChartProps;
 };
