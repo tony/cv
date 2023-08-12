@@ -34,6 +34,7 @@ function CustomSelect<
       isMulti
       theme={(theme) => ({ ...theme, borderRadius: 0 })}
       className="react-select"
+      classNamePrefix="react-select"
       hideSelectedOptions={false}
       closeMenuOnSelect={false}
       blurInputOnSelect={false}
