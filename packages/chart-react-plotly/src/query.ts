@@ -67,7 +67,6 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
 
 export const stateToLine = (state: Instance<typeof CVState>) => {
   const activityYearMap = state.activityYearMap;
-  const totalActivities = state.filteredActivities.length;
   return {
     type: "scatter",
     x: Object.keys(activityYearMap),
