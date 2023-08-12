@@ -40,13 +40,6 @@ export const orgStyles: StylesConfig<StyleOption, true> = {
       wordWrap: "break-word",
       wordBreak: "break-all",
       alignItems: "center",
-      "&:hover": {
-        backgroundColor: "var(--react-select-item-hover-background)",
-      },
-      "&.selected": {
-        backgroundColor: "var(--react-select-item-selected-background)",
-        fontWeight: "bold",
-      },
     };
   },
 };
@@ -243,6 +236,8 @@ export const categoriestyles: StylesConfig<StyleOption, true> = {
       },
       "&.selected:hover": {
         backgroundColor: hoverBackgroundColor,
+        color:
+          chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
       },
     };
   },

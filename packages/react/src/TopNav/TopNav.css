@@ -1,5 +1,5 @@
 :root {
-  --top-nav-bg-color: #0854a0;
+  --top-nav-bg-color: var(--theme-primary);
   --top-nav-bg-color-400: #0961b8;
   --top-nav-bg-color-600: #063b6f;
   --top-nav-bg-color-800: #01080e;
@@ -18,7 +18,7 @@ html:not(.dark) {
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
   --bg-image-url: url("/logo-dark.svg");
-  --top-nav-bg-color: #0b1723;
+  --top-nav-bg-color: var(--theme-primary);
   --top-nav-site-name-text-color: white;
   --top-nav-site-name-text-shadow-color: #333;
 }

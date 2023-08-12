@@ -114,7 +114,7 @@ export const CategoryText: React.FC<
 
 export const OrgTypeTag: React.FC<
   { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ orgTypeName, children, className = "", style = {}, ...props }) => {
+> = ({ orgTypeName, children, className = "", ...props }) => {
   if (!orgTypeName) {
     return null;
   }
@@ -129,11 +129,7 @@ export const OrgTypeTag: React.FC<
   }
 
   return (
-    <div
-      className={`tag` + (className ? ` ${className}` : "")}
-      style={{ ...(orgType?.ui ?? {}), ...style }}
-      {...props}
-    >
+    <div className={`tag` + (className ? ` ${className}` : "")} {...props}>
       {children || orgTypeName}
     </div>
   );

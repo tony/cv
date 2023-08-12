@@ -29,7 +29,17 @@ function CustomSelect<
   Group extends GroupBase<Option> = GroupBase<Option>,
 >(props: Props<Option, IsMulti, Group>) {
   return (
-    <Select {...props} theme={(theme) => ({ ...theme, borderRadius: 0 })} />
+    <Select
+      {...props}
+      isMulti
+      theme={(theme) => ({ ...theme, borderRadius: 0 })}
+      className="react-select"
+      classNamePrefix="react-select"
+      hideSelectedOptions={false}
+      closeMenuOnSelect={false}
+      blurInputOnSelect={false}
+      maxItemsSelectCount={0}
+    />
   );
 }
 
@@ -185,20 +195,14 @@ export const FilterDropdowns: React.FC = () => {
         options={getSelectOptions(
           Object.values(cvState.languages ?? {}).map(({ id }) => id as string),
         )}
-        isMulti
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setLanguages(
             (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
-        className="react-select"
-        placeholder="Language"
         styles={{ ...colourStyles, ...languageStyles }}
         components={{ Option: LanguageOption, MultiValue: MultiValueCount }}
-        hideSelectedOptions={false}
-        closeMenuOnSelect={false}
-        blurInputOnSelect={false}
-        maxItemsSelectCount={0}
+        placeholder="Language"
         objectLabelSingular="language"
         objectLabelPlural="languages"
       />
@@ -209,24 +213,18 @@ export const FilterDropdowns: React.FC = () => {
             value: a.id,
           })) as SelectOption
         }
-        isMulti={true}
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setCategories(
             (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
-        className="react-select"
-        placeholder="Category"
         styles={{ ...colourStyles, ...categoriestyles }}
         components={{
           Option: CategoryOption,
           MultiValueLabel: ActivityMultiValueLabel,
           MultiValue: MultiValueCount,
         }}
-        hideSelectedOptions={false}
-        closeMenuOnSelect={false}
-        blurInputOnSelect={false}
-        maxItemsSelectCount={0}
+        placeholder="Category"
         objectLabelSingular="category"
         objectLabelPlural="categories"
       />
@@ -237,18 +235,12 @@ export const FilterDropdowns: React.FC = () => {
             value: org.id?.toString() ?? org.id,
           })) as SelectOption
         }
-        isMulti={true}
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setOrgs((value as OptionType[]).map(({ value: v }) => v));
         }}
-        className="react-select"
-        placeholder="Organization and projects"
         styles={{ ...colourStyles, ...orgStyles }}
         components={{ Option: OrgOption, MultiValue: MultiValueCount }}
-        hideSelectedOptions={false}
-        closeMenuOnSelect={false}
-        blurInputOnSelect={false}
-        maxItemsSelectCount={0}
+        placeholder="Organization and projects"
         objectLabelSingular="org / project"
         objectLabelPlural="orgs / projects"
       />
