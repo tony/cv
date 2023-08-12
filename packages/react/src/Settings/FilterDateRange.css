@@ -1,8 +1,8 @@
 div#year-range {
-  margin: 0 auto;
-  max-width: 70%;
   display: block;
   z-index: 0;
+  max-width: 70%;
+  margin: 0 auto;
   margin-bottom: 25px;
 }
 @media (max-width: 1023px) {
@@ -16,26 +16,26 @@ div#year-range {
 
 .track {
   display: inline-block;
-  height: 8px;
   width: 90%;
+  height: 8px;
   margin: 0 5%;
 }
 
 .tick:before {
-  content: "";
   position: absolute;
   left: 0;
-  background: rgba(0, 0, 0, 0.2);
-  height: 5px;
   width: 2px;
+  height: 5px;
   transform: translate(-50%, 0.7rem);
+  background: rgba(0, 0, 0, 0.2);
+  content: "";
 }
 
 .tick-label {
   position: absolute;
-  font-size: 0.6rem;
-  color: var(--date-range-tick-label-color);
   top: 100%;
   transform: translate(-50%, 1.2rem);
+  color: var(--date-range-tick-label-color);
+  font-size: 0.6rem;
   white-space: nowrap;
 }

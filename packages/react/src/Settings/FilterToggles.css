@@ -1,19 +1,19 @@
 .toggles label {
-  font-size: 0.85rem;
-  font-style: inherit;
-  color: var(--toggle-label-color);
-  font-weight: 600;
   display: inline-block;
+  color: var(--toggle-label-color);
+  font-style: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 div.toggles {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 70%;
   height: 50px;
+  margin: 0 auto;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 @media (max-width: 1023px) {
   div.toggles {

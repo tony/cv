@@ -11,7 +11,8 @@
     "",
     "\\.s?css$"
   ],
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-css-order"],
   "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"],
-  "importOrderTypeScriptVersion": "5.0.0"
+  "importOrderTypeScriptVersion": "5.0.0",
+  "cssDeclarationSorterOrder": "smacss"
 }
