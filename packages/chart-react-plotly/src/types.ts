@@ -1,6 +1,6 @@
-import type { CandlestickData, Data, OhclData, ViolinData } from "plotly.js";
+import type { CandlestickData, Data, OhlcData, ViolinData } from "plotly.js";
 
 export type PlotlyData = Exclude<
   Data,
-  Partial<ViolinData> | Partial<OhclData> | Partial<CandlestickData>
+  Partial<ViolinData> | Partial<OhlcData> | Partial<CandlestickData>
 >;
