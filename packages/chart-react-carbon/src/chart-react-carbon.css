@@ -1,10 +1,9 @@
 .chartRow.carbon .chartRow--donut {
+  /* center */
+  justify-self: center;
   /* After removing callouts, the proportions are off, trim the extra space
      https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
   margin: 0 auto;
-
-  /* center */
-  justify-self: center;
 
   /* adjust white spacing to match other charts */
   margin: 0.75rem 0rem 0.75rem 1.75rem;

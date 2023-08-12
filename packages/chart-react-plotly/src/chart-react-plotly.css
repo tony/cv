@@ -1,4 +1,4 @@
 .chartRow.plotly:not(.noCharts) .chartRow--donut {
-  margin: 0 auto;
   min-width: var(--chart-width);
+  margin: 0 auto;
 }

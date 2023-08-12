@@ -1,7 +1,7 @@
 .chartRow.victory:not(.noCharts) .chartRow--donut {
-  margin: 0 auto auto 2.25rem;
-  height: var(--chart-height);
   width: 350px;
+  height: var(--chart-height);
+  margin: 0 auto auto 2.25rem;
 }
 .chartRow.victory:not(.noCharts) .chartRow--line {
   width: 100%;

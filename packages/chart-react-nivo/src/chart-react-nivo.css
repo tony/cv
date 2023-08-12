@@ -13,8 +13,8 @@
 
 .chartRow.nivo:not(.noCharts) .chartRow--donut,
 .chartRow.nivo:not(.noCharts) .chartRow--line {
-  min-height: var(--chart-height);
   height: var(--chart-height);
+  min-height: var(--chart-height);
 }
 
 @media (max-width: 768px) {
