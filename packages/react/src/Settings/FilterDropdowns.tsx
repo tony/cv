@@ -242,7 +242,8 @@ export const FilterDropdowns: React.FC = () => {
         components={{ Option: OrgOption, MultiValue: MultiValueCount }}
         placeholder="Organization and projects"
         objectLabelSingular="org / project"
-        objectLabelPlural="orgs / projects"
+        // tablets with >1 item linebreak
+        objectLabelPlural="orgs"
       />
     </div>
   );
