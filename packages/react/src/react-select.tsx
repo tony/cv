@@ -243,6 +243,8 @@ export const categoriestyles: StylesConfig<StyleOption, true> = {
       },
       "&.selected:hover": {
         backgroundColor: hoverBackgroundColor,
+        color:
+          chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
       },
     };
   },
