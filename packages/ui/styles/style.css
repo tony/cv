@@ -2,16 +2,19 @@
   --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --theme-primary: #0854a0;
+  --theme-primary-300: #0a63bd;
   --chart-height: 250px;
   --chart-width: 250px;
   --top-nav-height: 3rem;
   --background-color: #f3f3f4;
   --text-color: #000;
   --text-color-inverted: #fff;
+  --text-middle-color: #5f6368;
   --container-width: 900px;
   --link-color: #1c1c1c;
   --tag-background-color: #f5f5f5;
-  --tag-text-color: #4a4a4a;
+  --tag-text-color: var(--text-middle-color, #4a4a4a);
   --tag-small-background-color: pink;
   --results-container-background-color: white;
   --results-info-text-color: #70757a;
@@ -39,20 +42,33 @@
   );
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
+  --react-select-control: var(--chart-container-background);
+  --react-select-menu: var(--chart-background-color);
+  --react-select-menu-list: var(--chart-container-background);
+  --react-select-option-background: inherit;
+  --react-select-option-text: var(--text-color);
+  --react-select-option-hover-background: #a9c2d6;
+  --react-select-option-hover-text: var(--text-color);
+  --react-select-option-selected-background: var(--theme-primary);
+  --react-select-option-selected-text: var(--text-color-inverted);
+  --react-select-option-selected-hover-background: var(--theme-primary-300);
+  --react-select-option-selected-hover-text: var(--text-color-inverted);
+  --react-select-input-container-text: var(--text-color);
   --react-select-tag-color: black;
   --react-select-tag-hover-color: white;
-  --react-select-item-hover-background: #a9c2d6;
-  --react-select-item-selected-background: #0854a0;
 }
 
 /* @media (prefers-color-scheme: dark) { */
 html.dark {
+  --theme-primary: #0b1723;
+  --theme-primary-300: #143453;
   --background-color: #0b1723;
   --text-color: #fff;
+  --text-middle-color: #cdcdcd;
   --text-color-inverted: #000;
   --link-color: #343434;
-  --tag-background-color: #f5f5f5;
-  --tag-text-color: #4a4a4a;
+  --tag-background-color: var(--background-color);
+  --tag-text-color: var(--text-middle-color);
   --results-container-background-color: #ffffff0f;
   --results-info-text-color: #fff;
   --activity-text-color: #ffffff90;
@@ -73,8 +89,58 @@ html.dark {
   --chart-label-color: white;
   --line-chart-grid-stroke: #ffffff5a;
   --line-chart-grid-tick: #ffffff69;
-  --react-select-tag-color: black;
+  --react-select-option-hover-background: var(--theme-primary-300);
+  --react-select-option-hover-text: var(--text-color);
+  --react-select-option-selected-text: var(--text-color);
+  --react-select-option-selected-hover-text: var(--text-color);
+  --react-select-tag-color: white;
   --react-select-tag-hover-color: white;
+}
+
+.react-select .react-select__control {
+  background-color: var(--react-select-control);
+  border-color: var(--line-chart-grid-stroke);
+}
+
+.react-select .react-select__menu {
+  background-color: var(--chart-background-color);
+  border: var(--line-chart-grid-stroke) 1px solid;
+  color: var(--text-color);
+}
+
+.react-select .react-select__menu-list {
+  background-color: var(--react-select-menu-list);
+  color: var(--text-color);
+}
+
+.react-select .react-select__control:hover {
+  border-color: var(--line-chart-grid-tick);
+}
+
+.react-select .react-select__option {
+  background-color: var(--react-select-option-background);
+  color: var(--react-select-option-text);
+}
+
+.react-select .react-select__option:hover {
+  background-color: var(--react-select-option-hover-background);
+  color: var(--react-select-option-hover-text);
+}
+
+.react-select .react-select__option--is-selected {
+  background-color: var(--react-select-option-selected-background);
+  color: var(--react-select-option-selected-text);
+  font-weight: bold;
+}
+
+.react-select .react-select__option--is-selected:hover {
+  background-color: var(--react-select-option-selected-hover-background);
+  color: var(--react-select-option-selected-hover-text);
+}
+
+.react-select .react-select__input-container,
+.react-select .react-select__placeholder {
+  color: var(--react-select-input-container-text);
 }
 
 body {
