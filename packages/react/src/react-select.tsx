@@ -130,8 +130,10 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       .alpha(0.6)
       .css();
     const hoverStyle = {
-      backgroundColor: hoverBackgroundColor,
-      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
+      backgroundColor: `${hoverBackgroundColor} !important`,
+      color: `${
+        chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white"
+      } !important`,
     };
 
     return {
@@ -143,7 +145,7 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       "&:hover": hoverStyle,
       "&.selected": {
         ...hoverStyle,
-        backgroundColor: selectedBackgroundColor,
+        backgroundColor: `${selectedBackgroundColor} !important`,
         fontWeight: "bold",
       },
       "&.selected:hover": {
@@ -219,8 +221,10 @@ export const categoriestyles: StylesConfig<StyleOption, true> = {
       .alpha(0.6)
       .css();
     const hoverStyle = {
-      backgroundColor: hoverBackgroundColor,
-      color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
+      backgroundColor: `${hoverBackgroundColor} !important`,
+      color: `${
+        chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white"
+      } !important`,
     };
     return {
       ...styles,

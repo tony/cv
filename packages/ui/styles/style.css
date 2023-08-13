@@ -630,7 +630,6 @@ p {
   color: var(--react-select-tag-color);
   text-align: right;
 }
-.dropdownRow .activityCount:hover,
 .dropdownRow .topicTags:hover {
   color: var(--react-select-tag-hover-color);
 }
