@@ -207,7 +207,7 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
   },
 };
 
-export const categoriestyles: StylesConfig<StyleOption, true> = {
+export const categoriesStyles: StylesConfig<StyleOption, true> = {
   option: (styles: CSSObject, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);

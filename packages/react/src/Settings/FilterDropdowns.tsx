@@ -11,7 +11,7 @@ import Select, {
 import { useMst } from "../mobx";
 import {
   ActivityMultiValueLabel,
-  categoriestyles,
+  categoriesStyles,
   CategoryOption,
   getSelectOptions,
   LanguageOption,
@@ -218,7 +218,7 @@ export const FilterDropdowns: React.FC = () => {
             (value as OptionType[]).map(({ value: v }) => v),
           );
         }}
-        styles={{ ...colourStyles, ...categoriestyles }}
+        styles={{ ...colourStyles, ...categoriesStyles }}
         components={{
           Option: CategoryOption,
           MultiValueLabel: ActivityMultiValueLabel,
