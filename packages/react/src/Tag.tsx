@@ -1,6 +1,7 @@
 import React from "react";
 
 import { observer } from "mobx-react-lite";
+import { type Instance } from "mobx-state-tree";
 
 import {
   CategoryEmojiMap,
@@ -8,11 +9,11 @@ import {
   CategoryVerbPresentTenseMap,
 } from "@tony/cv-data/constants";
 import type {
-  Activity,
   CategoryName,
   LanguageName,
   OrgTypeName,
 } from "@tony/cv-data/types";
+import { Activity } from "@tony/cv-lib/search/mobx";
 
 import { useMst } from "./mobx";
 
@@ -73,7 +74,7 @@ export const CategoryTag: React.FC<
 
 export const CategoryText: React.FC<
   { categoryName: CategoryName } & Pick<
-    Activity,
+    Instance<typeof Activity>,
     "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
   > &
     React.HTMLProps<HTMLDivElement>

@@ -149,8 +149,8 @@ export const Org = types.union(
   OpenSourceOrg,
 );
 
-export const Activity = types
-  .model("Activity", {
+export const BaseActivity = types
+  .model("BaseActivity", {
     id: types.identifier,
     title: types.string,
     category: types.enumeration<CategoryName>(
@@ -186,6 +186,104 @@ export const Activity = types
       },
     };
   });
+
+export const ActivityOpenSource = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Patch),
+
+      // URLs
+      qaUrl: types.string,
+      diffUrl: types.string,
+
+      // Dates
+      createdAt: types.string,
+      acceptedAt: types.string,
+      startedAt: types.string,
+      endedAt: types.string,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityOpenSource");
+
+export const ActivitySoftware = types
+  .compose(
+    types.model({
+      category: types.union(
+        types.literal(CategoryName.SoftwareLib),
+        types.literal(CategoryName.SoftwareApp),
+      ),
+    }),
+    BaseActivity,
+  )
+  .named("ActivitySoftware");
+
+export const ActivityWebsite = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Website),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityWebsite");
+
+export const ActivityVolunteer = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Volunteer),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityVolunteer");
+
+export const ActivityArticleFeatured = types.model("ActivityArticleFeatured", {
+  HN: types.maybe(types.string),
+  "/r/python": types.maybe(types.string),
+  "/r/flask": types.maybe(types.string),
+  "/r/django": types.maybe(types.string),
+});
+
+export const ActivityArticle = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Article),
+      featured: ActivityArticleFeatured,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityArticle");
+
+export const ActivityPublication = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Publication),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityPublication");
+
+export const ActivityWork = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Work),
+
+      // Dates
+      createdAt: types.string,
+      endedAt: types.string,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityWork");
+
+export const Activity = types.union(
+  ActivityOpenSource,
+  ActivitySoftware,
+  ActivityWebsite,
+  ActivityVolunteer,
+  ActivityArticle,
+  ActivityPublication,
+  ActivityWork,
+);
 
 export const SearchOptions = types.model("SearchOptions", {
   showReleases: types.boolean,

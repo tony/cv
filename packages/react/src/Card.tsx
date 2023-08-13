@@ -4,17 +4,17 @@ import ReactMarkdown from "react-markdown";
 import { format, formatDistance } from "date-fns";
 import { Instance } from "mobx-state-tree";
 
-import {
-  CategoryName,
-  OrgTypeName,
-  type ActivityOpenSource,
-  type ActivityPublication,
-  type ActivityWork,
-  type CompanyOrg,
-  type OpenSourceOrg,
-  type PublicationOrg,
-} from "@tony/cv-data/types";
-import { Activity, Org } from "@tony/cv-lib/search/mobx";
+import { CategoryName, OrgTypeName } from "@tony/cv-data/types";
+import type {
+  Activity,
+  ActivityOpenSource,
+  ActivityPublication,
+  ActivityWork,
+  CompanyOrg,
+  OpenSourceOrg,
+  Org,
+  PublicationOrg,
+} from "@tony/cv-lib/search/mobx";
 
 import { CategoryText, LanguageTag } from "./Tag";
 
@@ -26,8 +26,8 @@ interface ActivityCardProps {
 }
 
 export const PatchInfo: React.FC<{
-  activity: ActivityOpenSource;
-  org: OpenSourceOrg;
+  activity: Instance<typeof ActivityOpenSource>;
+  org: Instance<typeof OpenSourceOrg>;
 }> = ({ activity }) => {
   const items = [];
 
@@ -74,8 +74,8 @@ export const PatchInfo: React.FC<{
 };
 
 export const PublicationInfo: React.FC<{
-  activity: ActivityPublication;
-  org: PublicationOrg;
+  activity: Instance<typeof ActivityPublication>;
+  org: Instance<typeof PublicationOrg>;
 }> = ({ org }) => {
   const items = [];
 
@@ -150,8 +150,8 @@ export const PublicationInfo: React.FC<{
 };
 
 export const CompanyInfo: React.FC<{
-  activity: ActivityWork;
-  org: CompanyOrg;
+  activity: Instance<typeof ActivityWork>;
+  org: Instance<typeof CompanyOrg>;
 }> = ({ org }) => {
   const items = [];
   if (org?.url) {
@@ -188,20 +188,20 @@ export const ActivityInfo: React.FC<
     <>
       {CategoryName.Patch == activity.category && (
         <PatchInfo
-          activity={activity as ActivityOpenSource}
-          org={org as OpenSourceOrg}
+          activity={activity as Instance<typeof ActivityOpenSource>}
+          org={org as Instance<typeof OpenSourceOrg>}
         />
       )}
       {CategoryName.Publication == activity.category && (
         <PublicationInfo
-          activity={activity as ActivityPublication}
-          org={org as PublicationOrg}
+          activity={activity as Instance<typeof ActivityPublication>}
+          org={org as Instance<typeof PublicationOrg>}
         />
       )}
       {CategoryName.Work == activity.category && (
         <CompanyInfo
-          activity={activity as ActivityWork}
-          org={org as CompanyOrg}
+          activity={activity as Instance<typeof ActivityWork>}
+          org={org as Instance<typeof CompanyOrg>}
         />
       )}
     </>
