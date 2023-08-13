@@ -19,7 +19,6 @@ import {
   OrgOption,
   orgStyles,
   type OptionType,
-  type SelectOption,
   type StyleOption,
 } from "../react-select";
 
@@ -31,7 +30,7 @@ function CustomSelect<
   return (
     <Select
       {...props}
-      isMulti
+      isMulti={true as IsMulti}
       theme={(theme) => ({ ...theme, borderRadius: 0 })}
       className="react-select"
       classNamePrefix="react-select"
@@ -192,9 +191,13 @@ export const FilterDropdowns: React.FC = () => {
   return (
     <div className="dropdownRow">
       <CustomSelect
-        options={getSelectOptions(
-          Object.values(cvState.languages ?? {}).map(({ id }) => id as string),
-        )}
+        options={
+          getSelectOptions(
+            Object.values(cvState.languages ?? {}).map(
+              ({ id }) => id as string,
+            ),
+          ) as StyleOption[]
+        }
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setLanguages(
             (value as OptionType[]).map(({ value: v }) => v),
@@ -207,12 +210,13 @@ export const FilterDropdowns: React.FC = () => {
         objectLabelPlural="languages"
       />
       <CustomSelect
-        options={
-          cvState.categories.map((a) => ({
-            label: a.name,
-            value: a.id,
-          })) as SelectOption
-        }
+        options={cvState.categories.map(
+          (a) =>
+            ({
+              label: a.name,
+              value: a.id,
+            }) as StyleOption,
+        )}
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setCategories(
             (value as OptionType[]).map(({ value: v }) => v),
@@ -229,12 +233,13 @@ export const FilterDropdowns: React.FC = () => {
         objectLabelPlural="categories"
       />
       <CustomSelect
-        options={
-          cvState.orgs.map((org) => ({
-            label: org.name,
-            value: org.id?.toString() ?? org.id,
-          })) as SelectOption
-        }
+        options={cvState.orgs.map(
+          (org) =>
+            ({
+              label: org.name,
+              value: org.id?.toString() ?? org.id,
+            }) as StyleOption,
+        )}
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setOrgs((value as OptionType[]).map(({ value: v }) => v));
         }}
