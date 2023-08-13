@@ -24,7 +24,7 @@ configure({
 });
 
 export type LanguageCountRecord = Record<string, number>;
-export type ActivityCountRecord = Record<string, string>;
+export type ActivityCountRecord = Record<string, number>;
 
 export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
   showReleases: false,
@@ -80,18 +80,74 @@ export const OrgType = types.model("OrgType", {
   ui: UiCssProperties,
 });
 
-export const Org = types.model("Org", {
+export const BaseOrg = types.model("BaseOrg", {
   id: types.identifier,
-  orgType: types.enumeration<OrgTypeName>(
-    "OrgTypeName",
-    Object.values(OrgTypeName),
-  ),
   name: types.string,
   url: types.optional(types.maybeNull(types.string), null),
   repoUrl: types.maybe(types.string),
   languages: types.array(types.reference(Language)),
-  logo: types.maybe(types.string),
 });
+
+export const CompanyOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Company),
+      oldUrl: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("CompanyOrg");
+
+export const PublicationOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Publication),
+      leanpubUrl: types.maybe(types.string),
+      amazonUrl: types.maybe(types.string),
+      goodreadsUrl: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("PublicationOrg");
+
+export const WebsiteOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Website),
+      url: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("WebsiteOrg");
+
+export const OpenSourceOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.OpenSource),
+      oldUrl: types.maybe(types.string),
+      repoUrl: types.maybe(types.string),
+      docsUrl: types.maybe(types.string),
+      apiUrl: types.maybe(types.string),
+      ciUrl: types.maybe(types.string),
+      coverageUrl: types.maybe(types.string),
+      changelogUrl: types.maybe(types.string),
+      issuesUrl: types.maybe(types.string),
+      browseCodeTestsUrl: types.maybe(types.string),
+      browseCodeUrl: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("OpenSourceOrg");
+
+export const Org = types.union(
+  CompanyOrg,
+  PublicationOrg,
+  WebsiteOrg,
+  OpenSourceOrg,
+);
 
 export const Activity = types
   .model("Activity", {
@@ -286,9 +342,9 @@ export const CVState = types
     }
 
     return {
-      loadActivities: (items: unknown[]) => {
+      loadActivities: (items: Instance<typeof Activity>[]) => {
         for (const i of items) {
-          self.activities.push(i as unknown);
+          self.activities.push(i);
         }
       },
       afterCreate,
@@ -348,7 +404,7 @@ export const CVState = types
     get filteredActivities(): Instance<typeof Activity>[] {
       return this.search({ ...self.searchOptions });
     },
-    get activityYearMap() {
+    get activityYearMap(): ActivityCountRecord {
       return Array.from(this.filteredActivities.values()).reduce(
         (jsonData, activity) => {
           if (activity.createdAt) {
