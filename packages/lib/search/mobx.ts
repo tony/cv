@@ -83,7 +83,9 @@ export const Org = types.model("Org", {
   ),
   name: types.string,
   url: types.optional(types.maybeNull(types.string), null),
+  repoUrl: types.maybe(types.string),
   languages: types.array(types.reference(Language)),
+  logo: types.maybe(types.string),
 });
 
 export const Activity = types
