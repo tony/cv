@@ -1,8 +1,8 @@
-import {
+import type {
   ChartConfig,
   DonutChartOptions,
   LineChartOptions,
-} from "@carbon/charts/interfaces";
+} from "@carbon/charts";
 import type { Instance } from "mobx-state-tree";
 
 import { CVState } from "@tony/cv-lib/search/mobx";
