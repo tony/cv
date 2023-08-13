@@ -72,7 +72,7 @@ export interface ActivityVolunteer extends ActivityCommon {
 export interface ActivityArticle extends ActivityCommon {
   category: CategoryName.Article;
 
-  // Dates
+  // Links
   featured: {
     HN?: string;
     "/r/python"?: string;
