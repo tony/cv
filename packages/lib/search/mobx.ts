@@ -1,6 +1,11 @@
 import getYear from "date-fns/getYear";
 import { configure } from "mobx";
-import { applySnapshot, Instance, SnapshotIn, types } from "mobx-state-tree";
+import {
+  applySnapshot,
+  types,
+  type Instance,
+  type SnapshotIn,
+} from "mobx-state-tree";
 import moment from "moment";
 
 import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
@@ -109,7 +114,7 @@ export const Activity = types
     qaUrl: types.optional(types.maybeNull(types.string), null),
     diffUrl: types.optional(types.maybeNull(types.string), null),
   })
-  .preProcessSnapshot((activity): Instance<typeof Activity> => {
+  .preProcessSnapshot((activity) => {
     return {
       ...activity,
       meta: {
@@ -144,9 +149,7 @@ export const UI = types.model("UI", {
   isLoading: types.boolean,
 });
 
-export const sortActivities = (
-  activities: Instance<typeof CVState>["activities"],
-) => {
+export const sortActivities = (activities: Instance<typeof Activity>[]) => {
   return activities
     .sort((a: Instance<typeof Activity>, b: Instance<typeof Activity>) =>
       a?.createdAt > b?.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1,
@@ -155,9 +158,12 @@ export const sortActivities = (
 };
 
 export const filterActivitiesByYear = (
-  activities: Instance<typeof CVState>["activities"],
-  { startYear, endYear }: { startYear: number; endYear: number },
-) => {
+  activities: Instance<typeof Activity>[],
+  {
+    startYear,
+    endYear,
+  }: Pick<Instance<typeof SearchOptions>, "startYear" | "endYear">,
+): Instance<typeof Activity>[] => {
   return activities.filter((activity: Instance<typeof Activity>) => {
     if (activity?.createdAt) {
       const createdAt = new Date(activity.createdAt);
@@ -175,7 +181,7 @@ export const filterActivitiesByYear = (
 };
 
 export const filterActivitiesByFilters = (
-  activities: Instance<typeof CVState>["activities"],
+  activities: Instance<typeof Activity>[],
   {
     showReleases,
     showTypos,
@@ -186,7 +192,7 @@ export const filterActivitiesByFilters = (
     orgs,
     categories,
   }: Instance<typeof SearchOptions>,
-) => {
+): Instance<typeof Activity>[] => {
   const activeLanguageIds = languages.map(({ id }) => id);
   const activeOrgIds = orgs.map(({ id }) => id);
   const activeCategoryIds = categories.map(({ id }) => id);
@@ -334,7 +340,7 @@ export const CVState = types
             startYear,
             endYear,
           }),
-          activityTraits,
+          { ...activityTraits, startYear, endYear },
         ),
       );
     },
