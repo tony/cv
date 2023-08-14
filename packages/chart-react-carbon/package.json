@@ -33,8 +33,8 @@
     "eslint-plugin-promise": "^5.1.0"
   },
   "dependencies": {
-    "@carbon/charts": "1.11.20",
-    "@carbon/charts-react": "1.11.20",
+    "@carbon/charts": "1.11.21",
+    "@carbon/charts-react": "1.11.21",
     "@tony/cv-lib": "*",
     "carbon-components": "^11.12.0",
     "d3": "^7.8.5",
