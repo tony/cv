@@ -2,6 +2,7 @@ import getYear from "date-fns/getYear";
 import { configure } from "mobx";
 import {
   applySnapshot,
+  castToSnapshot,
   types,
   type Instance,
   type SnapshotIn,
@@ -175,13 +176,17 @@ export const BaseActivity = types
       ...activity,
       meta: {
         isOptionDisabled: false,
-        isRelease: matchers.isActivityRelease(activity),
-        isTypo: matchers.isActivityTypoFix(activity),
-        isDocImprovement: matchers.isActivityDocImprovement(activity),
-        isCodeStyleTweak: matchers.isActivityCodeStyleTweak(activity),
+        isRelease: matchers.isActivityRelease(castToSnapshot(activity)),
+        isTypo: matchers.isActivityTypoFix(castToSnapshot(activity)),
+        isDocImprovement: matchers.isActivityDocImprovement(
+          castToSnapshot(activity),
+        ),
+        isCodeStyleTweak: matchers.isActivityCodeStyleTweak(
+          castToSnapshot(activity),
+        ),
         isMerged:
           activity.category == "Patch"
-            ? matchers.isActivityMerged(activity)
+            ? matchers.isActivityMerged(castToSnapshot(activity))
             : true,
       },
     };
