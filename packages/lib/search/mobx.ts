@@ -436,7 +436,7 @@ export const CVState = types
       applySnapshot(self, {
         ui: { isLoading: false },
         searchOptions: INITIAL_SEARCH_OPTIONS,
-        activities: data.activities,
+        activities: castToSnapshot(data.activities),
         languages: data.languages,
         orgs: data.orgs,
         orgTypes: data.orgTypes,
