@@ -54,8 +54,8 @@ export const activityUI = ActivityMeta.create({
 });
 
 export const UiCssProperties = types.model("UiCssProperties", {
-  color: types.optional(types.maybeNull(types.string), null),
-  backgroundColor: types.optional(types.maybeNull(types.string), null),
+  color: types.optional(types.string, "black"),
+  backgroundColor: types.optional(types.string, LANGUAGE_FALLBACK_COLOR),
 });
 
 export const Language = types.model("Language", {

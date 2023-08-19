@@ -1,13 +1,14 @@
 import React from "react";
 import {
-  MultiValueGenericProps,
-  OptionProps,
-  Options,
   components as ReactSelectComponents,
-  StylesConfig,
+  type CSSObjectWithLabel,
+  type MultiValueGenericProps,
+  type OptionProps,
+  type Options,
+  type StylesConfig,
 } from "react-select";
 
-import type { CSSObject } from "@emotion/serialize";
+import type { CSSObject } from "@emotion/react";
 import chroma from "chroma-js";
 
 import { CategoryEmojiMap } from "@tony/cv-data/constants";
@@ -33,7 +34,7 @@ export const getSelectOptions = (items: string[]): SelectOption =>
   })) as SelectOption;
 
 export const orgStyles: StylesConfig<StyleOption, true> = {
-  option: (styles: CSSObject, _props) => {
+  option: (styles, _props) => {
     return {
       ...styles,
       fontSize: "0.8rem",
@@ -117,7 +118,7 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
 };
 
 export const languageStyles: StylesConfig<StyleOption, true> = {
-  option: (styles: CSSObject, { data, isFocused, isSelected }) => {
+  option: (styles, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
@@ -151,9 +152,8 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       "&.selected:hover": {
         backgroundColor: hoverBackgroundColor,
       },
-    };
+    } as CSSObjectWithLabel;
   },
-
   multiValueLabel: (styles, { data }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
@@ -168,9 +168,9 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       borderTopRightRadius: 0,
       paddingRight: "4px",
       ...language.ui,
-    };
+    } as CSSObjectWithLabel;
   },
-  multiValueRemove: (styles, { data = {} }) => {
+  multiValueRemove: (styles, { data }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor) {
@@ -185,7 +185,7 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       .alpha(0.6)
       .css();
     const hoverStyle = {
-      backgroundColor: hoverBackgroundColor,
+      backgroundColor: hoverBackgroundColor.css(),
       color: chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
     };
 
@@ -194,21 +194,21 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       borderBottomLeftRadius: 0,
       borderTopLeftRadius: 0,
       ...language.ui,
-      ":hover": hoverStyle,
+      "&:hover": hoverStyle,
       "&.selected": {
         ...hoverStyle,
         backgroundColor: selectedBackgroundColor,
         fontWeight: "bold",
       },
       "&.selected:hover": {
-        backgroundColor: hoverBackgroundColor,
+        backgroundColor: hoverBackgroundColor.css(),
       },
-    };
+    } as CSSObject;
   },
 };
 
 export const categoriesStyles: StylesConfig<StyleOption, true> = {
-  option: (styles: CSSObject, { data, isFocused, isSelected }) => {
+  option: (styles, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);
     if (!category?.ui?.backgroundColor || !category?.ui?.color) {
@@ -243,7 +243,7 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
         color:
           chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
       },
-    };
+    } as CSSObjectWithLabel;
   },
 
   multiValueLabel: (styles, { data }) => {
@@ -260,9 +260,9 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
       display: "flex",
       placeItems: "center",
       ...category.ui,
-    };
+    } as CSSObjectWithLabel;
   },
-  multiValueRemove: (styles, { data = {} }) => {
+  multiValueRemove: (styles, { data }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);
     if (!category?.ui?.backgroundColor) {
@@ -284,7 +284,7 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
       borderTopLeftRadius: 0,
       ...category.ui,
       ":hover": hoverStyle,
-    };
+    } as CSSObjectWithLabel;
   },
 };
 

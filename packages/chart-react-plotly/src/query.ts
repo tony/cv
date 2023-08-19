@@ -75,7 +75,7 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
       ([year, count]) => `${year} (${count})`,
     ),
     hoverinfo: "text",
-    mode: "lines+markers+text",
+    mode: "text+lines+markers",
     hoverlabel: {
       bgcolor: "var(--line-chart-tooltip-background)",
       font: {

@@ -2,7 +2,7 @@ import chroma from "chroma-js";
 import CSS from "csstype";
 
 interface CategoryNameStringMap {
-  // [key: CategoryName]: string;
+  [key: string]: string;
   SoftwareApp: string;
   SoftwareLib: string;
   Patch: string;

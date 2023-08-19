@@ -14,11 +14,11 @@ export const ResultsHeader: React.FC = observer(() => {
 });
 
 export const Results = observer(() => {
-  const { filteredActivities, cvState } = useMst();
+  const { filteredActivities } = useMst();
 
   return (
     <div id="results-container">
-      <ResultsHeader results={cvState} />
+      <ResultsHeader />
 
       <div id="results">
         {filteredActivities &&
