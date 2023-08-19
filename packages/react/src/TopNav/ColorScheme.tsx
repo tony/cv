@@ -11,6 +11,7 @@ import {
 } from "../colorScheme";
 
 export const ColorSchemeToggle: React.FC = () => {
+  const systemIcon = "🖥️";
   const darkModeIcon = "🌙";
   const lightModeIcon = "☀️";
   const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
@@ -53,6 +54,25 @@ export const ColorSchemeToggle: React.FC = () => {
 
   return (
     <div className="color-scheme-toggle">
+      <div
+        className={`color-scheme-toggle--icon ${
+          _hasCustomColorScheme ? "" : "disabled"
+        }`}
+      >
+        <div
+          className={`color-scheme-toggle--icon--clear ${
+            _hasCustomColorScheme ? "" : "disabled"
+          }`}
+          title={
+            _hasCustomColorScheme
+              ? "Back to OS default"
+              : "Using OS color scheme"
+          }
+          onClick={setSystemTheme}
+        >
+          {systemIcon}
+        </div>
+      </div>
       <div className="color-scheme-toggle--icon">
         {colorScheme == ColorScheme.LIGHT ? (
           <div
@@ -71,21 +91,6 @@ export const ColorSchemeToggle: React.FC = () => {
             {lightModeIcon}
           </div>
         )}
-      </div>
-      <div
-        className={`color-scheme-toggle--icon ${
-          _hasCustomColorScheme ? "" : "disabled"
-        }`}
-      >
-        <div
-          className={`color-scheme-toggle--icon--clear ${
-            _hasCustomColorScheme ? "" : "disabled"
-          }`}
-          title="Back to OS default"
-          onClick={setSystemTheme}
-        >
-          ❌
-        </div>
       </div>
     </div>
   );

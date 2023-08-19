@@ -17,10 +17,6 @@
   margin-left: var(--top-nav-icon-separation);
   user-select: none;
 }
-.color-scheme-toggle--icon--mode {
-  cursor: pointer;
-  filter: grayscale(1);
-}
 .color-scheme-toggle--icon--clear {
   cursor: pointer;
   filter: grayscale(0.5);
@@ -29,9 +25,14 @@
   cursor: default;
   filter: grayscale(1);
 }
-.color-scheme-toggle--icon-:hover {
-  background-color: var(--color-scheme-toggle-icon-btn-color);
-}
 .color-scheme-toggle--icon:hover:not(.disabled) {
   background-color: var(--color-scheme-toggle-icon-btn-color);
+  cursor: pointer;
+}
+.color-scheme-toggle--icon .color-scheme-toggle--icon--mode {
+  filter: grayscale(1);
+}
+.color-scheme-toggle--icon:hover:not(.disabled)
+  .color-scheme-toggle--icon--mode {
+  filter: grayscale(0);
 }
