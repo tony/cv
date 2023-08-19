@@ -97,6 +97,10 @@ html.dark {
   --react-select-tag-hover-color: white;
 }
 
+a:not(.disabled) {
+  cursor: pointer;
+}
+
 .react-select .react-select__control {
   border-color: var(--line-chart-grid-stroke);
   background-color: var(--react-select-control);
