@@ -1,6 +1,12 @@
 import getYear from "date-fns/getYear";
 import { configure } from "mobx";
-import { applySnapshot, Instance, SnapshotIn, types } from "mobx-state-tree";
+import {
+  applySnapshot,
+  castToSnapshot,
+  types,
+  type Instance,
+  type SnapshotIn,
+} from "mobx-state-tree";
 import moment from "moment";
 
 import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
@@ -19,7 +25,7 @@ configure({
 });
 
 export type LanguageCountRecord = Record<string, number>;
-export type ActivityCountRecord = Record<string, string>;
+export type ActivityCountRecord = Record<string, number>;
 
 export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
   showReleases: false,
@@ -75,19 +81,77 @@ export const OrgType = types.model("OrgType", {
   ui: UiCssProperties,
 });
 
-export const Org = types.model("Org", {
+export const BaseOrg = types.model("BaseOrg", {
   id: types.identifier,
-  orgType: types.enumeration<OrgTypeName>(
-    "OrgTypeName",
-    Object.values(OrgTypeName),
-  ),
   name: types.string,
   url: types.optional(types.maybeNull(types.string), null),
+  repoUrl: types.maybe(types.string),
   languages: types.array(types.reference(Language)),
 });
 
-export const Activity = types
-  .model("Activity", {
+export const CompanyOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Company),
+      oldUrl: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("CompanyOrg");
+
+export const PublicationOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Publication),
+      leanpubUrl: types.maybe(types.string),
+      amazonUrl: types.maybe(types.string),
+      goodreadsUrl: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("PublicationOrg");
+
+export const WebsiteOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.Website),
+      url: types.maybe(types.string),
+      logo: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("WebsiteOrg");
+
+export const OpenSourceOrg = types
+  .compose(
+    types.model({
+      orgType: types.literal(OrgTypeName.OpenSource),
+      oldUrl: types.maybe(types.string),
+      repoUrl: types.maybe(types.string),
+      docsUrl: types.maybe(types.string),
+      apiUrl: types.maybe(types.string),
+      ciUrl: types.maybe(types.string),
+      coverageUrl: types.maybe(types.string),
+      changelogUrl: types.maybe(types.string),
+      issuesUrl: types.maybe(types.string),
+      browseCodeTestsUrl: types.maybe(types.string),
+      browseCodeUrl: types.maybe(types.string),
+    }),
+    BaseOrg,
+  )
+  .named("OpenSourceOrg");
+
+export const Org = types.union(
+  CompanyOrg,
+  PublicationOrg,
+  WebsiteOrg,
+  OpenSourceOrg,
+);
+
+export const BaseActivity = types
+  .model("BaseActivity", {
     id: types.identifier,
     title: types.string,
     category: types.enumeration<CategoryName>(
@@ -107,22 +171,124 @@ export const Activity = types
     qaUrl: types.optional(types.maybeNull(types.string), null),
     diffUrl: types.optional(types.maybeNull(types.string), null),
   })
-  .preProcessSnapshot((activity): Instance<typeof Activity> => {
+  .preProcessSnapshot((activity) => {
     return {
       ...activity,
       meta: {
         isOptionDisabled: false,
-        isRelease: matchers.isActivityRelease(activity),
-        isTypo: matchers.isActivityTypoFix(activity),
-        isDocImprovement: matchers.isActivityDocImprovement(activity),
-        isCodeStyleTweak: matchers.isActivityCodeStyleTweak(activity),
+        isRelease: matchers.isActivityRelease(castToSnapshot(activity)),
+        isTypo: matchers.isActivityTypoFix(castToSnapshot(activity)),
+        isDocImprovement: matchers.isActivityDocImprovement(
+          castToSnapshot(activity),
+        ),
+        isCodeStyleTweak: matchers.isActivityCodeStyleTweak(
+          castToSnapshot(activity),
+        ),
         isMerged:
           activity.category == "Patch"
-            ? matchers.isActivityMerged(activity)
+            ? matchers.isActivityMerged(castToSnapshot(activity))
             : true,
       },
     };
   });
+
+export const ActivityOpenSource = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Patch),
+
+      // URLs
+      qaUrl: types.string,
+      diffUrl: types.string,
+
+      // Dates
+      createdAt: types.string,
+      acceptedAt: types.string,
+      startedAt: types.string,
+      endedAt: types.string,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityOpenSource");
+
+export const ActivitySoftware = types
+  .compose(
+    types.model({
+      category: types.union(
+        types.literal(CategoryName.SoftwareLib),
+        types.literal(CategoryName.SoftwareApp),
+      ),
+    }),
+    BaseActivity,
+  )
+  .named("ActivitySoftware");
+
+export const ActivityWebsite = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Website),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityWebsite");
+
+export const ActivityVolunteer = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Volunteer),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityVolunteer");
+
+export const ActivityArticleFeatured = types.model("ActivityArticleFeatured", {
+  HN: types.maybe(types.string),
+  "/r/python": types.maybe(types.string),
+  "/r/flask": types.maybe(types.string),
+  "/r/django": types.maybe(types.string),
+});
+
+export const ActivityArticle = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Article),
+      featured: ActivityArticleFeatured,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityArticle");
+
+export const ActivityPublication = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Publication),
+    }),
+    BaseActivity,
+  )
+  .named("ActivityPublication");
+
+export const ActivityWork = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Work),
+
+      // Dates
+      createdAt: types.string,
+      endedAt: types.string,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityWork");
+
+export const Activity = types.union(
+  ActivityOpenSource,
+  ActivitySoftware,
+  ActivityWebsite,
+  ActivityVolunteer,
+  ActivityArticle,
+  ActivityPublication,
+  ActivityWork,
+);
 
 export const SearchOptions = types.model("SearchOptions", {
   showReleases: types.boolean,
@@ -142,9 +308,7 @@ export const UI = types.model("UI", {
   isLoading: types.boolean,
 });
 
-export const sortActivities = (
-  activities: Instance<typeof CVState>["activities"],
-) => {
+export const sortActivities = (activities: Instance<typeof Activity>[]) => {
   return activities
     .sort((a: Instance<typeof Activity>, b: Instance<typeof Activity>) =>
       a?.createdAt > b?.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1,
@@ -153,9 +317,12 @@ export const sortActivities = (
 };
 
 export const filterActivitiesByYear = (
-  activities: Instance<typeof CVState>["activities"],
-  { startYear, endYear }: { startYear: number; endYear: number },
-) => {
+  activities: Instance<typeof Activity>[],
+  {
+    startYear,
+    endYear,
+  }: Pick<Instance<typeof SearchOptions>, "startYear" | "endYear">,
+): Instance<typeof Activity>[] => {
   return activities.filter((activity: Instance<typeof Activity>) => {
     if (activity?.createdAt) {
       const createdAt = new Date(activity.createdAt);
@@ -173,7 +340,7 @@ export const filterActivitiesByYear = (
 };
 
 export const filterActivitiesByFilters = (
-  activities: Instance<typeof CVState>["activities"],
+  activities: Instance<typeof Activity>[],
   {
     showReleases,
     showTypos,
@@ -184,7 +351,7 @@ export const filterActivitiesByFilters = (
     orgs,
     categories,
   }: Instance<typeof SearchOptions>,
-) => {
+): Instance<typeof Activity>[] => {
   const activeLanguageIds = languages.map(({ id }) => id);
   const activeOrgIds = orgs.map(({ id }) => id);
   const activeCategoryIds = categories.map(({ id }) => id);
@@ -269,7 +436,7 @@ export const CVState = types
       applySnapshot(self, {
         ui: { isLoading: false },
         searchOptions: INITIAL_SEARCH_OPTIONS,
-        activities: data.activities,
+        activities: castToSnapshot(data.activities),
         languages: data.languages,
         orgs: data.orgs,
         orgTypes: data.orgTypes,
@@ -278,9 +445,9 @@ export const CVState = types
     }
 
     return {
-      loadActivities: (items: unknown[]) => {
+      loadActivities: (items: Instance<typeof Activity>[]) => {
         for (const i of items) {
-          self.activities.push(i as unknown);
+          self.activities.push(i);
         }
       },
       afterCreate,
@@ -332,7 +499,7 @@ export const CVState = types
             startYear,
             endYear,
           }),
-          activityTraits,
+          { ...activityTraits, startYear, endYear },
         ),
       );
     },
@@ -340,7 +507,7 @@ export const CVState = types
     get filteredActivities(): Instance<typeof Activity>[] {
       return this.search({ ...self.searchOptions });
     },
-    get activityYearMap() {
+    get activityYearMap(): ActivityCountRecord {
       return Array.from(this.filteredActivities.values()).reduce(
         (jsonData, activity) => {
           if (activity.createdAt) {
