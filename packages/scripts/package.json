@@ -24,10 +24,10 @@
     "@octokit/core": "^5.0.0",
     "@octokit/graphql": "^7.0.1",
     "@octokit/plugin-paginate-graphql": "^4.0.0",
-    "@types/node": "^20.5.3",
+    "@types/node": "^20.5.6",
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
