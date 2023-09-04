@@ -1824,10 +1824,10 @@ before-after-hook@^2.2.0:
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.3.tgz#c51e809c81a4e354084422b9b26bad88249c517c"
   integrity sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==
 
-billboard.js@^3.9.3:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.3.tgz#888f9500edcf931b5ff16209b63f94fe1f06b82b"
-  integrity sha512-w1YrBpYiVR2YmSa55OGciV0PfsUdLkTE7OMTPmrtBoc1sbz6po27nRyRpI/hL5finba5XZks2bADBQP4cvUKAg==
+billboard.js@^3.9.4:
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/billboard.js/-/billboard.js-3.9.4.tgz#d626b7e31f0b6b131a1328003ab0b07f3f56a943"
+  integrity sha512-0s0UifY1pzhizmOi+gDUZsVAy9lwoO9BfoMfB4HYn3LR7KFAgPsozwN+YKmJDVS59DITlbMGD4NnIpJ9KjwE/w==
   dependencies:
     "@types/d3-selection" "^3.0.5"
     "@types/d3-transition" "^3.0.3"
