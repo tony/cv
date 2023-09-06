@@ -322,24 +322,24 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.11.21":
-  version "1.11.21"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.11.21.tgz#4fc744b643ac476502246dc1866641b0a0bb8d6f"
-  integrity sha512-sfGn5G4qHPIopv3XWttLSBxZxRe+QPt3K+2rkUP0eMC9vDRkV5JO7p/M7KepvWeaRow2gADW7QWPfmEgXraeag==
+"@carbon/charts-react@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.12.0.tgz#3c6757b4af863d58d4d43883c5fa5551633e1f15"
+  integrity sha512-+eVLj/VJiMQqzDU+d7RY0SkZjKVdsej2mOfYvWKexPIJbfU+niJtxVmMDCfX/N9Nft4H2LaNCTZ9wAM8he1Ilg==
   dependencies:
-    "@carbon/charts" "1.11.21"
-    "@carbon/icons-react" "^11.24.0"
+    "@carbon/charts" "1.12.0"
+    "@carbon/icons-react" "^11.25.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.11.21":
-  version "1.11.21"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.11.21.tgz#d727c946040e237d4e387a689f2c9fb4501dab64"
-  integrity sha512-JDyIs5GnCEa0hvsiBUjaNQm1VcxPphZ96/22btHROkA9RDVdViYffJeAJz2w6O5rEMYvziYSpHZGK+JS2W/UQA==
+"@carbon/charts@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.12.0.tgz#2b2471a8685cfeef059b14f6e4ca001f69df31f5"
+  integrity sha512-5Rh0ha86ZGblAYATzg9b2ZaZEm2ZZYkLH75C7jmJR3gtTeCQ1PQSntcxJl6WcK4lH1KhuO56B4Qr9Pq2FKQE3Q==
   dependencies:
     "@carbon/colors" "^11.19.0"
     "@carbon/telemetry" "~0.1.0"
     "@carbon/utils-position" "^1.1.4"
-    carbon-components "^10.58.8"
+    carbon-components "^10.58.10"
     d3 "^7.8.5"
     d3-cloud "^1.2.7"
     d3-sankey "^0.12.3"
@@ -347,7 +347,7 @@
     html-to-image "^1.11.11"
     lodash-es "^4.17.21"
     topojson-client "^3.1.0"
-    tslib "^2.6.1"
+    tslib "^2.6.2"
 
 "@carbon/colors@^11.16.0", "@carbon/colors@^11.19.0":
   version "11.19.0"
@@ -371,10 +371,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.44.0.tgz#4308806bf903310d68240325a53ce400ef7dc9af"
   integrity sha512-8gvP8Qr2pNspIUPiQRQQUB9gdklLxfs7JDIz4a/PUzon7IcVielpl08blh2IjpbDr/cZSje5fwn3CAInCKNb1g==
 
-"@carbon/icons-react@^11.24.0":
-  version "11.24.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.24.0.tgz#c5e02204820ab3073ab7470c05918520ea1c6329"
-  integrity sha512-u6cOtG2fVyPyf9szosTl3Qn3U1qtmfza6l+TTi2fvsR9s72JioVEjOUWwKh3kmxdu6qns2b5XQj7sWCs6iEWrw==
+"@carbon/icons-react@^11.25.0":
+  version "11.26.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.26.0.tgz#8d5282833edb20d0fdce0d31cf2b74cd710b5e4e"
+  integrity sha512-lw3e/+yDyD+dexqhrZcxNmLO96R2O0pAfjZaaJr9CF60paeTiEcQBzAsQLp3iIjWnLlIDbmbEqCBrtBvGV04ng==
   dependencies:
     "@carbon/icon-helpers" "^10.44.0"
     "@carbon/telemetry" "0.1.0"
@@ -1939,10 +1939,10 @@ canvas-fit@^1.5.0:
   dependencies:
     element-size "^1.1.1"
 
-carbon-components@^10.58.8:
-  version "10.58.8"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.8.tgz#206a39434a1154e0710c239afbe810f872f6d703"
-  integrity sha512-oYFxoq6sCAyFO8gdOUoI4OyZ0D1uCSznnGcFTeH84q7A0yGCAuR7PU1rd0PmptQUq/3q8F6EGhJu0lcMKaQ4Lw==
+carbon-components@^10.58.10:
+  version "10.58.10"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.10.tgz#712eadb48faa8cce26096659f5956bce41811db5"
+  integrity sha512-RnTFB5s27rTKiGELIZVF72CKCFNy6Mz3x4cU6wVifbgjYKRDVlFCyXsmo56pNIhfGi5LPFHfLl/+sc/+ImkOsg==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     flatpickr "4.6.1"
@@ -6121,10 +6121,15 @@ tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.6.1:
+tslib@^2.0.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.1.tgz#fd8c9a0ff42590b25703c0acb3de3d3f4ede0410"
   integrity sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
+
+tslib@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.2.tgz#703ac29425e7b37cd6fd456e92404d46d1f3e4ae"
+  integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
