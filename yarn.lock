@@ -322,19 +322,19 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.12.0.tgz#3c6757b4af863d58d4d43883c5fa5551633e1f15"
-  integrity sha512-+eVLj/VJiMQqzDU+d7RY0SkZjKVdsej2mOfYvWKexPIJbfU+niJtxVmMDCfX/N9Nft4H2LaNCTZ9wAM8he1Ilg==
+"@carbon/charts-react@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.13.0.tgz#9b32365e892d7c395d6cea886545dd3e294c9c94"
+  integrity sha512-wkwBchToDylmtXjyb19zcpXQcUk3bMXJiICVK1qL5+mQV9IIildU8EGDn2dw7zEUst3n+cqertWX063207zdGw==
   dependencies:
-    "@carbon/charts" "1.12.0"
+    "@carbon/charts" "1.13.0"
     "@carbon/icons-react" "^11.25.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.12.0.tgz#2b2471a8685cfeef059b14f6e4ca001f69df31f5"
-  integrity sha512-5Rh0ha86ZGblAYATzg9b2ZaZEm2ZZYkLH75C7jmJR3gtTeCQ1PQSntcxJl6WcK4lH1KhuO56B4Qr9Pq2FKQE3Q==
+"@carbon/charts@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.13.0.tgz#1910181f03e8fcb68f6d91575ccd18d96e04941a"
+  integrity sha512-fdr1D3fP31Qk94LCu5Bao6/iJ/AeoSzYJkE/9pXj+Lt+5rngeiXkHj1ZMcOcPvoo/MbZ/oWvGuNwikno/BHOwg==
   dependencies:
     "@carbon/colors" "^11.19.0"
     "@carbon/telemetry" "~0.1.0"
@@ -1389,10 +1389,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@^20.6.0":
-  version "20.6.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.0.tgz#9d7daa855d33d4efec8aea88cd66db1c2f0ebe16"
-  integrity sha512-najjVq5KN2vsH2U/xyh2opaSEz6cZMR2SetLIlxlj08nOcmPOemJmUK2o4kUzfLqfrWE0PIrNeE16XhYDd3nqg==
+"@types/node@^20.6.1":
+  version "20.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.1.tgz#8b589bba9b2af0128796461a0979764562687e6f"
+  integrity sha512-4LcJvuXQlv4lTHnxwyHQZ3uR9Zw2j7m1C9DfuwoTFQQP4Pmu04O6IfLYgMmHoOCt0nosItLLZAH+sOrRE0Bo8g==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
