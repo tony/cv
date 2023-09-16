@@ -26,7 +26,12 @@ const patchPushState = (history: History) => {
 export const QueryStringProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [chart, setChart] = React.useState<ChartKey>(null);
+  const currentParams = new URLSearchParams<QueryStringContextInterface>(
+    document.location.search,
+  );
+  const [chart, setChart] = React.useState<ChartKey>(
+    currentParams.get("chart"),
+  );
 
   React.useEffect(() => {
     if (!(history as unknown)?.isPatched) {
@@ -44,4 +49,13 @@ export const QueryStringProvider: React.FC<{
       {children}
     </QueryStringContext.Provider>
   );
+};
+
+export const useQueryString = () => {
+  const context = React.useContext(QueryStringContext);
+
+  if (!context) {
+    throw new Error("useQueryString must be used inside a QueryStringProvider");
+  }
+  return context;
 };

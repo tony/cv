@@ -3,6 +3,7 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
+import { useQueryString } from "./hooks/useQueryString";
 import { useMst } from "./mobx";
 import { SettingsContext } from "./Settings";
 import { Chart } from "./types";
@@ -36,10 +37,13 @@ const ChartLinks: React.FC<
 
 export const Charts = observer(() => {
   const cvState = useMst();
+  const { chart: queryStringChart } = useQueryString();
   const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
   const context = React.useContext(SettingsContext);
+
+  console.log({ queryStringChart });
 
   if (!context) {
     return null;

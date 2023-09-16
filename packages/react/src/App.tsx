@@ -5,14 +5,13 @@ import { observer } from "mobx-react-lite";
 import * as mobxLib from "@tony/cv-lib/search/mobx";
 
 import { Charts } from "./Charts";
+import { QueryStringProvider } from "./hooks/useQueryString";
 import { MobxProvider, useMst } from "./mobx";
 import { Results } from "./Results";
 import { Settings, SettingsContextProvider } from "./Settings";
 import { TopNav } from "./TopNav/TopNav";
 
 import "@tony/cv-ui/styles/style.css";
-
-import { QueryStringProvider } from "./hooks/useQueryString";
 
 const { state: cvState } = mobxLib;
 
