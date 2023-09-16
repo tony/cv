@@ -25,6 +25,7 @@ const config = {
     "peergradeio",
     "eduflow",
     "Multiverse-io",
+    "multiverse-io", // lowercase name, in case of case sensitivity
     "tmux-python",
     "vcs-python",
     "social-embed",
