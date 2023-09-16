@@ -91,7 +91,7 @@ jobs:
         yarn build
     - name: push to s3 (react)
       if: env.PUBLISH == 'true' && (steps.manual-trigger.outputs.manual-trigger == 'true' || steps.changes.outputs.react == 'true' || steps.changes.outputs.common == 'true')
-      uses: jakejarvis/s3-sync-action@master
+      uses: jakejarvis/s3-sync-action@v0.5.1
       with:
         args: --acl public-read --follow-symlinks
       env:
