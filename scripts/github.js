@@ -26,6 +26,7 @@ const config = {
     "nick-ma",
     "peergradeio",
     "eduflow",
+    "Multiverse-io",
     "tmux-python",
     "vcs-python",
     "social-embed",
