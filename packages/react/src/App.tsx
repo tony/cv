@@ -12,6 +12,8 @@ import { TopNav } from "./TopNav/TopNav";
 
 import "@tony/cv-ui/styles/style.css";
 
+import { QueryStringProvider } from "./hooks/useQueryString";
+
 const { state: cvState } = mobxLib;
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
@@ -20,10 +22,12 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
   return (
     <div>
       <MobxProvider value={cvState}>
-        <SettingsContextProvider>
-          <TopNav />
-          {children}
-        </SettingsContextProvider>
+        <QueryStringProvider>
+          <SettingsContextProvider>
+            <TopNav />
+            {children}
+          </SettingsContextProvider>
+        </QueryStringProvider>
       </MobxProvider>
     </div>
   );
