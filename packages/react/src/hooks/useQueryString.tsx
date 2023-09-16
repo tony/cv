@@ -9,19 +9,27 @@ export interface QueryStringContextInterface {
 export const QueryStringContext =
   React.createContext<QueryStringContextInterface | null>(null);
 
-const patchPushState = (history: History) => {
-  const originalPushState = history.pushState;
+function patchHistoryMethod(
+  methodName: "pushState" | "replaceState",
+  history: History,
+  callbackFn: (state: any) => void,
+) {
+  const originalMethod = history[methodName];
 
-  history.pushState = (state) => {
-    if (typeof history.onpushstate === "function") {
-      history.onpushstate({ state });
-    }
+  history[methodName] = function (state: any): void {
+    const result = originalMethod.apply(this, arguments);
+    // if (typeof history.onpushstate === "function") {
+    //   history.onpushstate({ state });
+    // }
 
-    return pushState.apply(history, arguments);
+    callbackFn(state);
+
+    return result;
   };
-  history.isPatched = true;
-  console.log(`patchPushState, isPatched: ${history.isPatched}`);
-};
+  history[`${methodName}IsPatched`] = true;
+
+  console.log(`patchHistoryMethod, isPatched: ${history.isPatched}`);
+}
 
 export const QueryStringProvider: React.FC<{
   children: React.ReactNode;
@@ -29,13 +37,28 @@ export const QueryStringProvider: React.FC<{
   const currentParams = new URLSearchParams<QueryStringContextInterface>(
     document.location.search,
   );
-  const [chart, setChart] = React.useState<ChartKey>(
+  const [chart, _setChart] = React.useState<ChartKey>(
     currentParams.get("chart"),
   );
 
+  const setChart = (chart: ChartKey) => {
+    currentParams.set("chart", chart);
+    window.history.pushState({ search: currentParams.toString() });
+    // setChart(chart);
+  };
+
+  const onPushState = (state: QueryStringContextInterface) => {
+    if (state.chart !== chart) {
+      _setChart(chart);
+    }
+  };
+
   React.useEffect(() => {
-    if (!(history as unknown)?.isPatched) {
-      patchPushState(window.history);
+    if (!(history as unknown)["pushStateIsPatched"]) {
+      patchHistoryMethod("pushState", window.history, onPushState);
+    }
+    if (!(history as unknown)["replaceStateIsPatched"]) {
+      patchHistoryMethod("replaceState", window.history, onPushState);
     }
     return () => {};
   }, []);
@@ -44,6 +67,7 @@ export const QueryStringProvider: React.FC<{
     <QueryStringContext.Provider
       value={{
         chart,
+        setChart,
       }}
     >
       {children}

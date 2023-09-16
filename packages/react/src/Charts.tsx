@@ -13,37 +13,46 @@ const ChartLinks: React.FC<
     chart: Chart;
     setChart: React.Dispatch<React.SetStateAction<Chart>>;
   } & React.HTMLProps<HTMLDivElement>
-> = ({ chart, setChart, ...props }) => (
-  <div {...props}>
-    📊
-    <span className="dh-tablet" title="Lazily loaded, honors filters and scope">
-      {" "}
-      Chart system (take your pick):
-    </span>{" "}
-    {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
-      <React.Fragment key={c}>
-        {idx > 0 && ", "}
-        <a
-          href="#"
-          onClick={() => setChart(c as unknown as Chart)}
-          {...(c === chart && { className: "active" })}
-        >
-          {c}
-        </a>
-      </React.Fragment>
-    ))}
-  </div>
-);
+> = ({ chart, setChart, ...props }) => {
+  const { chart: queryStringChart, setChart: setQueryStringChart } =
+    useQueryString();
+  console.log({ queryStringChart });
+
+  return (
+    <div {...props}>
+      📊
+      <span
+        className="dh-tablet"
+        title="Lazily loaded, honors filters and scope"
+      >
+        {" "}
+        Chart system (take your pick):
+      </span>{" "}
+      {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
+        <React.Fragment key={c}>
+          {idx > 0 && ", "}
+          <a
+            href="#"
+            onClick={() => {
+              setChart(c as unknown as Chart);
+              setQueryStringChart(c as unknown as Chart);
+            }}
+            {...(c === chart && { className: "active" })}
+          >
+            {c}
+          </a>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
 
 export const Charts = observer(() => {
   const cvState = useMst();
-  const { chart: queryStringChart } = useQueryString();
   const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
   const context = React.useContext(SettingsContext);
-
-  console.log({ queryStringChart });
 
   if (!context) {
     return null;
