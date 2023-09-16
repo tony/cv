@@ -1,8 +1,6 @@
 import React from "react";
 
 import { observer } from "mobx-react-lite";
-import { QueryParamProvider } from "use-query-params";
-import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 
 import * as mobxLib from "@tony/cv-lib/search/mobx";
 
@@ -22,15 +20,10 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
   return (
     <div>
       <MobxProvider value={cvState}>
-        <QueryParamProvider
-          adapter={WindowHistoryAdapter}
-          options={{ removeDefaultsFromUrl: true }}
-        >
-          <SettingsContextProvider>
-            <TopNav />
-            {children}
-          </SettingsContextProvider>
-        </QueryParamProvider>
+        <SettingsContextProvider>
+          <TopNav />
+          {children}
+        </SettingsContextProvider>
       </MobxProvider>
     </div>
   );
