@@ -69,7 +69,7 @@ jobs:
         SOURCE_DIR: 'vue/dist/'
     - name: Invalidate (react)
       if: env.PUBLISH == 'true'
-      uses: chetan/invalidate-cloudfront-action@master
+      uses: chetan/invalidate-cloudfront-action@v2.4
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_REACT_V1 }}
         PATHS: '/index.html /'
@@ -78,7 +78,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Invalidate (vue)
       if: env.PUBLISH == 'true'
-      uses: chetan/invalidate-cloudfront-action@master
+      uses: chetan/invalidate-cloudfront-action@v2.4
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_VUE_V1 }}
         PATHS: '/index.html /'
