@@ -176,9 +176,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 1.5rem;
-  padding: 0.7rem;
-  border-bottom: 1px solid var(--card-border-color);
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
   font-size: 0.875rem;
 }
 .card:hover {
@@ -193,12 +193,8 @@ p {
 .card a {
   font-size: 0.875rem;
 }
-.card:first-child {
-  border-top: 1px solid var(--card-border-color);
-}
 .card:last-child {
   margin-bottom: 0;
-  border-bottom: 1px solid var(--card-border-color);
 }
 .card-category-and-date {
   color: var(--activity-text-color);
