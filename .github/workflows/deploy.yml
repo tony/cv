@@ -44,12 +44,15 @@ jobs:
               - 'packages/nav/**'
             data: &data
               - 'packages/data/**'
+            scripts: &scripts
+              - 'packages/scripts/**'
             common:
               - *root
               - *lib
               - *sharedComponents
               - *nav
               - *data
+              - *scripts
             react:
               - 'packages/react/**'
               - 'packages/chart-react-*/**'
