@@ -102,7 +102,7 @@ jobs:
         DEST_DIR: ${{ env.AWS_S3_DEST_DIR }}
     - name: Invalidate (react)
       if: env.PUBLISH == 'true' && (steps.manual-trigger.outputs.manual-trigger == 'true' || steps.changes.outputs.react == 'true' || steps.changes.outputs.common == 'true')
-      uses: chetan/invalidate-cloudfront-action@master
+      uses: chetan/invalidate-cloudfront-action@v2.4
       env:
         DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_REACT_V2 }}
         PATHS: ${{ env.AWS_CLOUDFRONT_INVALIDATION_PATHS }}
