@@ -25,7 +25,7 @@ jobs:
     - name: Extract Branch Name
       run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
     - name: Filter changed file paths to outputs
-      uses: dorny/paths-filter@v2.10.2
+      uses: dorny/paths-filter@v2.11.1
       id: changes
       if: github.event_name != 'schedule'
       with:
