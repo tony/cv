@@ -1,11 +1,12 @@
 import React from "react";
 
 import { observer } from "mobx-react-lite";
+import { useQueryParam, withDefault } from "use-query-params";
 
 import { LINE_CHART_MAP, PIE_CHART_MAP } from "./constants";
 import { useMst } from "./mobx";
 import { SettingsContext } from "./Settings";
-import { Chart } from "./types";
+import { Chart, type ChartKey } from "./types";
 
 const ChartLinks: React.FC<
   {
@@ -23,7 +24,6 @@ const ChartLinks: React.FC<
       <React.Fragment key={c}>
         {idx > 0 && ", "}
         <a
-          href="#"
           onClick={() => setChart(c as unknown as Chart)}
           {...(c === chart && { className: "active" })}
         >
@@ -34,9 +34,34 @@ const ChartLinks: React.FC<
   </div>
 );
 
+const DEFAULT_CHART = Chart.Carbon;
+const ChartParam = withDefault(
+  {
+    encode(value: Chart): string {
+      return value;
+    },
+
+    // decode(strValue: string | undefined | null) {
+    decode(strValue: string | (string | null)[] | null | undefined) {
+      if (!strValue || typeof strValue !== "string") {
+        return null;
+      }
+      const chartValue = strValue.charAt(0).toUpperCase() + strValue.slice(1);
+      function isChart(
+        val: string | (string | null)[] | null | undefined,
+      ): val is ChartKey {
+        return typeof val === "string" && val in Chart;
+      }
+      return isChart(chartValue) ? Chart[chartValue] : null;
+    },
+  },
+  DEFAULT_CHART,
+);
+
 export const Charts = observer(() => {
   const cvState = useMst();
-  const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
+  const [queryChart, setQueryChart] = useQueryParam("chart", ChartParam);
+  const [chart, setChart] = React.useState<Chart>(queryChart || DEFAULT_CHART);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
   const context = React.useContext(SettingsContext);
@@ -45,6 +70,12 @@ export const Charts = observer(() => {
     return null;
   }
   const { showChartsMobile } = context;
+
+  React.useEffect(() => {
+    if (chart !== queryChart) {
+      setQueryChart(chart);
+    }
+  }, [chart]);
 
   return (
     <>

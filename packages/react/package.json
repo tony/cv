@@ -47,6 +47,7 @@
     "react-markdown": "^8.0.7",
     "react-ranger": "^2.1.0",
     "react-select": "^5.7.4",
+    "use-query-params": "^2.2.1",
     "vite": "^4.4.9"
   }
 }
