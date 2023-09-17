@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ['20.x']
+        node-version: ["20.x"]
 
     steps:
       - uses: actions/checkout@v3
@@ -16,15 +16,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: "yarn"
       - name: project - install
         run: yarn install --frozen-lockfile
-      - name: lib - pull gh repos
+      - name: pull gh repos
         run: |
           env GITHUB_API_TOKEN=${{ secrets.CI_GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
-      - name: lib - lint
-        run: |
-          yarn workspace @tony/cv-lib run lint
-      - name: react - lint
-        run: |
-          yarn workspace @tony/cv-react run lint
+      - name: prettier --check . - all
+        run: yarn prettier . --check
+      - name: eslint - lib
+        run: yarn workspace @tony/cv-lib run lint
+      - name: eslint - react
+        run: yarn workspace @tony/cv-react run lint
+      - name: eslint - all
+        run: yarn lint
