@@ -14,8 +14,10 @@
   align-items: center;
   width: var(--color-scheme-icon-width);
   height: var(--color-scheme-icon-height);
-  margin-left: var(--top-nav-icon-separation);
   user-select: none;
+}
+.color-scheme-toggle--icon:not(:first-child) {
+  margin-left: var(--top-nav-icon-separation);
 }
 .color-scheme-toggle--icon--clear {
   cursor: pointer;
