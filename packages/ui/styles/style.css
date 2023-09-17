@@ -20,7 +20,6 @@
   --results-info-text-color: #70757a;
   --activity-text-color: gray;
   --activity-link-color: #5b616b;
-  --card-border-color: rgba(16, 22, 26, 0.25);
   --card-hover-background-color: #fafafa;
   --card-grid-left-side-link-color: #5f6368;
   --card-grid-left-side-link-hover-color: #000;
@@ -73,7 +72,6 @@ html.dark {
   --results-info-text-color: #fff;
   --activity-text-color: #ffffff90;
   --activity-link-color: #5b616b;
-  --card-border-color: #ffffff1a;
   --card-hover-background-color: #0085f230;
   --card-grid-left-side-link-color: #cdcdcd;
   --card-grid-left-side-link-hover-color: white;
