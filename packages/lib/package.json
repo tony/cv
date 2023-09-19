@@ -20,7 +20,7 @@
     "github-graphql-api": "^1.0.6",
     "invert-color": "^2.0.0",
     "mobx": "^6.10.2",
-    "mobx-state-tree": "^5.1.8",
+    "mobx-state-tree": "^5.2.0",
     "moment": "^2.29.4",
     "prettier": "^3.0.3"
   },
