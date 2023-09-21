@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@tony/cv-data": "*",
-    "@types/node": "^20.6.2",
+    "@types/node": "^20.6.3",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "cross-env": "^7.0.3",
@@ -47,7 +47,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",
     "react-ranger": "^2.1.0",
-    "react-select": "^5.7.4",
+    "react-select": "^5.7.5",
     "vite": "^4.4.9"
   }
 }

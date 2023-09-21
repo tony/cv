@@ -322,19 +322,19 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@1.13.1":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.13.1.tgz#81fa4086cf9169bdc1406a6e5021bafac656757d"
-  integrity sha512-G+RHbDFYYqrby9gUO9uIj1hjZ6gQiuc78N0hPMVYDUmC1bxXA1OsVo1zhJLLTwSEjUArCIZ0ORqhk2GwdV2mZw==
+"@carbon/charts-react@1.13.2":
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-1.13.2.tgz#70316784f574e0c95e22f109bb3636f3dedd2f46"
+  integrity sha512-mbN4fOkRNtx9EFvEEk7HiZHRhvLJXL8DIa/B2XShDyoDylm2qzxs6BeZ7bGFgDAjfI/AQJ1JfDRDX1QcEFpw9g==
   dependencies:
-    "@carbon/charts" "1.13.1"
-    "@carbon/icons-react" "^11.25.0"
+    "@carbon/charts" "1.13.2"
+    "@carbon/icons-react" "^11.27.0"
     "@carbon/telemetry" "~0.1.0"
 
-"@carbon/charts@1.13.1":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.13.1.tgz#a36a9b0598a55644f2e1f17cc4a43b12a5b32d2a"
-  integrity sha512-6QnaBEsZeP3muWxk1M+Z4TZzshO7fwZo1HZWqwVzcgLdoEiMt1+r4FaowGXmALqa1W4auDL9dPv+fub5SBpN3A==
+"@carbon/charts@1.13.2":
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-1.13.2.tgz#bd730d4b7645f02533f109352a7cb34d561cdaf9"
+  integrity sha512-TnzCzAmLRF9O5YtKKfzcHQYIrZSA8tb4zGk6ihXWxwQWd3iqI30SRJKFotMYKkvsV1/KTM+VmvmhTLSCr8EbwA==
   dependencies:
     "@carbon/colors" "^11.19.0"
     "@carbon/telemetry" "~0.1.0"
@@ -371,10 +371,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.44.0.tgz#4308806bf903310d68240325a53ce400ef7dc9af"
   integrity sha512-8gvP8Qr2pNspIUPiQRQQUB9gdklLxfs7JDIz4a/PUzon7IcVielpl08blh2IjpbDr/cZSje5fwn3CAInCKNb1g==
 
-"@carbon/icons-react@^11.25.0":
-  version "11.26.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.26.0.tgz#8d5282833edb20d0fdce0d31cf2b74cd710b5e4e"
-  integrity sha512-lw3e/+yDyD+dexqhrZcxNmLO96R2O0pAfjZaaJr9CF60paeTiEcQBzAsQLp3iIjWnLlIDbmbEqCBrtBvGV04ng==
+"@carbon/icons-react@^11.27.0":
+  version "11.27.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.27.0.tgz#96baeea681b05d1607139ab5f585b4b11eff6ed3"
+  integrity sha512-Q6z7hCLAvehRjhAhA2SOkzIQs1VKnh4+mOhAafuaxyLDF4Hnu/R0Thq61By9YJ1YrY3/F+JjpHqbmzibPw5pPQ==
   dependencies:
     "@carbon/icon-helpers" "^10.44.0"
     "@carbon/telemetry" "0.1.0"
@@ -1425,10 +1425,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@^20.6.2":
-  version "20.6.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.2.tgz#a065925409f59657022e9063275cd0b9bd7e1b12"
-  integrity sha512-Y+/1vGBHV/cYk6OI1Na/LHzwnlNCAfU3ZNGrc1LdRe/LAIbdDPTTv/HU3M7yXN448aTVDq3eKRm2cg7iKLb8gw==
+"@types/node@^20.6.3":
+  version "20.6.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.3.tgz#5b763b321cd3b80f6b8dde7a37e1a77ff9358dd9"
+  integrity sha512-HksnYH4Ljr4VQgEy2lTStbCKv/P590tmPe5HqOnv9Gprffgv5WXAY+Y5Gqniu0GGqeTCUdBnzC3QSrzPkBkAMA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -5419,10 +5419,10 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-select@^5.7.4:
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.7.4.tgz#d8cad96e7bc9d6c8e2709bdda8f4363c5dd7ea7d"
-  integrity sha512-NhuE56X+p9QDFh4BgeygHFIvJJszO1i1KSkg/JPcIJrbovyRtI+GuOEa4XzFCEpZRAEoEI8u/cAHK+jG/PgUzQ==
+react-select@^5.7.5:
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.7.5.tgz#d2d0f29994e0f06000147bfb2adf58324926c2fd"
+  integrity sha512-jgYZa2xgKP0DVn5GZk7tZwbRx7kaVz1VqU41S8z1KWmshRDhlrpKS0w80aS1RaK5bVIXpttgSou7XCjWw1ncKA==
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
