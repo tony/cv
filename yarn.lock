@@ -1446,20 +1446,20 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@^20.6.3":
-  version "20.6.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.3.tgz#5b763b321cd3b80f6b8dde7a37e1a77ff9358dd9"
-  integrity sha512-HksnYH4Ljr4VQgEy2lTStbCKv/P590tmPe5HqOnv9Gprffgv5WXAY+Y5Gqniu0GGqeTCUdBnzC3QSrzPkBkAMA==
+"@types/node@^20.6.4":
+  version "20.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.4.tgz#7882cb8b8adc3106c352dac9c02d4d3ebb95cf3e"
+  integrity sha512-nU6d9MPY0NBUMiE/nXd2IIoC4OLvsLpwAjheoAeuzgvDZA1Cb10QYg+91AF6zQiKWRN5i1m07x6sMe0niBznoQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/plotly.js@^2.12.26":
-  version "2.12.26"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.26.tgz#42c7b98a462645af56bdcb00349cf0beaae96fe1"
-  integrity sha512-vP1iaVL4HHYSbugv49pwtLL6D9CSqOnQLjiRRdRYjVMEDbjIWhMgxc49BJAxSUShupiJHDp35e0WJS9SwIB2WA==
+"@types/plotly.js@^2.12.27":
+  version "2.12.27"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-2.12.27.tgz#4f0a9ef660504670a5f0bf44d1b1f2911d79b0b7"
+  integrity sha512-Ah7XuePFNxu2XAHG79GeKN/Ky8dZ0k6hzy49da6AeZFrTqO5wDbtJovp3co3C+iRitp8tA6rIxkltiJ3cjsQWw==
 
 "@types/prop-types@*", "@types/prop-types@^15.0.0", "@types/prop-types@^15.7.2":
   version "15.7.5"
