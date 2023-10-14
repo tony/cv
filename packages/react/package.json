@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@atlaskit/toggle": "^12.6.11",
-    "@floating-ui/react": "^0.26.0",
+    "@floating-ui/react": "^0.26.1",
     "@types/react-ranger": "^2.0.2",
     "@vitejs/plugin-react": "^4.1.0",
     "date-fns": "^2.30.0",

@@ -851,10 +851,10 @@
   dependencies:
     "@floating-ui/dom" "^1.5.1"
 
-"@floating-ui/react@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/@floating-ui/react/-/react-0.26.0.tgz#f33317652d382f21ce2584c43bb009154e6b7700"
-  integrity sha512-W70xgicegogSoy+8Hfmpd/NWEuL26vsatIHkpVydmigJ84YYhs5/GlBCkLcETWajCjD9XKwlHUv6ezwbLLiung==
+"@floating-ui/react@^0.26.1":
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react/-/react-0.26.1.tgz#a790bd3cff5f334d9e87d3ec132a3dc39d937800"
+  integrity sha512-5gyJIJ2tZOPMgmZ/vEcVhdmQiy75b7LPO71sYIiDsxGcZ4hxLuygQWCuT0YXHqppt//Eese+L6t5KnX/gZ3tVA==
   dependencies:
     "@floating-ui/react-dom" "^2.0.2"
     "@floating-ui/utils" "^0.1.5"
