@@ -485,9 +485,9 @@ p {
 /** Victory end **/
 
 /** Nivo start **/
-#charts.nivo div {
+#charts.nivo .chartRow--donut div:not(.loading-chart) {
   /* Tooltips */
-  color: black;
+  color: var(--line-chart-tooltip-background);
 }
 #charts.nivo svg g text {
   fill: var(--chart-label-color) !important;
