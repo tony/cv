@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@tony/cv-data": "*",
-    "@types/node": "^20.8.10",
-    "@types/react": "^18.2.36",
-    "@types/react-dom": "^18.2.14",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.0.3",
@@ -38,7 +38,7 @@
   "dependencies": {
     "@atlaskit/toggle": "^12.6.11",
     "@floating-ui/react": "^0.26.1",
-    "@types/react-ranger": "^2.0.3",
+    "@types/react-ranger": "^2.0.4",
     "@vitejs/plugin-react": "^4.1.1",
     "date-fns": "^2.30.0",
     "fast-deep-equal": "^3.1.3",
