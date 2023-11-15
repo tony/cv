@@ -8,7 +8,7 @@
     "github-colors": "curl https://raw.githubusercontent.com/IonicaBizau/github-colors/master/lib/colors.json -o gh_colors.json",
     "lint": "echo 'NOOP'",
     "test": "echo 'NOOP'",
-    "prettier": "prettier",
+    "prettier": "echo 'NOOP'",
     "format": "yarn run prettier . --write",
     "update": "echo 'NOOP'",
     "ncu": "echo 'NOOP'",
