@@ -47,13 +47,12 @@
     "@babel/runtime" "^7.0.0"
     bind-event-listener "^2.1.1"
 
-"@atlaskit/icon@^21.12.0":
-  version "21.12.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/icon/-/icon-21.12.0.tgz#9421bfc5c64f8d3f82c2ea08d15b6ec61f32f77e"
-  integrity sha512-nnSoEP87jFIGDXbfG71Rx0R2BLE5It73ckH4vZ8kerYaWVRATHSpTjM9lV1G0FSfbz4kO1sJOrGJ4cPj0Y2rdw==
+"@atlaskit/icon@^22.0.0":
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/icon/-/icon-22.0.0.tgz#f267fe623827eb4ddf3b1632756049d04d19a8b7"
+  integrity sha512-90sfTQ7O6vehzNY8Qm2SCufwmQQ3A5Pw40yHBEHD5XeiJ0BaGY8fmzxx16JcqLxiUfyDlxml3rsKD++XzksOHg==
   dependencies:
-    "@atlaskit/theme" "^12.5.0"
-    "@atlaskit/tokens" "^1.3.0"
+    "@atlaskit/tokens" "^1.28.0"
     "@babel/runtime" "^7.0.0"
     "@emotion/react" "^11.7.1"
 
@@ -62,16 +61,6 @@
   resolved "https://registry.yarnpkg.com/@atlaskit/platform-feature-flags/-/platform-feature-flags-0.2.0.tgz#48c4c5affe7fc5cd0cac5214447c96d0ff7c3400"
   integrity sha512-JfpW5n3MgocADR2k5rhIAYODfEZHP4IE7V8qI1GOVnIX4SzrtRqxpkvnGJZgzNEdxF3yup6X6FNcmq+ReknUfg==
   dependencies:
-    "@babel/runtime" "^7.0.0"
-
-"@atlaskit/theme@^12.5.0":
-  version "12.5.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-12.5.1.tgz#3b0c44f51dc5269668fc1d55b8c2bcd5c7aee504"
-  integrity sha512-YZrXZ09x+48Piffev9kF1hY4gr9cIE5v7EP6NURwSq9HEuEtwK+PzijNjwzhXSImNMsTd3DtT5YPS5KXyIYgLw==
-  dependencies:
-    "@atlaskit/codemod-utils" "^4.2.0"
-    "@atlaskit/ds-lib" "^2.2.0"
-    "@atlaskit/tokens" "^1.3.0"
     "@babel/runtime" "^7.0.0"
 
 "@atlaskit/theme@^12.6.0":
@@ -84,14 +73,14 @@
     "@atlaskit/tokens" "^1.25.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/toggle@^13.0.0":
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-13.0.0.tgz#23e65118c23e2398ef8343ec7db76eff02f09a1b"
-  integrity sha512-m6ZmTuFmjpO+8DwRwdxFL+BmbDQWHvlvIn4eLTvRS4ZuTbrdARbVl7rrq4x+qKnGuGXTg7QAVm03n5NDouczqw==
+"@atlaskit/toggle@^13.0.1":
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-13.0.1.tgz#c1a31768b91ea73a2d6a8c8afc81d919a16e9f1e"
+  integrity sha512-fOP9vnAibY/2EzPYGiyjbGYh5tzj7X7JSUcZB2mubMgGh7wFOn6mBsJBhC0k5veN+Y7MpxnOkvadz+XkuEQwxQ==
   dependencies:
     "@atlaskit/analytics-next" "^9.1.0"
     "@atlaskit/ds-lib" "^2.2.0"
-    "@atlaskit/icon" "^21.12.0"
+    "@atlaskit/icon" "^22.0.0"
     "@atlaskit/theme" "^12.6.0"
     "@atlaskit/tokens" "^1.28.0"
     "@babel/runtime" "^7.0.0"
@@ -106,18 +95,6 @@
     "@atlaskit/platform-feature-flags" "^0.2.0"
     "@babel/runtime" "^7.0.0"
     "@babel/traverse" "^7.23.2"
-    "@babel/types" "^7.20.0"
-    bind-event-listener "^2.1.1"
-
-"@atlaskit/tokens@^1.3.0":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-1.13.1.tgz#0b25a5a4d17ea196aee7c00b12e4ec5b7e1c73e1"
-  integrity sha512-Q6sAMbX5kQMNPOt71deN2pICf1hNlthScT0r1cHA9uPngVkhWmImDOkhoZdfvF7fhbjyHCrtcfyJF/O2xNvPKQ==
-  dependencies:
-    "@atlaskit/ds-lib" "^2.2.0"
-    "@atlaskit/platform-feature-flags" "^0.2.0"
-    "@babel/runtime" "^7.0.0"
-    "@babel/traverse" "^7.20.0"
     "@babel/types" "^7.20.0"
     bind-event-listener "^2.1.1"
 
@@ -450,7 +427,7 @@
     "@babel/parser" "^7.22.5"
     "@babel/types" "^7.22.5"
 
-"@babel/traverse@^7.20.0", "@babel/traverse@^7.21.5", "@babel/traverse@^7.22.6", "@babel/traverse@^7.22.8":
+"@babel/traverse@^7.21.5", "@babel/traverse@^7.22.6", "@babel/traverse@^7.22.8":
   version "7.22.8"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.22.8.tgz#4d4451d31bc34efeae01eac222b514a77aa4000e"
   integrity sha512-y6LPR+wpM2I3qJrsheCTwhIinzkETbplIgPBbwvqPKc+uljeA5gP+3nP8irdYt1mjQaDnlIcG+dw8OjAco4GXw==
@@ -889,10 +866,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@8.53.0":
-  version "8.53.0"
-  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.53.0.tgz#bea56f2ed2b5baea164348ff4d5a879f6f81f20d"
-  integrity sha512-Kn7K8dx/5U6+cT1yEhpX1w4PCSg0M+XyRILPgvwcEBjerFWCwQj5sbr3/VmxqV0JGHCBCzyd6LxypEuehypY1w==
+"@eslint/js@8.54.0":
+  version "8.54.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.54.0.tgz#4fab9a2ff7860082c304f750e94acd644cf984cf"
+  integrity sha512-ut5V+D+fOoWPgGGNj83GGjnntO39xDy6DWxO0wb7Jp3DcMX0TfIqdzHF85VTQkerdyGmuuMD9AKAo5KiNlf/AQ==
 
 "@floating-ui/core@^1.0.4":
   version "1.0.4"
@@ -3683,15 +3660,15 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
-eslint@^8.53.0:
-  version "8.53.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.53.0.tgz#14f2c8244298fcae1f46945459577413ba2697ce"
-  integrity sha512-N4VuiPjXDUa4xVeV/GC/RV3hQW9Nw+Y463lkWaKKXKYMvmRiRDAtfpuPFLN+E1/6ZhyR8J2ig+eVREnYgUsiag==
+eslint@^8.54.0:
+  version "8.54.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.54.0.tgz#588e0dd4388af91a2e8fa37ea64924074c783537"
+  integrity sha512-NY0DfAkM8BIZDVl6PgSa1ttZbx3xHgJzSNJKYcQglem6CppHyMhRIQkBVSSMaSRnLhig3jsDbEzOjwCVt4AmmA==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.6.1"
     "@eslint/eslintrc" "^2.1.3"
-    "@eslint/js" "8.53.0"
+    "@eslint/js" "8.54.0"
     "@humanwhocodes/config-array" "^0.11.13"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
@@ -7289,10 +7266,10 @@ victory@^36.6.12:
     victory-voronoi-container "^36.6.12"
     victory-zoom-container "^36.6.12"
 
-vite-plugin-webfont-dl@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.9.0.tgz#e47a458a87503bf4b956367745aaa4e349d6465a"
-  integrity sha512-A56+B/newkXjGuftScl77ryiHZ8yfSy7Od4Vefn3Ddt1Yazt0wUFChLoQUrO9bXVF/3zOVavJBjdj4CDo6qkCA==
+vite-plugin-webfont-dl@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.9.1.tgz#ccbb1450e20f8d5b34649f45b905671fa375fe9e"
+  integrity sha512-nr6UN0Y9ZDbtjwe0/3j+w5VdQCeYWjsgx3IaHg2EvhhbgDM44wmJLQ2ecHWduo0o+PJEmBJK6QhST6z7qxKwnA==
   dependencies:
     axios "^1"
     clean-css "^5"
