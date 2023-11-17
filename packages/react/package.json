@@ -3,6 +3,7 @@
   "license": "All rights reserved",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "start": "yarn vite",
     "build": "yarn vite build",
