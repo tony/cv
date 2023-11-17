@@ -1,3 +1,3 @@
 module.exports = {
-  extends: "../react/.eslintrc.js",
+  extends: "../react/.eslintrc.cjs",
 };
