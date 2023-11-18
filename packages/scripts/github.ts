@@ -1,8 +1,7 @@
 import fs from "fs";
 
-import { Octokit } from "@octokit/core";
-import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
 import moment from "moment";
+import { Octokit } from "octokit";
 
 const ghToken =
   process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;
@@ -41,8 +40,7 @@ if (!fs.existsSync(config.output_dir)) {
   fs.mkdirSync(config.output_dir);
 }
 
-const MyOctokit = Octokit.plugin(paginateGraphql);
-const octokit = new MyOctokit({ auth: ghToken });
+const octokit = new Octokit({ auth: ghToken });
 
 let issues = [];
 
