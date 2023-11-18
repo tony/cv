@@ -4,6 +4,7 @@ import equal from "fast-deep-equal";
 import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import {
+  VictoryArea,
   VictoryAxis,
   VictoryChart,
   VictoryLine,
@@ -169,7 +170,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
           }}
           standalone={false}
         />
-        <VictoryLine
+        <VictoryArea
           ref={chartRef}
           padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
           animate={{
