@@ -23,10 +23,10 @@ jobs:
         run: |
           env GITHUB_API_TOKEN=${{ secrets.CI_GITHUB_API_TOKEN }} yarn workspace @tony/cv-scripts run github
       - name: prettier --check . - all
-        run: yarn prettier . --check
+        run: yarn prettier --check .
       - name: eslint - lib
-        run: yarn workspace @tony/cv-lib run lint
+        run: yarn workspace @tony/cv-lib run -T lint
       - name: eslint - react
-        run: yarn workspace @tony/cv-react run lint
+        run: yarn workspace @tony/cv-react run -T lint
       - name: eslint - all
         run: yarn lint
