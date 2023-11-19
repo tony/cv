@@ -9,7 +9,7 @@
     "start": "echo 'noop'",
     "build": "echo 'noop'",
     "test": "echo 'noop'",
-    "lint": "eslint . -c .eslintrc.js --ext .ts,.tsx",
+    "lint": "../../node_modules/.bin/eslint . -c .eslintrc.js --ext .ts,.tsx",
     "prettier": "prettier",
     "format": "yarn run prettier . --write",
     "update": "yarn run ncu",
