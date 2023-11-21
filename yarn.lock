@@ -1433,43 +1433,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nivo/annotations@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/annotations@npm:0.83.1"
+"@nivo/annotations@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/annotations@npm:0.84.0"
   dependencies:
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     "@types/prop-types": "npm:^15.7.2"
     lodash: "npm:^4.17.21"
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 76dd094bb312af7f374399a7f9cddc87d0d3a301909d87cf0808a9132d7d1b7e9ce218ea23e9bf6cbe263b27ef9a3d4ab1a48d3d9ae4ff2cb39c7dd18b3a8494
+  checksum: 22e01ebea550237943fd81da78d75a243787dc3ee2af9de5e6053d5b11fb9a4db5d829a36a704a79781c1fa7e4689762008aa09b2faa18ba25d2ca6612151917
   languageName: node
   linkType: hard
 
-"@nivo/arcs@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/arcs@npm:0.83.1"
+"@nivo/arcs@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/arcs@npm:0.84.0"
   dependencies:
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     "@types/d3-shape": "npm:^2.0.0"
     d3-shape: "npm:^1.3.5"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: c0baa6d46bb010b3116cdec36d6a0f93945d406ee8fc82c9334836804acf5185e37644242493528905b7b41c680570d30816dfeabb1398bc37b9f1cc6ad7523d
+  checksum: aed01882b79d73edcf5f849ad8fff57f0afc42bebe21c0c462390ef5e6d70ed277ff998b9b0f486ab93fc2a2ea1dd1fbf27da6ea6103da76ae14f5f1f9d9df74
   languageName: node
   linkType: hard
 
-"@nivo/axes@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/axes@npm:0.83.1"
+"@nivo/axes@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/axes@npm:0.84.0"
   dependencies:
-    "@nivo/core": "npm:0.83.1"
-    "@nivo/scales": "npm:0.83.0"
+    "@nivo/core": "npm:0.84.0"
+    "@nivo/scales": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     "@types/d3-format": "npm:^1.4.1"
     "@types/d3-time-format": "npm:^2.3.1"
@@ -1479,21 +1479,21 @@ __metadata:
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 33e7f5d973ffb1c95ad683c7f395b5b54407ace75b30ef10104a9bcb9c7d7f4a6d35639d6741d68935c82432781ff4e049af2b0f690abfe5f94f49afa55f7d31
+  checksum: 59e1db46674a409d8b510d61d752aa2446c21d54de5c300b359d55a587b82c5284119a1876e86f7ce260811a54fec1af8eddcd146a57fe333669dea1828b58d6
   languageName: node
   linkType: hard
 
-"@nivo/bar@npm:^0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/bar@npm:0.83.1"
+"@nivo/bar@npm:^0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/bar@npm:0.84.0"
   dependencies:
-    "@nivo/annotations": "npm:0.83.1"
-    "@nivo/axes": "npm:0.83.1"
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
-    "@nivo/legends": "npm:0.83.1"
-    "@nivo/scales": "npm:0.83.0"
-    "@nivo/tooltip": "npm:0.83.1"
+    "@nivo/annotations": "npm:0.84.0"
+    "@nivo/axes": "npm:0.84.0"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
+    "@nivo/legends": "npm:0.84.0"
+    "@nivo/scales": "npm:0.84.0"
+    "@nivo/tooltip": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     "@types/d3-scale": "npm:^3.2.3"
     "@types/d3-shape": "npm:^2.0.0"
@@ -1502,15 +1502,15 @@ __metadata:
     lodash: "npm:^4.17.21"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: bfaba24229524691dd6ef26c0eca7614fb13a734fd4bcff529bda383b60615fd97448cae56d51950cdcc9c3c52664648e8a64931eb632409a9138cce922f724c
+  checksum: 6ac13abc7b93c1e1c6e5597be8937fdf26ebe3e8efb9472dd95967796c0753c8be151faace249271ac1662920a8bc2407560e29f06d7a781675d22576381eecf
   languageName: node
   linkType: hard
 
-"@nivo/colors@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/colors@npm:0.83.1"
+"@nivo/colors@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/colors@npm:0.84.0"
   dependencies:
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/core": "npm:0.84.0"
     "@types/d3-color": "npm:^2.0.0"
     "@types/d3-scale": "npm:^3.2.3"
     "@types/d3-scale-chromatic": "npm:^2.0.0"
@@ -1522,16 +1522,16 @@ __metadata:
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 5543d83aefe2bfadb1dbcfa5894b3e748b0cabea87dc5808276324bf57729d4b2f90f75cbc97e8450c32762b5f2b3a7515f092962a389e24007f3d36c9b281e0
+  checksum: 1b1aa3d8fc4573446a03d19b423ac8529c66f4eacbb3fe9d371fe019674c40953e65e5db5f8e8fe188c99717109bd40911e0cb1623e2c53b1f22f84990da0d9c
   languageName: node
   linkType: hard
 
-"@nivo/core@npm:0.83.1, @nivo/core@npm:^0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/core@npm:0.83.1"
+"@nivo/core@npm:0.84.0, @nivo/core@npm:^0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/core@npm:0.84.0"
   dependencies:
-    "@nivo/recompose": "npm:0.83.0"
-    "@nivo/tooltip": "npm:0.83.1"
+    "@nivo/recompose": "npm:0.84.0"
+    "@nivo/tooltip": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     "@types/d3-shape": "npm:^2.0.0"
     d3-color: "npm:^3.1.0"
@@ -1545,67 +1545,67 @@ __metadata:
   peerDependencies:
     prop-types: ">= 15.5.10 < 16.0.0"
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 885a134d419bd6c9432a76f946cc319ee2264a831545a1b432353441b4fea7c755af636cc3652d178cd5e69c26180da9431f7d5bd302a659391e4f55b8ec9f99
+  checksum: 2367b6fab4f091818fa5b2743a98002f6b13acb2b7388ad5a7f047683009a229fa7252669a14055625542105ab4c8553d96a5acea4236d919bdeb3d8f64d7e12
   languageName: node
   linkType: hard
 
-"@nivo/legends@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/legends@npm:0.83.1"
+"@nivo/legends@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/legends@npm:0.84.0"
   dependencies:
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
     "@types/d3-scale": "npm:^3.2.3"
     "@types/prop-types": "npm:^15.7.2"
     d3-scale: "npm:^3.2.3"
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: ef39d740ab9782d65d242be004b50e749aae92d818f9d6d4c04439352d653c0c763b57b3938657239ab836cc5d91dd6dff00f922d7143feeb0e7242986ec02a0
+  checksum: 99968f773ddda72a2792c3b2a576f54af08050a8533907f1ab61d32865bd7dfa2680639965b5102392ac6223f6e272c117e517c381f0f2f008562e1cc267d15b
   languageName: node
   linkType: hard
 
-"@nivo/line@npm:^0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/line@npm:0.83.1"
+"@nivo/line@npm:^0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/line@npm:0.84.0"
   dependencies:
-    "@nivo/annotations": "npm:0.83.1"
-    "@nivo/axes": "npm:0.83.1"
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
-    "@nivo/legends": "npm:0.83.1"
-    "@nivo/scales": "npm:0.83.0"
-    "@nivo/tooltip": "npm:0.83.1"
-    "@nivo/voronoi": "npm:0.83.1"
+    "@nivo/annotations": "npm:0.84.0"
+    "@nivo/axes": "npm:0.84.0"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
+    "@nivo/legends": "npm:0.84.0"
+    "@nivo/scales": "npm:0.84.0"
+    "@nivo/tooltip": "npm:0.84.0"
+    "@nivo/voronoi": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
     d3-shape: "npm:^1.3.5"
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 1bc5a7063e08a780b52bad0b44e0a5220452112f16465f59227f41904681476e86191d8f8e195b5f0747081a0188ef029b07b94ac922f02f185981faf45e1258
+  checksum: f85f9b932f6d8009bdef0fc18d3a516ef2117bf296b415e55738f2993e7ab49aeb4173b464e688c0299401f8c1152638d31d814a56277d3321f675abb63f418d
   languageName: node
   linkType: hard
 
-"@nivo/pie@npm:^0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/pie@npm:0.83.1"
+"@nivo/pie@npm:^0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/pie@npm:0.84.0"
   dependencies:
-    "@nivo/arcs": "npm:0.83.1"
-    "@nivo/colors": "npm:0.83.1"
-    "@nivo/core": "npm:0.83.1"
-    "@nivo/legends": "npm:0.83.1"
-    "@nivo/tooltip": "npm:0.83.1"
+    "@nivo/arcs": "npm:0.84.0"
+    "@nivo/colors": "npm:0.84.0"
+    "@nivo/core": "npm:0.84.0"
+    "@nivo/legends": "npm:0.84.0"
+    "@nivo/tooltip": "npm:0.84.0"
     "@types/d3-shape": "npm:^2.0.0"
     d3-shape: "npm:^1.3.5"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: a9414bf5cdc95849eb53340814d760167731eb104892b8920bc934c2288d2e5ad2f87fe653f4ecd30d55a9e62fbe06e535665722d8f43520c11f4cb734c42893
+  checksum: c848726949eb720511686addafa6411d63aee6c26b8ab9aedbd3745be3634e404fd4bf2b752be7c6ab03eb3933ad37e2ffc3cdc91ce85e2fe3894c091d08bf4a
   languageName: node
   linkType: hard
 
-"@nivo/recompose@npm:0.83.0":
-  version: 0.83.0
-  resolution: "@nivo/recompose@npm:0.83.0"
+"@nivo/recompose@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/recompose@npm:0.84.0"
   dependencies:
     "@types/prop-types": "npm:^15.7.2"
     "@types/react-lifecycles-compat": "npm:^3.0.1"
@@ -1613,13 +1613,13 @@ __metadata:
     react-lifecycles-compat: "npm:^3.0.4"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: e7801bb9f641bb2f4b25f1bf86322e93137e5ab0a7cc6ec8bd702ae090e9f38d5997ea3376ef370ea8f7eb78a4ece0290fe0e33aa2f73913a4c0778e1d9dc6c1
+  checksum: d3543d2c6049678c5d9cd77557f7fe6b77ac52f4220879f6b93777d4eb221e164326cd688b2a499204e287dbfcd888319fa867abc0f11c4bcc802ea4b5d33d4b
   languageName: node
   linkType: hard
 
-"@nivo/scales@npm:0.83.0":
-  version: 0.83.0
-  resolution: "@nivo/scales@npm:0.83.0"
+"@nivo/scales@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/scales@npm:0.84.0"
   dependencies:
     "@types/d3-scale": "npm:^3.2.3"
     "@types/d3-time": "npm:^1.1.1"
@@ -1628,32 +1628,32 @@ __metadata:
     d3-time: "npm:^1.0.11"
     d3-time-format: "npm:^3.0.0"
     lodash: "npm:^4.17.21"
-  checksum: d3c3c55ef273c60aaf80d04f3ff7f34612dad804ec836af9dea4658a44e17d97f8153717cf3e572a7ae0c7f5d5a172470666d2ab906f09ba19eab675eea38023
+  checksum: 56174000fe17fdaba54136a249e0bb99e1f50e92d199ae22f1aec1b1bcd05e92e13c45428f02fd08eac23b5d6ac09a674b58aa9b5b0b381c1cbbff55a157ca16
   languageName: node
   linkType: hard
 
-"@nivo/tooltip@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/tooltip@npm:0.83.1"
+"@nivo/tooltip@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/tooltip@npm:0.84.0"
   dependencies:
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/core": "npm:0.84.0"
     "@react-spring/web": "npm:9.4.5 || ^9.7.2"
-  checksum: 4e50994e6564eb4346f06e14ae6163a9a3f89020e95c4198bbd164bbe50cdadff65d8502956dd69fc16745a397e49245f1832091d3b130ee2f409601abb9d2bc
+  checksum: 91fac6167cf0c2252fe478c6ce193ee4d20dac5704051211a404721e104576fb4b9acee4f26b9ef7187ba2712c3c60778cb12685fb41951de8fb319512fffdd4
   languageName: node
   linkType: hard
 
-"@nivo/voronoi@npm:0.83.1":
-  version: 0.83.1
-  resolution: "@nivo/voronoi@npm:0.83.1"
+"@nivo/voronoi@npm:0.84.0":
+  version: 0.84.0
+  resolution: "@nivo/voronoi@npm:0.84.0"
   dependencies:
-    "@nivo/core": "npm:0.83.1"
+    "@nivo/core": "npm:0.84.0"
     "@types/d3-delaunay": "npm:^5.3.0"
     "@types/d3-scale": "npm:^3.2.3"
     d3-delaunay: "npm:^5.3.0"
     d3-scale: "npm:^3.2.3"
   peerDependencies:
     react: ">= 16.14.0 < 19.0.0"
-  checksum: 2ecb0d483ea05dcd202afbf3f4fac9d25b706fbeecc0e341cb23c262b635f8116918eea762b981cf8712741e04d1bfa5adf65cc75d94ded227b1c13a12d49ac8
+  checksum: 417fd9f23ddea95cd3afd22bb5000eec6fb942864612e694ef908ba8dc46a06480951e7768815b6a8d2073e55a66f3310d9fa9ace60b723d5ee73b1a6cc723dc
   languageName: node
   linkType: hard
 
@@ -2214,7 +2214,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2246,7 +2246,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2260,10 +2260,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-nivo@workspace:packages/chart-react-nivo"
   dependencies:
-    "@nivo/bar": "npm:^0.83.1"
-    "@nivo/core": "npm:^0.83.1"
-    "@nivo/line": "npm:^0.83.1"
-    "@nivo/pie": "npm:^0.83.1"
+    "@nivo/bar": "npm:^0.84.0"
+    "@nivo/core": "npm:^0.84.0"
+    "@nivo/line": "npm:^0.84.0"
+    "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.9.2"
     "@types/react": "npm:^18.2.37"
@@ -2276,7 +2276,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2304,7 +2304,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2330,7 +2330,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
     victory: "npm:^36.6.12"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
@@ -2364,7 +2364,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     ts-loader: "npm:^9.5.1"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2400,7 +2400,7 @@ __metadata:
     react-ranger: "npm:^2.1.0"
     react-select: "npm:^5.8.0"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
     vite: "npm:^5.0.0"
     vite-plugin-webfont-dl: "npm:^3.9.1"
   peerDependencies:
@@ -2424,7 +2424,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     ts-loader: "npm:^9.5.1"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.3.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -2928,15 +2928,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:6.11.0"
+"@typescript-eslint/eslint-plugin@npm:^6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:6.12.0"
   dependencies:
     "@eslint-community/regexpp": "npm:^4.5.1"
-    "@typescript-eslint/scope-manager": "npm:6.11.0"
-    "@typescript-eslint/type-utils": "npm:6.11.0"
-    "@typescript-eslint/utils": "npm:6.11.0"
-    "@typescript-eslint/visitor-keys": "npm:6.11.0"
+    "@typescript-eslint/scope-manager": "npm:6.12.0"
+    "@typescript-eslint/type-utils": "npm:6.12.0"
+    "@typescript-eslint/utils": "npm:6.12.0"
+    "@typescript-eslint/visitor-keys": "npm:6.12.0"
     debug: "npm:^4.3.4"
     graphemer: "npm:^1.4.0"
     ignore: "npm:^5.2.4"
@@ -2949,44 +2949,44 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: c9c9e7a918e2f3ef8cb200c9158b70553a1014529867411b35e141c1d26713dd281907af1a231e640e8c4c73c3245a20cfc0e56a1cc95874889ce88c04706c78
+  checksum: 1b9d2bb88f3e793067d7ec1e24e11b9d22891314bd5ebdef80a11a0ddde19f5c052b341e2f2c8a466b3af48e492f1028023566feaeb10a826d3928380c3d3d88
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/parser@npm:6.11.0"
+"@typescript-eslint/parser@npm:^6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/parser@npm:6.12.0"
   dependencies:
-    "@typescript-eslint/scope-manager": "npm:6.11.0"
-    "@typescript-eslint/types": "npm:6.11.0"
-    "@typescript-eslint/typescript-estree": "npm:6.11.0"
-    "@typescript-eslint/visitor-keys": "npm:6.11.0"
+    "@typescript-eslint/scope-manager": "npm:6.12.0"
+    "@typescript-eslint/types": "npm:6.12.0"
+    "@typescript-eslint/typescript-estree": "npm:6.12.0"
+    "@typescript-eslint/visitor-keys": "npm:6.12.0"
     debug: "npm:^4.3.4"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: abb2aff0d4f06937337d1b2da77df4e1501d708b0bce1707c523206ee10e6aa732e1ae6548da56b9889459f23c375a6f0ae2e3a208e972dab8eb3b46680d839a
+  checksum: 2e33b581bcf882336bd4734e90a90dc3618960f8c07f5f7d16e4f3a0f00af97d3b3c8adc366170e1d9c8afd922068b3cfc5e9e997fd4ca6ebcb7c46a9e5b30a1
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/scope-manager@npm:6.11.0"
+"@typescript-eslint/scope-manager@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/scope-manager@npm:6.12.0"
   dependencies:
-    "@typescript-eslint/types": "npm:6.11.0"
-    "@typescript-eslint/visitor-keys": "npm:6.11.0"
-  checksum: 60702ab23710c59ab0b52ffc66f77e24382cec8f684e3e43d4269cc17f414d3cb3a3bb85e232ea9f1e0f7e85506529978a5eea3c08945c01ed7aed4d4997b472
+    "@typescript-eslint/types": "npm:6.12.0"
+    "@typescript-eslint/visitor-keys": "npm:6.12.0"
+  checksum: 46c4a5575fbbb70a800934c93e89795cceef268a140b786a8d22615a0577a5356e42e316dfb23dbb43cec7271b480e712e3127ba33642040bd292fbb6a5de278
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/type-utils@npm:6.11.0"
+"@typescript-eslint/type-utils@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/type-utils@npm:6.12.0"
   dependencies:
-    "@typescript-eslint/typescript-estree": "npm:6.11.0"
-    "@typescript-eslint/utils": "npm:6.11.0"
+    "@typescript-eslint/typescript-estree": "npm:6.12.0"
+    "@typescript-eslint/utils": "npm:6.12.0"
     debug: "npm:^4.3.4"
     ts-api-utils: "npm:^1.0.1"
   peerDependencies:
@@ -2994,23 +2994,23 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 478819bbbab39a0d11dc6276fc9b90e0b2576d7e32d761c811369657dc12bfaf95084bf951714ea82015259d736dec70770d229d6547b066ea0fc4133039082f
+  checksum: e92709a0ea5d5aee86def3da40fe4190235d3560f41e77a73d4bc10f6f59e0df367d5a1263d4e05aa44af4deb158ca6f37b09e483248e341a38fd5e2e8b70f72
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/types@npm:6.11.0"
-  checksum: 3ea55101325950d9594f839b38aa1c0958c3b8401ca9a8d2e4247997bb30dff7ac5e760e888de48a3ea9af3cb656eafb3e2cddc837a523a300ebccb63e150185
+"@typescript-eslint/types@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/types@npm:6.12.0"
+  checksum: e52f12d01e2f543927fde985d709616dec1ef310da3a00e3d239874752ba7635e04d325e2a7cf6403d19977282f15fed7629d2477aeeb57df9140fa424f530fe
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/typescript-estree@npm:6.11.0"
+"@typescript-eslint/typescript-estree@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/typescript-estree@npm:6.12.0"
   dependencies:
-    "@typescript-eslint/types": "npm:6.11.0"
-    "@typescript-eslint/visitor-keys": "npm:6.11.0"
+    "@typescript-eslint/types": "npm:6.12.0"
+    "@typescript-eslint/visitor-keys": "npm:6.12.0"
     debug: "npm:^4.3.4"
     globby: "npm:^11.1.0"
     is-glob: "npm:^4.0.3"
@@ -3019,34 +3019,34 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 9d2333e517d50035f2c962b3966ebf8b35db0ac139c537cf4f1c4fd7b8d8914671671ad3bccdd59ef88fc4d29f441c0412a6c119ac6463bd2fbe8059d5209219
+  checksum: 16f327faf736becb145894380e059a68a993b14fdf6dab50c5b79ff3c027a1e1a61274742f44f6ecd9ebbfadfc55559f94fad52e1596e1ed2656a3053367de85
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/utils@npm:6.11.0"
+"@typescript-eslint/utils@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/utils@npm:6.12.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.4.0"
     "@types/json-schema": "npm:^7.0.12"
     "@types/semver": "npm:^7.5.0"
-    "@typescript-eslint/scope-manager": "npm:6.11.0"
-    "@typescript-eslint/types": "npm:6.11.0"
-    "@typescript-eslint/typescript-estree": "npm:6.11.0"
+    "@typescript-eslint/scope-manager": "npm:6.12.0"
+    "@typescript-eslint/types": "npm:6.12.0"
+    "@typescript-eslint/typescript-estree": "npm:6.12.0"
     semver: "npm:^7.5.4"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: 7b8c17bd191b06cc77fe341f32fb7b4126d47a6ec05e5112567d4424a1896cf851935ff867c825d7e3361c317a48fe5304f95e454089f9aecc182bd42b1e4176
+  checksum: 84091ddc0f0cceb5d0a2e366139d65413867cf648f805355ab4a42ee273cdd691b9083084d1c1feb9cb3c1934c1ed338fbf92146c738a96b84de3d2ec2dfdec5
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:6.11.0":
-  version: 6.11.0
-  resolution: "@typescript-eslint/visitor-keys@npm:6.11.0"
+"@typescript-eslint/visitor-keys@npm:6.12.0":
+  version: 6.12.0
+  resolution: "@typescript-eslint/visitor-keys@npm:6.12.0"
   dependencies:
-    "@typescript-eslint/types": "npm:6.11.0"
+    "@typescript-eslint/types": "npm:6.12.0"
     eslint-visitor-keys: "npm:^3.4.1"
-  checksum: d89ef8579737f23a1a81506724e2c5cfec92fa4431232f93c4b6970a21382c6c0ad09ba21ffe8d25725d43aecce351fee2797c9170012ef0c00e5be7592e8233
+  checksum: edf3537c8176059e8fdea680c10f85a635e427fb5caa6f88473077f50edbec7b011b0dc1e4499543519085559268d30a166b1cb160d30a1315ef818fc181a6a4
   languageName: node
   linkType: hard
 
@@ -9384,8 +9384,8 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.1.1"
-    "@typescript-eslint/eslint-plugin": "npm:^6.11.0"
-    "@typescript-eslint/parser": "npm:^6.11.0"
+    "@typescript-eslint/eslint-plugin": "npm:^6.12.0"
+    "@typescript-eslint/parser": "npm:^6.12.0"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.54.0"
     eslint-plugin-import: "npm:^2.29.0"
@@ -10348,23 +10348,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "typescript@npm:5.2.2"
+"typescript@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "typescript@npm:5.3.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d65e50eb849bd21ff8677e5b9447f9c6e74777e346afd67754934264dcbf4bd59e7d2473f6062d9a015d66bd573311166357e3eb07fea0b52859cf9bb2b58555
+  checksum: 415e5fb6611f5713e460bad48039f00bcfdbde53a2f911727862d5aa9c5d5edd250059a419df382d8f031709e15a169c41eb62b6a401da5eec7ac0f4e359d6ac
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
-  version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+"typescript@patch:typescript@npm%3A^5.3.2#optional!builtin<compat/typescript>":
+  version: 5.3.2
+  resolution: "typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
+  checksum: 1b45cdfb577a78ae7a9a9d0b77a7b772142cb98ba05e4e5aefba7044a028ded885bcecef63166407a5986645cea816fe4986894336aacd5e791796ea79a6a7ed
   languageName: node
   linkType: hard
 
