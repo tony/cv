@@ -2209,8 +2209,8 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2241,8 +2241,8 @@ __metadata:
     dom-to-image: "npm:^2.6.0"
     eslint-plugin-react: "npm:^7.33.2"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2271,8 +2271,8 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2298,8 +2298,8 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     plotly.js: "npm:^2.27.1"
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
@@ -2325,8 +2325,8 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2358,8 +2358,8 @@ __metadata:
     github-colors: "npm:~2.2"
     github-graphql-api: "npm:^1.0.6"
     invert-color: "npm:^2.0.0"
-    mobx: "npm:^6.11.0"
-    mobx-state-tree: "npm:^5.3.0"
+    mobx: "npm:^6.12.0"
+    mobx-state-tree: "npm:^5.4.0"
     moment: "npm:^2.29.4"
     prettier: "npm:^3.1.0"
     ts-loader: "npm:^9.5.1"
@@ -8057,19 +8057,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx-state-tree@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "mobx-state-tree@npm:5.3.0"
+"mobx-state-tree@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "mobx-state-tree@npm:5.4.0"
   peerDependencies:
     mobx: ^6.3.0
-  checksum: fc21219c31d9776e1fb8f48523117903d86c8809f1bebfce3c2c2687d7e029ea9d028b40a279f3706c78b503ae2570ad698e9618a7add60c2891e59fd1bf3754
+  checksum: 06a63c0eedd2b87c4a960218c42f101d83fee45fa415c42f4edab684525da46d922497c225de2fedfbc7efca852fe924f0a6b19db2598bb42053bf424a7ae558
   languageName: node
   linkType: hard
 
-"mobx@npm:^6.11.0":
-  version: 6.11.0
-  resolution: "mobx@npm:6.11.0"
-  checksum: dba665ad2fe94aa43b7d3364f99354eb55664d01ab7a92a8dbd8c9ca60d835d3a5d7c52958e306d9a4e49ad45107d18dd7d480798af1fd6ab2827f2c9a4ebdd4
+"mobx@npm:^6.12.0":
+  version: 6.12.0
+  resolution: "mobx@npm:6.12.0"
+  checksum: 65d784abfc141a807160e0147b25e56069fb8942caafe4ffcd53542f58695bcfa7840cc266a2386efb8f9c4e8ccc1ed662f0dab784a2e449e055a9d49a2a2126
   languageName: node
   linkType: hard
 
