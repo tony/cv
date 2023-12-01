@@ -2202,7 +2202,7 @@ __metadata:
   resolution: "@tony/cv-chart-react-billboard@workspace:packages/chart-react-billboard"
   dependencies:
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
     billboard.js: "npm:^3.10.3"
@@ -2231,7 +2231,7 @@ __metadata:
     "@carbon/charts": "npm:1.13.8"
     "@carbon/charts-react": "npm:1.13.8"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
     carbon-components: "npm:^11.12.0"
@@ -2265,7 +2265,7 @@ __metadata:
     "@nivo/line": "npm:^0.84.0"
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
     cross-env: "npm:^7.0.3"
@@ -2291,7 +2291,7 @@ __metadata:
   resolution: "@tony/cv-chart-react-plotly@workspace:packages/chart-react-plotly"
   dependencies:
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/plotly.js": "npm:^2.12.30"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
@@ -2319,7 +2319,7 @@ __metadata:
   resolution: "@tony/cv-chart-react-victory@workspace:packages/chart-react-victory"
   dependencies:
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
     cross-env: "npm:^7.0.3"
@@ -2352,7 +2352,7 @@ __metadata:
   resolution: "@tony/cv-lib@workspace:packages/lib"
   dependencies:
     "@types/chroma-js": "npm:^2.4.3"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     chroma-js: "npm:^2.4.2"
     csstype: "npm:^3.1.2"
     github-colors: "npm:~2.2"
@@ -2382,7 +2382,7 @@ __metadata:
     "@atlaskit/toggle": "npm:^13.0.1"
     "@floating-ui/react": "npm:^0.26.3"
     "@tony/cv-data": "npm:*"
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     "@types/react": "npm:^18.2.39"
     "@types/react-dom": "npm:^18.2.17"
     "@types/react-ranger": "npm:^2.0.4"
@@ -2401,7 +2401,7 @@ __metadata:
     react-select: "npm:^5.8.0"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.3.2"
-    vite: "npm:^5.0.3"
+    vite: "npm:^5.0.4"
     vite-plugin-webfont-dl: "npm:^3.9.1"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
@@ -2416,7 +2416,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
-    "@types/node": "npm:^20.10.0"
+    "@types/node": "npm:^20.10.1"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
     moment: "npm:^2.29.4"
@@ -2819,12 +2819,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.10.0":
-  version: 20.10.0
-  resolution: "@types/node@npm:20.10.0"
+"@types/node@npm:^20.10.1":
+  version: 20.10.1
+  resolution: "@types/node@npm:20.10.1"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: c7d5ddbdbf3491e2363135c9611eb6bfae90eda2957279237fa232bcb29cd0df1cc3ee149d6de9915b754262a531ee2d57d33c9ecd58d763e8ad4856113822f3
+  checksum: 703c3cc5bdb2818a16f87019fe4072bfd66489bb300338970260c5b84dd2129595995c41b28773c3b7d9d1a64f36fec59a741629ec466f2aeddad7a9d0c027ac
   languageName: node
   linkType: hard
 
@@ -11060,9 +11060,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "vite@npm:5.0.3"
+"vite@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "vite@npm:5.0.4"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -11096,7 +11096,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 3f2cc01eaa632df89c1486dccdbea7df1e7b1d7e4f9270b987502096ac97038b0c7d5989ea04e7d095e3eaa5669e78e700470690b0f12076e2a58b97cda24351
+  checksum: 3d1726e5ee09c99ca8f57ebb34428ceb23e51705cd9e39ee97cb123870caaff1e65fbeaed00658f8112dd6ac658e90cd020bd33c090ecd190fb962e43cc8d64c
   languageName: node
   linkType: hard
 
