@@ -2203,7 +2203,7 @@ __metadata:
   dependencies:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     billboard.js: "npm:^3.10.3"
     cross-env: "npm:^7.0.3"
@@ -2232,7 +2232,7 @@ __metadata:
     "@carbon/charts-react": "npm:1.13.8"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2266,7 +2266,7 @@ __metadata:
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
@@ -2293,7 +2293,7 @@ __metadata:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.2"
     "@types/plotly.js": "npm:^2.12.30"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
@@ -2320,7 +2320,7 @@ __metadata:
   dependencies:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     cross-env: "npm:^7.0.3"
     eslint-plugin-react: "npm:^7.33.2"
@@ -2383,7 +2383,7 @@ __metadata:
     "@floating-ui/react": "npm:^0.26.3"
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.10.2"
-    "@types/react": "npm:^18.2.40"
+    "@types/react": "npm:^18.2.41"
     "@types/react-dom": "npm:^18.2.17"
     "@types/react-ranger": "npm:^2.0.4"
     "@vitejs/plugin-react": "npm:^4.2.0"
@@ -2896,14 +2896,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.40":
-  version: 18.2.40
-  resolution: "@types/react@npm:18.2.40"
+"@types/react@npm:^18.2.41":
+  version: 18.2.41
+  resolution: "@types/react@npm:18.2.41"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 323c319461482ad17b4813fec8641a4167361f42164757b64dbe27db379ae8fd98f3811a301f4abce0c17ce53a83c549db3ba3008e54d2a422a0656bddd72440
+  checksum: 31a498a56ad3e825ae13799355fe49042c0cdbbe6f40003f39b6b9cf847ba1669393c22ba60e97b1072cf1c002b15432082cdd17e47c948430bdc1f0864829b9
   languageName: node
   linkType: hard
 
