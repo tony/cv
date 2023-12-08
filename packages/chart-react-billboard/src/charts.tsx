@@ -34,7 +34,7 @@ export const Chart: React.FC<bb.ChartOptions> = observer(
       if (!chart || !data) {
         return;
       }
-      if (chart && chart?.load && data) {
+      if (chart?.load && data) {
         // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
         chart.load(data);
       }

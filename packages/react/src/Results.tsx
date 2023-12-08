@@ -21,12 +21,11 @@ export const Results = observer(() => {
       <ResultsHeader />
 
       <div id="results">
-        {filteredActivities &&
-          filteredActivities.map((activity, idx) => {
-            return (
-              <ActivityCard activity={activity} org={activity.org} key={idx} />
-            );
-          })}
+        {filteredActivities?.map?.((activity, idx) => {
+          return (
+            <ActivityCard activity={activity} org={activity.org} key={idx} />
+          );
+        })}
       </div>
       <div id="results-bottom"></div>
     </div>
