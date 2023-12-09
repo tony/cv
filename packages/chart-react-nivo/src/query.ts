@@ -1,5 +1,6 @@
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
+import chroma from "chroma-js";
 import type { Instance } from "mobx-state-tree";
 
 import { CVState } from "@tony/cv-lib/search/mobx";
@@ -102,9 +103,29 @@ export const stateToLine = (
         }),
       },
     ],
-    colors: "var(--line-chart-fill-color, rgb(53, 114, 165))",
-    pointColor: "var(--line-chart-fill-color, rgb(37, 80, 115))",
-    pointBorderColor: "var(--line-chart-fill-color, rgb(37, 80, 115))",
+    colors: () => {
+      const color = state.dominantLanguage?.ui?.backgroundColor;
+
+      if (color && isString(color)) {
+        return color;
+      }
+      return "gray";
+    },
+    pointBorderColor: () => {
+      const color = chroma(
+        state.dominantLanguage?.ui?.backgroundColor ?? "grey",
+      )
+        ?.darken(0.8)
+        .css();
+
+      if (color && isString(color)) {
+        return color;
+      }
+      return "gray";
+    },
+    pointColor: "white",
+    pointSize: 12,
+    pointBorderWidth: 4,
     xScale: {
       type: "time",
       format: "%Y-%m-%d",
@@ -124,8 +145,6 @@ export const stateToLine = (
       legendOffset: -12,
     },
     enablePointLabel: true,
-    pointSize: 16,
-    pointBorderWidth: 1,
     useMesh: true,
     enableSlices: false,
     enableArea: true,
