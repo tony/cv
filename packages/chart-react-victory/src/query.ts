@@ -1,3 +1,4 @@
+import chroma from "chroma-js";
 import type { Instance } from "mobx-state-tree";
 import type { VictoryLine, VictoryPie } from "victory";
 
@@ -45,13 +46,17 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
 
 export const stateToLine = (state: Instance<typeof CVState>) => {
   const activityYearMap = state.activityYearMap;
+  const strokeColor = chroma(
+    state.dominantLanguage?.ui?.backgroundColor ?? "grey",
+  )
+    ?.darken(0.8)
+    .css();
 
   return {
     style: {
       data: {
-        stroke: () => {
-          return "var(--line-chart-fill-color)";
-        },
+        stroke: strokeColor ?? "var(--line-chart-fill-color, #fff)",
+        strokeWidth: 5,
         fill: "var(--line-chart-fill-color)",
       },
     },

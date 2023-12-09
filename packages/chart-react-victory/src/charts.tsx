@@ -7,6 +7,7 @@ import {
   VictoryArea,
   VictoryAxis,
   VictoryChart,
+  VictoryClipContainer,
   VictoryLine,
   VictoryPie,
   VictoryTheme,
@@ -171,6 +172,9 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
           standalone={false}
         />
         <VictoryArea
+          groupComponent={
+            <VictoryClipContainer clipPadding={{ top: 5, right: 10 }} />
+          }
           ref={chartRef}
           padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
           animate={{
