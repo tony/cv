@@ -116,13 +116,11 @@ export const stateToLine = (
       stacked: false,
     },
     axisLeft: {
-      legend: "linear scale",
       legendOffset: 12,
     },
     axisBottom: {
       format: "%Y",
       tickValues: "every 1 year",
-      legend: "time scale",
       legendOffset: -12,
     },
     enablePointLabel: true,
@@ -130,6 +128,7 @@ export const stateToLine = (
     pointBorderWidth: 1,
     useMesh: true,
     enableSlices: false,
+    enableArea: true,
     height: lineChartHeight,
     margin: {
       left: 25,
