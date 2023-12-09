@@ -489,7 +489,7 @@ p {
   /* Tooltips */
   color: var(--line-chart-tooltip-background);
 }
-#charts.nivo svg g text {
+#charts.nivo .chartRow--line svg g text {
   fill: var(--chart-label-color) !important;
 }
 /** Nivo end **/
