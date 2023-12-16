@@ -15,5 +15,8 @@
     "clean": "echo 'NOOP'",
     "build": "echo 'NOOP'",
     "full-clean": "rm -rf scraped/"
+  },
+  "devDependencies": {
+    "oxlint": "^0.0.20"
   }
 }
