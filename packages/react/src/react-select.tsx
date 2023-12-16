@@ -307,7 +307,7 @@ export const CategoryOption: React.FC<OptionProps<StyleOption, true>> = ({
       isSelected={isSelected}
       className={`dropdownCategoryOption ${isSelected ? "selected" : ""}`}
     >
-      {category.id && <>{CategoryEmojiMap[category.id]}</>} {children}
+      {category.id ? CategoryEmojiMap[category.id] : null} {children}
     </ReactSelectComponents.Option>
   );
 };

@@ -94,74 +94,72 @@ export const ColorSchemeToggle: React.FC = () => {
   return (
     <div className="color-scheme-toggler">
       <FloatingFocusManager context={context} modal={false}>
-        <>
-          {isTooltipOpen && (
+        {isTooltipOpen && (
+          <div
+            className="color-scheme-popover"
+            ref={refs.setFloating}
+            style={floatingStyles}
+            aria-labelledby={headingId}
+            {...getFloatingProps()}
+          >
             <div
-              className="color-scheme-popover"
-              ref={refs.setFloating}
-              style={floatingStyles}
-              aria-labelledby={headingId}
-              {...getFloatingProps()}
+              className={`color-scheme-toggle ${
+                _hasCustomColorScheme && colorScheme == ColorScheme.LIGHT
+                  ? "active"
+                  : ""
+              }`}
+              onClick={setLightTheme}
             >
-              <div
-                className={`color-scheme-toggle ${
-                  _hasCustomColorScheme && colorScheme == ColorScheme.LIGHT
-                    ? "active"
-                    : ""
-                }`}
-                onClick={setLightTheme}
-              >
-                <div className="color-scheme-toggle--icon">
-                  <div
-                    className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--light-mode"
-                    title="Switch to light mode"
-                  >
-                    {lightModeIcon}
-                  </div>
+              <div className="color-scheme-toggle--icon">
+                <div
+                  className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--light-mode"
+                  title="Switch to light mode"
+                >
+                  {lightModeIcon}
                 </div>
-                Light
               </div>
-              <div
-                className={`color-scheme-toggle ${
-                  _hasCustomColorScheme && colorScheme == ColorScheme.DARK
-                    ? "active"
-                    : ""
-                }`}
-                onClick={setDarkTheme}
-              >
-                <div className="color-scheme-toggle--icon">
-                  <div
-                    className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--dark-mode"
-                    title="Switch to dark mode"
-                  >
-                    {darkModeIcon}
-                  </div>
-                </div>
-                Dark
-              </div>
-              <div
-                className={`color-scheme-toggle ${
-                  _hasCustomColorScheme ? "" : "active"
-                }`}
-                onClick={setSystemTheme}
-              >
-                <div className="color-scheme-toggle--icon">
-                  <div
-                    className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--clear"
-                    title={
-                      _hasCustomColorScheme
-                        ? "Back to OS default"
-                        : "Using OS color scheme"
-                    }
-                  >
-                    {systemIcon}
-                  </div>
-                </div>
-                System
-              </div>
+              Light
             </div>
-          )}
-        </>
+            <div
+              className={`color-scheme-toggle ${
+                _hasCustomColorScheme && colorScheme == ColorScheme.DARK
+                  ? "active"
+                  : ""
+              }`}
+              onClick={setDarkTheme}
+            >
+              <div className="color-scheme-toggle--icon">
+                <div
+                  className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--dark-mode"
+                  title="Switch to dark mode"
+                >
+                  {darkModeIcon}
+                </div>
+              </div>
+              Dark
+            </div>
+            <div
+              className={`color-scheme-toggle ${
+                _hasCustomColorScheme ? "" : "active"
+              }`}
+              onClick={setSystemTheme}
+            >
+              <div className="color-scheme-toggle--icon">
+                <div
+                  className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--clear"
+                  title={
+                    _hasCustomColorScheme
+                      ? "Back to OS default"
+                      : "Using OS color scheme"
+                  }
+                >
+                  {systemIcon}
+                </div>
+              </div>
+              System
+            </div>
+          </div>
+        )}
       </FloatingFocusManager>
       <div
         className="color-scheme-toggler-button"

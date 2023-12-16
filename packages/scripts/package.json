@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "lint": "../../node_modules/.bin/eslint . -c .eslintrc.js --ext .ts",
+    "lint": "yarn oxlint",
     "test": "echo 'NOOP'",
     "build": "echo 'NOOP'",
     "prettier": "prettier",
@@ -23,17 +23,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
+    "oxlint": "^0.0.20",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.0",
-    "eslint-plugin-import": "^2.25.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-tsc": "^2.0.0"
   }
 }

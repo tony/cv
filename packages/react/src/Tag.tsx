@@ -34,7 +34,7 @@ export const LanguageTag: React.FC<
   return (
     <div
       className={`tag` + (className ? ` ${className}` : "")}
-      style={{ ...(language?.ui ?? {}), ...style }}
+      style={{ ...language?.ui, ...style }}
       {...props}
     >
       {children || languageName}
@@ -62,10 +62,10 @@ export const CategoryTag: React.FC<
     return (
       <div
         className={`tag` + (className ? ` ${className}` : "")}
-        style={{ ...(category?.ui ?? {}), ...style }}
+        style={{ ...category?.ui, ...style }}
         {...props}
       >
-        {category?.id && <>{CategoryEmojiMap[category.id]}</>}
+        {category?.id && CategoryEmojiMap[category.id]}
         {children || category?.name || categoryName}
       </div>
     );

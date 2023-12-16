@@ -210,15 +210,12 @@ export const ActivityInfo: React.FC<
 
 const DateText: React.FC<
   { date: string } & React.HTMLProps<HTMLSpanElement>
-> = ({ date, ...rest }) => (
-  <>
-    {date && (
-      <span title={format(new Date(date), "MMMM do, yyyy")} {...rest}>
-        {formatDistance(new Date(date), new Date())} ago
-      </span>
-    )}
-  </>
-);
+> = ({ date, ...rest }) =>
+  date && (
+    <span title={format(new Date(date), "MMMM do, yyyy")} {...rest}>
+      {formatDistance(new Date(date), new Date())} ago
+    </span>
+  );
 
 export const ActivityCard: React.FC<ActivityCardProps> = ({
   activity,
