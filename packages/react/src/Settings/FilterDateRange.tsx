@@ -54,15 +54,16 @@ export const FilterDateRange: React.FC<{
       id="year-range"
     >
       {ticks.map(({ value, getTickProps }) => (
-        <div className="tick" {...getTickProps()} key={value}>
+        <div className="tick" key={value} {...getTickProps()}>
           <div className="tick-label">{value}</div>
         </div>
       ))}
       {segments.map(({ getSegmentProps }, i) => (
-        <div {...getSegmentProps()} key={i} />
+        <div key={i} {...getSegmentProps()} />
       ))}
       {handles.map(({ getHandleProps }, j) => (
         <button
+          key={j}
           {...getHandleProps({
             style: {
               width: "14px",
@@ -73,7 +74,6 @@ export const FilterDateRange: React.FC<{
               border: "solid 1px #888",
             },
           })}
-          key={j}
         />
       ))}
     </div>

@@ -49,9 +49,7 @@ const DominantLanguageCSSVariable: React.FC = observer(() => {
   `,
       }}
     ></style>
-  ) : (
-    <></>
-  );
+  ) : null;
 });
 
 const App: React.FC = observer(() => {
