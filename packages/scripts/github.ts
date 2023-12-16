@@ -88,7 +88,7 @@ query fetchIssues($login: String!, $cursor: String) {
 
   for await (const res of ghIterator) {
     const data = {
-      ...{ pullRequests: res.user.pullRequests.edges },
+      pullRequests: res.user.pullRequests.edges,
     };
     issues = issues.concat(data.pullRequests);
     console.log(
