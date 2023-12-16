@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "lint": "eslint . -c .eslintrc.js --ext .ts",
+    "lint": "yarn oxlint",
     "test": "echo 'noop'",
     "prettier": "prettier",
     "format": "yarn run prettier . --write",
