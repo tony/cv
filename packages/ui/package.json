@@ -17,6 +17,6 @@
     "prettier": "^3.1.1"
   },
   "devDependencies": {
-    "oxlint": "^0.0.20"
+    "oxlint": "^0.0.21"
   }
 }
