@@ -2378,7 +2378,7 @@ __metadata:
     "@types/react-ranger": "npm:^2.0.4"
     "@vitejs/plugin-react": "npm:^4.2.1"
     cross-env: "npm:^7.0.3"
-    date-fns: "npm:^3.0.1"
+    date-fns: "npm:^3.0.4"
     fast-deep-equal: "npm:^3.1.3"
     mobx-react-lite: "npm:^4.0.5"
     oxlint: "npm:^0.0.21"
@@ -4385,6 +4385,13 @@ __metadata:
   version: 3.0.1
   resolution: "date-fns@npm:3.0.1"
   checksum: e349cf5b53982813bb8a8fb1ee395083208bdd817d8ee94e3c06af9226688af4e60d625ea44898baf089a3b824364a08eaf783bf386012e355f966d9d4d1782d
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "date-fns@npm:3.0.4"
+  checksum: 6e67c6cee45740adaac300c098bcde27981156da9609c585936cc8d53cddaa0ea42cdb4521507fab021132bfc08a5fe6d716627118ffbf2b3407e6fa4a285311
   languageName: node
   linkType: hard
 
