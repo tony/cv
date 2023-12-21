@@ -558,7 +558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
   version: 7.21.5
   resolution: "@babel/runtime@npm:7.21.5"
   dependencies:
@@ -698,11 +698,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.12":
-  version: 1.13.12
-  resolution: "@carbon/charts-react@npm:1.13.12"
+"@carbon/charts-react@npm:1.13.14":
+  version: 1.13.14
+  resolution: "@carbon/charts-react@npm:1.13.14"
   dependencies:
-    "@carbon/charts": "npm:1.13.12"
+    "@carbon/charts": "npm:1.13.14"
     "@carbon/icons-react": "npm:^11.33.0"
     "@carbon/telemetry": "npm:~0.1.0"
     react: "npm:^18.2.0"
@@ -710,13 +710,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: c2aa1a0705e393152c04d3e319d102854967a83da7618c7194df8bb177f4a20a9bf729c181d022d0b51e599f76a9294ce4355e9befe4ce1d93b757129cb872a3
+  checksum: bbfde8eeadc9da00656a16413bbdb1fd8134c767aba425771608b244e5f2b1cd83f8c74a74c8cc1dfe91e4928daf9698b5a96e0b93caff29770ff84d3fbdba16
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.12":
-  version: 1.13.12
-  resolution: "@carbon/charts@npm:1.13.12"
+"@carbon/charts@npm:1.13.14":
+  version: 1.13.14
+  resolution: "@carbon/charts@npm:1.13.14"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/telemetry": "npm:~0.1.0"
@@ -725,7 +725,7 @@ __metadata:
     d3: "npm:^7.8.5"
     d3-cloud: "npm:^1.2.7"
     d3-sankey: "npm:^0.12.3"
-    date-fns: "npm:^2.30.0"
+    date-fns: "npm:^3.0.1"
     html-to-image: "npm:^1.11.11"
     lodash-es: "npm:^4.17.21"
     topojson-client: "npm:^3.1.0"
@@ -739,7 +739,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: fc6ce5dc0c22ff8ef4554ffc71d992361454c4d0e823f5447a720b1c0fe98bbce84d75cdb84e60bface427fef89417d0df2c8fc816089e64f101fa76d969bb88
+  checksum: e2139fe486d72f402a096eb911507e38cf9b12dc17dae9b6acfe98aba1def7ade267d5e236f72c1204348faccc5d4bdcba8eb42e3d0eb13ede905b41e526e2b4
   languageName: node
   linkType: hard
 
@@ -2246,8 +2246,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
-    "@carbon/charts": "npm:1.13.12"
-    "@carbon/charts-react": "npm:1.13.12"
+    "@carbon/charts": "npm:1.13.14"
+    "@carbon/charts-react": "npm:1.13.14"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
     "@types/react": "npm:^18.2.45"
@@ -2378,7 +2378,7 @@ __metadata:
     "@types/react-ranger": "npm:^2.0.4"
     "@vitejs/plugin-react": "npm:^4.2.1"
     cross-env: "npm:^7.0.3"
-    date-fns: "npm:^3.0.0"
+    date-fns: "npm:^3.0.1"
     fast-deep-equal: "npm:^3.1.3"
     mobx-react-lite: "npm:^4.0.5"
     oxlint: "npm:^0.0.21"
@@ -4381,19 +4381,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: 70b3e8ea7aaaaeaa2cd80bd889622a4bcb5d8028b4de9162cbcda359db06e16ff6e9309e54eead5341e71031818497f19aaf9839c87d1aba1e27bb4796e758a9
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "date-fns@npm:3.0.0"
-  checksum: 2d3de7f435bb85d8898b3f0c32e5f25d554fea926dc3d5814cfc42f0079aa44e46c284be801e856b7be5e371b2ac93fccda7fa5a58f6996e23291feb5f536eb4
+"date-fns@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "date-fns@npm:3.0.1"
+  checksum: e349cf5b53982813bb8a8fb1ee395083208bdd817d8ee94e3c06af9226688af4e60d625ea44898baf089a3b824364a08eaf783bf386012e355f966d9d4d1782d
   languageName: node
   linkType: hard
 
