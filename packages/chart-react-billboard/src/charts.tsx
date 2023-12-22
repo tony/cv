@@ -70,8 +70,6 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
       return void 0;
     }, [cvState, setChartData, chartData]);
 
-    React.useEffect(() => void 0, []);
-
     if (!chartData) {
       return null;
     }
@@ -106,8 +104,6 @@ export const ActivityLineChart: React.FC<Partial<bb.ChartOptions>> = observer(
       }
       return void 0;
     }, [setChartData, chartData, cvState]);
-
-    React.useEffect(() => void 0, []);
 
     if (!chartData) {
       return null;

@@ -116,8 +116,6 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
       return void 0;
     }, [cvState, chartData, setChartData]);
 
-    React.useEffect(() => void 0, []);
-
     React.useEffect(
       () =>
         reaction(
