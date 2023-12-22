@@ -2296,6 +2296,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-billboard@workspace:packages/chart-react-billboard"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
     "@types/react": "npm:^18.2.45"
@@ -2317,6 +2318,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@carbon/charts": "npm:1.13.14"
     "@carbon/charts-react": "npm:1.13.14"
     "@tony/cv-lib": "npm:*"
@@ -2343,6 +2345,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-nivo@workspace:packages/chart-react-nivo"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@nivo/bar": "npm:^0.84.0"
     "@nivo/core": "npm:^0.84.0"
     "@nivo/line": "npm:^0.84.0"
@@ -2367,6 +2370,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-plotly@workspace:packages/chart-react-plotly"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
     "@types/plotly.js": "npm:^2.12.31"
@@ -2389,6 +2393,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-victory@workspace:packages/chart-react-victory"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
     "@types/react": "npm:^18.2.45"
@@ -2410,6 +2415,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-data@workspace:packages/data"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     oxlint: "npm:^0.0.20"
   languageName: unknown
   linkType: soft
@@ -2418,6 +2424,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-lib@workspace:packages/lib"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@types/chroma-js": "npm:^2.4.3"
     "@types/node": "npm:^20.10.5"
     chroma-js: "npm:^2.4.2"
@@ -2441,6 +2448,7 @@ __metadata:
   resolution: "@tony/cv-react@workspace:packages/react"
   dependencies:
     "@atlaskit/toggle": "npm:^13.0.1"
+    "@biomejs/biome": "npm:1.4.1"
     "@floating-ui/react": "npm:^0.26.4"
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.10.5"
@@ -2471,6 +2479,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     "@types/node": "npm:^20.10.5"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
@@ -2488,6 +2497,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-ui@workspace:packages/ui"
   dependencies:
+    "@biomejs/biome": "npm:1.4.1"
     oxlint: "npm:^0.0.21"
     prettier: "npm:^3.1.1"
   languageName: unknown

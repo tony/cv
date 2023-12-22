@@ -17,6 +17,7 @@
     "full-clean": "rm -rf scraped/"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.4.1",
     "oxlint": "^0.0.20"
   }
 }

@@ -17,6 +17,7 @@
     "clean": "rm -rf dist/ node_modules/.cache/"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.4.1",
     "@tony/cv-data": "*",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
