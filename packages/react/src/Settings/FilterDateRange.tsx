@@ -59,11 +59,11 @@ export const FilterDateRange: React.FC<{
         </div>
       ))}
       {segments.map(({ getSegmentProps }, i) => (
-        <div key={i} {...getSegmentProps()} />
+        <div key={`filter-date-range-segment-${i}`} {...getSegmentProps()} />
       ))}
       {handles.map(({ getHandleProps }, j) => (
         <button
-          key={j}
+          key={`filter-date-range-handle-${j}`}
           type="button"
           {...getHandleProps({
             style: {
