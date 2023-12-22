@@ -1,18 +1,3 @@
 {
-  "printWidth": 80,
-  "importOrder": [
-    "^react",
-    "",
-    "<THIRD_PARTY_MODULES>",
-    "",
-    "^@tony/(.*)$",
-    "",
-    "^[./]",
-    "",
-    "\\.s?css$"
-  ],
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-css-order"],
-  "importOrderParserPlugins" : ["typescript", "jsx", "decorators-legacy"],
-  "importOrderTypeScriptVersion": "5.0.0",
-  "cssDeclarationSorterOrder": "smacss"
+  "printWidth": 80
 }
