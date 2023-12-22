@@ -142,6 +142,7 @@ export const ColorSchemeToggle: React.FC = () => {
                 _hasCustomColorScheme ? "" : "active"
               }`}
               onClick={setSystemTheme}
+              onKeyDown={setSystemTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
