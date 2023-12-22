@@ -6,11 +6,11 @@
     "build": "yarn workspaces foreach --all run build",
     "clean": "yarn workspaces foreach --all run clean",
     "distclean": "yarn workspaces foreach --all run distclean",
-    "format": "yarn workspaces foreach --all run format",
-    "lint": "yarn workspaces foreach --all run lint",
+    "format": "biome format .",
+    "lint": "biome lint .",
     "ncu": "yarn ncu-local -u; yarn workspaces foreach --all run ncu",
     "ncu-local": "ncu",
-    "prettier": "yarn workspaces foreach --all run prettier",
+    "biome-all": "yarn workspaces foreach --all run biome",
     "update": "yarn workspaces foreach --all run update",
     "github": "yarn workspace @tony/cv-scripts run github",
     "deduplicate": "npx --yes yarn-deduplicate yarn.lock"
@@ -22,9 +22,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
-    "cross-env": "^7.0.3",
-    "oxlint": "^0.0.21"
+    "@biomejs/biome": "1.4.1",
+    "cross-env": "^7.0.3"
   },
   "packageManager": "yarn@4.0.2"
 }

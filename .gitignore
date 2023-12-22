@@ -31,3 +31,6 @@ packages/data/scraped/
 
 # WSL
 *:Zone.Identifier
+
+# biome
+biome-logs/

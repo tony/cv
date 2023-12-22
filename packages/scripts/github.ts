@@ -100,7 +100,8 @@ query fetchIssues($login: String!, $cursor: String) {
 };
 
 fetchGitHubIssues()
-  .then((prs) => {
+  .then((rawPrs) => {
+    let prs = rawPrs;
     if (config.exclude_own_repo) {
       prs = prs.filter(
         (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`),
@@ -118,9 +119,9 @@ fetchGitHubIssues()
       prs = prs.filter((pr) => !pr.node.repository.isPrivate);
     }
 
-    prs = prs.map((pr) => pr.node); // zoom in on "node"
+    const prNodes = prs.map((pr) => pr.node); // zoom in on "node"
 
-    let projects = prs.map((pr) => pr.repository);
+    let projects = prNodes.map((pr) => pr.repository);
 
     // join languages
     projects = projects.map((p) => {
@@ -150,21 +151,18 @@ fetchGitHubIssues()
     };
 
     let id = 0;
-    const projectsFinal = projects.reduce(
-      (acc, p) => ({
-        ...acc,
-        [p.name]: {
-          orgType: "Open Source",
-          id: `${id++}`,
-          // missing language in kohana-modules
-          languages: p.languages || fillMissingLanguages(p.name),
-          name: p.name,
-          repoUrl: p.url,
-          ...(p.homepageUrl ? { url: p.homepageUrl } : {}),
-        },
-      }),
-      {},
-    );
+    const projectsFinal = projects.reduce((acc, p) => {
+      acc[p.name] = {
+        orgType: "Open Source",
+        id: `${id++}`,
+        // missing language in kohana-modules
+        languages: p.languages || fillMissingLanguages(p.name),
+        name: p.name,
+        repoUrl: p.url,
+        ...(p.homepageUrl ? { url: p.homepageUrl } : {}),
+      };
+      return acc;
+    }, {});
 
     let data = JSON.stringify(projectsFinal, null, "  ");
     fs.writeFileSync(`${config.output_dir}/gh_orgs.json`, data);
@@ -172,7 +170,7 @@ fetchGitHubIssues()
     // We do this at the bottom because we want to associate the
     // project_final 'id' attribute with project in pr's
     id = 0;
-    const pullRequestsFinal = prs.map((pr) => {
+    const pullRequestsFinal = prNodes.map((pr) => {
       return {
         acceptedAt: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
@@ -182,7 +180,7 @@ fetchGitHubIssues()
         ),
         category: "Patch",
         createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),
-        diffUrl: pr.url + ".diff",
+        diffUrl: `${pr.url}.diff`,
         id: `${id++}`,
         qaUrl: pr.url,
         title: pr.title,

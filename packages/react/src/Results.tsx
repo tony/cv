@@ -23,11 +23,15 @@ export const Results = observer(() => {
       <div id="results">
         {filteredActivities?.map?.((activity, idx) => {
           return (
-            <ActivityCard activity={activity} org={activity.org} key={idx} />
+            <ActivityCard
+              activity={activity}
+              org={activity.org}
+              key={`activity-card-${idx}`}
+            />
           );
         })}
       </div>
-      <div id="results-bottom"></div>
+      <div id="results-bottom" />
     </div>
   );
 });

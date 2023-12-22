@@ -7,16 +7,13 @@
     "lint": "echo 'NOOP'",
     "test": "echo 'NOOP'",
     "build": "echo 'NOOP'",
-    "prettier": "prettier",
-    "format": "yarn run prettier . --write",
+    "biome": "biome",
+    "format": "yarn biome format . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "rm -rf dist/"
   },
-  "dependencies": {
-    "prettier": "^3.1.1"
-  },
   "devDependencies": {
-    "oxlint": "^0.0.21"
+    "@biomejs/biome": "1.4.1"
   }
 }

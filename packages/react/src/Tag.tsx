@@ -33,7 +33,7 @@ export const LanguageTag: React.FC<
 
   return (
     <div
-      className={`tag` + (className ? ` ${className}` : "")}
+      className={`tag${className ? ` ${className}` : ""}`}
       style={{ ...language?.ui, ...style }}
       {...props}
     >
@@ -61,7 +61,7 @@ export const CategoryTag: React.FC<
 
     return (
       <div
-        className={`tag` + (className ? ` ${className}` : "")}
+        className={`tag${className ? ` ${className}` : ""}`}
         style={{ ...category?.ui, ...style }}
         {...props}
       >
@@ -130,7 +130,7 @@ export const OrgTypeTag: React.FC<
   }
 
   return (
-    <div className={`tag` + (className ? ` ${className}` : "")} {...props}>
+    <div className={`tag${className ? ` ${className}` : ""}`} {...props}>
       {children || orgTypeName}
     </div>
   );

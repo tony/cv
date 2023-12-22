@@ -64,7 +64,7 @@ export const PatchInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        <React.Fragment key={`patch-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
@@ -140,7 +140,7 @@ export const PublicationInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        <React.Fragment key={`publication-info-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
@@ -172,7 +172,7 @@ export const CompanyInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        <React.Fragment key={`company-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
@@ -181,48 +181,46 @@ export const CompanyInfo: React.FC<{
   );
 };
 
-export const ActivityInfo: React.FC<
-  React.ComponentProps<typeof ActivityCard>
-> = ({ activity, org }) => {
-  return (
-    <>
-      {CategoryName.Patch == activity.category && (
-        <PatchInfo
-          activity={activity as Instance<typeof ActivityOpenSource>}
-          org={org as Instance<typeof OpenSourceOrg>}
-        />
-      )}
-      {CategoryName.Publication == activity.category && (
-        <PublicationInfo
-          activity={activity as Instance<typeof ActivityPublication>}
-          org={org as Instance<typeof PublicationOrg>}
-        />
-      )}
-      {CategoryName.Work == activity.category && (
-        <CompanyInfo
-          activity={activity as Instance<typeof ActivityWork>}
-          org={org as Instance<typeof CompanyOrg>}
-        />
-      )}
-    </>
-  );
-};
+export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
+  ({ activity, org }) => {
+    return (
+      <>
+        {CategoryName.Patch === activity.category && (
+          <PatchInfo
+            activity={activity as Instance<typeof ActivityOpenSource>}
+            org={org as Instance<typeof OpenSourceOrg>}
+          />
+        )}
+        {CategoryName.Publication === activity.category && (
+          <PublicationInfo
+            activity={activity as Instance<typeof ActivityPublication>}
+            org={org as Instance<typeof PublicationOrg>}
+          />
+        )}
+        {CategoryName.Work === activity.category && (
+          <CompanyInfo
+            activity={activity as Instance<typeof ActivityWork>}
+            org={org as Instance<typeof CompanyOrg>}
+          />
+        )}
+      </>
+    );
+  };
 
-const DateText: React.FC<
-  { date: string } & React.HTMLProps<HTMLSpanElement>
-> = ({ date, ...rest }) =>
-  date && (
-    <span title={format(new Date(date), "MMMM do, yyyy")} {...rest}>
-      {formatDistance(new Date(date), new Date())} ago
-    </span>
-  );
+const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
+  ({ date, ...rest }) =>
+    date && (
+      <span title={format(new Date(date), "MMMM do, yyyy")} {...rest}>
+        {formatDistance(new Date(date), new Date())} ago
+      </span>
+    );
 
 export const ActivityCard: React.FC<ActivityCardProps> = ({
   activity,
   org,
 }) => {
   const orgLink =
-    org.orgType == OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
+    org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
   return (
     <div className="card cardGrid">

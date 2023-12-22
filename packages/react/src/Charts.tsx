@@ -22,13 +22,13 @@ const ChartLinks: React.FC<
     {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
       <React.Fragment key={c}>
         {idx > 0 && ", "}
-        <a
-          href="#"
+        <button
+          type="button"
           onClick={() => setChart(c as unknown as Chart)}
           {...(c === chart && { className: "active" })}
         >
           {c}
-        </a>
+        </button>
       </React.Fragment>
     ))}
   </div>

@@ -185,7 +185,7 @@ export const BaseActivity = types
           castToSnapshot(activity),
         ),
         isMerged:
-          activity.category == "Patch"
+          activity.category === "Patch"
             ? matchers.isActivityMerged(castToSnapshot(activity))
             : true,
       },
@@ -489,8 +489,8 @@ export const CVState = types
       return sortActivities(Array.from(self.activities.values()));
     },
     search({
-      startYear = INITIAL_SEARCH_OPTIONS["startYear"],
-      endYear = INITIAL_SEARCH_OPTIONS["endYear"],
+      startYear = INITIAL_SEARCH_OPTIONS.startYear,
+      endYear = INITIAL_SEARCH_OPTIONS.endYear,
       ...activityTraits
     }: Instance<typeof SearchOptions>) {
       return sortActivities(
@@ -526,17 +526,16 @@ export const CVState = types
     get languageUsageStats() {
       return Array.from(this.filteredActivities.values()).reduce(
         (languages, activity) => {
-          activity.org.languages.forEach(
-            ({ id: languageName }: Instance<typeof Language>) => {
-              if (languageName) {
-                if (languageName in languages) {
-                  languages[languageName] += 1;
-                } else {
-                  languages[languageName] = 1;
-                }
+          for (const language of activity.org.languages) {
+            const { id: languageName } = language; // : Instance<typeof Language>)
+            if (languageName) {
+              if (languageName in languages) {
+                languages[languageName] += 1;
+              } else {
+                languages[languageName] = 1;
               }
-            },
-          );
+            }
+          }
           return languages;
         },
         Object.fromEntries<number>(
@@ -557,7 +556,7 @@ export const CVState = types
       const dominantLanguageId = dominantLanguageCount[0];
 
       const dominantLanguage = self.languages.find(
-        (language) => language.id == dominantLanguageId,
+        (language) => language.id === dominantLanguageId,
       );
       return dominantLanguage;
     },

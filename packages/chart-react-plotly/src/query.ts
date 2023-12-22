@@ -22,20 +22,14 @@ export const DEFAULT_RESULTS: Results = {
 export const stateToDonut = (state: Instance<typeof CVState>) => {
   const languageUsageStats = state.languageUsageStats;
   const total = Object.values(languageUsageStats).reduce((a, b) => a + b, 0);
-  const languageBGMap = state.languages.reduce(
-    (languageColorMap, language) => {
-      if (language) {
-        if (
-          !(language.id in languageColorMap) &&
-          language.ui?.backgroundColor
-        ) {
-          languageColorMap[language.id] = language.ui.backgroundColor as string;
-        }
+  const languageBGMap = state.languages.reduce((languageColorMap, language) => {
+    if (language) {
+      if (!(language.id in languageColorMap) && language.ui?.backgroundColor) {
+        languageColorMap[language.id] = language.ui.backgroundColor as string;
       }
-      return languageColorMap;
-    },
-    {} as { [key: string]: string },
-  );
+    }
+    return languageColorMap;
+  }, {} as { [key: string]: string });
   return {
     type: "pie",
     values: Object.values(languageUsageStats),

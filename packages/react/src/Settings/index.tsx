@@ -57,6 +57,7 @@ export const Settings: React.FC = () => {
     <>
       <div id="mobile-buttons">
         <button
+          type="button"
           className={`toggle-btn ${showOptionsMobile ? "active" : ""}`}
           onClick={(e) => {
             e.preventDefault();
@@ -66,6 +67,7 @@ export const Settings: React.FC = () => {
           🎛️ Settings
         </button>
         <button
+          type="button"
           className={`toggle-btn ${showChartsMobile ? "active" : ""}`}
           onClick={(e) => {
             e.preventDefault();

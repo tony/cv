@@ -1,16 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-string */
 declare module "*.svg" {
-  const content: any;
+  const content: string;
   export default content;
 }
 
 declare module "*.css" {
-  const content: any;
+  const content: string;
   export default content;
 }
 
 declare module "*.html" {
-  const content: any;
+  const content: string;
   export default content;
 }
 

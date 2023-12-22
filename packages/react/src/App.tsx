@@ -40,6 +40,7 @@ const DominantLanguageCSSVariable: React.FC = observer(() => {
 
   return dominantLanguage ? (
     <style
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Simplest way with JSX?
       dangerouslySetInnerHTML={{
         __html: `
   :root {
@@ -48,7 +49,7 @@ const DominantLanguageCSSVariable: React.FC = observer(() => {
   }
   `,
       }}
-    ></style>
+    />
   ) : null;
 });
 

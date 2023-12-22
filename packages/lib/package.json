@@ -4,10 +4,10 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "lint": "yarn oxlint",
+    "lint": "yarn biome lint .",
     "test": "echo 'noop'",
-    "prettier": "prettier",
-    "format": "yarn run prettier . --write",
+    "biome": "biome",
+    "format": "yarn biome format . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "echo 'noop'",
@@ -21,13 +21,12 @@
     "invert-color": "^2.0.0",
     "mobx": "^6.12.0",
     "mobx-state-tree": "^5.4.0",
-    "moment": "^2.29.4",
-    "prettier": "^3.1.1"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.4.1",
     "@types/chroma-js": "^2.4.3",
     "@types/node": "^20.10.5",
-    "oxlint": "^0.0.21",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"

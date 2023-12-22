@@ -35,7 +35,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
             }
           },
         ),
-      [cvState],
+      [cvState, setChartData],
     );
 
     React.useEffect(() => {
@@ -43,17 +43,13 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
         setChartData(stateToDonut(cvState) as DonutChartProps);
       }
       return void 0;
-    }, [cvState]);
-
-    React.useEffect(() => void 0, [chartData]);
+    }, [cvState, chartData, setChartData]);
 
     if (!chartData) {
       return null;
     }
 
-    return (
-      <DonutChart ref={languageChartRef} {...chartData} {...props}></DonutChart>
-    );
+    return <DonutChart ref={languageChartRef} {...chartData} {...props} />;
   },
 );
 
@@ -75,7 +71,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
             }
           },
         ),
-      [cvState],
+      [cvState, setChartData],
     );
 
     React.useEffect(() => {
@@ -83,20 +79,12 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         setChartData(stateToLine(cvState) as LineChartProps);
       }
       return void 0;
-    }, [cvState]);
-
-    React.useEffect(() => void 0, [chartData]);
+    }, [cvState, chartData, setChartData]);
 
     if (!chartData) {
       return null;
     }
 
-    return (
-      <StackedAreaChart
-        ref={lineChartRef}
-        {...chartData}
-        {...props}
-      ></StackedAreaChart>
-    );
+    return <StackedAreaChart ref={lineChartRef} {...chartData} {...props} />;
   },
 );

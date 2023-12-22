@@ -50,7 +50,7 @@ export const stateToDonut = (
       },
     ),
     colors: (item) => {
-      const color = state.languages.find((language) => language.id == item.id)
+      const color = state.languages.find((language) => language.id === item.id)
         ?.ui?.backgroundColor;
 
       if (color && isString(color)) {
@@ -69,7 +69,7 @@ export const stateToDonut = (
       label: string;
       value: number;
     }) => {
-      const color = state.languages.find((language) => language.id == item.id)
+      const color = state.languages.find((language) => language.id === item.id)
         ?.ui?.color;
 
       if (color && isString(color)) {

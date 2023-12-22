@@ -28,8 +28,9 @@ export const ColorSchemeToggle: React.FC = () => {
   const systemIcon = "🖥️";
   const darkModeIcon = "🌙";
   const lightModeIcon = "☀️";
-  const [colorScheme, setColorScheme] =
-    React.useState<ColorScheme>(getColorScheme());
+  const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
+    getColorScheme(),
+  );
   const [_hasCustomColorScheme, setHasCustomColorScheme] =
     React.useState<boolean>(hasCustomColorScheme());
 
@@ -61,11 +62,7 @@ export const ColorSchemeToggle: React.FC = () => {
   React.useLayoutEffect(() => {
     applyColorScheme(colorScheme);
     setHasCustomColorScheme(hasCustomColorScheme());
-  }, [colorScheme]);
-  React.useLayoutEffect(() => {
-    applyColorScheme(colorScheme);
-    setHasCustomColorScheme(hasCustomColorScheme());
-  }, [colorScheme]);
+  }, [colorScheme, applyColorScheme, setHasCustomColorScheme]);
 
   const [isTooltipOpen, setIsTooltipOpen] = React.useState<boolean>(false);
   const { refs, floatingStyles, context } = useFloating({
@@ -104,11 +101,12 @@ export const ColorSchemeToggle: React.FC = () => {
           >
             <div
               className={`color-scheme-toggle ${
-                _hasCustomColorScheme && colorScheme == ColorScheme.LIGHT
+                _hasCustomColorScheme && colorScheme === ColorScheme.LIGHT
                   ? "active"
                   : ""
               }`}
               onClick={setLightTheme}
+              onKeyDown={setLightTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
@@ -122,11 +120,12 @@ export const ColorSchemeToggle: React.FC = () => {
             </div>
             <div
               className={`color-scheme-toggle ${
-                _hasCustomColorScheme && colorScheme == ColorScheme.DARK
+                _hasCustomColorScheme && colorScheme === ColorScheme.DARK
                   ? "active"
                   : ""
               }`}
               onClick={setDarkTheme}
+              onKeyDown={setDarkTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
@@ -143,6 +142,7 @@ export const ColorSchemeToggle: React.FC = () => {
                 _hasCustomColorScheme ? "" : "active"
               }`}
               onClick={setSystemTheme}
+              onKeyDown={setSystemTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
@@ -168,7 +168,7 @@ export const ColorSchemeToggle: React.FC = () => {
       >
         <div className="color-scheme-toggle">
           <div className="color-scheme-toggle--icon">
-            {colorScheme == ColorScheme.DARK ? (
+            {colorScheme === ColorScheme.DARK ? (
               <div
                 className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--dark-mode"
                 title="Switch to dark mode"
