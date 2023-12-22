@@ -106,6 +106,7 @@ export const ColorSchemeToggle: React.FC = () => {
                   : ""
               }`}
               onClick={setLightTheme}
+              onKeyDown={setLightTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
@@ -124,6 +125,7 @@ export const ColorSchemeToggle: React.FC = () => {
                   : ""
               }`}
               onClick={setDarkTheme}
+              onKeyDown={setDarkTheme}
             >
               <div className="color-scheme-toggle--icon">
                 <div
