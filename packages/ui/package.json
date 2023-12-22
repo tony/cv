@@ -17,7 +17,6 @@
     "prettier": "^3.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "oxlint": "^0.0.21"
+    "@biomejs/biome": "1.4.1"
   }
 }
