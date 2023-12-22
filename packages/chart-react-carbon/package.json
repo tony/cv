@@ -9,7 +9,7 @@
     "start": "echo 'noop'",
     "build": "echo 'noop'",
     "test": "echo 'noop'",
-    "lint": "yarn oxlint",
+    "lint": "yarn biome lint .",
     "prettier": "prettier",
     "format": "yarn run prettier . --write",
     "update": "yarn run ncu",

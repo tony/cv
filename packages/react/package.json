@@ -8,7 +8,7 @@
     "start": "yarn vite",
     "build": "yarn vite build",
     "preview": "yarn vite preview",
-    "lint": "yarn oxlint",
+    "lint": "yarn biome lint .",
     "test": "echo 'noop'",
     "prettier": "prettier",
     "format": "yarn run prettier . --write",
