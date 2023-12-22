@@ -23,7 +23,6 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
-    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "cross-env": "^7.0.3"
   },
   "packageManager": "yarn@4.0.2"

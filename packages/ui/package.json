@@ -13,9 +13,6 @@
     "ncu": "ncu",
     "clean": "rm -rf dist/"
   },
-  "dependencies": {
-    "prettier": "^3.1.1"
-  },
   "devDependencies": {
     "@biomejs/biome": "1.4.1"
   }
