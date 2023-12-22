@@ -68,11 +68,7 @@ const ghColorsJsonMissing: {
 
 // Calculated at runtime, based on the content of above
 export const languages: Language[] = Array.from(
-  new Set([
-    ...orgs
-      .filter((a) => a.languages)
-      .flatMap((a) => a.languages),
-  ]),
+  new Set([...orgs.filter((a) => a.languages).flatMap((a) => a.languages)]),
 )
   .filter(Boolean)
   .map((languageName: LanguageName) => {
