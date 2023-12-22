@@ -64,6 +64,7 @@ export const FilterDateRange: React.FC<{
       {handles.map(({ getHandleProps }, j) => (
         <button
           key={j}
+          type="button"
           {...getHandleProps({
             style: {
               width: "14px",
