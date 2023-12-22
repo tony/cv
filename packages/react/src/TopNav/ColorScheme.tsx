@@ -28,8 +28,9 @@ export const ColorSchemeToggle: React.FC = () => {
   const systemIcon = "🖥️";
   const darkModeIcon = "🌙";
   const lightModeIcon = "☀️";
-  const [colorScheme, setColorScheme] =
-    React.useState<ColorScheme>(getColorScheme());
+  const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
+    getColorScheme(),
+  );
   const [_hasCustomColorScheme, setHasCustomColorScheme] =
     React.useState<boolean>(hasCustomColorScheme());
 

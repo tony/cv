@@ -2,9 +2,7 @@
   "aseprite": {
     "orgType": "Open Source",
     "id": 97,
-    "languages": [
-      "C++"
-    ],
+    "languages": ["C++"],
     "name": "aseprite",
     "repoUrl": "https://github.com/aseprite/aseprite",
     "url": "https://www.aseprite.org"
