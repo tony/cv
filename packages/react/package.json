@@ -10,8 +10,8 @@
     "preview": "yarn vite preview",
     "lint": "yarn biome lint .",
     "test": "echo 'noop'",
-    "prettier": "prettier",
-    "format": "yarn run prettier . --write",
+    "biome": "biome",
+    "format": "yarn biome format . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "rm -rf dist/ node_modules/.cache/"

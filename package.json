@@ -10,7 +10,7 @@
     "lint": "yarn workspaces foreach --all run lint",
     "ncu": "yarn ncu-local -u; yarn workspaces foreach --all run ncu",
     "ncu-local": "ncu",
-    "prettier": "yarn workspaces foreach --all run prettier",
+    "biome": "yarn workspaces foreach --all run biome",
     "update": "yarn workspaces foreach --all run update",
     "github": "yarn workspace @tony/cv-scripts run github",
     "deduplicate": "npx --yes yarn-deduplicate yarn.lock"

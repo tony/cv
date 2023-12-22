@@ -10,8 +10,8 @@
     "build": "echo 'noop'",
     "test": "echo 'noop'",
     "lint": "yarn biome lint .",
-    "prettier": "prettier",
-    "format": "yarn run prettier . --write",
+    "biome": "biome",
+    "format": "yarn biome format . --write",
     "update": "yarn run ncu",
     "ncu": "ncu",
     "clean": "rm -rf dist/"
