@@ -380,14 +380,14 @@ p {
   font-size: 0.9rem;
   text-align: center;
 }
-#chart-links a {
+#chart-links button {
   color: var(--chart-link-color);
   font-size: 0.9rem;
 }
-#chart-links a.active {
+#chart-links button.active {
   font-weight: 600;
 }
-#chart-links a:hover {
+#chart-links button:hover {
   color: var(--chart-link-color-hover);
 }
 #charts {
@@ -648,4 +648,10 @@ p {
   justify-content: center;
   height: var(--chart-height);
   text-align: center;
+}
+
+/* Reset button for a11y usage */
+button {
+  all: unset;
+  outline: revert;
 }
