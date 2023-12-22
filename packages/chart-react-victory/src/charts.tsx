@@ -47,7 +47,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
             }
           },
         ),
-      [cvState],
+      [cvState, setChartData],
     );
 
     React.useEffect(() => {
@@ -55,7 +55,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
         setChartData(stateToDonut(cvState) as DonutChartProps);
       }
       return void 0;
-    }, [cvState]);
+    }, [cvState, chartData, setChartData]);
 
     if (!chartData) {
       return null;
@@ -98,7 +98,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
             }
           },
         ),
-      [cvState],
+      [cvState, setChartData],
     );
 
     React.useEffect(() => {
@@ -106,7 +106,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         setChartData(stateToLine(cvState) as LineChartProps);
       }
       return void 0;
-    }, [cvState]);
+    }, [cvState, chartData, setChartData]);
 
     const [width, setWidth] = React.useState(
       document.querySelector("#charts .chartRow--line")?.clientWidth ??
@@ -128,7 +128,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
       return () => {
         window.removeEventListener("resize", updateWidth);
       };
-    }, []);
+    }, [updateWidth]);
 
     if (!chartData) {
       return null;
