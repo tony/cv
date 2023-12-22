@@ -526,17 +526,16 @@ export const CVState = types
     get languageUsageStats() {
       return Array.from(this.filteredActivities.values()).reduce(
         (languages, activity) => {
-          activity.org.languages.forEach(
-            ({ id: languageName }: Instance<typeof Language>) => {
-              if (languageName) {
-                if (languageName in languages) {
-                  languages[languageName] += 1;
-                } else {
-                  languages[languageName] = 1;
-                }
+          for (const language of activity.org.languages) {
+            const { id: languageName } = language; // : Instance<typeof Language>)
+            if (languageName) {
+              if (languageName in languages) {
+                languages[languageName] += 1;
+              } else {
+                languages[languageName] = 1;
               }
-            },
-          );
+            }
+          }
           return languages;
         },
         Object.fromEntries<number>(
