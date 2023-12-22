@@ -185,19 +185,19 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
   ({ activity, org }) => {
     return (
       <>
-        {CategoryName.Patch == activity.category && (
+        {CategoryName.Patch === activity.category && (
           <PatchInfo
             activity={activity as Instance<typeof ActivityOpenSource>}
             org={org as Instance<typeof OpenSourceOrg>}
           />
         )}
-        {CategoryName.Publication == activity.category && (
+        {CategoryName.Publication === activity.category && (
           <PublicationInfo
             activity={activity as Instance<typeof ActivityPublication>}
             org={org as Instance<typeof PublicationOrg>}
           />
         )}
-        {CategoryName.Work == activity.category && (
+        {CategoryName.Work === activity.category && (
           <CompanyInfo
             activity={activity as Instance<typeof ActivityWork>}
             org={org as Instance<typeof CompanyOrg>}
@@ -220,7 +220,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
   org,
 }) => {
   const orgLink =
-    org.orgType == OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
+    org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
   return (
     <div className="card cardGrid">

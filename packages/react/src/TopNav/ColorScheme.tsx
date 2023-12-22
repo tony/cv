@@ -105,7 +105,7 @@ export const ColorSchemeToggle: React.FC = () => {
           >
             <div
               className={`color-scheme-toggle ${
-                _hasCustomColorScheme && colorScheme == ColorScheme.LIGHT
+                _hasCustomColorScheme && colorScheme === ColorScheme.LIGHT
                   ? "active"
                   : ""
               }`}
@@ -123,7 +123,7 @@ export const ColorSchemeToggle: React.FC = () => {
             </div>
             <div
               className={`color-scheme-toggle ${
-                _hasCustomColorScheme && colorScheme == ColorScheme.DARK
+                _hasCustomColorScheme && colorScheme === ColorScheme.DARK
                   ? "active"
                   : ""
               }`}
@@ -169,7 +169,7 @@ export const ColorSchemeToggle: React.FC = () => {
       >
         <div className="color-scheme-toggle">
           <div className="color-scheme-toggle--icon">
-            {colorScheme == ColorScheme.DARK ? (
+            {colorScheme === ColorScheme.DARK ? (
               <div
                 className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--dark-mode"
                 title="Switch to dark mode"

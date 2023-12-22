@@ -27,7 +27,7 @@ export const Results = observer(() => {
           );
         })}
       </div>
-      <div id="results-bottom"></div>
+      <div id="results-bottom" />
     </div>
   );
 });

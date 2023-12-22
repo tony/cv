@@ -51,9 +51,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
       return null;
     }
 
-    return (
-      <DonutChart ref={languageChartRef} {...chartData} {...props}></DonutChart>
-    );
+    return <DonutChart ref={languageChartRef} {...chartData} {...props} />;
   },
 );
 
@@ -91,12 +89,6 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
       return null;
     }
 
-    return (
-      <StackedAreaChart
-        ref={lineChartRef}
-        {...chartData}
-        {...props}
-      ></StackedAreaChart>
-    );
+    return <StackedAreaChart ref={lineChartRef} {...chartData} {...props} />;
   },
 );

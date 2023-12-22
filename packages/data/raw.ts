@@ -71,8 +71,7 @@ export const languages: Language[] = Array.from(
   new Set([
     ...orgs
       .filter((a) => a.languages)
-      .map((a) => a.languages)
-      .flat(),
+      .flatMap((a) => a.languages),
   ]),
 )
   .filter(Boolean)

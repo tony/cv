@@ -185,7 +185,7 @@ export const BaseActivity = types
           castToSnapshot(activity),
         ),
         isMerged:
-          activity.category == "Patch"
+          activity.category === "Patch"
             ? matchers.isActivityMerged(castToSnapshot(activity))
             : true,
       },
@@ -489,8 +489,8 @@ export const CVState = types
       return sortActivities(Array.from(self.activities.values()));
     },
     search({
-      startYear = INITIAL_SEARCH_OPTIONS["startYear"],
-      endYear = INITIAL_SEARCH_OPTIONS["endYear"],
+      startYear = INITIAL_SEARCH_OPTIONS.startYear,
+      endYear = INITIAL_SEARCH_OPTIONS.endYear,
       ...activityTraits
     }: Instance<typeof SearchOptions>) {
       return sortActivities(
@@ -557,7 +557,7 @@ export const CVState = types
       const dominantLanguageId = dominantLanguageCount[0];
 
       const dominantLanguage = self.languages.find(
-        (language) => language.id == dominantLanguageId,
+        (language) => language.id === dominantLanguageId,
       );
       return dominantLanguage;
     },

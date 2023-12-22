@@ -182,7 +182,7 @@ fetchGitHubIssues()
         ),
         category: "Patch",
         createdAt: moment(pr.createdAt).format("YYYY-MM-DD"),
-        diffUrl: pr.url + ".diff",
+        diffUrl: `${pr.url}.diff`,
         id: `${id++}`,
         qaUrl: pr.url,
         title: pr.title,

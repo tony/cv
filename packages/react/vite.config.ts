@@ -21,11 +21,10 @@ export default defineConfig(({ command }: ConfigEnv): UserConfig => {
       // dev specific config
       ...config,
     };
-  } else {
-    // command === 'build'
-    return {
-      // build specific config
-      ...config,
-    };
   }
+  // command === 'build'
+  return {
+    // build specific config
+    ...config,
+  };
 });
