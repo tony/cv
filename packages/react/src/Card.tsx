@@ -64,7 +64,7 @@ export const PatchInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={`activity-link-row-${idx}`}>
+        <React.Fragment key={`patch-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
@@ -140,7 +140,7 @@ export const PublicationInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        <React.Fragment key={`publication-info-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
@@ -172,7 +172,7 @@ export const CompanyInfo: React.FC<{
   return (
     <div className="activityLinkRow">
       {items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        <React.Fragment key={`company-activity-link-row-${idx}`}>
           {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
           {item}
         </React.Fragment>
