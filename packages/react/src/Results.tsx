@@ -13,24 +13,28 @@ export const ResultsHeader: React.FC = observer(() => {
   return <div id="results-info">{resultsCount} results</div>;
 });
 
-export const Results = observer(() => {
+export const ResultList = observer(() => {
   const { filteredActivities } = useMst();
 
   return (
+    <div id="results">
+      {filteredActivities?.map?.((activity, idx) => {
+        return (
+          <ActivityCard
+            activity={activity}
+            org={activity.org}
+            key={`activity-card-${idx}`}
+          />
+        );
+      })}
+    </div>
+  );
+});
+export const Results = observer(() => {
+  return (
     <div id="results-container">
       <ResultsHeader />
-
-      <div id="results">
-        {filteredActivities?.map?.((activity, idx) => {
-          return (
-            <ActivityCard
-              activity={activity}
-              org={activity.org}
-              key={`activity-card-${idx}`}
-            />
-          );
-        })}
-      </div>
+      <ResultList />
       <div id="results-bottom" />
     </div>
   );
