@@ -374,20 +374,20 @@ p {
     width: 100%;
   }
 }
-#chart-links {
+#chart-menu {
   width: 100%;
   margin-bottom: 0.25rem;
   font-size: 0.9rem;
   text-align: center;
 }
-#chart-links button {
+#chart-menu button {
   color: var(--chart-link-color);
   font-size: 0.9rem;
 }
-#chart-links button.active {
+#chart-menu button.active {
   font-weight: 600;
 }
-#chart-links button:hover {
+#chart-menu button:hover {
   color: var(--chart-link-color-hover);
 }
 #charts {
@@ -589,11 +589,11 @@ p {
 }
 @media screen and (max-width: 768px) {
   #charts,
-  #chart-links {
+  #chart-menu {
     display: none !important;
   }
   #charts.active,
-  #chart-links.active {
+  #chart-menu.active {
     display: block !important;
   }
 }

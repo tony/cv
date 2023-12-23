@@ -12,31 +12,58 @@ const ChartLinks: React.FC<
     chart: Chart;
     setChart: React.Dispatch<React.SetStateAction<Chart>>;
   } & React.HTMLProps<HTMLDivElement>
-> = ({ chart, setChart, ...props }) => (
-  <div {...props}>
-    📊
-    <span className="dh-tablet" title="Lazily loaded, honors filters and scope">
-      {" "}
-      Chart system (take your pick):
-    </span>{" "}
-    {Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
-      <React.Fragment key={c}>
-        {idx > 0 && ", "}
-        <button
-          type="button"
-          onClick={() => setChart(c as unknown as Chart)}
-          {...(c === chart && { className: "active" })}
-        >
-          {c}
-        </button>
-      </React.Fragment>
-    ))}
-  </div>
-);
+> = ({ chart, setChart, ...props }) => {
+  return Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
+    <React.Fragment key={c}>
+      {idx > 0 && ", "}
+      <button
+        type="button"
+        onClick={() => setChart(c as unknown as Chart)}
+        className={c === chart ? "active" : ""}
+      >
+        {c}
+      </button>
+    </React.Fragment>
+  ));
+};
 
-export const Charts = observer(() => {
+const ChartMenu: React.FC<
+  {
+    chart: Chart;
+    setChart: React.Dispatch<React.SetStateAction<Chart>>;
+  } & React.HTMLProps<HTMLDivElement>
+> = ({ chart, setChart, ...props }) => {
+  const context = React.useContext(SettingsContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { showChartsMobile } = context;
+
+  return (
+    <div
+      id="chart-menu"
+      className={`fss-tablet ${showChartsMobile ? "active" : ""}`}
+    >
+      📊
+      <span
+        className="dh-tablet"
+        title="Lazily loaded, honors filters and scope"
+      >
+        {" "}
+        Chart system (take your pick):
+      </span>{" "}
+      <ChartLinks setChart={setChart} chart={chart} />
+    </div>
+  );
+};
+
+const ChartBody: React.FC<{
+  chart: Chart;
+  setChart: React.Dispatch<React.SetStateAction<Chart>>;
+}> = observer(({ chart, setChart }) => {
   const cvState = useMst();
-  const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
   const LanguagePieChart = PIE_CHART_MAP[chart];
   const ActivityLineChart = LINE_CHART_MAP[chart];
   const context = React.useContext(SettingsContext);
@@ -47,34 +74,36 @@ export const Charts = observer(() => {
   const { showChartsMobile } = context;
 
   return (
-    <>
-      <ChartLinks
-        chart={chart}
-        setChart={setChart}
-        id="chart-links"
-        className={`fss-tablet ${showChartsMobile ? "active" : ""}`}
-      />
-      <div
-        id="charts"
-        className={`chartRow ${chart}${
-          Object.keys(cvState.filteredActivities).length ? "" : " noCharts"
-        } ${showChartsMobile ? "active" : ""}`}
-      >
-        <div className="chartRow--donut">
-          <React.Suspense
-            fallback={<div className="loading-chart">Loading Pie Chart</div>}
-          >
-            <LanguagePieChart />
-          </React.Suspense>
-        </div>
-        <div className="chartRow--line">
-          <React.Suspense
-            fallback={<div className="loading-chart">Loading Line Chart</div>}
-          >
-            <ActivityLineChart />
-          </React.Suspense>
-        </div>
+    <div
+      id="charts"
+      className={`chartRow ${chart}${
+        Object.keys(cvState.filteredActivities).length ? "" : " noCharts"
+      } ${showChartsMobile ? "active" : ""}`}
+    >
+      <div className="chartRow--donut">
+        <React.Suspense
+          fallback={<div className="loading-chart">Loading Pie Chart</div>}
+        >
+          <LanguagePieChart />
+        </React.Suspense>
       </div>
+      <div className="chartRow--line">
+        <React.Suspense
+          fallback={<div className="loading-chart">Loading Line Chart</div>}
+        >
+          <ActivityLineChart />
+        </React.Suspense>
+      </div>
+    </div>
+  );
+});
+
+export const Charts = observer(() => {
+  const [chart, setChart] = React.useState<Chart>(Chart.Carbon);
+  return (
+    <>
+      <ChartMenu chart={chart} setChart={setChart} />
+      <ChartBody chart={chart} setChart={setChart} />
     </>
   );
 });
