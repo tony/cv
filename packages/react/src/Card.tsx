@@ -214,6 +214,20 @@ const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
       </span>
     );
 
+const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
+  return (
+    <div className="language-tags">
+      {org?.languages?.map((language) => (
+        <LanguageTag
+          languageName={language.id}
+          key={language.id}
+          style={{ display: "inline-flex" }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   const orgLink =
@@ -262,13 +276,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
         </div>
       </div>
       <div className="right-side">
-        {org?.languages?.map((language) => (
-          <LanguageTag
-            languageName={language.id}
-            key={language.id}
-            style={{ display: "inline-flex" }}
-          />
-        ))}
+        <LanguageTags org={org} />
       </div>
     </div>
   );
