@@ -45,9 +45,25 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
       return void 0;
     }, [cvState, chartData, setChartData]);
 
+    const [animateDonutLabel, setAnimateDonutLabel] =
+      React.useState<boolean>(false);
+
+    // Part 1: Prevent re-render when switching chart tops
+    React.useLayoutEffect(() => {
+      if (!chartData) {
+        return;
+      }
+      if (!animateDonutLabel) {
+        setAnimateDonutLabel(true);
+      }
+    }, [animateDonutLabel, setAnimateDonutLabel, chartData]);
+
     if (!chartData) {
       return null;
     }
+
+    // Part 2: Prevent re-render when switching chart tops
+    chartData.options.animations = animateDonutLabel;
 
     return <DonutChart ref={languageChartRef} {...chartData} {...props} />;
   },
