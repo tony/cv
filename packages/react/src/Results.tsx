@@ -20,11 +20,7 @@ export const ResultList = observer(() => {
     <div id="results">
       {filteredActivities?.map?.((activity, idx) => {
         return (
-          <ActivityCard
-            activity={activity}
-            org={activity.org}
-            key={`activity-card-${idx}`}
-          />
+          <ActivityCard activity={activity} key={`activity-card-${idx}`} />
         );
       })}
     </div>

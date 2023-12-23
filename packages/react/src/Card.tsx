@@ -22,7 +22,6 @@ import "@tony/cv-ui/styles/style.css";
 
 interface ActivityCardProps {
   activity: Instance<typeof Activity>;
-  org: Instance<typeof Org>;
 }
 
 export const PatchInfo: React.FC<{
@@ -215,10 +214,8 @@ const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
       </span>
     );
 
-export const ActivityCard: React.FC<ActivityCardProps> = ({
-  activity,
-  org,
-}) => {
+export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
+  const { org } = activity;
   const orgLink =
     org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
