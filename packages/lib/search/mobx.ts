@@ -11,7 +11,7 @@ import moment from "moment";
 
 import { LANGUAGE_FALLBACK_COLOR } from "@tony/cv-data/constants";
 import type { fetchDataFn } from "@tony/cv-data/fetch";
-import { CategoryName, OrgTypeName } from "@tony/cv-data/types";
+import { CategoryName, Chart, OrgTypeName } from "@tony/cv-data/types";
 import * as matchers from "@tony/cv-lib/search/utils";
 
 import { hasAny } from "../utils";
@@ -39,6 +39,9 @@ export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
 
 export const INITIAL_UI: SnapshotIn<typeof UI> = {
   isLoading: true,
+  showChartsMobile: false,
+  showOptionsMobile: false,
+  chart: Chart.Carbon,
 };
 
 export const ActivityMeta = types.model("ActivityMeta", {
@@ -306,6 +309,9 @@ export const SearchOptions = types.model("SearchOptions", {
 
 export const UI = types.model("UI", {
   isLoading: types.boolean,
+  showChartsMobile: types.boolean,
+  showOptionsMobile: types.boolean,
+  chart: types.enumeration<Chart>("Chart", Object.values(Chart)),
 });
 
 export const sortActivities = (activities: Instance<typeof Activity>[]) => {
@@ -434,7 +440,7 @@ export const CVState = types
       const data = await fetchData();
 
       applySnapshot(self, {
-        ui: { isLoading: false },
+        ui: { ...INITIAL_UI, isLoading: false },
         searchOptions: INITIAL_SEARCH_OPTIONS,
         activities: castToSnapshot(data.activities),
         languages: data.languages,
@@ -457,6 +463,15 @@ export const CVState = types
           self.searchOptions.languages.length,
           ...languageIds,
         );
+      },
+      setShowChartsMobile(visible: boolean) {
+        self.ui.showChartsMobile = visible;
+      },
+      setShowOptionsMobile(visible: boolean) {
+        self.ui.showOptionsMobile = visible;
+      },
+      setChart(chart: Instance<Chart>) {
+        self.ui.chart = chart;
       },
       setYears({ startYear, endYear }: { startYear: number; endYear: number }) {
         self.searchOptions.endYear = endYear;
@@ -584,7 +599,7 @@ export const CVState = types
 
 export const state = CVState.create({
   searchOptions: INITIAL_SEARCH_OPTIONS,
-  ui: { isLoading: true },
+  ui: INITIAL_UI,
   activities: [],
   languages: [],
   orgs: [],

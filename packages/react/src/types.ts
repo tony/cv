@@ -1,7 +1,1 @@
-export enum Chart {
-  Carbon = "carbon",
-  Plotly = "plotly",
-  Billboard = "billboard",
-  Nivo = "nivo",
-  Victory = "victory",
-}
+export { Chart } from "@tony/cv-data/types";

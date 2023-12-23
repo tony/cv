@@ -1,5 +1,13 @@
 import CSS from "csstype";
 
+export enum Chart {
+  Carbon = "carbon",
+  Plotly = "plotly",
+  Billboard = "billboard",
+  Nivo = "nivo",
+  Victory = "victory",
+}
+
 interface IThemeable {
   ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
