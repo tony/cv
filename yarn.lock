@@ -2125,7 +2125,7 @@ __metadata:
     "@biomejs/biome": "npm:1.4.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
-    "@types/plotly.js": "npm:^2.12.31"
+    "@types/plotly.js": "npm:^2.12.32"
     "@types/react": "npm:^18.2.45"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
@@ -2618,10 +2618,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:^2.12.31":
-  version: 2.12.31
-  resolution: "@types/plotly.js@npm:2.12.31"
-  checksum: a8bd1264f0d964d297bcc58a8c69156ae5e22baba3ed64dfcb7622e5aade47d8ec63789108d720e0dd2271c3af9b09d36727b44ccf3591d47705265798aa993d
+"@types/plotly.js@npm:^2.12.32":
+  version: 2.12.32
+  resolution: "@types/plotly.js@npm:2.12.32"
+  checksum: 4f307cd15d171baf22bce0b2b8853f4d7de86c27d5b76ab582a215d77bed4de60943af17a8fcba3230fbe6d9bb77c2b47e123496bb995204d8a1cf760d6f0dc2
   languageName: node
   linkType: hard
 
