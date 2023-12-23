@@ -12,16 +12,6 @@ interface IThemeable {
   ui: NonNullable<Pick<CSS.Properties, "color" | "backgroundColor">>;
 }
 
-// export type CategoryName =
-//   | "SoftwareApp"
-//   | "SoftwareLib"
-//   | "Patch"
-//   | "Work"
-//   | "Publication"
-//   | "Volunteer"
-//   | "Website"
-//   | "Article";
-
 export enum CategoryName {
   SoftwareApp = "SoftwareApp",
   SoftwareLib = "SoftwareLib",
