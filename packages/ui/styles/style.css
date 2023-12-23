@@ -23,7 +23,7 @@
   --card-hover-background-color: #0085f230;
   --card-grid-left-side-link-color: #5f6368;
   --card-grid-left-side-link-hover-color: #000;
-  --mobile-buttons-background-color: #f1f1f1;
+  --mobile-buttons-background-color: #ffffff;
   --mobile-buttons-toggle-text-color: #000;
   --mobile-buttons-toggle-btn-box-shadow-color: #3e94cf;
   --date-range-tick-label-color: rgba(0, 0, 0, 0.5);
@@ -359,14 +359,32 @@ p {
     display: none;
   }
 }
+@media (max-width: 767px) {
+  #mobile-buttons .toggle-btn:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+}
 @media screen and (max-width: 768px) {
   #settings {
     display: none !important;
   }
   #settings.active {
     display: block !important;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #settings.active .dropdownRow {
+    padding-bottom: 0;
+  }
+  #settings.active .toggles {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 0;
+  }
+  #settings.active #year-range {
+    display: none;
   }
 }
 @media (max-width: 1023px) {
@@ -595,6 +613,7 @@ p {
   #charts.active,
   #chart-menu.active {
     display: block !important;
+    margin: 0.5rem 0;
   }
 }
 @media screen and (max-width: 768px) {
