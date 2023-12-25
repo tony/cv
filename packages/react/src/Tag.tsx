@@ -33,7 +33,7 @@ export const LanguageTag: React.FC<
 
   return (
     <div
-      className={`tag${className ? ` ${className}` : ""}`}
+      className={`tag language-tag ${className ? ` ${className}` : ""}`}
       style={{ ...language?.ui, ...style }}
       {...props}
     >
@@ -72,20 +72,16 @@ export const CategoryTag: React.FC<
   },
 );
 
-export const CategoryText: React.FC<
-  { categoryName: CategoryName } & Pick<
-    Instance<typeof Activity>,
-    "createdAt" | "acceptedAt" | "startedAt" | "endedAt"
-  > &
-    React.HTMLProps<HTMLDivElement>
-> = ({
-  categoryName,
-  acceptedAt,
-  endedAt,
-  startedAt: _startedAt,
-  createdAt: _createdAt,
-  ...props
-}) => {
+export const CategoryText: React.FC<{
+  activity: Instance<typeof Activity>;
+}> = ({ activity }) => {
+  const {
+    category: categoryName,
+    acceptedAt,
+    endedAt,
+    startedAt: _startedAt,
+    endedAt: _createdAt,
+  } = activity;
   if (!categoryName) {
     return null;
   }
@@ -103,7 +99,7 @@ export const CategoryText: React.FC<
     !endedAt && !acceptedAt ? CategoryVerbPresentTenseMap : CategoryVerbMap;
 
   return (
-    <span {...props}>
+    <span>
       {category?.id && (
         <>
           {CategoryEmojiMap[category.id]} {VerbMap[category.id]}

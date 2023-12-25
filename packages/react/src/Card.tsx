@@ -60,10 +60,10 @@ export const PatchInfo: React.FC<{
   }
 
   return (
-    <div className="activityLinkRow">
+    <div className="activity-link-row">
       {items.map((item, idx) => (
         <React.Fragment key={`patch-activity-link-row-${idx}`}>
-          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {idx > 0 && <span className="card-section-separator">·</span>}
           {item}
         </React.Fragment>
       ))}
@@ -135,10 +135,10 @@ export const PublicationInfo: React.FC<{
   }
 
   return (
-    <div className="activityLinkRow">
+    <div className="activity-link-row">
       {items.map((item, idx) => (
         <React.Fragment key={`publication-info-activity-link-row-${idx}`}>
-          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {idx > 0 && <span className="card-section-separator">·</span>}
           {item}
         </React.Fragment>
       ))}
@@ -166,10 +166,10 @@ export const CompanyInfo: React.FC<{
   }
 
   return (
-    <div className="activityLinkRow">
+    <div className="activity-link-row">
       {items.map((item, idx) => (
         <React.Fragment key={`company-activity-link-row-${idx}`}>
-          {idx > 0 && <span style={{ padding: "0 0.5rem" }}>·</span>}
+          {idx > 0 && <span className="card-section-separator">·</span>}
           {item}
         </React.Fragment>
       ))}
@@ -198,9 +198,12 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
   };
 
 const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
-  ({ date, ...rest }) =>
+  ({ date, className }) =>
     date && (
-      <span title={format(new Date(date), "MMMM do, yyyy")} {...rest}>
+      <span
+        title={format(new Date(date), "MMMM do, yyyy")}
+        className={className}
+      >
         {formatDistance(new Date(date), new Date())} ago
       </span>
     );
@@ -209,47 +212,43 @@ const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
   return (
     <div className="language-tags">
       {org?.languages?.map((language) => (
-        <LanguageTag
-          languageName={language.id}
-          key={language.id}
-          style={{ display: "inline-flex" }}
-        />
+        <LanguageTag languageName={language.id} key={language.id} />
       ))}
     </div>
   );
 };
 
-export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
-  const { org } = activity;
+const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
   const orgLink =
     org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
   return (
-    <div className="card cardGrid">
+    <span className="card-org-name">
+      <a
+        {...(orgLink ? { href: orgLink } : {})}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={org.orgType}
+      >
+        {org.name}
+      </a>
+    </span>
+  );
+};
+
+export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
+  const { org } = activity;
+  return (
+    <div className="card card-grid">
       <div className="left-side">
         <div>
-          <span style={{ fontWeight: 600 }}>
-            <a
-              {...(orgLink ? { href: orgLink } : {})}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={org.orgType}
-            >
-              {org.name}
-            </a>
-          </span>
-          <span style={{ padding: "0 0.5rem" }}>·</span>
+          <CardOrgName org={org} />
+          <span className="card-section-separator">·</span>
           <span className="card-category-and-date">
-            <CategoryText
-              categoryName={activity.category}
-              createdAt={activity.createdAt}
-              acceptedAt={activity.acceptedAt}
-              startedAt={activity.startedAt}
-              endedAt={activity.endedAt}
-            />
+            <CategoryText activity={activity} />
             <DateText
               date={activity.acceptedAt ?? activity.createdAt}
-              style={{ paddingLeft: "0.25rem" }}
+              className="card-date-text-left"
             />
             {activity.endedAt && (
               <>
@@ -259,10 +258,10 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
             )}
           </span>
         </div>
-        <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
+        <div className="card-activity-title">
           <ReactMarkdown>{activity.title}</ReactMarkdown>
         </div>
-        <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
+        <div className="card-activity-info">
           <ActivityInfo activity={activity} />
         </div>
       </div>

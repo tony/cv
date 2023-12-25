@@ -194,60 +194,82 @@ p {
 .card:last-child {
   margin-bottom: 0;
 }
+.card-org-name {
+  font-weight: 600;
+}
+.card-section-separator {
+  padding: 0 0.5rem;
+}
+.card-date-text-left {
+  padding-left: 0.25rem;
+}
 .card-category-and-date {
   color: var(--activity-text-color);
 }
-.cardGrid {
+.card-activity-title {
+  padding-top: 0.25rem;
+  font-size: 1rem;
+}
+.card-activity-info {
+  padding-top: 0.25rem;
+  font-size: 1rem;
+}
+.card-grid {
   -webkit-box-pack: justify;
   justify-content: space-between;
   height: 100%;
 }
-.cardGrid > div {
+.card-grid > div {
   margin-bottom: auto;
 }
-.cardGrid .left-side {
+.card-grid .left-side {
   flex-grow: 1;
   align-items: center;
   margin-bottom: 0;
 }
-.cardGrid .left-side .tag {
+.card-grid .left-side .tag {
   margin-right: 0.5rem;
 }
-.cardGrid .left-side .tag.orgTag {
+.card-grid .left-side .tag.orgTag {
   margin-left: 0.5rem;
 }
-.cardGrid .left-side .tag.orgTag:only-child {
+.card-grid .left-side .tag.orgTag:only-child {
   margin-left: 0;
 }
-.cardGrid .left-side a {
+.card-grid .left-side a {
   color: var(--card-grid-left-side-link-color);
 }
-.cardGrid .left-side a:hover {
+.card-grid .left-side a:hover {
   color: var(--card-grid-left-side-link-hover-color);
 }
-.cardGrid .left-side .activityLinkRow {
+.card-grid .left-side .activity-link-row {
   font-size: 0.8rem;
 }
-.cardGrid .left-side .activityLinkRow a {
+.card-grid .left-side .activity-link-row a {
   font-size: inherit;
   opacity: 0.6;
 }
-.cardGrid .left-side .activityLinkRow a:hover {
+.card-grid .left-side .activity-link-row a:hover {
   opacity: 1;
 }
-.cardGrid .right-side {
+.card-grid .right-side {
   text-align: right;
 }
-.cardGrid .right-side .tag {
+.card-grid .right-side .tag {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
 }
-.cardGrid .right-side .tag:only-child {
+.card-grid .right-side .tag:only-child {
   margin-top: 0;
 }
 .activity-link {
   color: var(--activity-link-color);
 }
+
+.language-tag {
+  display: inline-flex;
+}
+
 .tag {
   -webkit-box-align: center;
   box-align: center;
