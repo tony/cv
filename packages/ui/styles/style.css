@@ -658,17 +658,17 @@ p {
     padding-top: 0;
   }
 }
-.dropdown-row .activityCount,
-.dropdown-row .topicTags {
+.dropdown-row .activity-count,
+.dropdown-row .topic-tags {
   flex-grow: 1;
   place-self: center;
   color: var(--react-select-tag-color);
   text-align: right;
 }
-.dropdown-row .topicTags:hover {
+.dropdown-row .topic-tags:hover {
   color: var(--react-select-tag-hover-color);
 }
-.dropdownCategoryOption {
+.dropdown-category-option {
   display: flex !important;
   place-items: center;
   line-height: 24px;

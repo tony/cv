@@ -55,12 +55,12 @@ export const OrgOption: React.FC<OptionProps<StyleOption, true>> = ({
   return (
     <ReactSelectComponents.Option
       {...props}
-      className={`df dropdownLanguageOption ${isSelected ? "selected" : ""}`}
+      className={`df dropdown-language-option ${isSelected ? "selected" : ""}`}
       isSelected={isSelected}
     >
       {children}{" "}
       {org?.orgType && (
-        <div className="topicTags">
+        <div className="topic-tags">
           <OrgTypeTag
             orgTypeName={org.orgType}
             style={{
@@ -103,14 +103,14 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
       {...props}
       data={data}
       isSelected={isSelected}
-      className={`df dropdownLanguageOption ${isSelected ? "selected" : ""}`}
+      className={`df dropdown-language-option ${isSelected ? "selected" : ""}`}
     >
       <LanguageTag
         languageName={languageName}
         key={languageName}
         className="tag ml0"
       />
-      <div className="activityCount">
+      <div className="activity-count">
         {cvState.languageUsageStats[languageName]} results
       </div>
     </ReactSelectComponents.Option>
@@ -305,7 +305,7 @@ export const CategoryOption: React.FC<OptionProps<StyleOption, true>> = ({
     <ReactSelectComponents.Option
       {...props}
       isSelected={isSelected}
-      className={`dropdownCategoryOption ${isSelected ? "selected" : ""}`}
+      className={`dropdown-category-option ${isSelected ? "selected" : ""}`}
     >
       {category.id ? CategoryEmojiMap[category.id] : null} {children}
     </ReactSelectComponents.Option>
