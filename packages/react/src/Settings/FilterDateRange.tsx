@@ -6,19 +6,10 @@ import CSS from "csstype";
 import { useMst } from "../mobx";
 
 import "./FilterDateRange.css";
+import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
 
-const DEFAULT_FILTERS = {
-  showReleases: false,
-  showTypos: false,
-  showDocImprovements: false,
-  showCodeStyleTweaks: false,
-  showUnmerged: false,
-  startYear: 2007,
-  endYear: 2023,
-};
-
-const minYear = DEFAULT_FILTERS.startYear;
-const maxYear = DEFAULT_FILTERS.endYear;
+const minYear = INITIAL_SEARCH_OPTIONS.startYear;
+const maxYear = INITIAL_SEARCH_OPTIONS.endYear;
 const initialRange = [minYear, maxYear];
 
 export const FilterDateRange: React.FC<{

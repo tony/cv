@@ -34,7 +34,7 @@ export const INITIAL_SEARCH_OPTIONS: SnapshotIn<typeof SearchOptions> = {
   showCodeStyleTweaks: false,
   showUnmerged: false,
   startYear: 2007,
-  endYear: 2023,
+  endYear: 2024,
 };
 
 export const INITIAL_UI: SnapshotIn<typeof UI> = {
