@@ -26,7 +26,6 @@ interface ActivityCardProps {
 
 export const PatchInfo: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
-  org: Instance<typeof OpenSourceOrg>;
 }> = ({ activity }) => {
   const items = [];
 
@@ -73,7 +72,6 @@ export const PatchInfo: React.FC<{
 };
 
 export const PublicationInfo: React.FC<{
-  activity: Instance<typeof ActivityPublication>;
   org: Instance<typeof PublicationOrg>;
 }> = ({ org }) => {
   const items = [];
@@ -149,7 +147,6 @@ export const PublicationInfo: React.FC<{
 };
 
 export const CompanyInfo: React.FC<{
-  activity: Instance<typeof ActivityWork>;
   org: Instance<typeof CompanyOrg>;
 }> = ({ org }) => {
   const items = [];
@@ -181,26 +178,20 @@ export const CompanyInfo: React.FC<{
 };
 
 export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
-  ({ activity, org }) => {
+  ({ activity }) => {
+    const { org } = activity;
     return (
       <>
         {CategoryName.Patch === activity.category && (
           <PatchInfo
             activity={activity as Instance<typeof ActivityOpenSource>}
-            org={org as Instance<typeof OpenSourceOrg>}
           />
         )}
         {CategoryName.Publication === activity.category && (
-          <PublicationInfo
-            activity={activity as Instance<typeof ActivityPublication>}
-            org={org as Instance<typeof PublicationOrg>}
-          />
+          <PublicationInfo org={org as Instance<typeof PublicationOrg>} />
         )}
         {CategoryName.Work === activity.category && (
-          <CompanyInfo
-            activity={activity as Instance<typeof ActivityWork>}
-            org={org as Instance<typeof CompanyOrg>}
-          />
+          <CompanyInfo org={org as Instance<typeof CompanyOrg>} />
         )}
       </>
     );
@@ -272,7 +263,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ReactMarkdown>{activity.title}</ReactMarkdown>
         </div>
         <div style={{ paddingTop: "0.25rem", fontSize: "1rem" }}>
-          <ActivityInfo activity={activity} org={org} />
+          <ActivityInfo activity={activity} />
         </div>
       </div>
       <div className="right-side">
