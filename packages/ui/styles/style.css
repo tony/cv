@@ -305,11 +305,11 @@ p {
   width: var(--container-width);
   margin: 0 auto;
 }
-.dropdownRow {
+.dropdown-row {
   margin: 0 auto;
 }
 @media (max-width: 1023px) {
-  .dropdownRow {
+  .dropdown-row {
     width: 98%;
     max-width: initial;
     margin: 0.5rem auto;
@@ -397,7 +397,7 @@ p {
     padding-right: 0;
     padding-left: 0;
   }
-  #settings.active .dropdownRow {
+  #settings.active .dropdown-row {
     padding-bottom: 0;
   }
   #settings.active .toggles {
@@ -644,7 +644,7 @@ p {
     padding-bottom: 1.5rem;
   }
 }
-.dropdownRow {
+.dropdown-row {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -654,18 +654,18 @@ p {
   color: var(--react-select-tag-color);
 }
 @media (max-width: 1023px) {
-  .dropdownRow {
+  .dropdown-row {
     padding-top: 0;
   }
 }
-.dropdownRow .activityCount,
-.dropdownRow .topicTags {
+.dropdown-row .activityCount,
+.dropdown-row .topicTags {
   flex-grow: 1;
   place-self: center;
   color: var(--react-select-tag-color);
   text-align: right;
 }
-.dropdownRow .topicTags:hover {
+.dropdown-row .topicTags:hover {
   color: var(--react-select-tag-hover-color);
 }
 .dropdownCategoryOption {
