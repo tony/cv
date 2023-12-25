@@ -1,27 +1,27 @@
-.chartRow.nivo:not(.noCharts) {
+.chart-row.nivo:not(.no-charts) {
   display: flex;
 }
 
-.chartRow.nivo:not(.noCharts) .chartRow--donut {
+.chart-row.nivo:not(.no-charts) .chart-row--donut {
   min-width: calc(var(--chart-width) - 35px);
 }
 
-.chartRow.nivo:not(.noCharts) .chartRow--line {
+.chart-row.nivo:not(.no-charts) .chart-row--line {
   display: block;
   max-width: calc(900px - var(--chart-width));
 }
 
-.chartRow.nivo:not(.noCharts) .chartRow--donut,
-.chartRow.nivo:not(.noCharts) .chartRow--line {
+.chart-row.nivo:not(.no-charts) .chart-row--donut,
+.chart-row.nivo:not(.no-charts) .chart-row--line {
   height: var(--chart-height);
   min-height: var(--chart-height);
 }
 
 @media (max-width: 768px) {
-  .chartRow.nivo:not(.noCharts) .chartRow--donut {
+  .chart-row.nivo:not(.no-charts) .chart-row--donut {
     justify-self: initial;
   }
-  .chartRow.nivo:not(.noCharts) .chartRow--line {
+  .chart-row.nivo:not(.no-charts) .chart-row--line {
     max-width: 90vw;
   }
 }

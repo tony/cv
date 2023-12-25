@@ -1,4 +1,4 @@
-.chartRow.carbon .chartRow--donut {
+.chart-row.carbon .chart-row--donut {
   /* center */
   justify-self: center;
   /* After removing callouts, the proportions are off, trim the extra space
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 767px) {
-  .chartRow.carbon .chartRow--donut {
+  .chart-row.carbon .chart-row--donut {
     margin: 0 auto;
   }
 }
