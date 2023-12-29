@@ -1,6 +1,7 @@
 import React from "react";
 
 import { observer } from "mobx-react-lite";
+import { Virtuoso } from "react-virtuoso";
 
 import { ActivityCard } from "./Card";
 import { useMst } from "./mobx";
@@ -13,17 +14,20 @@ export const ResultsHeader: React.FC = observer(() => {
   return <div id="results-info">{resultsCount} results</div>;
 });
 
-export const ResultList = observer(() => {
+const FixedSizeListItem = observer(({ index }: { index: number }) => {
   const { filteredActivities } = useMst();
+  return <ActivityCard activity={filteredActivities[index]} key={index} />;
+});
+
+export const ResultList = observer(() => {
+  const { filteredActivitiesCount } = useMst();
 
   return (
-    <div id="results">
-      {filteredActivities?.map?.((activity, idx) => {
-        return (
-          <ActivityCard activity={activity} key={`activity-card-${idx}`} />
-        );
-      })}
-    </div>
+    <Virtuoso
+      style={{ height: "400px" }}
+      totalCount={filteredActivitiesCount}
+      itemContent={(index) => <FixedSizeListItem index={index} />}
+    />
   );
 });
 export const Results = observer(() => {
