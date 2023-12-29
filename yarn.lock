@@ -631,11 +631,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.15":
-  version: 1.13.15
-  resolution: "@carbon/charts-react@npm:1.13.15"
+"@carbon/charts-react@npm:1.13.17":
+  version: 1.13.17
+  resolution: "@carbon/charts-react@npm:1.13.17"
   dependencies:
-    "@carbon/charts": "npm:1.13.15"
+    "@carbon/charts": "npm:1.13.17"
     "@carbon/icons-react": "npm:^11.33.0"
     "@carbon/telemetry": "npm:~0.1.0"
     react: "npm:^18.2.0"
@@ -643,13 +643,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 7dbab306709a588e6c90db4cf71ec76fd0ed9cc3103ad056525813419cef27d651bc53e78d45eb7772c67e31293229d00c3c70d0a3a8dd78d04d95cc56cf0858
+  checksum: 3eea6d3e36ce3f6740eb31dcf10d4ce3ff955cb1356f4a829cc4cffb9ca8b64cff9d03a7fd9c739644b301bd43d06c93976efdd6fbabb21d02ec042fb433b84f
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.15":
-  version: 1.13.15
-  resolution: "@carbon/charts@npm:1.13.15"
+"@carbon/charts@npm:1.13.17":
+  version: 1.13.17
+  resolution: "@carbon/charts@npm:1.13.17"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/telemetry": "npm:~0.1.0"
@@ -659,6 +659,7 @@ __metadata:
     d3-cloud: "npm:^1.2.7"
     d3-sankey: "npm:^0.12.3"
     date-fns: "npm:^3.0.6"
+    dompurify: "npm:^3.0.6"
     html-to-image: "npm:^1.11.11"
     lodash-es: "npm:^4.17.21"
     topojson-client: "npm:^3.1.0"
@@ -672,7 +673,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 800d9f8354650bc0557fd2f99c8bca7ae41f722af24ea46db1ac5c4eac4e7cc659a76ccf26d113213123c7cc7db0270dd41f0ee93690390d1be1f2663e2ff8a2
+  checksum: 86abccfd8e9109741edc05193bdfbe8300e2b170ec3203691e8a792211255abb3f360f7c65658d0d3b6a0d530375ac08c3f820945ae031aa129eaf47fe8c3d86
   languageName: node
   linkType: hard
 
@@ -2075,8 +2076,8 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.4.1"
-    "@carbon/charts": "npm:1.13.15"
-    "@carbon/charts-react": "npm:1.13.15"
+    "@carbon/charts": "npm:1.13.17"
+    "@carbon/charts-react": "npm:1.13.17"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.10.5"
     "@types/react": "npm:^18.2.46"
@@ -4379,6 +4380,13 @@ __metadata:
   version: 2.6.0
   resolution: "dom-to-image@npm:2.6.0"
   checksum: bf8d174c50b7fabc07b4d369478695f78fd5e84f68681eb3dcb951a80ff173b1e026faf7020d34fbed2595508e2c977346439635fb9c201d98963fee4763ebad
+  languageName: node
+  linkType: hard
+
+"dompurify@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "dompurify@npm:3.0.6"
+  checksum: bf6e8a240673f60f5aafa46b598cfb66a18ab68f2801840005bc784b3fd3598a6bfac1eca1f80a98b197054d2329cd6edbc857aca34364abdee389a8fe6c027a
   languageName: node
   linkType: hard
 
