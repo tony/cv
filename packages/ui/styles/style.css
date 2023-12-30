@@ -137,7 +137,8 @@ html.dark {
 }
 
 .react-select .react-select__input-container,
-.react-select .react-select__placeholder {
+.react-select .react-select__placeholder,
+.react-select .react-select__single-value {
   color: var(--react-select-input-container-text);
 }
 
