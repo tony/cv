@@ -120,6 +120,13 @@ html.dark {
   color: var(--react-select-option-text);
 }
 
+.react-select .react-select__option.react-select__option--is-disabled,
+.react-select .react-select__option.react-select__option--is-disabled:hover
+{
+  background-color: var(--react-select-option-selected-background);
+  opacity: 0.4;
+}
+
 .react-select .react-select__option:hover {
   background-color: var(--react-select-option-hover-background);
   color: var(--react-select-option-hover-text);
