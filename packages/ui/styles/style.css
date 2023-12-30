@@ -127,6 +127,7 @@ html.dark {
   opacity: 0.4;
 }
 
+.react-select .react-select__option.react-select__option--is-focused,
 .react-select .react-select__option:hover {
   background-color: var(--react-select-option-hover-background);
   color: var(--react-select-option-hover-text);
@@ -138,8 +139,9 @@ html.dark {
   font-weight: bold;
 }
 
+.react-select .react-select__option.react-select__option--is-focused.react-select__option--is-selected,
 .react-select .react-select__option--is-selected:hover {
-  background-color: var(--react-select-option-selected-hover-background);
+  background-color: var(--react-select-option-selected-background);
   color: var(--react-select-option-selected-hover-text);
 }
 

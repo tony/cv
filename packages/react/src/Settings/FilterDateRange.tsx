@@ -115,6 +115,7 @@ export const FilterDateRange: React.FC = () => {
         onMenuOpen={onMenuOpen}
         menuShouldScrollIntoView
         {...DEFAULT_REACT_SELECT_PROPS}
+        isSearchable={false}
       />
       <div className="date-range-separator">-</div>
       <Select
@@ -143,6 +144,7 @@ export const FilterDateRange: React.FC = () => {
         components={{ SingleValue, Option: YearOption }}
         menuShouldScrollIntoView
         {...DEFAULT_REACT_SELECT_PROPS}
+        isSearchable={false}
       />
     </div>
   );
