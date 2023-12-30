@@ -1,16 +1,24 @@
 import React from "react";
 import { useRanger } from "react-ranger";
+import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 
 import CSS from "csstype";
 
 import { useMst } from "../mobx";
+import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
+
+import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
+import "react-calendar/dist/Calendar.css";
 
 import "./FilterDateRange.css";
-import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
 
 const minYear = INITIAL_SEARCH_OPTIONS.startYear;
 const maxYear = INITIAL_SEARCH_OPTIONS.endYear;
 const initialRange = [minYear, maxYear];
+
+type ValuePiece = Date | null;
+
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export const FilterDateRange: React.FC<{
   lineColor: CSS.Properties["backgroundColor"];
@@ -18,6 +26,17 @@ export const FilterDateRange: React.FC<{
   const cvState = useMst();
 
   const [values, setValues] = React.useState(initialRange);
+  const [value, setValue] = React.useState<Value>([
+    new Date(minYear, 1, 1),
+    new Date(maxYear, 1, 1),
+  ]);
+  const onDateChange = (values: Value) => {
+    cvState.setYears({
+      startYear: values[0].getFullYear(),
+      endYear: values[1].getFullYear(),
+    });
+    setValue(values);
+  };
 
   const onChange = (values: number[]) => {
     cvState.setYears({ startYear: values[0], endYear: values[1] });
@@ -32,6 +51,11 @@ export const FilterDateRange: React.FC<{
     onChange,
     tickSize: 1,
   });
+  return (
+    <div id="year-range">
+      <DateRangePicker onChange={onDateChange} value={value} />
+    </div>
+  );
   return (
     <div
       {...getTrackProps({
