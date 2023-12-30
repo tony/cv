@@ -42,6 +42,27 @@ function CustomSelect<
   );
 }
 
+// Todo: Make isMulti adjustable in CustomSelect, then consolidate above
+export function CustomSingleSelect<
+  Option extends OptionType,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+>(props: Props<Option, IsMulti, Group>) {
+  return (
+    <Select
+      {...props}
+      isMulti={false as IsMulti}
+      theme={(theme) => ({ ...theme, borderRadius: 0 })}
+      className="react-select"
+      classNamePrefix="react-select"
+      hideSelectedOptions={false}
+      closeMenuOnSelect={false}
+      blurInputOnSelect={false}
+      maxItemsSelectCount={0}
+    />
+  );
+}
+
 declare module "react-select/dist/declarations/src/Select" {
   export interface Props<
     Option,
@@ -56,7 +77,7 @@ declare module "react-select/dist/declarations/src/Select" {
   }
 }
 
-const colourStyles: StylesConfig<StyleOption, true> = {
+export const colourStyles: StylesConfig<StyleOption, true> = {
   control: (styles) => ({
     ...styles,
     backgroundColor: "white",
