@@ -63,7 +63,7 @@ export const SingleValue: React.FC<SingleValueProps<OptionType>> = ({
 }) => {
   return (
     <ReactSelectComponents.SingleValue {...props}>
-      {children}
+      {children === maxYear ? "Present" : children}
     </ReactSelectComponents.SingleValue>
   );
 };
@@ -92,7 +92,7 @@ export const FilterDateRange: React.FC = () => {
         options={YEAR_RANGE.map(
           (year) =>
             ({
-              label: year,
+              label: year === maxYear ? "Present" : year,
               value: year,
             }) as StyleOption,
         )}
@@ -121,7 +121,7 @@ export const FilterDateRange: React.FC = () => {
         options={YEAR_RANGE.map(
           (year) =>
             ({
-              label: year,
+              label: year === maxYear ? "Present" : year,
               value: year,
             }) as StyleOption,
         )}
@@ -134,7 +134,7 @@ export const FilterDateRange: React.FC = () => {
         styles={{ ...colourStyles, ...dateRangeStyles }}
         placeholder="End year"
         defaultValue={{
-          label: maxYear,
+          label: "Present",
           value: maxYear,
         }}
         isOptionDisabled={({ value: year }: OptionType) => {
