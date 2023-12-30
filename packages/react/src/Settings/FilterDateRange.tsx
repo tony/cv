@@ -2,9 +2,6 @@ import React from "react";
 
 import CSS from "csstype";
 
-import { useMst } from "../mobx";
-
-import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
 import Select, {
   components as ReactSelectComponents,
   type Props,
@@ -15,8 +12,12 @@ import Select, {
   type OptionProps,
 } from "react-select";
 
-import { CustomSingleSelect, colourStyles } from "./FilterDropdowns";
+import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
+
+import { useMst } from "../mobx";
 import type { OptionType, StyleOption } from "../react-select";
+
+import { DEFAULT_REACT_SELECT_PROPS, colourStyles } from "./FilterDropdowns";
 
 import "./FilterDateRange.css";
 
@@ -87,7 +88,7 @@ export const FilterDateRange: React.FC = () => {
 
   return (
     <div id="year-range">
-      <CustomSingleSelect
+      <Select
         options={YEAR_RANGE.map(
           (year) =>
             ({
@@ -113,9 +114,10 @@ export const FilterDateRange: React.FC = () => {
         components={{ SingleValue }}
         onMenuOpen={onMenuOpen}
         menuShouldScrollIntoView
+        {...DEFAULT_REACT_SELECT_PROPS}
       />
       <div className="date-range-separator">-</div>
-      <CustomSingleSelect
+      <Select
         options={YEAR_RANGE.map(
           (year) =>
             ({
@@ -140,6 +142,7 @@ export const FilterDateRange: React.FC = () => {
         }}
         components={{ SingleValue, Option: YearOption }}
         menuShouldScrollIntoView
+        {...DEFAULT_REACT_SELECT_PROPS}
       />
     </div>
   );

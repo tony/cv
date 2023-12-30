@@ -22,6 +22,18 @@ import {
   type StyleOption,
 } from "../react-select";
 
+export const DEFAULT_REACT_SELECT_PROPS: Partial<
+  React.ComponentProps<typeof Select>
+> = {
+  theme: (theme) => ({ ...theme, borderRadius: 0 }),
+  className: "react-select",
+  classNamePrefix: "react-select",
+  hideSelectedOptions: false,
+  closeMenuOnSelect: false,
+  blurInputOnSelect: false,
+  maxItemsSelectCount: 0,
+};
+
 function CustomSelect<
   Option extends OptionType,
   IsMulti extends boolean = true,
@@ -31,34 +43,7 @@ function CustomSelect<
     <Select
       {...props}
       isMulti={true as IsMulti}
-      theme={(theme) => ({ ...theme, borderRadius: 0 })}
-      className="react-select"
-      classNamePrefix="react-select"
-      hideSelectedOptions={false}
-      closeMenuOnSelect={false}
-      blurInputOnSelect={false}
-      maxItemsSelectCount={0}
-    />
-  );
-}
-
-// Todo: Make isMulti adjustable in CustomSelect, then consolidate above
-export function CustomSingleSelect<
-  Option extends OptionType,
-  IsMulti extends boolean = false,
-  Group extends GroupBase<Option> = GroupBase<Option>,
->(props: Props<Option, IsMulti, Group>) {
-  return (
-    <Select
-      {...props}
-      isMulti={false as IsMulti}
-      theme={(theme) => ({ ...theme, borderRadius: 0 })}
-      className="react-select"
-      classNamePrefix="react-select"
-      hideSelectedOptions={false}
-      closeMenuOnSelect={false}
-      blurInputOnSelect={false}
-      maxItemsSelectCount={0}
+      {...DEFAULT_REACT_SELECT_PROPS}
     />
   );
 }
