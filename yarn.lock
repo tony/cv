@@ -2200,7 +2200,6 @@ __metadata:
     "@types/node": "npm:^20.10.6"
     "@types/react": "npm:^18.2.46"
     "@types/react-dom": "npm:^18.2.18"
-    "@types/react-ranger": "npm:^2.0.4"
     "@vitejs/plugin-react": "npm:^4.2.1"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^3.0.6"
@@ -2209,7 +2208,6 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-markdown: "npm:^9.0.1"
-    react-ranger: "npm:^2.1.0"
     react-select: "npm:^5.8.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
@@ -2648,15 +2646,6 @@ __metadata:
   dependencies:
     "@types/react": "npm:*"
   checksum: 188a63845c654ac6edb0e06136acf504c12d69a5576cb691199fc243b3b9b49d51c0e45b021a27ae7c5634173dae840428417b3e46022995f055fc894dcfdaf7
-  languageName: node
-  linkType: hard
-
-"@types/react-ranger@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "@types/react-ranger@npm:2.0.4"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 356e750327ca536b17d5d45a912e03753a145b6ce1c985897a59fe623df944b40a7780db0aa3d9e2253dca2bab4d5afe0f5cb3b4ab3b247c164d4911509fd168
   languageName: node
   linkType: hard
 
@@ -7151,15 +7140,6 @@ __metadata:
     "@types/react": ">=18"
     react: ">=18"
   checksum: 71ce31f200982f641d363888a26e8fb52a199a589124f20295e9be870fa3aed26fcfa14d1dc766d83df666a15cb82359291bfda207bd55d5728ff376d217e079
-  languageName: node
-  linkType: hard
-
-"react-ranger@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "react-ranger@npm:2.1.0"
-  peerDependencies:
-    react: ^16.6.3
-  checksum: b00744b50a68312324f4d7c0b88f7e4efbb37183a799555232590926b8a8d64b50a166ab6da6b684d4de0f0b8f6f0d71379c9c8af5d97446bfaa3ab645cee66d
   languageName: node
   linkType: hard
 

@@ -1,41 +1,19 @@
 div#year-range {
-  display: block;
-  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
   max-width: 70%;
   margin: 0 auto;
-  margin-bottom: 25px;
 }
 @media (max-width: 1023px) {
   div#year-range {
     width: 90%;
     max-width: initial;
     margin: 0.5rem auto;
-    margin-bottom: 25px;
   }
 }
 
-.track {
-  display: inline-block;
-  width: 90%;
-  height: 8px;
-  margin: 0 5%;
-}
-
-.tick:before {
-  position: absolute;
-  left: 0;
-  width: 2px;
-  height: 5px;
-  transform: translate(-50%, 0.7rem);
-  background: rgba(0, 0, 0, 0.2);
-  content: "";
-}
-
-.tick-label {
-  position: absolute;
-  top: 100%;
-  transform: translate(-50%, 1.2rem);
-  color: var(--date-range-tick-label-color);
-  font-size: 0.6rem;
-  white-space: nowrap;
+.date-range-separator {
+  padding: 1rem;
 }
