@@ -24,6 +24,12 @@ export const FilterDateRange: React.FC<{
     setValues(values);
   };
 
+  const onStartYearChange = (values: number[]) => {
+    console.log("onStartYearChange", values);
+    //   cvState.setYears({ startYear: values[0], endYear: values[1] });
+    //   setValues(values);
+  };
+
   const { ticks, segments, getTrackProps, handles } = useRanger({
     min: minYear - 1,
     max: maxYear + 1,
@@ -32,6 +38,22 @@ export const FilterDateRange: React.FC<{
     onChange,
     tickSize: 1,
   });
+  return (
+    <div id="year-range">
+      <label>
+        <input
+          type="date"
+          name="from-date"
+          min={`${minYear - 1}-01-01`}
+          max={`${maxYear + 1}-01-01`}
+          defaultValue={`${minYear - 1}-01-01`}
+          required
+          onChange={onStartYearChange}
+        />
+        <span className="validity" />
+      </label>
+    </div>
+  );
   return (
     <div
       {...getTrackProps({

@@ -39,3 +39,20 @@ div#year-range {
   font-size: 0.6rem;
   white-space: nowrap;
 }
+
+#year-range label {
+  display: flex;
+  align-items: center;
+}
+
+#year-range span::after {
+  padding-left: 5px;
+}
+
+#year-range input:invalid + span::after {
+  content: "✖";
+}
+
+#year-range input:valid + span::after {
+  content: "✓";
+}
