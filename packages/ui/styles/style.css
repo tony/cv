@@ -412,9 +412,6 @@ p {
     height: auto;
     padding-bottom: 0;
   }
-  #settings.active #year-range {
-    display: none;
-  }
 }
 @media (max-width: 1023px) {
   #settings {
