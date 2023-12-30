@@ -401,7 +401,6 @@ p {
     padding-bottom: 0;
   }
   #settings.active .toggles {
-    flex-direction: column;
     height: auto;
     padding-bottom: 0;
   }

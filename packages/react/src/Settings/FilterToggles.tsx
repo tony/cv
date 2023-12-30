@@ -61,31 +61,47 @@ export const FilterToggles: React.FC = () => {
 
   return (
     <div className="toggles">
-      <Toggle
-        id="show-documentation"
-        onChange={onShowDocumentationContributionsChange}
-      />
-      <label htmlFor="show-documentation">Docs</label>
+      <div id="show-documentation-group" className="toggle">
+        <Toggle
+          id="show-documentation"
+          onChange={onShowDocumentationContributionsChange}
+        />
+        <label htmlFor="show-documentation">Docs</label>
+      </div>
 
-      <Toggle id="show-release" onChange={onShowReleaseContributionsChange} />
-      <label
-        htmlFor="show-release"
-        title="Continuous integration, build and releases"
-      >
-        Build / Release / CI
-      </label>
+      <div id="show-release-group" className="toggle">
+        <Toggle id="show-release" onChange={onShowReleaseContributionsChange} />
+        <label
+          htmlFor="show-release"
+          title="Continuous integration, build and releases"
+        >
+          Build / Release / CI
+        </label>
+      </div>
 
-      <Toggle
-        id="show-code-style"
-        onChange={onShowCodeStyleContributionsChange}
-      />
-      <label htmlFor="show-code-style">Code Style</label>
+      <div id="show-code-style-group" className="toggle">
+        <Toggle
+          id="show-code-style"
+          onChange={onShowCodeStyleContributionsChange}
+        />
+        <label htmlFor="show-code-style">Code Style</label>
+      </div>
 
-      <Toggle id="show-spelling" onChange={onShowSpellingContributionsChange} />
-      <label htmlFor="show-spelling">Typos</label>
+      <div id="show-spelling-group" className="toggle">
+        <Toggle
+          id="show-spelling"
+          onChange={onShowSpellingContributionsChange}
+        />
+        <label htmlFor="show-spelling">Typos</label>
+      </div>
 
-      <Toggle id="show-unmerged" onChange={onShowUnmergedContributionsChange} />
-      <label htmlFor="show-unmerged">Unmerged</label>
+      <div id="show-unmerged-group" className="toggle">
+        <Toggle
+          id="show-unmerged"
+          onChange={onShowUnmergedContributionsChange}
+        />
+        <label htmlFor="show-unmerged">Unmerged</label>
+      </div>
     </div>
   );
 };
