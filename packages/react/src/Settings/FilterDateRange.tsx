@@ -10,6 +10,8 @@ import Select, {
   type SingleValueProps,
   type Options,
   type OptionProps,
+  type SingleValue as SingleValueType,
+  type GroupBase,
 } from "react-select";
 
 import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";
@@ -21,10 +23,14 @@ import { DEFAULT_REACT_SELECT_PROPS, colourStyles } from "./FilterDropdowns";
 
 import "./FilterDateRange.css";
 
+export interface YearOptionType {
+  readonly label: string;
+  readonly value: number;
+}
 const minYear = INITIAL_SEARCH_OPTIONS.startYear;
 const maxYear = INITIAL_SEARCH_OPTIONS.endYear;
 const initialRange = [minYear, maxYear];
-const YEAR_RANGE = Array.from(
+const YEAR_RANGE = Array.from<number, number>(
   { length: maxYear - minYear + 1 },
   (_, yearNotch) => minYear + yearNotch,
 );
@@ -57,7 +63,7 @@ const YearOption: React.FC<OptionProps<OptionType>> = (props) => {
   return <ReactSelectComponents.Option {...props} innerRef={ref} />;
 };
 
-export const SingleValue: React.FC<SingleValueProps<OptionType>> = ({
+export const SingleValue: React.FC<SingleValueProps<YearOptionType>> = ({
   children,
   ...props
 }) => {
@@ -88,27 +94,28 @@ export const FilterDateRange: React.FC = () => {
 
   return (
     <div id="year-range">
-      <Select
-        options={YEAR_RANGE.map(
-          (year) =>
-            ({
-              label: year === maxYear ? "Present" : year,
-              value: year,
-            }) as StyleOption,
-        )}
-        onChange={(value: PropsValue<OptionType>): void => {
-          cvState.setYears({
-            startYear: parseInt(value.value),
-            endYear: cvState.searchOptions.endYear,
-          });
+      <Select<OptionType, false, GroupBase<OptionType>>
+        options={
+          YEAR_RANGE.map((year: number) => ({
+            label: `${year}`,
+            value: `${year}`,
+          }))
+        }
+        onChange={(value: SingleValueType<OptionType>): void => {
+          if (value?.value) {
+            cvState.setYears({
+              startYear: parseInt(value.value),
+              endYear: cvState.searchOptions.endYear,
+            });
+          }
         }}
         styles={{ ...colourStyles, ...dateRangeStyles }}
         placeholder="Start year"
         defaultValue={{
-          label: minYear,
+          label: `${minYear}`,
           value: minYear,
         }}
-        isOptionDisabled={({ value: year }: OptionType) => {
+        isOptionDisabled={({ value: year }: YearOptionType) => {
           return year > cvState.searchOptions.endYear;
         }}
         components={{ SingleValue }}
