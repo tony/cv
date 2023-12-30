@@ -82,9 +82,7 @@ const onMenuOpen = () => {
   }, 15);
 };
 
-export const FilterDateRange: React.FC<{
-  lineColor: CSS.Properties["backgroundColor"];
-}> = ({ lineColor }) => {
+export const FilterDateRange: React.FC = () => {
   const cvState = useMst();
 
   return (

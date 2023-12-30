@@ -45,7 +45,7 @@ export const Settings: React.FC = observer(() => {
         className={`${cvState.ui.showOptionsMobile ? " active" : ""}`}
       >
         <FilterDropdowns />
-        <FilterDateRange lineColor={topLanguageColorBg} />
+        <FilterDateRange />
         <FilterToggles />
       </div>
     </>
