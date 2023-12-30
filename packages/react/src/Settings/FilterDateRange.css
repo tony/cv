@@ -2,7 +2,7 @@ div#year-range {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 0;
+  z-index: 3;
   max-width: 70%;
   margin: 0 auto;
 }
