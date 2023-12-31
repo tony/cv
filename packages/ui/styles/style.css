@@ -448,27 +448,6 @@ p {
   color: var(--chart-label-color);
 }
 
-/** Billboard start **/
-#charts.billboard .bb-tooltip-container {
-  color: black;
-}
-.dark #charts.billboard .chart-row--line .bb-event-rects .bb-event-rect {
-  fill: var(--chart-background-color);
-}
-#charts.billboard .chart-row--line svg g text {
-  fill: var(--chart-label-color);
-}
-#charts.billboard .chart-row--line svg g line.bb-ygrid {
-  stroke: var(--line-chart-grid-stroke);
-}
-#charts.billboard .chart-row--line svg .bb-areas-activityYearMap path {
-  fill: var(--line-chart-fill-color) !important;
-}
-#charts.billboard .chart-row--line svg .bb-shapes-activityYearMap path.bb-line {
-  stroke: var(--line-chart-fill-color) !important;
-}
-/** Billboard end **/
-
 /** Plotly start **/
 #charts.plotly div.svg-container g.subplot.xy g.xtick text,
 #charts.plotly div.svg-container g.subplot.xy g.ytick text {
