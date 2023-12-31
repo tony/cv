@@ -68,6 +68,7 @@ nav#top-nav .site-info--logo {
 }
 
 nav#top-nav .site-info--logo--img {
+  display: block;
   width: var(--top-nav-logo-size);
   height: var(--top-nav-height);
   background: var(--bg-image-url) var(--top-nav-icon-separation) center
