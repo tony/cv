@@ -45,7 +45,7 @@ function useEventListener<K extends keyof DocumentEventMap>(
 
 // Credit: https://usehooks-ts.com/react-hook/use-event-listener
 // License: MIT
-function useEventListener<
+export function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
   KM extends keyof MediaQueryListEventMap,
