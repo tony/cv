@@ -5,10 +5,10 @@ import { observer } from "mobx-react-lite";
 import * as mobxLib from "@tony/cv-lib/search/mobx";
 
 import { Charts } from "./Charts";
-import { MobxProvider, useMst } from "./mobx";
 import { Results } from "./Results";
 import { Settings } from "./Settings";
 import { TopNav } from "./TopNav/TopNav";
+import { MobxProvider, useMst } from "./mobx";
 
 import "@tony/cv-ui/styles/style.css";
 

@@ -3,13 +3,13 @@ import React from "react";
 import CSS from "csstype";
 
 import Select, {
-  components as ReactSelectComponents,
+  type OptionProps,
+  type Options,
   type Props,
   type PropsValue,
-  type StylesConfig,
   type SingleValueProps,
-  type Options,
-  type OptionProps,
+  type StylesConfig,
+  components as ReactSelectComponents,
 } from "react-select";
 
 import { INITIAL_SEARCH_OPTIONS } from "@tony/cv-lib/search/mobx";

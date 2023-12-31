@@ -1,25 +1,25 @@
 import React from "react";
 import Select, {
-  components as ReactSelectComponents,
   type GroupBase,
   type MultiValueProps,
   type Props,
   type PropsValue,
   type StylesConfig,
+  components as ReactSelectComponents,
 } from "react-select";
 
 import { useMst } from "../mobx";
 import {
   ActivityMultiValueLabel,
-  categoriesStyles,
   CategoryOption,
-  getSelectOptions,
   LanguageOption,
-  languageStyles,
-  OrgOption,
-  orgStyles,
   type OptionType,
+  OrgOption,
   type StyleOption,
+  categoriesStyles,
+  getSelectOptions,
+  languageStyles,
+  orgStyles,
 } from "../react-select";
 
 export const DEFAULT_REACT_SELECT_PROPS: Partial<

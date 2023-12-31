@@ -1,9 +1,9 @@
 import React from "react";
 
 import {
+  FloatingFocusManager,
   autoUpdate,
   flip,
-  FloatingFocusManager,
   offset,
   shift,
   useClick,

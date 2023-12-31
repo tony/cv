@@ -21,10 +21,10 @@ import {
 } from "@tony/cv-ui/styles/constants";
 
 import {
-  stateToDonut,
-  stateToLine,
   type DonutChartProps,
   type LineChartProps,
+  stateToDonut,
+  stateToLine,
 } from "./query";
 
 import "./chart-react-victory.css";

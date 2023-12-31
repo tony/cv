@@ -1,5 +1,5 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig, type ConfigEnv, type UserConfig } from "vite";
+import { type ConfigEnv, type UserConfig, defineConfig } from "vite";
 import webfontDownload from "vite-plugin-webfont-dl";
 
 export default defineConfig(({ command }: ConfigEnv): UserConfig => {

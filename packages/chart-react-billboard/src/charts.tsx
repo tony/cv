@@ -8,10 +8,10 @@ import { observer } from "mobx-react-lite";
 import { useMst } from "@tony/cv-react/src/mobx";
 
 import {
-  stateToDonut,
-  stateToLine,
   type DonutChartProps,
   type LineChartProps,
+  stateToDonut,
+  stateToLine,
 } from "./query";
 
 import "billboard.js/dist/billboard.css";

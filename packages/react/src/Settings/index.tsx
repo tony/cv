@@ -1,10 +1,10 @@
 import React from "react";
 
+import { observer } from "mobx-react-lite";
 import { useMst } from "../mobx";
 import { FilterDateRange } from "./FilterDateRange";
 import { FilterDropdowns } from "./FilterDropdowns";
 import { FilterToggles } from "./FilterToggles";
-import { observer } from "mobx-react-lite";
 
 export const Settings: React.FC = observer(() => {
   const cvState = useMst();

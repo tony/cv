@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  components as ReactSelectComponents,
   type CSSObjectWithLabel,
   type MultiValueGenericProps,
   type OptionProps,
   type Options,
   type StylesConfig,
+  components as ReactSelectComponents,
 } from "react-select";
 
 import type { CSSObject } from "@emotion/react";
@@ -13,8 +13,8 @@ import chroma from "chroma-js";
 
 import { CategoryEmojiMap } from "@tony/cv-data/constants";
 
-import { useMst } from "./mobx";
 import { LanguageTag, OrgTypeTag } from "./Tag";
+import { useMst } from "./mobx";
 
 export interface OptionType {
   readonly label: string;
