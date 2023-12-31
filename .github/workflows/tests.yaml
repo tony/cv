@@ -26,3 +26,5 @@ jobs:
         run: yarn biome format .
       - name: yarn biome lint .
         run: yarn biome lint .
+      - name: yarn biome check .
+        run: yarn biome check .
