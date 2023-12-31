@@ -3,18 +3,14 @@
 }
 
 .chart-row.nivo:not(.no-charts) .chart-row--donut {
-  min-width: calc(var(--chart-width) - 35px);
 }
 
 .chart-row.nivo:not(.no-charts) .chart-row--line {
-  display: block;
-  max-width: calc(900px - var(--chart-width));
+  display: flex;
 }
 
 .chart-row.nivo:not(.no-charts) .chart-row--donut,
 .chart-row.nivo:not(.no-charts) .chart-row--line {
-  height: var(--chart-height);
-  min-height: var(--chart-height);
 }
 
 @media (max-width: 768px) {
@@ -22,7 +18,6 @@
     justify-self: initial;
   }
   .chart-row.nivo:not(.no-charts) .chart-row--line {
-    max-width: 90vw;
   }
 }
 

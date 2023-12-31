@@ -444,8 +444,7 @@ p {
   width: calc(100% - 1rem);
   min-width: 900px;
   max-width: 40%;
-  margin: 0.5rem auto;
-  padding: 0.1rem 0;
+  margin: 0rem auto;
   border-radius: 0.75rem;
   background-color: var(--chart-container-background);
   color: var(--chart-label-color);
@@ -494,8 +493,7 @@ p {
   grid-auto-rows: 1fr;
   align-items: stretch;
   justify-items: stretch;
-  min-height: var(--chart-height);
-  padding: 0.75rem;
+  height: var(--chart-height);
 }
 .chart-row.no-charts {
   grid-template-rows: initial;
@@ -508,14 +506,15 @@ p {
 }
 .chart-row--line {
   width: 100%;
+  /* max-width: calc(900px - var(--chart-width)); */
+  max-width: initial;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
 .chart-row--donut,
 .chart-row--line {
   align-self: center;
-  max-height: var(--chart-height);
-  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  height: var(--chart-height);
   border-radius: 0.75rem;
 }
 @media (max-width: 1023px) {

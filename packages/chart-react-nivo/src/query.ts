@@ -8,6 +8,7 @@ import {
   donutChartHeight,
   donutChartWidth,
   lineChartHeight,
+  lineChartWidth,
 } from "@tony/cv-ui/styles/constants";
 
 function isString(x: unknown): x is string {

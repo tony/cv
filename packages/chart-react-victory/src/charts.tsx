@@ -109,7 +109,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     }, [cvState, chartData, setChartData]);
 
     const [width, setWidth] = React.useState(
-      document.querySelector("#charts .chart-row--line")?.clientWidth ??
+      document.querySelector("#charts .chart-row--line")?.getBoundingClientRect().width ??
         lineChartWidth,
     );
     const updateWidth = () => {
@@ -139,7 +139,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         theme={VictoryTheme.material}
         domainPadding={{ x: 20 }}
         padding={{ top: 15, bottom: 30, right: 0, left: 20 }}
-        width={width + 170}
+        width={width + donutChartWidth}
         style={{
           background: { fill: "var(--chart-background-color)" },
         }}
