@@ -13,3 +13,11 @@
     margin: 0 auto;
   }
 }
+
+.dark #charts.victory g line {
+  opacity: 0.4;
+}
+.dark #charts.victory .chart-row--donut text tspan,
+.dark #charts.victory .chart-row--line text tspan {
+  fill: var(--chart-label-color) !important;
+}

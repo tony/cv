@@ -448,16 +448,6 @@ p {
   color: var(--chart-label-color);
 }
 
-/** Victory start **/
-.dark #charts.victory g line {
-  opacity: 0.4;
-}
-.dark #charts.victory .chart-row--donut text tspan,
-.dark #charts.victory .chart-row--line text tspan {
-  fill: var(--chart-label-color) !important;
-}
-/** Victory end **/
-
 /** Nivo start **/
 #charts.nivo .chart-row--donut div:not(.loading-chart) {
   /* Tooltips */
