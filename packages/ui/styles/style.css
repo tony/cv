@@ -448,32 +448,6 @@ p {
   color: var(--chart-label-color);
 }
 
-/** Plotly start **/
-#charts.plotly div.svg-container g.subplot.xy g.xtick text,
-#charts.plotly div.svg-container g.subplot.xy g.ytick text {
-  fill: var(--chart-label-color) !important;
-}
-#charts.plotly div.svg-container > svg.main-svg {
-  background: initial !important;
-}
-#charts.plotly .chart-row--line .bglayer rect.bg {
-  fill: var(--chart-background-color) !important;
-}
-#charts.plotly .chart-row--line g.plot g.points path.point,
-#charts.plotly .chart-row--line g.plot g.lines path.js-line {
-  stroke: var(--line-chart-fill-color) !important;
-}
-#charts.plotly .chart-row--line g.plot g.fills path.js-fill,
-#charts.plotly .chart-row--line g.plot g.points path.point {
-  fill: var(--line-chart-fill-color) !important;
-}
-#charts.plotly .chart-row--line g.gridlayer g.x path.xgrid,
-#charts.plotly .chart-row--line g.gridlayer g.y path.ygrid {
-  stroke: var(--line-chart-grid-stroke) !important;
-}
-
-/** Plotly end **/
-
 /** Victory start **/
 .dark #charts.victory g line {
   opacity: 0.4;
