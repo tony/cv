@@ -448,16 +448,6 @@ p {
   color: var(--chart-label-color);
 }
 
-/** Nivo start **/
-#charts.nivo .chart-row--donut div:not(.loading-chart) {
-  /* Tooltips */
-  color: var(--line-chart-tooltip-background);
-}
-#charts.nivo .chart-row--line svg g text {
-  fill: var(--chart-label-color) !important;
-}
-/** Nivo end **/
-
 @media (max-width: 1023px) {
   #charts {
     width: 100%;

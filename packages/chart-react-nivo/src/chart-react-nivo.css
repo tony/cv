@@ -25,3 +25,11 @@
     max-width: 90vw;
   }
 }
+
+#charts.nivo .chart-row--donut div:not(.loading-chart) {
+  /* Tooltips */
+  color: var(--line-chart-tooltip-background);
+}
+#charts.nivo .chart-row--line svg g text {
+  fill: var(--chart-label-color) !important;
+}
