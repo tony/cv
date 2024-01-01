@@ -12,7 +12,7 @@ export default {
       fontFamily: {
         sans: ["IBM Plex Sans", "Inter var", ...defaultTheme.fontFamily.sans],
       },
-      theme: {
+      colors: {
         // blue: "#0854a0",
         // https://uicolors.app/create
         blue: {
