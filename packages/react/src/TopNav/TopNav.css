@@ -48,7 +48,6 @@ nav#top-nav {
   place-items: center;
   width: 100%;
   height: var(--top-nav-height);
-  background: var(--top-nav-bg-color);
 }
 .top-nav--container {
   width: var(--container-width);
@@ -58,7 +57,6 @@ nav#top-nav .site-info--site-name {
   display: flex;
   place-items: center;
   padding: 0 1rem 0 0.5rem;
-  color: var(--top-nav-site-name-text-color);
   font-size: 1rem;
   line-height: 1.25rem;
   text-shadow: 1px 1px 0px var(--top-nav-site-name-text-shadow-color);
@@ -114,8 +112,6 @@ nav#top-nav li {
   place-items: center;
   height: var(--top-nav-height);
   padding: 0 1rem;
-  background: var(--top-nav-bg-color);
-  color: #fff;
   text-decoration: none;
   transition-duration: 0.5s;
 }
@@ -134,7 +130,6 @@ nav#top-nav li img {
 }
 nav#top-nav li a {
   display: flex;
-  color: #fff;
   font-size: 0.95rem;
   text-decoration: none;
 }
