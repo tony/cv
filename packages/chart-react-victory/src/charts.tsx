@@ -18,7 +18,7 @@ import {
   donutChartHeight,
   donutChartWidth,
   lineChartWidth,
-} from "@tony/cv-ui/styles/constants";
+} from "@tony/cv-react/src/styles/constants";
 
 import {
   type DonutChartProps,

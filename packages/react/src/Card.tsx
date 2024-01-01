@@ -18,8 +18,6 @@ import type {
 
 import { CategoryText, LanguageTag } from "./Tag";
 
-import "@tony/cv-ui/styles/style.css";
-
 interface ActivityCardProps {
   activity: Instance<typeof Activity>;
 }
