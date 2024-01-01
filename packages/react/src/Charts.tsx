@@ -58,7 +58,9 @@ const ChartBody: React.FC = observer(() => {
       id="charts"
       className={`chart-row ${chart}${
         Object.keys(cvState.filteredActivities).length ? "" : " no-charts"
-      } ${cvState.ui.showChartsMobile ? "active" : ""} flex w-full `}
+      } ${
+        cvState.ui.showChartsMobile ? "active" : ""
+      } flex w-full max-w-4xl h-64`}
     >
       <div className="chart-row--donut aspect-square flex-none">
         <React.Suspense
