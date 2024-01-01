@@ -15,7 +15,7 @@ const ChartLinks: React.FC = observer(() => {
       <button
         type="button"
         onClick={() => cvState.setChart(c as unknown as Chart)}
-        className={c === cvState.ui.chart ? "active" : ""}
+        className={`chart-link ${c === cvState.ui.chart ? "active" : ""}`}
       >
         {c}
       </button>
