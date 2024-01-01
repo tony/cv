@@ -2257,14 +2257,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tony/cv-ui@workspace:packages/ui":
-  version: 0.0.0-use.local
-  resolution: "@tony/cv-ui@workspace:packages/ui"
-  dependencies:
-    "@biomejs/biome": "npm:1.4.1"
-  languageName: unknown
-  linkType: soft
-
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
