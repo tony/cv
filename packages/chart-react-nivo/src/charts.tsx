@@ -7,6 +7,7 @@ import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import { useMst } from "@tony/cv-react/src/mobx";
+import { useRemainingWidthSpaceForLineChart } from "@tony/cv-react/src/utils/charts";
 
 import {
   type DonutChartProps,
@@ -94,57 +95,67 @@ export const ActivityLineChart: React.FC<
   }, [cvState, chartData, setChartData]);
 
   const getDonutDimensions = () => {
-    const donutChartContainer = document.querySelector("#charts .chart-row--donut")
-    return donutChartContainer?.getBoundingClientRect()
-  }
+    const donutChartContainer = document.querySelector(
+      "#charts .chart-row--donut",
+    );
+    return donutChartContainer?.getBoundingClientRect();
+  };
 
   const getLineDimensions = () => {
-    const lineChartContainer = document.querySelector("#charts .chart-row--line")
-    return lineChartContainer?.getBoundingClientRect()
-  }
+    const lineChartContainer = document.querySelector(
+      "#charts .chart-row--line",
+    );
+    return lineChartContainer?.getBoundingClientRect();
+  };
   const getRemainingWidth = () => {
-    const chartContainer = document.querySelector("#charts")
-    const chartContainerDimensions = chartContainer?.getBoundingClientRect()
+    const chartContainer = document.querySelector("#charts");
+    const chartContainerDimensions = chartContainer?.getBoundingClientRect();
 
-    const donutChartContainer = document.querySelector("#charts .chart-row--donut")
-    const donutChartContainerDimensions = donutChartContainer?.getBoundingClientRect()
+    const donutChartContainer = document.querySelector(
+      "#charts .chart-row--donut",
+    );
+    const donutChartContainerDimensions =
+      donutChartContainer?.getBoundingClientRect();
 
-    if (!chartContainerDimensions?.width || !donutChartContainerDimensions?.width) {
-      return 0
+    if (
+      !chartContainerDimensions?.width ||
+      !donutChartContainerDimensions?.width
+    ) {
+      return 0;
     }
 
-    return chartContainerDimensions?.width - donutChartContainerDimensions?.width
-  }
-
-    const [width, setWidth] = React.useState(
-      document.querySelector("#charts .chart-row--line")?.getBoundingClientRect().width ??
-        lineChartWidth,
+    return (
+      chartContainerDimensions?.width - donutChartContainerDimensions?.width
     );
-    const updateWidth = () => {
-      const chartElement = document.querySelector("#charts .chart-row--line");
-      if (!chartElement?.clientWidth) {
-        return;
-      }
-      setWidth(chartElement.clientWidth);
+  };
+
+  const [width, setWidth] = React.useState(
+    document.querySelector("#charts .chart-row--line")?.getBoundingClientRect()
+      .width ?? lineChartWidth,
+  );
+  const updateWidth = () => {
+    const chartElement = document.querySelector("#charts .chart-row--line");
+    if (!chartElement?.clientWidth) {
+      return;
+    }
+    setWidth(chartElement.clientWidth);
+  };
+
+  // thanks @jasonhealy https://github.com/FormidableLabs/victory/issues/396#issuecomment-348182325
+  React.useEffect(() => {
+    window.addEventListener("resize", updateWidth);
+
+    // Removes listener on unmount
+    return () => {
+      window.removeEventListener("resize", updateWidth);
     };
+  }, [updateWidth]);
 
-    // thanks @jasonhealy https://github.com/FormidableLabs/victory/issues/396#issuecomment-348182325
-    React.useEffect(() => {
-      window.addEventListener("resize", updateWidth);
-
-      // Removes listener on unmount
-      return () => {
-        window.removeEventListener("resize", updateWidth);
-      };
-    }, [updateWidth]);
-
-
-
-  if (!chartData) {
+  const remainingWidth = useRemainingWidthSpaceForLineChart();
+  console.log({ width, remainingWidth });
+  if (!chartData || !remainingWidth) {
     return null;
   }
-
-  console.log({width, remainingWidth: getRemainingWidth()})
 
   return (
     <ResponsiveLine
@@ -161,7 +172,7 @@ export const ActivityLineChart: React.FC<
         "points",
         "legends",
       ]}
-      width={getRemainingWidth()}
+      width={remainingWidth}
     />
   );
 });

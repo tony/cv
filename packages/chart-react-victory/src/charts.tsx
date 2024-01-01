@@ -109,8 +109,9 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     }, [cvState, chartData, setChartData]);
 
     const [width, setWidth] = React.useState(
-      document.querySelector("#charts .chart-row--line")?.getBoundingClientRect().width ??
-        lineChartWidth,
+      document
+        .querySelector("#charts .chart-row--line")
+        ?.getBoundingClientRect().width ?? lineChartWidth,
     );
     const updateWidth = () => {
       const chartElement = document.querySelector("#charts .chart-row--line");
