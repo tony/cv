@@ -4,14 +4,10 @@
   /* After removing callouts, the proportions are off, trim the extra space
      https://github.com/carbon-design-system/carbon-charts/pull/927#issuecomment-765796640 */
   margin: 0 auto;
-
-  /* adjust white spacing to match other charts */
-  margin: 0.75rem 0rem 0.75rem 1.75rem;
 }
 
 @media (max-width: 767px) {
   .chart-row.carbon .chart-row--donut {
-    margin: 0 auto;
   }
 }
 

@@ -1,10 +1,8 @@
 .chart-row.victory:not(.no-charts) .chart-row--donut {
-  width: 350px;
   height: var(--chart-height);
   margin: 0 auto auto 2.25rem;
 }
 .chart-row.victory:not(.no-charts) .chart-row--line {
-  width: 100%;
   height: var(--chart-height);
 }
 
