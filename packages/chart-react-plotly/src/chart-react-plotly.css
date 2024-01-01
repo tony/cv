@@ -1,8 +1,3 @@
-.chart-row.plotly:not(.no-charts) .chart-row--donut {
-  min-width: var(--chart-width);
-  margin: 0 auto;
-}
-
 #charts.plotly div.svg-container g.subplot.xy g.xtick text,
 #charts.plotly div.svg-container g.subplot.xy g.ytick text {
   fill: var(--chart-label-color) !important;

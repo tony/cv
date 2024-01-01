@@ -58,16 +58,16 @@ const ChartBody: React.FC = observer(() => {
       id="charts"
       className={`chart-row ${chart}${
         Object.keys(cvState.filteredActivities).length ? "" : " no-charts"
-      } ${cvState.ui.showChartsMobile ? "active" : ""}`}
+      } ${cvState.ui.showChartsMobile ? "active" : ""} flex w-full `}
     >
-      <div className="chart-row--donut">
+      <div className="chart-row--donut aspect-square flex-none">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Pie Chart</div>}
         >
           <LanguagePieChart />
         </React.Suspense>
       </div>
-      <div className="chart-row--line">
+      <div className="chart-row--line flex-none md:flex-1">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Line Chart</div>}
         >
