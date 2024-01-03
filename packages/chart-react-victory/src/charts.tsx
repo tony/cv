@@ -68,7 +68,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
         {...props}
         height={donutChartHeight}
         width={donutChartWidth}
-        padding={{ top: 18, bottom: 18, left: 18, right: 18 }}
+        padding={{ top: 18, bottom: 30, left: 18, right: 18 }}
         labelPlacement="perpendicular"
         labelRadius={110}
         animate={{
@@ -138,8 +138,8 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
       <VictoryChart
         theme={VictoryTheme.material}
         domainPadding={{ x: 20 }}
-        padding={{ top: 15, bottom: 30, right: 0, left: 20 }}
-        width={width + 170}
+        padding={{ top: 0, bottom: 30, right: 0, left: 40 }}
+        width={width + 250}
         style={{
           background: { fill: "var(--chart-background-color)" },
         }}
@@ -169,6 +169,7 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
               strokeWidth: 1,
             },
           }}
+          padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
           standalone={false}
         />
         <VictoryArea
