@@ -522,6 +522,9 @@ export const CVState = types
     get filteredActivities(): Instance<typeof Activity>[] {
       return this.search({ ...self.searchOptions });
     },
+    get filteredActivitiesCount(): number {
+      return this.filteredActivities?.length;
+    },
     get activityYearMap(): ActivityCountRecord {
       return Array.from(this.filteredActivities.values()).reduce(
         (jsonData, activity) => {
