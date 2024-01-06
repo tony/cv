@@ -3,7 +3,7 @@ import type { Instance } from "mobx-state-tree";
 import type { VictoryLine, VictoryPie } from "victory";
 
 import { CVState } from "@tony/cv-lib/search/mobx";
-import { donutChartWidth } from "@tony/cv-ui/styles/constants";
+import { donutChartWidth } from "@tony/cv-react/src/styles/constants";
 
 export type DonutChartProps = React.ComponentProps<typeof VictoryPie>;
 export type LineChartProps = React.ComponentProps<typeof VictoryLine>;

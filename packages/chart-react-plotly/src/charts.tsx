@@ -10,7 +10,7 @@ import { useMst } from "@tony/cv-react/src/mobx";
 import {
   donutChartHeightWithUnit,
   lineChartHeightWithUnit,
-} from "@tony/cv-ui/styles/constants";
+} from "@tony/cv-react/src/styles/constants";
 
 import {
   DonutChartProps,

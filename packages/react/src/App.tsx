@@ -10,7 +10,7 @@ import { Settings } from "./Settings";
 import { TopNav } from "./TopNav/TopNav";
 import { MobxProvider, useMst } from "./mobx";
 
-import "@tony/cv-ui/styles/style.css";
+import "./styles/style.css";
 
 const { state: cvState } = mobxLib;
 

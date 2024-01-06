@@ -8,7 +8,7 @@ import {
   donutChartHeight,
   donutChartWidth,
   lineChartHeight,
-} from "@tony/cv-ui/styles/constants";
+} from "@tony/cv-react/src/styles/constants";
 
 function isString(x: unknown): x is string {
   return typeof x === "string";

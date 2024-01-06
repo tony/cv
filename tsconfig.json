@@ -16,7 +16,6 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "paths": {
-      "@tony/cv-ui": ["./packages/ui"],
       "@tony/cv-react": ["./packages/react"],
       "@tony/cv-lib": ["./packages/lib"],
       "@tony/cv-data": ["./packages/data"],
@@ -29,7 +28,6 @@
     }
   },
   "references": [
-    { "path": "packages/ui" },
     { "path": "packages/react" },
     { "path": "packages/lib" },
     { "path": "packages/data" },
