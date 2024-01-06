@@ -366,13 +366,6 @@ p {
   color: var(--mobile-buttons-toggle-text-color);
   font-family: var(--sans-font);
 }
-#mobile-buttons button.toggle-btn:focus,
-#mobile-buttons button.toggle-btn:active,
-#mobile-buttons button.toggle-btn.active {
-  box-shadow:
-    0 0 3px var(--mobile-buttons-toggle-btn-box-shadow-color),
-    0 0 7px var(--mobile-buttons-toggle-btn-box-shadow-color);
-}
 @media (min-width: 767px) {
   #mobile-buttons {
     display: none;

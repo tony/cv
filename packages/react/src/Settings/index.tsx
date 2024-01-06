@@ -16,9 +16,12 @@ export const Settings: React.FC = observer(() => {
       <div id="mobile-buttons">
         <button
           type="button"
-          className={`toggle-btn ${
-            cvState.ui.showOptionsMobile ? "active" : ""
-          }`}
+          className={`toggle-btn ${cvState.ui.showOptionsMobile ? "active" : ""}
+          focus:shadow-[0_0_3px_#3e94cf]
+          focus:shadow-[0_0_7px_#3e94cf]
+          active:shadow-[0_0_3px_#3e94cf]
+          active:shadow-[0_0_7px_#3e94cf]
+            `}
           onClick={(e) => {
             e.preventDefault();
             cvState.setShowOptionsMobile(!cvState.ui.showOptionsMobile);
@@ -28,9 +31,12 @@ export const Settings: React.FC = observer(() => {
         </button>
         <button
           type="button"
-          className={`toggle-btn ${
-            cvState.ui.showChartsMobile ? "active" : ""
-          }`}
+          className={`toggle-btn ${cvState.ui.showChartsMobile ? "active" : ""}
+          focus:shadow-[0_0_3px_#3e94cf]
+          focus:shadow-[0_0_7px_#3e94cf]
+          active:shadow-[0_0_3px_#3e94cf]
+          active:shadow-[0_0_7px_#3e94cf]
+            `}
           onClick={(e) => {
             e.preventDefault();
             cvState.setShowChartsMobile(!cvState.ui.showChartsMobile);
