@@ -4,7 +4,17 @@
   }
 }
 
+/** Nivo exception: Needing deep styling **/
+#charts.nivo .chart-row--line {
+  /* Workaround: Without this the line chart will not paint */
+  aspect-ratio: 1/1;
+}
+
 #charts.nivo .chart-row--donut div:not(.loading-chart) {
+  /* Workaround: Without this the donut will not center. */
+  display: flex;
+  justify-content: center;
+
   /* Tooltips */
   color: var(--line-chart-tooltip-background);
 }
