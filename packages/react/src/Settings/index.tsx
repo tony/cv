@@ -6,6 +6,17 @@ import { FilterDateRange } from "./FilterDateRange";
 import { FilterDropdowns } from "./FilterDropdowns";
 import { FilterToggles } from "./FilterToggles";
 
+const activeClasses = `
+shadow-[0_0_3px_#3e94cf]
+shadow-[0_0_7px_#3e94cf]
+`;
+
+const shadowClasses = `
+focus:shadow-[0_0_3px_#3e94cf]
+focus:shadow-[0_0_7px_#3e94cf]
+active:shadow-[0_0_3px_#3e94cf]
+active:shadow-[0_0_7px_#3e94cf]
+`;
 export const Settings: React.FC = observer(() => {
   const cvState = useMst();
   const topLanguageColorBg = cvState.languages.find(({ id }) => id)?.ui
@@ -16,11 +27,10 @@ export const Settings: React.FC = observer(() => {
       <div id="mobile-buttons">
         <button
           type="button"
-          className={`toggle-btn ${cvState.ui.showOptionsMobile ? "active" : ""}
-          focus:shadow-[0_0_3px_#3e94cf]
-          focus:shadow-[0_0_7px_#3e94cf]
-          active:shadow-[0_0_3px_#3e94cf]
-          active:shadow-[0_0_7px_#3e94cf]
+          className={`toggle-btn ${
+            cvState.ui.showOptionsMobile ? activeClasses : ""
+          }
+          ${shadowClasses}
             `}
           onClick={(e) => {
             e.preventDefault();
@@ -31,11 +41,10 @@ export const Settings: React.FC = observer(() => {
         </button>
         <button
           type="button"
-          className={`toggle-btn ${cvState.ui.showChartsMobile ? "active" : ""}
-          focus:shadow-[0_0_3px_#3e94cf]
-          focus:shadow-[0_0_7px_#3e94cf]
-          active:shadow-[0_0_3px_#3e94cf]
-          active:shadow-[0_0_7px_#3e94cf]
+          className={`toggle-btn ${
+            cvState.ui.showChartsMobile ? activeClasses : ""
+          }
+          ${shadowClasses}
             `}
           onClick={(e) => {
             e.preventDefault();
@@ -48,7 +57,9 @@ export const Settings: React.FC = observer(() => {
 
       <div
         id="settings"
-        className={`${cvState.ui.showOptionsMobile ? " active" : ""}`}
+        className={`${
+          cvState.ui.showOptionsMobile ? " active" : "hidden md:block"
+        }`}
       >
         <FilterDropdowns />
         <FilterDateRange />

@@ -59,7 +59,7 @@ const ChartBody: React.FC = observer(() => {
       className={`chart-row ${chart}${
         Object.keys(cvState.filteredActivities).length ? "" : " no-charts"
       } ${
-        cvState.ui.showChartsMobile ? "active" : ""
+        cvState.ui.showChartsMobile ? "active" : "hidden md:flex"
       } lg:flex md:w-svw w-full max-w-4xl lg:h-64 mx-auto`}
     >
       <div className="chart-row--donut aspect-square flex content-center place-content-center lg:flex-none lg:content-none h-64 md:h-auto w-full md:w-auto">
