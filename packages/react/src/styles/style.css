@@ -11,7 +11,7 @@
   --chart-height: 250px;
   --chart-width: 250px;
   --top-nav-height: 3rem;
-  --background-color: #f3f3f4;
+  --background-color: #fff;
   --text-color: #000;
   --text-color-inverted: #fff;
   --text-middle-color: #5f6368;
@@ -358,7 +358,6 @@ p {
   display: flex;
   justify-content: center;
   height: 30px;
-  background-color: var(--mobile-buttons-background-color);
   text-align: center;
 }
 #mobile-buttons button.toggle-btn {
