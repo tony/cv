@@ -4,5 +4,6 @@
   },
   "prettier.enable": false,
   "eslint.enable": false,
-  "biome.enable": true
+  "biome.enable": true,
+  "biome.trace.server": "messages"
 }
