@@ -8,15 +8,6 @@
   outline: var(--color-scheme-toggle-icon-btn-color) solid 1px;
 }
 
-.color-scheme-popover {
-  z-index: 10;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  background-color: var(--top-nav-bg-color);
-  box-shadow: 1px 1px 0px var(--top-nav-site-name-text-shadow-color);
-  color: var(--text-color);
-}
-
 .color-scheme-toggle {
   @apply flex justify-start items-center gap-1.5 rounded;
   color: var(--top-nav-site-name-text-color);

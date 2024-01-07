@@ -93,7 +93,7 @@ export const ColorSchemeToggle: React.FC = () => {
       <FloatingFocusManager context={context} modal={false}>
         {isTooltipOpen && (
           <div
-            className="color-scheme-popover backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-blue-900/85 text-white supports-backdrop-blur:bg-white/60 dark:bg-black-pearl-900/95 w-24"
+            className="color-scheme-popover backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-blue-900/85 text-white supports-backdrop-blur:bg-white/60 dark:bg-black-pearl-900/95 w-24 shadow-sm shadow-slate-500/75 dark:shadow-white/25 rounded p-1 z-10"
             ref={refs.setFloating}
             style={floatingStyles}
             aria-labelledby={headingId}
