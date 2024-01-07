@@ -9,6 +9,10 @@ export default {
   },
   theme: {
     extend: {
+      backgroundImage: {
+        logo: "url(/logo.svg)",
+        "logo-dark": "url(/logo-dark.svg)",
+      },
       fontFamily: {
         sans: ["IBM Plex Sans", "Inter var", ...defaultTheme.fontFamily.sans],
       },
