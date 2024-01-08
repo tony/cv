@@ -11,7 +11,7 @@ const ChartLinks: React.FC = observer(() => {
 
   return Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
     <React.Fragment key={c}>
-      {idx > 0 && ", "}
+      {idx > 0 && ",\u00A0 "}
       <button
         type="button"
         onClick={() => cvState.setChart(c as unknown as Chart)}
@@ -35,17 +35,18 @@ const ChartMenu: React.FC = observer(() => {
     <div
       id="chart-menu"
       className={`
-      ${cvState.ui.showChartsMobile ? "active" : ""}
       ${cvState.ui.showChartsMobile ? "active" : "hidden md:flex"}
-      pb-0 lg:pb-2`}
+      pb-0 lg:pb-2
+      flex
+      justify-center
+      `}
     >
       📊
       <span
         className="hidden md:inline"
         title="Lazily loaded, honors filters and scope"
       >
-        {" "}
-        Chart system (take your pick):{" "}
+        &nbsp;Chart system (take your pick):&nbsp;
       </span>
       <ChartLinks />
     </div>
