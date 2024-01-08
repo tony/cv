@@ -589,9 +589,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/biome@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/biome@npm:1.5.0"
+  dependencies:
+    "@biomejs/cli-darwin-arm64": "npm:1.5.0"
+    "@biomejs/cli-darwin-x64": "npm:1.5.0"
+    "@biomejs/cli-linux-arm64": "npm:1.5.0"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.5.0"
+    "@biomejs/cli-linux-x64": "npm:1.5.0"
+    "@biomejs/cli-linux-x64-musl": "npm:1.5.0"
+    "@biomejs/cli-win32-arm64": "npm:1.5.0"
+    "@biomejs/cli-win32-x64": "npm:1.5.0"
+  dependenciesMeta:
+    "@biomejs/cli-darwin-arm64":
+      optional: true
+    "@biomejs/cli-darwin-x64":
+      optional: true
+    "@biomejs/cli-linux-arm64":
+      optional: true
+    "@biomejs/cli-linux-arm64-musl":
+      optional: true
+    "@biomejs/cli-linux-x64":
+      optional: true
+    "@biomejs/cli-linux-x64-musl":
+      optional: true
+    "@biomejs/cli-win32-arm64":
+      optional: true
+    "@biomejs/cli-win32-x64":
+      optional: true
+  bin:
+    biome: bin/biome
+  checksum: db7e9635fe1fb844df887326d901be8b7adf49c719a056c7c3176b042e46d0d8923729870e6aa61c432fd398bc52791288e49e84062d2736efdfb51faf1e3469
+  languageName: node
+  linkType: hard
+
 "@biomejs/cli-darwin-arm64@npm:1.4.1":
   version: 1.4.1
   resolution: "@biomejs/cli-darwin-arm64@npm:1.4.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.5.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -603,10 +645,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/cli-darwin-x64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-darwin-x64@npm:1.5.0"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64-musl@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.5.0"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
 "@biomejs/cli-linux-arm64@npm:1.4.1":
   version: 1.4.1
   resolution: "@biomejs/cli-linux-arm64@npm:1.4.1"
   conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-linux-arm64@npm:1.5.0"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64-musl@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.5.0"
+  conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
@@ -617,6 +687,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/cli-linux-x64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-linux-x64@npm:1.5.0"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
 "@biomejs/cli-win32-arm64@npm:1.4.1":
   version: 1.4.1
   resolution: "@biomejs/cli-win32-arm64@npm:1.4.1"
@@ -624,9 +701,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/cli-win32-arm64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-win32-arm64@npm:1.5.0"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@biomejs/cli-win32-x64@npm:1.4.1":
   version: 1.4.1
   resolution: "@biomejs/cli-win32-x64@npm:1.4.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-x64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@biomejs/cli-win32-x64@npm:1.5.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2080,9 +2171,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-billboard@workspace:packages/chart-react-billboard"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
     billboard.js: "npm:^3.10.3"
@@ -2100,11 +2191,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@carbon/charts": "npm:1.13.18"
     "@carbon/charts-react": "npm:1.13.18"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
     carbon-components: "npm:^11.12.0"
@@ -2125,13 +2216,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-nivo@workspace:packages/chart-react-nivo"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@nivo/bar": "npm:^0.84.0"
     "@nivo/core": "npm:^0.84.0"
     "@nivo/line": "npm:^0.84.0"
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
@@ -2148,9 +2239,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-plotly@workspace:packages/chart-react-plotly"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/plotly.js": "npm:^2.12.32"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
@@ -2169,9 +2260,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-victory@workspace:packages/chart-react-victory"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
@@ -2197,9 +2288,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-lib@workspace:packages/lib"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@types/chroma-js": "npm:^2.4.3"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     chroma-js: "npm:^2.4.2"
     csstype: "npm:^3.1.3"
     github-colors: "npm:~2.2"
@@ -2219,10 +2310,10 @@ __metadata:
   resolution: "@tony/cv-react@workspace:packages/react"
   dependencies:
     "@atlaskit/toggle": "npm:^13.0.1"
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     "@floating-ui/react": "npm:^0.26.5"
     "@tony/cv-data": "npm:*"
-    "@types/node": "npm:^20.10.6"
+    "@types/node": "npm:^20.10.7"
     "@types/react": "npm:^18.2.47"
     "@types/react-dom": "npm:^18.2.18"
     "@vitejs/plugin-react": "npm:^4.2.1"
@@ -2245,8 +2336,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
-    "@types/node": "npm:^20.10.6"
+    "@biomejs/biome": "npm:1.5.0"
+    "@types/node": "npm:^20.10.7"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
     moment: "npm:^2.30.1"
@@ -2618,12 +2709,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.10.6":
-  version: 20.10.6
-  resolution: "@types/node@npm:20.10.6"
+"@types/node@npm:^20.10.7":
+  version: 20.10.7
+  resolution: "@types/node@npm:20.10.7"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 08471220d3cbbb6669835c4b78541edf5eface8f2c2e36c550cfa4ff73da73071c90e200a06359fac25d6564127597c23e178128058fb676824ec23d5178a017
+  checksum: 4a1ba3fb7fc0a262c6b2d5ec763cec7abf5b5d6b2d277798ddbf05227f5778f9a806987821fd4d3eacd6f37c946ac61a9c64fb79ae4b84daaec12354158835a3
   languageName: node
   linkType: hard
 
@@ -7514,7 +7605,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:1.4.1"
+    "@biomejs/biome": "npm:1.5.0"
     cross-env: "npm:^7.0.3"
   languageName: unknown
   linkType: soft
