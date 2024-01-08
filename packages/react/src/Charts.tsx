@@ -15,7 +15,10 @@ const ChartLinks: React.FC = observer(() => {
       <button
         type="button"
         onClick={() => cvState.setChart(c as unknown as Chart)}
-        className={`chart-link ${c === cvState.ui.chart ? "active" : ""}`}
+        className={`
+      chart-link
+      ${c === cvState.ui.chart ? "active" : ""}
+      `}
       >
         {c}
       </button>
@@ -31,7 +34,10 @@ const ChartMenu: React.FC = observer(() => {
   return (
     <div
       id="chart-menu"
-      className={`fss-tablet ${cvState.ui.showChartsMobile ? "active" : ""}`}
+      className={`
+      ${cvState.ui.showChartsMobile ? "active" : ""}
+      ${cvState.ui.showChartsMobile ? "active" : "hidden md:flex"}
+      pb-0 lg:pb-2`}
     >
       📊
       <span
@@ -39,8 +45,8 @@ const ChartMenu: React.FC = observer(() => {
         title="Lazily loaded, honors filters and scope"
       >
         {" "}
-        Chart system (take your pick):
-      </span>{" "}
+        Chart system (take your pick):{" "}
+      </span>
       <ChartLinks />
     </div>
   );
@@ -69,7 +75,7 @@ const ChartBody: React.FC = observer(() => {
           <LanguagePieChart />
         </React.Suspense>
       </div>
-      <div className="chart-row--line flex-none md:flex-1 px-1 lg:px-0 h-64">
+      <div className="chart-row--line w-full flex-none md:flex-1 px-1 lg:px-0 h-64">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Line Chart</div>}
         >

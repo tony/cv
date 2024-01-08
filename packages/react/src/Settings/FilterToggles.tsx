@@ -58,7 +58,7 @@ export const FilterToggles: React.FC = () => {
   };
 
   return (
-    <div className="toggles flex items-center justify-center max-w-3/4 h-12 mx-auto flex-wrap lg:flex-nowrap">
+    <div className="toggles flex items-center justify-center max-w-3/4 py-2 mx-auto flex-wrap lg:flex-nowrap">
       <div id="show-documentation-group" className="toggle flex items-center">
         <Toggle
           id="show-documentation"

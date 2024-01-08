@@ -161,11 +161,6 @@ body {
   color: var(--text-color);
   font-family: var(--sans-font);
 }
-@media (max-width: 1023px) {
-  .fss-tablet {
-    font-size: 0.7rem !important;
-  }
-}
 .card {
   display: flex;
   align-items: center;
@@ -290,8 +285,6 @@ body {
   display: flex;
   align-self: center;
   justify-content: center;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
   color: var(--results-info-text-color);
   text-align: center;
 }
@@ -311,7 +304,7 @@ body {
     width: 100%;
     min-width: initial;
     max-width: initial;
-    margin: 0.5rem auto;
+    margin: 0rem auto;
   }
 }
 #results-bottom {
@@ -366,7 +359,6 @@ body {
 }
 #chart-menu {
   width: 100%;
-  margin-bottom: 0.25rem;
   font-size: 0.9rem;
   text-align: center;
 }
@@ -396,8 +388,6 @@ body {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   gap: 10px 10px;
   color: var(--react-select-tag-color);
 }
