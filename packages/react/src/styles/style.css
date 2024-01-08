@@ -173,7 +173,6 @@ body {
   margin: 0 1rem;
   padding: 1rem;
   border-radius: 0.75rem;
-  font-size: 0.875rem;
 }
 .card:hover {
   background-color: var(--card-hover-background-color);
@@ -210,11 +209,6 @@ body {
   padding-top: 0.25rem;
   font-size: 1rem;
 }
-.card-grid {
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  height: 100%;
-}
 .card-grid > div {
   margin-bottom: auto;
 }
@@ -231,12 +225,6 @@ body {
 }
 .card-grid .left-side .tag.orgTag:only-child {
   margin-left: 0;
-}
-.card-grid .left-side a {
-  color: var(--card-grid-left-side-link-color);
-}
-.card-grid .left-side a:hover {
-  color: var(--card-grid-left-side-link-hover-color);
 }
 .card-grid .left-side .activity-link-row {
   font-size: 0.8rem;
@@ -259,7 +247,7 @@ body {
   margin-top: 0;
 }
 .activity-link {
-  color: var(--activity-link-color);
+  @apply text-gray-500 hover:text-slate-500;
 }
 
 .language-tag {

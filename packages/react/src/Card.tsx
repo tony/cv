@@ -34,7 +34,7 @@ export const PatchInfo: React.FC<{
           href={activity.qaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className="activity-link text-gray-500 hover:text-slate-500"
         >
           💬 Pull Request
         </a>
@@ -58,7 +58,7 @@ export const PatchInfo: React.FC<{
   }
 
   return (
-    <div className="activity-link-row">
+    <div className="activity-link-row text-xs">
       {items.map((item, idx) => (
         <React.Fragment key={`patch-activity-link-row-${idx}`}>
           {idx > 0 && <span className="card-section-separator">·</span>}
@@ -237,7 +237,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   return (
-    <div className="card card-grid">
+    <div className="card card-grid text-sm flex justify-space-between h-full">
       <div className="left-side">
         <div>
           <CardOrgName org={org} />
