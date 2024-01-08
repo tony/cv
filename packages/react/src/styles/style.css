@@ -239,19 +239,8 @@ body {
 .card-grid .right-side {
   text-align: right;
 }
-.card-grid .right-side .tag {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-}
-.card-grid .right-side .tag:only-child {
-  margin-top: 0;
-}
 .activity-link {
   @apply text-gray-500 hover:text-slate-500;
-}
-
-.language-tag {
-  display: inline-flex;
 }
 
 .tag {
