@@ -34,7 +34,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
             }
           },
         ),
-      [cvState, setChartData],
+      [cvState],
     );
 
     React.useEffect(() => {
@@ -42,7 +42,7 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
         setChartData(stateToDonut(cvState) as DonutChartProps);
       }
       return void 0;
-    }, [cvState, setChartData, chartData]);
+    }, [cvState, chartData]);
 
     if (!chartData) {
       return null;
@@ -83,7 +83,7 @@ export const ActivityLineChart: React.FC<
           }
         },
       ),
-    [cvState, setChartData],
+    [cvState],
   );
 
   React.useEffect(() => {
@@ -91,7 +91,7 @@ export const ActivityLineChart: React.FC<
       setChartData(stateToLine(cvState) as LineChartProps);
     }
     return void 0;
-  }, [cvState, chartData, setChartData]);
+  }, [cvState, chartData]);
 
   if (!chartData) {
     return null;

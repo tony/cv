@@ -52,7 +52,7 @@ const YearOption: React.FC<OptionProps<OptionType>> = (props) => {
           inline: "start",
         },
       );
-  }, [props.isSelected, ref]);
+  }, [props.isSelected]);
 
   return <ReactSelectComponents.Option {...props} innerRef={ref} />;
 };

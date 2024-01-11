@@ -62,7 +62,7 @@ export const ColorSchemeToggle: React.FC = () => {
   React.useLayoutEffect(() => {
     applyColorScheme(colorScheme);
     setHasCustomColorScheme(hasCustomColorScheme());
-  }, [colorScheme, applyColorScheme, setHasCustomColorScheme]);
+  }, [colorScheme, applyColorScheme]);
 
   const [isTooltipOpen, setIsTooltipOpen] = React.useState<boolean>(false);
   const { refs, floatingStyles, context } = useFloating({
