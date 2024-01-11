@@ -38,14 +38,17 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
       labels: {
         // billboard.js doesn't accept callbacks here
         // issue: https://github.com/naver/billboard.js/issues/1845
-        colors: state.languages.reduce((languageColorMap, language) => {
-          if (language) {
-            if (!(language.id in languageColorMap) && language.ui?.color) {
-              languageColorMap[language.id] = language.ui.color as string;
+        colors: state.languages.reduce(
+          (languageColorMap, language) => {
+            if (language) {
+              if (!(language.id in languageColorMap) && language.ui?.color) {
+                languageColorMap[language.id] = language.ui.color as string;
+              }
             }
-          }
-          return languageColorMap;
-        }, {} as { [key: string]: string }),
+            return languageColorMap;
+          },
+          {} as { [key: string]: string },
+        ),
       },
     },
     legend: {
