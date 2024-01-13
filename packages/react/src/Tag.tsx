@@ -33,7 +33,7 @@ export const LanguageTag: React.FC<
 
   return (
     <div
-      className={`tag language-tag ${className ? ` ${className}` : ""} mr-2`}
+      className={`tag language-tag ${className ? ` ${className}` : ""}`}
       style={{ ...language?.ui, ...style }}
       {...props}
     >

@@ -207,13 +207,9 @@ const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
     );
 
 const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
-  return (
-    <div className="language-tags">
-      {org?.languages?.map((language) => (
-        <LanguageTag languageName={language.id} key={language.id} />
-      ))}
-    </div>
-  );
+  return org?.languages?.map((language) => (
+    <LanguageTag languageName={language.id} key={language.id} />
+  ));
 };
 
 const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
@@ -227,6 +223,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
         target="_blank"
         rel="noopener noreferrer"
         title={org.orgType}
+        className="text-gray-500 hover:text-slate-700 dark:hover:text-slate-200"
       >
         {org.name}
       </a>
@@ -237,7 +234,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   return (
-    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 mx-1 my-1 align-center space-between flex hover:bg-[#0085f230]">
+    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 mx-1 my-1 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
       <div className="left-side">
         <div>
           <CardOrgName org={org} />
@@ -263,7 +260,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ActivityInfo activity={activity} />
         </div>
       </div>
-      <div className="right-side">
+      <div className="right-side text-left md:text-right pt-2 md:pt-0 gap-x-1 flex">
         <LanguageTags org={org} />
       </div>
     </div>
