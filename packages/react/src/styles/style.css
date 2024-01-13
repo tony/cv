@@ -323,9 +323,6 @@ p {
     margin: 0.5rem auto;
   }
 }
-.df {
-  display: flex !important;
-}
 #results-info {
   display: flex;
   align-self: center;
