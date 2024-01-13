@@ -323,9 +323,6 @@ p {
     margin: 0.5rem auto;
   }
 }
-.fr {
-  float: right;
-}
 .df {
   display: flex !important;
 }
