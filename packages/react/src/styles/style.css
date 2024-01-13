@@ -239,23 +239,24 @@ body {
 }
 
 .tag {
-  -webkit-box-align: center;
-  box-align: center;
-  box-pack: center;
-  -webkit-box-pack: center;
+  @apply
+    mt-1
+    ml-1
+    text-center
+    justify-center
+    items-center
+    rounded-sm
+    p-1
+    tracking-widest
+    select-none
+    whitespace-nowrap
+    leading-tight
+  ;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em 0.75em;
-  border-radius: 4px;
   background-color: var(--tag-background-color);
   color: var(--tag-text-color);
   font-weight: bold;
   font-size: 0.6875rem;
-  line-height: 1rem;
-  letter-spacing: 0.07272727em;
-  white-space: nowrap;
-  user-select: none;
 }
 
 .tag.small {
