@@ -10,7 +10,11 @@ export const ResultsHeader: React.FC = observer(() => {
 
   const resultsCount = filteredActivities ? filteredActivities.length : 0;
 
-  return <div id="results-info">{resultsCount} results</div>;
+  return (
+    <div id="results-info" className="my-0 lg:my-2">
+      {resultsCount} results
+    </div>
+  );
 });
 
 export const ResultList = observer(() => {
