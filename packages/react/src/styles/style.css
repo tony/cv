@@ -161,23 +161,6 @@ body {
   color: var(--text-color);
   font-family: var(--sans-font);
 }
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 1rem;
-  padding: 1rem;
-  border-radius: 0.75rem;
-}
-.card:hover {
-  background-color: var(--card-hover-background-color);
-}
-@media (max-width: 1023px) {
-  .card {
-    margin: 0 0.25rem;
-    padding: 0.2rem;
-  }
-}
 .card a {
   font-size: 0.875rem;
 }

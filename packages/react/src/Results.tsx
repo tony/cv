@@ -34,7 +34,7 @@ export const Results = observer(() => {
   return (
     <div
       id="results-container"
-      className="rounded-none md:rounded-xl p-0 mx-auto my-0 lg:my-1 w-full lg:min-w-lg lg:max-w-[900px]"
+      className="rounded-none md:rounded p-0 mx-auto my-0 lg:my-1 w-full lg:min-w-lg lg:max-w-[900px]"
     >
       <ResultsHeader />
       <ResultList />
