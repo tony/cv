@@ -35,7 +35,7 @@ const ChartMenu: React.FC = observer(() => {
     >
       📊
       <span
-        className="dh-tablet"
+        className="hidden md:inline"
         title="Lazily loaded, honors filters and scope"
       >
         {" "}

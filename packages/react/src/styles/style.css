@@ -163,11 +163,6 @@ body {
   text-align: center;
 }
 @media (max-width: 1023px) {
-  .dh-tablet {
-    display: none;
-  }
-}
-@media (max-width: 1023px) {
   .fss-tablet {
     font-size: 0.7rem !important;
   }
