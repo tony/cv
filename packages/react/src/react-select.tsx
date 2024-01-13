@@ -108,7 +108,7 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
       <LanguageTag
         languageName={languageName}
         key={languageName}
-        className="tag ml0"
+        className="tag ml-0"
       />
       <div className="activity-count">
         {cvState.languageUsageStats[languageName]} results
