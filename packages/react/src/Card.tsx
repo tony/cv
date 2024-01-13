@@ -234,7 +234,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   return (
-    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 mx-1 my-1 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
+    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
       <div className="left-side">
         <div>
           <CardOrgName org={org} />
