@@ -722,11 +722,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.19":
-  version: 1.13.19
-  resolution: "@carbon/charts-react@npm:1.13.19"
+"@carbon/charts-react@npm:1.13.21":
+  version: 1.13.21
+  resolution: "@carbon/charts-react@npm:1.13.21"
   dependencies:
-    "@carbon/charts": "npm:1.13.19"
+    "@carbon/charts": "npm:1.13.21"
     "@carbon/icons-react": "npm:^11.33.0"
     "@carbon/telemetry": "npm:~0.1.0"
     react: "npm:^18.2.0"
@@ -734,13 +734,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 116a2d4890cddd70a77ec32752f6552bf975d86ec6e2f6b739c818efb410dd179aea0a81c591a132a5f2a0a56f2c8d7379834a873ece992f30bd485293a1e5c2
+  checksum: e39c2f21b5c0b5a8f5b006e65ec53350e0a947d46444479f673bf2de0744ac5dcf7720c64d87a2ff58d44a9b6ce473d37b9201c80a48b652ba5f941698f32680
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.19":
-  version: 1.13.19
-  resolution: "@carbon/charts@npm:1.13.19"
+"@carbon/charts@npm:1.13.21":
+  version: 1.13.21
+  resolution: "@carbon/charts@npm:1.13.21"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/telemetry": "npm:~0.1.0"
@@ -764,7 +764,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 425a5773c5413bf7213c259270c87a41e2aeac3b1f2cb5255292a08e045759f141529749392fa6c03255edad268b7dc09a9fe2306f98e2e4672fc3d565be61d3
+  checksum: af58415c898b885204495f4e3a26c8298716c2fca08400d3c0e0341ef3b52f3f7bfa96a8a47d0a0685a6fa6b78f056941a44d5cbb3777bf8bc91da5fad5603ea
   languageName: node
   linkType: hard
 
@@ -2192,8 +2192,8 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.1"
-    "@carbon/charts": "npm:1.13.19"
-    "@carbon/charts-react": "npm:1.13.19"
+    "@carbon/charts": "npm:1.13.21"
+    "@carbon/charts-react": "npm:1.13.21"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.0"
     "@types/react": "npm:^18.2.47"
