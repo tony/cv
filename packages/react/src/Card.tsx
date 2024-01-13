@@ -235,7 +235,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   return (
     <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
-      <div className="left-side">
+      <div className="left-side flex-grow">
         <div>
           <CardOrgName org={org} />
           <span className="card-section-separator">·</span>

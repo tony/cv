@@ -161,58 +161,8 @@ body {
   color: var(--text-color);
   font-family: var(--sans-font);
 }
-.card a {
-  font-size: 0.875rem;
-}
-.card:last-child {
-  margin-bottom: 0;
-}
-.card-org-name {
-  font-weight: 600;
-}
-.card-section-separator {
-  padding: 0 0.5rem;
-}
-.card-date-text-left {
-  padding-left: 0.25rem;
-}
-.card-category-and-date {
-  color: var(--activity-text-color);
-}
-.card-activity-title {
-  padding-top: 0.25rem;
-  font-size: 1rem;
-}
-.card-activity-info {
-  padding-top: 0.25rem;
-  font-size: 1rem;
-}
 .card-grid > div {
   margin-bottom: auto;
-}
-.card-grid .left-side {
-  flex-grow: 1;
-  align-items: center;
-  margin-bottom: 0;
-}
-.card-grid .left-side .tag {
-  margin-right: 0.5rem;
-}
-.card-grid .left-side .tag.orgTag {
-  margin-left: 0.5rem;
-}
-.card-grid .left-side .tag.orgTag:only-child {
-  margin-left: 0;
-}
-.card-grid .left-side .activity-link-row {
-  font-size: 0.8rem;
-}
-.card-grid .left-side .activity-link-row a {
-  font-size: inherit;
-  opacity: 0.6;
-}
-.card-grid .left-side .activity-link-row a:hover {
-  opacity: 1;
 }
 .activity-link {
   @apply text-gray-500 hover:text-slate-500;
@@ -237,15 +187,6 @@ body {
   color: var(--tag-text-color);
 }
 
-.tag.small {
-  padding: 0.25em;
-  background-color: var(--tag-small-background-color);
-  font-size: 0.6rem;
-}
-.tag:last-child {
-  margin-right: 0;
-  margin-left: 0;
-}
 #settings {
   width: var(--container-width);
   margin: 0 auto;
