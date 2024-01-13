@@ -292,20 +292,7 @@ body {
   margin-left: 0.25rem;
 }
 #results-container {
-  min-width: var(--container-width);
-  max-width: 40%;
-  margin: 0.5rem auto;
-  padding: 0.1rem 0;
-  border-radius: 0.75rem;
   background-color: var(--results-container-background-color);
-}
-@media (max-width: 1023px) {
-  #results-container {
-    width: 100%;
-    min-width: initial;
-    max-width: initial;
-    margin: 0rem auto;
-  }
 }
 #results-bottom {
   display: block;
