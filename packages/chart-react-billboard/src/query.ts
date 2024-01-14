@@ -56,7 +56,9 @@ export const stateToDonut = (state: Instance<typeof CVState>) => {
     },
     size: {
       height: donutChartHeight,
-      width: donutChartWidth + 50,
+    },
+    padding: {
+      mode: "fit",
     },
   } as bb.ChartOptions;
 };
@@ -93,6 +95,9 @@ export const stateToLine = (state: Instance<typeof CVState>) => {
     },
     background: {
       color: "var(--chart-background-color)",
+    },
+    padding: {
+      mode: "fit",
     },
   } as bb.ChartOptions;
 };

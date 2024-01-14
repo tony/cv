@@ -10,10 +10,5 @@ div#year-range {
   div#year-range {
     width: 90%;
     max-width: initial;
-    margin: 0.5rem auto;
   }
-}
-
-.date-range-separator {
-  padding: 1rem;
 }

@@ -10,14 +10,18 @@ export const ResultsHeader: React.FC = observer(() => {
 
   const resultsCount = filteredActivities ? filteredActivities.length : 0;
 
-  return <div id="results-info">{resultsCount} results</div>;
+  return (
+    <div id="results-info" className="py-0 lg:py-2">
+      {resultsCount} results
+    </div>
+  );
 });
 
 export const ResultList = observer(() => {
   const { filteredActivities } = useMst();
 
   return (
-    <div id="results">
+    <div id="results" className="divide-slate-700 divide-y md:divide-y-0">
       {filteredActivities?.map?.((activity, idx) => {
         return (
           <ActivityCard activity={activity} key={`activity-card-${idx}`} />
@@ -28,7 +32,10 @@ export const ResultList = observer(() => {
 });
 export const Results = observer(() => {
   return (
-    <div id="results-container">
+    <div
+      id="results-container"
+      className="rounded-none md:rounded p-0 mx-auto my-0 lg:my-1 w-full lg:min-w-lg lg:max-w-[900px]"
+    >
       <ResultsHeader />
       <ResultList />
       <div id="results-bottom" />

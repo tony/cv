@@ -55,7 +55,9 @@ export const OrgOption: React.FC<OptionProps<StyleOption, true>> = ({
   return (
     <ReactSelectComponents.Option
       {...props}
-      className={`df dropdown-language-option ${isSelected ? "selected" : ""}`}
+      className={`!flex dropdown-language-option ${
+        isSelected ? "selected" : ""
+      }`}
       isSelected={isSelected}
     >
       {children}{" "}
@@ -103,12 +105,14 @@ export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
       {...props}
       data={data}
       isSelected={isSelected}
-      className={`df dropdown-language-option ${isSelected ? "selected" : ""}`}
+      className={`!flex dropdown-language-option ${
+        isSelected ? "selected" : ""
+      }`}
     >
       <LanguageTag
         languageName={languageName}
         key={languageName}
-        className="tag ml0"
+        className="tag ml-0"
       />
       <div className="activity-count">
         {cvState.languageUsageStats[languageName]} results

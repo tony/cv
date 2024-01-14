@@ -34,7 +34,7 @@ export const PatchInfo: React.FC<{
           href={activity.qaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className="activity-link text-gray-500 hover:text-slate-500"
         >
           💬 Pull Request
         </a>
@@ -58,10 +58,10 @@ export const PatchInfo: React.FC<{
   }
 
   return (
-    <div className="activity-link-row">
+    <div className="activity-link-row text-xs">
       {items.map((item, idx) => (
         <React.Fragment key={`patch-activity-link-row-${idx}`}>
-          {idx > 0 && <span className="card-section-separator">·</span>}
+          {idx > 0 && <span className="card-section-separator px-1">·</span>}
           {item}
         </React.Fragment>
       ))}
@@ -207,13 +207,9 @@ const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
     );
 
 const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
-  return (
-    <div className="language-tags">
-      {org?.languages?.map((language) => (
-        <LanguageTag languageName={language.id} key={language.id} />
-      ))}
-    </div>
-  );
+  return org?.languages?.map((language) => (
+    <LanguageTag languageName={language.id} key={language.id} />
+  ));
 };
 
 const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
@@ -227,6 +223,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
         target="_blank"
         rel="noopener noreferrer"
         title={org.orgType}
+        className="text-gray-500 hover:text-slate-700 dark:hover:text-slate-200"
       >
         {org.name}
       </a>
@@ -237,22 +234,21 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   return (
-    <div className="card card-grid">
-      <div className="left-side">
+    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
+      <div className="left-side flex-grow">
         <div>
           <CardOrgName org={org} />
-          <span className="card-section-separator">·</span>
+          <span className="card-section-separator px-1">·</span>
           <span className="card-category-and-date">
             <CategoryText activity={activity} />
             <DateText
               date={activity.acceptedAt ?? activity.createdAt}
-              className="card-date-text-left"
+              className="card-date-text-left pl-1"
             />
             {activity.endedAt && (
-              <>
-                {" "}
+              <span className="pl-1">
                 until <DateText date={activity.endedAt} />
-              </>
+              </span>
             )}
           </span>
         </div>
@@ -263,7 +259,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ActivityInfo activity={activity} />
         </div>
       </div>
-      <div className="right-side">
+      <div className="right-side text-left md:text-right pt-2 md:pt-0 gap-x-1 flex">
         <LanguageTags org={org} />
       </div>
     </div>

@@ -195,7 +195,7 @@ const MultiValueCount: React.FC<MultiValueProps<StyleOption, true>> = ({
 export const FilterDropdowns: React.FC = () => {
   const cvState = useMst();
   return (
-    <div className="dropdown-row">
+    <div className="dropdown-row py-2">
       <CustomSelect
         options={
           getSelectOptions(

@@ -11,11 +11,14 @@ const ChartLinks: React.FC = observer(() => {
 
   return Object.keys(PIE_CHART_MAP).map((c, idx: number) => (
     <React.Fragment key={c}>
-      {idx > 0 && ", "}
+      {idx > 0 && ",\u00A0 "}
       <button
         type="button"
         onClick={() => cvState.setChart(c as unknown as Chart)}
-        className={`chart-link ${c === cvState.ui.chart ? "active" : ""}`}
+        className={`
+      chart-link
+      ${c === cvState.ui.chart ? "active" : ""}
+      `}
       >
         {c}
       </button>
@@ -31,16 +34,20 @@ const ChartMenu: React.FC = observer(() => {
   return (
     <div
       id="chart-menu"
-      className={`fss-tablet ${cvState.ui.showChartsMobile ? "active" : ""}`}
+      className={`
+      ${cvState.ui.showChartsMobile ? "active" : "hidden md:flex"}
+      pb-0 md:pb-2
+      flex
+      justify-center
+      `}
     >
       📊
       <span
-        className="dh-tablet"
+        className="hidden md:inline"
         title="Lazily loaded, honors filters and scope"
       >
-        {" "}
-        Chart system (take your pick):
-      </span>{" "}
+        &nbsp;Chart system (take your pick):&nbsp;
+      </span>
       <ChartLinks />
     </div>
   );
@@ -58,16 +65,18 @@ const ChartBody: React.FC = observer(() => {
       id="charts"
       className={`chart-row ${chart}${
         Object.keys(cvState.filteredActivities).length ? "" : " no-charts"
-      } ${cvState.ui.showChartsMobile ? "active" : ""}`}
+      } ${
+        cvState.ui.showChartsMobile ? "active" : "hidden md:flex"
+      } md:flex md:w-svw w-full max-w-4xl md:h-64 mx-auto`}
     >
-      <div className="chart-row--donut">
+      <div className="chart-row--donut aspect-square flex content-center place-content-center md:flex-none md:content-none h-64 md:h-auto w-full md:w-auto">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Pie Chart</div>}
         >
           <LanguagePieChart />
         </React.Suspense>
       </div>
-      <div className="chart-row--line">
+      <div className="chart-row--line w-full flex-none md:flex-1 px-1 md:px-0 h-64">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Line Chart</div>}
         >

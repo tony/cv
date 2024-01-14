@@ -6,6 +6,17 @@ import { FilterDateRange } from "./FilterDateRange";
 import { FilterDropdowns } from "./FilterDropdowns";
 import { FilterToggles } from "./FilterToggles";
 
+const activeClasses = `
+shadow-[0_0_3px_#3e94cf]
+shadow-[0_0_7px_#3e94cf]
+`;
+
+const shadowClasses = `
+focus:shadow-[0_0_3px_#3e94cf]
+focus:shadow-[0_0_7px_#3e94cf]
+active:shadow-[0_0_3px_#3e94cf]
+active:shadow-[0_0_7px_#3e94cf]
+`;
 export const Settings: React.FC = observer(() => {
   const cvState = useMst();
   const topLanguageColorBg = cvState.languages.find(({ id }) => id)?.ui
@@ -17,8 +28,10 @@ export const Settings: React.FC = observer(() => {
         <button
           type="button"
           className={`toggle-btn ${
-            cvState.ui.showOptionsMobile ? "active" : ""
-          }`}
+            cvState.ui.showOptionsMobile ? activeClasses : ""
+          }
+          ${shadowClasses}
+            `}
           onClick={(e) => {
             e.preventDefault();
             cvState.setShowOptionsMobile(!cvState.ui.showOptionsMobile);
@@ -29,8 +42,10 @@ export const Settings: React.FC = observer(() => {
         <button
           type="button"
           className={`toggle-btn ${
-            cvState.ui.showChartsMobile ? "active" : ""
-          }`}
+            cvState.ui.showChartsMobile ? activeClasses : ""
+          }
+          ${shadowClasses}
+            `}
           onClick={(e) => {
             e.preventDefault();
             cvState.setShowChartsMobile(!cvState.ui.showChartsMobile);
@@ -42,7 +57,9 @@ export const Settings: React.FC = observer(() => {
 
       <div
         id="settings"
-        className={`${cvState.ui.showOptionsMobile ? " active" : ""}`}
+        className={`${
+          cvState.ui.showOptionsMobile ? " active" : "hidden md:block"
+        }`}
       >
         <FilterDropdowns />
         <FilterDateRange />

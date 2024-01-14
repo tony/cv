@@ -117,7 +117,7 @@ export const FilterDateRange: React.FC = () => {
         {...DEFAULT_REACT_SELECT_PROPS}
         isSearchable={false}
       />
-      <div className="date-range-separator">-</div>
+      <div className="date-range-separator px-2">-</div>
       <Select
         options={YEAR_RANGE.map(
           (year) =>

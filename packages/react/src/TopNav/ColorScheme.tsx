@@ -69,7 +69,7 @@ export const ColorSchemeToggle: React.FC = () => {
     open: isTooltipOpen,
     onOpenChange: setIsTooltipOpen,
     middleware: [
-      offset(1),
+      offset(8),
       flip({ fallbackAxisSideDirection: "end" }),
       shift(),
     ],
@@ -93,7 +93,7 @@ export const ColorSchemeToggle: React.FC = () => {
       <FloatingFocusManager context={context} modal={false}>
         {isTooltipOpen && (
           <div
-            className="color-scheme-popover"
+            className="color-scheme-popover backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-blue-900/85 text-white supports-backdrop-blur:bg-white/60 dark:bg-black-pearl-900/95 w-24 shadow-sm shadow-slate-500/75 dark:shadow-white/25 rounded p-1 z-10"
             ref={refs.setFloating}
             style={floatingStyles}
             aria-labelledby={headingId}
@@ -162,12 +162,12 @@ export const ColorSchemeToggle: React.FC = () => {
         )}
       </FloatingFocusManager>
       <div
-        className="color-scheme-toggler-button"
+        className="color-scheme-toggler-button w-24"
         ref={refs.setReference}
         {...getReferenceProps()}
       >
-        <div className="color-scheme-toggle">
-          <div className="color-scheme-toggle--icon">
+        <div className="color-scheme-toggle justify-center">
+          <div className="color-scheme-toggle--icon w-5 mr-0.5">
             {colorScheme === ColorScheme.DARK ? (
               <div
                 className="color-scheme-toggle--icon--mode color-scheme-toggle--icon--dark-mode"
