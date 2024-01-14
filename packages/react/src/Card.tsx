@@ -61,7 +61,7 @@ export const PatchInfo: React.FC<{
     <div className="activity-link-row text-xs">
       {items.map((item, idx) => (
         <React.Fragment key={`patch-activity-link-row-${idx}`}>
-          {idx > 0 && <span className="card-section-separator">·</span>}
+          {idx > 0 && <span className="card-section-separator px-1">·</span>}
           {item}
         </React.Fragment>
       ))}
@@ -238,18 +238,17 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
       <div className="left-side flex-grow">
         <div>
           <CardOrgName org={org} />
-          <span className="card-section-separator">·</span>
+          <span className="card-section-separator px-1">·</span>
           <span className="card-category-and-date">
             <CategoryText activity={activity} />
             <DateText
               date={activity.acceptedAt ?? activity.createdAt}
-              className="card-date-text-left"
+              className="card-date-text-left pl-1"
             />
             {activity.endedAt && (
-              <>
-                {" "}
+              <span className="pl-1">
                 until <DateText date={activity.endedAt} />
-              </>
+              </span>
             )}
           </span>
         </div>
