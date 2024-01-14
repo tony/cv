@@ -18,6 +18,9 @@ import type {
 
 import { CategoryText, LanguageTag } from "./Tag";
 
+const activityLinkClasses =
+  "text-gray-500 hover:text-slate-700 dark:hover:text-slate-200";
+
 interface ActivityCardProps {
   activity: Instance<typeof Activity>;
 }
@@ -34,7 +37,7 @@ export const PatchInfo: React.FC<{
           href={activity.qaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link text-gray-500 hover:text-slate-500"
+          className={activityLinkClasses}
         >
           💬 Pull Request
         </a>
@@ -49,7 +52,7 @@ export const PatchInfo: React.FC<{
           href={activity.diffUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           ✒️ .diff
         </a>
@@ -58,10 +61,14 @@ export const PatchInfo: React.FC<{
   }
 
   return (
-    <div className="activity-link-row text-xs">
+    <div className="text-xs">
       {items.map((item, idx) => (
         <React.Fragment key={`patch-activity-link-row-${idx}`}>
-          {idx > 0 && <span className="card-section-separator px-1">·</span>}
+          {idx > 0 && (
+            <span className="card-section-separator text-black dark:text-white px-1">
+              ·
+            </span>
+          )}
           {item}
         </React.Fragment>
       ))}
@@ -81,7 +88,7 @@ export const PublicationInfo: React.FC<{
           href={org.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           Official homepage
         </a>
@@ -96,7 +103,7 @@ export const PublicationInfo: React.FC<{
           href={org.amazonUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           Amazon
         </a>
@@ -110,7 +117,7 @@ export const PublicationInfo: React.FC<{
           href={org.leanpubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           Leanpub
         </a>
@@ -124,7 +131,7 @@ export const PublicationInfo: React.FC<{
           href={org.goodreadsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           Goodreads
         </a>
@@ -155,7 +162,7 @@ export const CompanyInfo: React.FC<{
           href={org.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="activity-link"
+          className={activityLinkClasses}
         >
           Official homepage
         </a>
@@ -223,7 +230,7 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
         target="_blank"
         rel="noopener noreferrer"
         title={org.orgType}
-        className="text-gray-500 hover:text-slate-700 dark:hover:text-slate-200"
+        className={activityLinkClasses}
       >
         {org.name}
       </a>
