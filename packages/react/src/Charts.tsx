@@ -36,7 +36,7 @@ const ChartMenu: React.FC = observer(() => {
       id="chart-menu"
       className={`
       ${cvState.ui.showChartsMobile ? "active" : "hidden md:flex"}
-      pb-0 lg:pb-2
+      pb-0 md:pb-2
       flex
       justify-center
       `}
@@ -67,16 +67,16 @@ const ChartBody: React.FC = observer(() => {
         Object.keys(cvState.filteredActivities).length ? "" : " no-charts"
       } ${
         cvState.ui.showChartsMobile ? "active" : "hidden md:flex"
-      } lg:flex md:w-svw w-full max-w-4xl lg:h-64 mx-auto`}
+      } md:flex md:w-svw w-full max-w-4xl md:h-64 mx-auto`}
     >
-      <div className="chart-row--donut aspect-square flex content-center place-content-center lg:flex-none lg:content-none h-64 md:h-auto w-full md:w-auto">
+      <div className="chart-row--donut aspect-square flex content-center place-content-center md:flex-none md:content-none h-64 md:h-auto w-full md:w-auto">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Pie Chart</div>}
         >
           <LanguagePieChart />
         </React.Suspense>
       </div>
-      <div className="chart-row--line w-full flex-none md:flex-1 px-1 lg:px-0 h-64">
+      <div className="chart-row--line w-full flex-none md:flex-1 px-1 md:px-0 h-64">
         <React.Suspense
           fallback={<div className="loading-chart">Loading Line Chart</div>}
         >
