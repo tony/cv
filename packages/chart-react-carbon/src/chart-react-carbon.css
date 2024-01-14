@@ -15,6 +15,24 @@
   }
 }
 
+/* .cds--cc--donut shows an x of 132 and y of 125. 7 pixels too much. */
+/* On mobile, not necessary */
+.chart-row.carbon .chart-row--donut .cds--cc--donut {
+  margin-left: 0px;
+}
+/* On tablets, phase in */
+@media (min-width: 767px) {
+  .chart-row.carbon .chart-row--donut .cds--cc--donut {
+    margin-left: -6px;
+  }
+}
+/* On desktops: Employ the full positioning */
+@media (min-width: 1023px) {
+  .chart-row.carbon .chart-row--donut .cds--cc--donut {
+    margin-left: -13px;
+  }
+}
+
 #charts.carbon g text {
   fill: var(--chart-label-color) !important;
 }
