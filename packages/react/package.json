@@ -17,13 +17,13 @@
     "clean": "rm -rf dist/ node_modules/.cache/"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.1",
+    "@biomejs/biome": "1.5.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.10",
     "@tony/cv-data": "*",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
+    "@types/node": "^20.11.4",
+    "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@atlaskit/toggle": "^13.0.1",
-    "@floating-ui/react": "^0.26.5",
+    "@floating-ui/react": "^0.26.6",
     "@vitejs/plugin-react": "^4.2.1",
     "date-fns": "^3.2.0",
     "fast-deep-equal": "^3.1.3",
