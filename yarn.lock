@@ -104,20 +104,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/toggle@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "@atlaskit/toggle@npm:13.0.1"
+"@atlaskit/toggle@npm:^13.0.2":
+  version: 13.0.2
+  resolution: "@atlaskit/toggle@npm:13.0.2"
   dependencies:
     "@atlaskit/analytics-next": "npm:^9.1.0"
     "@atlaskit/ds-lib": "npm:^2.2.0"
     "@atlaskit/icon": "npm:^22.0.0"
     "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.28.0"
+    "@atlaskit/tokens": "npm:^1.33.0"
     "@babel/runtime": "npm:^7.0.0"
     "@emotion/react": "npm:^11.7.1"
   peerDependencies:
     react: ^16.8.0
-  checksum: f6d7bbc46eb235ce0ef51fc8c45cfd77597140dd476a1e0f64b6c6616b85e80794e84f1c7d3f8073243157900638ee97b1814e1b2b77d76f358c57f380753371
+  checksum: d89f578faead47f28650d90e43073dc965c85dc27b1c8bc1e1dd6540ae619cb04facd1ec2d381c27ada3ceea26ba61c8357c142beca9f0a47cd20ca5550634ce
   languageName: node
   linkType: hard
 
@@ -134,6 +134,22 @@ __metadata:
   peerDependencies:
     react: ^16.8.0
   checksum: 926b9892665181e972ae859a41a08d1917b1c673b921034b84cc53576f637a430b1dc6f9ea6383062f7208f68a8632386243edf7b5c1b67e03288049b1c35f92
+  languageName: node
+  linkType: hard
+
+"@atlaskit/tokens@npm:^1.33.0":
+  version: 1.33.0
+  resolution: "@atlaskit/tokens@npm:1.33.0"
+  dependencies:
+    "@atlaskit/ds-lib": "npm:^2.2.0"
+    "@atlaskit/platform-feature-flags": "npm:^0.2.0"
+    "@babel/runtime": "npm:^7.0.0"
+    "@babel/traverse": "npm:^7.23.2"
+    "@babel/types": "npm:^7.20.0"
+    bind-event-listener: "npm:^2.1.1"
+  peerDependencies:
+    react: ^16.8.0
+  checksum: 6f860d7ab0997046c85eeb4a8302435de490ec52469aee0c6f5f1d796c0d0de6d04319cf9e5eb73f88bea946c562daf89920863123a1e8196cf7947eaec58c8a
   languageName: node
   linkType: hard
 
@@ -2382,7 +2398,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-react@workspace:packages/react"
   dependencies:
-    "@atlaskit/toggle": "npm:^13.0.1"
+    "@atlaskit/toggle": "npm:^13.0.2"
     "@biomejs/biome": "npm:1.5.2"
     "@floating-ui/react": "npm:^0.26.6"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"

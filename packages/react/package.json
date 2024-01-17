@@ -34,7 +34,7 @@
     "vite-plugin-webfont-dl": "^3.9.1"
   },
   "dependencies": {
-    "@atlaskit/toggle": "^13.0.1",
+    "@atlaskit/toggle": "^13.0.2",
     "@floating-ui/react": "^0.26.6",
     "@vitejs/plugin-react": "^4.2.1",
     "date-fns": "^3.2.0",
