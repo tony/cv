@@ -745,35 +745,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.22":
-  version: 1.13.22
-  resolution: "@carbon/charts-react@npm:1.13.22"
+"@carbon/charts-react@npm:1.13.23":
+  version: 1.13.23
+  resolution: "@carbon/charts-react@npm:1.13.23"
   dependencies:
-    "@carbon/charts": "npm:1.13.22"
-    "@carbon/icons-react": "npm:^11.33.0"
+    "@carbon/charts": "npm:1.13.23"
+    "@carbon/icons-react": "npm:^11.34.0"
     "@carbon/telemetry": "npm:~0.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 2c3dc4f0e6214d9ca1379e547f4d0da50d43967af173cfb7d9cb6a4ed4d738b5fdee578a4c463285f4e702605c4ce5bcc7abb6a009a31c58d1e49f40d3792e11
+  checksum: 13853ffe1107d49a86974f68269c499a2eae50c4a5ddb82122e43a24aaf79b5bd7dc5e42b6825ee00002d50a9b0d516a7cbf58434878292e0ee3934197708dde
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.22":
-  version: 1.13.22
-  resolution: "@carbon/charts@npm:1.13.22"
+"@carbon/charts@npm:1.13.23":
+  version: 1.13.23
+  resolution: "@carbon/charts@npm:1.13.23"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/telemetry": "npm:~0.1.0"
     "@carbon/utils-position": "npm:^1.1.4"
-    carbon-components: "npm:^10.58.12"
+    carbon-components: "npm:^10.58.13"
     d3: "npm:^7.8.5"
     d3-cloud: "npm:^1.2.7"
     d3-sankey: "npm:^0.12.3"
-    date-fns: "npm:^3.0.6"
-    dompurify: "npm:^3.0.6"
+    date-fns: "npm:^3.3.0"
+    dompurify: "npm:^3.0.8"
     html-to-image: "npm:^1.11.11"
     lodash-es: "npm:^4.17.21"
     topojson-client: "npm:^3.1.0"
@@ -787,7 +787,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 0d12b4a7280d561dd8c57ab5ca3bc5d575d9086f5025ae05d734cd2b1bdb7efe21397fdaef37d2c81322445d80161f87fd167f33905c7cda953738b402537e37
+  checksum: 410205e2cce9b17b8ff5cc16e1706a0c5813939277afe4c0517629e5879eaefef6fb6e1270009e3bf42043b3b4c707afe537e8211a546820071d56893676031d
   languageName: node
   linkType: hard
 
@@ -828,16 +828,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/icons-react@npm:^11.33.0":
-  version: 11.33.0
-  resolution: "@carbon/icons-react@npm:11.33.0"
+"@carbon/icons-react@npm:^11.34.0":
+  version: 11.34.0
+  resolution: "@carbon/icons-react@npm:11.34.0"
   dependencies:
     "@carbon/icon-helpers": "npm:^10.45.0"
     "@carbon/telemetry": "npm:0.1.0"
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">=16"
-  checksum: beb78e827e0eb81a55ae7b2d3ee7f07cf89e664445d6c4be01095d78d72f15b2ab5889109cf77add940c2c1e221747cbcaad62d28ec57d13ccf7a489493fecb9
+  checksum: e9a07606ebd5dea71811972b6325c01c0687d9b34a3adc783f62db86c04a5e19ad805f802931d5306d0840083eeeed36f0387c44ed5bb87747fae618a11dd350
   languageName: node
   linkType: hard
 
@@ -2281,8 +2281,8 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.2"
-    "@carbon/charts": "npm:1.13.22"
-    "@carbon/charts-react": "npm:1.13.22"
+    "@carbon/charts": "npm:1.13.23"
+    "@carbon/charts-react": "npm:1.13.23"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.5"
     "@types/react": "npm:^18.2.48"
@@ -3440,15 +3440,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"carbon-components@npm:^10.58.12":
-  version: 10.58.12
-  resolution: "carbon-components@npm:10.58.12"
+"carbon-components@npm:^10.58.13":
+  version: 10.58.13
+  resolution: "carbon-components@npm:10.58.13"
   dependencies:
     "@carbon/telemetry": "npm:0.1.0"
     flatpickr: "npm:4.6.1"
     lodash.debounce: "npm:^4.0.8"
     warning: "npm:^3.0.0"
-  checksum: 5ebf03f54aefcf906a568d7fa7303517a89b8ff0fd6211850d6e5bb08ad4837c1eff18ccafb2773fdb4a1ecbe9011ce52ee850f56baf6615546be27472076e57
+  checksum: ead3db2ff50af33157198c02ebee2333531988e35ff759eee4e354096fb5a09b38d7344f9cfd8315b019354a7325bec0f916bd32ebea836fefe31e54e0f8ee78
   languageName: node
   linkType: hard
 
@@ -4510,13 +4510,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "date-fns@npm:3.0.6"
-  checksum: 4eb4c1f15257026593bd62ea366347be3940a83133fc84aa32e03bc9a19d6f8a919ef0475211200b16de7980e1d797c993713ed092a6f5c941474bce516f7d96
-  languageName: node
-  linkType: hard
-
 "date-fns@npm:^3.3.0":
   version: 3.3.0
   resolution: "date-fns@npm:3.3.0"
@@ -4722,10 +4715,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "dompurify@npm:3.0.6"
-  checksum: bf6e8a240673f60f5aafa46b598cfb66a18ab68f2801840005bc784b3fd3598a6bfac1eca1f80a98b197054d2329cd6edbc857aca34364abdee389a8fe6c027a
+"dompurify@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "dompurify@npm:3.0.8"
+  checksum: 671fa18bd4bcb1a6ff2e59ecf919f807615b551e7add8834b27751d4e0f3d754a67725482d1efdd259317cadcaaccb72a8afc3aba829ac59730e760041591a1a
   languageName: node
   linkType: hard
 
