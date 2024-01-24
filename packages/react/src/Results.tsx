@@ -22,9 +22,12 @@ export const ResultList = observer(() => {
 
   return (
     <div id="results" className="divide-slate-700 divide-y md:divide-y-0">
-      {filteredActivities?.map?.((activity, idx) => {
+      {filteredActivities?.map?.((activity) => {
         return (
-          <ActivityCard activity={activity} key={`activity-card-${idx}`} />
+          <ActivityCard
+            activity={activity}
+            key={`activity-card-${activity?.id}`}
+          />
         );
       })}
     </div>

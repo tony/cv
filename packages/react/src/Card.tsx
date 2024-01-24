@@ -28,10 +28,12 @@ interface ActivityCardProps {
 export const PatchInfo: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
 }> = ({ activity }) => {
-  const items = [];
+  type PatchLink = [id: string, component: React.ReactNode];
+  const items: PatchLink[] = [];
 
   if (activity?.qaUrl) {
-    items.push(
+    items.push([
+      "qa-link",
       <span>
         <a
           href={activity.qaUrl}
@@ -42,11 +44,12 @@ export const PatchInfo: React.FC<{
           💬 Pull Request
         </a>
       </span>,
-    );
+    ]);
   }
 
   if (activity?.diffUrl) {
-    items.push(
+    items.push([
+      "diff-link",
       <span>
         <a
           href={activity.diffUrl}
@@ -57,19 +60,19 @@ export const PatchInfo: React.FC<{
           ✒️ .diff
         </a>
       </span>,
-    );
+    ]);
   }
 
   return (
     <div className="text-xs">
-      {items.map((item, idx) => (
-        <React.Fragment key={`patch-activity-link-row-${idx}`}>
+      {items.map(([id, component], idx) => (
+        <React.Fragment key={`patch-activity-link-row-${id}`}>
           {idx > 0 && (
             <span className="card-section-separator text-black dark:text-white px-1">
               ·
             </span>
           )}
-          {item}
+          {component}
         </React.Fragment>
       ))}
     </div>
@@ -79,10 +82,12 @@ export const PatchInfo: React.FC<{
 export const PublicationInfo: React.FC<{
   org: Instance<typeof PublicationOrg>;
 }> = ({ org }) => {
-  const items = [];
+  type PublicationLink = [id: string, component: React.ReactNode];
+  const items: PublicationLink[] = [];
 
   if (org?.url) {
-    items.push(
+    items.push([
+      "publication-homepage",
       <span>
         <a
           href={org.url}
@@ -93,11 +98,12 @@ export const PublicationInfo: React.FC<{
           Official homepage
         </a>
       </span>,
-    );
+    ]);
   }
 
   if (org?.amazonUrl) {
-    items.push(
+    items.push([
+      "amazon-link",
       <span>
         <a
           href={org.amazonUrl}
@@ -108,10 +114,11 @@ export const PublicationInfo: React.FC<{
           Amazon
         </a>
       </span>,
-    );
+    ]);
   }
   if (org?.leanpubUrl) {
-    items.push(
+    items.push([
+      "leanpub-link",
       <span>
         <a
           href={org.leanpubUrl}
@@ -122,10 +129,12 @@ export const PublicationInfo: React.FC<{
           Leanpub
         </a>
       </span>,
-    );
+    ]);
   }
   if (org?.goodreadsUrl) {
-    items.push(
+    items.push([
+      "goodreads-link",
+
       <span>
         <a
           href={org.goodreadsUrl}
@@ -136,15 +145,15 @@ export const PublicationInfo: React.FC<{
           Goodreads
         </a>
       </span>,
-    );
+    ]);
   }
 
   return (
     <div className="activity-link-row">
-      {items.map((item, idx) => (
-        <React.Fragment key={`publication-info-activity-link-row-${idx}`}>
+      {items.map(([id, component], idx) => (
+        <React.Fragment key={`publication-info-activity-link-row-${id}`}>
           {idx > 0 && <span className="card-section-separator">·</span>}
-          {item}
+          {component}
         </React.Fragment>
       ))}
     </div>
@@ -154,9 +163,11 @@ export const PublicationInfo: React.FC<{
 export const CompanyInfo: React.FC<{
   org: Instance<typeof CompanyOrg>;
 }> = ({ org }) => {
-  const items = [];
+  type CompanyLink = [id: string, component: React.ReactNode];
+  const items: CompanyLink[] = [];
   if (org?.url) {
-    items.push(
+    items.push([
+      "company-homepage",
       <span>
         <a
           href={org.url}
@@ -167,15 +178,15 @@ export const CompanyInfo: React.FC<{
           Official homepage
         </a>
       </span>,
-    );
+    ]);
   }
 
   return (
     <div className="activity-link-row">
-      {items.map((item, idx) => (
-        <React.Fragment key={`company-activity-link-row-${idx}`}>
+      {items.map(([id, component], idx) => (
+        <React.Fragment key={`company-activity-link-row-${id}`}>
           {idx > 0 && <span className="card-section-separator">·</span>}
-          {item}
+          {component}
         </React.Fragment>
       ))}
     </div>
