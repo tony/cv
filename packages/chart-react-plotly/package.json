@@ -17,7 +17,7 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.2",
+    "@biomejs/biome": "1.5.3",
     "@types/node": "^20.11.5",
     "@types/plotly.js": "^2.12.32",
     "@types/react": "^18.2.48",
