@@ -745,25 +745,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.25":
-  version: 1.13.25
-  resolution: "@carbon/charts-react@npm:1.13.25"
+"@carbon/charts-react@npm:1.13.27":
+  version: 1.13.27
+  resolution: "@carbon/charts-react@npm:1.13.27"
   dependencies:
-    "@carbon/charts": "npm:1.13.25"
-    "@carbon/icons-react": "npm:^11.34.0"
+    "@carbon/charts": "npm:1.13.27"
+    "@carbon/icons-react": "npm:^11.34.1"
     "@ibm/telemetry-js": "npm:^1.2.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: ff88fafffba767f0781876e02b6d9fcd7887be751a07a64aae667dfc31b79bfac61dac9b5ed34aa90e01dc0926d3a2cbb96cdd215399b001a01cd914b696241f
+  checksum: 7fa56263a3b948e9066cbc60c057ece2a09630d74d73bb20f292023d764a2f64e4ce41be80749aecca304942bec95e578b9bd0af34d3df2fb9025211d381c579
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.25":
-  version: 1.13.25
-  resolution: "@carbon/charts@npm:1.13.25"
+"@carbon/charts@npm:1.13.27":
+  version: 1.13.27
+  resolution: "@carbon/charts@npm:1.13.27"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/utils-position": "npm:^1.1.4"
@@ -772,7 +772,7 @@ __metadata:
     d3: "npm:^7.8.5"
     d3-cloud: "npm:^1.2.7"
     d3-sankey: "npm:^0.12.3"
-    date-fns: "npm:^3.3.0"
+    date-fns: "npm:^3.3.1"
     dompurify: "npm:^3.0.8"
     html-to-image: "npm:^1.11.11"
     lodash-es: "npm:^4.17.21"
@@ -787,7 +787,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: b01d38422476a8cca9f4eade77e4c655e5d81ae2164ade0d4deec1e302249ccee7a6c7ba2635f45779916044723142d531a4ff53534fe94c885f6330f17559a3
+  checksum: 542610914f6926b3db84b1f20a498a6b7bb0d109ed4b7f4e658c585122a3daddd4007bd10f7265aa7b0f46568e8807a5e955121ed2a6faf2b03dc8800848bd0c
   languageName: node
   linkType: hard
 
@@ -821,23 +821,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/icon-helpers@npm:^10.45.0":
-  version: 10.45.0
-  resolution: "@carbon/icon-helpers@npm:10.45.0"
-  checksum: 3b3bac5cca8969054d01f220a1d1ce3eebc4587c9483e4ea68b802fd6ba01e3563fa81e50c689cdc6fa3c704a119e51deabf91bebd70c4ca60ad0b6e5347e8dd
+"@carbon/icon-helpers@npm:^10.46.0":
+  version: 10.46.0
+  resolution: "@carbon/icon-helpers@npm:10.46.0"
+  checksum: 479973b8fbe087c20ec933d85231669d4213de876e33ae07ba66428703b6cb899cbfdc5d09ee54a23784cd974b99c100dd143b164be1104a8a172f05c8cc5682
   languageName: node
   linkType: hard
 
-"@carbon/icons-react@npm:^11.34.0":
-  version: 11.34.0
-  resolution: "@carbon/icons-react@npm:11.34.0"
+"@carbon/icons-react@npm:^11.34.1":
+  version: 11.35.0
+  resolution: "@carbon/icons-react@npm:11.35.0"
   dependencies:
-    "@carbon/icon-helpers": "npm:^10.45.0"
+    "@carbon/icon-helpers": "npm:^10.46.0"
     "@carbon/telemetry": "npm:0.1.0"
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ">=16"
-  checksum: e9a07606ebd5dea71811972b6325c01c0687d9b34a3adc783f62db86c04a5e19ad805f802931d5306d0840083eeeed36f0387c44ed5bb87747fae618a11dd350
+  checksum: d3d431efa008691024de90180ead77acb05dd77a1a352604d5b732bfbeb81a079928b6c81ca01d7dc3cdf55c26bd823b98f2717094b7a6a5cf4f39ffd8ddea74
   languageName: node
   linkType: hard
 
@@ -2281,8 +2281,8 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@carbon/charts": "npm:1.13.25"
-    "@carbon/charts-react": "npm:1.13.25"
+    "@carbon/charts": "npm:1.13.27"
+    "@carbon/charts-react": "npm:1.13.27"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.51"
@@ -2338,7 +2338,7 @@ __metadata:
     fast-deep-equal: "npm:^3.1.3"
     mobx: "npm:^6.12.0"
     mobx-state-tree: "npm:^5.4.0"
-    plotly.js: "npm:^2.28.0"
+    plotly.js: "npm:^2.29.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     typescript: "npm:^5.3.3"
@@ -4507,13 +4507,6 @@ __metadata:
     es5-ext: "npm:^0.10.50"
     type: "npm:^1.0.1"
   checksum: 1296e3f92e646895681c1cb564abd0eb23c29db7d62c5120a279e84e98915499a477808e9580760f09e3744c0ed7ac8f7cff98d096ba9770754f6ef0f1c97983
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "date-fns@npm:3.3.0"
-  checksum: e93a99f0a447e26e01aeb099ee711abbced3b62f40e28c84effd09e69788f93587f2daec43950ead417faeebbd94afddc335bfd442c34443b03f09dfc0022ff8
   languageName: node
   linkType: hard
 
@@ -7423,9 +7416,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js@npm:^2.28.0":
-  version: 2.28.0
-  resolution: "plotly.js@npm:2.28.0"
+"plotly.js@npm:^2.29.0":
+  version: 2.29.0
+  resolution: "plotly.js@npm:2.29.0"
   dependencies:
     "@plotly/d3": "npm:3.8.1"
     "@plotly/d3-sankey": "npm:0.7.2"
@@ -7477,7 +7470,7 @@ __metadata:
     topojson-client: "npm:^3.1.0"
     webgl-context: "npm:^2.2.0"
     world-calendars: "npm:^1.0.3"
-  checksum: 28d6cdc8706f9e98484e019b9daa185a226c85542b4f84160ad272957ba7a537dd5e79e7b5078a29f04482baae51ec3477c0a1c5e5f0eb5d3c9f613318a35bf7
+  checksum: 0a738629234379689ae7885f9fc807e9c0efc2fd14d45f2dcc574c8993d8a71f567b04050bec83bc5a63340a54880fe73fe1d96674683ea86555dc029c2fce05
   languageName: node
   linkType: hard
 
