@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@types/node": "^20.11.14",
-    "@types/react": "^18.2.48",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.18",
     "cross-env": "^7.0.3",
     "typescript": "^5.3.3"
@@ -31,6 +31,6 @@
     "mobx-state-tree": "^5.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "victory": "^36.8.5"
+    "victory": "^36.8.6"
   }
 }

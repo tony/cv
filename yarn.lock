@@ -2262,8 +2262,8 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.14"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.16"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     billboard.js: "npm:^3.10.3"
     cross-env: "npm:^7.0.3"
@@ -2284,8 +2284,8 @@ __metadata:
     "@carbon/charts": "npm:1.13.25"
     "@carbon/charts-react": "npm:1.13.25"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.14"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.16"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2311,8 +2311,8 @@ __metadata:
     "@nivo/line": "npm:^0.84.0"
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.14"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.16"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2330,9 +2330,9 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.14"
+    "@types/node": "npm:^20.11.16"
     "@types/plotly.js": "npm:^2.12.32"
-    "@types/react": "npm:^18.2.48"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2351,8 +2351,8 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.14"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.16"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2361,7 +2361,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     typescript: "npm:^5.3.3"
-    victory: "npm:^36.8.5"
+    victory: "npm:^36.8.6"
   languageName: unknown
   linkType: soft
 
@@ -2379,7 +2379,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@types/chroma-js": "npm:^2.4.3"
-    "@types/node": "npm:^20.11.14"
+    "@types/node": "npm:^20.11.16"
     chroma-js: "npm:^2.4.2"
     csstype: "npm:^3.1.3"
     github-colors: "npm:~2.2"
@@ -2405,8 +2405,8 @@ __metadata:
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/typography": "npm:^0.5.10"
     "@tony/cv-data": "npm:*"
-    "@types/node": "npm:^20.11.14"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.16"
+    "@types/react": "npm:^18.2.51"
     "@types/react-dom": "npm:^18.2.18"
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.17"
@@ -2432,7 +2432,7 @@ __metadata:
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@types/node": "npm:^20.11.14"
+    "@types/node": "npm:^20.11.16"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
     moment: "npm:^2.30.1"
@@ -2804,12 +2804,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.14":
-  version: 20.11.14
-  resolution: "@types/node@npm:20.11.14"
+"@types/node@npm:^20.11.16":
+  version: 20.11.16
+  resolution: "@types/node@npm:20.11.16"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 129104b80a33b92ffcd139593b51d39b85e9dce0e7065a39eca23cd3c629da9f06a747509cdcbf0e6bd89349d944d1a4b112b598d122d0d33f10765d51a39334
+  checksum: 751f50ec5c9332b11515e82fe37c71479ac4449b711280aa3c7910edf67b1e3f5ac00041512add543f9a892096a68356406998bf02a2c809a73d176c44c28414
   languageName: node
   linkType: hard
 
@@ -2872,14 +2872,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.48":
-  version: 18.2.48
-  resolution: "@types/react@npm:18.2.48"
+"@types/react@npm:^18.2.51":
+  version: 18.2.51
+  resolution: "@types/react@npm:18.2.51"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 2e56ea6bd821ae96bd943f727a59d85384eaf5f8a3e6fce4fa1d34453e32d8eedda742432b3857fa0de7a4214bf84ce4239757eb52918e76452c00384731e585
+  checksum: af2935027172ea40695b90b02e98520a097160fa8517f6022e2e2cf8518017e0b84991cc34ee8d72cd91dcb7c5404784d4bada7a4836edf2727c3d6703c16ff8
   languageName: node
   linkType: hard
 
@@ -9182,347 +9182,347 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-area@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-area@npm:36.8.5"
+"victory-area@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-area@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 147ee74a50e120d6d731dbe6e464042a6ac4aaa088989c246df7da15c90da47b98d0f7770ebb510a155b6fadc716b509692e75cd31a3ac0663b1e0c58ded3279
+  checksum: 022a3ae7bd75da5af78c57dca74795c458bc11dda3fd0ce1173c852bc52f86f1bc733610ebb3ac853a754dddd9ff2dc6ddf5bdd353fa6d32c4c0b78499619bfb
   languageName: node
   linkType: hard
 
-"victory-axis@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-axis@npm:36.8.5"
+"victory-axis@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-axis@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 630df8699d6447496c62267558e641b4c7e12e2687892aca1dd999b70dd40289b336d36adc928ebfe23dc49d5210c5ec08028ec0d78137ddcf745b3c0bf76cb3
+  checksum: c78c8454f544f6d15defce5a38a14e178d02a5f6cdd61ff1e52a387f833d145a1631c2c62905536f32f9ef557eef8f24ef8727efa88d5f163b108eefba92b3c3
   languageName: node
   linkType: hard
 
-"victory-bar@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-bar@npm:36.8.5"
+"victory-bar@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-bar@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 85f34f8cdc50183f34b6148b488560595a3d2e08a0576251b9067afe1a1403c1ea8bdc7d502dc229f0b8b8c99aae54bc752cb40adc064ce18d115e37144b06c1
+  checksum: 36673dd052768cd1750b405b2a3efde5639e112088f4aadeb2b088f7ac610b76505745c228adfdb795c4234c6e5835a0d4d0514510f6ba3ee5df72a3e474a79f
   languageName: node
   linkType: hard
 
-"victory-box-plot@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-box-plot@npm:36.8.5"
+"victory-box-plot@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-box-plot@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 1fc51db01b893211133f46ef57b5977c02d04d6aeee4945b7f3c2712c6beb45127c74c6a408b7712748d46056d45b87ed04094453fec284e71e6aa4ea79cfe62
+  checksum: 87dc67156b1fd2c03cf7519f9107dc92dc61b8dd225bc0f232d326890411a98d5bfd7d3971feaf3a003fa0aab3081c40df9665e38e76acae5394e3e1728340bc
   languageName: node
   linkType: hard
 
-"victory-brush-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-brush-container@npm:36.8.5"
-  dependencies:
-    lodash: "npm:^4.17.19"
-    prop-types: "npm:^15.8.1"
-    react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: e6ae258b747d95b940b69314c716abd254445b25aea519dfc6c19cb950dcc9c893a384ea03fcf8d0aeaa0819c60d6d41b42d5bbdee8343ae7411360e758324c3
-  languageName: node
-  linkType: hard
-
-"victory-brush-line@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-brush-line@npm:36.8.5"
+"victory-brush-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-brush-container@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: d2f650fc0539cd416988f441d323a562508c71af54ce4c11f6496f5e1ccb412aaaca2954857f0df602a6a7af35a50e4c6105cfd66f1dec9ba0ba0e8f7073ac25
+  checksum: de9564502c543116c50d30a2fda2c65c3295aac83734f92af22ea130e1ac66d8d43c7623e89345dd340ebf30e0e492e8756da70829fa3ef38fb3b1fb4e45ae28
   languageName: node
   linkType: hard
 
-"victory-candlestick@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-candlestick@npm:36.8.5"
-  dependencies:
-    lodash: "npm:^4.17.19"
-    prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: b1ed182ba2c08db37647ff5a8e560dd8509c12a23d61b075511632e9f7200aead75f9e762fd02e569bbd9570b792d163e3903b3e9e30644e86c6f73a7277e22a
-  languageName: node
-  linkType: hard
-
-"victory-canvas@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-canvas@npm:36.8.5"
-  dependencies:
-    lodash: "npm:^4.17.19"
-    prop-types: "npm:^15.8.1"
-    victory-bar: "npm:^36.8.5"
-    victory-core: "npm:^36.8.5"
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: 3d61af817bd42c9f2a93881bf00db5e7aed493ce41620725278bb0891fb097a123a48684018fc74e75dcec3e53914e6c398edb111e2165d74330c05f8eb2d613
-  languageName: node
-  linkType: hard
-
-"victory-chart@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-chart@npm:36.8.5"
+"victory-brush-line@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-brush-line@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-axis: "npm:^36.8.5"
-    victory-core: "npm:^36.8.5"
-    victory-polar-axis: "npm:^36.8.5"
-    victory-shared-events: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: d0e78e9212336bd11f7c1cf04dfdf0b9b07537df286b4781007f0fbc83ddac56c0a59619bf8bae0d5d784fc2561fde67e3926ac1107de6dea780e1ef0a35ed20
+  checksum: 9de05499be854eae4611e1f5235130d0904e98e86d8381936983c66b62f0e8c4d9dd118dec99f3967d6c08f644bf238c45310939576ac94a5e5653fa4a6108fd
   languageName: node
   linkType: hard
 
-"victory-core@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-core@npm:36.8.5"
+"victory-candlestick@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-candlestick@npm:36.8.6"
+  dependencies:
+    lodash: "npm:^4.17.19"
+    prop-types: "npm:^15.8.1"
+    victory-core: "npm:^36.8.6"
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: f3daee67bd47ee98f9c302cc66caf369a004b8200c04ed6821f1a3db11ff1c7810da6248e5e0217d8d9b6167c5fe4bfe81beb38580ad9fd824eb724088b56fd8
+  languageName: node
+  linkType: hard
+
+"victory-canvas@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-canvas@npm:36.8.6"
+  dependencies:
+    lodash: "npm:^4.17.19"
+    prop-types: "npm:^15.8.1"
+    victory-bar: "npm:^36.8.6"
+    victory-core: "npm:^36.8.6"
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: ba3368ce28a30e43a5e53976fc9df37e52e55cee540fa4c7107ad85354db48ecf5a24a92e8c0a8a51fd8ff60955d323613f3cffd31c8a00eac89e2acc45b5e25
+  languageName: node
+  linkType: hard
+
+"victory-chart@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-chart@npm:36.8.6"
+  dependencies:
+    lodash: "npm:^4.17.19"
+    prop-types: "npm:^15.8.1"
+    react-fast-compare: "npm:^3.2.0"
+    victory-axis: "npm:^36.8.6"
+    victory-core: "npm:^36.8.6"
+    victory-polar-axis: "npm:^36.8.6"
+    victory-shared-events: "npm:^36.8.6"
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: ed29ed54654eb85900067685f4ff548a6a87b388d7dce1bada7c7ae579918d3fb1628dffbc16ab210ecde30fc85d784a4b2b71da20fac1e96c19f2a6fccfd906
+  languageName: node
+  linkType: hard
+
+"victory-core@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-core@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.21"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-vendor: "npm:^36.8.5"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: c5401f8f573a8241747bbffa9715264e137ddd154d283fa7799d598f4e07937f9f505968dbc44079f0e7ba90270ffafe039c9b7d8c2e639b18ce26a6102d99d3
+  checksum: 0e1f82776016c781112d7fa57ff30a9d4e7d0d7acb23ecde42bec91ee9cb015fe537902094e5eb30d76595bd4e02c09675c40eb5412a8e3a6c75a8a19f82b9a8
   languageName: node
   linkType: hard
 
-"victory-create-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-create-container@npm:36.8.5"
+"victory-create-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-create-container@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
-    victory-brush-container: "npm:^36.8.5"
-    victory-core: "npm:^36.8.5"
-    victory-cursor-container: "npm:^36.8.5"
-    victory-selection-container: "npm:^36.8.5"
-    victory-voronoi-container: "npm:^36.8.5"
-    victory-zoom-container: "npm:^36.8.5"
+    victory-brush-container: "npm:^36.8.6"
+    victory-core: "npm:^36.8.6"
+    victory-cursor-container: "npm:^36.8.6"
+    victory-selection-container: "npm:^36.8.6"
+    victory-voronoi-container: "npm:^36.8.6"
+    victory-zoom-container: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 48d98eddba8c474acac4b9e4a8f254a2df58bf2e0ffc86253df398459b22d224c8a1e0980bc64d30c93915d6b3fa95928efba043e1ba119b7a3f6b83be760ad2
+  checksum: dec8b2784f923458c2d4256e79ec75dab1d601a22ca2e5f0dd4949a238da9c7c12d55607948783a7e30a08b62ccbee9b98b8c1313d5ef75dba9d4d5cd90da98a
   languageName: node
   linkType: hard
 
-"victory-cursor-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-cursor-container@npm:36.8.5"
-  dependencies:
-    lodash: "npm:^4.17.19"
-    prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: f1ff12d85bfc15d07f21f3f1a01a3db28f8aa293ba78e09f5fa023fe603d87914654e3b95944087558643271dc93f7921b086278c124f699b962a10cd10f8e35
-  languageName: node
-  linkType: hard
-
-"victory-errorbar@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-errorbar@npm:36.8.5"
+"victory-cursor-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-cursor-container@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: f379afa761f55ceb0b892bfa0ac5cdd4e670a565ff4a98a8e8103c39946ff9a0c2754ce40471df49fc94b7d894b1357d8020c9fc32bd26a393474c50c48ffb1e
+  checksum: b994fb9e117be34e223cad1526a4e49ecb7b724a126aa615b0a0de5f6e78badb6b9575c7d164ff492a321d845b51918d0a4846a16c5a8e719a766a2e47b8cd3c
   languageName: node
   linkType: hard
 
-"victory-group@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-group@npm:36.8.5"
+"victory-errorbar@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-errorbar@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
-    victory-shared-events: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 5bfe8b6568915a0487fd5ce7614aebbe657ecc3144a3f7e072e9b1b6d48088254027394f72c132ac9310c7fb41b72d9dbfeee2bfd6e3cd6eb086362668308fa0
+  checksum: 76044f71f30cbaac5652f82de7853d2726f52e93c9e9abf5338a66ee2fbc230222a2c19b96c61039c6fb4c777b1a26138b6dedd3e5ce552dde7cbc60810e5f72
   languageName: node
   linkType: hard
 
-"victory-histogram@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-histogram@npm:36.8.5"
+"victory-group@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-group@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-bar: "npm:^36.8.5"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-shared-events: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 9ea8910e29e49adf82e35644174eef5fcc3b50750129feb38e3da2a591b7e5d83075d67d9fa5e470d182549d0e55484cfc62e8e4df2e41fd198bfe96629fc70b
+  checksum: 5c85f287c2c30269e5d6f027d9a5bd46710945ac3e0e2db2f34ffdfc005714354791c1b4fb839b857194c6a45908d067174d97e41bb8837d0687eb2d7de8a2a2
   languageName: node
   linkType: hard
 
-"victory-legend@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-legend@npm:36.8.5"
+"victory-histogram@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-histogram@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    react-fast-compare: "npm:^3.2.0"
+    victory-bar: "npm:^36.8.6"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 07794e630f3249f6e8fef2b92fb0b24256bdf6fdcdae49fb9e7140e9e10fd9888ab4572202a25f73b1b04c7c6819aee9b0710b86ec6035c610a5c2a054067ab1
+  checksum: fcb80d8c5ee1a31b1f831bc413771c2b67fa9aba49929803061f383de92128f9a43b7009baf30005d9bb374053cbb2adac4d8e991ab5e2d1b9d527c8c0cd8583
   languageName: node
   linkType: hard
 
-"victory-line@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-line@npm:36.8.5"
+"victory-legend@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-legend@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: bfdba3c986f89184f3756f05db79f08fb15fdc6d4bdd701a3c113b020295908710042379716d12fe7cb66c5f5d8d3bc00acbfd3ab3a47bc4b641f0337ffe321e
+  checksum: 6e553a6bfa7c7f55743994316f7f9fc2e86c99b304b337fe89fec7fb94ff5614af2a603a0bc0292f1cd1c32cc73b997701c1ccca8bf315011b4857d9b7953249
   languageName: node
   linkType: hard
 
-"victory-pie@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-pie@npm:36.8.5"
+"victory-line@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-line@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
-    victory-vendor: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 32b4351f1e210973458f9183c3e0191ca407c8be2b5586bd20f218cac3bdcc3414ae50bf86132fa3e2023a829316bed37c4218346226aff8fb6f630b9e5daadb
+  checksum: e79a00c917ce14e3703839c48e09f484ee0f91ba23576e1d4914a0240dace246c6e50ce493c38c63051cd307ebcae17e34b945cbdbb85e22be57064ed49dba2f
   languageName: node
   linkType: hard
 
-"victory-polar-axis@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-polar-axis@npm:36.8.5"
+"victory-pie@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-pie@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-vendor: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 25d69e6cde6033e6a5cebe614e09df7b7c07a149a3eb275facbb6e11cf66773b9a78621edcc3b58e93142b64a0d535c06fe770ebd11e58b5d939514f2a279147
+  checksum: f066c544d63666cd83d90c1818969db6b8b8aa5ebedf8c8a3cb7eaa7bffb398d54ad1827c956722e5e255c5d4ca2dc4bac07249ea77a9b305391b959704d69b4
   languageName: node
   linkType: hard
 
-"victory-scatter@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-scatter@npm:36.8.5"
+"victory-polar-axis@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-polar-axis@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: a93aec57c967e40f8e5d78831447b2855439ba145135f800a9ff7274e09dd238ec53a92a9c653be2f7738f12c0db752f6dd9263dabd57afabdee1390cad1b9d3
+  checksum: dd0b0baa7edbebd909b4cf222e94d5d724e51d5f2036e23872e7f18451539db6bc7cf4a6a3a2a8358b117cd20480adfbc97055fe5bd695a255880b8d191b4abb
   languageName: node
   linkType: hard
 
-"victory-selection-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-selection-container@npm:36.8.5"
+"victory-scatter@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-scatter@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 7aae444dbe5b419fbf663242aea3e9937ac5ecc2eb351cf4254623d8776659e82490346422bd98494b8d0fabf2dec9ab7f172303b3a8d862f66c74c5ceeb3146
+  checksum: 0597df6a1d6893a0a224090b895f85eee3d39d4bea8a01a1820d928dbf6111df30439e52b66b7368be7eed20e280d09270ba7ae2b53aeeb128d7a490f585d598
   languageName: node
   linkType: hard
 
-"victory-shared-events@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-shared-events@npm:36.8.5"
+"victory-selection-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-selection-container@npm:36.8.6"
+  dependencies:
+    lodash: "npm:^4.17.19"
+    prop-types: "npm:^15.8.1"
+    victory-core: "npm:^36.8.6"
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: 784221a7206fb937f74d819e5a9cd5913ca5922fe0770ca3d95b4b35b936fad1e2deba2712f4f9218e25a99b28cf59902487949e6cd206762e5c9de3bb83a7c1
+  languageName: node
+  linkType: hard
+
+"victory-shared-events@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-shared-events@npm:36.8.6"
   dependencies:
     json-stringify-safe: "npm:^5.0.1"
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 76b42b30c542107d4a0ab11c85a0b9c088930754b1774c041219f0798e2408842d3fd95ea0c60f83dd67c2cb0c5e10a12dc9186b8ff3091034da19381d87d550
+  checksum: 02a3e2b1dace95b441c816b7d54e10f94474add80306d766dc540befcd2bd09a06b48e2c016e05efe3386674af0897e847e9f48b0515a6377110e3fd2e931537
   languageName: node
   linkType: hard
 
-"victory-stack@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-stack@npm:36.8.5"
+"victory-stack@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-stack@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
-    victory-shared-events: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-shared-events: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: ee3e80b5cbf47fcb3174b7009ed3f1855752813294d88ecdf99243604e9659839132725980f5d774d0e0b8554a9b75c33a4f9d0eb71ec13ba0393b6ce3755139
+  checksum: 78c719fe39f2d9165cb0d9c4bfab7a874cac25c7bc362775d3e2ec7c60f5448700691c12c1390e54903795c5a9167e617a05e63a46a7c92ff4dbda70ac487067
   languageName: node
   linkType: hard
 
-"victory-tooltip@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-tooltip@npm:36.8.5"
+"victory-tooltip@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-tooltip@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 1122b21d34c325f7159712d5d2030605a908c35a9afe3522614a07b598cdac2cab534372dc515bab390d65f60d5f55ec5adb79d8b57101758549883bbd5cf5f6
+  checksum: 42cf5579f03dab98cff7a70f29c4e0507c0e090976a24c2e7880e47586a3ec2c412f81996751ac107a0d4927a60df1c1a213c18ca06ad2c6cd055ce3444ab258
   languageName: node
   linkType: hard
 
-"victory-vendor@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-vendor@npm:36.8.5"
+"victory-vendor@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-vendor@npm:36.8.6"
   dependencies:
     "@types/d3-array": "npm:^3.0.3"
     "@types/d3-ease": "npm:^3.0.0"
@@ -9538,87 +9538,87 @@ __metadata:
     d3-shape: "npm:^3.1.0"
     d3-time: "npm:^3.0.0"
     d3-timer: "npm:^3.0.1"
-  checksum: 527f4a4faaa6d0b95cb7cc05101da126df89102addc376a57e9946bb39e0b1c705a2229bd6d1b54ff6f4d74776c651538a6bf0838da50c52dc758ad6d042e87e
+  checksum: ded45555d8e796fbc138081216f3a54e61755adcf468ad6d045016ade910a8fb27173a98ca7a1c336d77847bc46c54350e2ffa1affdad1efaf4ceec5c5023d38
   languageName: node
   linkType: hard
 
-"victory-voronoi-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-voronoi-container@npm:36.8.5"
+"victory-voronoi-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-voronoi-container@npm:36.8.6"
   dependencies:
     delaunay-find: "npm:0.0.6"
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
     react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^36.8.5"
-    victory-tooltip: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
+    victory-tooltip: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 73682993283bbddaf295f3b009ed9f38702cce4d34dcd765e87bf390aaaec5f013088d0dc16febf4714c6b1abacc3832d8001603b52fbaa15bec3dbef6c285cd
+  checksum: 2b804f6876508df2cb11c4bb119f547345a7e0aa47c49f3a61fa70d6bee2ab244e188d97d17c1996a5a2a5579daa337f8d040de74de4de31ed1954253153fafa
   languageName: node
   linkType: hard
 
-"victory-voronoi@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-voronoi@npm:36.8.5"
+"victory-voronoi@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-voronoi@npm:36.8.6"
   dependencies:
     d3-voronoi: "npm:^1.1.4"
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 05705fa141fe6948728959873787eac48c64c9a8b2475a13a78ba2f05ebc450bc258d246d4e8a28068559ae6adfdfe555cbaf405d0a33888217e282ec224adaf
+  checksum: 7af79645c9294da69f01bd82b0eec8855e750eea08860b87f159bc8e9a4af9aee5076fd5d4569e33b900ae60c310488818b899d91cdfcf70b87a77ce778c10fc
   languageName: node
   linkType: hard
 
-"victory-zoom-container@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory-zoom-container@npm:36.8.5"
+"victory-zoom-container@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory-zoom-container@npm:36.8.6"
   dependencies:
     lodash: "npm:^4.17.19"
     prop-types: "npm:^15.8.1"
-    victory-core: "npm:^36.8.5"
+    victory-core: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 06148fc4c6ab6aa7441876de013b2e7ff064ee41fa154496cf1eec0365a6e326c50b51f2ca16146e9e41998dbb4b315a0f438aff8905400250d4afbb3192c458
+  checksum: 7401838bd5d24fee5039e982546132b717c3106289628ee500580d9c3dc230efed88e2c3315708be603cc118cbd9398401c171cef5ccc53611e1e07f1dcfad57
   languageName: node
   linkType: hard
 
-"victory@npm:^36.8.5":
-  version: 36.8.5
-  resolution: "victory@npm:36.8.5"
+"victory@npm:^36.8.6":
+  version: 36.8.6
+  resolution: "victory@npm:36.8.6"
   dependencies:
-    victory-area: "npm:^36.8.5"
-    victory-axis: "npm:^36.8.5"
-    victory-bar: "npm:^36.8.5"
-    victory-box-plot: "npm:^36.8.5"
-    victory-brush-container: "npm:^36.8.5"
-    victory-brush-line: "npm:^36.8.5"
-    victory-candlestick: "npm:^36.8.5"
-    victory-canvas: "npm:^36.8.5"
-    victory-chart: "npm:^36.8.5"
-    victory-core: "npm:^36.8.5"
-    victory-create-container: "npm:^36.8.5"
-    victory-cursor-container: "npm:^36.8.5"
-    victory-errorbar: "npm:^36.8.5"
-    victory-group: "npm:^36.8.5"
-    victory-histogram: "npm:^36.8.5"
-    victory-legend: "npm:^36.8.5"
-    victory-line: "npm:^36.8.5"
-    victory-pie: "npm:^36.8.5"
-    victory-polar-axis: "npm:^36.8.5"
-    victory-scatter: "npm:^36.8.5"
-    victory-selection-container: "npm:^36.8.5"
-    victory-shared-events: "npm:^36.8.5"
-    victory-stack: "npm:^36.8.5"
-    victory-tooltip: "npm:^36.8.5"
-    victory-voronoi: "npm:^36.8.5"
-    victory-voronoi-container: "npm:^36.8.5"
-    victory-zoom-container: "npm:^36.8.5"
+    victory-area: "npm:^36.8.6"
+    victory-axis: "npm:^36.8.6"
+    victory-bar: "npm:^36.8.6"
+    victory-box-plot: "npm:^36.8.6"
+    victory-brush-container: "npm:^36.8.6"
+    victory-brush-line: "npm:^36.8.6"
+    victory-candlestick: "npm:^36.8.6"
+    victory-canvas: "npm:^36.8.6"
+    victory-chart: "npm:^36.8.6"
+    victory-core: "npm:^36.8.6"
+    victory-create-container: "npm:^36.8.6"
+    victory-cursor-container: "npm:^36.8.6"
+    victory-errorbar: "npm:^36.8.6"
+    victory-group: "npm:^36.8.6"
+    victory-histogram: "npm:^36.8.6"
+    victory-legend: "npm:^36.8.6"
+    victory-line: "npm:^36.8.6"
+    victory-pie: "npm:^36.8.6"
+    victory-polar-axis: "npm:^36.8.6"
+    victory-scatter: "npm:^36.8.6"
+    victory-selection-container: "npm:^36.8.6"
+    victory-shared-events: "npm:^36.8.6"
+    victory-stack: "npm:^36.8.6"
+    victory-tooltip: "npm:^36.8.6"
+    victory-voronoi: "npm:^36.8.6"
+    victory-voronoi-container: "npm:^36.8.6"
+    victory-zoom-container: "npm:^36.8.6"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: d32fced76c52dde58a2f06206b9de99efdfae56e57d094b1f36a240a08879574d93597738fb77092b5e38d5255e0d0d5906b8bdb6546f0870ff2bb39bb16aaee
+  checksum: c506e9f5424bc954a131891f564868a552a50e083c12342601aa899a7d77611406dd9d7bec94c27703bee69a15e0f5ebbe6876bbad3ef372bf6a533ecc878418
   languageName: node
   linkType: hard
 
