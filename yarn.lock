@@ -1255,9 +1255,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:^0.26.8":
-  version: 0.26.8
-  resolution: "@floating-ui/react@npm:0.26.8"
+"@floating-ui/react@npm:^0.26.9":
+  version: 0.26.9
+  resolution: "@floating-ui/react@npm:0.26.9"
   dependencies:
     "@floating-ui/react-dom": "npm:^2.0.8"
     "@floating-ui/utils": "npm:^0.2.1"
@@ -1265,7 +1265,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 809af37e13baf67426be5542a8d608b7d9b904b5a386e7e5147da584dc154c3e977c67daefa4a3df1980dee07152a44f4997b8269132b732b62eb5e64b0a9809
+  checksum: 997f5a471ac6080c5162ad86fbb8e5bc0eca9335c40d8445597a90ba645e5d35ee796c29bdc66d868182afe5901804ecd52b82560332ae123b0c269400421e63
   languageName: node
   linkType: hard
 
@@ -2263,7 +2263,7 @@ __metadata:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/react": "npm:^18.2.51"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     billboard.js: "npm:^3.10.3"
     cross-env: "npm:^7.0.3"
@@ -2285,7 +2285,7 @@ __metadata:
     "@carbon/charts-react": "npm:1.13.27"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/react": "npm:^18.2.51"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2312,7 +2312,7 @@ __metadata:
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/react": "npm:^18.2.51"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2331,8 +2331,8 @@ __metadata:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/plotly.js": "npm:^2.12.32"
-    "@types/react": "npm:^18.2.51"
+    "@types/plotly.js": "npm:^2.29.0"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2352,7 +2352,7 @@ __metadata:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/react": "npm:^18.2.51"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2400,13 +2400,13 @@ __metadata:
   dependencies:
     "@atlaskit/toggle": "npm:^13.0.2"
     "@biomejs/biome": "npm:1.5.3"
-    "@floating-ui/react": "npm:^0.26.8"
+    "@floating-ui/react": "npm:^0.26.9"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/typography": "npm:^0.5.10"
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.11.16"
-    "@types/react": "npm:^18.2.51"
+    "@types/react": "npm:^18.2.52"
     "@types/react-dom": "npm:^18.2.18"
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.17"
@@ -2820,10 +2820,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/plotly.js@npm:^2.12.32":
-  version: 2.12.32
-  resolution: "@types/plotly.js@npm:2.12.32"
-  checksum: 4f307cd15d171baf22bce0b2b8853f4d7de86c27d5b76ab582a215d77bed4de60943af17a8fcba3230fbe6d9bb77c2b47e123496bb995204d8a1cf760d6f0dc2
+"@types/plotly.js@npm:^2.29.0":
+  version: 2.29.0
+  resolution: "@types/plotly.js@npm:2.29.0"
+  checksum: 84fa6d6b1d2e225232d6ad37045e81a1c1a09986f85dbdab943d4a50d3b4f70437d240fe1b50a371e013a13c3ecca8076c66394f84a2dff3b04b1e37648c89d1
   languageName: node
   linkType: hard
 
@@ -2872,14 +2872,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.51":
-  version: 18.2.51
-  resolution: "@types/react@npm:18.2.51"
+"@types/react@npm:^18.2.52":
+  version: 18.2.52
+  resolution: "@types/react@npm:18.2.52"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: af2935027172ea40695b90b02e98520a097160fa8517f6022e2e2cf8518017e0b84991cc34ee8d72cd91dcb7c5404784d4bada7a4836edf2727c3d6703c16ff8
+  checksum: 0ab90a37fd82028c3559f18ce50790d01b262589a2ea49d014d8888291f47d9c91e65cb7db031a3e5d58818cb5376577afb4b593068473abfd0c695fa7e6b7c4
   languageName: node
   linkType: hard
 
