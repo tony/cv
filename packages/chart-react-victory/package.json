@@ -31,6 +31,6 @@
     "mobx-state-tree": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "victory": "^36.9.0"
+    "victory": "^36.9.1"
   }
 }
