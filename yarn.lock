@@ -745,11 +745,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.13.30":
-  version: 1.13.30
-  resolution: "@carbon/charts-react@npm:1.13.30"
+"@carbon/charts-react@npm:1.13.32":
+  version: 1.13.32
+  resolution: "@carbon/charts-react@npm:1.13.32"
   dependencies:
-    "@carbon/charts": "npm:1.13.30"
+    "@carbon/charts": "npm:1.13.32"
     "@carbon/icons-react": "npm:^11.35.0"
     "@ibm/telemetry-js": "npm:^1.2.0"
     react: "npm:^18.2.0"
@@ -757,13 +757,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 8c66622e88e641d36482d93c043c58634d04ae916158f27030ddd15551b3704d0898b43b90a12eb7a4f8700c5e7aeee7de5133e227c64ed1906c11938671ed91
+  checksum: 29e7f82fc00a66aea99781c776a49b5d2a7ef57407afa923a4d266a1f2ecc6ff76d1e7674fcfb9b94c0e5469dc0720b947c79a783fa3c87c8fcf12a338f362e2
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.13.30":
-  version: 1.13.30
-  resolution: "@carbon/charts@npm:1.13.30"
+"@carbon/charts@npm:1.13.32":
+  version: 1.13.32
+  resolution: "@carbon/charts@npm:1.13.32"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/utils-position": "npm:^1.1.4"
@@ -787,7 +787,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 958ad0a8047397b5f309052d119fb8a02f8d14f3b8340ae31dcfb51c72c02569dc1b0cc3a2387d4b7191e06848551b3e62bc74094e070c6830faf9b80c1c5458
+  checksum: e6cdeb1ae8a14a9c277f55c7166689c518d293c4ff2cba7aa1b32fed251f4df687ccbc68ad0f0df8ee960d1ef5628b250d7e9d2da68a863e823937ab46b0cdfb
   languageName: node
   linkType: hard
 
@@ -2264,7 +2264,7 @@ __metadata:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     billboard.js: "npm:^3.10.3"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2281,12 +2281,12 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@carbon/charts": "npm:1.13.30"
-    "@carbon/charts-react": "npm:1.13.30"
+    "@carbon/charts": "npm:1.13.32"
+    "@carbon/charts-react": "npm:1.13.32"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
     d3: "npm:^7.8.5"
@@ -2313,7 +2313,7 @@ __metadata:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
     mobx: "npm:^6.12.0"
@@ -2333,7 +2333,7 @@ __metadata:
     "@types/node": "npm:^20.11.16"
     "@types/plotly.js": "npm:^2.29.0"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
     mobx: "npm:^6.12.0"
@@ -2353,7 +2353,7 @@ __metadata:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
     mobx: "npm:^6.12.0"
@@ -2378,7 +2378,7 @@ __metadata:
   resolution: "@tony/cv-lib@workspace:packages/lib"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@types/chroma-js": "npm:^2.4.3"
+    "@types/chroma-js": "npm:^2.4.4"
     "@types/node": "npm:^20.11.16"
     chroma-js: "npm:^2.4.2"
     csstype: "npm:^3.1.3"
@@ -2407,14 +2407,14 @@ __metadata:
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.11.16"
     "@types/react": "npm:^18.2.55"
-    "@types/react-dom": "npm:^18.2.18"
+    "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.17"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^3.3.1"
     fast-deep-equal: "npm:^3.1.3"
     mobx-react-lite: "npm:^4.0.5"
-    postcss: "npm:^8.4.34"
+    postcss: "npm:^8.4.35"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-markdown: "npm:^9.0.1"
@@ -2422,7 +2422,7 @@ __metadata:
     tailwindcss: "npm:^3.4.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
-    vite: "npm:^5.0.12"
+    vite: "npm:^5.1.0"
     vite-plugin-webfont-dl: "npm:^3.9.1"
   languageName: unknown
   linkType: soft
@@ -2572,10 +2572,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chroma-js@npm:^2.4.3":
-  version: 2.4.3
-  resolution: "@types/chroma-js@npm:2.4.3"
-  checksum: d6e8567bea25f02d97a2771fc818b949e7d9f750497b364234e671e7b1e807aee104bc4d007f9fe1ab42b5f13cafb7e3fcef0ae6bf6dae2b93f8d271527ba82e
+"@types/chroma-js@npm:^2.4.4":
+  version: 2.4.4
+  resolution: "@types/chroma-js@npm:2.4.4"
+  checksum: 0ea1eec88703dcddeb270b151a9268ba207cd911de837b5a30ec3c7c7068d1d5033f7c44df89d2c94c68db214ecd810e3aa096bd4495c2f903777f911ac69c48
   languageName: node
   linkType: hard
 
@@ -2834,12 +2834,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.18":
-  version: 18.2.18
-  resolution: "@types/react-dom@npm:18.2.18"
+"@types/react-dom@npm:^18.2.19":
+  version: 18.2.19
+  resolution: "@types/react-dom@npm:18.2.19"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 4ef7725b4cebd4a32e049097ddfdfd855a178e63ead97ab6d3084872e7d6c1acd71aa923488123cd1015f0e0b11489d2b44f674a1df8fe82d7827eabbec6dbf1
+  checksum: 98eb760ce78f1016d97c70f605f0b1a53873a548d3c2192b40c897f694fd9c8bb12baeada16581a9c7b26f5022c1d2613547be98284d8f1b82d1611b1e3e7df0
   languageName: node
   linkType: hard
 
@@ -7579,25 +7579,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.32":
-  version: 8.4.32
-  resolution: "postcss@npm:8.4.32"
+"postcss@npm:^8.4.35":
+  version: 8.4.35
+  resolution: "postcss@npm:8.4.35"
   dependencies:
     nanoid: "npm:^3.3.7"
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
-  checksum: 28084864122f29148e1f632261c408444f5ead0e0b9ea9bd9729d0468818ebe73fe5dc0075acd50c1365dbe639b46a79cba27d355ec857723a24bc9af0f18525
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.34":
-  version: 8.4.34
-  resolution: "postcss@npm:8.4.34"
-  dependencies:
-    nanoid: "npm:^3.3.7"
-    picocolors: "npm:^1.0.0"
-    source-map-js: "npm:^1.0.2"
-  checksum: ff4769ff6910f688b0672e0a8f83d1d0a9fee3f61aa33b61b6ade0d5dc2ef53ce1a80d78e2eab03f2d40a15e04bc028682857a4f15d31501d63c80473dee2981
+  checksum: 93a7ce50cd6188f5f486a9ca98950ad27c19dfed996c45c414fa242944497e4d084a8760d3537f078630226f2bd3c6ab84b813b488740f4432e7c7039cd73a20
   languageName: node
   linkType: hard
 
@@ -9614,13 +9603,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.12":
-  version: 5.0.12
-  resolution: "vite@npm:5.0.12"
+"vite@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "vite@npm:5.1.0"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
-    postcss: "npm:^8.4.32"
+    postcss: "npm:^8.4.35"
     rollup: "npm:^4.2.0"
   peerDependencies:
     "@types/node": ^18.0.0 || >=20.0.0
@@ -9650,7 +9639,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: ed0bb26a0d0c8e1dae0b70af9e36adffd7e15d80297443fe4da762596dc81570bad7f0291f590a57c1553f5e435338d8c7ffc483bd9431a95c09d9ac90665fad
+  checksum: 14d136f2e71d657cb55bec2a9330951e27e572ed79c4e79e3edc24decfa87f95664b8206614bfcf6a61db933667e554a8eed389291ad8af49de0784548a83a4c
   languageName: node
   linkType: hard
 
