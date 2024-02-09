@@ -39,10 +39,7 @@
   --chart-link-color-hover: #999;
   --line-chart-fill-color: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-tooltip-text: var(--cv-dominant-language-color, #ffffff0f);
-  --line-chart-tooltip-background: var(
-    --cv-dominant-language-background,
-    #ffffff0f
-  );
+  --line-chart-tooltip-background: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
   --react-select-control: var(--chart-container-background);
@@ -125,8 +122,7 @@ html.dark {
 }
 
 .react-select .react-select__option.react-select__option--is-disabled,
-.react-select .react-select__option.react-select__option--is-disabled:hover
-{
+.react-select .react-select__option.react-select__option--is-disabled:hover {
   background-color: var(--react-select-option-selected-background);
   opacity: 0.4;
 }
@@ -161,28 +157,17 @@ body {
   color: var(--text-color);
   font-family: var(--sans-font);
 }
+
 .card-grid > div {
   margin-bottom: auto;
 }
+
 .activity-link {
   @apply text-gray-500 hover:text-slate-500;
 }
 
 .tag {
-  @apply
-    p-1
-    text-center
-    justify-center
-    items-center
-    rounded-sm
-    tracking-widest
-    select-none
-    whitespace-nowrap
-    leading-tight
-    font-bold
-    inline-flex
-    text-xs
-  ;
+  @apply p-1 text-center justify-center items-center rounded-sm tracking-widest select-none whitespace-nowrap leading-tight font-bold inline-flex text-xs;
   background-color: var(--tag-background-color);
   color: var(--tag-text-color);
 }
@@ -191,9 +176,11 @@ body {
   width: var(--container-width);
   margin: 0 auto;
 }
+
 .dropdown-row {
   margin: 0 auto;
 }
+
 @media (max-width: 1023px) {
   .dropdown-row {
     width: 98%;
@@ -201,6 +188,7 @@ body {
     margin: 0.5rem auto;
   }
 }
+
 #results-info {
   display: flex;
   align-self: center;
@@ -208,42 +196,51 @@ body {
   color: var(--results-info-text-color);
   text-align: center;
 }
+
 #results-info img {
   margin-left: 0.25rem;
 }
+
 #results-container {
   background-color: var(--results-container-background-color);
 }
+
 #results-bottom {
   display: block;
   height: 1.25rem;
 }
+
 #mobile-buttons {
   display: flex;
   justify-content: center;
   height: 30px;
   text-align: center;
 }
+
 #mobile-buttons button.toggle-btn {
   border: 0;
   background-color: initial;
   color: var(--mobile-buttons-toggle-text-color);
   font-family: var(--sans-font);
 }
+
 @media (min-width: 767px) {
   #mobile-buttons {
     display: none;
   }
 }
+
 @media (max-width: 767px) {
   #mobile-buttons .toggle-btn:not(:first-child) {
     margin-left: 0.5rem;
   }
 }
+
 @media screen and (max-width: 767px) {
   #settings {
     display: none !important;
   }
+
   #settings.active {
     display: block !important;
     margin-right: 0;
@@ -251,37 +248,46 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+
   #settings.active .dropdown-row {
     padding-bottom: 0;
   }
+
   #settings.active .toggles {
     height: auto;
     padding-bottom: 0;
   }
 }
+
 @media (max-width: 1023px) {
   #settings {
     width: 100%;
   }
 }
+
 #chart-menu {
   width: 100%;
   font-size: 0.9rem;
   text-align: center;
 }
+
 #chart-menu button {
   color: var(--chart-link-color);
   font-size: 0.9rem;
 }
+
 #chart-menu button.active {
   font-weight: 600;
 }
+
 #chart-menu button:hover {
   color: var(--chart-link-color-hover);
 }
+
 #chart-menu .chart-link {
   cursor: pointer;
 }
+
 .loading-chart {
   display: flex;
   flex-direction: column;
@@ -298,11 +304,13 @@ body {
   gap: 10px 10px;
   color: var(--react-select-tag-color);
 }
+
 @media (max-width: 1023px) {
   .dropdown-row {
     padding-top: 0;
   }
 }
+
 .dropdown-row .activity-count,
 .dropdown-row .topic-tags {
   flex-grow: 1;
@@ -310,9 +318,11 @@ body {
   color: var(--react-select-tag-color);
   text-align: right;
 }
+
 .dropdown-row .topic-tags:hover {
   color: var(--react-select-tag-hover-color);
 }
+
 .dropdown-category-option {
   display: flex !important;
   place-items: center;
