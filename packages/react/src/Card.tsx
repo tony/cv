@@ -249,10 +249,93 @@ const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
   );
 };
 
+const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
+  ({ activity, isOpen }) => {
+    if (activity.category !== CategoryName.Patch || !isOpen) {
+      return null;
+    }
+    return (
+      <div className="pull-request-journey max-w-4xl my-2 ml-2">
+        <ol className="relative border-s border-gray-200 dark:border-gray-700">
+          <li className="ms-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              {activity.createdAt}
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              Opened pull request
+            </h3>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              Open patch submission to {activity.org.name}.
+            </p>
+          </li>
+          {activity.acceptedAt ? (
+            <li className="ms-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                {activity.acceptedAt}
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Merged to project
+              </h3>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                Merged to {activity.org.name}.
+              </p>
+            </li>
+          ) : activity.closedAt ? (
+            <li className="ms-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                {activity.closedAt}
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Pull request closed
+              </h3>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                Pull request to {activity.org.name} closed.
+              </p>
+            </li>
+          ) : (
+            <li className="ms-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" />
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Awaiting final review
+              </h3>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                Pull request to {activity.org.name} still open.
+              </p>
+            </li>
+          )}
+        </ol>
+      </div>
+    );
+  };
+
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
+  const [isOpen, setIsOpen] = React.useState(false);
+  const clickOpen: React.MouseEventHandler<HTMLDivElement> = (
+    e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>,
+  ) => {
+    // Don't trigger if clicking a link
+    if ((event?.target as HTMLElement)?.tagName?.toLowerCase() === "a") return;
+
+    // Don't trigger if selecting text
+    const cellText = document.getSelection();
+    if (cellText.type === "Range") {
+      e.stopPropagation();
+      return;
+    }
+
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row">
+    <div
+      className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row"
+      onClick={clickOpen}
+      onKeyDown={clickOpen}
+    >
       <div className="left-side flex-grow">
         <div>
           <CardOrgName org={org} />
@@ -273,6 +356,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
         <div className="card-activity-title">
           <ReactMarkdown>{activity.title}</ReactMarkdown>
         </div>
+        <PullRequestJourney activity={activity} isOpen={isOpen} />
         <div className="card-activity-info">
           <ActivityInfo activity={activity} />
         </div>
