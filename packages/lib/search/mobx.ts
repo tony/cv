@@ -167,6 +167,7 @@ export const BaseActivity = types
     // Dates
     createdAt: types.string,
     acceptedAt: types.optional(types.maybeNull(types.string), null),
+    closedAt: types.optional(types.maybeNull(types.string), null),
     startedAt: types.optional(types.maybeNull(types.string), null),
     endedAt: types.optional(types.maybeNull(types.string), null),
 
@@ -207,6 +208,7 @@ export const ActivityOpenSource = types
       // Dates
       createdAt: types.string,
       acceptedAt: types.string,
+      closedAt: types.string,
       startedAt: types.string,
       endedAt: types.string,
     }),
