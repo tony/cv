@@ -254,6 +254,7 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
     if (activity.category !== CategoryName.Patch || !isOpen) {
       return null;
     }
+    const isGithub = activity?.diffUrl?.includes("github.com");
     return (
       <div className="pull-request-journey max-w-4xl my-2 ml-2">
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
@@ -263,10 +264,11 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
               {activity.createdAt}
             </time>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Opened pull request
+              {isGithub ? "Opened pull request" : "Submitted patch"}
             </h3>
             <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              Open patch submission to {activity.org.name}.
+              {isGithub ? "Pull request opened with" : "Patch submitted to"}{" "}
+              <CardOrgName org={activity.org} />.
             </p>
           </li>
           {activity.acceptedAt ? (
@@ -279,7 +281,8 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
                 Merged to project
               </h3>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                Merged to {activity.org.name}.
+                {isGithub ? "Pull request merged" : "Patch accepted"} to{" "}
+                <CardOrgName org={activity.org} />.
               </p>
             </li>
           ) : activity.closedAt ? (
