@@ -353,10 +353,11 @@ export const filterActivitiesByFilters = (
   const activeLanguageIds = languages.map(({ id }) => id);
   const activeOrgIds = orgs.map(({ id }) => id);
   const activeCategoryIds = categories.map(({ id }) => id);
+
   const activitiesFilteredByLanguage =
     languages?.length > 0
-      ? activities.filter((activity: Instance<typeof Activity>) => {
-          return (
+      ? activities.filter(
+          (activity: Instance<typeof Activity>) =>
             hasAny(
               new Set(
                 activity.org.languages.map(
@@ -364,26 +365,25 @@ export const filterActivitiesByFilters = (
                 ),
               ),
               activeLanguageIds,
-            ).length > 0
-          );
-        })
+            ).length > 0,
+        )
       : activities;
+
   const activitiesFilteredByOrg =
     orgs?.length > 0
       ? activitiesFilteredByLanguage.filter(
-          (activity: Instance<typeof Activity>) => {
-            return activeOrgIds.includes(activity.org.id);
-          },
+          (activity: Instance<typeof Activity>) =>
+            activeOrgIds.includes(activity.org.id),
         )
       : activitiesFilteredByLanguage;
+
   const activitiesFilteredByCategory =
     categories?.length > 0
-      ? activitiesFilteredByOrg.filter(
-          (activity: Instance<typeof Activity>) => {
-            return activeCategoryIds.includes(activity.category);
-          },
+      ? activitiesFilteredByOrg.filter((activity: Instance<typeof Activity>) =>
+          activeCategoryIds.includes(activity.category),
         )
       : activitiesFilteredByOrg;
+
   return activitiesFilteredByCategory.filter(
     (activity: Instance<typeof Activity>) => {
       if (activity.category !== "Patch") {
