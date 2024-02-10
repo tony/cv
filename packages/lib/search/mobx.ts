@@ -530,28 +530,33 @@ export const CVState = types
         {} as ActivityCountRecord,
       );
     },
-    get languageUsageStats() {
-      return Array.from(this.filteredActivities.values()).reduce(
-        (languages, activity) => {
-          for (const language of activity.org.languages) {
-            const { id: languageName } = language; // : Instance<typeof Language>)
+
+    get languageUsageStats(): LanguageCountRecord {
+      // Initialize the languages object with all available languages set to 0
+      const initialLanguageCounts: LanguageCountRecord = this.languages.reduce(
+        (acc, { id: languageName }) => {
+          if (languageName) acc[languageName] = 0;
+          return acc;
+        },
+        {},
+      );
+
+      // Accumulate language usage from filteredActivities
+      const languageUsage = Array.from(this.filteredActivities.values()).reduce(
+        (acc, activity) => {
+          for (const { id: languageName } of activity.org.languages) {
             if (languageName) {
-              if (languageName in languages) {
-                languages[languageName] += 1;
-              } else {
-                languages[languageName] = 1;
-              }
+              acc[languageName] = (acc[languageName] || 0) + 1;
             }
           }
-          return languages;
+          return acc;
         },
-        Object.fromEntries<number>(
-          self.languages
-            .filter(({ id }: Instance<typeof Language>) => id)
-            .map(({ id }) => [id as string, 0]),
-        ),
-      ) as LanguageCountRecord;
+        initialLanguageCounts,
+      );
+
+      return languageUsage;
     },
+
     get sortedLanguages(): [string, number][] {
       /** Languages sorted ascending by usage **/
       return Object.entries(this.languageUsageStats)
