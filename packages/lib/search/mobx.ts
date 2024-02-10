@@ -316,12 +316,12 @@ export const UI = types.model("UI", {
   chart: types.enumeration<Chart>("Chart", Object.values(Chart)),
 });
 
-export const sortActivities = (activities: Instance<typeof Activity>[]) => {
-  return activities
-    .sort((a: Instance<typeof Activity>, b: Instance<typeof Activity>) =>
-      a?.createdAt > b?.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1,
-    )
-    .reverse();
+export const sortActivities: (
+  activities: Instance<typeof Activity>[],
+) => Instance<typeof Activity>[] = (activities) => {
+  return activities.sort((a, b) =>
+    a.createdAt < b.createdAt ? 1 : a.createdAt === b.createdAt ? 0 : -1,
+  );
 };
 
 export const filterActivitiesByYear = (
