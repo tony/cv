@@ -21,7 +21,10 @@ export const ResultList = observer(() => {
   const { filteredActivities } = useMst();
 
   return (
-    <div id="results" className="divide-slate-700 divide-y md:divide-y-0">
+    <ul
+      id="results"
+      className="divide-slate-700 divide-y md:divide-y-0 list-none"
+    >
       {filteredActivities?.map?.((activity) => {
         return (
           <ActivityCard
@@ -30,7 +33,7 @@ export const ResultList = observer(() => {
           />
         );
       })}
-    </div>
+    </ul>
   );
 });
 export const Results = observer(() => {

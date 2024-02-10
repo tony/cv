@@ -315,27 +315,70 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
 export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   const { org } = activity;
   const [isOpen, setIsOpen] = React.useState(false);
-  const clickOpen: React.MouseEventHandler<HTMLDivElement> = (
-    e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>,
+  const clickOpen:
+    | React.MouseEventHandler<HTMLLIElement>
+    | React.KeyboardEventHandler<HTMLLIElement>
+    | undefined = (
+    e: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
   ) => {
     // Don't trigger if clicking a link
     if ((event?.target as HTMLElement)?.tagName?.toLowerCase() === "a") return;
 
     // Don't trigger if selecting text
     const cellText = document.getSelection();
-    if (cellText.type === "Range") {
+    if (cellText?.type === "Range") {
       e.stopPropagation();
       return;
+    }
+
+    const keyPress = e.type === "keydown" && (e as React.KeyboardEvent).key;
+    const navKeys = ["Enter", "ArrowUp", "ArrowDown"];
+    if (keyPress) {
+      const cardEl = e.currentTarget?.closest(".card");
+      const previousItem =
+        cardEl?.previousElementSibling ??
+        document.querySelector("#chart-menu button:last-child");
+      const nextItem = cardEl?.nextElementSibling;
+
+      if (["ArrowUp", "k"].includes(keyPress)) {
+        (previousItem as HTMLDivElement)?.focus();
+        return;
+      }
+      if (["ArrowDown", "j"].includes(keyPress)) {
+        (nextItem as HTMLDivElement)?.focus();
+        return;
+      }
+
+      if (["ArrowRight", "l"].includes(keyPress)) {
+        setIsOpen(!isOpen);
+        return;
+      }
+
+      if (["ArrowLeft", "h"].includes(keyPress)) {
+        setIsOpen(!isOpen);
+        return;
+      }
+
+      if (["Space", " "].includes(keyPress)) {
+        setIsOpen(!isOpen);
+        e.preventDefault();
+        return;
+      }
+
+      if (["Tab", "Shift", "Control", "Alt", "z"].includes(keyPress)) {
+        return;
+      }
     }
 
     setIsOpen(!isOpen);
   };
   return (
-    <div
+    <li
       className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row"
       onClick={clickOpen}
       onKeyDown={clickOpen}
-      tabindex="0"
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: Simplest way with JSX?
+      tabIndex={0}
     >
       <div className="left-side flex-grow">
         <div>
@@ -365,6 +408,6 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
       <div className="right-side text-left md:text-right pt-2 md:pt-0 gap-x-1 flex">
         <LanguageTags org={org} />
       </div>
-    </div>
+    </li>
   );
 };
