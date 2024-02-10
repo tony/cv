@@ -42,6 +42,7 @@
   --line-chart-tooltip-background: var(--cv-dominant-language-background, #ffffff0f);
   --line-chart-grid-stroke: #dddddd;
   --line-chart-grid-tick: #999;
+  --loading-screen-min-height: calc(100vh - var(--top-nav-height));
   --react-select-control: var(--chart-container-background);
   --react-select-menu: var(--chart-background-color);
   --react-select-menu-list: var(--chart-container-background);
@@ -97,69 +98,56 @@ html.dark {
 }
 
 .react-select .react-select__control {
-  border-color: var(--line-chart-grid-stroke);
-  background-color: var(--react-select-control);
+  @apply border-[var(--line-chart-grid-stroke)] bg-[var(--react-select-control)];
 }
 
 .react-select .react-select__menu {
-  border: var(--line-chart-grid-stroke) 1px solid;
-  background-color: var(--chart-background-color);
-  color: var(--text-color);
+  @apply border-[var(--line-chart-grid-stroke)] border bg-[var(--chart-background-color)] text-[var(--text-color)];
 }
 
 .react-select .react-select__menu-list {
-  background-color: var(--react-select-menu-list);
-  color: var(--text-color);
+  @apply bg-[var(--react-select-menu-list)] text-[var(--text-color)];
 }
 
 .react-select .react-select__control:hover {
-  border-color: var(--line-chart-grid-tick);
+  @apply border-[var(--line-chart-grid-tick)];
 }
 
 .react-select .react-select__option {
-  background-color: var(--react-select-option-background);
-  color: var(--react-select-option-text);
+  @apply bg-[var(--react-select-option-background)] text-[var(--react-select-option-text)];
 }
 
 .react-select .react-select__option.react-select__option--is-disabled,
 .react-select .react-select__option.react-select__option--is-disabled:hover {
-  background-color: var(--react-select-option-selected-background);
-  opacity: 0.4;
+  @apply bg-[var(--react-select-option-selected-background)] opacity-40;
 }
 
 .react-select .react-select__option.react-select__option--is-focused,
 .react-select .react-select__option:hover {
-  background-color: var(--react-select-option-hover-background);
-  color: var(--react-select-option-hover-text);
+  @apply bg-[var(--react-select-option-hover-background)] text-[var(--react-select-option-hover-text)];
 }
 
 .react-select .react-select__option--is-selected {
-  background-color: var(--react-select-option-selected-background);
-  color: var(--react-select-option-selected-text);
-  font-weight: bold;
+  @apply bg-[var(--react-select-option-selected-background)] text-[var(--react-select-option-selected-text)] font-bold;
 }
 
 .react-select .react-select__option.react-select__option--is-focused.react-select__option--is-selected,
 .react-select .react-select__option--is-selected:hover {
-  background-color: var(--react-select-option-selected-background);
-  color: var(--react-select-option-selected-hover-text);
+  @apply bg-[var(--react-select-option-selected-background)] text-[var(--react-select-option-selected-hover-text)];
 }
 
 .react-select .react-select__input-container,
 .react-select .react-select__placeholder,
 .react-select .react-select__single-value {
-  color: var(--react-select-input-container-text);
+  @apply text-[var(--react-select-input-container-text)];
 }
 
 body {
-  margin: 0 0 1rem 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--sans-font);
+  @apply m-0 mb-1 bg-[var(--background-color)] text-[var(--text-color)] font-[var(--sans-font)];
 }
 
 .card-grid > div {
-  margin-bottom: auto;
+  @apply mb-auto;
 }
 
 .activity-link {
@@ -168,174 +156,132 @@ body {
 
 .tag {
   @apply p-1 text-center justify-center items-center rounded-sm tracking-widest select-none whitespace-nowrap leading-tight font-bold inline-flex text-xs;
-  background-color: var(--tag-background-color);
-  color: var(--tag-text-color);
+  @apply bg-[var(--tag-background-color)] text-[var(--tag-text-color)];
 }
 
 #settings {
-  width: var(--container-width);
-  margin: 0 auto;
+  @apply w-[var(--container-width)] mx-auto;
 }
 
 .dropdown-row {
-  margin: 0 auto;
+  @apply mx-auto;
 }
 
 @media (max-width: 1023px) {
   .dropdown-row {
-    width: 98%;
-    max-width: initial;
-    margin: 0.5rem auto;
+    @apply w-[98%] max-w-none mx-auto my-1;
   }
 }
 
 #results-info {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  color: var(--results-info-text-color);
-  text-align: center;
+  @apply flex self-center justify-center text-[var(--results-info-text-color)] text-center;
 }
 
 #results-info img {
-  margin-left: 0.25rem;
+  @apply ml-1;
 }
 
 #results-container {
-  background-color: var(--results-container-background-color);
+  @apply bg-[var(--results-container-background-color)];
 }
 
 #results-bottom {
-  display: block;
-  height: 1.25rem;
+  @apply block h-1;
 }
 
 #mobile-buttons {
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  text-align: center;
+  @apply flex justify-center h-8 text-center;
 }
 
 #mobile-buttons button.toggle-btn {
-  border: 0;
-  background-color: initial;
-  color: var(--mobile-buttons-toggle-text-color);
-  font-family: var(--sans-font);
+  @apply border-0 bg-transparent text-[var(--mobile-buttons-toggle-text-color)] font-[var(--sans-font)];
 }
 
 @media (min-width: 767px) {
   #mobile-buttons {
-    display: none;
+    @apply hidden;
   }
 }
 
 @media (max-width: 767px) {
   #mobile-buttons .toggle-btn:not(:first-child) {
-    margin-left: 0.5rem;
+    @apply ml-1;
   }
 }
 
 @media screen and (max-width: 767px) {
   #settings {
-    display: none !important;
+    @apply !hidden;
   }
 
   #settings.active {
-    display: block !important;
-    margin-right: 0;
-    margin-left: 0;
-    padding-right: 0;
-    padding-left: 0;
+    @apply !block !mr-0 !ml-0 !pr-0 !pl-0;
   }
 
   #settings.active .dropdown-row {
-    padding-bottom: 0;
+    @apply pb-0;
   }
 
   #settings.active .toggles {
-    height: auto;
-    padding-bottom: 0;
+    @apply h-auto pb-0;
   }
 }
 
 @media (max-width: 1023px) {
   #settings {
-    width: 100%;
+    @apply w-full;
   }
 }
 
 #chart-menu {
-  width: 100%;
-  font-size: 0.9rem;
-  text-align: center;
+  @apply w-full text-[0.9rem] text-center;
 }
 
 #chart-menu button {
-  color: var(--chart-link-color);
-  font-size: 0.9rem;
+  @apply text-[var(--chart-link-color)] text-[0.9rem];
 }
 
 #chart-menu button.active {
-  font-weight: 600;
+  @apply font-semibold;
 }
 
 #chart-menu button:hover {
-  color: var(--chart-link-color-hover);
+  @apply text-[var(--chart-link-color-hover)];
 }
 
 #chart-menu .chart-link {
-  cursor: pointer;
+  @apply cursor-pointer;
 }
 
 .loading-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: var(--chart-height);
-  text-align: center;
+  @apply flex flex-col items-center justify-center h-[var(--chart-height)] text-center;
 }
 
 .dropdown-row {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 10px 10px;
-  color: var(--react-select-tag-color);
+  @apply grid grid-rows-1 grid-cols-1 md:grid-cols-3 gap-2.5 text-[var(--react-select-tag-color)];
 }
 
 @media (max-width: 1023px) {
   .dropdown-row {
-    padding-top: 0;
+    @apply pt-0;
   }
 }
 
 .dropdown-row .activity-count,
 .dropdown-row .topic-tags {
-  flex-grow: 1;
-  place-self: center;
-  color: var(--react-select-tag-color);
-  text-align: right;
+  @apply flex-grow place-self-center text-right text-[var(--react-select-tag-color)];
 }
 
 .dropdown-row .topic-tags:hover {
-  color: var(--react-select-tag-hover-color);
+  @apply text-[var(--react-select-tag-hover-color)];
 }
 
 .dropdown-category-option {
-  display: flex !important;
-  place-items: center;
-  line-height: 24px;
+  @apply flex place-items-center leading-6;
 }
 
 #loading-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - var(--top-nav-height));
-  text-align: center;
+  @apply flex flex-col items-center justify-center min-h-[var(loading-screen-min-height)] text-center;
 }
 
 /* Reset button for a11y usage */
