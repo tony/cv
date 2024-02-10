@@ -64,6 +64,48 @@ query fetchIssues($login: String!, $cursor: String) {
           closedAt
           title
           url
+          # files(first: 20) {
+          #   edges {
+          #     node {
+          #       additions
+          #       changeType
+          #       deletions
+          #       path
+          #     }
+          #   }
+          # }
+          merged
+          number
+          timelineItems(itemTypes: [MERGED_EVENT, CLOSED_EVENT], first: 20) {
+            edges {
+              node {
+                ... on ClosedEvent {
+                  closedEventId: id
+                  stateReason
+                  createdAt
+                }
+                ... on MergedEvent {
+                  mergedEventId: id
+                  createdAt
+                  resourcePath
+                  url
+                  commit {
+                    additions
+                    deletions
+                    messageHeadline
+                    url
+                    zipballUrl
+                    treeUrl
+                  }
+                  mergeRef {
+                    name
+                    prefix
+                  }
+                  mergeRefName
+                }
+              }
+            }
+          }
           repository {
             url
             name
@@ -185,6 +227,10 @@ fetchGitHubIssues()
         id: `${id++}`,
         qaUrl: pr.url,
         title: pr.title,
+        merged: pr.merged,
+        url: pr.url,
+        number: pr.number,
+        timelineItems: pr.timelineItems.edges.map((edge) => edge.node),
       };
     });
     data = JSON.stringify(pullRequestsFinal, null, "  ");
