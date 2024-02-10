@@ -332,18 +332,8 @@ export const filterActivitiesByYear = (
   }: Pick<Instance<typeof SearchOptions>, "startYear" | "endYear">,
 ): Instance<typeof Activity>[] => {
   return activities.filter((activity: Instance<typeof Activity>) => {
-    if (activity?.createdAt) {
-      const createdAt = new Date(activity.createdAt);
-      const createdYear = getYear(createdAt);
-      if (startYear > createdYear) {
-        return false;
-      }
-
-      if (endYear < createdYear) {
-        return false;
-      }
-    }
-    return true;
+    const year = getYear(new Date(activity.createdAt));
+    return year >= startYear && year <= endYear;
   });
 };
 
