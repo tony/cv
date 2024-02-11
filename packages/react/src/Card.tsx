@@ -63,20 +63,16 @@ export const PatchInfo: React.FC<{
     ]);
   }
 
-  return (
-    <div className="text-xs">
-      {items.map(([id, component], idx) => (
-        <React.Fragment key={`patch-activity-link-row-${id}`}>
-          {idx > 0 && (
-            <span className="card-section-separator text-black dark:text-white px-1">
-              ·
-            </span>
-          )}
-          {component}
-        </React.Fragment>
-      ))}
-    </div>
-  );
+  return items.map(([id, component], idx) => (
+    <React.Fragment key={`patch-activity-link-row-${id}`}>
+      {idx > 0 && (
+        <span className="card-section-separator text-black dark:text-white px-1">
+          ·
+        </span>
+      )}
+      {component}
+    </React.Fragment>
+  ));
 };
 
 export const PublicationInfo: React.FC<{
@@ -148,16 +144,12 @@ export const PublicationInfo: React.FC<{
     ]);
   }
 
-  return (
-    <div className="activity-link-row">
-      {items.map(([id, component], idx) => (
-        <React.Fragment key={`publication-info-activity-link-row-${id}`}>
-          {idx > 0 && <span className="card-section-separator">·</span>}
-          {component}
-        </React.Fragment>
-      ))}
-    </div>
-  );
+  return items.map(([id, component], idx) => (
+    <React.Fragment key={`publication-info-activity-link-row-${id}`}>
+      {idx > 0 && <span className="card-section-separator">·</span>}
+      {component}
+    </React.Fragment>
+  ));
 };
 
 export const CompanyInfo: React.FC<{
@@ -181,16 +173,12 @@ export const CompanyInfo: React.FC<{
     ]);
   }
 
-  return (
-    <div className="activity-link-row">
-      {items.map(([id, component], idx) => (
-        <React.Fragment key={`company-activity-link-row-${id}`}>
-          {idx > 0 && <span className="card-section-separator">·</span>}
-          {component}
-        </React.Fragment>
-      ))}
-    </div>
-  );
+  return items.map(([id, component], idx) => (
+    <React.Fragment key={`company-activity-link-row-${id}`}>
+      {idx > 0 && <span className="card-section-separator">·</span>}
+      {component}
+    </React.Fragment>
+  ));
 };
 
 export const Links: React.FC<{
@@ -217,27 +205,23 @@ export const Links: React.FC<{
     }
   }
 
-  return (
-    <div className="text-xs">
-      {items.map(([id, component], idx) => (
-        <React.Fragment key={`links-link-row-${id}`}>
-          {idx > 0 && (
-            <span className="card-section-separator text-black dark:text-white px-1">
-              ·
-            </span>
-          )}
-          {component}
-        </React.Fragment>
-      ))}
-    </div>
-  );
+  return items.map(([id, component], idx) => (
+    <React.Fragment key={`links-link-row-${id}`}>
+      {idx > 0 && (
+        <span className="card-section-separator text-black dark:text-white px-1">
+          ·
+        </span>
+      )}
+      {component}
+    </React.Fragment>
+  ));
 };
 
 export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
   ({ activity }) => {
     const { org } = activity;
     return (
-      <>
+      <div className="activity-link-row text-xs">
         {CategoryName.Patch === activity.category && (
           <PatchInfo
             activity={activity as Instance<typeof ActivityOpenSource>}
@@ -250,7 +234,7 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
           <CompanyInfo org={org as Instance<typeof CompanyOrg>} />
         )}
         {activity?.links && <Links activity={activity} />}
-      </>
+      </div>
     );
   };
 
