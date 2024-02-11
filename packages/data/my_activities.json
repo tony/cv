@@ -229,6 +229,46 @@
     "org": "multiverse"
   },
   {
+    "id": "41000",
+    "category": "Acquisition",
+    "createdAt": "2012-02-01",
+    "title": "Social Amp acquired by Merkle",
+    "description": "Social Amp's Facebook API and social media campaigns tech acquired by Merkle.",
+    "acquiringOrg": "merkle",
+    "org": "social-amp",
+    "url": "https://www.merkle.com/en/merkle-now/press-releases/2012/merkle-acquires-social-amp--leading-facebook-open-graph-develope.html",
+    "links": {
+      "Press release": {
+        "title": "Press release",
+        "url": "https://www.merkle.com/en/merkle-now/press-releases/2012/merkle-acquires-social-amp--leading-facebook-open-graph-develope.html"
+      },
+      "Crunchbase": {
+        "title": "Crunchbase",
+        "url": "https://www.crunchbase.com/acquisition/merkle-acquires-social-amp--23cf958c"
+      }
+    }
+  },
+  {
+    "id": "41001",
+    "category": "Acquisition",
+    "createdAt": "2023-05-23",
+    "title": "Eduflow acquired by Multiverse",
+    "description": "Eduflow acquired by professional apprenticeship platform Multiverse",
+    "acquiringOrg": "multiverse",
+    "org": "peergrade",
+    "url": "https://www.crunchbase.com/acquisition/whitehat-acquires-eduflow--a5083ae4",
+    "links": {
+      "Press release": {
+        "title": "Press release",
+        "url": "https://www.multiverse.io/en-US/blog/multiverse-tech-multiverse-joined-by-eduflow-and-hires-cpto"
+      },
+      "Crunchbase": {
+        "title": "Crunchbase",
+        "url": "https://www.crunchbase.com/acquisition/whitehat-acquires-eduflow--a5083ae4"
+      }
+    }
+  },
+  {
     "id": "50000",
     "category": "Publication",
     "createdAt": "2017-01-01",

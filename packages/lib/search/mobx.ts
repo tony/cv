@@ -153,6 +153,11 @@ export const Org = types.union(
   OpenSourceOrg,
 );
 
+export const Link = types.model("UiCssProperties", {
+  title: types.string,
+  url: types.string,
+});
+
 export const BaseActivity = types
   .model("BaseActivity", {
     id: types.identifier,
@@ -174,6 +179,10 @@ export const BaseActivity = types
     // URLs (OpenSource)
     qaUrl: types.optional(types.maybeNull(types.string), null),
     diffUrl: types.optional(types.maybeNull(types.string), null),
+
+    // ActivityAcquisition (Acquisition)
+    acquiringOrg: types.optional(types.maybeNull(types.reference(Org)), null),
+    links: types.optional(types.maybeNull(types.map(Link)), null),
   })
   .preProcessSnapshot((activity) => {
     return {
@@ -285,6 +294,20 @@ export const ActivityWork = types
   )
   .named("ActivityWork");
 
+export const ActivityAcquisition = types
+  .compose(
+    types.model({
+      category: types.literal(CategoryName.Acquisition),
+      links: types.map(Link),
+      acquiringOrg: types.reference(Org),
+
+      // Dates
+      createdAt: types.string,
+    }),
+    BaseActivity,
+  )
+  .named("ActivityAcquisition");
+
 export const Activity = types.union(
   ActivityOpenSource,
   ActivitySoftware,
@@ -293,6 +316,7 @@ export const Activity = types.union(
   ActivityArticle,
   ActivityPublication,
   ActivityWork,
+  ActivityAcquisition,
 );
 
 export const SearchOptions = types.model("SearchOptions", {
