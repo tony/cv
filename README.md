@@ -203,8 +203,11 @@ yarn workspaces run lint
 
 ## Thanks
 
-[@IonicaBizao/github-colors] - For `data/gh_colors.json` (via `yarn workspace @tony/cv-data run github-colors`), [license
-MIT]
+- [@IonicaBizao/github-colors] - For `data/gh_colors.json` (via `yarn workspace @tony/cv-data run github-colors`), [github-colors license]: MIT
+- [Octicons] ([primer/octicons](https://github.com/primer/octicons)) - For
+  activity timeline icons, [Octicons license]: MIT.
 
 [@ionicabizao/github-colors]: https://github.com/IonicaBizau/github-colors
-[license mit]: https://github.com/IonicaBizau/github-colors/blob/2ed4842/LICENSE
+[github-colors license]: https://github.com/IonicaBizau/github-colors/blob/2ed4842/LICENSE
+[Octicons]: https://primer.style/foundations/icons
+[Octicons license]: https://github.com/primer/octicons/blob/12b41dc/LICENSE
