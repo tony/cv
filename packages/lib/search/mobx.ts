@@ -205,6 +205,18 @@ export const BaseActivity = types
     };
   });
 
+export const OpenSourceCommit = types.model("OpenSourceCommit", {
+  oid: types.string,
+  abbreviatedOid: types.string,
+  messageHeadline: types.string,
+  url: types.string,
+  commitUrl: types.string,
+  zipballUrl: types.string,
+  treeUrl: types.string,
+  additions: types.number,
+  deletions: types.number,
+});
+
 export const ActivityOpenSource = types
   .compose(
     types.model({
@@ -216,6 +228,7 @@ export const ActivityOpenSource = types
 
       // Pull request
       number: types.number,
+      mergeCommit: types.maybe(OpenSourceCommit),
 
       // Dates
       createdAt: types.string,

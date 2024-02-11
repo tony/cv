@@ -348,7 +348,23 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
               </h3>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                 {isGithub ? "Pull request merged" : "Patch accepted"} to{" "}
-                <CardOrgName org={activity.org} />.
+                <CardOrgName org={activity.org} />
+                {isGithub && (
+                  <>
+                    {" "}
+                    via{" "}
+                    <a
+                      href={activity?.mergeCommit?.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={activityLinkClasses}
+                    >
+                      {activity?.org?.name}@
+                      {activity?.mergeCommit?.abbreviatedOid}
+                    </a>
+                  </>
+                )}
+                .
               </p>
             </li>
           ) : activity.closedAt ? (
