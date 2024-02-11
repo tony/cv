@@ -301,7 +301,7 @@
   "peergrade": {
     "id": "50004",
     "orgType": "Company",
-    "name": "Peergrade",
+    "name": "Eduflow (a.k.a. Peergrade)",
     "url": "https://www.peergrade.io",
     "logo": "/static/img/peergrade-blue.png",
     "languages": ["JavaScript", "TypeScript", "Python"]
