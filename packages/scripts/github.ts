@@ -3,7 +3,89 @@ import fs from "fs";
 import moment from "moment";
 import { Octokit } from "octokit";
 
-const ghToken =
+interface PullRequestEdge {
+  node: PullRequestNode;
+}
+
+interface PullRequestNode {
+  mergedAt: string;
+  createdAt: string;
+  closedAt: string;
+  title: string;
+  url: string;
+  merged: boolean;
+  number: number;
+  timelineItems: TimelineConnection;
+  repository: Repository;
+}
+
+interface TimelineConnection {
+  edges: TimelineItemEdge[];
+}
+
+type TimelineItem = ClosedEvent | MergedEvent;
+
+interface TimelineItemEdge {
+  node: ClosedEvent | MergedEvent;
+}
+
+interface ClosedEvent {
+  closedEventId: string;
+  stateReason: string;
+  createdAt: string;
+}
+
+interface MergedEvent {
+  mergedEventId: string;
+  createdAt: string;
+  resourcePath: string;
+  url: string;
+  commit: Commit;
+  mergeRef: MergeRef;
+  mergeRefName: string;
+}
+
+interface Commit {
+  additions: number;
+  deletions: number;
+  messageHeadline: string;
+  url: string;
+  zipballUrl: string;
+  treeUrl: string;
+}
+
+interface MergeRef {
+  name: string;
+  prefix: string;
+}
+
+interface Repository {
+  url: string;
+  name: string;
+  nameWithOwner: string;
+  homepageUrl: string;
+  isPrivate: boolean;
+  languages: LanguageConnection;
+}
+
+interface RepositoryWithLanguagesStringified
+  extends Omit<Repository, "languages"> {
+  languages: string[];
+}
+
+interface LanguageNode {
+  name: string;
+}
+
+interface LanguageEdge {
+  node: LanguageNode;
+}
+
+interface LanguageConnection {
+  edges: LanguageEdge[];
+}
+
+const ghToken: string | undefined =
   process.env.GITHUB_API_TOKEN || process.env.HOMEBREW_GITHUB_API_TOKEN;
 
 if (!ghToken) {
@@ -13,7 +95,13 @@ if (!ghToken) {
   process.exit(0);
 }
 
-const config = {
+const config: {
+  exclude_own_repo: boolean;
+  exclude_users: string[];
+  gh_user: string;
+  ignore_private_repos: boolean;
+  output_dir: string;
+} = {
   exclude_own_repo: true,
   exclude_users: [
     "cihai",
@@ -42,9 +130,9 @@ if (!fs.existsSync(config.output_dir)) {
 
 const octokit = new Octokit({ auth: ghToken });
 
-let issues = [];
+const fetchGitHubIssues = async (): Promise<PullRequestEdge[]> => {
+  let issues: PullRequestEdge[] = [];
 
-const fetchGitHubIssues = async () => {
   // on first invocation, add initial query
   const ghIterator = octokit.graphql.paginate.iterator(
     `
@@ -142,11 +230,12 @@ query fetchIssues($login: String!, $cursor: String) {
 };
 
 fetchGitHubIssues()
-  .then((rawPrs) => {
-    let prs = rawPrs;
+  .then((rawPrs: PullRequestEdge[]) => {
+    let prs: PullRequestEdge[] = rawPrs;
     if (config.exclude_own_repo) {
       prs = prs.filter(
-        (pr) => !pr.node.url.includes(`https://github.com/${config.gh_user}/`),
+        (pr: PullRequestEdge) =>
+          !pr.node.url.includes(`https://github.com/${config.gh_user}/`),
       );
     }
     if (config.exclude_users) {
@@ -161,17 +250,18 @@ fetchGitHubIssues()
       prs = prs.filter((pr) => !pr.node.repository.isPrivate);
     }
 
-    const prNodes = prs.map((pr) => pr.node); // zoom in on "node"
+    const prNodes: PullRequestNode[] = prs.map((pr) => pr.node); // zoom in on "node"
 
-    let projects = prNodes.map((pr) => pr.repository);
-
-    // join languages
-    projects = projects.map((p) => {
-      p.languages = p.languages.edges.length
-        ? [p.languages.edges[0].node.name]
-        : undefined;
-      return p;
-    });
+    let projects: RepositoryWithLanguagesStringified[] = prNodes.map(
+      ({ repository }: { repository: Repository }) => {
+        return {
+          ...repository,
+          languages: repository.languages.edges.length
+            ? [repository.languages.edges[0].node.name]
+            : undefined,
+        };
+      },
+    );
 
     // Filter uniques
     projects = projects.filter(
