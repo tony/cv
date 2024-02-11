@@ -289,11 +289,24 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
               {activity.createdAt}
             </time>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {isGithub ? "Opened pull request" : "Submitted patch"}
-            </h3>
+              {isGithub ? "Opened pull request" : "Submitted patch"}{" "}
+                          </h3>
             <p className="text-base font-normal text-gray-500 dark:text-gray-400">
               {isGithub ? "Pull request opened with" : "Patch submitted to"}{" "}
-              <CardOrgName org={activity.org} />.
+              <CardOrgName org={activity.org} />{isGithub && (
+                <>
+                {" "}at{" "}
+                  <a
+                    href={`${activity.org.repoUrl}/pull/${activity.number}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={activityLinkClasses}
+                  >
+                    {activity.org.name}#{activity.number}
+                  </a>
+                </>
+              )}
+.
             </p>
           </li>
           {activity.acceptedAt ? (

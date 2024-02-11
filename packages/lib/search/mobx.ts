@@ -214,6 +214,9 @@ export const ActivityOpenSource = types
       qaUrl: types.string,
       diffUrl: types.string,
 
+      // Pull request
+      number: types.number,
+
       // Dates
       createdAt: types.string,
       acceptedAt: types.string,
