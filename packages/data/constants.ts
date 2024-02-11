@@ -26,7 +26,7 @@ export const CategoryNameMap: CategoryNameStringMap = {
 export const CategoryVerbMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
-  Patch: "Patch accepted",
+  Patch: "Merged",
   Work: "Worked there",
   Acquisition: "Acquired",
   Volunteer: "Volunteered there",
@@ -37,7 +37,7 @@ export const CategoryVerbMap: CategoryNameStringMap = {
 export const CategoryVerbPresentTenseMap: CategoryNameStringMap = {
   SoftwareApp: "Published",
   SoftwareLib: "Published",
-  Patch: "Patch submitted",
+  Patch: "Merge requested",
   Work: "Working there since",
   Acquisition: "Acquired",
   Volunteer: "Volunteering there since",
