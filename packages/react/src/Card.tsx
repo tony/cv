@@ -25,55 +25,44 @@ interface ActivityCardProps {
   activity: Instance<typeof Activity>;
 }
 
-export const PatchInfo: React.FC<{
-  activity: Instance<typeof ActivityOpenSource>;
-}> = ({ activity }) => {
-  type PatchLink = [id: string, component: React.ReactNode];
-  const items: PatchLink[] = [];
+interface LinkProps {
+  id: string;
+  title: string;
+  url: string;
+}
 
-  if (activity?.qaUrl) {
-    items.push([
-      "qa-link",
-      <span>
-        <a
-          href={activity.qaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          💬 Pull Request
-        </a>
-      </span>,
-    ]);
-  }
-
-  if (activity?.diffUrl) {
-    items.push([
-      "diff-link",
-      <span>
-        <a
-          href={activity.diffUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          ✒️ .diff
-        </a>
-      </span>,
-    ]);
-  }
-
-  return items.map(([id, component], idx) => (
-    <React.Fragment key={`patch-activity-link-row-${id}`}>
+export const Links: React.FC<{
+  linkMap: LinkProps[];
+}> = ({ linkMap }) => {
+  return linkMap.map((link, idx) => (
+    <React.Fragment key={link.id}>
       {idx > 0 && (
         <span className="card-section-separator text-black dark:text-white px-1">
           ·
         </span>
       )}
-      {component}
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={activityLinkClasses}
+      >
+        {link.title}
+      </a>
     </React.Fragment>
   ));
 };
+
+export const PatchInfo: React.FC<{
+  activity: Instance<typeof ActivityOpenSource>;
+}> = ({ activity }) => (
+  <Links
+    linkMap={[
+      { id: "qa-link", title: "💬 Pull Request", url: activity.qaUrl },
+      { id: "diff-link", title: "✒️ .diff", url: activity.diffUrl },
+    ]}
+  />
+);
 
 export const PublicationInfo: React.FC<{
   org: Instance<typeof PublicationOrg>;
