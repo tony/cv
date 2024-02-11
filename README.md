@@ -206,8 +206,12 @@ yarn workspaces run lint
 - [@IonicaBizao/github-colors] - For `data/gh_colors.json` (via `yarn workspace @tony/cv-data run github-colors`), [github-colors license]: MIT
 - [Octicons] ([primer/octicons](https://github.com/primer/octicons)) - For
   activity timeline icons, [Octicons license]: MIT.
+- [Flowbite] - Tailwind Theme UI library, including timeline, [Flowbite
+  license]: MIT.
 
 [@ionicabizao/github-colors]: https://github.com/IonicaBizau/github-colors
 [github-colors license]: https://github.com/IonicaBizau/github-colors/blob/2ed4842/LICENSE
 [Octicons]: https://primer.style/foundations/icons
 [Octicons license]: https://github.com/primer/octicons/blob/12b41dc/LICENSE
+[Flowbite]: https://github.com/themesberg/flowbite
+[Flowbite license]: https://github.com/themesberg/flowbite/blob/b0d2939/LICENSE.md
