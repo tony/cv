@@ -284,10 +284,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
       <div className="pull-request-journey max-w-4xl my-2 ml-2">
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
           <li className="mb-6 ms-6">
-            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-green-900">
               {/* Credit: git-pull-request, https://primer.style/foundations/icons/git-pull-request-16 */}
               <svg
-                className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300"
+                className="w-3.5 h-3.5 text-green-800 dark:text-green-300"
                 aria-hidden="true"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
@@ -326,10 +326,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
           </li>
           {activity.acceptedAt ? (
             <li className="ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-purple-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-purple-900">
                 {/* Credit: git-merge, https://primer.style/foundations/icons/git-merge-16 */}
                 <svg
-                  className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300"
+                  className="w-3.5 h-3.5 text-purple-800 dark:text-purple-300"
                   aria-hidden="true"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
@@ -353,9 +353,9 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
             </li>
           ) : activity.closedAt ? (
             <li className="ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-red-900">
                 <svg
-                  className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300"
+                  className="w-3.5 h-3.5 text-red-800 dark:text-red-300"
                   aria-hidden="true"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
