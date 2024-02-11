@@ -16,6 +16,7 @@ interface PullRequestNode {
   merged: boolean;
   number: number;
   timelineItems: TimelineConnection;
+  mergeCommit: Commit;
   repository: Repository;
 }
 
@@ -46,12 +47,15 @@ interface MergedEvent {
 }
 
 interface Commit {
-  additions: number;
-  deletions: number;
+  oid: string;
+  abbreviatedOid: string;
   messageHeadline: string;
+  commitUrl: string;
   url: string;
   zipballUrl: string;
   treeUrl: string;
+  additions: number;
+  deletions: number;
 }
 
 interface MergeRef {
@@ -162,6 +166,17 @@ query fetchIssues($login: String!, $cursor: String) {
           #     }
           #   }
           # }
+          mergeCommit {
+            oid
+            abbreviatedOid
+            messageHeadline
+            commitUrl
+            url
+            zipballUrl
+            treeUrl
+            additions
+            deletions
+          }
           merged
           number
           timelineItems(itemTypes: [MERGED_EVENT, CLOSED_EVENT], first: 20) {
@@ -178,12 +193,15 @@ query fetchIssues($login: String!, $cursor: String) {
                   resourcePath
                   url
                   commit {
-                    additions
-                    deletions
+                    oid
+                    abbreviatedOid
                     messageHeadline
+                    commitUrl
                     url
                     zipballUrl
                     treeUrl
+                    additions
+                    deletions
                   }
                   mergeRef {
                     name
@@ -304,6 +322,7 @@ fetchGitHubIssues()
     id = 0;
     const pullRequestsFinal = prNodes.map((pr) => {
       return {
+        // todo: Transition from acceptedAt to mergedAt?
         acceptedAt: pr.mergedAt
           ? moment(pr.mergedAt).format("YYYY-MM-DD")
           : null,
@@ -320,6 +339,7 @@ fetchGitHubIssues()
         merged: pr.merged,
         url: pr.url,
         number: pr.number,
+        mergeCommit: pr.mergeCommit,
         timelineItems: pr.timelineItems.edges.map((edge) => edge.node),
       };
     });
