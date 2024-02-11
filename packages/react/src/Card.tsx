@@ -81,72 +81,32 @@ export const PublicationInfo: React.FC<{
   type PublicationLink = [id: string, component: React.ReactNode];
   const items: PublicationLink[] = [];
 
-  if (org?.url) {
-    items.push([
-      "publication-homepage",
-      <span>
-        <a
-          href={org.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          Official homepage
-        </a>
-      </span>,
-    ]);
-  }
+  const addLink = (id: string, url: string, text: string) => {
+    if (url) {
+      items.push([
+        id,
+        <span>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={activityLinkClasses}
+          >
+            {text}
+          </a>
+        </span>,
+      ]);
+    }
+  };
 
-  if (org?.amazonUrl) {
-    items.push([
-      "amazon-link",
-      <span>
-        <a
-          href={org.amazonUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          Amazon
-        </a>
-      </span>,
-    ]);
-  }
-  if (org?.leanpubUrl) {
-    items.push([
-      "leanpub-link",
-      <span>
-        <a
-          href={org.leanpubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          Leanpub
-        </a>
-      </span>,
-    ]);
-  }
-  if (org?.goodreadsUrl) {
-    items.push([
-      "goodreads-link",
-
-      <span>
-        <a
-          href={org.goodreadsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          Goodreads
-        </a>
-      </span>,
-    ]);
-  }
+  addLink("publication-homepage", org?.url, "Official homepage");
+  addLink("amazon-link", org?.amazonUrl, "Amazon");
+  addLink("leanpub-link", org?.leanpubUrl, "Leanpub");
+  addLink("goodreads-link", org?.goodreadsUrl, "Goodreads");
 
   return items.map(([id, component], idx) => (
     <React.Fragment key={`publication-info-activity-link-row-${id}`}>
-      {idx > 0 && <span className="card-section-separator">·</span>}
+      {idx > 0 && <span className="card-section-separator">&nbsp;·&nbsp;</span>}
       {component}
     </React.Fragment>
   ));
