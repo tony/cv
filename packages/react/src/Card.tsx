@@ -53,7 +53,7 @@ export const Links: React.FC<{
   ));
 };
 
-export const PatchInfo: React.FC<{
+export const PatchLinks: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
 }> = ({ activity }) => (
   <Links
@@ -64,7 +64,7 @@ export const PatchInfo: React.FC<{
   />
 );
 
-export const PublicationInfo: React.FC<{
+export const PublicationLinks: React.FC<{
   org: Instance<typeof PublicationOrg>;
 }> = ({ org }) => (
   <Links
@@ -91,7 +91,7 @@ export const PublicationInfo: React.FC<{
   />
 );
 
-export const CompanyInfo: React.FC<{
+export const CompanyLinks: React.FC<{
   org: Instance<typeof CompanyOrg>;
 }> = ({ org }) => {
   type CompanyLink = [id: string, component: React.ReactNode];
@@ -139,15 +139,15 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
     return (
       <div className="activity-link-row text-xs">
         {CategoryName.Patch === activity.category && (
-          <PatchInfo
+          <PatchLinks
             activity={activity as Instance<typeof ActivityOpenSource>}
           />
         )}
         {CategoryName.Publication === activity.category && (
-          <PublicationInfo org={org as Instance<typeof PublicationOrg>} />
+          <PublicationLinks org={org as Instance<typeof PublicationOrg>} />
         )}
         {CategoryName.Work === activity.category && (
-          <CompanyInfo org={org as Instance<typeof CompanyOrg>} />
+          <CompanyLinks org={org as Instance<typeof CompanyOrg>} />
         )}
         {activity?.links && <PullRequestLinks activity={activity} />}
       </div>
