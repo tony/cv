@@ -66,40 +66,30 @@ export const PatchInfo: React.FC<{
 
 export const PublicationInfo: React.FC<{
   org: Instance<typeof PublicationOrg>;
-}> = ({ org }) => {
-  type PublicationLink = [id: string, component: React.ReactNode];
-  const items: PublicationLink[] = [];
-
-  const addLink = (id: string, url: string, text: string) => {
-    if (url) {
-      items.push([
-        id,
-        <span>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={activityLinkClasses}
-          >
-            {text}
-          </a>
-        </span>,
-      ]);
-    }
-  };
-
-  addLink("publication-homepage", org?.url, "Official homepage");
-  addLink("amazon-link", org?.amazonUrl, "Amazon");
-  addLink("leanpub-link", org?.leanpubUrl, "Leanpub");
-  addLink("goodreads-link", org?.goodreadsUrl, "Goodreads");
-
-  return items.map(([id, component], idx) => (
-    <React.Fragment key={`publication-info-activity-link-row-${id}`}>
-      {idx > 0 && <span className="card-section-separator">&nbsp;·&nbsp;</span>}
-      {component}
-    </React.Fragment>
-  ));
-};
+}> = ({ org }) => (
+  <Links
+    linkMap={[
+      ...(org?.url
+        ? [
+            {
+              id: "publication-homepage",
+              title: "Official homepage",
+              url: org.url,
+            },
+          ]
+        : []),
+      ...(org?.amazonUrl
+        ? [{ id: "amazon-link", title: "Amazon", url: org?.amazonUrl }]
+        : []),
+      ...(org?.leanpubUrl
+        ? [{ id: "leanpub-link", title: "Leanpub", url: org?.leanpubUrl }]
+        : []),
+      ...(org?.goodreadsUrl
+        ? [{ id: "goodreads-link", title: "Goodreads", url: org?.goodreadsUrl }]
+        : []),
+    ]}
+  />
+);
 
 export const CompanyInfo: React.FC<{
   org: Instance<typeof CompanyOrg>;
