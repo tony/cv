@@ -158,6 +158,19 @@ export const Link = types.model("UiCssProperties", {
   url: types.string,
 });
 
+export const ActivityTimelineItem = types.model("ActivityTimelineItem", {
+  verb: types.optional(types.maybeNull(types.string), null),
+  createdAt: types.string,
+  url: types.optional(types.maybeNull(types.string), null),
+});
+
+export const ActivityTimeline = types.model("ActivityTimeline", {
+  items: types.optional(
+    types.maybeNull(types.array(ActivityTimelineItem)),
+    null,
+  ),
+});
+
 export const BaseActivity = types
   .model("BaseActivity", {
     id: types.identifier,
@@ -179,6 +192,9 @@ export const BaseActivity = types
     // URLs (OpenSource)
     qaUrl: types.optional(types.maybeNull(types.string), null),
     diffUrl: types.optional(types.maybeNull(types.string), null),
+
+    // Timeline (OpenSource)
+    timeline: types.optional(types.maybeNull(ActivityTimeline), null),
 
     // ActivityAcquisition (Acquisition)
     acquiringOrg: types.optional(types.maybeNull(types.reference(Org)), null),
