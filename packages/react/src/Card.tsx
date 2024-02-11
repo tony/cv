@@ -193,6 +193,46 @@ export const CompanyInfo: React.FC<{
   );
 };
 
+export const Links: React.FC<{
+  activity: Instance<typeof Activity>;
+}> = ({ activity }) => {
+  type LinkType = [id: string, component: React.ReactNode];
+  const items: LinkType[] = [];
+
+  if (activity?.links) {
+    for (const [id, link] of activity.links) {
+      items.push([
+        `link-${id}`,
+        <span>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={activityLinkClasses}
+          >
+            {link.title}
+          </a>
+        </span>,
+      ]);
+    }
+  }
+
+  return (
+    <div className="text-xs">
+      {items.map(([id, component], idx) => (
+        <React.Fragment key={`links-link-row-${id}`}>
+          {idx > 0 && (
+            <span className="card-section-separator text-black dark:text-white px-1">
+              ·
+            </span>
+          )}
+          {component}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
 export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
   ({ activity }) => {
     const { org } = activity;
@@ -209,6 +249,7 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
         {CategoryName.Work === activity.category && (
           <CompanyInfo org={org as Instance<typeof CompanyOrg>} />
         )}
+        {activity?.links && <Links activity={activity} />}
       </>
     );
   };

@@ -17,6 +17,7 @@ export enum CategoryName {
   SoftwareLib = "SoftwareLib",
   Patch = "Patch",
   Work = "Work",
+  Acquisition = "Acquisition",
   Publication = "Publication",
   Volunteer = "Volunteer",
   Website = "Website",

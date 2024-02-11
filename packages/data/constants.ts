@@ -17,6 +17,7 @@ export const CategoryNameMap: CategoryNameStringMap = {
   SoftwareLib: "Published software component",
   Patch: "Contributed software patch",
   Work: "Employed",
+  Acquisition: "Acquired",
   Volunteer: "Volunteered",
   Publication: "Published book",
   Website: "Published website",
@@ -27,6 +28,7 @@ export const CategoryVerbMap: CategoryNameStringMap = {
   SoftwareLib: "Published",
   Patch: "Patch accepted",
   Work: "Worked there",
+  Acquisition: "Acquired",
   Volunteer: "Volunteered there",
   Publication: "Published",
   Website: "Published",
@@ -37,6 +39,7 @@ export const CategoryVerbPresentTenseMap: CategoryNameStringMap = {
   SoftwareLib: "Published",
   Patch: "Patch submitted",
   Work: "Working there since",
+  Acquisition: "Acquired",
   Volunteer: "Volunteering there since",
   Publication: "Published",
   Website: "Published",
@@ -47,6 +50,7 @@ export const CategoryEmojiMap: CategoryNameStringMap = {
   SoftwareLib: "⚙️",
   Patch: "🔨",
   Work: "💼",
+  Acquisition: "🤝",
   Volunteer: "💗",
   Publication: "📚",
   Website: "🖥️",
@@ -58,6 +62,7 @@ export const CategorySVGIconMap: CategoryNameStringMap = {
   SoftwareLib: "settings",
   Patch: "file-diff",
   Work: "briefcase",
+  Acquisition: "handshake",
   Volunteer: "heart",
   Publication: "book",
   Website: "browser",
@@ -242,6 +247,7 @@ export const CategoryColors: {
   SoftwareLib: CSS.Properties;
   Patch: CSS.Properties;
   Work: CSS.Properties;
+  Acquisition: CSS.Properties;
   Publication: CSS.Properties;
   Volunteer: CSS.Properties;
   Website: CSS.Properties;
@@ -271,6 +277,12 @@ export const CategoryColors: {
     borderStyle: "none",
     borderWidth: 0,
     color: Colors["gray.800"],
+  },
+  Acquisition: {
+    backgroundColor: "#f0ead6",
+    borderStyle: "solid",
+    borderWidth: "0",
+    color: Colors["gray.700"],
   },
   Publication: {
     backgroundColor: Colors["blue.200"],
