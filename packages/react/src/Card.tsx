@@ -141,7 +141,7 @@ export const CompanyInfo: React.FC<{
   ));
 };
 
-export const Links: React.FC<{
+export const PullRequestLinks: React.FC<{
   activity: Instance<typeof Activity>;
 }> = ({ activity }) => {
   type LinkType = [id: string, component: React.ReactNode];
@@ -193,7 +193,7 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
         {CategoryName.Work === activity.category && (
           <CompanyInfo org={org as Instance<typeof CompanyOrg>} />
         )}
-        {activity?.links && <Links activity={activity} />}
+        {activity?.links && <PullRequestLinks activity={activity} />}
       </div>
     );
   };
