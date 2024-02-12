@@ -17,6 +17,7 @@ import type {
 } from "@tony/cv-lib/search/mobx";
 
 import {
+  DiffIcon,
   GitMergeIcon,
   GitMergeQueueIcon,
   GitPullRequestClosedIcon,
@@ -41,7 +42,10 @@ export const Links: React.FC<{
   linkMap: LinkProps[];
 }> = ({ linkMap }) => {
   return linkMap.map((link, idx) => (
-    <React.Fragment key={link.id}>
+    <span
+      className="inline-flex [&>*]:inline-flex [&>*]:items-center [&>a>span]:items-center"
+      key={link.id}
+    >
       {idx > 0 && (
         <span className="card-section-separator text-black dark:text-white px-1">
           ·
@@ -55,7 +59,7 @@ export const Links: React.FC<{
       >
         {link.title}
       </a>
-    </React.Fragment>
+    </span>
   ));
 };
 
@@ -64,8 +68,32 @@ export const PatchLinks: React.FC<{
 }> = ({ activity }) => (
   <Links
     linkMap={[
-      { id: "qa-link", title: "💬 Pull Request", url: activity.qaUrl },
-      { id: "diff-link", title: "✒️ .diff", url: activity.diffUrl },
+      {
+        id: "qa-link",
+        title: (
+          <span className="inline-flex justify-center">
+            <GitPullRequestIcon
+              wrapperClassName="bg-inherit dark:bg-inherit inline-flex w-3 h-3 mr-0.5"
+              svgClassName={"text-inherit dark:text-inherit w-3 h-3"}
+            />{" "}
+            Pull Request
+          </span>
+        ),
+        url: activity.qaUrl,
+      },
+      {
+        id: "diff-link",
+        title: (
+          <span className="inline-flex justify-center">
+            <DiffIcon
+              wrapperClassName="bg-inherit dark:bg-inherit inline-flex w-3 h-3 mr-0.5"
+              svgClassName={"text-inherit dark:text-inherit w-3 h-3"}
+            />{" "}
+            .diff
+          </span>
+        ),
+        url: activity.diffUrl,
+      },
     ]}
   />
 );
@@ -133,7 +161,7 @@ export const ActivityLinks: React.FC<
 > = ({ activity }) => {
   const { org } = activity;
   return (
-    <div className="activity-link-row text-xs">
+    <div className="activity-link-row text-xs inline-flex items-center">
       {CategoryName.Patch === activity.category && (
         <PatchLinks
           activity={activity as Instance<typeof ActivityOpenSource>}
@@ -386,7 +414,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ReactMarkdown>{activity.title}</ReactMarkdown>
         </div>
         <PullRequestJourney activity={activity} isOpen={isOpen} />
-        <div className="card-activity-links">
+        <div className="card-activity-links inline-flex items-center">
           <ActivityLinks activity={activity} />
         </div>
       </div>
