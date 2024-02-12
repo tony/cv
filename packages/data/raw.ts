@@ -101,13 +101,21 @@ export const languages: Language[] = Array.from(
         ? {
             ui: {
               backgroundColor: ghColor.color,
-              color: invert(ghColor.color, true),
+              color: invert(ghColor.color, {
+                threshold: 0.19,
+                black: "#000000",
+                white: "#ffffff",
+              }),
             },
           }
         : {
             ui: {
               backgroundColor: LANGUAGE_FALLBACK_COLOR,
-              color: invert(LANGUAGE_FALLBACK_COLOR, true),
+              color: invert(LANGUAGE_FALLBACK_COLOR, {
+                threshold: 0.19,
+                black: "#000000",
+                white: "#ffffff",
+              }),
             },
           }),
     } as Language;
