@@ -128,26 +128,27 @@ export const PullRequestLinks: React.FC<{
     />
   );
 
-export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
-  ({ activity }) => {
-    const { org } = activity;
-    return (
-      <div className="activity-link-row text-xs">
-        {CategoryName.Patch === activity.category && (
-          <PatchLinks
-            activity={activity as Instance<typeof ActivityOpenSource>}
-          />
-        )}
-        {CategoryName.Publication === activity.category && (
-          <PublicationLinks org={org as Instance<typeof PublicationOrg>} />
-        )}
-        {CategoryName.Work === activity.category && (
-          <CompanyLinks org={org as Instance<typeof CompanyOrg>} />
-        )}
-        {activity?.links && <PullRequestLinks activity={activity} />}
-      </div>
-    );
-  };
+export const ActivityLinks: React.FC<
+  React.ComponentProps<typeof ActivityCard>
+> = ({ activity }) => {
+  const { org } = activity;
+  return (
+    <div className="activity-link-row text-xs">
+      {CategoryName.Patch === activity.category && (
+        <PatchLinks
+          activity={activity as Instance<typeof ActivityOpenSource>}
+        />
+      )}
+      {CategoryName.Publication === activity.category && (
+        <PublicationLinks org={org as Instance<typeof PublicationOrg>} />
+      )}
+      {CategoryName.Work === activity.category && (
+        <CompanyLinks org={org as Instance<typeof CompanyOrg>} />
+      )}
+      {activity?.links && <PullRequestLinks activity={activity} />}
+    </div>
+  );
+};
 
 const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
   ({ date, className }) =>
@@ -385,8 +386,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ReactMarkdown>{activity.title}</ReactMarkdown>
         </div>
         <PullRequestJourney activity={activity} isOpen={isOpen} />
-        <div className="card-activity-info">
-          <ActivityInfo activity={activity} />
+        <div className="card-activity-links">
+          <ActivityLinks activity={activity} />
         </div>
       </div>
       <div className="right-side text-left md:text-right pt-2 md:pt-0 gap-x-1 flex">
