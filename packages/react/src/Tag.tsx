@@ -8,13 +8,14 @@ import {
   CategoryVerbMap,
   CategoryVerbPresentTenseMap,
 } from "@tony/cv-data/constants";
-import type {
-  CategoryName,
-  LanguageName,
-  OrgTypeName,
-} from "@tony/cv-data/types";
-import { Activity } from "@tony/cv-lib/search/mobx";
+import { CategoryName, LanguageName, OrgTypeName } from "@tony/cv-data/types";
+import { Activity, ActivityOpenSource } from "@tony/cv-lib/search/mobx";
 
+import {
+  GitMergeIcon,
+  GitMergeQueueIcon,
+  GitPullRequestClosedIcon,
+} from "./Icons";
 import { useMst } from "./mobx";
 
 export const LanguageTag: React.FC<
@@ -72,6 +73,40 @@ export const CategoryTag: React.FC<
   },
 );
 
+export const ActivityOpenSourceEmoji: React.FC<{
+  activity: Instance<typeof ActivityOpenSource>;
+}> = ({ activity }) => {
+  const wrapperClassName = "inline-flex w-5 h-5";
+  const svgClassName = "w-3 h-3";
+
+  const isStale =
+    (new Date().valueOf() - new Date(activity.createdAt).valueOf()) /
+      (1000 * 60 * 60 * 24 * 365) >
+    1;
+
+  return activity?.acceptedAt ? (
+    <GitMergeIcon
+      wrapperClassName={wrapperClassName}
+      svgClassName={svgClassName}
+    />
+  ) : activity?.closedAt ? (
+    <GitPullRequestClosedIcon
+      wrapperClassName={wrapperClassName}
+      svgClassName={svgClassName}
+    />
+  ) : isStale ? (
+    <GitMergeQueueIcon
+      wrapperClassName={`bg-gray-200 dark:bg-gray-600 ${wrapperClassName}`}
+      svgClassName={`text-gray-800 dark:text-gray-300 ${svgClassName}`}
+    />
+  ) : (
+    <GitMergeQueueIcon
+      wrapperClassName={wrapperClassName}
+      svgClassName={svgClassName}
+    />
+  );
+};
+
 export const ActivityActionText: React.FC<{
   activity: Instance<typeof Activity>;
 }> = ({ activity }) => {
@@ -102,7 +137,12 @@ export const ActivityActionText: React.FC<{
     <span>
       {category?.id && (
         <>
-          {CategoryEmojiMap[category.id]} {VerbMap[category.id]}
+          {activity?.category === CategoryName.Patch ? (
+            <ActivityOpenSourceEmoji activity={activity} />
+          ) : (
+            CategoryEmojiMap[category.id]
+          )}{" "}
+          {VerbMap[category.id]}
         </>
       )}
     </span>
