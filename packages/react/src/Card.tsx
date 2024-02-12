@@ -99,32 +99,21 @@ export const PublicationLinks: React.FC<{
 
 export const CompanyLinks: React.FC<{
   org: Instance<typeof CompanyOrg>;
-}> = ({ org }) => {
-  type CompanyLink = [id: string, component: React.ReactNode];
-  const items: CompanyLink[] = [];
-  if (org?.url) {
-    items.push([
-      "company-homepage",
-      <span>
-        <a
-          href={org.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={activityLinkClasses}
-        >
-          Official homepage
-        </a>
-      </span>,
-    ]);
-  }
-
-  return items.map(([id, component], idx) => (
-    <React.Fragment key={`company-activity-link-row-${id}`}>
-      {idx > 0 && <span className="card-section-separator">·</span>}
-      {component}
-    </React.Fragment>
-  ));
-};
+}> = ({ org }) => (
+  <Links
+    linkMap={[
+      ...(org?.url
+        ? [
+            {
+              id: "company-homepage",
+              title: "Official homepage",
+              url: org.url,
+            },
+          ]
+        : []),
+    ]}
+  />
+);
 
 export const PullRequestLinks: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
