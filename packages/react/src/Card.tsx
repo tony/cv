@@ -418,7 +418,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
           <ActivityLinks activity={activity} />
         </div>
       </div>
-      <div className="right-side text-left md:text-right pt-2 md:pt-0 gap-x-1 flex">
+      <div className="right-side text-left md:text-right pt-1 md:pt-0 gap-x-1 flex">
         <LanguageTags org={org} />
       </div>
     </li>
