@@ -777,6 +777,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/css@npm:^11.11.2":
+  version: 11.11.2
+  resolution: "@emotion/css@npm:11.11.2"
+  dependencies:
+    "@emotion/babel-plugin": "npm:^11.11.0"
+    "@emotion/cache": "npm:^11.11.0"
+    "@emotion/serialize": "npm:^1.1.2"
+    "@emotion/sheet": "npm:^1.2.2"
+    "@emotion/utils": "npm:^1.2.1"
+  checksum: 10/718f758575f05e3610cdef9bdcfcdf17eae1992616c7cc85e29a24ff3b4d3da9968cc1c253a510874c056c22dc73b6b12bd759be9943e20141e0603a3cb35630
+  languageName: node
+  linkType: hard
+
 "@emotion/hash@npm:^0.9.1":
   version: 0.9.1
   resolution: "@emotion/hash@npm:0.9.1"
@@ -2220,6 +2233,7 @@ __metadata:
     mobx-react-lite: "npm:^4.0.5"
     postcss: "npm:^8.4.35"
     react: "npm:^18.2.0"
+    react-diff-viewer-continued: "npm:^3.4.0"
     react-dom: "npm:^18.2.0"
     react-markdown: "npm:^9.0.1"
     react-select: "npm:^5.8.0"
@@ -3371,6 +3385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.3.2":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: 10/58eb394e8817021b153bb6e7d782cfb667e4ab390cb2e9dac2fc7c6b979d1cc2b2a733093955fc5c94aa79ef5c8c89f11ab77780894509be6afbb91dddd79d15
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5":
   version: 5.3.3
   resolution: "clean-css@npm:5.3.3"
@@ -4502,6 +4523,13 @@ __metadata:
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: 10/ec09ec2101934ca5966355a229d77afcad5911c92e2a77413efda5455636c4cf2ce84057e2d7715227a2eeeda04255b849bd3ae3a4dd22eb22e86e76456df069
+  languageName: node
+  linkType: hard
+
+"diff@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "diff@npm:5.1.0"
+  checksum: 10/f4557032a98b2967fe27b1a91dfcf8ebb6b9a24b1afe616b5c2312465100b861e9b8d4da374be535f2d6b967ce2f53826d7f6edc2a0d32b2ab55abc96acc2f9d
   languageName: node
   linkType: hard
 
@@ -7484,7 +7512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.10, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -7536,6 +7564,22 @@ __metadata:
   dependencies:
     performance-now: "npm:^2.1.0"
   checksum: 10/4c4b4c826b09d2aec6ca809f1a3c3c12136e7ec8d13fbb91f495dd2c99cd43345240e003da3bfd16036a432e635049fc6d9f69f9187f5f22ea88bb146ec75881
+  languageName: node
+  linkType: hard
+
+"react-diff-viewer-continued@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "react-diff-viewer-continued@npm:3.4.0"
+  dependencies:
+    "@emotion/css": "npm:^11.11.2"
+    classnames: "npm:^2.3.2"
+    diff: "npm:^5.1.0"
+    memoize-one: "npm:^6.0.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 10/98a5fc3e01ffd16768a6d52d5d0eb582b1650b3c02ba41c769c588a520cc428ea3ead4bb64610ecc8ad709a643404cc7edb769f0fdd644ed7923c8bceedb4f74
   languageName: node
   linkType: hard
 

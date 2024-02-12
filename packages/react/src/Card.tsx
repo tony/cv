@@ -17,7 +17,7 @@ import type {
 } from "@tony/cv-lib/search/mobx";
 
 import { CategoryText, LanguageTag } from "./Tag";
-
+import ReactDiffViewer from "react-diff-viewer-continued";
 const activityLinkClasses =
   "text-gray-500 hover:text-slate-700 dark:hover:text-slate-200";
 
@@ -135,7 +135,54 @@ export const PullRequestLinks: React.FC<{
 
 export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
   ({ activity }) => {
+    const [showDiff, setShowDiff] = React.useState(false);
+    const [diff, setDiff] = React.useState("");
+    const [isFetching, setIsFetching] = React.useState(false);
+    const [hasFetched, setHasFetched] = React.useState(false);
+
     const { org } = activity;
+
+    const openDiff = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('openDiff', e)
+      setShowDiff(!showDiff);
+    };
+
+    React.useEffect(() => {
+      const fetchDiff = async () => {
+        setIsFetching(true);
+        try {
+          const data = await fetch(activity.diffUrl);
+          try{
+            const text=data?.text();
+            console.log(text)
+
+            setDiff(text);
+          } catch (e){
+            console.error(e);
+          }
+        } finally {
+          setHasFetched(true);
+          setIsFetching(false);
+        }
+      };
+      if (
+        activity?.diffUrl &&
+        showDiff &&
+        !diff &&
+        !isFetching &&
+        !hasFetched
+      ) {
+        console.log(
+        activity?.diffUrl,
+        showDiff,
+        !diff,
+        !isFetching,
+        !hasFetched)
+        fetchDiff();
+      }
+    }, [showDiff, diff, isFetching, hasFetched, activity.diffUrl]);
     return (
       <div className="activity-link-row text-xs">
         {CategoryName.Patch === activity.category && (
@@ -150,6 +197,21 @@ export const ActivityInfo: React.FC<React.ComponentProps<typeof ActivityCard>> =
           <CompanyLinks org={org as Instance<typeof CompanyOrg>} />
         )}
         {activity?.links && <PullRequestLinks activity={activity} />}
+        {activity?.diffUrl && (
+          <>
+            <span className="card-section-separator text-black dark:text-white px-1">
+              ·
+            </span>
+            <button
+              type="button"
+              data-url={activity?.diffUrl}
+              onClick={openDiff}
+              className={activityLinkClasses}
+            >
+              Open diff
+            </button>
+          </>
+        )}
       </div>
     );
   };
