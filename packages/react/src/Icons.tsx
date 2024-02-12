@@ -1,7 +1,11 @@
 import React from "react";
 
-export const GitPullRequestIcon = () => (
-  <span className="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-green-900">
+export const GitPullRequestIcon: React.FC<{ className: string }> = ({
+  className = "",
+}) => (
+  <span
+    className={`${className} flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-green-900`}
+  >
     {/* Credit: git-pull-request, https://primer.style/foundations/icons/git-pull-request-16 */}
     <svg
       className="w-3.5 h-3.5 text-green-800 dark:text-green-300"
@@ -17,8 +21,12 @@ export const GitPullRequestIcon = () => (
   </span>
 );
 
-export const GitPullRequestClosedIcon = () => (
-  <span className="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-red-900">
+export const GitPullRequestClosedIcon: React.FC<{ className: string }> = ({
+  className = "",
+}) => (
+  <span
+    className={`${className} flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-red-900`}
+  >
     <svg
       className="w-3.5 h-3.5 text-red-800 dark:text-red-300"
       aria-hidden="true"
@@ -34,8 +42,12 @@ export const GitPullRequestClosedIcon = () => (
   </span>
 );
 
-export const GitMergeIcon = () => (
-  <span className="absolute flex items-center justify-center w-6 h-6 bg-purple-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-purple-900">
+export const GitMergeIcon: React.FC<{ className: string }> = ({
+  className = "",
+}) => (
+  <span
+    className={`${className} flex items-center justify-center w-6 h-6 bg-purple-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-purple-900`}
+  >
     {/* Credit: git-merge, https://primer.style/foundations/icons/git-merge-16 */}
     <svg
       className="w-3.5 h-3.5 text-purple-800 dark:text-purple-300"
@@ -51,8 +63,12 @@ export const GitMergeIcon = () => (
   </span>
 );
 
-export const GitMergeQueueIcon = () => (
-  <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900">
+export const GitMergeQueueIcon: React.FC<{ className: string }> = ({
+  className = "",
+}) => (
+  <span
+    className={`${className} flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900`}
+  >
     <svg
       className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300"
       aria-hidden="true"
