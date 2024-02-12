@@ -33,7 +33,7 @@ interface ActivityCardProps {
 
 interface LinkProps {
   id: string;
-  title: string;
+  title: React.ReactNode;
   url: string;
 }
 
