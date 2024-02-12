@@ -242,12 +242,13 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
                   {" "}
                   at{" "}
                   <a
-                    href={`${activity.org.repoUrl}/pull/${activity.number}`}
+                    href={activity.qaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={activityLinkClasses}
                   >
-                    {activity.org.name}#{activity.number}
+                    {activity.org.name}#
+                    {activity.number ?? activity.qaUrl.split("/").slice(-1)}
                   </a>
                 </>
               )}
