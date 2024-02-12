@@ -90,3 +90,23 @@ export const GitMergeQueueIcon: React.FC<IconProps> = ({
     </svg>
   </span>
 );
+
+export const DiffIcon: React.FC<IconProps> = ({
+  wrapperClassName = "",
+  svgClassName = "",
+}) => (
+  <span
+    className={`${wrapperClassName} flex items-center justify-center bg-gray-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-gray-900`}
+  >
+    <svg
+      className={`${svgClassName} text-gray-800 dark:text-gray-300`}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      {/* Credit: git-diff-16, https://primer.style/foundations/icons/git-diff-16 */}
+      <path d="M8.75 1.75V5H12a.75.75 0 0 1 0 1.5H8.75v3.25a.75.75 0 0 1-1.5 0V6.5H4A.75.75 0 0 1 4 5h3.25V1.75a.75.75 0 0 1 1.5 0ZM4 13h8a.75.75 0 0 1 0 1.5H4A.75.75 0 0 1 4 13Z" />
+    </svg>
+  </span>
+);
