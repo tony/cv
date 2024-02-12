@@ -2,7 +2,7 @@
 import React from "react";
 
 import equal from "fast-deep-equal";
-import { reaction } from "mobx";
+import { autorun, reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import Plotly from "plotly.js/dist/plotly";
 
@@ -79,10 +79,12 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToDonut(cvState) as DonutChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToDonut(cvState) as DonutChartProps);
+        }
+      });
+      return dispose;
     }, [cvState, chartData]);
 
     if (!chartData) {
@@ -109,13 +111,6 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     const cvState = useMst();
     const [chartData, setChartData] = React.useState<LineChartProps>();
 
-    React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToLine(cvState) as LineChartProps);
-      }
-      return void 0;
-    }, [cvState, chartData]);
-
     React.useEffect(
       () =>
         reaction(
@@ -130,6 +125,15 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
         ),
       [cvState],
     );
+
+    React.useEffect(() => {
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToLine(cvState) as LineChartProps);
+        }
+      });
+      return dispose;
+    }, [cvState, chartData]);
 
     if (!chartData) {
       return null;
