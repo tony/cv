@@ -22,7 +22,7 @@ import {
   GitPullRequestClosedIcon,
   GitPullRequestIcon,
 } from "./Icons";
-import { CategoryText, LanguageTag } from "./Tag";
+import { ActivityActionText, LanguageTag } from "./Tag";
 
 const activityLinkClasses =
   "text-gray-500 hover:text-slate-700 dark:hover:text-slate-200";
@@ -177,7 +177,7 @@ const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
   ));
 };
 
-const CardOrgName: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
+const OrganizationLink: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
   const orgLink =
     org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
@@ -215,7 +215,7 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
             </h3>
             <p className="text-base font-normal text-gray-500 dark:text-gray-400">
               {isGithub ? "Pull request opened with" : "Patch submitted to"}{" "}
-              <CardOrgName org={activity.org} />
+              <OrganizationLink org={activity.org} />
               {isGithub && (
                 <>
                   {" "}
@@ -244,7 +244,7 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
               </h3>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                 {isGithub ? "Pull request merged" : "Patch accepted"} to{" "}
-                <CardOrgName org={activity.org} />
+                <OrganizationLink org={activity.org} />
                 {isGithub && (
                   <>
                     {" "}
@@ -365,10 +365,10 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
     >
       <div className="left-side flex-grow">
         <div>
-          <CardOrgName org={org} />
+          <OrganizationLink org={org} />
           <span className="card-section-separator px-1">·</span>
           <span className="card-category-and-date">
-            <CategoryText activity={activity} />
+            <ActivityActionText activity={activity} />
             <DateText
               date={activity.acceptedAt ?? activity.createdAt}
               className="card-date-text-left pl-1"

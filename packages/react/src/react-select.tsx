@@ -13,7 +13,7 @@ import chroma from "chroma-js";
 
 import { CategoryEmojiMap } from "@tony/cv-data/constants";
 
-import { LanguageTag, OrgTypeTag } from "./Tag";
+import { LanguageTag, OrganizationTypeTag } from "./Tag";
 import { useMst } from "./mobx";
 
 export interface OptionType {
@@ -33,7 +33,7 @@ export const getSelectOptions = (items: string[]): SelectOption =>
     value: actorName,
   })) as SelectOption;
 
-export const orgStyles: StylesConfig<StyleOption, true> = {
+export const organizationStyles: StylesConfig<StyleOption, true> = {
   option: (styles, _props) => {
     return {
       ...styles,
@@ -45,7 +45,7 @@ export const orgStyles: StylesConfig<StyleOption, true> = {
   },
 };
 
-export const OrgOption: React.FC<OptionProps<StyleOption, true>> = ({
+export const OrganizationOption: React.FC<OptionProps<StyleOption, true>> = ({
   children,
   isSelected,
   ...props
@@ -63,14 +63,14 @@ export const OrgOption: React.FC<OptionProps<StyleOption, true>> = ({
       {children}{" "}
       {org?.orgType && (
         <div className="topic-tags">
-          <OrgTypeTag
+          <OrganizationTypeTag
             orgTypeName={org.orgType}
             style={{
               marginLeft: "0.75rem",
             }}
           >
             {org.orgType}
-          </OrgTypeTag>
+          </OrganizationTypeTag>
 
           {/*org.languages.map((languageId) => (
             <LanguageTag

@@ -14,12 +14,12 @@ import {
   CategoryOption,
   LanguageOption,
   type OptionType,
-  OrgOption,
+  OrganizationOption,
   type StyleOption,
   categoriesStyles,
   getSelectOptions,
   languageStyles,
-  orgStyles,
+  organizationStyles,
 } from "../react-select";
 
 export const DEFAULT_REACT_SELECT_PROPS: Partial<
@@ -249,8 +249,8 @@ export const FilterDropdowns: React.FC = () => {
         onChange={(value: PropsValue<OptionType>): void => {
           cvState.setOrgs((value as OptionType[]).map(({ value: v }) => v));
         }}
-        styles={{ ...colourStyles, ...orgStyles }}
-        components={{ Option: OrgOption, MultiValue: MultiValueCount }}
+        styles={{ ...colourStyles, ...organizationStyles }}
+        components={{ Option: OrganizationOption, MultiValue: MultiValueCount }}
         placeholder="Organization and projects"
         objectLabelSingular="org / project"
         // tablets with >1 item linebreak

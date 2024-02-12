@@ -72,7 +72,7 @@ export const CategoryTag: React.FC<
   },
 );
 
-export const CategoryText: React.FC<{
+export const ActivityActionText: React.FC<{
   activity: Instance<typeof Activity>;
 }> = ({ activity }) => {
   const {
@@ -109,7 +109,7 @@ export const CategoryText: React.FC<{
   );
 };
 
-export const OrgTypeTag: React.FC<
+export const OrganizationTypeTag: React.FC<
   { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>
 > = ({ orgTypeName, children, className = "", ...props }) => {
   if (!orgTypeName) {
