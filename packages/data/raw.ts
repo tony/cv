@@ -58,6 +58,9 @@ const ghColorsJsonMissing: {
   Markdown: {
     color: "#083fa1",
   },
+  MDX: {
+    color: "#083fa1",
+  },
   CMake: {
     color: "#ccc",
   },
