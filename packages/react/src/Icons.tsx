@@ -1,14 +1,20 @@
 import React from "react";
 
-export const GitPullRequestIcon: React.FC<{ className: string }> = ({
-  className = "",
+export interface IconProps {
+  wrapperClassName: string;
+  svgClassName: string;
+}
+
+export const GitPullRequestIcon: React.FC<IconProps> = ({
+  wrapperClassName = "",
+  svgClassName = "",
 }) => (
   <span
-    className={`${className} flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-green-900`}
+    className={`${wrapperClassName} flex items-center justify-center bg-green-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-green-900`}
   >
     {/* Credit: git-pull-request, https://primer.style/foundations/icons/git-pull-request-16 */}
     <svg
-      className="w-3.5 h-3.5 text-green-800 dark:text-green-300"
+      className={`${svgClassName} text-green-800 dark:text-green-300`}
       aria-hidden="true"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,14 +27,15 @@ export const GitPullRequestIcon: React.FC<{ className: string }> = ({
   </span>
 );
 
-export const GitPullRequestClosedIcon: React.FC<{ className: string }> = ({
-  className = "",
+export const GitPullRequestClosedIcon: React.FC<IconProps> = ({
+  wrapperClassName = "",
+  svgClassName = "",
 }) => (
   <span
-    className={`${className} flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-red-900`}
+    className={`${wrapperClassName} flex items-center justify-center bg-red-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-red-900`}
   >
     <svg
-      className="w-3.5 h-3.5 text-red-800 dark:text-red-300"
+      className={`${svgClassName} text-red-800 dark:text-red-300`}
       aria-hidden="true"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +49,16 @@ export const GitPullRequestClosedIcon: React.FC<{ className: string }> = ({
   </span>
 );
 
-export const GitMergeIcon: React.FC<{ className: string }> = ({
-  className = "",
+export const GitMergeIcon: React.FC<IconProps> = ({
+  wrapperClassName = "",
+  svgClassName = "",
 }) => (
   <span
-    className={`${className} flex items-center justify-center w-6 h-6 bg-purple-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-purple-900`}
+    className={`${wrapperClassName} flex items-center justify-center bg-purple-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-purple-900`}
   >
     {/* Credit: git-merge, https://primer.style/foundations/icons/git-merge-16 */}
     <svg
-      className="w-3.5 h-3.5 text-purple-800 dark:text-purple-300"
+      className={`${svgClassName} text-purple-800 dark:text-purple-300`}
       aria-hidden="true"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -63,14 +71,15 @@ export const GitMergeIcon: React.FC<{ className: string }> = ({
   </span>
 );
 
-export const GitMergeQueueIcon: React.FC<{ className: string }> = ({
-  className = "",
+export const GitMergeQueueIcon: React.FC<IconProps> = ({
+  wrapperClassName = "",
+  svgClassName = "",
 }) => (
   <span
-    className={`${className} flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900`}
+    className={`${wrapperClassName} flex items-center justify-center bg-blue-100 rounded-full -start-3 ring-5 ring-white dark:ring-gray-900 dark:bg-blue-900`}
   >
     <svg
-      className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300"
+      className={`${svgClassName} text-blue-800 dark:text-blue-300`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"

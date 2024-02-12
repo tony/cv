@@ -206,7 +206,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
       <div className="pull-request-journey max-w-4xl my-2 ml-2">
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
           <li className="mb-6 ms-6">
-            <GitPullRequestIcon className="absolute" />
+            <GitPullRequestIcon
+              wrapperClassName="absolute w-6 h-6"
+              svgClassName="w-3.5 h-3.5"
+            />
             <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {activity.createdAt}
             </time>
@@ -235,7 +238,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
           </li>
           {activity.acceptedAt ? (
             <li className="ms-6">
-              <GitMergeIcon className="absolute" />
+              <GitMergeIcon
+                wrapperClassName="absolute w-6 h-6"
+                svgClassName="w-3.5 h-3.5"
+              />
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {activity.acceptedAt}
               </time>
@@ -265,7 +271,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
             </li>
           ) : activity.closedAt ? (
             <li className="ms-6">
-              <GitPullRequestClosedIcon className="absolute" />
+              <GitPullRequestClosedIcon
+                wrapperClassName="absolute w-6 h-6"
+                svgClassName="w-3.5 h-3.5"
+              />
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {activity.closedAt}
               </time>
@@ -278,7 +287,10 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
             </li>
           ) : (
             <li className="ms-6">
-              <GitMergeQueueIcon className="absolute" />
+              <GitMergeQueueIcon
+                wrapperClassName="absolute w-6 h-6"
+                svgClassName="w-3.5 h-3.5"
+              />
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 Current status
               </time>
