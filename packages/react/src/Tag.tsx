@@ -153,7 +153,7 @@ export const ActivityActionText: React.FC<{
 
 export const OrganizationTypeTag: React.FC<
   { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>
-> = ({ orgTypeName, children, className = "", ...props }) => {
+> = observer(({ orgTypeName, children, className = "", ...props }) => {
   if (!orgTypeName) {
     return null;
   }
@@ -172,4 +172,4 @@ export const OrganizationTypeTag: React.FC<
       {children || orgTypeName}
     </div>
   );
-};
+});
