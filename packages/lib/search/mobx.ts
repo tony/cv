@@ -20,7 +20,7 @@ configure({
   enforceActions: "always",
   // computedRequiresReaction: true,
   // reactionRequiresObservable: true,
-  // observableRequiresReaction: true,
+  observableRequiresReaction: true,
   disableErrorBoundaries: true,
 });
 
@@ -51,15 +51,6 @@ export const ActivityMeta = types.model("ActivityMeta", {
   isDocImprovement: types.boolean,
   isCodeStyleTweak: types.boolean,
   isMerged: types.boolean,
-});
-
-export const activityUI = ActivityMeta.create({
-  isOptionDisabled: false,
-  isRelease: false,
-  isTypo: false,
-  isDocImprovement: false,
-  isCodeStyleTweak: false,
-  isMerged: false,
 });
 
 export const UiCssProperties = types.model("UiCssProperties", {

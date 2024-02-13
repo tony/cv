@@ -3,7 +3,7 @@ import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { ResponsivePie } from "@nivo/pie";
 import equal from "fast-deep-equal";
-import { reaction } from "mobx";
+import { autorun, reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import { useMst } from "@tony/cv-react/src/mobx";
@@ -20,8 +20,8 @@ import "./chart-react-nivo.css";
 export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
   (props) => {
     const cvState = useMst();
-
     const [chartData, setChartData] = React.useState<DonutChartProps>();
+
     React.useEffect(
       () =>
         reaction(
@@ -38,10 +38,12 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToDonut(cvState) as DonutChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToDonut(cvState) as DonutChartProps);
+        }
+      });
+      return dispose;
     }, [cvState, chartData]);
 
     if (!chartData) {
@@ -52,18 +54,16 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
   },
 );
 
-const AreaLayer: React.FC<{ innerWidth: number; innerHeight: number }> = ({
-  innerWidth,
-  innerHeight,
-}) => {
-  return (
-    <path
-      d={`M${innerWidth} 0 L${innerWidth} ${innerHeight} L0 ${innerHeight} L0 0 Z`}
-      fill="var(--chart-background-color)"
-      fillOpacity={1}
-    />
-  );
-};
+const AreaLayer: React.FC<{ innerWidth: number; innerHeight: number }> =
+  observer(({ innerWidth, innerHeight }) => {
+    return (
+      <path
+        d={`M${innerWidth} 0 L${innerWidth} ${innerHeight} L0 ${innerHeight} L0 0 Z`}
+        fill="var(--chart-background-color)"
+        fillOpacity={1}
+      />
+    );
+  });
 
 export const ActivityLineChart: React.FC<
   Partial<React.ComponentProps<typeof ResponsiveLine>>
@@ -87,10 +87,12 @@ export const ActivityLineChart: React.FC<
   );
 
   React.useEffect(() => {
-    if (!chartData) {
-      setChartData(stateToLine(cvState) as LineChartProps);
-    }
-    return void 0;
+    const dispose = autorun(() => {
+      if (!chartData) {
+        setChartData(stateToLine(cvState) as LineChartProps);
+      }
+    });
+    return dispose;
   }, [cvState, chartData]);
 
   if (!chartData) {

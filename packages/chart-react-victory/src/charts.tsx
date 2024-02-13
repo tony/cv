@@ -1,7 +1,7 @@
 import React from "react";
 
 import equal from "fast-deep-equal";
-import { reaction } from "mobx";
+import { autorun, reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import {
   VictoryArea,
@@ -51,10 +51,12 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToDonut(cvState) as DonutChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToDonut(cvState) as DonutChartProps);
+        }
+      });
+      return dispose;
     }, [cvState, chartData]);
 
     if (!chartData) {
@@ -102,10 +104,12 @@ export const ActivityLineChart: React.FC<Partial<LineChartProps>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToLine(cvState) as LineChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToLine(cvState) as LineChartProps);
+        }
+      });
+      return dispose;
     }, [cvState, chartData]);
 
     const [width, setWidth] = React.useState(

@@ -13,6 +13,8 @@ import chroma from "chroma-js";
 
 import { CategoryEmojiMap } from "@tony/cv-data/constants";
 
+import { action } from "mobx";
+import { observer } from "mobx-react-lite";
 import { LanguageTag, OrganizationTypeTag } from "./Tag";
 import { useMst } from "./mobx";
 
@@ -45,34 +47,31 @@ export const organizationStyles: StylesConfig<StyleOption, true> = {
   },
 };
 
-export const OrganizationOption: React.FC<OptionProps<StyleOption, true>> = ({
-  children,
-  isSelected,
-  ...props
-}) => {
-  const cvState = useMst();
-  const org = cvState.orgs.find(({ id }) => id === props.data?.value);
-  return (
-    <ReactSelectComponents.Option
-      {...props}
-      className={`!flex dropdown-language-option ${
-        isSelected ? "selected" : ""
-      }`}
-      isSelected={isSelected}
-    >
-      {children}{" "}
-      {org?.orgType && (
-        <div className="topic-tags">
-          <OrganizationTypeTag
-            orgTypeName={org.orgType}
-            style={{
-              marginLeft: "0.75rem",
-            }}
-          >
-            {org.orgType}
-          </OrganizationTypeTag>
+export const OrganizationOption: React.FC<OptionProps<StyleOption, true>> =
+  observer(({ children, isSelected, ...props }) => {
+    const cvState = useMst();
+    const org = cvState.orgs.find(({ id }) => id === props.data?.value);
+    return (
+      <ReactSelectComponents.Option
+        {...props}
+        className={`!flex dropdown-language-option ${
+          isSelected ? "selected" : ""
+        }`}
+        isSelected={isSelected}
+      >
+        {children}{" "}
+        {org?.orgType && (
+          <div className="topic-tags">
+            <OrganizationTypeTag
+              orgTypeName={org.orgType}
+              style={{
+                marginLeft: "0.75rem",
+              }}
+            >
+              {org.orgType}
+            </OrganizationTypeTag>
 
-          {/*org.languages.map((languageId) => (
+            {/*org.languages.map((languageId) => (
             <LanguageTag
               languageName={languageId}
               key={languageId}
@@ -82,47 +81,44 @@ export const OrganizationOption: React.FC<OptionProps<StyleOption, true>> = ({
               }}
             />
           ))*/}
+          </div>
+        )}
+      </ReactSelectComponents.Option>
+    );
+  });
+
+export const LanguageOption: React.FC<OptionProps<StyleOption, true>> =
+  observer(({ data, isSelected, ...props }) => {
+    const cvState = useMst();
+    const languageName = data?.value;
+
+    if (!languageName) {
+      console.warn(`${languageName} missing from option`);
+      return null;
+    }
+    return (
+      <ReactSelectComponents.Option
+        {...props}
+        data={data}
+        isSelected={isSelected}
+        className={`!flex dropdown-language-option ${
+          isSelected ? "selected" : ""
+        }`}
+      >
+        <LanguageTag
+          languageName={languageName}
+          key={languageName}
+          className="tag ml-0"
+        />
+        <div className="activity-count">
+          {cvState.languageUsageStats[languageName]} results
         </div>
-      )}
-    </ReactSelectComponents.Option>
-  );
-};
-
-export const LanguageOption: React.FC<OptionProps<StyleOption, true>> = ({
-  data,
-  isSelected,
-  ...props
-}) => {
-  const cvState = useMst();
-  const languageName = data?.value;
-
-  if (!languageName) {
-    console.warn(`${languageName} missing from option`);
-    return null;
-  }
-  return (
-    <ReactSelectComponents.Option
-      {...props}
-      data={data}
-      isSelected={isSelected}
-      className={`!flex dropdown-language-option ${
-        isSelected ? "selected" : ""
-      }`}
-    >
-      <LanguageTag
-        languageName={languageName}
-        key={languageName}
-        className="tag ml-0"
-      />
-      <div className="activity-count">
-        {cvState.languageUsageStats[languageName]} results
-      </div>
-    </ReactSelectComponents.Option>
-  );
-};
+      </ReactSelectComponents.Option>
+    );
+  });
 
 export const languageStyles: StylesConfig<StyleOption, true> = {
-  option: (styles, { data, isFocused, isSelected }) => {
+  option: action((styles, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor || !language?.ui?.color) {
@@ -157,8 +153,9 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
         backgroundColor: hoverBackgroundColor,
       },
     } as CSSObjectWithLabel;
-  },
-  multiValueLabel: (styles, { data }) => {
+  }),
+
+  multiValueLabel: action((styles, { data }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
 
@@ -173,8 +170,9 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
       paddingRight: "4px",
       ...language.ui,
     } as CSSObjectWithLabel;
-  },
-  multiValueRemove: (styles, { data }) => {
+  }),
+
+  multiValueRemove: action((styles, { data }) => {
     const cvState = useMst();
     const language = cvState.languages.find(({ id }) => id === data.value);
     if (!language?.ui?.backgroundColor) {
@@ -208,11 +206,11 @@ export const languageStyles: StylesConfig<StyleOption, true> = {
         backgroundColor: hoverBackgroundColor.css(),
       },
     } as CSSObject;
-  },
+  }),
 };
 
 export const categoriesStyles: StylesConfig<StyleOption, true> = {
-  option: (styles, { data, isFocused, isSelected }) => {
+  option: action((styles, { data, isFocused, isSelected }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);
     if (!category?.ui?.backgroundColor || !category?.ui?.color) {
@@ -248,9 +246,9 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
           chroma(hoverBackgroundColor).get("lab.l") > 80 ? "black" : "white",
       },
     } as CSSObjectWithLabel;
-  },
+  }),
 
-  multiValueLabel: (styles, { data }) => {
+  multiValueLabel: action((styles, { data }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);
     if (!category?.ui) {
@@ -265,8 +263,9 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
       placeItems: "center",
       ...category.ui,
     } as CSSObjectWithLabel;
-  },
-  multiValueRemove: (styles, { data }) => {
+  }),
+
+  multiValueRemove: action((styles, { data }) => {
     const cvState = useMst();
     const category = cvState.categories.find(({ id }) => id === data.value);
     if (!category?.ui?.backgroundColor) {
@@ -289,32 +288,29 @@ export const categoriesStyles: StylesConfig<StyleOption, true> = {
       ...category.ui,
       ":hover": hoverStyle,
     } as CSSObjectWithLabel;
-  },
+  }),
 };
 
-export const CategoryOption: React.FC<OptionProps<StyleOption, true>> = ({
-  children,
-  isSelected,
-  ...props
-}) => {
-  const cvState = useMst();
-  const category = cvState.categories.find(
-    ({ id }) => id === props.data?.value,
-  );
-  if (!category) {
-    console.warn(`category ${props?.data?.value} could not be found`);
-    return null;
-  }
-  return (
-    <ReactSelectComponents.Option
-      {...props}
-      isSelected={isSelected}
-      className={`dropdown-category-option ${isSelected ? "selected" : ""}`}
-    >
-      {category.id ? CategoryEmojiMap[category.id] : null} {children}
-    </ReactSelectComponents.Option>
-  );
-};
+export const CategoryOption: React.FC<OptionProps<StyleOption, true>> =
+  observer(({ children, isSelected, ...props }) => {
+    const cvState = useMst();
+    const category = cvState.categories.find(
+      ({ id }) => id === props.data?.value,
+    );
+    if (!category) {
+      console.warn(`category ${props?.data?.value} could not be found`);
+      return null;
+    }
+    return (
+      <ReactSelectComponents.Option
+        {...props}
+        isSelected={isSelected}
+        className={`dropdown-category-option ${isSelected ? "selected" : ""}`}
+      >
+        {category.id ? CategoryEmojiMap[category.id] : null} {children}
+      </ReactSelectComponents.Option>
+    );
+  });
 
 export const ActivityMultiValueLabel: React.FC<MultiValueGenericProps> = ({
   children,

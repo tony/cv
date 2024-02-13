@@ -2,7 +2,7 @@ import React from "react";
 
 import bb from "billboard.js";
 import equal from "fast-deep-equal";
-import { reaction } from "mobx";
+import { autorun, reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import { useMst } from "@tony/cv-react/src/mobx";
@@ -23,21 +23,27 @@ export const Chart: React.FC<bb.ChartOptions> = observer(
     const [chart, setChart] = React.useState<bb.Chart | null>(null);
 
     React.useEffect(() => {
-      if (!chart) {
-        const newChart = bb.generate({ bindto: ref.current, data, ...props });
-        setChart(newChart);
-        return () => newChart.unload();
-      }
+      const dispose = autorun(() => {
+        if (!chart) {
+          const newChart = bb.generate({ bindto: ref.current, data, ...props });
+          setChart(newChart);
+          return () => newChart.unload();
+        }
+      });
+      return dispose;
     }, [props, data, chart, data]);
 
     React.useEffect(() => {
-      if (!chart || !data) {
-        return;
-      }
-      if (chart?.load && data) {
-        // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
-        chart.load(data);
-      }
+      const dispose = autorun(() => {
+        if (!chart || !data) {
+          return;
+        }
+        if (chart?.load && data) {
+          // @ts-ignore Data structure mismatches: https://github.com/naver/billboard.js/issues/1848
+          chart.load(data);
+        }
+      });
+      return dispose;
     }, [data, chart]);
     return <div ref={ref} />;
   },
@@ -64,10 +70,12 @@ export const LanguagePieChart: React.FC<Partial<DonutChartProps>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToDonut(cvState) as DonutChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToDonut(cvState) as DonutChartProps);
+        }
+      });
+      return dispose;
     }, [cvState, chartData]);
 
     if (!chartData) {
@@ -99,10 +107,12 @@ export const ActivityLineChart: React.FC<Partial<bb.ChartOptions>> = observer(
     );
 
     React.useEffect(() => {
-      if (!chartData) {
-        setChartData(stateToLine(cvState) as LineChartProps);
-      }
-      return void 0;
+      const dispose = autorun(() => {
+        if (!chartData) {
+          setChartData(stateToLine(cvState) as LineChartProps);
+        }
+      });
+      return dispose;
     }, [chartData, cvState]);
 
     if (!chartData) {
