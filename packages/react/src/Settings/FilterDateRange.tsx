@@ -19,6 +19,8 @@ import type { OptionType, StyleOption } from "../react-select";
 
 import { DEFAULT_REACT_SELECT_PROPS, colourStyles } from "./FilterDropdowns";
 
+import { action } from "mobx";
+import { observer } from "mobx-react-lite";
 import "./FilterDateRange.css";
 
 const minYear = INITIAL_SEARCH_OPTIONS.startYear;
@@ -83,7 +85,7 @@ const onMenuOpen = () => {
   }, 15);
 };
 
-export const FilterDateRange: React.FC = () => {
+export const FilterDateRange: React.FC = observer(() => {
   const cvState = useMst();
 
   return (
@@ -96,21 +98,21 @@ export const FilterDateRange: React.FC = () => {
               value: year,
             }) as StyleOption,
         )}
-        onChange={(value: PropsValue<OptionType>): void => {
+        onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setYears({
             startYear: parseInt(value.value),
             endYear: cvState.searchOptions.endYear,
           });
-        }}
+        })}
         styles={{ ...colourStyles, ...dateRangeStyles }}
         placeholder="Start year"
         defaultValue={{
           label: minYear,
           value: minYear,
         }}
-        isOptionDisabled={({ value: year }: OptionType) => {
+        isOptionDisabled={action(({ value: year }: OptionType) => {
           return year > cvState.searchOptions.endYear;
-        }}
+        })}
         components={{ SingleValue }}
         onMenuOpen={onMenuOpen}
         menuShouldScrollIntoView
@@ -126,21 +128,21 @@ export const FilterDateRange: React.FC = () => {
               value: year,
             }) as StyleOption,
         )}
-        onChange={(value: PropsValue<OptionType>): void => {
+        onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setYears({
             startYear: cvState.searchOptions.startYear,
             endYear: parseInt(value.value),
           });
-        }}
+        })}
         styles={{ ...colourStyles, ...dateRangeStyles }}
         placeholder="End year"
         defaultValue={{
           label: "Present",
           value: maxYear,
         }}
-        isOptionDisabled={({ value: year }: OptionType) => {
+        isOptionDisabled={action(({ value: year }: OptionType) => {
           return year < cvState.searchOptions.startYear;
-        }}
+        })}
         components={{ SingleValue, Option: YearOption }}
         menuShouldScrollIntoView
         {...DEFAULT_REACT_SELECT_PROPS}
@@ -148,4 +150,4 @@ export const FilterDateRange: React.FC = () => {
       />
     </div>
   );
-};
+});
