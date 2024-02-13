@@ -20,28 +20,30 @@ import { useMst } from "./mobx";
 
 export const LanguageTag: React.FC<
   { languageName: LanguageName } & React.HTMLProps<HTMLDivElement>
-> = ({ languageName, children, className = "", style = {}, ...props }) => {
-  if (!languageName) {
-    return null;
-  }
-  const cvState = useMst();
-  const language = cvState.languages.find(({ id }) => id === languageName);
-  if (!language || !language.ui) {
-    console.groupCollapsed(`missing language for ${languageName}`);
-    console.table(language);
-    console.groupEnd();
-  }
+> = observer(
+  ({ languageName, children, className = "", style = {}, ...props }) => {
+    if (!languageName) {
+      return null;
+    }
+    const cvState = useMst();
+    const language = cvState.languages.find(({ id }) => id === languageName);
+    if (!language || !language.ui) {
+      console.groupCollapsed(`missing language for ${languageName}`);
+      console.table(language);
+      console.groupEnd();
+    }
 
-  return (
-    <div
-      className={`tag language-tag ${className ? ` ${className}` : ""}`}
-      style={{ ...language?.ui, ...style }}
-      {...props}
-    >
-      {children || languageName}
-    </div>
-  );
-};
+    return (
+      <div
+        className={`tag language-tag ${className ? ` ${className}` : ""}`}
+        style={{ ...language?.ui, ...style }}
+        {...props}
+      >
+        {children || languageName}
+      </div>
+    );
+  },
+);
 
 export const CategoryTag: React.FC<
   { categoryName: CategoryName } & React.HTMLProps<HTMLDivElement>
@@ -75,7 +77,7 @@ export const CategoryTag: React.FC<
 
 export const ActivityOpenSourceEmoji: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
-}> = ({ activity }) => {
+}> = observer(({ activity }) => {
   const wrapperClassName = "inline-flex w-5 h-5";
   const svgClassName = "w-3 h-3";
 
@@ -105,11 +107,11 @@ export const ActivityOpenSourceEmoji: React.FC<{
       svgClassName={svgClassName}
     />
   );
-};
+});
 
 export const ActivityActionText: React.FC<{
   activity: Instance<typeof Activity>;
-}> = ({ activity }) => {
+}> = observer(({ activity }) => {
   const {
     category: categoryName,
     acceptedAt,
@@ -147,7 +149,7 @@ export const ActivityActionText: React.FC<{
       )}
     </span>
   );
-};
+});
 
 export const OrganizationTypeTag: React.FC<
   { orgTypeName: OrgTypeName } & React.HTMLProps<HTMLDivElement>

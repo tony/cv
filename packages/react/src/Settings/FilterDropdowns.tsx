@@ -8,6 +8,7 @@ import Select, {
   components as ReactSelectComponents,
 } from "react-select";
 
+import { observer } from "mobx-react-lite";
 import { useMst } from "../mobx";
 import {
   ActivityMultiValueLabel,
@@ -192,7 +193,7 @@ const MultiValueCount: React.FC<MultiValueProps<StyleOption, true>> = ({
   ) : null;
 };
 
-export const FilterDropdowns: React.FC = () => {
+export const FilterDropdowns: React.FC = observer(() => {
   const cvState = useMst();
   return (
     <div className="dropdown-row py-2">
@@ -258,4 +259,4 @@ export const FilterDropdowns: React.FC = () => {
       />
     </div>
   );
-};
+});

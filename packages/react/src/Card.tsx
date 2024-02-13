@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -65,7 +66,7 @@ export const Links: React.FC<{
 
 export const PatchLinks: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
-}> = ({ activity }) => (
+}> = observer(({ activity }) => (
   <Links
     linkMap={[
       {
@@ -96,11 +97,11 @@ export const PatchLinks: React.FC<{
       },
     ]}
   />
-);
+));
 
 export const PublicationLinks: React.FC<{
   org: Instance<typeof PublicationOrg>;
-}> = ({ org }) => (
+}> = observer(({ org }) => (
   <Links
     linkMap={[
       ...(org?.url
@@ -123,11 +124,11 @@ export const PublicationLinks: React.FC<{
         : []),
     ]}
   />
-);
+));
 
 export const CompanyLinks: React.FC<{
   org: Instance<typeof CompanyOrg>;
-}> = ({ org }) => (
+}> = observer(({ org }) => (
   <Links
     linkMap={[
       ...(org?.url
@@ -141,24 +142,26 @@ export const CompanyLinks: React.FC<{
         : []),
     ]}
   />
-);
+));
 
 export const PullRequestLinks: React.FC<{
   activity: Instance<typeof ActivityOpenSource>;
-}> = ({ activity }) =>
-  activity?.links && (
-    <Links
-      linkMap={Array.from(activity?.links)?.map(([id, link]) => ({
-        id,
-        title: link.title,
-        url: link.url,
-      }))}
-    />
-  );
+}> = observer(
+  ({ activity }) =>
+    activity?.links && (
+      <Links
+        linkMap={Array.from(activity?.links)?.map(([id, link]) => ({
+          id,
+          title: link.title,
+          url: link.url,
+        }))}
+      />
+    ),
+);
 
 export const ActivityLinks: React.FC<
   React.ComponentProps<typeof ActivityCard>
-> = ({ activity }) => {
+> = observer(({ activity }) => {
   const { org } = activity;
   return (
     <div className="activity-link-row text-xs inline-flex items-center">
@@ -176,7 +179,7 @@ export const ActivityLinks: React.FC<
       {activity?.links && <PullRequestLinks activity={activity} />}
     </div>
   );
-};
+});
 
 const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
   ({ date, className }) =>
@@ -189,33 +192,37 @@ const DateText: React.FC<{ date: string } & React.HTMLProps<HTMLSpanElement>> =
       </span>
     );
 
-const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
-  return org?.languages?.map((language) => (
-    <LanguageTag languageName={language.id} key={language.id} />
-  ));
-};
+const LanguageTags: React.FC<{ org: Instance<typeof Org> }> = observer(
+  ({ org }) => {
+    return org?.languages?.map((language) => (
+      <LanguageTag languageName={language.id} key={language.id} />
+    ));
+  },
+);
 
-const OrganizationLink: React.FC<{ org: Instance<typeof Org> }> = ({ org }) => {
-  const orgLink =
-    org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
+const OrganizationLink: React.FC<{ org: Instance<typeof Org> }> = observer(
+  ({ org }) => {
+    const orgLink =
+      org.orgType === OrgTypeName.OpenSource ? org.repoUrl || org.url : org.url;
 
-  return (
-    <span className="card-org-name">
-      <a
-        {...(orgLink ? { href: orgLink } : {})}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={org.orgType}
-        className={activityLinkClasses}
-      >
-        {org.name}
-      </a>
-    </span>
-  );
-};
+    return (
+      <span className="card-org-name">
+        <a
+          {...(orgLink ? { href: orgLink } : {})}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={org.orgType}
+          className={activityLinkClasses}
+        >
+          {org.name}
+        </a>
+      </span>
+    );
+  },
+);
 
 const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
-  ({ activity, isOpen }) => {
+  observer(({ activity, isOpen }) => {
     if (activity.category !== CategoryName.Patch || !isOpen) {
       return null;
     }
@@ -324,104 +331,107 @@ const PullRequestJourney: React.FC<ActivityCardProps & { isOpen?: boolean }> =
         </ol>
       </div>
     );
-  };
+  });
 
-export const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
-  const { org } = activity;
-  const [isOpen, setIsOpen] = React.useState(false);
-  const clickOpen:
-    | React.MouseEventHandler<HTMLLIElement>
-    | React.KeyboardEventHandler<HTMLLIElement>
-    | undefined = (
-    e: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
-  ) => {
-    // Don't trigger if clicking a link
-    if ((event?.target as HTMLElement)?.tagName?.toLowerCase() === "a") return;
-
-    // Don't trigger if selecting text
-    const cellText = document.getSelection();
-    if (cellText?.type === "Range") {
-      e.stopPropagation();
-      return;
-    }
-
-    const keyPress = e.type === "keydown" && (e as React.KeyboardEvent).key;
-    const navKeys = ["Enter", "ArrowUp", "ArrowDown"];
-    if (keyPress) {
-      const cardEl = e.currentTarget?.closest(".card");
-      const previousItem =
-        cardEl?.previousElementSibling ??
-        document.querySelector("#chart-menu button:last-child");
-      const nextItem = cardEl?.nextElementSibling;
-
-      if (["ArrowUp", "k"].includes(keyPress)) {
-        (previousItem as HTMLDivElement)?.focus();
+export const ActivityCard: React.FC<ActivityCardProps> = observer(
+  ({ activity }) => {
+    const { org } = activity;
+    const [isOpen, setIsOpen] = React.useState(false);
+    const clickOpen:
+      | React.MouseEventHandler<HTMLLIElement>
+      | React.KeyboardEventHandler<HTMLLIElement>
+      | undefined = (
+      e: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
+    ) => {
+      // Don't trigger if clicking a link
+      if ((event?.target as HTMLElement)?.tagName?.toLowerCase() === "a")
         return;
-      }
-      if (["ArrowDown", "j"].includes(keyPress)) {
-        (nextItem as HTMLDivElement)?.focus();
+
+      // Don't trigger if selecting text
+      const cellText = document.getSelection();
+      if (cellText?.type === "Range") {
+        e.stopPropagation();
         return;
       }
 
-      if (["ArrowRight", "l"].includes(keyPress)) {
-        setIsOpen(!isOpen);
-        return;
+      const keyPress = e.type === "keydown" && (e as React.KeyboardEvent).key;
+      const navKeys = ["Enter", "ArrowUp", "ArrowDown"];
+      if (keyPress) {
+        const cardEl = e.currentTarget?.closest(".card");
+        const previousItem =
+          cardEl?.previousElementSibling ??
+          document.querySelector("#chart-menu button:last-child");
+        const nextItem = cardEl?.nextElementSibling;
+
+        if (["ArrowUp", "k"].includes(keyPress)) {
+          (previousItem as HTMLDivElement)?.focus();
+          return;
+        }
+        if (["ArrowDown", "j"].includes(keyPress)) {
+          (nextItem as HTMLDivElement)?.focus();
+          return;
+        }
+
+        if (["ArrowRight", "l"].includes(keyPress)) {
+          setIsOpen(!isOpen);
+          return;
+        }
+
+        if (["ArrowLeft", "h"].includes(keyPress)) {
+          setIsOpen(!isOpen);
+          return;
+        }
+
+        if (["Space", " "].includes(keyPress)) {
+          setIsOpen(!isOpen);
+          e.preventDefault();
+          return;
+        }
+
+        if (["Tab", "Shift", "Control", "Alt", "z"].includes(keyPress)) {
+          return;
+        }
       }
 
-      if (["ArrowLeft", "h"].includes(keyPress)) {
-        setIsOpen(!isOpen);
-        return;
-      }
-
-      if (["Space", " "].includes(keyPress)) {
-        setIsOpen(!isOpen);
-        e.preventDefault();
-        return;
-      }
-
-      if (["Tab", "Shift", "Control", "Alt", "z"].includes(keyPress)) {
-        return;
-      }
-    }
-
-    setIsOpen(!isOpen);
-  };
-  return (
-    <li
-      className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row"
-      onClick={clickOpen}
-      onKeyDown={clickOpen}
-      // biome-ignore lint/a11y/noNoninteractiveTabindex: Simplest way with JSX?
-      tabIndex={0}
-    >
-      <div className="left-side flex-grow">
-        <div>
-          <OrganizationLink org={org} />
-          <span className="card-section-separator px-1">·</span>
-          <span className="card-category-and-date">
-            <ActivityActionText activity={activity} />
-            <DateText
-              date={activity.acceptedAt ?? activity.createdAt}
-              className="card-date-text-left pl-1"
-            />
-            {activity.endedAt && (
-              <span className="pl-1">
-                until <DateText date={activity.endedAt} />
-              </span>
-            )}
-          </span>
+      setIsOpen(!isOpen);
+    };
+    return (
+      <li
+        className="card card-grid text-sm flex justify-space-between h-full rounded-sm md:rounded max-w-4xl p-2 m-0 md:m-1 lg:m-2 align-center space-between hover:bg-[#0085f230] flex-col md:flex-row"
+        onClick={clickOpen}
+        onKeyDown={clickOpen}
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: Simplest way with JSX?
+        tabIndex={0}
+      >
+        <div className="left-side flex-grow">
+          <div>
+            <OrganizationLink org={org} />
+            <span className="card-section-separator px-1">·</span>
+            <span className="card-category-and-date">
+              <ActivityActionText activity={activity} />
+              <DateText
+                date={activity.acceptedAt ?? activity.createdAt}
+                className="card-date-text-left pl-1"
+              />
+              {activity.endedAt && (
+                <span className="pl-1">
+                  until <DateText date={activity.endedAt} />
+                </span>
+              )}
+            </span>
+          </div>
+          <div className="card-activity-title">
+            <ReactMarkdown>{activity.title}</ReactMarkdown>
+          </div>
+          <PullRequestJourney activity={activity} isOpen={isOpen} />
+          <div className="card-activity-links inline-flex items-center">
+            <ActivityLinks activity={activity} />
+          </div>
         </div>
-        <div className="card-activity-title">
-          <ReactMarkdown>{activity.title}</ReactMarkdown>
+        <div className="right-side text-left md:text-right pt-1 md:pt-0 gap-x-1 flex">
+          <LanguageTags org={org} />
         </div>
-        <PullRequestJourney activity={activity} isOpen={isOpen} />
-        <div className="card-activity-links inline-flex items-center">
-          <ActivityLinks activity={activity} />
-        </div>
-      </div>
-      <div className="right-side text-left md:text-right pt-1 md:pt-0 gap-x-1 flex">
-        <LanguageTags org={org} />
-      </div>
-    </li>
-  );
-};
+      </li>
+    );
+  },
+);
