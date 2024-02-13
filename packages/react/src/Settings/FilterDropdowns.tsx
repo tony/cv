@@ -8,6 +8,7 @@ import Select, {
   components as ReactSelectComponents,
 } from "react-select";
 
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useMst } from "../mobx";
 import {
@@ -205,11 +206,11 @@ export const FilterDropdowns: React.FC = observer(() => {
             ),
           ) as StyleOption[]
         }
-        onChange={(value: PropsValue<OptionType>): void => {
+        onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setLanguages(
             (value as OptionType[]).map(({ value: v }) => v),
           );
-        }}
+        })}
         styles={{ ...colourStyles, ...languageStyles }}
         components={{ Option: LanguageOption, MultiValue: MultiValueCount }}
         placeholder="Language"
@@ -224,11 +225,11 @@ export const FilterDropdowns: React.FC = observer(() => {
               value: a.id,
             }) as StyleOption,
         )}
-        onChange={(value: PropsValue<OptionType>): void => {
+        onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setCategories(
             (value as OptionType[]).map(({ value: v }) => v),
           );
-        }}
+        })}
         styles={{ ...colourStyles, ...categoriesStyles }}
         components={{
           Option: CategoryOption,
@@ -247,9 +248,9 @@ export const FilterDropdowns: React.FC = observer(() => {
               value: org.id?.toString() ?? org.id,
             }) as StyleOption,
         )}
-        onChange={(value: PropsValue<OptionType>): void => {
+        onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setOrgs((value as OptionType[]).map(({ value: v }) => v));
-        }}
+        })}
         styles={{ ...colourStyles, ...organizationStyles }}
         components={{ Option: OrganizationOption, MultiValue: MultiValueCount }}
         placeholder="Organization and projects"
