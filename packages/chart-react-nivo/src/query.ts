@@ -1,14 +1,14 @@
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
-import chroma from "chroma-js";
-import type { Instance } from "mobx-state-tree";
-
 import { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeight,
   donutChartWidth,
   lineChartHeight,
 } from "@tony/cv-react/src/styles/constants";
+import chroma from "chroma-js";
+import { action, computed, reaction } from "mobx";
+import type { Instance } from "mobx-state-tree";
 
 function isString(x: unknown): x is string {
   return typeof x === "string";
@@ -36,20 +36,22 @@ export const DEFAULT_RESULTS: Results = {
 export const stateToDonut = (
   state: Instance<typeof CVState>,
 ): DonutChartProps => {
+  const languageUsageStats = computed(() => state.languageUsageStats).get();
+  const languages = computed(() => state.languages).get();
+  const dominantLanguage = computed(() => state.dominantLanguage).get();
+
   return {
     height: donutChartHeight,
     width: donutChartWidth,
     fit: true,
-    data: Object.entries(state.languageUsageStats).map(
-      ([languageName, count]) => {
-        return {
-          id: languageName,
-          label: languageName,
-          value: count,
-        };
-      },
-    ),
-    colors: (item) => {
+    data: Object.entries(languageUsageStats).map(([languageName, count]) => {
+      return {
+        id: languageName,
+        label: languageName,
+        value: count,
+      };
+    }),
+    colors: action((item) => {
       const color = state.languages.find((language) => language.id === item.id)
         ?.ui?.backgroundColor;
 
@@ -57,26 +59,29 @@ export const stateToDonut = (
         return color;
       }
       return "gray";
-    },
+    }),
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
     innerRadius: 0.5,
     padAngle: 0.7,
     cornerRadius: 3,
     borderWidth: 0,
     sortByValue: true,
-    arcLabelsTextColor: (item: {
-      id: string;
-      label: string;
-      value: number;
-    }) => {
-      const color = state.languages.find((language) => language.id === item.id)
-        ?.ui?.color;
+    arcLabelsTextColor: action(
+      (item: {
+        id: string;
+        label: string;
+        value: number;
+      }) => {
+        const color = state.languages.find(
+          (language) => language.id === item.id,
+        )?.ui?.color;
 
-      if (color && isString(color)) {
-        return color;
-      }
-      return "gray";
-    },
+        if (color && isString(color)) {
+          return color;
+        }
+        return "gray";
+      },
+    ),
     arcLinkLabelsSkipAngle: 100,
     arcLabelsSkipAngle: 25,
     arcLinkLabelsOffset: 10,
@@ -89,13 +94,12 @@ export const stateToDonut = (
 export const stateToLine = (
   state: Instance<typeof CVState>,
 ): LineChartProps => {
-  const activityYearMap = state.activityYearMap;
   return {
     // @ts-ignore
     data: [
       {
         id: "Year",
-        data: Object.entries(activityYearMap).map(([year, count]) => {
+        data: Object.entries(state.activityYearMap).map(([year, count]) => {
           return {
             x: `${year.toString()}-01-01`,
             y: count,
@@ -103,15 +107,15 @@ export const stateToLine = (
         }),
       },
     ],
-    colors: () => {
+    colors: action(() => {
       const color = state.dominantLanguage?.ui?.backgroundColor;
 
       if (color && isString(color)) {
         return color;
       }
       return "gray";
-    },
-    pointBorderColor: () => {
+    }),
+    pointBorderColor: action(() => {
       const color = chroma(
         state.dominantLanguage?.ui?.backgroundColor ?? "grey",
       )
@@ -122,7 +126,7 @@ export const stateToLine = (
         return color;
       }
       return "gray";
-    },
+    }),
     pointColor: "white",
     pointSize: 12,
     pointBorderWidth: 4,
