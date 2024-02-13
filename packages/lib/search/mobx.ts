@@ -20,7 +20,7 @@ configure({
   enforceActions: "always",
   // computedRequiresReaction: true,
   // reactionRequiresObservable: true,
-  // observableRequiresReaction: true,
+  observableRequiresReaction: true,
   disableErrorBoundaries: true,
 });
 
