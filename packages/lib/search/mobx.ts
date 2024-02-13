@@ -53,15 +53,6 @@ export const ActivityMeta = types.model("ActivityMeta", {
   isMerged: types.boolean,
 });
 
-export const activityUI = ActivityMeta.create({
-  isOptionDisabled: false,
-  isRelease: false,
-  isTypo: false,
-  isDocImprovement: false,
-  isCodeStyleTweak: false,
-  isMerged: false,
-});
-
 export const UiCssProperties = types.model("UiCssProperties", {
   color: types.optional(types.string, "black"),
   backgroundColor: types.optional(types.string, LANGUAGE_FALLBACK_COLOR),
