@@ -563,11 +563,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.14.2":
-  version: 1.14.2
-  resolution: "@carbon/charts-react@npm:1.14.2"
+"@carbon/charts-react@npm:1.14.3":
+  version: 1.14.3
+  resolution: "@carbon/charts-react@npm:1.14.3"
   dependencies:
-    "@carbon/charts": "npm:1.14.2"
+    "@carbon/charts": "npm:1.14.3"
     "@carbon/icons-react": "npm:^11.36.0"
     "@ibm/telemetry-js": "npm:^1.2.1"
     react: "npm:^18.2.0"
@@ -575,13 +575,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/93fe4f071b2a0706cc41766bbc163ea21781bc5b35fab7648f40de1b10b06b5bad9e1e1321d5887e61c7a66c67ed76c72b2a5d2557a9f84fefac75752527bbc2
+  checksum: 10/26b3e2f811d36ce499a7350f94a84fa1a46ee76bd25e59008da3908418a04a6f8261359b7a33a4bae654fe3aa71e1f98e450090de06b7799f2f80851a7295dd6
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.14.2":
-  version: 1.14.2
-  resolution: "@carbon/charts@npm:1.14.2"
+"@carbon/charts@npm:1.14.3":
+  version: 1.14.3
+  resolution: "@carbon/charts@npm:1.14.3"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/utils-position": "npm:^1.1.4"
@@ -605,7 +605,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 10/f86d8aecbf90b2f2cce35df878ac1e8cba63f4a1a452b570bbbee7fa74f531f224d88e2cf851d336f224d3e591acaaf9e4c0bf63035160bef3c7c85b02d1f8c3
+  checksum: 10/77316b94a83db6ddbd386e97269dc6ceaaaf8cbe3e6e0b1c952fcc94c1fb18b0491f0d85dace8f305185bd212c2ae722aa9e1922d91e2beccd9cd772a4bafa96
   languageName: node
   linkType: hard
 
@@ -2057,10 +2057,10 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.19"
-    "@types/react": "npm:^18.2.57"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
-    billboard.js: "npm:^3.11.0"
+    billboard.js: "npm:^3.11.2"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
     mobx: "npm:^6.12.0"
@@ -2076,11 +2076,11 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@carbon/charts": "npm:1.14.2"
-    "@carbon/charts-react": "npm:1.14.2"
+    "@carbon/charts": "npm:1.14.3"
+    "@carbon/charts-react": "npm:1.14.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.19"
-    "@types/react": "npm:^18.2.57"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2106,8 +2106,8 @@ __metadata:
     "@nivo/line": "npm:^0.84.0"
     "@nivo/pie": "npm:^0.84.0"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.19"
-    "@types/react": "npm:^18.2.57"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2125,9 +2125,9 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.19"
+    "@types/node": "npm:^20.11.20"
     "@types/plotly.js": "npm:^2.29.1"
-    "@types/react": "npm:^18.2.57"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2146,8 +2146,8 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@tony/cv-lib": "npm:*"
-    "@types/node": "npm:^20.11.19"
-    "@types/react": "npm:^18.2.57"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2174,7 +2174,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@types/chroma-js": "npm:^2.4.4"
-    "@types/node": "npm:^20.11.19"
+    "@types/node": "npm:^20.11.20"
     chroma-js: "npm:^2.4.2"
     csstype: "npm:^3.1.3"
     github-colors: "npm:~2.2"
@@ -2200,8 +2200,8 @@ __metadata:
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/typography": "npm:^0.5.10"
     "@tony/cv-data": "npm:*"
-    "@types/node": "npm:^20.11.19"
-    "@types/react": "npm:^18.2.57"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.58"
     "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.17"
@@ -2217,7 +2217,7 @@ __metadata:
     tailwindcss: "npm:^3.4.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
-    vite: "npm:^5.1.3"
+    vite: "npm:^5.1.4"
     vite-plugin-webfont-dl: "npm:^3.9.1"
   languageName: unknown
   linkType: soft
@@ -2227,7 +2227,7 @@ __metadata:
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@types/node": "npm:^20.11.19"
+    "@types/node": "npm:^20.11.20"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
     moment: "npm:^2.30.1"
@@ -2464,6 +2464,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/d3-selection@npm:*, @types/d3-selection@npm:^3.0.0":
+  version: 3.0.10
+  resolution: "@types/d3-selection@npm:3.0.10"
+  checksum: 10/a62227d59fdd2debda326ca58613af64f8a5819f68b94aecb6b990616f5889a6d3d12816521bcd0c5c44df5d81654c558ba49a4570a766c6460bf2a765bdb10b
+  languageName: node
+  linkType: hard
+
 "@types/d3-shape@npm:^2.0.0":
   version: 2.1.7
   resolution: "@types/d3-shape@npm:2.1.7"
@@ -2521,6 +2528,15 @@ __metadata:
   version: 3.0.2
   resolution: "@types/d3-timer@npm:3.0.2"
   checksum: 10/1643eebfa5f4ae3eb00b556bbc509444d88078208ec2589ddd8e4a24f230dd4cf2301e9365947e70b1bee33f63aaefab84cd907822aae812b9bc4871b98ab0e1
+  languageName: node
+  linkType: hard
+
+"@types/d3-transition@npm:^3.0.0":
+  version: 3.0.8
+  resolution: "@types/d3-transition@npm:3.0.8"
+  dependencies:
+    "@types/d3-selection": "npm:*"
+  checksum: 10/6b4d4062486857036263de499f3cde861935e11784e9f7b834254625d87655376e03eec61bca204fd5fde29434722d1633bb12c8654bcf62632fe126b3ac90ce
   languageName: node
   linkType: hard
 
@@ -2592,12 +2608,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.19":
-  version: 20.11.19
-  resolution: "@types/node@npm:20.11.19"
+"@types/node@npm:^20.11.20":
+  version: 20.11.20
+  resolution: "@types/node@npm:20.11.20"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/c7f4705d6c84aa21679ad180c33c13ca9567f650e66e14bcee77c7c43d14619c7cd3b4d7b2458947143030b7b1930180efa6d12d999b45366abff9fed7a17472
+  checksum: 10/ff449bdc94810dadb54e0f77dd587c6505ef79ffa5a208c16eb29b223365b188f4c935a3abaf0906a01d05257c3da1f72465594a841d35bcf7b6deac7a6938fb
   languageName: node
   linkType: hard
 
@@ -2660,14 +2676,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.57":
-  version: 18.2.57
-  resolution: "@types/react@npm:18.2.57"
+"@types/react@npm:^18.2.58":
+  version: 18.2.58
+  resolution: "@types/react@npm:18.2.58"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/beee45a8ee48862fb5101f6ebdd89ccc20c5a6df29dcd2315560bc3b57ea3af8d09a8e9bb1c58063a70f9010e0d2c7bd300819438e2ca62810285c3d7275ab5a
+  checksum: 10/ec5e1a7d8acc55551efec7a3d63441d24c7e94b66bf8039944541a8408048668e51b7b4b0b6e8303cdea271b7c6da242cdc7bb8ca501eedf822956edbdbfc67e
   languageName: node
   linkType: hard
 
@@ -3020,10 +3036,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"billboard.js@npm:^3.11.0":
-  version: 3.11.0
-  resolution: "billboard.js@npm:3.11.0"
+"billboard.js@npm:^3.11.2":
+  version: 3.11.2
+  resolution: "billboard.js@npm:3.11.2"
   dependencies:
+    "@types/d3-selection": "npm:^3.0.0"
+    "@types/d3-transition": "npm:^3.0.0"
     d3-axis: "npm:^3.0.0"
     d3-brush: "npm:^3.0.0"
     d3-drag: "npm:^3.0.0"
@@ -3037,7 +3055,7 @@ __metadata:
     d3-time-format: "npm:^4.1.0"
     d3-transition: "npm:^3.0.1"
     d3-zoom: "npm:^3.0.0"
-  checksum: 10/00602ee51e835bb853242ef45d4c9f1f1ecf6bbbe104ca0caa551733561127a6b4d1604d0d8338192bc8b9c199cd6634e5ff8177f9184fd765b610f326d39dd0
+  checksum: 10/0ab3c72c900fbfd5de60f250eb01352f39e4c3751dc73be6b859e7a4a08116f6fe55fc1b6da630bfbe08cf888f7d2868436f1a9f9a895f003e733e3e01ee086f
   languageName: node
   linkType: hard
 
@@ -9402,9 +9420,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.1.3":
-  version: 5.1.3
-  resolution: "vite@npm:5.1.3"
+"vite@npm:^5.1.4":
+  version: 5.1.4
+  resolution: "vite@npm:5.1.4"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -9438,7 +9456,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/6ba2223157e2cc2fa62dff9004ccba20fc409c6baf7354c64ed0f8e4bcd853092d08d06ec4dec37143e794a96e061879a870d85bad4f1eb9ee5c6d0a13cef30f
+  checksum: 10/e9003b853f0784260f4fe7ce0190124b347fd8fd6bf889a07080facd0d9a9667eaff4022eddb1ba3f0283ef69d15d77f84bca832082e48874a7a62e7f6d66b08
   languageName: node
   linkType: hard
 
