@@ -33,7 +33,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/analytics-next@npm:^9.1.0":
+"@atlaskit/analytics-next@npm:^9.2.0":
   version: 9.2.0
   resolution: "@atlaskit/analytics-next@npm:9.2.0"
   dependencies:
@@ -69,16 +69,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/icon@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "@atlaskit/icon@npm:22.0.0"
+"@atlaskit/icon@npm:^22.1.0":
+  version: 22.1.1
+  resolution: "@atlaskit/icon@npm:22.1.1"
   dependencies:
-    "@atlaskit/tokens": "npm:^1.28.0"
+    "@atlaskit/tokens": "npm:^1.38.0"
     "@babel/runtime": "npm:^7.0.0"
     "@emotion/react": "npm:^11.7.1"
   peerDependencies:
     react: ^16.8.0
-  checksum: 10/4ee022f66353edc74299547fdb7a0cc0b2b8c18de761efa188dc7aad468ff65723c6bba3ed3d76bc2003672e66a7b1a1fed685b34c807664213ecb9561b0c12c
+  checksum: 10/0df15ac04446f0a32d03aadacc247b6a7985526c1d4504d8da0c658bcbf35cba58373e0081b0ca35527ce6b643e295f709289d8703a5c34ad44dbf6d1037af95
   languageName: node
   linkType: hard
 
@@ -105,24 +105,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/toggle@npm:^13.0.2":
-  version: 13.0.2
-  resolution: "@atlaskit/toggle@npm:13.0.2"
+"@atlaskit/toggle@npm:^13.0.3":
+  version: 13.0.3
+  resolution: "@atlaskit/toggle@npm:13.0.3"
   dependencies:
-    "@atlaskit/analytics-next": "npm:^9.1.0"
+    "@atlaskit/analytics-next": "npm:^9.2.0"
     "@atlaskit/ds-lib": "npm:^2.2.0"
-    "@atlaskit/icon": "npm:^22.0.0"
+    "@atlaskit/icon": "npm:^22.1.0"
     "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.33.0"
+    "@atlaskit/tokens": "npm:^1.38.0"
     "@babel/runtime": "npm:^7.0.0"
     "@emotion/react": "npm:^11.7.1"
+    react-uid: "npm:^2.2.0"
   peerDependencies:
     react: ^16.8.0
-  checksum: 10/d89f578faead47f28650d90e43073dc965c85dc27b1c8bc1e1dd6540ae619cb04facd1ec2d381c27ada3ceea26ba61c8357c142beca9f0a47cd20ca5550634ce
+  checksum: 10/5fb24d5ad50cc9e7774de018e5867c4b24fda63f4bfe2a8562fdc5dc1733e4302830b22595fd6b283eea46260cac4b48bd6013c96d6650f84171565f3065c1f8
   languageName: node
   linkType: hard
 
-"@atlaskit/tokens@npm:^1.25.0, @atlaskit/tokens@npm:^1.28.0, @atlaskit/tokens@npm:^1.33.0":
+"@atlaskit/tokens@npm:^1.25.0":
   version: 1.36.0
   resolution: "@atlaskit/tokens@npm:1.36.0"
   dependencies:
@@ -135,6 +136,22 @@ __metadata:
   peerDependencies:
     react: ^16.8.0
   checksum: 10/0258b6b7da726131da2ea16f6d7f7f898eab94284db950736f3466a0c7c6fc20a3c9b0f986822573237036335e6b95cdd1f51e034c8e2ab2c003bed49bad4ec5
+  languageName: node
+  linkType: hard
+
+"@atlaskit/tokens@npm:^1.38.0":
+  version: 1.38.0
+  resolution: "@atlaskit/tokens@npm:1.38.0"
+  dependencies:
+    "@atlaskit/ds-lib": "npm:^2.2.0"
+    "@atlaskit/platform-feature-flags": "npm:^0.2.0"
+    "@babel/runtime": "npm:^7.0.0"
+    "@babel/traverse": "npm:^7.23.2"
+    "@babel/types": "npm:^7.20.0"
+    bind-event-listener: "npm:^2.1.1"
+  peerDependencies:
+    react: ^16.8.0
+  checksum: 10/a25c1ec79252a95901fc173528dc13612da8a60d54a5e8f29e94db96e58f2582f918881a74f2ed0e2812cef65a1253d3f50227b42b8babc76710f446ea586596
   languageName: node
   linkType: hard
 
@@ -563,11 +580,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.14.7":
-  version: 1.14.7
-  resolution: "@carbon/charts-react@npm:1.14.7"
+"@carbon/charts-react@npm:1.14.8":
+  version: 1.14.8
+  resolution: "@carbon/charts-react@npm:1.14.8"
   dependencies:
-    "@carbon/charts": "npm:1.14.7"
+    "@carbon/charts": "npm:1.14.8"
     "@carbon/icons-react": "npm:^11.36.0"
     "@ibm/telemetry-js": "npm:^1.2.1"
     react: "npm:^18.2.0"
@@ -575,13 +592,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/cf94c3a0745ceefaba1bd1f952a5e6fd7a65c79c21f85193f3c52f7f4f86dbf97687beae818e603b2da4b04543ff9610e40000993eeb5988e2ffbd4cec5ba422
+  checksum: 10/28c7bbbade6174b37473b0591d739972f704c7d1445e720dc9e9d1fd60f9f1bd8ae4b4623da8f669a5ab320715fb50f0c007f977a32b29fb538f4e71bcfd158b
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.14.7":
-  version: 1.14.7
-  resolution: "@carbon/charts@npm:1.14.7"
+"@carbon/charts@npm:1.14.8":
+  version: 1.14.8
+  resolution: "@carbon/charts@npm:1.14.8"
   dependencies:
     "@carbon/colors": "npm:^11.20.1"
     "@carbon/utils-position": "npm:^1.1.4"
@@ -605,7 +622,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 10/4e6126d72f6d97454944f2423e993a4868b03f18e0e0f818819134fa38ef11b1a752f580f565263af246675b11962013a934a99f3407784ec1b65ac87b39ff14
+  checksum: 10/202262aa3f51b7df3cc27a0af4d3654756c18d97b4f687e49f88c7f237709fade2f86dfbb40896277dc06849ef60265e4e39849badde0304e82d60b8ef80dd57
   languageName: node
   linkType: hard
 
@@ -2076,8 +2093,8 @@ __metadata:
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
-    "@carbon/charts": "npm:1.14.7"
-    "@carbon/charts-react": "npm:1.14.7"
+    "@carbon/charts": "npm:1.14.8"
+    "@carbon/charts-react": "npm:1.14.8"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.24"
     "@types/react": "npm:^18.2.61"
@@ -2193,7 +2210,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-react@workspace:packages/react"
   dependencies:
-    "@atlaskit/toggle": "npm:^13.0.2"
+    "@atlaskit/toggle": "npm:^13.0.3"
     "@biomejs/biome": "npm:1.5.3"
     "@floating-ui/react": "npm:^0.26.9"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
@@ -2204,7 +2221,7 @@ __metadata:
     "@types/react": "npm:^18.2.61"
     "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react": "npm:^4.2.1"
-    autoprefixer: "npm:^10.4.17"
+    autoprefixer: "npm:^10.4.18"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^3.3.1"
     fast-deep-equal: "npm:^3.1.3"
@@ -2968,12 +2985,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.17":
-  version: 10.4.17
-  resolution: "autoprefixer@npm:10.4.17"
+"autoprefixer@npm:^10.4.18":
+  version: 10.4.18
+  resolution: "autoprefixer@npm:10.4.18"
   dependencies:
-    browserslist: "npm:^4.22.2"
-    caniuse-lite: "npm:^1.0.30001578"
+    browserslist: "npm:^4.23.0"
+    caniuse-lite: "npm:^1.0.30001591"
     fraction.js: "npm:^4.3.7"
     normalize-range: "npm:^0.1.2"
     picocolors: "npm:^1.0.0"
@@ -2982,7 +2999,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 10/ac4416e72643bf92c2a346af5a6a437eb39e3b852e5d48e1a0a3204a81cbf8eecc5489a9386cf63a288b7183fae3ad52cf3c24c458d7cbb5463e55e21dc7e6ed
+  checksum: 10/c5bc0b539451557ac0b531bd6dad2db50499cf3d5daff9ead57d0d90d8f63ea6aa0e0556cbda3fbd3d081ec1199202f14533d54494ea47f42b239852d6bde16f
   languageName: node
   linkType: hard
 
@@ -3153,6 +3170,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.23.0":
+  version: 4.23.0
+  resolution: "browserslist@npm:4.23.0"
+  dependencies:
+    caniuse-lite: "npm:^1.0.30001587"
+    electron-to-chromium: "npm:^1.4.668"
+    node-releases: "npm:^2.0.14"
+    update-browserslist-db: "npm:^1.0.13"
+  bin:
+    browserslist: cli.js
+  checksum: 10/496c3862df74565dd942b4ae65f502c575cbeba1fa4a3894dad7aa3b16130dc3033bc502d8848147f7b625154a284708253d9598bcdbef5a1e34cf11dc7bad8e
+  languageName: node
+  linkType: hard
+
 "btoa-lite@npm:^1.0.0":
   version: 1.0.0
   resolution: "btoa-lite@npm:1.0.0"
@@ -3221,10 +3252,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001578, caniuse-lite@npm:^1.0.30001580":
+"caniuse-lite@npm:^1.0.30001580":
   version: 1.0.30001585
   resolution: "caniuse-lite@npm:1.0.30001585"
   checksum: 10/877e234c13f8db9bde20265f8c0702d1a5d3d0f0b0f726f431c951cf92d4c2b73db6e7b2c8bdf964e49e817037f27691564f56c5e2d557b001097bc8d526d2a1
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001591":
+  version: 1.0.30001591
+  resolution: "caniuse-lite@npm:1.0.30001591"
+  checksum: 10/3891fad30a99b984a3a20570c0440d35dda933c79ea190cdb78a1f1743866506a4b41b4389b53a7c0351f2228125f9dc49308463f57e61503e5689b444add1a8
   languageName: node
   linkType: hard
 
@@ -4610,6 +4648,13 @@ __metadata:
   version: 1.4.665
   resolution: "electron-to-chromium@npm:1.4.665"
   checksum: 10/ed78b2f7516111a17b39c3432eaf9c11470ebe626804396246a73de421769ed7044fce1ea12807de3e7dee0135d1e7fd787d9e0f97b939fec3b06a52445e65fc
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.4.668":
+  version: 1.4.690
+  resolution: "electron-to-chromium@npm:1.4.690"
+  checksum: 10/3a8e43623b8b5d39783e369b28fe3ebcf5d26157793b27286c24a2a1536b10bb94b22468d1403c2f1a7beb2537a029e032bc320661ddc438f8a7e0e57dfd1efa
   languageName: node
   linkType: hard
 
@@ -7643,6 +7688,21 @@ __metadata:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: 10/ca32d3fd2168c976c5d90a317f25d5f5cd723608b415fb3b9006f9d793c8965c619562d0884503a3e44e4b06efbca4fdd1520f30e58ca3e00a0890e637d55419
+  languageName: node
+  linkType: hard
+
+"react-uid@npm:^2.2.0":
+  version: 2.3.3
+  resolution: "react-uid@npm:2.3.3"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/c026f9a5cda9e1cb5fa7d8327c6661cdd05f818f20387563b4ca830f8895199dbdf50e41a26c8c3e00e1a440f512c84fb5a6222e55c6f1259f2c392efa8a0028
   languageName: node
   linkType: hard
 
