@@ -42,26 +42,46 @@ interface LinkProps {
 export const Links: React.FC<{
   linkMap: LinkProps[];
 }> = ({ linkMap }) => {
-  return linkMap.map((link, idx) => (
-    <span
-      className="inline-flex [&>*]:inline-flex [&>*]:items-center [&>a>span]:items-center"
-      key={link.id}
-    >
-      {idx > 0 && (
-        <span className="card-section-separator text-black dark:text-white px-1">
-          ·
-        </span>
-      )}
-      <a
-        href={link.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={activityLinkClasses}
-      >
-        {link.title}
-      </a>
-    </span>
-  ));
+  if (!linkMap.length) return null;
+  return (
+    <div className="flex gap-1.5">
+      {linkMap.map((link, idx) => (
+        <React.Fragment key={link.id}>
+          {idx > 0 && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className="self-center"
+              width="3"
+              height="4"
+              viewBox="0 0 3 4"
+              fill="none"
+            >
+              <circle
+                cx="1.5"
+                cy="2"
+                r="1.5"
+                className="fill-gray-500 dark:fill-gray-400"
+              />
+            </svg>
+          )}
+          <span
+            className="flex [&>*]:flex [&>*]:items-center [&>a>span]:items-center"
+            key={link.id}
+          >
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={activityLinkClasses}
+            >
+              {link.title}
+            </a>
+          </span>
+        </React.Fragment>
+      ))}
+    </div>
+  );
 };
 
 export const PatchLinks: React.FC<{
