@@ -18,15 +18,15 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.63",
-    "@types/react-dom": "^18.2.20",
+    "@types/node": "^20.11.25",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "cross-env": "^7.0.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "dependencies": {
-    "@carbon/charts": "1.15.0",
-    "@carbon/charts-react": "1.15.0",
+    "@carbon/charts": "1.15.1",
+    "@carbon/charts-react": "1.15.1",
     "@tony/cv-lib": "*",
     "carbon-components": "^11.12.0",
     "d3": "^7.8.5",
