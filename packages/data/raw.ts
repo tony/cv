@@ -12,7 +12,7 @@ import {
   LANGUAGE_FALLBACK_COLOR,
   OrgTypeColors,
 } from "./constants";
-import {
+import type {
   Activity,
   Category,
   CategoryName,

@@ -5,7 +5,7 @@ import type {
 } from "@carbon/charts";
 import type { Instance } from "mobx-state-tree";
 
-import { CVState } from "@tony/cv-lib/search/mobx";
+import type { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeightWithUnit,
   donutChartWidthWithUnit,

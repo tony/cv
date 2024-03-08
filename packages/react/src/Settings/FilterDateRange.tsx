@@ -100,7 +100,7 @@ export const FilterDateRange: React.FC = observer(() => {
         )}
         onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setYears({
-            startYear: parseInt(value.value),
+            startYear: Number.parseInt(value.value),
             endYear: cvState.searchOptions.endYear,
           });
         })}
@@ -131,7 +131,7 @@ export const FilterDateRange: React.FC = observer(() => {
         onChange={action((value: PropsValue<OptionType>): void => {
           cvState.setYears({
             startYear: cvState.searchOptions.startYear,
-            endYear: parseInt(value.value),
+            endYear: Number.parseInt(value.value),
           });
         })}
         styles={{ ...colourStyles, ...dateRangeStyles }}

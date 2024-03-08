@@ -1,11 +1,11 @@
-import React from "react";
+import type React from "react";
 import {
   type CSSObjectWithLabel,
   type MultiValueGenericProps,
   type OptionProps,
   type Options,
-  type StylesConfig,
   components as ReactSelectComponents,
+  type StylesConfig,
 } from "react-select";
 
 import type { CSSObject } from "@emotion/react";

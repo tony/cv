@@ -8,7 +8,7 @@ import {
   VictoryAxis,
   VictoryChart,
   VictoryClipContainer,
-  VictoryLine,
+  type VictoryLine,
   VictoryPie,
   VictoryTheme,
 } from "victory";

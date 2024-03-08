@@ -1,5 +1,5 @@
 import chroma from "chroma-js";
-import CSS from "csstype";
+import type CSS from "csstype";
 
 interface CategoryNameStringMap {
   [key: string]: string;

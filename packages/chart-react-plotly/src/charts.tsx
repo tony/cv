@@ -13,8 +13,8 @@ import {
 } from "@tony/cv-react/src/styles/constants";
 
 import {
-  DonutChartProps,
-  LineChartProps,
+  type DonutChartProps,
+  type LineChartProps,
   stateToDonut,
   stateToLine,
 } from "./query";

@@ -1,4 +1,5 @@
-import bb, { areaSpline, donut } from "billboard.js";
+import type bb from "billboard.js";
+import { areaSpline, donut } from "billboard.js";
 import type { Instance } from "mobx-state-tree";
 
 import type { CVState } from "@tony/cv-lib/search/mobx";

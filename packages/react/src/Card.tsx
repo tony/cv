@@ -3,7 +3,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 import { format, formatDistance } from "date-fns";
-import { Instance } from "mobx-state-tree";
+import type { Instance } from "mobx-state-tree";
 
 import { CategoryName, OrgTypeName } from "@tony/cv-data/types";
 import type {

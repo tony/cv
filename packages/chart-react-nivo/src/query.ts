@@ -1,6 +1,6 @@
 import type { LineSvgProps } from "@nivo/line";
 import type { PieSvgProps } from "@nivo/pie";
-import { CVState } from "@tony/cv-lib/search/mobx";
+import type { CVState } from "@tony/cv-lib/search/mobx";
 import {
   donutChartHeight,
   donutChartWidth,

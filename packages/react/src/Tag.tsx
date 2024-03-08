@@ -1,15 +1,19 @@
-import React from "react";
+import type React from "react";
 
 import { observer } from "mobx-react-lite";
-import { type Instance } from "mobx-state-tree";
+import type { Instance } from "mobx-state-tree";
 
 import {
   CategoryEmojiMap,
   CategoryVerbMap,
   CategoryVerbPresentTenseMap,
 } from "@tony/cv-data/constants";
-import { CategoryName, LanguageName, OrgTypeName } from "@tony/cv-data/types";
-import { Activity, ActivityOpenSource } from "@tony/cv-lib/search/mobx";
+import {
+  CategoryName,
+  type LanguageName,
+  type OrgTypeName,
+} from "@tony/cv-data/types";
+import type { Activity, ActivityOpenSource } from "@tony/cv-lib/search/mobx";
 
 import {
   GitMergeIcon,
