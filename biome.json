@@ -6,7 +6,8 @@
       "dist",
       ".cache",
       "*.graphql",
-      "packages/data/scraped"
+      "packages/data/scraped",
+      "package.json"
     ],
     "ignoreUnknown": true
   },
