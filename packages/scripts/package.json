@@ -21,7 +21,7 @@
     "octokit": "^3.1.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "1.6.0",
     "@types/node": "^20.11.25",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",

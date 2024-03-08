@@ -24,7 +24,7 @@
     "moment": "^2.30.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "1.6.0",
     "@types/chroma-js": "^2.4.4",
     "@types/node": "^20.11.25",
     "ts-loader": "^9.5.1",

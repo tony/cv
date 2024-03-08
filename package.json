@@ -22,7 +22,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "1.6.0",
     "cross-env": "^7.0.3"
   },
   "packageManager": "yarn@4.1.0"
