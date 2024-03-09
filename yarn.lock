@@ -2227,7 +2227,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^3.3.1"
     fast-deep-equal: "npm:^3.1.3"
-    mobx-react-lite: "npm:^4.0.5"
+    mobx-react-lite: "npm:^4.0.6"
     postcss: "npm:^8.4.35"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -6785,9 +6785,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx-react-lite@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "mobx-react-lite@npm:4.0.5"
+"mobx-react-lite@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "mobx-react-lite@npm:4.0.6"
   dependencies:
     use-sync-external-store: "npm:^1.2.0"
   peerDependencies:
@@ -6798,7 +6798,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/bcd4c6977b244bc83fd2ce0568e07b3ea8980729f50ec7520b1f0c2f98c0c312156fb018c41174893e3fff69c5a72f15733d9ef392c41eb29a4c7b35d2633484
+  checksum: 10/636722478995a39661b2c06d5f89d2a64da6a6cd858bc96a0eb3294484fac6e874e35e2d0b5c8d4af7d41f028cb7a59542a3d3d9bc454e17269ba52fc49f34fa
   languageName: node
   linkType: hard
 
