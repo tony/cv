@@ -23,7 +23,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@tony/cv-data": "*",
     "@types/node": "^20.11.27",
-    "@types/react": "^18.2.65",
+    "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "autoprefixer": "^10.4.18",
     "cross-env": "^7.0.3",
