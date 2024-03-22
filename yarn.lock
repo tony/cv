@@ -463,18 +463,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/biome@npm:1.6.1"
+"@biomejs/biome@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/biome@npm:1.6.2"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:1.6.1"
-    "@biomejs/cli-darwin-x64": "npm:1.6.1"
-    "@biomejs/cli-linux-arm64": "npm:1.6.1"
-    "@biomejs/cli-linux-arm64-musl": "npm:1.6.1"
-    "@biomejs/cli-linux-x64": "npm:1.6.1"
-    "@biomejs/cli-linux-x64-musl": "npm:1.6.1"
-    "@biomejs/cli-win32-arm64": "npm:1.6.1"
-    "@biomejs/cli-win32-x64": "npm:1.6.1"
+    "@biomejs/cli-darwin-arm64": "npm:1.6.2"
+    "@biomejs/cli-darwin-x64": "npm:1.6.2"
+    "@biomejs/cli-linux-arm64": "npm:1.6.2"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.6.2"
+    "@biomejs/cli-linux-x64": "npm:1.6.2"
+    "@biomejs/cli-linux-x64-musl": "npm:1.6.2"
+    "@biomejs/cli-win32-arm64": "npm:1.6.2"
+    "@biomejs/cli-win32-x64": "npm:1.6.2"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -494,7 +494,7 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10/42a11c30f06f0ac3e8e15d61803d2f2c402d1495a6a0757efa9c11ba03d0a426c3471955f2714a612689da271c7ce352592adf7aab496c85ca045298b4fffd2b
+  checksum: 10/6cdcab4112f5d87666f4978184d7e452e88094c32ad947443fed8afa4f015805065ac471f2bac97b4375ca41614aea26a77918605334264936b79f16aacd396e
   languageName: node
   linkType: hard
 
@@ -505,9 +505,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.1"
+"@biomejs/cli-darwin-arm64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -519,16 +519,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-darwin-x64@npm:1.6.1"
+"@biomejs/cli-darwin-x64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-darwin-x64@npm:1.6.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.1"
+"@biomejs/cli-linux-arm64-musl@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.2"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
@@ -540,16 +540,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-arm64@npm:1.6.1"
+"@biomejs/cli-linux-arm64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-linux-arm64@npm:1.6.2"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.1"
+"@biomejs/cli-linux-x64-musl@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.2"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
@@ -561,9 +561,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-linux-x64@npm:1.6.1"
+"@biomejs/cli-linux-x64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-linux-x64@npm:1.6.2"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
@@ -575,9 +575,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-win32-arm64@npm:1.6.1"
+"@biomejs/cli-win32-arm64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-win32-arm64@npm:1.6.2"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
@@ -589,18 +589,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@biomejs/cli-win32-x64@npm:1.6.1"
+"@biomejs/cli-win32-x64@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@biomejs/cli-win32-x64@npm:1.6.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@carbon/charts-react@npm:1.15.4":
-  version: 1.15.4
-  resolution: "@carbon/charts-react@npm:1.15.4"
+"@carbon/charts-react@npm:1.15.5":
+  version: 1.15.5
+  resolution: "@carbon/charts-react@npm:1.15.5"
   dependencies:
-    "@carbon/charts": "npm:1.15.4"
+    "@carbon/charts": "npm:1.15.5"
     "@carbon/icons-react": "npm:^11.38.0"
     "@ibm/telemetry-js": "npm:^1.3.0"
     react: "npm:^18.2.0"
@@ -608,13 +608,13 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/73c298c2192d24c85b46c132028cae154bf7796aede9d2e08411d81cb360ba780eb6838266aab7df5132691be245be902ef2ad93c709bed6a39865aa17a59448
+  checksum: 10/76a0845ae6b0a9cde7710a89d0485c2043748ae04e0a965cec47b12bea7d33619cf7f4fd3b0d2340b39bb790321afa2417b7d1ae6d85c2e0d53bcbd1a5d9c7eb
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:1.15.4":
-  version: 1.15.4
-  resolution: "@carbon/charts@npm:1.15.4"
+"@carbon/charts@npm:1.15.5":
+  version: 1.15.5
+  resolution: "@carbon/charts@npm:1.15.5"
   dependencies:
     "@carbon/colors": "npm:^11.21.0"
     "@carbon/utils-position": "npm:^1.1.4"
@@ -638,7 +638,7 @@ __metadata:
       optional: true
     d3-sankey:
       optional: true
-  checksum: 10/55665904e65f22826fbeb694687049288065768c0a46bcf05b4267993eac45b8e4c9821ffd1ddc71bdb07dbcb10401b4b0fcf4300ff5873b1141fd3904b47a0f
+  checksum: 10/fc61832d125d1ea32094bcceaf2ff5940e7dabaef51aafdf22328205951164fad0df502c48327db030353e2b6e6067982b4507d7e6f2e6d1f592548acb8434cd
   languageName: node
   linkType: hard
 
@@ -2110,15 +2110,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-billboard@workspace:packages/chart-react-billboard"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     billboard.js: "npm:^3.11.3"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2130,12 +2130,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-carbon@workspace:packages/chart-react-carbon"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
-    "@carbon/charts": "npm:1.15.4"
-    "@carbon/charts-react": "npm:1.15.4"
+    "@biomejs/biome": "npm:1.6.2"
+    "@carbon/charts": "npm:1.15.5"
+    "@carbon/charts-react": "npm:1.15.5"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2143,7 +2143,7 @@ __metadata:
     d3-selection: "npm:^3.0.0"
     dom-to-image: "npm:^2.6.0"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2155,18 +2155,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-nivo@workspace:packages/chart-react-nivo"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@nivo/bar": "npm:^0.85.1"
     "@nivo/core": "npm:^0.85.1"
     "@nivo/line": "npm:^0.85.1"
     "@nivo/pie": "npm:^0.85.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2178,15 +2178,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-plotly@workspace:packages/chart-react-plotly"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
     "@types/plotly.js": "npm:^2.29.2"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     plotly.js: "npm:^2.30.1"
     react: "npm:^18.2.0"
@@ -2199,14 +2199,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-chart-react-victory@workspace:packages/chart-react-victory"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -2227,7 +2227,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-lib@workspace:packages/lib"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@types/chroma-js": "npm:^2.4.4"
     "@types/node": "npm:^20.11.30"
     chroma-js: "npm:^2.4.2"
@@ -2235,7 +2235,7 @@ __metadata:
     github-colors: "npm:~2.2"
     github-graphql-api: "npm:^1.0.6"
     invert-color: "npm:^2.0.0"
-    mobx: "npm:^6.12.0"
+    mobx: "npm:^6.12.1"
     mobx-state-tree: "npm:^5.4.1"
     moment: "npm:^2.30.1"
     ts-loader: "npm:^9.5.1"
@@ -2249,22 +2249,22 @@ __metadata:
   resolution: "@tony/cv-react@workspace:packages/react"
   dependencies:
     "@atlaskit/toggle": "npm:^13.0.4"
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@floating-ui/react": "npm:^0.26.9"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@tailwindcss/typography": "npm:^0.5.10"
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.67"
+    "@types/react": "npm:^18.2.69"
     "@types/react-dom": "npm:^18.2.22"
     "@vitejs/plugin-react": "npm:^4.2.1"
-    autoprefixer: "npm:^10.4.18"
+    autoprefixer: "npm:^10.4.19"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^3.6.0"
     fast-deep-equal: "npm:^3.1.3"
     mobx-react-lite: "npm:^4.0.6"
-    postcss: "npm:^8.4.37"
+    postcss: "npm:^8.4.38"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-markdown: "npm:^9.0.1"
@@ -2272,7 +2272,7 @@ __metadata:
     tailwindcss: "npm:^3.4.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.4.3"
-    vite: "npm:^5.2.2"
+    vite: "npm:^5.2.3"
     vite-plugin-webfont-dl: "npm:^3.9.1"
   languageName: unknown
   linkType: soft
@@ -2281,7 +2281,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tony/cv-scripts@workspace:packages/scripts"
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     "@types/node": "npm:^20.11.30"
     github-colors: "npm:~2.2"
     invert-color: "npm:^2.0.0"
@@ -2708,14 +2708,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.67":
-  version: 18.2.67
-  resolution: "@types/react@npm:18.2.67"
+"@types/react@npm:^18.2.69":
+  version: 18.2.69
+  resolution: "@types/react@npm:18.2.69"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/d7e248dbe8d9d3b05f0d8e128d615fc9c85aa2c5d15634271d20cb9b343dbeffb0875f31a44e7ac63b42afc25949bd4c3633b7ebee45ee4666591ca934a8dffb
+  checksum: 10/5cc185f00ad5a4c2261e127ad25241448492f391e2206738b0477cbdba6aa75692e18ece5e75854ed513342d95c9ee83315744cb6b1470d488772cef1f8b40c8
   languageName: node
   linkType: hard
 
@@ -3000,12 +3000,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.18":
-  version: 10.4.18
-  resolution: "autoprefixer@npm:10.4.18"
+"autoprefixer@npm:^10.4.19":
+  version: 10.4.19
+  resolution: "autoprefixer@npm:10.4.19"
   dependencies:
     browserslist: "npm:^4.23.0"
-    caniuse-lite: "npm:^1.0.30001591"
+    caniuse-lite: "npm:^1.0.30001599"
     fraction.js: "npm:^4.3.7"
     normalize-range: "npm:^0.1.2"
     picocolors: "npm:^1.0.0"
@@ -3014,7 +3014,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 10/c5bc0b539451557ac0b531bd6dad2db50499cf3d5daff9ead57d0d90d8f63ea6aa0e0556cbda3fbd3d081ec1199202f14533d54494ea47f42b239852d6bde16f
+  checksum: 10/98378eae37b8bf0f1515e4c91b4c9c1ce69ede311d4dea7e934f5afe147d23712c577f112c4019a4c40461c585d82d474d08044f8eb6cb8a063c3d5b7aca52d2
   languageName: node
   linkType: hard
 
@@ -3274,10 +3274,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001591":
+"caniuse-lite@npm:^1.0.30001587":
   version: 1.0.30001591
   resolution: "caniuse-lite@npm:1.0.30001591"
   checksum: 10/3891fad30a99b984a3a20570c0440d35dda933c79ea190cdb78a1f1743866506a4b41b4389b53a7c0351f2228125f9dc49308463f57e61503e5689b444add1a8
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001599":
+  version: 1.0.30001600
+  resolution: "caniuse-lite@npm:1.0.30001600"
+  checksum: 10/4c52f83ed71bc5f6e443bd17923460f1c77915adc2c2aa79ddaedceccc690b5917054b0c41b79e9138cbbd9abcdc0db9e224e79e3e734e581dfec06505f3a2b4
   languageName: node
   linkType: hard
 
@@ -6845,10 +6852,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:^6.12.0":
-  version: 6.12.0
-  resolution: "mobx@npm:6.12.0"
-  checksum: 10/65d784abfc141a807160e0147b25e56069fb8942caafe4ffcd53542f58695bcfa7840cc266a2386efb8f9c4e8ccc1ed662f0dab784a2e449e055a9d49a2a2126
+"mobx@npm:^6.12.1":
+  version: 6.12.1
+  resolution: "mobx@npm:6.12.1"
+  checksum: 10/4e1f21aef8c9a6780468d1dd1193b418b7a2d93744984baeb903aacef05cc359a560923294504307922359370848b9d05a91aab5a8098460b8474f6a1a0edc74
   languageName: node
   linkType: hard
 
@@ -7475,14 +7482,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.37":
-  version: 8.4.37
-  resolution: "postcss@npm:8.4.37"
+"postcss@npm:^8.4.38":
+  version: 8.4.38
+  resolution: "postcss@npm:8.4.38"
   dependencies:
     nanoid: "npm:^3.3.7"
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.2.0"
-  checksum: 10/9acf36dfeaa350aab1100518af2da8cabebbbaf7d28356d0f81e1c30c9307f5ecb7356515585c63e5b011895ce3f5c7265df2cb9fce2e812b462aaf308199ffe
+  checksum: 10/6e44a7ed835ffa9a2b096e8d3e5dfc6bcf331a25c48aeb862dd54e3aaecadf814fa22be224fd308f87d08adf2299164f88c5fd5ab1c4ef6cbd693ceb295377f4
   languageName: node
   linkType: hard
 
@@ -8027,7 +8034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:1.6.1"
+    "@biomejs/biome": "npm:1.6.2"
     cross-env: "npm:^7.0.3"
   languageName: unknown
   linkType: soft
@@ -9481,9 +9488,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "vite@npm:5.2.2"
+"vite@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "vite@npm:5.2.3"
   dependencies:
     esbuild: "npm:^0.20.1"
     fsevents: "npm:~2.3.3"
@@ -9517,7 +9524,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/8e7f1e79e00a092b43378565898b5b60f66738d55fdcd2bb3a17b07183d32c3bfda30135490956ad8eb5eb77b0e56d4377655bf9478898616edbb20645477edb
+  checksum: 10/5033a989462bc3127cb937ae5138024af68ec1b67accad07e07e116254b84fc6888a18d7a0358e3d3ce19fe160d72b6622259edc93e7fba47b84d042dcbe1e4e
   languageName: node
   linkType: hard
 
