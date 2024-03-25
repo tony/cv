@@ -17,9 +17,9 @@
     "clean": "rm -rf dist/"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.6.2",
+    "@biomejs/biome": "1.6.3",
     "@types/node": "^20.11.30",
-    "@types/react": "^18.2.69",
+    "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
     "cross-env": "^7.0.3",
     "typescript": "^5.4.3"
@@ -31,6 +31,6 @@
     "mobx-state-tree": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "victory": "^37.0.0"
+    "victory": "^37.0.1"
   }
 }
