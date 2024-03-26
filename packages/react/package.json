@@ -20,10 +20,10 @@
     "@biomejs/biome": "1.6.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.11",
     "@tony/cv-data": "*",
     "@types/node": "^20.11.30",
-    "@types/react": "^18.2.70",
+    "@types/react": "^18.2.72",
     "@types/react-dom": "^18.2.22",
     "autoprefixer": "^10.4.19",
     "cross-env": "^7.0.3",
@@ -31,11 +31,11 @@
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3",
-    "vite-plugin-webfont-dl": "^3.9.1"
+    "vite-plugin-webfont-dl": "^3.9.2"
   },
   "dependencies": {
     "@atlaskit/toggle": "^13.0.4",
-    "@floating-ui/react": "^0.26.9",
+    "@floating-ui/react": "^0.26.10",
     "@vitejs/plugin-react": "^4.2.1",
     "date-fns": "^3.6.0",
     "fast-deep-equal": "^3.1.3",

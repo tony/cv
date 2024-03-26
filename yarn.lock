@@ -1086,7 +1086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react-dom@npm:^2.0.8":
+"@floating-ui/react-dom@npm:^2.0.0":
   version: 2.0.8
   resolution: "@floating-ui/react-dom@npm:2.0.8"
   dependencies:
@@ -1098,21 +1098,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:^0.26.9":
-  version: 0.26.9
-  resolution: "@floating-ui/react@npm:0.26.9"
+"@floating-ui/react@npm:^0.26.10":
+  version: 0.26.10
+  resolution: "@floating-ui/react@npm:0.26.10"
   dependencies:
-    "@floating-ui/react-dom": "npm:^2.0.8"
-    "@floating-ui/utils": "npm:^0.2.1"
-    tabbable: "npm:^6.0.1"
+    "@floating-ui/react-dom": "npm:^2.0.0"
+    "@floating-ui/utils": "npm:^0.2.0"
+    tabbable: "npm:^6.0.0"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 10/997f5a471ac6080c5162ad86fbb8e5bc0eca9335c40d8445597a90ba645e5d35ee796c29bdc66d868182afe5901804ecd52b82560332ae123b0c269400421e63
+  checksum: 10/7bbb22d61f180a3ef245da4c57c8773c38994087e1f593b2be7377796d66a0050109a4f3f57f63653662130bcf01c47a7b254d7448383339870bf9208624640d
   languageName: node
   linkType: hard
 
-"@floating-ui/utils@npm:^0.2.1":
+"@floating-ui/utils@npm:^0.2.0, @floating-ui/utils@npm:^0.2.1":
   version: 0.2.1
   resolution: "@floating-ui/utils@npm:0.2.1"
   checksum: 10/33c9ab346e7b05c5a1e6a95bc902aafcfc2c9d513a147e2491468843bd5607531b06d0b9aa56aa491cbf22a6c2495c18ccfc4c0344baec54a689a7bb8e4898d6
@@ -2092,9 +2092,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:^0.5.10":
-  version: 0.5.10
-  resolution: "@tailwindcss/typography@npm:0.5.10"
+"@tailwindcss/typography@npm:^0.5.11":
+  version: 0.5.11
+  resolution: "@tailwindcss/typography@npm:0.5.11"
   dependencies:
     lodash.castarray: "npm:^4.4.0"
     lodash.isplainobject: "npm:^4.0.6"
@@ -2102,7 +2102,7 @@ __metadata:
     postcss-selector-parser: "npm:6.0.10"
   peerDependencies:
     tailwindcss: "*"
-  checksum: 10/dd9934a556661f1eef57a8101fdf89a438cb05bb48b52b79832f8cbf772181b16e87a5cbab594f7e2de64a5ff457514177af91f430d5d97a5a833db22b6f61c3
+  checksum: 10/79adf78f728d0eaa38b9f50a0fe10ddfcc48ffdc96edad09f468df39584410fb312145b619d231a7bd7d48d5953cfb37322e608dd287ee8716da8280322a0a6b
   languageName: node
   linkType: hard
 
@@ -2113,7 +2113,7 @@ __metadata:
     "@biomejs/biome": "npm:1.6.3"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     billboard.js: "npm:^3.11.3"
     cross-env: "npm:^7.0.3"
@@ -2135,7 +2135,7 @@ __metadata:
     "@carbon/charts-react": "npm:1.15.5"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     carbon-components: "npm:^11.12.0"
     cross-env: "npm:^7.0.3"
@@ -2162,7 +2162,7 @@ __metadata:
     "@nivo/pie": "npm:^0.85.1"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2182,7 +2182,7 @@ __metadata:
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
     "@types/plotly.js": "npm:^2.29.2"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2202,7 +2202,7 @@ __metadata:
     "@biomejs/biome": "npm:1.6.3"
     "@tony/cv-lib": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     cross-env: "npm:^7.0.3"
     fast-deep-equal: "npm:^3.1.3"
@@ -2250,13 +2250,13 @@ __metadata:
   dependencies:
     "@atlaskit/toggle": "npm:^13.0.4"
     "@biomejs/biome": "npm:1.6.3"
-    "@floating-ui/react": "npm:^0.26.9"
+    "@floating-ui/react": "npm:^0.26.10"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/container-queries": "npm:^0.1.1"
-    "@tailwindcss/typography": "npm:^0.5.10"
+    "@tailwindcss/typography": "npm:^0.5.11"
     "@tony/cv-data": "npm:*"
     "@types/node": "npm:^20.11.30"
-    "@types/react": "npm:^18.2.70"
+    "@types/react": "npm:^18.2.72"
     "@types/react-dom": "npm:^18.2.22"
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.19"
@@ -2273,7 +2273,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.4.3"
     vite: "npm:^5.2.6"
-    vite-plugin-webfont-dl: "npm:^3.9.1"
+    vite-plugin-webfont-dl: "npm:^3.9.2"
   languageName: unknown
   linkType: soft
 
@@ -2708,14 +2708,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.70":
-  version: 18.2.70
-  resolution: "@types/react@npm:18.2.70"
+"@types/react@npm:^18.2.72":
+  version: 18.2.72
+  resolution: "@types/react@npm:18.2.72"
   dependencies:
     "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/ddf235dfa6abe0075b40e66d3119ca3d0af330045cd12ebea8f335e07e6d71882535bfab2b7ae33c1709a6c1cf06eab2e5587c9d4c2333d25f781f9fd34c83e5
+  checksum: 10/0c15461eeb8cd5153b48446d4aae681ae1d4f45fa5828fc53c12aaac9dfe426a64259a284737f6abfc3bea36df9507c129d7065ebb390b21349ad30128385ac1
   languageName: node
   linkType: hard
 
@@ -8521,7 +8520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabbable@npm:^6.0.1":
+"tabbable@npm:^6.0.0":
   version: 6.2.0
   resolution: "tabbable@npm:6.2.0"
   checksum: 10/980fa73476026e99dcacfc0d6e000d41d42c8e670faf4682496d30c625495e412c4369694f2a15cf1e5252d22de3c396f2b62edbe8d60b5dadc40d09e3f2dde3
@@ -9474,9 +9473,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-webfont-dl@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "vite-plugin-webfont-dl@npm:3.9.1"
+"vite-plugin-webfont-dl@npm:^3.9.2":
+  version: 3.9.2
+  resolution: "vite-plugin-webfont-dl@npm:3.9.2"
   dependencies:
     axios: "npm:^1"
     clean-css: "npm:^5"
@@ -9484,7 +9483,7 @@ __metadata:
     picocolors: "npm:^1"
   peerDependencies:
     vite: ^2 || ^3 || ^4 || ^5
-  checksum: 10/e55a027ae9263f3cda10ba96c5610157257161f3b03ff0ae9443827668293d894ec11e68308ae4188ae844e96bf051644c21f299939fd07bd87f2cfad2b9bde2
+  checksum: 10/2a6d3eb85ba839a3a672acf838449f617612fc8a400562edbcf2e5cf94229125421fc6ec2f35679bb4473ba7a6c2c48abae6ff54d1d454d515f33e010390ae5f
   languageName: node
   linkType: hard
 
